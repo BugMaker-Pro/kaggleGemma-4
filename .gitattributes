@@ -1,0 +1,8 @@
+# Keep line endings stable across the Linux data / Windows toolchain split.
+# Diff line numbers must not shift because a file was checked out on Windows.
+* text=auto eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.jsonl text eol=lf
+*.tgz binary
+*.zip binary

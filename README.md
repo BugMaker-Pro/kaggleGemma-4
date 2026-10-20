@@ -31,12 +31,32 @@
 - [x] 官方规则核实（字数、评分维度、奖项、评委）——靠 Edge 无头渲染抓取
 - [x] 选题 v3 定稿：代码图覆盖率 + 重建（去 GPU 依赖）
 - [x] 论文骨架（3000 词预算）
-- [ ] **shell 转完全权限**（当前默认模式 `0xC0000142`，见下）
-- [ ] 数据落地 + 抽 129 任务的黄金符号（E0）
+- [x] shell 转完全权限；Python 3.12 在 `D:\pyenv\cpython-3.12.13-windows-x86_64-none\python.exe`
+- [x] **E0 代码**：diff 解析 + 符号解析 + 不落盘直接读 tar 快照（15 个测试通过）
+- [ ] **数据落地 22.4 GB**（阻塞：需要 Kaggle 下载，见下）
+- [ ] 用 129 个任务跑 E0，产出 `data/gold_symbols.jsonl`
 - [ ] 官方图覆盖率审计（E1）
 - [ ] 重建图 + 检索对照（E2/E3）→ **主图**
 - [ ] 3000 词初稿 → 11/12 提交
 - [ ] 主赛道首次提交（11/14 之后）
+
+## 数据（当前唯一阻塞项）
+
+22.4 GB，前提：Kaggle 账号已 **Join** 比赛并接受 Rules。
+
+两条路（任选）：
+
+**A. 浏览器**：比赛 **Data** 页 → Download All → 解压到本项目 `data/`。
+
+**B. 命令行**
+```powershell
+& "D:\pyenv\cpython-3.12.13-windows-x86_64-none\python.exe" -m pip install kaggle
+# 然后把 Kaggle → Settings → Create New Token 下载的 kaggle.json 放到 %USERPROFILE%\.kaggle\
+& "D:\pyenv\cpython-3.12.13-windows-x86_64-none\python.exe" -m kaggle competitions download -c gemma-4-developer-agent -p data
+```
+
+落地后应是：`data/tasks.jsonl`、`data/snapshots/<instance_id>.tgz`、`data/graphs/`、`data/embeddings/`。
+`data/` 已在 `.gitignore` 里，不会进仓库。
 
 ## 环境备注
 
