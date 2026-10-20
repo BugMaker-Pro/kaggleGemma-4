@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# Kaggle / 数据（体积大，绝不入库）
+data/
+snapshots/
+wheels/
+*.tgz
+*.zip
+!submission.zip
+
+# 实验产物
+runs/
+traces/
+results/
+*.log
+
+# 论文构建产物
+paper/build/
+paper/*.aux
+paper/*.pdf
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 临时探针
+.dsh-probe.txt
