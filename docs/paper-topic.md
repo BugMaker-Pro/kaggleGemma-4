@@ -77,6 +77,25 @@ Best New Resource 的原文举例是「新数据集 / 新工具 / 新软件」�
 
 ## 4. 方法：五个实验
 
+### 4.0 官方资产格式（2026-10-20 从主赛道 Data 页核实）
+
+> 论文赛道本身没有数据（writeup-only）。数据在主赛道 `gemma-4-developer-agent` 的 Data 页：**22.42 GB / 524 files**，需 Join + Accept Rules 才能看到。
+
+| 资产 | 格式 | 关键字段 |
+| --- | --- | --- |
+| `tasks.jsonl` | 行 JSON，129 条 | `instance_id` / `repo` / `base_commit` / `problem_statement` / `patch` / `test_patch` |
+| `snapshots/` | 129 个 tgz | 冻结在 `base_commit`，未来提交已删除 |
+| `graphs/` | NetworkX JSON，256 文件（129 任务名 + 127 commit 名，硬链接） | `nodes[*].id`（全限定符号）/ `name` / **`text`（符号完整源码）**；`edges[*].source/target/type/key` |
+| `embeddings/` | `.npz`，256 文件 | `<node_id>.npy`，float32 × 256 |
+| `wheels/` | 124 个 whl | 离线依赖，`/wheels/` 只读挂载 |
+| `docker/`、`sandbox/` | 容器规格 + 初始化脚本 | 构建 `swebench-sandbox` |
+
+三条对实验的硬含义：
+
+1. **节点自带 `text`** → 覆盖率可在符号级严格计算，无需先重建即可比对。
+2. **129 任务 ↔ 127 commit** → 硬链接去重必须做，否则覆盖率重复计数。社区报告的「129 个 0 字节」最可能就是打包时硬链接断掉，**待数据落地核实**。
+3. **官方策展期已跑 fail-to-pass / pass-to-pass** → 「参考修复过不了验证」这条上界风险被官方堵死，v2 的正负对照审计因此不再是主线（已降级）。
+
 ### E0 黄金符号抽取（1 天，纯 CPU）
 
 输入 `tasks.jsonl` → 取 `patch` → 解析出：变更文件、变更行号、所在符号（函数/类/方法）、新增/删除的行数。

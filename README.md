@@ -19,6 +19,7 @@
 | --- | --- |
 | [docs/paper-topic.md](docs/paper-topic.md) | **主线**：选题定稿 v3、RQ/H1–H3、E0–E4 实验协议、3000 词预算、23 天排期与止损线 |
 | [docs/kaggle-paper-track-raw.md](docs/kaggle-paper-track-raw.md) | **官方规则原文**（2026-10-20 核实）：3000 词、五维评分、三个奖、题目清单、评委 |
+| [docs/data-assets.md](docs/data-assets.md) | **官方数据资产清单**（主赛道 Data 页原文）：22.42 GB / 524 文件、graph 与 embedding 的 schema、策展流程 |
 | [docs/competition.md](docs/competition.md) | 两个赛道的完整机制：任务形态、约束、数据构成、评分方式 |
 | [docs/task-walkthrough.md](docs/task-walkthrough.md) | 主赛道单任务流程：任务包字段、两阶段评测、六步循环、七个吃分的坑 |
 | [paper/main.md](paper/main.md) | 论文骨架：3000 词逐节分配、主表/主图占位、主张→证据对照、投稿检查 |
@@ -33,7 +34,8 @@
 - [x] 论文骨架（3000 词预算）
 - [x] shell 转完全权限；Python 3.12 在 `D:\pyenv\cpython-3.12.13-windows-x86_64-none\python.exe`
 - [x] **E0 代码**：diff 解析 + 符号解析 + 不落盘直接读 tar 快照（15 个测试通过）
-- [ ] **数据落地 22.4 GB**（阻塞：需要 Kaggle 下载，见下）
+- [x] **E1 代码**：graph 读取 + 符号级覆盖率四分类（exact/suffix/module_only/miss，14 个测试通过）
+- [ ] **数据落地 22.42 GB**（阻塞：需在**主赛道**页面 Join + Accept Rules，见下）
 - [ ] 用 129 个任务跑 E0，产出 `data/gold_symbols.jsonl`
 - [ ] 官方图覆盖率审计（E1）
 - [ ] 重建图 + 检索对照（E2/E3）→ **主图**
