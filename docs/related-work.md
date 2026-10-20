@@ -59,7 +59,29 @@
 | --- | --- | --- |
 | RepoAtlas（2026） | 它改善**视图**，我们质疑**底座** | 「你优化的是怎么选，我量的是有没有」 |
 | PyCG / Jarvis | 它们报 precision/recall，我们报**对 agent 任务的影响** | 「召回率 70% 对编译分析是常识，对 agent 是致命的」 |
-| ARISE（2026）⚠️ | 它是「图表示 + 工具集」，可能也报了覆盖率 | **必须精读**；若它已报，我们的贡献要退到「打包缺陷 + 桥」 |
+| ARISE（2026） | **已精读，不撞车**（见 §3.5） | 它比谁的图更**深**，我们量图有**多全** |
+
+## 3.5 ARISE 精读结论（2026-10-20，已排除撞车）
+
+**它做了什么**：在 SWE-agent 上加「多粒度程序图」——结构边（Contains/Imports/Calls/Inherits）**再加语句级节点与过程内 def-use 边**，通过三层工具 API 暴露，核心是 `get_dataflow_slice`。
+**数字**：SWE-bench Lite（300 题 / 11 个 Python 仓库），Qwen2.5-Coder-32B；Function Recall@1 **+17.0**、Line Recall@1 **+15.0**、Pass@1 **22.0%（66/300）**，比 SWE-agent **+4.7**。
+**它没做什么**：**没有报任何图覆盖率指标**——只报端任务结果。
+
+**为什么它反而帮我们**：原文自己写了建图时的取舍——
+
+> "spurious edges (false positives) cause agents to follow incorrect paths, which can be more harmful than missing edges... We therefore restrict resolution to unambiguous cases... and **silently drop dynamic dispatch through attribute access**."
+
+也就是说：**它明知会漏边，仍然选择静默丢弃，并且从不回报丢了多少。** 这正是我们的论文要量的东西。这句话可以直接引成我们 Introduction 的动机。
+
+**顺带拿到的对标数字**（都来自 ARISE 的 Related Work，引用前仍需回原文核）：
+
+| 系统 | 指标（SWE-bench Lite） |
+| --- | --- |
+| LocAgent | 92.7% **file-level** accuracy（微调 Qwen2.5-32B） |
+| OrcaLoca | 65.33% **function** match |
+| ARISE | Function Recall@1 +17.0 / Pass@1 22.0% |
+
+**结论**：这个社区的量纲是 file-level accuracy / function recall@1 / resolved。我们的覆盖率可以直接挂在这个量纲上——「覆盖率 → function recall@1 → resolved」是一条评审一眼能看懂的因果链。
 
 ---
 
