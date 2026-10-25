@@ -103,11 +103,18 @@ class BM25:
         return [(self.ids[i], score) for i, score in best]
 
 
-def adjacency(graph: dict) -> dict[str, set[str]]:
-    """Undirected call/inheritance neighbourhood, used for one-hop expansion."""
+def adjacency(graph: dict, resolutions: set[str] | None = None) -> dict[str, set[str]]:
+    """Undirected call/inheritance neighbourhood, used for one-hop expansion.
+
+    `resolutions` restricts the edges used: passing the high-precision set is how
+    the paper separates "the graph is useless" from "this graph's edges are half
+    unresolved noise".
+    """
     neighbours: dict[str, set[str]] = defaultdict(set)
     for edge in graph.get("edges", []):
         if edge.get("type") not in ("calls", "inherits"):
+            continue
+        if resolutions is not None and edge.get("resolution") not in resolutions:
             continue
         src, dst = edge.get("source"), edge.get("target")
         if not src or not dst:
@@ -130,6 +137,85 @@ def expand(seeds: list[str], neighbours: dict[str, set[str]], limit: int) -> lis
             if len(seen) >= limit:
                 return seen
     return seen
+
+
+def expand_round_robin(pool_ids: list[str], neighbours: dict[str, set[str]],
+                       k: int, seeds: int = 5) -> list[str]:
+    """Keep the strongest text hits, then fill the remaining slots with neighbours.
+
+    This is the arm that can actually add something new: a gold symbol whose name
+    has nothing to do with the issue, but which is one hop from a strong seed,
+    enters the shortlist even though BM25 never ranked it inside the pool.
+
+    Neighbours are taken round-robin across the seeds so a single hub seed with
+    forty neighbours cannot take every slot, and anything left over is padded
+    from the untouched tail of the text ranking -- so both arms always return
+    the same number of symbols and the context budget stays comparable.
+    """
+    if k <= 0:
+        return []
+    head = list(pool_ids[:seeds])
+    out = list(head)
+    seen = set(out)
+
+    queues = [sorted(neighbours.get(node, ())) for node in head]
+    cursor = [0] * len(queues)
+    while len(out) < k:
+        progressed = False
+        for i, queue in enumerate(queues):
+            if len(out) >= k:
+                break
+            while cursor[i] < len(queue):
+                candidate = queue[cursor[i]]
+                cursor[i] += 1
+                if candidate in seen:
+                    continue
+                out.append(candidate)
+                seen.add(candidate)
+                progressed = True
+                break
+        if not progressed:
+            break
+
+    for node_id in pool_ids[seeds:]:
+        if len(out) >= k:
+            break
+        if node_id in seen:
+            continue
+        out.append(node_id)
+        seen.add(node_id)
+    return out[:k]
+
+
+def fuse(pool: list[tuple[str, float]], neighbours: dict[str, set[str]],
+         k: int = 10, seeds: int = 5, weight: float = 0.5) -> list[str]:
+    """Text score plus a discounted score inherited from adjacent strong seeds.
+
+    This is the standard graph-augmented ranking, kept deliberately simple so the
+    weight means something: a candidate that BM25 never ranked can still enter the
+    shortlist, and a candidate that BM25 ranked highly is not thrown away just
+    because it happens to have no neighbours.
+
+    `weight` is the fraction of the score a candidate can inherit from its best
+    adjacent seed, so 0 degenerates to plain text ranking and 1 lets a neighbour
+    of the top hit outrank the top hit itself.
+    """
+    if not pool or k <= 0:
+        return []
+    top = max(score for _, score in pool) or 1.0
+    base = {node_id: score / top for node_id, score in pool}
+    seed_ids = [node_id for node_id, _ in pool[:seeds]]
+    seed_score = {node_id: base.get(node_id, 0.0) for node_id in seed_ids}
+
+    candidates = dict(base)
+    for seed in seed_ids:
+        for neighbour in neighbours.get(seed, ()):
+            inherited = weight * seed_score[seed]
+            if inherited > candidates.get(neighbour, 0.0):
+                candidates[neighbour] = inherited
+
+    ranked = sorted(candidates.items(), key=lambda kv: (-kv[1], kv[0]))
+    return [node_id for node_id, _ in ranked[:k]]
 
 
 def context_chars(ids: list[str], nodes: dict[str, dict], cap: int = 400) -> int:

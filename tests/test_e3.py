@@ -5,14 +5,14 @@ import unittest
 try:
     from experiments.retrieve import (
         BM25, adjacency, any_hit_at, context_chars, document_text, expand,
-        recall_at, tokenize,
+        expand_round_robin, fuse, recall_at, tokenize,
     )
 except ImportError:  # pragma: no cover
     import pathlib, sys
     sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
     from experiments.retrieve import (
         BM25, adjacency, any_hit_at, context_chars, document_text, expand,
-        recall_at, tokenize,
+        expand_round_robin, fuse, recall_at, tokenize,
     )
 
 
@@ -78,6 +78,14 @@ class TestGraphArms(unittest.TestCase):
         self.assertNotIn("d", neigh["a"])
         self.assertNotIn("ext.os.path", neigh["a"])
 
+    def test_adjacency_can_be_restricted_to_high_precision_edges(self):
+        graph = {"edges": [
+            {"source": "a", "target": "b", "type": "calls", "resolution": "local"},
+            {"source": "a", "target": "z", "type": "calls", "resolution": "unresolved"},
+        ]}
+        self.assertEqual(adjacency(graph)["a"], {"b", "z"})
+        self.assertEqual(adjacency(graph, {"local"})["a"], {"b"})
+
     def test_expand_is_one_hop(self):
         neigh = adjacency(self.GRAPH)
         self.assertEqual(expand(["a"], neigh, 10), ["a", "b"])
@@ -89,6 +97,76 @@ class TestGraphArms(unittest.TestCase):
 
     def test_expand_terminates_without_neighbours(self):
         self.assertEqual(expand(["zzz"], {}, 5), ["zzz"])
+
+
+class TestOpenArm(unittest.TestCase):
+    """The treatment arm must be able to introduce a symbol BM25 never ranked."""
+
+    NEIGH = {
+        "s1": {"n1", "n2", "n3"},
+        "s2": {"n4"},
+    }
+
+    def test_head_is_untouched(self):
+        out = expand_round_robin(["s1", "s2", "x", "y"], self.NEIGH, k=8, seeds=2)
+        self.assertEqual(out[:2], ["s1", "s2"])
+
+    def test_neighbours_are_interleaved_across_seeds(self):
+        out = expand_round_robin(["s1", "s2", "x", "y"], self.NEIGH, k=4, seeds=2)
+        self.assertEqual(out, ["s1", "s2", "n1", "n4"])
+
+    def test_a_hub_seed_cannot_take_every_slot(self):
+        out = expand_round_robin(["s1", "s2"], self.NEIGH, k=4, seeds=2)
+        self.assertIn("n4", out)
+
+    def test_padding_comes_from_the_text_tail(self):
+        out = expand_round_robin(["s1", "x", "y", "z"], {"s1": {"n1"}}, k=4, seeds=1)
+        self.assertEqual(out, ["s1", "n1", "x", "y"])
+
+    def test_no_duplicates(self):
+        out = expand_round_robin(["s1", "n1"], {"s1": {"n1", "n2"}}, k=4, seeds=2)
+        self.assertEqual(len(out), len(set(out)))
+
+    def test_k_is_respected(self):
+        self.assertEqual(len(expand_round_robin(["s1"], self.NEIGH, k=2, seeds=1)), 2)
+        self.assertEqual(expand_round_robin(["s1"], self.NEIGH, k=0), [])
+
+    def test_isolated_seed_still_returns_k(self):
+        out = expand_round_robin(["a", "b", "c", "d", "e"], {}, k=5, seeds=2)
+        self.assertEqual(out, ["a", "b", "c", "d", "e"])
+
+
+class TestFusion(unittest.TestCase):
+    POOL = [("a", 10.0), ("b", 8.0), ("c", 6.0), ("d", 4.0), ("e", 2.0)]
+    NEIGH = {"a": {"x"}, "b": {"c"}}
+
+    def test_weight_zero_is_plain_text(self):
+        self.assertEqual(fuse(self.POOL, self.NEIGH, k=5, weight=0.0),
+                         ["a", "b", "c", "d", "e"])
+
+    def test_neighbour_can_enter_a_shortlist_it_was_absent_from(self):
+        # x inherits 0.5 of a's score, which is enough to beat d and e but not c
+        out = fuse(self.POOL, self.NEIGH, k=4, seeds=1, weight=0.5)
+        self.assertEqual(out, ["a", "b", "c", "x"])
+
+    def test_high_weight_lets_a_neighbour_outrank_its_seed(self):
+        out = fuse(self.POOL, {"a": {"x"}}, k=2, seeds=1, weight=1.5)
+        self.assertEqual(out[0], "x")
+
+    def test_text_hits_survive_when_there_is_room(self):
+        out = fuse(self.POOL, self.NEIGH, k=6, seeds=5, weight=0.5)
+        for node_id in ("a", "b", "c", "d", "e"):
+            self.assertIn(node_id, out)
+
+    def test_a_neighbour_displaces_only_the_weakest_text_hit(self):
+        out = fuse(self.POOL, self.NEIGH, k=5, seeds=5, weight=0.5)
+        self.assertEqual(out, ["a", "b", "c", "x", "d"])
+
+    def test_empty_pool(self):
+        self.assertEqual(fuse([], self.NEIGH, k=5), [])
+
+    def test_k_is_respected(self):
+        self.assertEqual(len(fuse(self.POOL, self.NEIGH, k=2)), 2)
 
 
 class TestMetrics(unittest.TestCase):

@@ -22,6 +22,20 @@ sys.path.insert(0, str(ROOT))
 from experiments.evalcov import aggregate, by_repo  # noqa: E402
 
 METRICS = ("recall@1", "recall@5", "recall@10")
+FILE_METRICS = ("file_recall@5", "file_recall@10")
+TREATMENTS = ("graph_rerank", "graph_open", "graph_fuse", "graph_fuse_precise")
+
+
+def treatment_of(row: dict, arm: str) -> dict | None:
+    """Arm lookup with a shim for files written before the arms were split."""
+    arms = row.get("arms")
+    if not arms:
+        return None
+    if arm in arms:
+        return arms[arm]
+    if arm == "graph_rerank" and "graph" in arms:
+        return arms["graph"]
+    return None
 
 
 def load(path: Path) -> list[dict]:
@@ -52,14 +66,15 @@ def bootstrap_ci(deltas: list[float], n: int = 2000, alpha: float = 0.05) -> tup
     return (lo, hi)
 
 
-def paired(rows: list[dict], metric: str) -> dict:
+def paired(rows: list[dict], metric: str, arm: str = "graph_open") -> dict:
     deltas = []
     wins = losses = ties = 0
     for row in rows:
-        arms = row.get("arms")
-        if not arms:
+        base = treatment_of(row, "text")
+        other = treatment_of(row, arm)
+        if base is None or other is None:
             continue
-        delta = arms["graph"][metric] - arms["text"][metric]
+        delta = other[metric] - base[metric]
         deltas.append(delta)
         if delta > 0:
             wins += 1
@@ -70,13 +85,14 @@ def paired(rows: list[dict], metric: str) -> dict:
     lo, hi = bootstrap_ci(deltas)
     return {
         "metric": metric,
+        "arm": arm,
         "n": len(deltas),
         "text": statistics.fmean(
-            [r["arms"]["text"][metric] for r in rows if r.get("arms")] or [0]
+            [treatment_of(r, "text")[metric] for r in rows if treatment_of(r, "text")]
         ),
         "graph": statistics.fmean(
-            [r["arms"]["graph"][metric] for r in rows if r.get("arms")] or [0]
-        ),
+            [treatment_of(r, arm)[metric] for r in rows if treatment_of(r, arm)]
+        ) if deltas else float("nan"),
         "delta": statistics.fmean(deltas) if deltas else float("nan"),
         "ci95": (round(lo, 4), round(hi, 4)),
         "wins": wins,
@@ -101,42 +117,55 @@ def main(argv=None) -> int:
     print("  " + "  ".join(f"{k}={v}" for k, v in cov["counts"].items()))
 
     scored = [row for row in rows if row.get("arms")]
-    print(f"\n== localisation (paired, n={len(scored)}) ==")
-    print(f"{'metric':10s} {'text':>7s} {'graph':>7s} {'delta':>7s} {'95% CI':>18s} "
-          f"{'W/L/T':>10s} {'sign p':>7s}")
-    for metric in METRICS:
-        stats = paired(rows, metric)
-        print(f"{stats['metric']:10s} {stats['text']:7.3f} {stats['graph']:7.3f} "
-              f"{stats['delta']:+7.3f} {str(stats['ci95']):>18s} "
-              f"{stats['wins']:3d}/{stats['losses']:3d}/{stats['ties']:3d} "
-              f"{stats['sign_p']:7.3f}")
+    for arm in TREATMENTS:
+        print(f"\n== localisation: {arm} vs text (paired, n={len(scored)}) ==")
+        print(f"{'metric':14s} {'text':>7s} {'graph':>7s} {'delta':>7s} {'95% CI':>18s} "
+              f"{'W/L/T':>10s} {'sign p':>7s}")
+        for metric in METRICS + FILE_METRICS:
+            stats = paired(rows, metric, arm)
+            if stats["n"] == 0:
+                continue
+            print(f"{stats['metric']:14s} {stats['text']:7.3f} {stats['graph']:7.3f} "
+                  f"{stats['delta']:+7.3f} {str(stats['ci95']):>18s} "
+                  f"{stats['wins']:3d}/{stats['losses']:3d}/{stats['ties']:3d} "
+                  f"{stats['sign_p']:7.3f}")
 
     head = [row["graph_headroom"] for row in scored if "graph_headroom" in row]
     pool = [row["pool_recall"] for row in scored if "pool_recall" in row]
+    pool_size = max((row.get("pool", 0) for row in scored), default=0)
+    oracle = [row["oracle@10"] for row in scored if "oracle@10" in row]
     if head:
         print(f"\nheadroom: {statistics.fmean(head):.3f} of gold targets are one hop "
               f"from a text-derived seed")
     if pool:
-        print(f"pool recall (top-60 BM25): {statistics.fmean(pool):.3f}  "
+        label = f"top-{pool_size} BM25" if pool_size else "BM25 pool"
+        print(f"pool recall ({label}): {statistics.fmean(pool):.3f}  "
               f"-- the ceiling both arms share")
+    if oracle:
+        print(f"oracle@10: {statistics.fmean(oracle):.3f}  "
+              f"-- best a perfect reranker could do over pool + seed neighbours")
 
     unreachable = sum(1 for row in rows if row.get("gold") and not row.get("gold_nodes"))
     if unreachable:
         print(f"tasks whose gold symbols match no graph node: {unreachable}")
 
     print("\n== per repo ==")
-    print(f"{'repo':28s} {'n':>3s} {'cov':>6s} {'r@1 t':>7s} {'r@1 g':>7s} "
-          f"{'r@10 t':>7s} {'r@10 g':>7s}")
+    print(f"{'repo':28s} {'n':>3s} {'cov':>6s} {'r@10':>6s} {'r@10 open':>10s} "
+          f"{'file@10':>8s} {'file@10 open':>13s}")
     for repo, group in sorted(_group(rows).items(), key=lambda kv: -len(kv[1])):
         stats = aggregate(group)
         scored_group = [row for row in group if row.get("arms")]
+
         def mean_arm(arm, metric):
-            values = [row["arms"][arm][metric] for row in scored_group]
+            values = [treatment_of(row, arm)[metric] for row in scored_group
+                      if treatment_of(row, arm) and metric in treatment_of(row, arm)]
             return statistics.fmean(values) if values else float("nan")
+
         print(f"{repo:28s} {stats['tasks_with_gold']:3d} "
               f"{stats['coverage'] if stats['coverage'] is not None else float('nan'):6.3f} "
-              f"{mean_arm('text', 'recall@1'):7.3f} {mean_arm('graph', 'recall@1'):7.3f} "
-              f"{mean_arm('text', 'recall@10'):7.3f} {mean_arm('graph', 'recall@10'):7.3f}")
+              f"{mean_arm('text', 'recall@10'):6.3f} {mean_arm('graph_open', 'recall@10'):10.3f} "
+              f"{mean_arm('text', 'file_recall@10'):8.3f} "
+              f"{mean_arm('graph_open', 'file_recall@10'):13.3f}")
     return 0
 
 

@@ -30,16 +30,19 @@ from experiments.coverage import candidate_ids  # noqa: E402
 from experiments.evalcov import aggregate, by_repo, evaluate, gold_symbols  # noqa: E402
 from experiments.gold import DictSnapshot, build_record  # noqa: E402
 from experiments.retrieve import (  # noqa: E402
-    BM25, adjacency, context_chars, document_text, recall_at,
+    BM25, adjacency, context_chars, document_text, expand_round_robin, fuse,
+    recall_at,
 )
 from experiments.snapindex import SnapshotIndex  # noqa: E402
 
 _INDEX: SnapshotIndex | None = None
+_POOL = 200
 
 
-def _init(repos: str) -> None:
-    global _INDEX
+def _init(repos: str, pool: int = 200) -> None:
+    global _INDEX, _POOL
     _INDEX = SnapshotIndex(repos)
+    _POOL = pool
 
 
 def target_ids(record: dict, node_ids: set[str]) -> tuple[list[str], list[str]]:
@@ -65,6 +68,34 @@ def rerank(pool: list[tuple[str, float]], neighbours: dict[str, set[str]],
     return [node_id for node_id, _ in ordered]
 
 
+def file_recall_at(ranked: list[str], files_of: dict[str, str], gold_files: set[str],
+                   k: int) -> float:
+    """Recall over distinct files, which is the level prior work reports."""
+    if not gold_files:
+        return float("nan")
+    seen: list[str] = []
+    for node_id in ranked:
+        path = files_of.get(node_id)
+        if path and path not in seen:
+            seen.append(path)
+        if len(seen) >= k:
+            break
+    return len(set(seen[:k]) & gold_files) / len(gold_files)
+
+
+def arm_metrics(ids: list[str], targets: set[str], gold_files: set[str],
+                nodes: dict[str, dict], files_of: dict[str, str]) -> dict:
+    top = ids[:10]
+    return {
+        "recall@1": recall_at(top, targets, 1),
+        "recall@5": recall_at(top, targets, 5),
+        "recall@10": recall_at(top, targets, 10),
+        "file_recall@5": file_recall_at(top, files_of, gold_files, 5),
+        "file_recall@10": file_recall_at(top, files_of, gold_files, 10),
+        "chars@10": context_chars(top, nodes),
+    }
+
+
 def _work(task: dict) -> dict:
     assert _INDEX is not None
     started = time.time()
@@ -80,6 +111,7 @@ def _work(task: dict) -> dict:
 
     row = evaluate(record, set(nodes))
     row["base_commit"] = task.get("base_commit", "")
+    row["pool"] = _POOL
     row["graph_nodes"] = stats["nodes"]
     row["graph_edges"] = stats["edges"]
     row["files"] = stats["files"]
@@ -92,27 +124,37 @@ def _work(task: dict) -> dict:
         docs = {node_id: document_text(node) for node_id, node in nodes.items()}
         bm25 = BM25(docs)
         query = task.get("problem_statement") or ""
-        pool_size = max(10, min(60, len(docs)))
-        pool = bm25.search(query, pool_size)
+        pool = bm25.search(query, _POOL)
         pool_ids = [node_id for node_id, _ in pool]
         neighbours = adjacency({"edges": graph.edges})
-        graph_ids = rerank(pool, neighbours)
 
         targets = set(gold_nodes)
         row["pool_recall"] = recall_at(pool_ids, targets, len(pool_ids))
+
+        open_ids = expand_round_robin(pool_ids, neighbours, k=10, seeds=5)
+        rerank_ids = rerank(pool, neighbours)
+        fuse_ids = fuse(pool, neighbours, k=10, seeds=5, weight=FUSE_WEIGHT)
+        precise = adjacency({"edges": graph.edges}, PRECISE_RESOLUTIONS)
+        fuse_precise = fuse(pool, precise, k=10, seeds=5, weight=FUSE_WEIGHT)
+        available = set(pool_ids)
+        for node_id in pool_ids[:5]:
+            available |= neighbours.get(node_id, set())
+        row["oracle@10"] = min(len(targets & available), 10) / len(targets)
+
+        gold_files = {
+            entry["path"] for entry in record.get("files", [])
+            if entry.get("language") == "python"
+        }
+        files_of = {node_id: node.get("file", "") for node_id, node in nodes.items()}
         row["arms"] = {
-            "text": {
-                "recall@1": recall_at(pool_ids, targets, 1),
-                "recall@5": recall_at(pool_ids, targets, 5),
-                "recall@10": recall_at(pool_ids, targets, 10),
-                "chars@10": context_chars(pool_ids[:10], nodes),
-            },
-            "graph": {
-                "recall@1": recall_at(graph_ids, targets, 1),
-                "recall@5": recall_at(graph_ids, targets, 5),
-                "recall@10": recall_at(graph_ids, targets, 10),
-                "chars@10": context_chars(graph_ids[:10], nodes),
-            },
+            name: arm_metrics(ids, targets, gold_files, nodes, files_of)
+            for name, ids in {
+                "text": pool_ids,
+                "graph_rerank": rerank_ids,
+                "graph_open": open_ids,
+                "graph_fuse": fuse_ids,
+                "graph_fuse_precise": fuse_precise,
+            }.items()
         }
         reachable: set[str] = set()
         for node_id in pool_ids[:5]:
@@ -123,14 +165,26 @@ def _work(task: dict) -> dict:
     return row
 
 
+ARMS = ("text", "graph_rerank", "graph_open", "graph_fuse", "graph_fuse_precise")
+
+# Fixed before the run, not tuned on the test set: a candidate may inherit half
+# the normalised score of its best adjacent seed.
+FUSE_WEIGHT = 0.5
+
+# The edges that name resolution actually established, as opposed to the
+# ambiguous and unresolved ones -- 46% of call sites on a django snapshot.
+PRECISE_RESOLUTIONS = {"local", "import", "unique", "suffix"}
+
+
 def summarise(rows: list[dict]) -> dict:
     def mean(values):
         values = [v for v in values if v is not None]
         return sum(values) / len(values) if values else None
 
-    arms = {"text": {}, "graph": {}}
-    for arm in arms:
-        for metric in ("recall@1", "recall@5", "recall@10", "chars@10"):
+    arms = {arm: {} for arm in ARMS}
+    for arm in ARMS:
+        for metric in ("recall@1", "recall@5", "recall@10",
+                       "file_recall@5", "file_recall@10", "chars@10"):
             arms[arm][metric] = mean(
                 row["arms"][arm][metric] for row in rows if "arms" in row
             )
@@ -139,6 +193,7 @@ def summarise(rows: list[dict]) -> dict:
         "tasks_scored": sum(1 for row in rows if "arms" in row),
         "graph_headroom": mean(row.get("graph_headroom") for row in rows),
         "pool_recall": mean(row.get("pool_recall") for row in rows),
+        "oracle@10": mean(row.get("oracle@10") for row in rows),
         "arms": arms,
     }
 
@@ -149,6 +204,7 @@ def main(argv=None) -> int:
     ap.add_argument("--repos", default=str(ROOT / "data" / "repos"))
     ap.add_argument("--out", default=str(ROOT / "data" / "experiment.jsonl"))
     ap.add_argument("--jobs", type=int, default=min(6, os.cpu_count() or 1))
+    ap.add_argument("--pool", type=int, default=200, help="BM25 candidate pool size")
     ap.add_argument("--limit", type=int, default=0)
     args = ap.parse_args(argv)
 
@@ -167,7 +223,7 @@ def main(argv=None) -> int:
     out.parent.mkdir(parents=True, exist_ok=True)
 
     with out.open("w", encoding="utf-8") as fh, ProcessPoolExecutor(
-        max_workers=args.jobs, initializer=_init, initargs=(args.repos,)
+        max_workers=args.jobs, initializer=_init, initargs=(args.repos, args.pool)
     ) as pool:
         futures = {pool.submit(_work, task): task for task in tasks}
         for done, future in enumerate(as_completed(futures), 1):
