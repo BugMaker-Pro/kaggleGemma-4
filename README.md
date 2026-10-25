@@ -19,7 +19,7 @@
 
 | 文档 | 内容 |
 | --- | --- |
-| [docs/paper-topic.md](docs/paper-topic.md) | **主线**：选题定稿 v3、RQ/H1–H3、E0–E4 实验协议、3000 词预算、23 天排期与止损线 |
+| [docs/paper-topic.md](docs/paper-topic.md) | **主线**：选题定稿 v4、三个天花板（黄金符号 / 候选池 / 图扩散）、E0–E3 协议与实测结果、3000 词预算、19 天排期 |
 | [docs/kaggle-paper-track-raw.md](docs/kaggle-paper-track-raw.md) | **官方规则原文**（2026-10-20 核实）：3000 词、五维评分、三个奖、题目清单、评委 |
 | [docs/data-assets.md](docs/data-assets.md) | **官方数据资产清单**（主赛道 Data 页原文）：22.42 GB / 524 文件、graph 与 embedding 的 schema、策展流程 |
 | [docs/competition.md](docs/competition.md) | 两个赛道的完整机制：任务形态、约束、数据构成、评分方式 |
@@ -32,7 +32,7 @@
 
 - [x] 竞赛资料梳理 + 任务流程
 - [x] 官方规则核实（字数、评分维度、奖项、评委）——靠 Edge 无头渲染抓取
-- [x] 选题 v3 定稿：代码图覆盖率 + 重建（去 GPU 依赖）
+- [x] 选题 v4 定稿：候选生成才是天花板（底座换成 SWE-bench Lite，不依赖 22 GB 比赛数据）
 - [x] 论文骨架（3000 词预算）
 - [x] shell 转完全权限；Python 3.12 在 `D:\pyenv\cpython-3.12.13-windows-x86_64-none\python.exe`
 - [x] **E0 代码**：diff 解析 + 符号解析 + 单次解压读 tar（不落盘）
@@ -40,7 +40,9 @@
 - [x] **E2 代码**：stdlib 建图器，输出与官方 graph 同 schema（`nodes[id,name,text]` / `edges[source,target,type,key]`）
 - [x] **E3 代码**：BM25 定位 + 一跳图扩散，同预算对照
 - [x] 数据落地：SWE-bench Lite 300 任务元数据 + 297 个 base_commit 源码快照（2.7 GB，`data/`）
-- [ ] 全量跑 E0/E2/E3 → `data/gold_symbols.jsonl`、`data/experiment.jsonl` → **主图**
+- [x] 全量跑 E0/E2/E3：295/300 任务落地 `data/experiment.jsonl`（0 报错，348 个黄金符号）
+- [ ] **修 open arm**（graph 臂允许池外邻居补位）后重跑 → 正式主图
+- [ ] 消融（种子数 / 跳数 / 池大小）+ 边解析率归因
 - [ ] 官方 129 任务那一路（可选：需在主赛道 Join + 接受 Rules）
 - [ ] 3000 词初稿 → 11/12 提交
 - [ ] 主赛道首次提交（11/14 之后）
