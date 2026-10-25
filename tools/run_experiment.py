@@ -159,6 +159,9 @@ def _work(task: dict) -> dict:
         reachable: set[str] = set()
         for node_id in pool_ids[:5]:
             reachable |= neighbours.get(node_id, set())
+        # A gold symbol that is itself a seed is already found by text retrieval;
+        # counting it as graph reach inflates the headroom with text wins.
+        reachable -= set(pool_ids[:5])
         row["graph_headroom"] = len(targets & reachable) / len(targets)
 
     row["seconds"] = round(time.time() - started, 2)

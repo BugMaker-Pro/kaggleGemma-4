@@ -20,7 +20,7 @@ Subtitle: *A 300-task symbol-level benchmark, four graph strategies at equal con
 
 Repository-level coding agents are evaluated on whether they resolve an issue, and the retrieval that feeds them is usually reported at file granularity. We measure the other granularity. On 300 SWE-bench Lite tasks spanning 12 Python repositories, we extract the **354 symbols the reference patches actually touch**, then ask how often a retriever surfaces them. The same ranking that recovers **62.4%** of gold files at rank 10 recovers **27.5%** of gold symbols, a 2.3× gap that we argue is the real frontier rather than an artefact.
 
-We then test four ways of adding a code graph — reranking, slot substitution, score fusion, and fusion restricted to deterministically resolved edges — under an identical candidate pool and an identical context-character budget. **None improves symbol-level recall; the most aggressive variant significantly degrades file-level recall** (4.8 points, p = 0.004). The arithmetic explains why: only **22.1%** of gold symbols are one hop from a text-derived seed, so expansion has almost nothing to gain, and 54% of static call sites never resolve to a definite target. We release the gold-symbol benchmark and the harness.
+We then test four ways of adding a code graph — reranking, slot substitution, score fusion, and fusion restricted to deterministically resolved edges — under an identical candidate pool and an identical context-character budget. **None improves symbol-level recall; the most aggressive variant significantly degrades file-level recall** (4.8 points, p = 0.004). The mechanism is not that the graph cannot reach the answer: reachability from strong lexical seeds is 11.9% at one hop and 35.7% at two. It is that converting reach into a ten-slot shortlist costs more than it gains, because neighbour sets are dominated by non-gold symbols — and 54% of static call sites never resolve to a definite target at all. We release the gold-symbol benchmark and the harness.
 
 ---
 
@@ -36,7 +36,7 @@ We measure the fine granularity. For each of 300 SWE-bench Lite tasks we take th
 
 Second, we test the standard remedy. Code graphs are the assumed answer to repository-scale retrieval: build a call graph, expand from a strong text hit, let structure carry the agent the rest of the way. We implement four variants of that idea and hold everything else fixed — same candidate pool, same character budget, same tasks. None of them improves symbol-level recall. The most aggressive one, which spends half the shortlist on graph neighbours, costs 4.8 points of file-level recall with p = 0.004.
 
-The explanation is arithmetic, and we think it is the paper's actual contribution. Only 22.1% of gold symbols are one hop away from a strong text-derived seed. A one-hop expansion therefore has a ceiling of about one fifth, and paying for it with shortlist slots is a losing trade almost everywhere. Meanwhile 54% of static call sites in the same repositories do not resolve to a definite target at all, so the graph being expanded is itself half guess.
+The explanation is not that the graph is unable to reach the answer, and we want to be precise about this because the obvious guess is wrong. Reachability from the top five lexical seeds is 11.9% at one hop — but **35.7% at two hops**. Doubling the radius more than triples reach. And yet the two-hop expansion arm is also worse than plain text (−0.026). Reach is not the binding constraint; **conversion is**. A neighbour set is dominated by symbols that are not the answer, and a ten-slot shortlist has no room to gamble. Meanwhile 54% of static call sites in the same repositories do not resolve to a definite target at all, so the graph being expanded is itself half guess.
 
 We release the 354-symbol benchmark, the graph builder, and the harness.
 
@@ -46,7 +46,7 @@ We release the 354-symbol benchmark, the graph builder, and the harness.
 
 **Repository-level benchmarks.** SWE-bench and its Lite and Verified subsets score whether a patch makes the failing tests pass. They say nothing about whether the model could have found the code. Our target set is derived from SWE-bench Lite's patches, but the quantity we measure — symbol-level retrieval — is orthogonal to resolved rate, and we report it as such rather than as a proxy.
 
-**Agents over repositories.** SWE-agent fixes the interface and lets the model act; LocAgent and OrcaLoca navigate with graph structure and report file- or function-level accuracy; ARISE trains a retriever over call graphs and reports function recall. These systems co-design retrieval with a model. We hold the model out entirely and measure the retrieval layer alone, at a granularity finer than the file.
+**Agents over repositories.** SWE-agent fixes the interface and lets the model act; LocAgent and OrcaLoca navigate with graph structure and report file- or function-level accuracy; ARISE builds a repository graph and reports Function R@1 rising from 0.43 to 0.60. These systems co-design retrieval with a model, and their absolute numbers are not comparable to ours: our retriever is raw BM25 with no model in the loop, which is the point — we hold the model out so that the graph's marginal value is the only thing that varies. ARISE also reports a coverage metric, but it is the share of gold *lines* inside an 8,000-token context bundle, not the coverage of the graph itself.
 
 **Code graphs.** PyCG reports 99.2% precision and 69.9% recall on its own benchmark; CodexGraph and RepoGraph build graph indices for agents. These works treat the graph as an asset whose quality is established. We report the resolution rate of the graph we build (46% of call sites definite) and, more importantly, the ceiling that bounds what any one-hop expansion can contribute.
 
@@ -127,27 +127,34 @@ Two thirds of the remaining error at file granularity is not there; at symbol gr
 | --- | ---: | ---: | ---: | ---: | --- | ---: |
 | text | 0.091 | 0.214 | 0.275 | 0.624 | — | — |
 | graph_rerank | 0.103 | 0.217 | 0.287 | 0.614 | +0.012 (−0.026, 0.050) | 0.50 |
-| graph_open | 0.091 | 0.214 | 0.257 | 0.576 | −0.018 (−0.051, 0.013) | 0.46 |
+| graph_open, 1 hop | 0.091 | 0.214 | 0.257 | 0.576 | −0.018 (−0.051, 0.013) | 0.46 |
+| graph_open, 2 hops | — | — | 0.249 | — | −0.026 (−0.057, 0.005) | 0.19 |
 | graph_fuse | 0.091 | 0.217 | 0.272 | 0.624 | −0.003 (−0.010, 0.000) | 1.00 |
 | graph_fuse_precise | 0.091 | 0.217 | 0.275 | 0.624 | 0.000 | 1.00 |
+
+The second-hop variant is worth its own row: it is the arm with the most reach (35.7%, Table 3) and it is still negative. Reverse-engineering the choice of radius does not rescue the approach.
 
 Fusion at a principled weight is very nearly the identity, which is itself informative: the inherited score almost never beats the tenth text hit. The one arm that can add unseen candidates does add them, and pays for them.
 
 **Aggressive expansion is significantly worse at file granularity.** `graph_open` trades slots 6–10 for neighbours; 18 tasks lose a gold file, 4 gain one, mean −4.8 points (p = 0.004). The interpretation is consistent with Table 1: at file granularity the text ranking is already good, so spending half the shortlist on structure discards value.
 
-**The ceiling explains all of it.** Table 3.
+**Reachability is not the constraint; conversion is.** Table 3.
 
-*Table 3 — diagnostics that bound the arms*
+*Table 3 — diagnostics and the ablation grid (n = 290)*
 
 | quantity | value | meaning |
 | --- | ---: | --- |
-| pool recall (top 200) | 0.600 | gold symbols that enter the candidate pool at all |
-| headroom (1 hop from top 5) | **0.221** | most a one-hop expansion could ever touch |
-| oracle@10 | 0.630 | best a perfect reranker could do over pool + seed neighbours |
+| pool recall, top 60 / 200 / 500 | 0.464 / 0.600 / 0.704 | candidate generation keeps improving with pool size |
+| reach, 1 hop, 1 / 3 / 5 / 10 seeds | 0.038 / 0.089 / 0.119 / 0.118 | the graph's marginal reach beyond text |
+| reach, 2 hops, 1 / 3 / 5 / 10 seeds | 0.191 / 0.310 / 0.357 / 0.395 | reach grows fast with radius |
+| tasks whose gold symbols never enter the top-500 pool | 80 / 290 (27.6%) | the hard tail |
+| of those, still one hop from a top-5 seed | 4 (5.0%) | the graph's only win case |
 
-Headroom of 22.1% is the decisive number. A one-hop graph expansion is not competing for 100% of the targets; it is competing for a fifth, and it pays for its slots out of a shortlist that already contains text hits. The arms are not badly implemented — they are bounded.
+Two things follow. First, **candidate generation is not a hard ceiling**: going from a 60 to a 500 candidate pool lifts pool recall from 46.4% to 70.4%, so a better reranker has room to work. Second, **the graph's own margin is small and does not convert**: expanding to two hops triples the reachable fraction, and the arm still loses (Table 2, 2-hop variant −0.026). Paying for reach with shortlist slots fails because the neighbours are mostly wrong.
 
-**Where the graph does help.** The one repository with a clear gain is astropy (0.458 → 0.792 at rank 10, six tasks), where the graph is small and the issue text shares little vocabulary with the edited symbol. That is exactly the regime the headroom predicts, and we report it as a hypothesis with one data point, not as a result.
+That is also why the win cases cluster: of the 80 tasks whose gold symbols never enter the top-500 pool, only 4 have a gold symbol adjacent to a top-5 seed. The intersection of "text failed" and "graph is adjacent" is 1.4% of tasks.
+
+**Where the graph does help.** The one repository with a clear gain is astropy (0.458 → 0.792 at rank 10, six tasks; one-hop reach 0.333), where the graph is small and the issue text shares little vocabulary with the edited symbol. Five of the twelve repositories have *zero* one-hop reach (pytest, sphinx, pylint, xarray, flask), and there the expansion arm can only lose. We report this as a hypothesis with one data point, not a result.
 
 **The graph itself is half guess.** Table 4, from one django snapshot, is the reason `graph_fuse_precise` exists: if only 46% of edges are definite, an expansion that trusts all edges is expanding mostly noise. Restricting to the definite subgraph does not help either, which we read as evidence that the problem is structural rather than a noise artefact — an important distinction, because it rules out the obvious objection.
 
@@ -168,7 +175,7 @@ Headroom of 22.1% is the decisive number. A one-hop graph expansion is not compe
 
 ## 6. Discussion (300 words)
 
-The practical claim is a reprioritisation. If a team is choosing where to spend effort on repository-scale retrieval, one-hop graph expansion is not where the error is: 77.9% of gold symbols are more than one hop from a strong text seed, and half the call sites that would carry the hop do not resolve. Effort spent on candidate generation — better name matching, better issue-to-identifier alignment, more aggressive pool sizes — addresses the 40% of symbols that never enter the pool, which is a larger and more tractable share.
+The practical claim is a reprioritisation. If a team is choosing where to spend effort on repository-scale retrieval, one-hop graph expansion is not where the error is: 88.1% of gold symbols are more than one hop from a strong text seed, and half the call sites that would carry the hop do not resolve. Effort spent on candidate generation — better name matching, better issue-to-identifier alignment, larger pools — addresses the 27.6% of tasks whose gold symbols never enter a top-500 pool, which is a larger and more tractable share.
 
 The measurement claim is about granularity. File-level retrieval numbers near 90% are routinely quoted as evidence that the hard part is over. Our numbers say the same ranking is at 62.4% on files and 27.5% on symbols, and that the difference is not a tighter definition of success but a different task. Benchmarks that stop at the file cannot see the remaining work.
 
@@ -180,13 +187,13 @@ For benchmark designers: the gold-symbol set is cheap to produce from any patch-
 
 ## 7. Limitations (130 words)
 
-Python only, though so are three quarters of the tasks in the benchmarks we compare against. One retriever: BM25 is a strong sparse baseline and we deliberately did not add a dense retriever or a cross-encoder, so the null result is about the graph's marginal value *given this ranking*, not about graphs in general. The 22.1% headroom is measured against top-5 seeds; a different seed count would move it, and we report the sensitivity in the appendix. Gold symbols come from patches and inherit their noise; we record rather than hide the 87 changed lines that land outside any definition. We measure retrieval, not resolution: a better shortlist is necessary for a better patch, not sufficient.
+Python only, though so are three quarters of the tasks in the benchmarks we compare against. One retriever: BM25 is a strong sparse baseline and we deliberately did not add a dense retriever or a cross-encoder, so the null result is about the graph's marginal value *given this ranking*, not about graphs in general. Reach is measured against the top-5 seeds at one and two hops (11.9% and 35.7%); the seed-count and pool-size sweeps are in Table 3, and they move the number but not the sign of any arm. Gold symbols come from patches and inherit their noise; we record rather than hide the 87 changed lines that land outside any definition. We measure retrieval, not resolution: a better shortlist is necessary for a better patch, not sufficient.
 
 ---
 
 ## 8. Conclusion (90 words)
 
-Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Four ways of folding a code graph into that ranking, none of which beats plain lexical retrieval, and one which significantly hurts at file level. The arithmetic that explains it — 22.1% one-hop reachability, 46% definite call resolution — is more useful than another graph variant, because it tells the next project where the missing two thirds actually lives.
+Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Four ways of folding a code graph into that ranking, none of which beats plain lexical retrieval, and one which significantly hurts at file level. The mechanism that explains it — 11.9% one-hop reach at five seeds, 35.7% at two hops, 46% definite call resolution, and no conversion from reach to shortlist slots — is more useful than another graph variant, because it tells the next project where the missing two thirds actually lives.
 
 ---
 
@@ -197,7 +204,7 @@ Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Fou
 | 1 | symbol-level is much harder than file-level | Table 1 | ✅ measured |
 | 2 | four graph arms do not improve symbol recall | Table 2 | ✅ measured |
 | 3 | aggressive expansion hurts file recall (p=0.004) | Table 2 | ✅ measured |
-| 4 | headroom is 22.1%, which caps expansion | Table 3 | ✅ measured |
+| 4 | reach grows with hops (11.9% to 35.7%) but does not convert | Table 3 + Table 2 2-hop row | ✅ measured |
 | 5 | only 46% of call sites resolve | Table 4 | ✅ measured on django |
 | 6 | the gap is the remaining frontier for agents | — | ⬜ argument, §6 |
 | 7 | precise-only edges do not rescue the arms | Table 2, row 5 | ✅ measured |

@@ -4,15 +4,15 @@ import unittest
 
 try:
     from experiments.retrieve import (
-        BM25, adjacency, any_hit_at, context_chars, document_text, expand,
-        expand_round_robin, fuse, recall_at, tokenize,
+        BM25, adjacency, any_hit_at, ball, context_chars, document_text,
+        expand, expand_ball, expand_round_robin, fuse, recall_at, tokenize,
     )
 except ImportError:  # pragma: no cover
     import pathlib, sys
     sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
     from experiments.retrieve import (
-        BM25, adjacency, any_hit_at, context_chars, document_text, expand,
-        expand_round_robin, fuse, recall_at, tokenize,
+        BM25, adjacency, any_hit_at, ball, context_chars, document_text,
+        expand, expand_ball, expand_round_robin, fuse, recall_at, tokenize,
     )
 
 
@@ -167,6 +167,31 @@ class TestFusion(unittest.TestCase):
 
     def test_k_is_respected(self):
         self.assertEqual(len(fuse(self.POOL, self.NEIGH, k=2)), 2)
+
+
+class TestBall(unittest.TestCase):
+    CHAIN = {"a": {"b"}, "b": {"a", "c"}, "c": {"b", "d"}, "d": {"c"}}
+
+    def test_one_hop(self):
+        self.assertEqual(sorted(ball(["a"], self.CHAIN, hops=1)), [("b", 1)])
+
+    def test_two_hops_reach_the_grandchild(self):
+        found = dict(ball(["a"], self.CHAIN, hops=2))
+        self.assertEqual(found["b"], 1)
+        self.assertEqual(found["c"], 2)
+        self.assertNotIn("d", found)
+
+    def test_seeds_are_excluded(self):
+        self.assertNotIn("a", dict(ball(["a"], self.CHAIN, hops=2)))
+
+    def test_hops_zero_is_empty(self):
+        self.assertEqual(ball(["a"], self.CHAIN, hops=0), [])
+
+    def test_expand_ball_prefers_near_nodes(self):
+        self.assertEqual(expand_ball(["a"], self.CHAIN, k=3, hops=2), ["a", "b", "c"])
+
+    def test_expand_ball_does_not_pad(self):
+        self.assertEqual(expand_ball(["a"], {"a": set()}, k=5, hops=2), ["a"])
 
 
 class TestMetrics(unittest.TestCase):

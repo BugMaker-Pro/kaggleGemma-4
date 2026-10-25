@@ -218,6 +218,51 @@ def fuse(pool: list[tuple[str, float]], neighbours: dict[str, set[str]],
     return [node_id for node_id, _ in ranked[:k]]
 
 
+def ball(seeds: list[str], neighbours: dict[str, set[str]],
+         hops: int = 1) -> list[tuple[str, int]]:
+    """Every node within `hops` of the seeds, as (node_id, distance), distance first.
+
+    Used both for the headroom diagnostic and for the multi-hop expansion arm:
+    the question "is the gold symbol reachable in k hops" is exactly this
+    function applied to the targets.
+    """
+    if hops <= 0:
+        return []
+    seen = {node_id: 0 for node_id in seeds}
+    frontier = list(seeds)
+    for distance in range(1, hops + 1):
+        next_frontier: list[str] = []
+        for node_id in frontier:
+            for neighbour in sorted(neighbours.get(node_id, ())):
+                if neighbour in seen:
+                    continue
+                seen[neighbour] = distance
+                next_frontier.append(neighbour)
+        frontier = next_frontier
+        if not frontier:
+            break
+    return [(node_id, distance) for node_id, distance in seen.items() if distance > 0]
+
+
+def expand_ball(seeds: list[str], neighbours: dict[str, set[str]], k: int,
+                hops: int = 2) -> list[str]:
+    """Seeds first, then the k-hop ball in distance order, padded from nothing.
+
+    Unlike `expand_round_robin` this does not fall back to the text tail: it is
+    the "how far can the graph alone get you" arm.
+    """
+    out = list(seeds[:k])
+    seen = set(out)
+    for node_id, _distance in sorted(ball(seeds, neighbours, hops), key=lambda kv: kv[1]):
+        if len(out) >= k:
+            break
+        if node_id in seen:
+            continue
+        out.append(node_id)
+        seen.add(node_id)
+    return out[:k]
+
+
 def context_chars(ids: list[str], nodes: dict[str, dict], cap: int = 400) -> int:
     total = 0
     for node_id in ids:
