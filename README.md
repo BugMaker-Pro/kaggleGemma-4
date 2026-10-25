@@ -2,8 +2,10 @@
 
 参加 **Google – The Gemma 4 Developer Agent** 系列赛：**主攻论文赛道**，主赛道 11/14 之后再用同一套东西去交一版。
 
-论文选题：**代码图覆盖率审计 + 重建**——官方发的 `graphs/` 与 `embeddings/` 里到底有多少代码？补全它，对小模型 agent 值多少？
+论文选题：**代码图的符号级覆盖率，以及它到底值多少定位收益**——图里到底有没有「参考修复动过的那几个符号」？补全它，检索排序能提多少？
 （完整协议见 [docs/paper-topic.md](docs/paper-topic.md)）
+
+**实验底座**：SWE-bench Lite（300 任务 / 12 个 Python 仓库），不依赖 22 GB 比赛数据；同一套流水线可以原样切到官方 129 任务上。
 
 ## 关键日期（北京时间，UTC+8）
 
@@ -33,18 +35,45 @@
 - [x] 选题 v3 定稿：代码图覆盖率 + 重建（去 GPU 依赖）
 - [x] 论文骨架（3000 词预算）
 - [x] shell 转完全权限；Python 3.12 在 `D:\pyenv\cpython-3.12.13-windows-x86_64-none\python.exe`
-- [x] **E0 代码**：diff 解析 + 符号解析 + 不落盘直接读 tar 快照（15 个测试通过）
-- [x] **E1 代码**：graph 读取 + 符号级覆盖率四分类（exact/suffix/module_only/miss，14 个测试通过）
-- [ ] **数据落地 22.42 GB**（阻塞：需在**主赛道**页面 Join + Accept Rules，见下）
-- [ ] 用 129 个任务跑 E0，产出 `data/gold_symbols.jsonl`
-- [ ] 官方图覆盖率审计（E1）
-- [ ] 重建图 + 检索对照（E2/E3）→ **主图**
+- [x] **E0 代码**：diff 解析 + 符号解析 + 单次解压读 tar（不落盘）
+- [x] **E1 代码**：graph 读取 + 符号级覆盖率四分类（exact/suffix/module_only/miss）
+- [x] **E2 代码**：stdlib 建图器，输出与官方 graph 同 schema（`nodes[id,name,text]` / `edges[source,target,type,key]`）
+- [x] **E3 代码**：BM25 定位 + 一跳图扩散，同预算对照
+- [x] 数据落地：SWE-bench Lite 300 任务元数据 + 297 个 base_commit 源码快照（2.7 GB，`data/`）
+- [ ] 全量跑 E0/E2/E3 → `data/gold_symbols.jsonl`、`data/experiment.jsonl` → **主图**
+- [ ] 官方 129 任务那一路（可选：需在主赛道 Join + 接受 Rules）
 - [ ] 3000 词初稿 → 11/12 提交
 - [ ] 主赛道首次提交（11/14 之后）
 
-## 数据（当前唯一阻塞项）
+## 实验流水线
 
-22.4 GB，前提：Kaggle 账号已 **Join** 比赛并接受 Rules。
+```powershell
+$py = 'D:\pyenv\cpython-3.12.13-windows-x86_64-none\python.exe'
+
+# 1. 元数据（走 hf-mirror，huggingface.co 直连被墙）
+& .\.venv\Scripts\python.exe tools\fetch_swebench.py
+
+# 2. 297 个 base_commit 源码快照（codeload，断了重跑会自动续）
+& $py tools\fetch_repos.py --jobs 6
+
+# 3. 黄金符号（参考修复动过的符号 = 所有覆盖率的分母）
+& $py experiments\gold.py --tasks data\swebench_lite.jsonl --out data\gold_symbols.jsonl --snapshots data\repos
+
+# 4. 建图 → 覆盖率 → 同预算定位对照
+& $py tools\run_experiment.py --jobs 6
+
+# 测试
+& $py -m unittest discover -s tests -t .
+```
+
+产物：`data/gold_symbols.jsonl`（每任务一条）、`data/experiment.jsonl`（每任务一行，含覆盖率四分类与 text/graph 两条 recall@k）。
+
+## 数据
+
+**主用**：SWE-bench Lite，`data/swebench_lite.jsonl` + `data/repos/*.tar.gz`，已就位（300 / 297，2.7 GB）。
+网络要点：`huggingface.co` 直连超时，**`hf-mirror.com` 可用**；`codeload.github.com` 可用。
+
+**备用/加分**：比赛官方的 22.42 GB 资产（129 任务 + `graphs/` + `embeddings/`），需要在**主赛道**页面 Join + 接受 Rules 才能下。
 
 两条路（任选）：
 

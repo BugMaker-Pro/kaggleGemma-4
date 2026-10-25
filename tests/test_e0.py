@@ -159,6 +159,43 @@ class SnapshotTests(unittest.TestCase):
         with Snapshot(root) as snap:
             self.assertIsNone(snap.read_text("blob.py"))
 
+    def test_read_all_text_one_pass(self) -> None:
+        tar_path = self._make_tar(
+            "repo-abc/",
+            {"pkg/a.py": "a = 1\n", "pkg/b.py": "b = 2\n", "notes.md": "# hi\n"},
+        )
+        with Snapshot(tar_path) as snap:
+            everything = snap.read_all_text()
+            self.assertEqual(
+                everything, {"pkg/a.py": "a = 1\n", "pkg/b.py": "b = 2\n", "notes.md": "# hi\n"}
+            )
+            only_py = snap.read_all_text(lambda name: name.endswith(".py"))
+            self.assertEqual(set(only_py), {"pkg/a.py", "pkg/b.py"})
+
+    def test_read_all_text_from_directory_matches_names(self) -> None:
+        root = Path(tempfile.mkdtemp())
+        (root / "pkg").mkdir()
+        (root / "pkg" / "mod.py").write_text("z = 3\n", encoding="utf-8")
+        with Snapshot(root) as snap:
+            self.assertEqual(snap.read_all_text(), {"pkg/mod.py": "z = 3\n"})
+
+    def test_subset_text_strips_the_archive_prefix(self) -> None:
+        tar_path = self._make_tar(
+            "repo-abc/",
+            {"pkg/a.py": "a = 1\n", "pkg/b.py": "b = 2\n"},
+        )
+        with Snapshot(tar_path) as snap:
+            self.assertEqual(snap.subset_text(["pkg/b.py"]), {"pkg/b.py": "b = 2\n"})
+            self.assertEqual(snap.subset_text(["pkg/nope.py"]), {})
+
+    def test_construction_does_not_decompress(self) -> None:
+        """A caller that only needs `read_all_text` must not pay for an index."""
+        tar_path = self._make_tar("repo-abc/", {"pkg/a.py": "a = 1\n"})
+        with Snapshot(tar_path) as snap:
+            self.assertIsNone(snap._members)
+            snap.read_all_text()
+            self.assertIsNone(snap._members)
+
 
 class EndToEndTests(unittest.TestCase):
     def test_gold_record_from_fixture(self) -> None:
