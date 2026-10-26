@@ -22,10 +22,11 @@ traces/
 results/
 *.log
 
-# 论文构建产物
+# 论文构建产物（图表例外：主图要跟随正文一起版本化）
 paper/build/
 paper/*.aux
 paper/*.pdf
+!paper/fig*.pdf
 
 # 编辑器 / 系统
 .vscode/

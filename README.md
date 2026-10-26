@@ -41,10 +41,13 @@
 - [x] **E3 代码**：BM25 定位 + 一跳图扩散，同预算对照
 - [x] 数据落地：SWE-bench Lite 300 任务元数据 + 297 个 base_commit 源码快照（2.7 GB，`data/`）
 - [x] 全量跑 E0/E2/E3：295/300 任务落地 `data/experiment.jsonl`（0 报错，348 个黄金符号）
-- [ ] **修 open arm**（graph 臂允许池外邻居补位）后重跑 → 正式主图
-- [ ] 消融（种子数 / 跳数 / 池大小）+ 边解析率归因
+- [x] **五条图臂**（rerank / open / open2 / fuse / fuse_precise）+ 文件级 recall：300/300 任务，290 个有黄金符号
+- [x] 消融（种子数 / 跳数 / 池大小 / λ）+ 边解析率归因 → `data/ablation.jsonl`
+- [x] **加 PPR 臂**（`graph_ppr` / `graph_ppr_text`）+ 完整排名导出 + 球内构成 → `data/experiment_v3.jsonl`
+- [x] 主图 `paper/fig1.png`（八臂 recall@k 曲线 + 两种粒度对照）
+- [x] 3000 词初稿收尾：正文 **2,978 词**，三个占位符全部填掉
+- [ ] 投稿前复核：每个数字可回溯到 `tools/analyse_v3.py`；图在 50% 缩放下可读；11/12 之前提交
 - [ ] 官方 129 任务那一路（可选：需在主赛道 Join + 接受 Rules）
-- [ ] 3000 词初稿 → 11/12 提交
 - [ ] 主赛道首次提交（11/14 之后）
 
 ## 实验流水线
