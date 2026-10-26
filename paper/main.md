@@ -4,7 +4,7 @@
 > Mandatory sections (missing any = ineligible): Title + Subtitle, Abstract, Introduction, Research description (methods & experiments), Related works & citations.
 > Protocol and changelog: [docs/paper-topic.md](../docs/paper-topic.md). Official rules: [docs/kaggle-paper-track-raw.md](../docs/kaggle-paper-track-raw.md).
 >
-> **Draft status**: no placeholders left. Body is 2,969 words (`tools/wordcount.py`), and every number regenerates from `data/experiment_v3.jsonl` via `tools/analyse_v3.py`, `tools/displacement.py`, `tools/deeper.py`.
+> **Draft status**: no placeholders left. Body is 2,984 words (`tools/wordcount.py`), and every number regenerates from `data/experiment_v3.jsonl` via `tools/analyse_v3.py`, `tools/displacement.py`, `tools/deeper.py`.
 
 ---
 
@@ -207,7 +207,7 @@ Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Eig
 
 ## Submission checklist
 
-- [x] **≤ 3,000 words** (counted with `tools/wordcount.py`: body 2,969)
+- [x] **≤ 3,000 words** (counted with `tools/wordcount.py`: body 2,984)
 - [x] five mandatory sections present
 - [ ] not previously published (Non-Archival permits posting only after submission)
 - [x] every number traceable to `data/experiment_v3.jsonl` via `tools/analyse_v3.py`

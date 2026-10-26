@@ -45,7 +45,7 @@
 - [x] 消融（种子数 / 跳数 / 池大小 / λ）+ 边解析率归因 → `data/ablation.jsonl`
 - [x] **加 PPR 臂**（`graph_ppr` / `graph_ppr_text`）+ 完整排名导出 + 球内构成 → `data/experiment_v3.jsonl`
 - [x] 主图 `paper/fig1.png`（八臂 recall@k 曲线 + 两种粒度对照）
-- [x] 3000 词初稿收尾：正文 **2,983 词**（含 References），三个占位符全部填掉
+- [x] 3000 词初稿收尾：正文 **2,984 词**（含 References），三个占位符全部填掉
 - [x] **数字审计** `tools/audit_numbers.py`：37 项逐一重算并比对正文，抓出 4 处错并已修
 - [x] 引用补齐：References 7 条（标题/作者从 PDF 原页抽），删掉未核实的 OrcaLoca / RepoGraph
 - [x] 图在 50% 缩放下复核可读（1050×367）
