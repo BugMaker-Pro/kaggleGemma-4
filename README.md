@@ -39,14 +39,17 @@
 - [x] **E1 代码**：graph 读取 + 符号级覆盖率四分类（exact/suffix/module_only/miss）
 - [x] **E2 代码**：stdlib 建图器，输出与官方 graph 同 schema（`nodes[id,name,text]` / `edges[source,target,type,key]`）
 - [x] **E3 代码**：BM25 定位 + 一跳图扩散，同预算对照
-- [x] 数据落地：SWE-bench Lite 300 任务元数据 + 297 个 base_commit 源码快照（2.7 GB，`data/`）
+- [x] 数据落地：SWE-bench Lite 300 任务元数据 + 297 个 base_commit 源码快照（2.5 GB，`data/`）
 - [x] 全量跑 E0/E2/E3：295/300 任务落地 `data/experiment.jsonl`（0 报错，348 个黄金符号）
 - [x] **五条图臂**（rerank / open / open2 / fuse / fuse_precise）+ 文件级 recall：300/300 任务，290 个有黄金符号
 - [x] 消融（种子数 / 跳数 / 池大小 / λ）+ 边解析率归因 → `data/ablation.jsonl`
 - [x] **加 PPR 臂**（`graph_ppr` / `graph_ppr_text`）+ 完整排名导出 + 球内构成 → `data/experiment_v3.jsonl`
 - [x] 主图 `paper/fig1.png`（八臂 recall@k 曲线 + 两种粒度对照）
-- [x] 3000 词初稿收尾：正文 **2,978 词**，三个占位符全部填掉
-- [ ] 投稿前复核：每个数字可回溯到 `tools/analyse_v3.py`；图在 50% 缩放下可读；11/12 之前提交
+- [x] 3000 词初稿收尾：正文 **2,983 词**（含 References），三个占位符全部填掉
+- [x] **数字审计** `tools/audit_numbers.py`：37 项逐一重算并比对正文，抓出 4 处错并已修
+- [x] 引用补齐：References 7 条（标题/作者从 PDF 原页抽），删掉未核实的 OrcaLoca / RepoGraph
+- [x] 图在 50% 缩放下复核可读（1050×367）
+- [ ] 11/12 之前提交；提交后按 Non-Archival 规则再公开
 - [ ] 官方 129 任务那一路（可选：需在主赛道 Join + 接受 Rules）
 - [ ] 主赛道首次提交（11/14 之后）
 
@@ -75,7 +78,7 @@ $py = 'D:\pyenv\cpython-3.12.13-windows-x86_64-none\python.exe'
 
 ## 数据
 
-**主用**：SWE-bench Lite，`data/swebench_lite.jsonl` + `data/repos/*.tar.gz`，已就位（300 / 297，2.7 GB）。
+**主用**：SWE-bench Lite，`data/swebench_lite.jsonl` + `data/repos/*.tar.gz`，已就位（300 / 297，2.5 GB）。
 网络要点：`huggingface.co` 直连超时，**`hf-mirror.com` 可用**；`codeload.github.com` 可用。
 
 **备用/加分**：比赛官方的 22.42 GB 资产（129 任务 + `graphs/` + `embeddings/`），需要在**主赛道**页面 Join + 接受 Rules 才能下。
