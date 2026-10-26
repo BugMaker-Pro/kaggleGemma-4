@@ -24,7 +24,9 @@
 | [docs/data-assets.md](docs/data-assets.md) | **官方数据资产清单**（主赛道 Data 页原文）：22.42 GB / 524 文件、graph 与 embedding 的 schema、策展流程 |
 | [docs/competition.md](docs/competition.md) | 两个赛道的完整机制：任务形态、约束、数据构成、评分方式 |
 | [docs/task-walkthrough.md](docs/task-walkthrough.md) | 主赛道单任务流程：任务包字段、两阶段评测、六步循环、七个吃分的坑 |
-| [paper/main.md](paper/main.md) | 论文骨架：3000 词逐节分配、主表/主图占位、主张→证据对照、投稿检查 |
+| [paper/main.md](paper/main.md) | 论文正文（v7，2,984 词）：八臂 + 四表一图 + References |
+| [docs/file-first.md](docs/file-first.md) | **2026-10-27 新实验**：file-first 分层基线 + 乘积分解（预算同时买文件与符号） |
+| [docs/papers/notes.md](docs/papers/notes.md) | 10 篇参考文献的逐条核实（引文原句 + 页码位置） |
 | [agent/README.md](agent/README.md) | 主赛道提交包结构（11/14 之后才用） |
 | [agent/prompts/system.md](agent/prompts/system.md) | 主赛道系统提示词第一版 |
 
@@ -49,6 +51,8 @@
 - [x] **数字审计** `tools/audit_numbers.py`：37 项逐一重算并比对正文，抓出 4 处错并已修
 - [x] 引用补齐：References 7 条（标题/作者从 PDF 原页抽），删掉未核实的 OrcaLoca / RepoGraph
 - [x] 图在 50% 缩放下复核可读（1050×367）
+- [x] **file-first 分层基线**（`ff_k1..k5` / `ff_graph` / `file_oracle`）：不赢；但乘积分解 r@10 ≈ P(文件) × 回收率 成立，`file_oracle` = 0.665 → `docs/file-first.md`
+- [ ] 决定是否把 file-first 结论并入正文（已备好 ≤120 词英文段与删减建议）
 - [ ] 11/12 之前提交；提交后按 Non-Archival 规则再公开
 - [ ] 官方 129 任务那一路（可选：需在主赛道 Join + 接受 Rules）
 - [ ] 主赛道首次提交（11/14 之后）
