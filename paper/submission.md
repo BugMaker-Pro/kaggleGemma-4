@@ -77,7 +77,7 @@ On a django snapshot (2,715 files, 38,651 nodes, 209,502 edges, 10.8 s) the dist
 
 **At ten slots, no graph arm improves symbol-level recall.** Table 2 and Figure 1.
 
-*Figure 1 — left: symbol recall@k for four of the eight arms over one pool. Right: the baseline ranking scored at both granularities. Reranking pulls ahead only past k ≈ 15.*
+*Figure 1 — top: symbol recall@k for four of the eight arms over one pool. Bottom: the baseline ranking scored at both granularities. Reranking pulls ahead only past k ≈ 15.*
 
 ![Figure 1](fig1.png)
 
@@ -148,9 +148,15 @@ Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Eig
 ## References
 
 [1] Jimenez et al. SWE-bench: Can Language Models Resolve Real-World GitHub Issues? ICLR 2024.
+
 [2] Chen et al. LocAgent: Graph-Guided LLM Agents for Code Localization. 2025.
+
 [3] Seddik et al. ARISE: A Repository-level Graph Representation and Toolset for Agentic Program Repair and Fault Localization. 2026.
+
 [4] Salis et al. PyCG: Practical Call Graph Generation in Python. ICSE 2021.
+
 [5] Yang et al. SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering. NeurIPS 2024.
+
 [6] Liu et al. CodexGraph: Bridging Large Language Models and Code Repositories via Code Graph Databases. NAACL 2025.
+
 [7] Zhang et al. RepoAtlas: Guiding Coding Agents via Evolving Multimodal Repository Views. 2026.

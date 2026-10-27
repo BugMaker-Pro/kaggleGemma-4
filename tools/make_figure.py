@@ -1,10 +1,11 @@
 """Figure 1: the same ranking scored at two granularities, and four arms over k.
 
-Left panel answers "do the arms separate?" -- they do not, until the budget is
-well past the ten slots the paper experiments with. Right panel answers "how
-much of the gap is the granularity?" with one ranking scored two ways.
+Sized for a 730 px column: 4.4 in wide at 220 dpi is ~970 px, so the figure is
+displayed at roughly 0.75 scale and the 9 pt labels land near 7 pt — readable.
+The panels are stacked rather than side by side because a two-up layout at
+column width squeezes each panel to ~360 px and the labels to 2.5 pt.
 
-    python tools/make_figure.py        # -> paper/fig1.png
+    python tools/make_figure.py
 """
 
 from __future__ import annotations
@@ -22,10 +23,10 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 
 STYLE = {
-    "text": dict(color="#1a1a1a", lw=1.6, ls="-", label="text (BM25)"),
-    "graph_rerank": dict(color="#1f6fb4", lw=1.4, ls="-", label="graph_rerank"),
-    "graph_open": dict(color="#c0392b", lw=1.2, ls="--", label="graph_open, 1 hop"),
-    "graph_ppr": dict(color="#2e8b57", lw=1.2, ls=":", label="graph_ppr"),
+    "text": dict(color="#1a1a1a", lw=2.0, ls="-", label="text (BM25)"),
+    "graph_rerank": dict(color="#1f6fb4", lw=1.7, ls="-", label="graph_rerank"),
+    "graph_open": dict(color="#c0392b", lw=1.5, ls="--", label="graph_open, 1 hop"),
+    "graph_ppr": dict(color="#2e8b57", lw=1.5, ls=":", label="graph_ppr"),
 }
 
 
@@ -46,61 +47,57 @@ def main() -> int:
     ks = list(range(1, len(next(iter(curves.values()))) + 1))
 
     plt.rcParams.update({
-        "font.size": 7.5,
+        "font.size": 9,
         "font.family": "DejaVu Sans",
-        "axes.linewidth": 0.6,
-        "xtick.major.width": 0.5,
-        "ytick.major.width": 0.5,
+        "axes.linewidth": 0.7,
+        "xtick.major.width": 0.6,
+        "ytick.major.width": 0.6,
     })
-    fig, (left, right) = plt.subplots(
-        1, 2, figsize=(7.0, 2.45), gridspec_kw={"width_ratios": (1.45, 1.0)}
-    )
+    fig, (top, bottom) = plt.subplots(2, 1, figsize=(4.4, 5.6))
 
     for arm, style in STYLE.items():
-        left.plot(ks, curves[arm], **style)
-        left.plot([10], [curves[arm][9]], marker="o", ms=2.6, color=style["color"])
-    left.axvline(10, color="#888888", lw=0.7, ls=(0, (2, 2)))
-    left.annotate("budget = 10 slots", xy=(10, 0.115), xytext=(11.5, 0.115),
-                  fontsize=6.5, color="#555555", va="bottom")
-    left.set_xlabel("shortlist slots $k$")
-    left.set_ylabel("symbol recall@$k$")
-    left.set_xlim(1, 50)
-    left.set_ylim(0.08, 0.50)
-    left.set_title("four arms, one candidate pool, one budget", fontsize=7.5, pad=4)
-    left.legend(frameon=False, fontsize=6.5, loc="lower right", handlelength=1.8)
+        top.plot(ks, curves[arm], **style)
+        top.plot([10], [curves[arm][9]], marker="o", ms=3.2, color=style["color"])
+    top.axvline(10, color="#888888", lw=0.8, ls=(0, (2, 2)))
+    top.annotate("budget = 10 slots", xy=(10.8, 0.10), fontsize=8, color="#555555")
+    top.set_xlabel("shortlist slots $k$")
+    top.set_ylabel("symbol recall@$k$")
+    top.set_xlim(1, 50)
+    top.set_ylim(0.08, 0.50)
+    top.set_title("four arms, one candidate pool, one budget", fontsize=9, pad=5)
+    top.legend(frameon=False, fontsize=8, loc="lower right", handlelength=2.0)
 
     groups = ("recall@5", "recall@10")
     symbol = (0.2135, 0.2750)
     files = (0.5483, 0.6241)
-    positions = range(len(groups))
+    positions = list(range(len(groups)))
     width = 0.34
-    right.bar([p - width / 2 for p in positions], symbol, width,
-              color="#1a1a1a", label="symbol")
-    right.bar([p + width / 2 for p in positions], files, width,
-              color="#9aa7b1", label="file")
+    bottom.bar([p - width / 2 for p in positions], symbol, width,
+               color="#1a1a1a", label="symbol")
+    bottom.bar([p + width / 2 for p in positions], files, width,
+               color="#9aa7b1", label="file")
     for idx, (s, f) in enumerate(zip(symbol, files)):
-        right.text(idx - width / 2, s + 0.015, f"{s:.3f}", ha="center", fontsize=6.5)
-        right.text(idx + width / 2, f + 0.015, f"{f:.3f}", ha="center", fontsize=6.5)
-    right.set_xticks(list(positions))
-    right.set_xticklabels(groups)
-    right.set_ylim(0, 0.78)
-    right.set_ylabel("recall")
-    right.set_title("one ranking, two granularities", fontsize=7.5, pad=4)
-    right.legend(frameon=False, fontsize=6.5, loc="upper left")
-    right.annotate("2.3× at $k=10$", xy=(1, 0.70), fontsize=7, color="#c0392b",
-                   ha="center")
+        bottom.text(idx - width / 2, s + 0.02, f"{s:.3f}", ha="center", fontsize=8.5)
+        bottom.text(idx + width / 2, f + 0.02, f"{f:.3f}", ha="center", fontsize=8.5)
+    bottom.set_xticks(positions)
+    bottom.set_xticklabels(groups, fontsize=9)
+    bottom.set_ylim(0, 0.80)
+    bottom.set_ylabel("recall")
+    bottom.set_title("one ranking, two granularities", fontsize=9, pad=5)
+    bottom.legend(frameon=False, fontsize=8, loc="upper left")
+    bottom.annotate("2.3×", xy=(1, 0.42), fontsize=11, color="#c0392b", ha="center")
 
-    for axes in (left, right):
+    for axes in (top, bottom):
         axes.spines["top"].set_visible(False)
         axes.spines["right"].set_visible(False)
-        axes.grid(axis="y", lw=0.4, color="#dddddd")
+        axes.grid(axis="y", lw=0.5, color="#dddddd")
         axes.set_axisbelow(True)
 
-    fig.tight_layout(pad=0.4)
+    fig.tight_layout(pad=0.5)
     out = ROOT / "paper" / "fig1.png"
-    fig.savefig(out, dpi=300)
+    fig.savefig(out, dpi=220)
     fig.savefig(out.with_suffix(".pdf"))
-    print(f"wrote {out} and {out.with_suffix('.pdf')}")
+    print(f"wrote {out} at {fig.get_size_inches()[0] * 220:.0f} px wide")
     return 0
 
 

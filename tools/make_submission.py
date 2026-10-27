@@ -59,6 +59,13 @@ def main(argv=None) -> int:
     text = text.replace("## Title\n\n", "")
     text = text.replace("Subtitle: ", "")
 
+    # Markdown joins consecutive lines into one paragraph, so reference entries
+    # need their own blocks or the whole bibliography renders as a single run-on.
+    head, _, refs = text.partition("## References\n")
+    if refs:
+        entries = [entry.strip() for entry in refs.splitlines() if entry.strip()]
+        text = head + "## References\n\n" + "\n\n".join(entries) + "\n"
+
     out = ROOT / "paper" / "submission.md"
     out.write_text(text, encoding="utf-8", newline="\n")
 

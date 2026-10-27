@@ -101,7 +101,7 @@ On a django snapshot (2,715 files, 38,651 nodes, 209,502 edges, 10.8 s) the dist
 
 **At ten slots, no graph arm improves symbol-level recall.** Table 2 and Figure 1.
 
-*Figure 1 — left: symbol recall@k for four of the eight arms over one pool. Right: the baseline ranking scored at both granularities. Reranking pulls ahead only past k ≈ 15.*
+*Figure 1 — top: symbol recall@k for four of the eight arms over one pool. Bottom: the baseline ranking scored at both granularities. Reranking pulls ahead only past k ≈ 15.*
 
 ![Figure 1](fig1.png)
 
