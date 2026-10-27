@@ -52,7 +52,7 @@ The explanation is arithmetic. One-hop balls reach a gold symbol in 13% of tasks
 
 ## 3. Setup (350 words)
 
-**Tasks.** All 300 instances of SWE-bench Lite, 12 repositories, dominated by django (114) and sympy (77). Each instance names a base commit; we fetch that exact tree as a tarball (297 distinct commits, 2.5 GB). We never execute the repositories or their tests: the measurement is purely over source.
+**Tasks.** All 300 instances of SWE-bench Lite, 12 repositories, dominated by django (114) and sympy (77). We fetch each instance's base commit as a tarball (297 distinct commits, 2.5 GB). We never execute the repositories or their tests; the measurement is over source.
 
 **Gold symbols.** For each task we parse the reference patch, and map every changed line to the innermost definition containing it in the *pre-fix* tree: a deleted line anchors itself, an added line anchors the line before it, since the added text does not exist before the fix. The result is 354 definitions over 290 tasks; the other 10 change only module-level statements and contribute no symbol. We record rather than drop the 87 changed lines outside any definition — module-level code, decorators, imports — because a benchmark that discards hard cases reports inflated numbers. A symbol is `<module>.<qualname>`, where the module is the repository-relative path without `.py`, so a patch header and a graph node agree without a lookup table; file-level metrics group the same ranking by file.
 
@@ -140,13 +140,12 @@ Reranking survives a wider budget: +2.9 points at k = 20 (13 wins, 3 losses, p =
 | oracle@10, pool only / pool plus neighbours | 0.600 / 0.630 | a perfect reranker's ceiling, with and without expansion |
 | symbol exchange at k = 10, ppr | +15 gained, −17 lost | the arm's net is a wash |
 | tasks whose gold symbols never enter the top-500 pool | 80 / 290 (27.6%) | the hard tail |
-| of those, still one hop from a top-5 seed | 4 (5.0%) | the graph's only win case |
 
 One-hop expansion has an arithmetic ceiling: 38 of 290 tasks (13.1%; 41 of 354 symbols) have a gold symbol one hop from a top-five seed, so the arm can gain at most 11.9 points even at perfect conversion. Two hops lift the ceiling to 35.7% (111 tasks, 125 symbols), which is why the radius sweep looks promising.
 
 Conversion is not the failure. Diffusion places 18 of the 41 reachable symbols in its top ten — 44%, median rank 12 — and still lands below text, because 15 gained cost 17 lost. The rate is the finding: 9,855 neighbours hold 41 answers, 0.42%, against 3.1% gold per text slot. A graph slot buys a candidate seven times less likely to be right, so the graph must out-rank text by that factor merely to break even — and diffusion breaks exactly even.
 
-**Where the gap is.** Spending all ten slots inside the top k files never beats text (best −0.007, p = 1.00), but it decomposes the gap: recall@10 ≈ P(gold file selected) × E[recovered | depth], and the product is 0.222 / 0.268 / 0.257 / 0.241 / 0.275 for one, two, three, five files and full breadth. The slots slide along one curve, and the baseline sits at its best end. Given the *right* file, ten slots recover **66.5%** of gold symbols, 2.4× the baseline: what is missing is file precision at small k, not symbol ranking.
+**Where the gap is.** Spending all ten slots inside the top k files never beats text (best −0.007, p = 1.00), but it decomposes the gap: recall@10 ≈ P(gold file selected) × E[recovered | depth], and the product is 0.222 / 0.268 / 0.257 / 0.241 / 0.275 for one, two, three, five files and full breadth. Given the *right* file, ten slots recover **66.5%** of gold symbols, 2.4× the baseline: what is missing is file precision at small k, not symbol ranking.
 
 **One arm gains, and it is not a graph arm.** A parameter-free vote over three lexical file scores — best symbol, sum of the top three, issue-to-path match — names the gold file first 34.5% of the time against 29.0%. Five slots in that file and five on text reach **0.305** against 0.275 (14 wins, 4 losses, p = 0.031, 36 fewer characters). The split was fixed before the run; a post-hoc sweep moves the answer only between 0.287 and 0.305, significant at three to five slots (p = 0.016–0.039), so the choice is not load-bearing. Adding file-level PageRank gives 0.300. Many arms were run, so we report this as a direction.
 
