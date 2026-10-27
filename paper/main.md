@@ -137,7 +137,7 @@ Reranking survives a wider budget: +2.9 points at k = 20 (13 wins, 3 losses, p =
 | reach, 2 hops, 1 / 3 / 5 / 10 seeds | 0.191 / 0.310 / 0.357 / 0.395 | radius buys reach quickly |
 | one-hop ball, median size / gold density | 21 nodes / 0.42% | 41 gold symbols among 9,855 neighbours |
 | diffusion's conversion of the ball | 18 / 41 (44%) | reachable gold placed in its top 10 |
-| oracle@10 over pool plus seed neighbours | 0.630 | the ceiling for any reranker |
+| oracle@10, pool only / pool plus neighbours | 0.600 / 0.630 | a perfect reranker's ceiling, with and without expansion |
 | symbol exchange at k = 10, ppr | +15 gained, −17 lost | the arm's net is a wash |
 | tasks whose gold symbols never enter the top-500 pool | 80 / 290 (27.6%) | the hard tail |
 | of those, still one hop from a top-5 seed | 4 (5.0%) | the graph's only win case |
@@ -162,7 +162,7 @@ The practical claim is a reprioritisation. One-hop expansion is not where the er
 
 The measurement claim is about granularity. File-level numbers near 90% are quoted as evidence that the hard part is over; the same ranking is 62.4% on files and 27.5% on symbols — a different task, not a tighter definition of success.
 
-Two findings would overturn this. A cross-encoder or LLM reranker over the same 500-candidate pool, if it pushed symbol recall@10 past roughly 40% — the point where the graph would have to contribute beyond reordering. Or a graph built by type inference rather than name matching: PyCG reports 99.2% precision at 69.9% recall on its own benchmark [4], so the 46% here is a property of our builder, and a denser graph changes what a two-hop ball contains. Neither is a variant of the arms above; both replace a component we held fixed.
+One thing would not overturn it: a stronger reranker over the same pool. A perfect text reranker reaches 0.600 and a perfect reranker over pool plus neighbours 0.630, so the graph's entire headroom is three points. What would overturn it is a different pool — a retriever that draws candidates by meaning rather than by name — or a graph built by type inference, since PyCG reports 99.2% precision at 69.9% recall [4] and our 46% is a property of the builder. Both replace a component we held fixed.
 
 ---
 
@@ -206,6 +206,7 @@ Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Eig
 | 10 | only 46% of call sites resolve | §4, §5 | ✅ measured on django |
 | 11 | precise-only edges do not rescue the arms | Table 2 | ✅ measured |
 | 12 | the gap is the remaining frontier for agents | — | ⬜ argument, §6 |
+| 13 | a perfect reranker's graph headroom is 3 points (0.600 → 0.630) | Table 3 | ✅ measured |
 
 ---
 
