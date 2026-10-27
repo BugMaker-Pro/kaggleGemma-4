@@ -102,6 +102,31 @@ $py = 'D:\pyenv\cpython-3.12.13-windows-x86_64-none\python.exe'
 落地后应是：`data/tasks.jsonl`、`data/snapshots/<instance_id>.tgz`、`data/graphs/`、`data/embeddings/`。
 `data/` 已在 `.gitignore` 里，不会进仓库。
 
+## 发布给评审的内容（Project Link）
+
+仓库对外时，下面这些是**必须入库**的（其余数据太大，靠脚本重新拉取）：
+
+| 路径 | 大小 | 作用 |
+| --- | --- | --- |
+| `data/gold_symbols.jsonl` | 0.14 MB | **354 个黄金符号**，300 任务，答案纸本身 |
+| `data/swebench_lite.jsonl` | 3.0 MB | 300 条任务元数据（issue、patch、base_commit） |
+| `data/ablation.jsonl` | 0.18 MB | 种子数 / 跳数 / 池大小的消融 |
+| `data/experiment_v3.jsonl` | 6.6 MB | 八臂主实验，含每臂前 50 名与每个符号的名次 |
+| `data/experiment_ff.jsonl` | 5.7 MB | file-first 分层臂与 `file_oracle` |
+| `data/experiment_fr2.jsonl` | 10.4 MB | 文件级投票、5/5 混合与消融 |
+
+复算全部数字：
+
+```powershell
+$py = 'D:\pyenv\cpython-3.12.13-windows-x86_64-none\python.exe'
+& $py tools/audit_numbers.py      # 70 条断言，0 failure
+& $py tools/analyse_v3.py         # 表 1–3
+& $py tools/decompose.py          # 预算乘积分解
+& $py tools/analyse_filerank.py   # 正结果与消融
+```
+
+不含入仓库的：`data/repos/*.tar.gz`（2.5 GB，`tools/fetch_repos.py` 按 commit 重拉）、`docs/papers/*.pdf`（版权）。
+
 ## 环境备注
 
 - **`pwsh` 默认模式必崩**（`0xC0000142` = `STATUS_DLL_INIT_FAILED`）。已定位：不是 Windows 或 PowerShell 损坏，是 DSH 沙箱层给子进程装配受限令牌失败；同一条命令在完全权限下正常。**解法：本会话切「完全权限」。**

@@ -8,13 +8,22 @@ venv/
 .pytest_cache/
 .ruff_cache/
 
-# 数据（体积大，绝不入库）
-data/
+# 数据（体积大，绝不入库）。用 data/* 而不是 data/，否则 git 不会进入该目录，
+# 下面的例外规则就没有机会生效。
+data/*
 snapshots/
 wheels/
 *.tgz
 *.zip
 !submission.zip
+
+# ...但发布用的四个结果文件要入库：没有它们，别人无法复算论文里的任何一个数字
+!data/gold_symbols.jsonl
+!data/swebench_lite.jsonl
+!data/ablation.jsonl
+!data/experiment_v3.jsonl
+!data/experiment_ff.jsonl
+!data/experiment_fr2.jsonl
 
 # 实验产物
 runs/
