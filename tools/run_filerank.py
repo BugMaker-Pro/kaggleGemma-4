@@ -199,6 +199,28 @@ def _work(task: dict) -> dict:
     mixed += [n for n in ranked_ids if n not in set(mixed)]
     arms["fr_borda_mix"] = _arm(mixed, targets, gold_files, nodes, files_of)
 
+    # Ablations, so "the graph contributes" is evidence rather than inference:
+    # a vote without the file-level PageRank signal, and a vote without the
+    # (individually useless) path signal. Same arms as above, same budget.
+    borda_nop = _borda(max_order[:_TOP_FILES], sum3_order[:_TOP_FILES],
+                       path_order[:_TOP_FILES])
+    borda_nopath = _borda(max_order[:_TOP_FILES], sum3_order[:_TOP_FILES],
+                          ppr_order[:_TOP_FILES])
+    for name, vote in (("nop", borda_nop), ("nopath", borda_nopath)):
+        filled = _fill(vote[:1], by_file, ranked_ids)
+        filled += [n for n in ranked_ids if n not in set(filled)]
+        arms[f"fr_borda_{name}"] = _arm(filled, targets, gold_files, nodes, files_of)
+        blend = list(arms[f"fr_borda_{name}"]["top"][:5])
+        seen = set(blend)
+        for node_id in ranked_ids:
+            if len(blend) >= 10:
+                break
+            if node_id not in seen:
+                blend.append(node_id)
+                seen.add(node_id)
+        blend += [n for n in ranked_ids if n not in set(blend)]
+        arms[f"fr_mix_{name}"] = _arm(blend, targets, gold_files, nodes, files_of)
+
     row["arms"] = arms
     row["stage1"] = {
         "max": _stage1_quality(max_order, gold_files),
@@ -206,6 +228,8 @@ def _work(task: dict) -> dict:
         "path": _stage1_quality(path_order, gold_files),
         "ppr": _stage1_quality(ppr_order, gold_files),
         "borda": _stage1_quality(borda, gold_files),
+        "borda_nop": _stage1_quality(borda_nop, gold_files),
+        "borda_nopath": _stage1_quality(borda_nopath, gold_files),
     }
     row["seconds"] = round(time.time() - started, 2)
     return row
@@ -262,15 +286,16 @@ def main(argv=None) -> int:
     scored = [row for row in rows if row.get("arms")]
     print(f"\ntasks {len(rows)} scored {len(scored)} failures {failures} "
           f"{round(time.time() - started, 1)}s")
-    print(f"{'arm':14s}{'r@1':>7s}{'r@5':>7s}{'r@10':>7s}{'file@10':>9s}")
+    print(f"{'arm':16s}{'r@1':>7s}{'r@5':>7s}{'r@10':>7s}{'file@10':>9s}")
     for arm in ("text", "fr_max", "fr_sum3", "fr_path", "fr_ppr", "fr_borda",
-                "fr_borda_k2", "fr_borda_mix"):
+                "fr_borda_k2", "fr_borda_mix", "fr_borda_nop", "fr_mix_nop",
+                "fr_borda_nopath", "fr_mix_nopath"):
         def mean(metric):
             return sum(row["arms"][arm][metric] for row in scored) / len(scored)
-        print(f"{arm:14s}{mean('recall@1'):7.3f}{mean('recall@5'):7.3f}"
+        print(f"{arm:16s}{mean('recall@1'):7.3f}{mean('recall@5'):7.3f}"
               f"{mean('recall@10'):7.3f}{mean('file_recall@10'):9.3f}")
     print("\nstage 1 quality (gold file):")
-    for signal in ("max", "sum3", "path", "ppr", "borda"):
+    for signal in ("max", "sum3", "path", "ppr", "borda", "borda_nop", "borda_nopath"):
         top1 = sum(row["stage1"][signal]["top1"] for row in scored) / len(scored)
         top3 = sum(row["stage1"][signal]["top3"] for row in scored) / len(scored)
         mrr = sum(row["stage1"][signal]["rr"] for row in scored) / len(scored)

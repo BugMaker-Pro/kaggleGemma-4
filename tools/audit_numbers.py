@@ -161,9 +161,52 @@ def main(argv=None) -> int:
         check("unresolved share", 0.341, counts["unresolved"] / total, 0.002)
         check("ambiguous share", 0.150, counts["ambiguous"] / total, 0.002)
 
+    print("\n== budget decomposition and the file vote ==")
+    ff = [json.loads(x) for x in (ROOT / "data" / "experiment_ff.jsonl").open(encoding="utf-8") if x.strip()]
+    ff = [row for row in ff if row.get("arms")]
+    fr = [json.loads(x) for x in (ROOT / "data" / "experiment_fr2.jsonl").open(encoding="utf-8") if x.strip()]
+    fr = [row for row in fr if row.get("arms")]
+    for arm, claimed in (("ff_k1", 0.236), ("ff_k2", 0.268), ("ff_k3", 0.257),
+                         ("ff_k5", 0.241), ("file_oracle", 0.665)):
+        value = statistics.fmean(row["arms"][arm]["recall@10"] for row in ff)
+        check(f"{arm} r@10", claimed, value, 0.001)
+    probability = {
+        "ff_k1": sum(1 for r in ff if r["stage1"]["gold_file_rank_3"] == 1) / len(ff),
+        "ff_k2": sum(1 for r in ff if 1 <= r["stage1"]["gold_file_rank_3"] <= 2) / len(ff),
+        "ff_k3": sum(1 for r in ff if 1 <= r["stage1"]["gold_file_rank_3"] <= 3) / len(ff),
+        "ff_k5": sum(1 for r in ff if 1 <= r["stage1"]["gold_file_rank_5"] <= 5) / len(ff),
+    }
+    for arm, claimed in (("ff_k1", 0.290), ("ff_k2", 0.459), ("ff_k3", 0.503),
+                         ("ff_k5", 0.586)):
+        check(f"{arm} P(gold file found)", claimed, probability[arm], 0.002)
+    for arm, claimed in (("ff_k1", 0.222), ("ff_k2", 0.268), ("ff_k3", 0.257),
+                         ("ff_k5", 0.241)):
+        subset = [row for row in ff if row["stage1"]["gold_file_rank_3" if arm != "ff_k5" else "gold_file_rank_5"]
+                  == 0 or False]
+        # product = P x recovery, recomputed the same way `tools/decompose.py` does
+        key = "gold_file_rank_5" if arm == "ff_k5" else "gold_file_rank_3"
+        limit = {"ff_k1": 1, "ff_k2": 2, "ff_k3": 3, "ff_k5": 5}[arm]
+        subset = [row for row in ff if 1 <= row["stage1"][key] <= limit]
+        recovery = statistics.fmean(row["arms"][arm]["recall@10"] for row in subset)
+        check(f"{arm} P x recovery", claimed, probability[arm] * recovery, 0.002)
+
+    top1 = {signal: sum(row["stage1"][signal]["top1"] for row in fr) / len(fr)
+            for signal in ("max", "sum3", "path", "ppr", "borda", "borda_nop")}
+    check("file top-1, best symbol", 0.290, top1["max"], 0.002)
+    check("file top-1, lexical vote", 0.345, top1["borda_nop"], 0.002)
+    check("file top-1, vote with PageRank", 0.348, top1["borda"], 0.002)
+    for arm, claimed, p_claim in (("fr_mix_nop", 0.305, 0.031), ("fr_borda_mix", 0.300, 0.049)):
+        value = statistics.fmean(row["arms"][arm]["recall@10"] for row in fr)
+        check(f"{arm} r@10", claimed, value, 0.001)
+        stats = paired(fr, "recall@10", arm)
+        check(f"{arm} p", p_claim, round(stats["sign_p"], 3), 0.001)
+    chars = statistics.fmean(row["arms"]["fr_mix_nop"]["chars@10"] for row in fr)
+    check("fr_mix_nop characters", 1579, chars, 1, fmt="{:.0f}")
+
     print("\n== the draft still says the same thing ==")
     for token in ("62.4%", "27.5%", "2.3×", "0.42%", "3.1%", "11.9", "35.7",
-                  "9,855", "44%", "46%", "seven times", "seven to one"):
+                  "9,855", "44%", "46%", "seven times", "seven to one",
+                  "66.5%", "0.305", "34.5%", "29.0%", "p = 0.031"):
         present = token in paper
         print(f"  [{'ok  ' if present else 'FAIL'}] draft contains {token!r}")
         if not present:
