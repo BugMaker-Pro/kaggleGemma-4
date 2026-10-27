@@ -62,7 +62,7 @@ The explanation is arithmetic. One-hop balls reach a gold symbol in 13% of tasks
 
 ## 4. Method (550 words)
 
-**The graph builder.** We build a definition-and-reference graph from source with Python's `ast`, emitting the same JSON shape the competition's released assets use (`nodes[id, name, text]`, `edges[source, target, type, key]`), so one reader and one metric apply to both. Nodes are modules, classes, functions and methods, each carrying its signature, docstring, and source span; edges come in four types — `defines`, `imports`, `inherits`, `calls`.
+**The graph builder.** We build a definition-and-reference graph from source with Python's `ast`, emitting the same JSON shape the competition's released assets use (`nodes[id, name, text]`, `edges[source, target, type, key]`), so one metric applies to both. Nodes are modules, classes, functions and methods, each carrying its signature, docstring, and source span; edges come in four types — `defines`, `imports`, `inherits`, `calls`.
 
 **Resolution states.** What matters is not the edge list but what each edge means. We record seven states and never collapse them:
 
@@ -88,7 +88,7 @@ On a django snapshot (2,715 files, 38,651 nodes, 209,502 edges, 10.8 s) the dist
 
 ## 5. Results (800 words)
 
-**Coverage is a sanity check, not a finding.** All 354 gold symbols resolve into the graph — expected, since extraction and builder share the `<module>.<qualname>` convention. It shows numerator and denominator agree; nothing about anyone else's graph.
+**Coverage is a sanity check, not a finding.** All 354 gold symbols resolve into the graph — expected, since extraction and builder share the `<module>.<qualname>` convention. It shows numerator and denominator agree, nothing more.
 
 **The granularity gap is the headline.** Table 1, one ranking, two ways of scoring it.
 
@@ -98,6 +98,8 @@ On a django snapshot (2,715 files, 38,651 nodes, 209,502 edges, 10.8 s) the dist
 | --- | ---: | ---: | ---: |
 | symbol | 0.091 | 0.214 | **0.275** |
 | file | — | 0.548 | **0.624** |
+
+Line granularity agrees: the ranking covers **23.9%** of the 1,010 changed lines (25.8% of those inside a definition), so the gap is not an artefact of coarse matching.
 
 **At ten slots, no graph arm improves symbol-level recall.** Table 2 and Figure 1.
 
@@ -157,7 +159,7 @@ Conversion is not the failure. Diffusion places 18 of the 41 reachable symbols i
 
 ## 6. Discussion (300 words)
 
-The practical claim is a reprioritisation. One-hop expansion is not where the error is: 88.1% of gold symbols are more than one hop from a strong text seed, half the call sites that would carry the hop do not resolve, and the exchange rate is seven to one against. The margin is in file-level aggregation of textual evidence, and in candidate generation for the 27.6% of tasks whose gold never enters a top-500 pool.
+The practical claim is a reprioritisation. One-hop expansion is not where the error is: 88.1% of gold symbols are more than one hop from a strong text seed, half the call sites that would carry the hop do not resolve, and the exchange rate is seven to one against. The margin is in file-level aggregation, and in candidate generation for the 27.6% of tasks whose gold never enters a top-500 pool.
 
 The measurement claim is about granularity. File-level numbers near 90% are quoted as evidence that the hard part is over; the same ranking is 62.4% on files and 27.5% on symbols — a different task, not a tighter definition of success.
 
@@ -167,7 +169,7 @@ One thing would not overturn it: a stronger reranker over the same pool. A perfe
 
 ## 7. Limitations (130 words)
 
-Python only, though so are most tasks in the benchmarks we compare against. One retriever: BM25, with no dense retriever or cross-encoder, so the result is about the graph's marginal value *given this ranking*, not about graphs in general. Diffusion's restart probability and the fusion weight were fixed at conventional values, not tuned. We measure retrieval, not resolution: a better shortlist is necessary for a better patch, not sufficient.
+Python only, though so are most benchmark tasks we compare against. One retriever: BM25, with no dense retriever or cross-encoder, so the result is about the graph's marginal value *given this ranking*, not about graphs in general. Diffusion's restart probability and the fusion weight were fixed at conventional values, not tuned. We measure retrieval, not resolution: a better shortlist is necessary for a better patch, not sufficient.
 
 ---
 

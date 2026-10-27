@@ -203,10 +203,32 @@ def main(argv=None) -> int:
     chars = statistics.fmean(row["arms"]["fr_mix_nop"]["chars@10"] for row in fr)
     check("fr_mix_nop characters", 1579, chars, 1, fmt="{:.0f}")
 
+    print("\n== line-level coverage ==")
+    from tools.line_coverage import anchor_symbols  # noqa: PLC0415
+    records = {row["instance_id"]: row for row in gold}
+    total_lines = covered = outside = 0
+    for row in scored:
+        record = records.get(row["instance_id"])
+        if record is None:
+            continue
+        mapped, _ = anchor_symbols(record)
+        if not mapped:
+            continue
+        top = set(row["arms"]["text"]["top"][:10])
+        total_lines += len(mapped)
+        outside += sum(1 for node in mapped if node is None)
+        covered += sum(1 for node in mapped if node is not None and node in top)
+    check("changed lines", 1010, total_lines, 0)
+    check("lines inside a definition", 936, total_lines - outside, 0)
+    check("line coverage, all", 0.239, covered / total_lines, 0.001)
+    check("line coverage, inside a definition", 0.258,
+          covered / (total_lines - outside), 0.001)
+
     print("\n== the draft still says the same thing ==")
     for token in ("62.4%", "27.5%", "2.3×", "0.42%", "3.1%", "11.9", "35.7",
                   "9,855", "44%", "46%", "seven times", "seven to one",
-                  "66.5%", "0.305", "34.5%", "29.0%", "p = 0.031"):
+                  "66.5%", "0.305", "34.5%", "29.0%", "p = 0.031",
+                  "23.9%", "25.8%"):
         present = token in paper
         print(f"  [{'ok  ' if present else 'FAIL'}] draft contains {token!r}")
         if not present:
