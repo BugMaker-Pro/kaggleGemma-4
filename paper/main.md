@@ -105,7 +105,7 @@ On a django snapshot (2,715 files, 38,651 nodes, 209,502 edges, 10.8 s) the dist
 
 ![Figure 1](fig1.png)
 
-*Table 2 — eight arms, paired, equal pool and equal character budget*
+*Table 2 — the eight graph arms, paired, equal pool and equal character budget*
 
 | arm | r@1 | r@5 | r@10 | file r@10 | Δr@10 (95% CI) | p |
 | --- | ---: | ---: | ---: | ---: | --- | ---: |
