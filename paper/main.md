@@ -4,7 +4,7 @@
 > Mandatory sections (missing any = ineligible): Title + Subtitle, Abstract, Introduction, Research description (methods & experiments), Related works & citations.
 > Protocol and changelog: [docs/paper-topic.md](../docs/paper-topic.md). Official rules: [docs/kaggle-paper-track-raw.md](../docs/kaggle-paper-track-raw.md).
 >
-> **Draft status**: no placeholders left. Body is 2,973 words (`tools/wordcount.py`); every number is re-derived from `data/*.jsonl` by `tools/audit_numbers.py` (70 assertions, 0 failures).
+> **Draft status**: no placeholders left. Body is 2,989 words (`tools/wordcount.py`); every number is re-derived from `data/*.jsonl` by `tools/audit_numbers.py` (70 assertions, 0 failures).
 
 ---
 
@@ -37,8 +37,6 @@ One instance makes it concrete. `matplotlib__matplotlib-24970` reports NumPy 1.2
 Second, we test the standard remedy: build a call graph, expand from a strong text hit, let structure carry the rest. We implement five strategies in eight arms, holding everything else fixed. None of the graph arms improves symbol-level recall at ten slots — not even personalised PageRank — and the most aggressive costs 4.8 points of file-level recall (p = 0.004). One arm does gain, and it uses no graph at all (§5).
 
 The explanation is arithmetic. One-hop balls reach a gold symbol in 13% of tasks but are 0.42% gold against 3.1% per text slot, so a graph slot buys a candidate seven times less likely to be right; diffusion converts 44% of what it can reach and still nets −2. Meanwhile 54% of the call sites that would carry the hop resolve to no definite target.
-
-We release the benchmark, the builder, and the harness.
 
 ---
 
@@ -124,9 +122,9 @@ The second-hop variant has the most reach (35.7%, Table 3) and is still negative
 
 Reranking survives a wider budget: +2.9 points at k = 20 (13 wins, 3 losses, p = 0.021), +0.8 at k = 50 (p = 0.45). It reorders a pool it cannot enlarge, so the benefit arrives only once there are enough slots for a promoted symbol to land inside the cut.
 
-**Diffusion is a lateral move, not a win.** Personalised PageRank is the only arm that improves the first slot (0.106 against 0.091), and the only one whose deficit can be audited symbol by symbol: it finds 15 gold symbols text misses and drops 17 text had. At file level it loses 4.5 points (7 wins, 20 losses, p = 0.019). Sharpening rank one while losing the file is a bad trade.
+**Diffusion is a lateral move, not a win.** Personalised PageRank is the only arm that improves the first slot (0.106 against 0.091), and its deficit can be audited: it finds 15 gold symbols text misses and drops 17 text had. At file level it loses 4.5 points (7 wins, 20 losses, p = 0.019). Sharpening rank one while losing the file is a bad trade.
 
-**Expansion is significantly worse at file granularity.** `graph_open` trades slots 6–10 for neighbours: 18 tasks lose a gold file, 4 gain one, mean −4.8 points (p = 0.004), and the two-hop arm repeats it (−4.5, p = 0.011). Spending half the shortlist on structure discards value.
+**Expansion is significantly worse at file granularity.** `graph_open` trades slots 6–10 for neighbours: 18 tasks lose a gold file, 4 gain one, mean −4.8 points (p = 0.004), and the two-hop arm repeats it (−4.5, p = 0.011).
 
 **Reach bounds the arm; the exchange rate eats the bound.** Table 3.
 
@@ -150,7 +148,7 @@ Conversion is not the failure. Diffusion places 18 of the 41 reachable symbols i
 
 **Where the gap is.** Spending all ten slots inside the top k files never beats text (best −0.007, p = 1.00), but it decomposes the gap: recall@10 ≈ P(gold file selected) × E[recovered | depth], and the product is 0.222 / 0.268 / 0.257 / 0.241 / 0.275 for one, two, three, five files and full breadth. The slots slide along one curve, and the baseline sits at its best end. Given the *right* file, ten slots recover **66.5%** of gold symbols, 2.4× the baseline: what is missing is file precision at small k, not symbol ranking.
 
-**One arm gains, and it is not a graph arm.** A parameter-free vote over three lexical file scores — best symbol, sum of the top three, issue-to-path match — names the gold file first 34.5% of the time against 29.0%, and five slots in that file plus five on text reach **0.305** against 0.275 (14 wins, 4 losses, p = 0.031, 36 fewer characters). Adding file-level PageRank gives 0.300: the gain is lexical aggregation, not structure. Many arms were run; this p-value carries no correction for that, so we report it as a direction.
+**One arm gains, and it is not a graph arm.** A parameter-free vote over three lexical file scores — best symbol, sum of the top three, issue-to-path match — names the gold file first 34.5% of the time against 29.0%. Five slots in that file and five on text reach **0.305** against 0.275 (14 wins, 4 losses, p = 0.031, 36 fewer characters). The split was fixed before the run; a post-hoc sweep moves the answer only between 0.287 and 0.305, significant at three to five slots (p = 0.016–0.039), so the choice is not load-bearing. Adding file-level PageRank gives 0.300. Many arms were run, so we report this as a direction.
 
 **Where the graph helps.** Astropy is the one repository with a clear gain (0.458 → 0.792, six tasks); five repositories have zero one-hop reach and can only lose. With only 46% of edges definite, restricting expansion to the definite subgraph does not help either — structural, not noise.
 
@@ -213,7 +211,7 @@ Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Eig
 
 ## Submission checklist
 
-- [x] **≤ 3,000 words** (counted with `tools/wordcount.py`: body 2,991)
+- [x] **≤ 3,000 words** (counted with `tools/wordcount.py`: body 2,989)
 - [x] five mandatory sections present
 - [ ] not previously published (Non-Archival permits posting only after submission)
 - [x] every number traceable to `data/*.jsonl` via `tools/audit_numbers.py` (70 assertions)
