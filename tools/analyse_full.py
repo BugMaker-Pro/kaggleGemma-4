@@ -86,6 +86,7 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--rows", default=str(ROOT / "data" / "features_full.jsonl"))
     ap.add_argument("--results", default=str(ROOT / "data" / "combo_ltr_full.jsonl"))
+    ap.add_argument("--orders", default=str(ROOT / "data" / "combo_ltr_orders_full.jsonl"))
     args = ap.parse_args(argv)
 
     tasks = [json.loads(line) for line in Path(args.rows).open(encoding="utf-8") if line.strip()]
@@ -146,6 +147,25 @@ def main(argv=None) -> int:
     print(f"\n{'arm':12s}{'symbol r@10':>14s}")
     for arm in ("bm25", "ltr", "ltr_ev5"):
         print(f"{arm:12s}{statistics.fmean([row[arm] for row in results.values()]):14.3f}")
+
+    orders_path = Path(args.orders)
+    if not orders_path.exists():
+        return 0
+    files_of = {task["instance_id"]: task["files"] for task in tasks}
+    gold_of = {task["instance_id"]: task.get("gold_files") or [] for task in tasks}
+    by_arm: dict[str, list[float]] = defaultdict(list)
+    for row in (json.loads(line) for line in orders_path.open(encoding="utf-8") if line.strip()):
+        instance_id = row["instance_id"]
+        if instance_id not in files_of:
+            continue
+        for arm, order in row["orders"].items():
+            value = file_recall(order, files_of[instance_id], gold_of[instance_id])
+            if value == value:
+                by_arm[arm].append(value)
+    print(f"\n{'arm':12s}{'file r@10':>14s}")
+    for arm in ("bm25", "ltr", "ltr_ev5"):
+        if arm in by_arm:
+            print(f"{arm:12s}{statistics.fmean(by_arm[arm]):14.3f}")
     return 0
 
 

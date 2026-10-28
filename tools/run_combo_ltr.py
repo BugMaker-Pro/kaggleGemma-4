@@ -92,7 +92,10 @@ def main(argv=None) -> int:
     ap.add_argument("--out", default=str(ROOT / "data" / "combo_ltr.jsonl"))
     ap.add_argument("--orders-out", default=str(ROOT / "data" / "combo_ltr_orders.jsonl"))
     ap.add_argument("--skip-ablation", action="store_true")
+    ap.add_argument("--caps", default="5",
+                    help="evidence override sizes to evaluate, e.g. 1,2,5,10")
     args = ap.parse_args(argv)
+    caps = [int(value) for value in args.caps.split(",") if value.strip()]
 
     tasks = [json.loads(line) for line in Path(args.rows).open(encoding="utf-8") if line.strip()]
     gold_total = {row["instance_id"]: len(row.get("gold_nodes") or []) for row in
@@ -122,16 +125,15 @@ def main(argv=None) -> int:
             arms = {
                 "bm25": [row[0] for row in task["rows"]],
                 "ltr": list(scores),
-                "ltr_ev5": None,
             }
             base_order = order_from(scores, labels)
-            for name, cap in (("ltr_ev5", 5),):
+            for cap in caps:
                 combined = prepend(base_order, task["rows"], cap)
                 # encode a permutation as scores: candidate at position p scores -p
                 values = [0.0] * len(combined)
                 for position, candidate in enumerate(combined):
                     values[candidate] = -float(position)
-                arms[name] = values
+                arms[f"ltr_ev{cap}"] = values
 
             orders[task["instance_id"]] = {
                 "gold_total": gold_total.get(task["instance_id"], 0),
@@ -146,7 +148,7 @@ def main(argv=None) -> int:
 
     print(f"tasks: {len(results['bm25'])}\n")
     print(f"{'arm':10s}{'r@10 (all tasks)':>18s}")
-    for name in ("bm25", "ltr", "ltr_ev5"):
+    for name in ("bm25", "ltr", *(f"ltr_ev{cap}" for cap in caps)):
         values = list(results[name].values())
         print(f"{name:10s}{statistics.fmean(values):18.3f}")
 
@@ -161,8 +163,9 @@ def main(argv=None) -> int:
 
     print()
     paired("ltr", "bm25")
-    paired("ltr_ev5", "ltr")
-    paired("ltr_ev5", "bm25")
+    for cap in caps:
+        paired(f"ltr_ev{cap}", "ltr")
+        paired(f"ltr_ev{cap}", "bm25")
 
     out = Path(args.out)
     with out.open("w", encoding="utf-8") as fh:
