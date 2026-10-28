@@ -1,6 +1,6 @@
-"""One-off: download the exact source snapshot of every SWE-bench Lite instance.
+"""One-off: download the exact source snapshot of every SWE-bench instance.
 
-    python tools/fetch_repos.py [--jobs 6] [--limit N]
+    python tools/fetch_repos.py [--jobs 6] [--limit N] [--index data/x.jsonl]
 
 Each instance is pinned to `base_commit` (the pre-fix tree), fetched as a GitHub
 tarball rather than by cloning, because we only ever need "the files as the agent
@@ -32,7 +32,7 @@ def target_path(repo, sha):
     return os.path.join(DEST, f"{repo.replace('/', '__')}@{sha[:12]}.tar.gz")
 
 
-def fetch(url, dest, tries=4):
+def fetch(url, dest, tries=6):
     tmp = dest + ".part"
     for i in range(tries):
         try:
@@ -53,7 +53,7 @@ def fetch(url, dest, tries=4):
                 os.remove(tmp)
             if i == tries - 1:
                 raise
-            time.sleep(2 * (i + 1))
+            time.sleep(3 * (i + 1))
     raise RuntimeError("unreachable")
 
 
@@ -61,11 +61,12 @@ def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--jobs", type=int, default=6)
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--index", default=INDEX, help="instance jsonl to read base_commits from")
     args = ap.parse_args(argv)
 
     os.makedirs(DEST, exist_ok=True)
     seen, jobs = set(), []
-    with open(INDEX, encoding="utf-8") as f:
+    with open(args.index, encoding="utf-8") as f:
         for line in f:
             r = json.loads(line)
             key = (r["repo"], r["base_commit"])

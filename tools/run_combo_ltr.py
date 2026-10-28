@@ -89,11 +89,18 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--rows", default=str(ROOT / "data" / "features.jsonl"))
     ap.add_argument("--gold", default=str(ROOT / "data" / "experiment_v3.jsonl"))
+    ap.add_argument("--out", default=str(ROOT / "data" / "combo_ltr.jsonl"))
+    ap.add_argument("--orders-out", default=str(ROOT / "data" / "combo_ltr_orders.jsonl"))
+    ap.add_argument("--skip-ablation", action="store_true")
     args = ap.parse_args(argv)
 
     tasks = [json.loads(line) for line in Path(args.rows).open(encoding="utf-8") if line.strip()]
     gold_total = {row["instance_id"]: len(row.get("gold_nodes") or []) for row in
                   (json.loads(line) for line in Path(args.gold).open(encoding="utf-8") if line.strip())}
+    # a features file carries its own gold count, which is what a full-benchmark run has
+    for task in tasks:
+        if task.get("gold_total"):
+            gold_total.setdefault(task["instance_id"], task["gold_total"])
     features = tasks[0]["features"]
     assert tuple(features) == ORDER, features
     repos = sorted({task["repo"] for task in tasks})
@@ -157,7 +164,7 @@ def main(argv=None) -> int:
     paired("ltr_ev5", "ltr")
     paired("ltr_ev5", "bm25")
 
-    out = ROOT / "data" / "combo_ltr.jsonl"
+    out = Path(args.out)
     with out.open("w", encoding="utf-8") as fh:
         for instance_id in sorted(results["bm25"]):
             fh.write(json.dumps({
@@ -167,7 +174,7 @@ def main(argv=None) -> int:
     print(f"\nper-task results -> {out}")
 
     # full curve data for the figure: store the ordering, not just r@10
-    curve_out = ROOT / "data" / "combo_ltr_orders.jsonl"
+    curve_out = Path(args.orders_out)
     with curve_out.open("w", encoding="utf-8") as fh:
         for instance_id, entry in orders.items():
             fh.write(json.dumps({
@@ -179,6 +186,8 @@ def main(argv=None) -> int:
     print(f"per-task orders -> {curve_out}")
 
     # ablation on the same scale: does the ranker need the graph features?
+    if args.skip_ablation:
+        return 0
     print("\n== ablation (all-task recall@10) ==")
     keep = [i for i, name in enumerate(ORDER)
             if name not in ("in_degree", "out_degree", "near_seed")]

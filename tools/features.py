@@ -235,6 +235,20 @@ def _work(task: dict) -> dict:
         "rows": rows,
         "labels": [1 if node_id in set(gold) else 0 for node_id in pool],
         "ids": pool,
+        "files": [files_of.get(node_id, "") for node_id in pool],
+        # graph_rerank for the same pool: reachable-from-a-seed first, then score.
+        # Stored as pool indices so recall is computable offline.
+        "rerank_top10": [
+            pool.index(node_id)
+            for node_id, _ in sorted(
+                ranked, key=lambda kv: (kv[0] in near or kv[0] in seeds, kv[1]), reverse=True
+            )[:10]
+        ],
+        "gold_total": len(gold),
+        # every Python file the reference patch touches: the file-level denominator,
+        # so the full run does not need a separate gold_symbols pass.
+        "gold_files": [entry["path"] for entry in record["files"]
+                       if entry["language"] == "python"],
         "seconds": round(time.time() - started, 2),
     }
 
@@ -246,6 +260,9 @@ def main(argv=None) -> int:
     ap.add_argument("--out", default=str(ROOT / "data" / "features.jsonl"))
     ap.add_argument("--jobs", type=int, default=min(6, os.cpu_count() or 1))
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--append", action="store_true",
+                    help="skip tasks already in --out and append to it; a 2,294-task run "
+                         "outlives a download that is still catching up")
     args = ap.parse_args(argv)
 
     tasks = [json.loads(line) for line in Path(args.tasks).open(encoding="utf-8") if line.strip()]
@@ -253,10 +270,17 @@ def main(argv=None) -> int:
         tasks = tasks[: args.limit]
 
     started = time.time()
-    rows, failures, skipped = [], 0, 0
+    rows, failures, skipped, pending = [], 0, 0, 0
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    with out.open("w", encoding="utf-8") as fh, ProcessPoolExecutor(
+    mode = "a" if args.append else "w"
+    if args.append and out.exists():
+        done_ids = {json.loads(line)["instance_id"]
+                    for line in out.open(encoding="utf-8") if line.strip()}
+        todo = [task for task in tasks if task["instance_id"] not in done_ids]
+        print(f"{len(tasks)} tasks, {len(done_ids)} already done, {len(todo)} to run", flush=True)
+        tasks = todo
+    with out.open(mode, encoding="utf-8") as fh, ProcessPoolExecutor(
         max_workers=args.jobs, initializer=_init, initargs=(args.repos,)
     ) as pool:
         futures = {pool.submit(_work, task): task for task in tasks}
@@ -267,8 +291,11 @@ def main(argv=None) -> int:
                 task = futures[future]
                 row = {"instance_id": task["instance_id"], "error": f"{type(exc).__name__}: {exc}"}
             if "error" in row:
-                failures += 1
-                print(f"  FAIL {row['instance_id']}: {row['error']}", flush=True)
+                if row["error"] == "no_snapshot":  # still downloading: not a failure
+                    pending += 1
+                else:
+                    failures += 1
+                    print(f"  FAIL {row['instance_id']}: {row['error']}", flush=True)
             elif row.get("skipped"):
                 skipped += 1
             else:
@@ -280,7 +307,7 @@ def main(argv=None) -> int:
                 print(f"  {done}/{len(tasks)}  {rate:.2f} task/s  "
                       f"eta {(len(tasks) - done) / max(rate, 1e-9) / 60:.1f} min", flush=True)
 
-    print(f"\ntasks {len(rows)} skipped {skipped} failures {failures} "
+    print(f"\ntasks {len(rows)} skipped {skipped} failures {failures} pending {pending} "
           f"{round(time.time() - started, 1)}s -> {out}")
     print(f"candidates {sum(len(r['rows']) for r in rows)} "
           f"positives {sum(sum(r['labels']) for r in rows)}")

@@ -72,20 +72,22 @@ def _normalise(row):
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--split", default=SPLIT)
+    ap.add_argument("--dataset", default=DATASET)
+    ap.add_argument("--out", default=OUT)
     ap.add_argument("--stats", action="store_true", help="skip download, rebuild from cache")
     args = ap.parse_args(argv)
 
     src = _parquet_path(args.split)
     if not args.stats or not os.path.exists(src):
-        _download(f"{MIRROR}/datasets/{DATASET}/resolve/main/data/{args.split}-00000-of-00001.parquet", src)
+        _download(f"{MIRROR}/datasets/{args.dataset}/resolve/main/data/{args.split}-00000-of-00001.parquet", src)
 
     import pyarrow.parquet as pq
 
     table = pq.read_table(src)
     rows = [_normalise(r) for r in table.to_pylist()]
 
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w", encoding="utf-8", newline="\n") as f:
+    os.makedirs(os.path.dirname(args.out), exist_ok=True)
+    with open(args.out, "w", encoding="utf-8", newline="\n") as f:
         for r in rows:
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
 
