@@ -194,6 +194,24 @@ def main(argv=None) -> int:
     check("issues quoting a body line", 0.228,
           sum(1 for row in census if row["line_quote"]) / len(census), 0.003)
 
+    def fires(instance_id: str) -> bool:
+        row = next((item for item in issue if item["instance_id"] == instance_id), None)
+        quoted = next((item for item in census if item["instance_id"] == instance_id), None)
+        return bool((row and (row["paths"] or row["frames"]))
+                    or (quoted and quoted["line_quote"]))
+
+    hot = [row for row in combo if fires(row["instance_id"])]
+    cold = [row for row in combo if not fires(row["instance_id"])]
+    check("tasks with a signal", 137, len(hot), 0)
+    check("signal: text r@10", 0.305,
+          statistics.fmean(row["arms"]["text"]["recall@10"] for row in hot), 0.002)
+    check("signal: combo r@10", 0.446,
+          statistics.fmean(row["arms"]["combo"]["recall@10"] for row in hot), 0.002)
+    check("no signal: text r@10", 0.248,
+          statistics.fmean(row["arms"]["text"]["recall@10"] for row in cold), 0.002)
+    check("no signal: combo r@10", 0.268,
+          statistics.fmean(row["arms"]["combo"]["recall@10"] for row in cold), 0.002)
+
     print("\n== budget decomposition and the file vote ==")
     ff = [json.loads(x) for x in (ROOT / "data" / "experiment_ff.jsonl").open(encoding="utf-8") if x.strip()]
     ff = [row for row in ff if row.get("arms")]
