@@ -10,9 +10,9 @@
 
 ## Title
 
-**File-Level Is Not Symbol-Level: Measuring Where Code Graphs Help Repository Agents**
+**File-Level Is Not Symbol-Level: What Code Graphs Miss and the Issue Already States**
 
-Subtitle: *A 300-task symbol-level benchmark, five graph strategies at equal budget, and the arithmetic that caps them*
+Subtitle: *300 tasks, five graph strategies, one budget: the graph adds nothing detectable; the source an issue quotes is worth 8.6 points*
 
 ---
 
@@ -20,7 +20,7 @@ Subtitle: *A 300-task symbol-level benchmark, five graph strategies at equal bud
 
 Repository-level coding agents are evaluated on whether they resolve an issue, and the retrieval that feeds them is usually reported at file granularity. We measure the other granularity. On 300 SWE-bench Lite tasks across 12 Python repositories we extract the **354 symbols the reference patches actually touch** and ask how often retrieval surfaces them. The same ranking that recovers **62.4%** of gold files at rank 10 recovers **27.5%** of gold symbols: a 2.3× gap that is the real frontier, not an artefact.
 
-We then test five ways of adding a code graph — reranking, slot substitution at one and two hops, score fusion, fusion over only deterministically resolved edges, and personalised PageRank — under an identical candidate pool and character budget. **No graph arm improves symbol-level recall, and three significantly degrade file-level recall.** A one-hop ball is 0.42% gold against 3.1% per text slot, so a graph slot buys a candidate seven times less likely to be right. The gap is a budget, not a granularity: given the right file, ten slots recover 66.5% of gold symbols. Indexing the source an issue quotes — text our symbol documents never contain — takes the same ten slots from 27.5% to **35.2%** (p < 0.001), and to **68.3%** on the 23% of tasks whose issue pastes the offending line. We release the benchmark and the harness.
+We then test five ways of adding a code graph — reranking, slot substitution at one and two hops, score fusion, fusion over only deterministically resolved edges, and personalised PageRank — under an identical candidate pool and character budget. **No graph arm improves symbol-level recall, and three significantly degrade file-level recall.** A one-hop ball is 0.42% gold against 3.1% per text slot, so a graph slot buys a candidate seven times less likely to be right. The gap is a budget, not a granularity: given the right file, ten slots recover 66.5% of gold symbols. A ranker over sixteen cheap features, plus an index of the source an issue quotes, takes the same ten slots to **36.1%** (p < 0.001) and to **74.6%** on the 23% of tasks whose issue pastes the offending line. We release the benchmark and the harness.
 
 ---
 
@@ -28,7 +28,7 @@ We then test five ways of adding a code graph — reranking, slot substitution a
 
 An agent that cannot see a repository must search it: the context holds a few hundred symbols, the repository tens of thousands, and everything downstream depends on the right symbol being among the few.
 
-LocAgent reports 92.7% file-level accuracy on SWE-bench-style tasks [2]. Those numbers are real and also easy: a large module holds dozens of definitions, and an agent that opens the right file still has to find the one function the fix belongs in.
+LocAgent reports 92.7% file-level accuracy on SWE-bench-style tasks [2]. They are also easy: a large module holds dozens of definitions, and an agent that opens the right file still has to find the one function the fix belongs in.
 
 We measure the fine granularity. For each of 300 SWE-bench Lite tasks we take the reference patch, map every changed line to its enclosing definition, and record the symbols the fix touched. The same ranking that finds 62.4% of gold files at rank 10 finds 27.5% of gold symbols. **The gap is 2.3×, and it is not an artefact — it is one list, scored two ways.**
 
@@ -44,7 +44,7 @@ The explanation is arithmetic. One-hop balls reach a gold symbol in 13% of tasks
 
 **Repository-level benchmarks.** SWE-bench and its Lite and Verified subsets score whether a patch makes the failing tests pass [1], and say nothing about whether the model could have found the code. Our targets derive from SWE-bench Lite's patches, but symbol-level retrieval is orthogonal to resolved rate and reported as such, not as a proxy.
 
-**Agents over repositories.** SWE-agent fixes the interface and lets the model act [5]; LocAgent navigates with graph structure [2]; ARISE builds a repository graph and lifts Function R@1 from 0.43 to 0.60 [3]. These systems co-design retrieval with a model, so their numbers are not comparable to ours: our retriever is raw BM25 with no model in the loop, so the graph's marginal value is the only thing that varies.
+**Agents over repositories.** SWE-agent fixes the interface and lets the model act [5]; LocAgent navigates with graph structure [2]; ARISE builds a repository graph and lifts Function R@1 from 0.43 to 0.60 [3]. These systems co-design retrieval with a model, so their numbers are not comparable to ours: the graph's marginal value is the only thing that varies.
 
 **Code graphs.** PyCG reports 99.2% precision and 69.9% recall on its own benchmark [4]; CodexGraph turns a repository into a queryable code graph [6], and RepoAtlas maintains evolving repository views for agents [7]. We report the resolution rate of ours — 46% of call sites definite — and the ceiling that bounds what one-hop expansion can contribute.
 
@@ -159,7 +159,7 @@ Conversion is not the failure. Diffusion places 18 of the 41 reachable symbols i
 | learned ranker, 16 features | 0.332 | +0.057 (0.019, 0.096) | 31/14 | 0.016 |
 | + evidence, 5 slots | **0.361** | **+0.086 (0.046, 0.126)** | **39/13** | **<0.001** |
 
-The learned combination is worth 5.7 points on repositories it has never seen; the evidence override adds 2.9 on top (12 wins, 3 losses, p = 0.035). Removing the four graph features costs 1.7 points with an interval that includes zero — 12 wins, 8 losses, p = 0.50: **in a ranker free to use them in any combination, the graph's contribution is not detectable.**
+The learned combination is worth 5.7 points on repositories it has never seen; the evidence override adds 2.9 (12 wins, 3 losses, p = 0.035). Removing the four graph features costs 1.7 points with an interval that includes zero — 12 wins, 8 losses, p = 0.50: **in a ranker free to use them in any combination, the graph's contribution is not detectable.**
 
 *Table 6 — the same arm, split by what the issue offers*
 
@@ -169,7 +169,7 @@ The learned combination is worth 5.7 points on repositories it has never seen; t
 | names a path or a frame only | 71 | 0.222 | 0.254 | +0.032 |
 | neither | 153 | 0.248 | 0.245 | −0.003 |
 
-The aggregate is a large effect on a quarter of the tasks and nothing elsewhere: on the 66 whose issue quotes source the arm reaches **74.6%**, on the 71 that name a file or line it moves 3 points, on the 153 that do neither not at all. Naming a file barely helps: it was already found 62.4% of the time. What pays is indexing the *body*, where the pasted line lives, and the body is exactly what our symbol documents never contained.
+The aggregate is a large effect on a quarter of the tasks: on the 66 whose issue quotes source the arm reaches **74.6%**, on the 71 that name a file or line it moves 3 points, on the 153 that do neither not at all. Naming a file barely helps: it was already found 62.4% of the time. What pays is indexing the *body*, where the pasted line lives, and the body is exactly what our symbol documents never contained.
 
 **Reproducibility.** Each number here is re-derived from the released JSONL by a 160-assertion check script, so a claim that drifts from the data fails the build rather than the review.
 
@@ -179,7 +179,7 @@ The aggregate is a large effect on a quarter of the tasks and nothing elsewhere:
 
 The practical claim is a reprioritisation. One-hop expansion is not where the error is: 88.1% of gold symbols are more than one hop from a strong text seed, and the exchange rate is seven to one against. The margin is in the source an issue quotes, and in candidate generation for the 27.6% of tasks whose gold never enters a top-500 pool.
 
-The measurement claim is about granularity. File-level numbers near 90% are quoted as evidence that the hard part is over; the same ranking is 62.4% on files and 27.5% on symbols — a different task.
+The measurement claim is about granularity: file-level numbers near 90% are quoted as evidence that the hard part is over, yet the same ranking is 62.4% on files and 27.5% on symbols.
 
 One thing would not overturn it: a stronger reranker over the same pool. A perfect text reranker reaches 0.600 and a perfect reranker over pool plus neighbours 0.630, so the graph's entire headroom is three points. What would overturn it is a different pool — a retriever that draws candidates by meaning rather than by name — or a graph built by type inference, since PyCG reports 99.2% precision at 69.9% recall [4] and our 46% is a property of the builder. Both replace a component we held fixed.
 
@@ -193,7 +193,7 @@ Python only, though so are most benchmark tasks. The eight-arm comparison uses o
 
 ## 8. Conclusion (90 words)
 
-Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Eight graph arms, none of which improves symbol-level recall and three of which significantly hurt file-level recall. The arithmetic explains why: an 11.9-point reach ceiling, a ball that is 0.42% gold against 3.1% for a text slot, and a graph headroom of three points even with perfect reranking. The same ten slots reach **35.2%** once they index the source the issue quotes — which is the difference between inferring structure and reading it.
+Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Eight graph arms, none of which improves symbol-level recall and three of which significantly hurt file-level recall. The arithmetic explains why: an 11.9-point reach ceiling, a ball that is 0.42% gold against 3.1% for a text slot, and a graph headroom of three points even with perfect reranking. The same ten slots reach **36.1%** once a ranker indexes the source the issue quotes — which is the difference between inferring structure and reading it.
 
 ---
 
