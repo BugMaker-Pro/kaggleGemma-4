@@ -4,7 +4,7 @@
 > Mandatory sections (missing any = ineligible): Title + Subtitle, Abstract, Introduction, Research description (methods & experiments), Related works & citations.
 > Protocol and changelog: [docs/paper-topic.md](../docs/paper-topic.md). Official rules: [docs/kaggle-paper-track-raw.md](../docs/kaggle-paper-track-raw.md).
 >
-> **Draft status**: no placeholders left. Body is 2,975 words (`tools/wordcount.py`); every number is re-derived from `data/*.jsonl` by `tools/audit_numbers.py` (100+ assertions, 0 failures).
+> **Draft status**: no placeholders left. Body is 2,969 words (`tools/wordcount.py`); every number is re-derived from `data/*.jsonl` by `tools/audit_numbers.py` (100+ assertions, 0 failures).
 
 ---
 
@@ -20,7 +20,7 @@ Subtitle: *A 300-task symbol-level benchmark, five graph strategies at equal bud
 
 Repository-level coding agents are evaluated on whether they resolve an issue, and the retrieval that feeds them is usually reported at file granularity. We measure the other granularity. On 300 SWE-bench Lite tasks across 12 Python repositories we extract the **354 symbols the reference patches actually touch** and ask how often retrieval surfaces them. The same ranking that recovers **62.4%** of gold files at rank 10 recovers **27.5%** of gold symbols: a 2.3× gap that is the real frontier, not an artefact.
 
-We then test five ways of adding a code graph — reranking, slot substitution at one and two hops, score fusion, fusion over only deterministically resolved edges, and personalised PageRank — under an identical candidate pool and character budget. **No graph arm improves symbol-level recall, and three significantly degrade file-level recall.** A one-hop ball is 0.42% gold against 3.1% per text slot, so a graph slot buys a candidate seven times less likely to be right. The gap is a budget, not a granularity: given the right file, ten slots recover 66.5% of gold symbols. Reading the structure the issue already states — a traceback line, a named path, a pasted line of source — takes the same ten slots to **0.352** (p < 0.001) with fewer characters. We release the benchmark and the harness.
+We then test five ways of adding a code graph — reranking, slot substitution at one and two hops, score fusion, fusion over only deterministically resolved edges, and personalised PageRank — under an identical candidate pool and character budget. **No graph arm improves symbol-level recall, and three significantly degrade file-level recall.** A one-hop ball is 0.42% gold against 3.1% per text slot, so a graph slot buys a candidate seven times less likely to be right. The gap is a budget, not a granularity: given the right file, ten slots recover 66.5% of gold symbols. Indexing the source an issue quotes — text our symbol documents never contain — takes the same ten slots from 27.5% to **35.2%** (p < 0.001), and to **68.3%** on the 23% of tasks whose issue pastes the offending line. We release the benchmark and the harness.
 
 ---
 
@@ -34,7 +34,7 @@ We measure the fine granularity. For each of 300 SWE-bench Lite tasks we take th
 
 One instance makes it concrete. `matplotlib__matplotlib-24970` reports NumPy 1.24 deprecation warnings, and its traceback prints the file and the line numbers, so the file is never in doubt: every arm puts `lib/matplotlib/colors.py` in its top five files. Not one puts the definition that has to change — `Colormap.__call__` — in its top ten, though the 200-candidate pool contains it and `__call__` shares no vocabulary with the issue. The file was handed over; the symbol was not.
 
-Second, we test the standard remedy: build a call graph, expand from a strong text hit, let structure carry the rest. We implement five strategies in eight arms, holding everything else fixed. None of the graph arms improves symbol-level recall at ten slots — not even personalised PageRank — and the most aggressive costs 4.8 points of file-level recall (p = 0.004). What does gain is the structure the issue already states (§5).
+Second, we test the standard remedy: build a call graph, expand from a strong text hit, let structure carry the rest. We implement five strategies in eight arms, holding everything else fixed. None of the graph arms improves symbol-level recall at ten slots — not even personalised PageRank — and the most aggressive costs 4.8 points of file-level recall (p = 0.004). What does gain is the source the issue quotes (§5).
 
 The explanation is arithmetic. One-hop balls reach a gold symbol in 13% of tasks but are 0.42% gold against 3.1% per text slot, so a graph slot buys a candidate seven times less likely to be right. And 54% of the call sites that would carry the hop resolve to no definite target.
 
@@ -149,19 +149,26 @@ Conversion is not the failure. Diffusion places 18 of the 41 reachable symbols i
 
 **Where the gap is.** The ten slots are a budget: recall@10 ≈ P(gold file selected) × E[recovered | depth], and the product stays near 0.25 whether the slots go to one file or ten. Given the *right* file, ten slots recover **66.5%** of gold symbols, 2.4× the baseline: what is missing is file precision at small k, not symbol ranking.
 
-**The issue is a structured bug report.** BM25 sees a bag of words, but many issues also state *where*: a traceback names the file and the line, a path names the file, a paste quotes the body. Each is cheap to read — a frame resolves through the symbol table we already built, a path is a suffix match, and a quote is found by indexing the candidate's body, which our index otherwise never contains. Table 5 adds the channels one at a time, under the same ten slots.
+**The issue quotes the code.** BM25 sees a bag of words. Two properties of an issue survive only if something looks for them: it names files and traceback lines, and it often *pastes* the offending source. The first is nearly free and nearly worthless; the second is where everything is.
 
-*Table 5 — evidence channels, paired against BM25 (n = 290)*
+*Table 5 — evidence channels (n = 290)*
 
 | ranking | r@1 | r@10 | Δr@10 (95% CI) | p | chars |
 | --- | ---: | ---: | --- | ---: | ---: |
 | BM25 | 0.091 | 0.275 | — | — | 1615 |
-| best file at depth 5/5 | 0.095 | 0.305 | +0.030 (0.004, 0.057) | 0.031 | 1579 |
 | + frame and named path | 0.113 | 0.323 | +0.048 (0.014, 0.082) | 0.005 | 1517 |
 | + quoted body | 0.130 | 0.335 | +0.060 (0.032, 0.089) | <0.001 | 1574 |
 | all three | 0.131 | **0.352** | **+0.077 (0.043, 0.113)** | <0.001 | **1535** |
 
-The effect is where the signals are: on the **137 tasks (47%)** whose issue names a path, a frame or a quote, recall@10 goes from 30.5% to **44.6%**; on the other 153 it does not move (24.8% to 26.8%). The aggregate +7.7 is a weighted average of a large effect on half the tasks and none on the rest. Fourteen variants were run across the three channels; the reported one was fixed before the final run, its neighbours land between 0.340 and 0.352, and the capped build trades 0.4 points for three fewer losses. Nothing here is a model: every channel is string matching against a table we already have.
+*Table 6 — the same arm, split by what the issue offers*
+
+| subset | n | BM25 | evidence | Δ |
+| --- | ---: | ---: | ---: | ---: |
+| quotes source from the gold body | 66 | 0.394 | **0.683** | **+0.289** |
+| names a path or a frame only | 71 | 0.222 | 0.225 | +0.004 |
+| neither | 153 | 0.248 | 0.268 | +0.020 |
+
+The aggregate is a weighted average of a very large effect on 23% of the tasks and almost nothing on the rest: excluding every task that quotes code, the arm gains 1.5 points. Naming a file does not help, even though 41.7% of issues name one — the file was already found 62.4% of the time, so the channel mostly constrains cases that were not ambiguous. What pays is indexing the *body*, where the pasted line lives, and the body is exactly what our symbol documents never contained. Fourteen variants were run; the reported one was fixed before the final run, its neighbours land between 0.340 and 0.352, and the capped build trades 0.4 points for three fewer losses.
 
 **Where the graph helps.** Astropy is the one repository with a clear gain (0.458 → 0.792, six tasks); five repositories have zero one-hop reach and can only lose. With only 46% of edges definite, restricting expansion to the definite subgraph does not help either.
 
@@ -171,7 +178,7 @@ The effect is where the signals are: on the **137 tasks (47%)** whose issue name
 
 ## 6. Discussion (300 words)
 
-The practical claim is a reprioritisation. One-hop expansion is not where the error is: 88.1% of gold symbols are more than one hop from a strong text seed, and the exchange rate is seven to one against. The margin is in what the issue already states, and in candidate generation for the 27.6% of tasks whose gold never enters a top-500 pool.
+The practical claim is a reprioritisation. One-hop expansion is not where the error is: 88.1% of gold symbols are more than one hop from a strong text seed, and the exchange rate is seven to one against. The margin is in the source an issue quotes, and in candidate generation for the 27.6% of tasks whose gold never enters a top-500 pool.
 
 The measurement claim is about granularity. File-level numbers near 90% are quoted as evidence that the hard part is over; the same ranking is 62.4% on files and 27.5% on symbols — a different task, not a tighter definition of success.
 
@@ -187,7 +194,7 @@ Python only, though so are most benchmark tasks we compare against. One retrieve
 
 ## 8. Conclusion (90 words)
 
-Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Eight graph arms, none of which improves symbol-level recall and three of which significantly hurt file-level recall. The arithmetic explains why: an 11.9-point reach ceiling, a ball that is 0.42% gold against 3.1% for a text slot, and a graph headroom of three points even with perfect reranking. The same ten slots reach **35.2%** once they are spent on what the issue already states — which is the difference between inferring structure and reading it.
+Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Eight graph arms, none of which improves symbol-level recall and three of which significantly hurt file-level recall. The arithmetic explains why: an 11.9-point reach ceiling, a ball that is 0.42% gold against 3.1% for a text slot, and a graph headroom of three points even with perfect reranking. The same ten slots reach **35.2%** once they index the source the issue quotes — which is the difference between inferring structure and reading it.
 
 ---
 
@@ -220,16 +227,18 @@ Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Eig
 | 11 | 22.8% of issues quote the gold symbol's body | `tools/body_evidence.py` | ✅ measured |
 | 12 | frame + path + quoted body reach 0.352 (p<0.001, 30W/4L) | Table 5 | ✅ measured |
 | 13 | the capped variant gives 0.348 with one loss instead of four | `tools/run_combined.py` | ✅ measured |
-| 14 | only 46% of call sites resolve | §4, §5 | ✅ measured on django |
-| 15 | precise-only edges do not rescue the arms | Table 2 | ✅ measured |
-| 16 | a perfect reranker's graph headroom is 3 points (0.600 → 0.630) | Table 3 | ✅ measured |
-| 17 | the gap is the remaining frontier for agents | — | ⬜ argument, §6 |
+| 14 | the gain is all in the 66 tasks that quote code (0.394 → 0.683) | Table 6 | ✅ measured |
+| 15 | excluding those tasks the arm gains 1.5 points | `tools/sensitivity.py` | ✅ measured |
+| 16 | only 46% of call sites resolve | §4, §5 | ✅ measured on django |
+| 17 | precise-only edges do not rescue the arms | Table 2 | ✅ measured |
+| 18 | a perfect reranker's graph headroom is 3 points (0.600 → 0.630) | Table 3 | ✅ measured |
+| 19 | the gap is the remaining frontier for agents | — | ⬜ argument, §6 |
 
 ---
 
 ## Submission checklist
 
-- [x] **≤ 3,000 words** (counted with `tools/wordcount.py`: body 2,975)
+- [x] **≤ 3,000 words** (counted with `tools/wordcount.py`: body 2,969)
 - [x] five mandatory sections present
 - [ ] not previously published (Non-Archival permits posting only after submission)
 - [x] every number traceable to `data/*.jsonl` via `tools/audit_numbers.py` (100+ assertions)

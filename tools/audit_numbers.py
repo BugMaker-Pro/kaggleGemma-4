@@ -212,6 +212,27 @@ def main(argv=None) -> int:
     check("no signal: combo r@10", 0.268,
           statistics.fmean(row["arms"]["combo"]["recall@10"] for row in cold), 0.002)
 
+    from tools.sensitivity import main as _sensitivity  # noqa: F401,PLC0415
+
+    def quoted(instance_id: str) -> bool:
+        row = next((item for item in census if item["instance_id"] == instance_id), None)
+        return bool(row and row["line_quote"])
+
+    def named_only(instance_id: str) -> bool:
+        row = next((item for item in issue if item["instance_id"] == instance_id), None)
+        return bool(row and (row["paths"] or row["frames"])) and not quoted(instance_id)
+
+    buckets = {
+        "quotes code": [row for row in combo if quoted(row["instance_id"])],
+        "names only": [row for row in combo if named_only(row["instance_id"])],
+    }
+    for label, claimed_n, claimed_delta in (("quotes code", 66, 0.289), ("names only", 71, 0.004)):
+        group = buckets[label]
+        check(f"{label}: n", claimed_n, len(group), 0)
+        delta = (statistics.fmean(row["arms"]["combo"]["recall@10"] for row in group)
+                 - statistics.fmean(row["arms"]["text"]["recall@10"] for row in group))
+        check(f"{label}: delta", claimed_delta, delta, 0.002)
+
     print("\n== budget decomposition and the file vote ==")
     ff = [json.loads(x) for x in (ROOT / "data" / "experiment_ff.jsonl").open(encoding="utf-8") if x.strip()]
     ff = [row for row in ff if row.get("arms")]
