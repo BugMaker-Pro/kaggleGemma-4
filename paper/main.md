@@ -20,7 +20,7 @@ Subtitle: *A 300-task symbol-level benchmark, five graph strategies at equal bud
 
 Repository-level coding agents are evaluated on whether they resolve an issue, and the retrieval that feeds them is usually reported at file granularity. We measure the other granularity. On 300 SWE-bench Lite tasks across 12 Python repositories we extract the **354 symbols the reference patches actually touch** and ask how often retrieval surfaces them. The same ranking that recovers **62.4%** of gold files at rank 10 recovers **27.5%** of gold symbols: a 2.3× gap that is the real frontier, not an artefact.
 
-We then test five ways of adding a code graph — reranking, slot substitution at one and two hops, score fusion, fusion over only deterministically resolved edges, and personalised PageRank — under an identical candidate pool and character budget. **No graph arm improves symbol-level recall, and three significantly degrade file-level recall.** A one-hop ball is 0.42% gold against 3.1% per text slot, so a graph slot buys a candidate seven times less likely to be right. The gap is a budget, not a granularity: given the right file, ten slots recover 66.5% of gold symbols. Spending five slots in the file a lexical vote prefers, and five on text, gives **0.305** against 0.275 (p = 0.031). We release the benchmark and the harness.
+We then test five ways of adding a code graph — reranking, slot substitution at one and two hops, score fusion, fusion over only deterministically resolved edges, and personalised PageRank — under an identical candidate pool and character budget. **No graph arm improves symbol-level recall, and three significantly degrade file-level recall.** A one-hop ball is 0.42% gold against 3.1% per text slot, so a graph slot buys a candidate seven times less likely to be right. The gap is a budget, not a granularity: given the right file, ten slots recover 66.5% of gold symbols. Reading the structure the issue already states — a traceback line, a named path, a pasted line of source — takes the same ten slots to **0.352** (p < 0.001) with fewer characters. We release the benchmark and the harness.
 
 ---
 
@@ -28,13 +28,13 @@ We then test five ways of adding a code graph — reranking, slot substitution a
 
 An agent that cannot see a repository must search it: the context holds a few hundred symbols, the repository tens of thousands, and everything downstream depends on the right symbol being among the few.
 
-The literature reports this step mostly at file granularity: LocAgent reports 92.7% file-level accuracy on SWE-bench-style tasks [2]. Those numbers are real and also easy: a large module holds dozens of definitions, and an agent that opens the right file still has to find the one function the fix belongs in.
+LocAgent reports 92.7% file-level accuracy on SWE-bench-style tasks [2]. Those numbers are real and also easy: a large module holds dozens of definitions, and an agent that opens the right file still has to find the one function the fix belongs in.
 
 We measure the fine granularity. For each of 300 SWE-bench Lite tasks we take the reference patch, map every changed line to its enclosing definition, and record the symbols the fix touched. The same ranking that finds 62.4% of gold files at rank 10 finds 27.5% of gold symbols. **The gap is 2.3×, and it is not an artefact — it is one list, scored two ways.**
 
 One instance makes it concrete. `matplotlib__matplotlib-24970` reports NumPy 1.24 deprecation warnings, and its traceback prints the file and the line numbers, so the file is never in doubt: every arm puts `lib/matplotlib/colors.py` in its top five files. Not one puts the definition that has to change — `Colormap.__call__` — in its top ten, though the 200-candidate pool contains it and `__call__` shares no vocabulary with the issue. The file was handed over; the symbol was not.
 
-Second, we test the standard remedy: build a call graph, expand from a strong text hit, let structure carry the rest. We implement five strategies in eight arms, holding everything else fixed. None of the graph arms improves symbol-level recall at ten slots — not even personalised PageRank — and the most aggressive costs 4.8 points of file-level recall (p = 0.004). One arm does gain, and it uses no graph at all (§5).
+Second, we test the standard remedy: build a call graph, expand from a strong text hit, let structure carry the rest. We implement five strategies in eight arms, holding everything else fixed. None of the graph arms improves symbol-level recall at ten slots — not even personalised PageRank — and the most aggressive costs 4.8 points of file-level recall (p = 0.004). What does gain is the structure the issue already states (§5).
 
 The explanation is arithmetic. One-hop balls reach a gold symbol in 13% of tasks but are 0.42% gold against 3.1% per text slot, so a graph slot buys a candidate seven times less likely to be right; diffusion converts 44% of what it can reach and still nets −2. Meanwhile 54% of the call sites that would carry the hop resolve to no definite target.
 
@@ -44,7 +44,7 @@ The explanation is arithmetic. One-hop balls reach a gold symbol in 13% of tasks
 
 **Repository-level benchmarks.** SWE-bench and its Lite and Verified subsets score whether a patch makes the failing tests pass [1], and say nothing about whether the model could have found the code. Our targets derive from SWE-bench Lite's patches, but symbol-level retrieval is orthogonal to resolved rate and reported as such, not as a proxy.
 
-**Agents over repositories.** SWE-agent fixes the interface and lets the model act [5]; LocAgent navigates with graph structure [2]; ARISE builds a repository graph and lifts Function R@1 from 0.43 to 0.60 [3]. These systems co-design retrieval with a model, so their numbers are not comparable to ours: our retriever is raw BM25 with no model in the loop, so the graph's marginal value is the only thing that varies. ARISE's coverage metric counts gold *lines* in an 8,000-token bundle, not graph coverage.
+**Agents over repositories.** SWE-agent fixes the interface and lets the model act [5]; LocAgent navigates with graph structure [2]; ARISE builds a repository graph and lifts Function R@1 from 0.43 to 0.60 [3]. These systems co-design retrieval with a model, so their numbers are not comparable to ours: our retriever is raw BM25 with no model in the loop, so the graph's marginal value is the only thing that varies.
 
 **Code graphs.** PyCG reports 99.2% precision and 69.9% recall on its own benchmark [4]; CodexGraph turns a repository into a queryable code graph [6], and RepoAtlas maintains evolving repository views for agents [7]. We report the resolution rate of ours — 46% of call sites definite — and the ceiling that bounds what one-hop expansion can contribute.
 
@@ -54,7 +54,7 @@ The explanation is arithmetic. One-hop balls reach a gold symbol in 13% of tasks
 
 **Tasks.** All 300 instances of SWE-bench Lite, 12 repositories, dominated by django (114) and sympy (77). We fetch each instance's base commit as a tarball (297 distinct commits, 2.5 GB). We never execute the repositories or their tests; the measurement is over source.
 
-**Gold symbols.** For each task we parse the reference patch, and map every changed line to the innermost definition containing it in the *pre-fix* tree: a deleted line anchors itself, an added line anchors the line before it, since the added text does not exist before the fix. The result is 354 definitions over 290 tasks; the other 10 change only module-level statements and contribute no symbol. We record rather than drop the 87 changed lines outside any definition — module-level code, decorators, imports — because a benchmark that discards hard cases reports inflated numbers. A symbol is `<module>.<qualname>`, where the module is the repository-relative path without `.py`, so a patch header and a graph node agree without a lookup table; file-level metrics group the same ranking by file.
+**Gold symbols.** For each task we parse the reference patch, and map every changed line to the innermost definition containing it in the *pre-fix* tree: a deleted line anchors itself, an added line anchors the line before it, since the added text does not exist before the fix. The result is 354 definitions over 290 tasks; the other 10 change only module-level statements and contribute no symbol. We record rather than drop the 87 changed lines outside any definition — module-level code, decorators, imports — because a benchmark that discards hard cases reports inflated numbers. A symbol is `<module>.<qualname>`, where the module is the repository-relative path without `.py`; file-level metrics group the same ranking by file.
 
 **Query and budget.** The issue text as given: no rewrite, no file hints, no LLM preprocessing — the weakest defensible query, so that no improvement can be attributed to query engineering. Every arm fills exactly 10 slots, and we report the characters those ten symbols would add to a prompt, so an arm cannot win by retrieving more.
 
@@ -78,7 +78,7 @@ The explanation is arithmetic. One-hop balls reach a gold symbol in 13% of tasks
 
 On a django snapshot (2,715 files, 38,651 nodes, 209,502 edges, 10.8 s) the distribution is 34.1% unresolved, 19.2% local, 15.6% import, 15.0% ambiguous, 11.2% unique, 4.9% external. **Only 46% of call sites resolve to a definite in-repository target** — the quality of the artefact the arms expand, and the reason `graph_fuse_precise` exists.
 
-**The arms.** Eight, all paired by task; `text` is the baseline and the other seven fold in the graph. `text` is BM25 over a document per symbol (path, qualified name, signature, docstring). `graph_rerank` promotes anything one hop from the top five seeds without changing the pool, so it cannot add a candidate. `graph_open` keeps the top five and fills slots 6–10 with their neighbours from the whole graph, padding from text if a seed has none — the only arm that can introduce a symbol BM25 never ranked; its two-hop variant fills from the distance-ordered two-hop ball instead. `graph_fuse` normalises BM25 to its top hit and lets a candidate inherit λ = 0.5 of its best adjacent seed's score, **fixed before the run and never tuned**; `graph_fuse_precise` fuses over only the definite 46%. `graph_ppr` is personalised PageRank — mass starts uniformly on the same five seeds, spreads over the same undirected graph, restarts with probability 0.15 (the convention, not a tuned value), 30 power iterations — and it is the only arm that scores the whole graph rather than a pool; `graph_ppr_text` adds half the diffusion mass to normalised BM25. Neighbours are unioned over `calls` and `inherits`, treated as undirected, and drawn round-robin so a hub cannot absorb the shortlist.
+**The arms.** Eight, all paired by task; `text` is BM25 over a per-symbol document (path, qualified name, signature, docstring), and the other seven fold in the graph. `graph_rerank` promotes anything one hop from the top five seeds without changing the pool, so it cannot add a candidate. `graph_open` keeps the top five and fills slots 6–10 with their neighbours from the whole graph — the only arm that can introduce a symbol BM25 never ranked; its two-hop variant fills from the distance-ordered ball. `graph_fuse` lets a candidate inherit λ = 0.5 of its best adjacent seed's score, **fixed before the run and never tuned**; `graph_fuse_precise` fuses over only the definite 46%. `graph_ppr` is personalised PageRank over the whole graph (restart 0.15, the convention, not tuned); `graph_ppr_text` adds half the diffusion mass to normalised BM25. Neighbours are unioned over `calls` and `inherits` and drawn round-robin so a hub cannot absorb the shortlist.
 
 **The file-level arm.** The one arm that ranks files rather than symbols scores each file by its best symbol's BM25 score, by the sum of its top three, and by the IDF-weighted overlap between issue tokens and path tokens; the three rankings are averaged by reciprocal rank — a Borda count with nothing to tune — and five slots go to the winning file, five to the text order.
 
@@ -88,7 +88,7 @@ On a django snapshot (2,715 files, 38,651 nodes, 209,502 edges, 10.8 s) the dist
 
 ## 5. Results (800 words)
 
-**Coverage is a sanity check, not a finding.** All 354 gold symbols resolve into the graph — expected, since extraction and builder share the `<module>.<qualname>` convention. It shows numerator and denominator agree, nothing more.
+**Coverage is a sanity check, not a finding.** All 354 gold symbols resolve into the graph — expected, since extraction and builder share the `<module>.<qualname>` convention.
 
 **The granularity gap is the headline.** Table 1, one ranking, two ways of scoring it.
 
@@ -145,13 +145,25 @@ Reranking survives a wider budget: +2.9 points at k = 20 (13 wins, 3 losses, p =
 
 One-hop expansion has an arithmetic ceiling: 38 of 290 tasks (13.1%; 41 of 354 symbols) have a gold symbol one hop from a top-five seed, so the arm can gain at most 11.9 points even at perfect conversion. Two hops lift the ceiling to 35.7% (111 tasks, 125 symbols), which is why the radius sweep looks promising.
 
-Conversion is not the failure. Diffusion places 18 of the 41 reachable symbols in its top ten — 44%, median rank 12 — and still lands below text, because 15 gained cost 17 lost. The rate is the finding: 9,855 neighbours hold 41 answers, 0.42%, against 3.1% gold per text slot. A graph slot buys a candidate seven times less likely to be right, so the graph must out-rank text by that factor merely to break even — and diffusion breaks exactly even.
+Conversion is not the failure. Diffusion places 18 of the 41 reachable symbols in its top ten — 44%, median rank 12 — and still lands below text, because 15 gained cost 17 lost. The rate is the finding: 9,855 neighbours hold 41 answers, 0.42%, against 3.1% gold per text slot. A graph slot buys a candidate seven times less likely to be right, and diffusion breaks exactly even.
 
 **Where the gap is.** Spending all ten slots inside the top k files never beats text (best −0.007, p = 1.00), but it decomposes the gap: recall@10 ≈ P(gold file selected) × E[recovered | depth], and the product is 0.222 / 0.268 / 0.257 / 0.241 / 0.275 for one, two, three, five files and full breadth. Given the *right* file, ten slots recover **66.5%** of gold symbols, 2.4× the baseline: what is missing is file precision at small k, not symbol ranking.
 
-**One arm gains, and it is not a graph arm.** A parameter-free vote over three lexical file scores — best symbol, sum of the top three, issue-to-path match — names the gold file first 34.5% of the time against 29.0%. Five slots in that file and five on text reach **0.305** against 0.275 (14 wins, 4 losses, p = 0.031, 36 fewer characters). The split was fixed before the run; a post-hoc sweep moves the answer only between 0.287 and 0.305, significant at three to five slots (p = 0.016–0.039), so the choice is not load-bearing. Adding file-level PageRank gives 0.300. Many arms were run, so we report this as a direction.
+**The issue is a structured bug report.** BM25 sees a bag of words, but many issues also state *where*: a traceback names the file and the line, a path names the file, a paste quotes the body. Each is cheap to read — a frame resolves through the symbol table we already built, a path is a suffix match, and a quote is found by indexing the candidate's body, which our index otherwise never contains. Table 5 adds the channels one at a time, under the same ten slots.
 
-**Where the graph helps.** Astropy is the one repository with a clear gain (0.458 → 0.792, six tasks); five repositories have zero one-hop reach and can only lose. With only 46% of edges definite, restricting expansion to the definite subgraph does not help either — structural, not noise.
+*Table 5 — evidence channels, paired against BM25 (n = 290)*
+
+| ranking | r@1 | r@10 | Δr@10 (95% CI) | p | chars |
+| --- | ---: | ---: | --- | ---: | ---: |
+| BM25 | 0.091 | 0.275 | — | — | 1615 |
+| best file at depth 5/5 | 0.095 | 0.305 | +0.030 (0.004, 0.057) | 0.031 | 1579 |
+| + frame and named path | 0.113 | 0.323 | +0.048 (0.014, 0.082) | 0.005 | 1517 |
+| + quoted body | 0.130 | 0.335 | +0.060 (0.032, 0.089) | <0.001 | 1574 |
+| all three | 0.131 | **0.352** | **+0.077 (0.043, 0.113)** | <0.001 | **1535** |
+
+The channels are independent and they add: 27.5% becomes 35.2%, with 30 tasks up and four down, on a shortlist that is eighty characters *shorter*. Nothing here is a model — every channel is string matching against a table we already have. And the two halves of the paper now agree: an inference about structure has three points of headroom, a statement of structure has thirty.
+
+**Where the graph helps.** Astropy is the one repository with a clear gain (0.458 → 0.792, six tasks); five repositories have zero one-hop reach and can only lose. With only 46% of edges definite, restricting expansion to the definite subgraph does not help either.
 
 **Reproducibility.** Each number here is re-derived from the released JSONL by a 70-assertion check script, so a claim that drifts from the data fails the build rather than the review.
 
@@ -159,7 +171,7 @@ Conversion is not the failure. Diffusion places 18 of the 41 reachable symbols i
 
 ## 6. Discussion (300 words)
 
-The practical claim is a reprioritisation. One-hop expansion is not where the error is: 88.1% of gold symbols are more than one hop from a strong text seed, half the call sites that would carry the hop do not resolve, and the exchange rate is seven to one against. The margin is in file-level aggregation, and in candidate generation for the 27.6% of tasks whose gold never enters a top-500 pool.
+The practical claim is a reprioritisation. One-hop expansion is not where the error is: 88.1% of gold symbols are more than one hop from a strong text seed, half the call sites that would carry the hop do not resolve, and the exchange rate is seven to one against. The margin is in what the issue already states, and in candidate generation for the 27.6% of tasks whose gold never enters a top-500 pool.
 
 The measurement claim is about granularity. File-level numbers near 90% are quoted as evidence that the hard part is over; the same ranking is 62.4% on files and 27.5% on symbols — a different task, not a tighter definition of success.
 
@@ -169,13 +181,13 @@ One thing would not overturn it: a stronger reranker over the same pool. A perfe
 
 ## 7. Limitations (130 words)
 
-Python only, though so are most benchmark tasks we compare against. One retriever: BM25, with no dense retriever or cross-encoder, so the result is about the graph's marginal value *given this ranking*, not about graphs in general. Diffusion's restart probability and the fusion weight were fixed at conventional values, not tuned. We measure retrieval, not resolution: a better shortlist is necessary for a better patch, not sufficient.
+Python only, though so are most benchmark tasks we compare against. One retriever: BM25, with no dense retriever or cross-encoder, so the result is about the graph's marginal value *given this ranking*, not about graphs in general. We measure retrieval, not resolution: a better shortlist is necessary for a better patch, not sufficient.
 
 ---
 
 ## 8. Conclusion (90 words)
 
-Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Eight graph arms, none of which improves symbol-level recall and three of which significantly hurt file-level recall. The arithmetic that explains it — an 11.9-point reach ceiling, a ball that is 0.42% gold against 3.1% for a text slot, and 66.5% recovery once the file is known — says where the next slot should go: to file precision, not to graph expansion. The one arm that gains does exactly that (0.305, p = 0.031).
+Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Eight graph arms, none of which improves symbol-level recall and three of which significantly hurt file-level recall. The arithmetic explains why: an 11.9-point reach ceiling, a ball that is 0.42% gold against 3.1% for a text slot, and a graph headroom of three points even with perfect reranking. The same ten slots reach **35.2%** once they are spent on what the issue already states — which is the difference between inferring structure and reading it.
 
 ---
 
@@ -202,12 +214,16 @@ Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Eig
 | 5 | the ball is 0.42% gold vs 3.1% per text slot | Table 3 + `tools/displacement.py` | ✅ measured |
 | 6 | the budget is a product: 0.222–0.275 across five allocations | `tools/decompose.py` | ✅ measured |
 | 7 | with the right file, ten slots recover 66.5% | `file_oracle`, run_filefirst | ✅ measured |
-| 8 | a lexical file vote + 5/5 split gives 0.305 (p=0.031) | `tools/analyse_filerank.py` | ✅ measured |
+| 8 | a lexical file vote + 5/5 split gives 0.305 (p=0.031) | Table 5 | ✅ measured |
 | 9 | adding file-level PageRank to the vote does not help (0.300) | `fr_borda_mix` ablation | ✅ measured |
-| 10 | only 46% of call sites resolve | §4, §5 | ✅ measured on django |
-| 11 | precise-only edges do not rescue the arms | Table 2 | ✅ measured |
-| 12 | the gap is the remaining frontier for agents | — | ⬜ argument, §6 |
-| 13 | a perfect reranker's graph headroom is 3 points (0.600 → 0.630) | Table 3 | ✅ measured |
+| 10 | 17.2% of issues carry a traceback frame, 41.7% a path | `tools/issue_evidence.py` | ✅ measured |
+| 11 | 22.8% of issues quote the gold symbol's body | `tools/body_evidence.py` | ✅ measured |
+| 12 | frame + path + quoted body reach 0.352 (p<0.001, 30W/4L) | Table 5 | ✅ measured |
+| 13 | the capped variant gives 0.348 with one loss instead of four | `tools/run_combined.py` | ✅ measured |
+| 14 | only 46% of call sites resolve | §4, §5 | ✅ measured on django |
+| 15 | precise-only edges do not rescue the arms | Table 2 | ✅ measured |
+| 16 | a perfect reranker's graph headroom is 3 points (0.600 → 0.630) | Table 3 | ✅ measured |
+| 17 | the gap is the remaining frontier for agents | — | ⬜ argument, §6 |
 
 ---
 

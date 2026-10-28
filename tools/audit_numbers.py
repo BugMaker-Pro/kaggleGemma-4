@@ -161,6 +161,39 @@ def main(argv=None) -> int:
         check("unresolved share", 0.341, counts["unresolved"] / total, 0.002)
         check("ambiguous share", 0.150, counts["ambiguous"] / total, 0.002)
 
+    print("\n== evidence channels ==")
+    ev = [json.loads(x) for x in (ROOT / "data" / "experiment_ev.jsonl").open(encoding="utf-8") if x.strip()]
+    ev = [row for row in ev if row.get("arms")]
+    body = [json.loads(x) for x in (ROOT / "data" / "experiment_body.jsonl").open(encoding="utf-8") if x.strip()]
+    body = [row for row in body if row.get("arms")]
+    combo = [json.loads(x) for x in (ROOT / "data" / "experiment_combo2.jsonl").open(encoding="utf-8") if x.strip()]
+    combo = [row for row in combo if row.get("arms")]
+
+    for name, rows_, arm, r10, delta, p in (
+        ("ev_soft", ev, "ev_soft", 0.323, 0.048, 0.005),
+        ("body_cap5", body, "body_cap5", 0.335, 0.060, 0.0),
+        ("combo", combo, "combo", 0.352, 0.077, 0.0),
+        ("combo_cap", combo, "combo_cap", 0.348, 0.073, 0.0),
+    ):
+        value = statistics.fmean(row["arms"][arm]["recall@10"] for row_ in [rows_] for row in row_)
+        check(f"{name} r@10", r10, value, 0.001)
+        stats = paired(rows_, "recall@10", arm)
+        check(f"{name} delta", delta, stats["delta"], 0.0015)
+        check(f"{name} p", p, round(stats["sign_p"], 3), 0.0015)
+    check("combo characters", 1535,
+          statistics.fmean(row["arms"]["combo"]["chars@10"] for row in combo), 2, fmt="{:.0f}")
+    check("combo wins", 30, sum(1 for row in combo
+                                if row["arms"]["combo"]["recall@10"] > row["arms"]["text"]["recall@10"]), 0)
+
+    issue = [json.loads(x) for x in (ROOT / "data" / "issue_evidence.jsonl").open(encoding="utf-8") if x.strip()]
+    census = [json.loads(x) for x in (ROOT / "data" / "body_evidence.jsonl").open(encoding="utf-8") if x.strip()]
+    check("issues naming a path", 0.417,
+          sum(1 for row in issue if row["paths"]) / len(issue), 0.003)
+    check("issues with a frame", 0.172,
+          sum(1 for row in issue if row["frames"]) / len(issue), 0.003)
+    check("issues quoting a body line", 0.228,
+          sum(1 for row in census if row["line_quote"]) / len(census), 0.003)
+
     print("\n== budget decomposition and the file vote ==")
     ff = [json.loads(x) for x in (ROOT / "data" / "experiment_ff.jsonl").open(encoding="utf-8") if x.strip()]
     ff = [row for row in ff if row.get("arms")]
@@ -227,8 +260,8 @@ def main(argv=None) -> int:
     print("\n== the draft still says the same thing ==")
     for token in ("62.4%", "27.5%", "2.3×", "0.42%", "3.1%", "11.9", "35.7",
                   "9,855", "44%", "46%", "seven times", "seven to one",
-                  "66.5%", "0.305", "34.5%", "29.0%", "p = 0.031",
-                  "23.9%", "25.8%"):
+                  "66.5%", "0.352", "0.335", "0.323", "p < 0.001",
+                  "22.8%", "17.2%", "41.7%", "23.9%", "25.8%"):
         present = token in paper
         print(f"  [{'ok  ' if present else 'FAIL'}] draft contains {token!r}")
         if not present:
