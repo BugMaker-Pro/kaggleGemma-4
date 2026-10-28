@@ -22,7 +22,7 @@ sys.path.insert(0, str(ROOT))
 
 from experiments.buildgraph import build_graph, read_snapshot  # noqa: E402
 from experiments.snapindex import SnapshotIndex  # noqa: E402
-from tools.analyse import paired  # noqa: E402
+from tools.analyse import paired, sign_test  # noqa: E402
 
 failures: list[str] = []
 
@@ -233,6 +233,44 @@ def main(argv=None) -> int:
                  - statistics.fmean(row["arms"]["text"]["recall@10"] for row in group))
         check(f"{label}: delta", claimed_delta, delta, 0.002)
 
+    print("\n== learned ranker ==")
+    ltr = [json.loads(x) for x in (ROOT / "data" / "combo_ltr.jsonl").open(encoding="utf-8") if x.strip()]
+    for arm, claimed in (("bm25", 0.275), ("ltr", 0.332), ("ltr_ev5", 0.361)):
+        check(f"{arm} r@10", claimed,
+              statistics.fmean(row[arm] for row in ltr), 0.002)
+    keys = sorted(row["instance_id"] for row in ltr)
+    index = {row["instance_id"]: row for row in ltr}
+    deltas = [index[key]["ltr_ev5"] - index[key]["bm25"] for key in keys]
+    check("ltr_ev5 delta", 0.086, statistics.fmean(deltas), 0.002)
+    wins = sum(1 for delta in deltas if delta > 0)
+    losses = sum(1 for delta in deltas if delta < 0)
+    check("ltr_ev5 wins", 39, wins, 0)
+    check("ltr_ev5 losses", 13, losses, 0)
+    check("ltr_ev5 p", 0.0004, round(sign_test(wins, losses), 4), 0.002)
+
+    def bucket(instance_id: str) -> str:
+        if quoted(instance_id):
+            return "quotes code"
+        row = next((item for item in issue if item["instance_id"] == instance_id), None)
+        if row and (row["paths"] or row["frames"]):
+            return "names only"
+        return "no signal"
+
+    groups: dict[str, list[dict]] = {}
+    for row in ltr:
+        groups.setdefault(bucket(row["instance_id"]), []).append(row)
+    for name, claimed_n, claimed_bm25, claimed_arm in (
+        ("quotes code", 66, 0.394, 0.746),
+        ("names only", 71, 0.222, 0.254),
+        ("no signal", 153, 0.248, 0.245),
+    ):
+        group = groups.get(name, [])
+        check(f"split {name}: n", claimed_n, len(group), 0)
+        check(f"split {name}: bm25", claimed_bm25,
+              statistics.fmean(row["bm25"] for row in group), 0.002)
+        check(f"split {name}: arm", claimed_arm,
+              statistics.fmean(row["ltr_ev5"] for row in group), 0.002)
+
     print("\n== budget decomposition and the file vote ==")
     ff = [json.loads(x) for x in (ROOT / "data" / "experiment_ff.jsonl").open(encoding="utf-8") if x.strip()]
     ff = [row for row in ff if row.get("arms")]
@@ -299,8 +337,8 @@ def main(argv=None) -> int:
     print("\n== the draft still says the same thing ==")
     for token in ("62.4%", "27.5%", "2.3×", "0.42%", "3.1%", "11.9", "35.7",
                   "9,855", "44%", "46%", "seven times", "seven to one",
-                  "66.5%", "0.352", "0.335", "0.323", "p < 0.001",
-                  "22.8%", "17.2%", "41.7%", "23.9%", "25.8%"):
+                  "66.5%", "0.361", "0.332", "74.6%", "p = 0.035",
+                  "22.8%", "17.2%", "41.7%", "23.9%", "25.8%", "0.352"):
         present = token in paper
         print(f"  [{'ok  ' if present else 'FAIL'}] draft contains {token!r}")
         if not present:

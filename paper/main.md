@@ -80,7 +80,7 @@ On a django snapshot (2,715 files, 38,651 nodes, 209,502 edges, 10.8 s) the dist
 
 **The arms.** Eight, all paired by task; `text` is BM25 over a per-symbol document (path, qualified name, signature, docstring), and the other seven fold in the graph. `graph_rerank` promotes anything one hop from the top five seeds without changing the pool, so it cannot add a candidate. `graph_open` keeps the top five and fills slots 6–10 with their neighbours from the whole graph — the only arm that can introduce a symbol BM25 never ranked; its two-hop variant fills from the distance-ordered ball. `graph_fuse` lets a candidate inherit λ = 0.5 of its best adjacent seed's score, **fixed before the run and never tuned**; `graph_fuse_precise` fuses over only the definite 46%. `graph_ppr` is personalised PageRank over the whole graph (restart 0.15, the convention, not tuned); `graph_ppr_text` adds half the diffusion mass to normalised BM25. Neighbours are unioned over `calls` and `inherits` and drawn round-robin so a hub cannot absorb the shortlist.
 
-**Two arms that do not use the graph.** The file arm ranks files by a Borda vote over three lexical scores — best symbol, sum of its top three, issue-to-path match — and gives five slots to the winner. The evidence arm reads what the issue states: a traceback frame resolves through the same symbol table, a named path is a suffix match, and a quoted line is found by indexing the candidate's *body* — text our symbol documents never contain — and scoring the longest run of tokens it shares with the issue. Each channel is capped and two slots always go to plain BM25.
+**Two more rankings.** The evidence arm reads what the issue states: a traceback frame resolves through the same symbol table we built, a named path is a suffix match, and a quoted line is found by indexing the candidate's *body* — text our symbol documents never contain — and scoring the longest run of tokens it shares with the issue. The learned arm puts sixteen such signals into one ranker, described in §5.
 
 **Statistics.** Per-task differences, so arms are compared on the same issue and repository: mean difference with a bootstrap 95% interval (2,000 resamples, fixed seed) plus an exact sign test. Ties dominate, so the sign test decides.
 
@@ -147,30 +147,31 @@ One-hop expansion has an arithmetic ceiling: 38 of 290 tasks (13.1%; 41 of 354 s
 
 Conversion is not the failure. Diffusion places 18 of the 41 reachable symbols in its top ten — 44%, median rank 12 — and still lands below text, because 15 gained cost 17 lost. The rate is the finding: 9,855 neighbours hold 41 answers, 0.42%, against 3.1% gold per text slot. A graph slot buys a candidate seven times less likely to be right, and diffusion breaks exactly even.
 
-**Where the gap is.** The ten slots are a budget: recall@10 ≈ P(gold file selected) × E[recovered | depth], and the product stays near 0.25 whether the slots go to one file or ten. Given the *right* file, ten slots recover **66.5%** of gold symbols, 2.4× the baseline: what is missing is file precision at small k, not symbol ranking.
+**Where the gap is.** The ten slots are a budget: recall@10 ≈ P(gold file selected) × E[recovered | depth], and the product stays near 0.25 whether the slots go to one file or ten. Given the *right* file, ten slots recover **66.5%** of gold symbols: what is missing is file precision at small k.
 
-**The issue quotes the code.** BM25 sees a bag of words. Two properties of an issue survive only if something looks for them: it names files and traceback lines, and it often *pastes* the offending source. The first is nearly free and nearly worthless; the second is where everything is.
+**A learned ranker, and what it does with the graph.** Sixteen features — lexical score and rank, body-quote overlap, path and frame matches, four graph statistics, size and shape terms — feed a LightGBM ranker trained on six repositories and tested on the other six, three seeds averaged, nothing tuned on the test fold. Table 5 gives the ladder.
 
-*Table 5 — evidence channels (n = 290)*
+*Table 5 — learned ranking and evidence, on unseen repositories (n = 290)*
 
-| ranking | r@1 | r@10 | Δr@10 (95% CI) | p | chars |
-| --- | ---: | ---: | --- | ---: | ---: |
-| BM25 | 0.091 | 0.275 | — | — | 1615 |
-| + frame and named path | 0.113 | 0.323 | +0.048 (0.014, 0.082) | 0.005 | 1517 |
-| + quoted body | 0.130 | 0.335 | +0.060 (0.032, 0.089) | <0.001 | 1574 |
-| all three | 0.131 | **0.352** | **+0.077 (0.043, 0.113)** | <0.001 | **1535** |
+| ranking | r@10 | Δ vs BM25 | W/L | p |
+| --- | ---: | ---: | --- | ---: |
+| BM25 | 0.275 | — | — | — |
+| learned ranker, 16 features | 0.332 | +0.057 (0.019, 0.096) | 31/14 | 0.016 |
+| + evidence, 5 slots | **0.361** | **+0.086 (0.046, 0.126)** | **39/13** | **<0.001** |
+
+The learned combination is worth 5.7 points on repositories it has never seen; the evidence override adds 2.9 on top (12 wins, 3 losses, p = 0.035). Removing the four graph features costs 1.7 points with an interval that includes zero — 12 wins, 8 losses, p = 0.50: **in a ranker free to use them in any combination, the graph's contribution is not detectable.**
 
 *Table 6 — the same arm, split by what the issue offers*
 
-| subset | n | BM25 | evidence | Δ |
+| subset | n | BM25 | ranker + evidence | Δ |
 | --- | ---: | ---: | ---: | ---: |
-| quotes source from the gold body | 66 | 0.394 | **0.683** | **+0.289** |
-| names a path or a frame only | 71 | 0.222 | 0.225 | +0.004 |
-| neither | 153 | 0.248 | 0.268 | +0.020 |
+| quotes source from the gold body | 66 | 0.394 | **0.746** | **+0.352** |
+| names a path or a frame only | 71 | 0.222 | 0.254 | +0.032 |
+| neither | 153 | 0.248 | 0.245 | −0.003 |
 
-The aggregate is a weighted average of a very large effect on 23% of the tasks and almost nothing on the rest: excluding every task that quotes code, the arm gains 1.5 points. Naming a file does not help, even though 41.7% of issues name one — the file was already found 62.4% of the time, so the channel mostly constrains cases that were not ambiguous. What pays is indexing the *body*, where the pasted line lives, and the body is exactly what our symbol documents never contained. Fourteen variants were run; the reported one was fixed before the final run, its neighbours land between 0.340 and 0.352, and the capped build trades 0.4 points for three fewer losses.
+The aggregate is a large effect on a quarter of the tasks and nothing elsewhere: on the 66 whose issue quotes source the arm reaches **74.6%**, on the 71 that name a file or line it moves 3 points, on the 153 that do neither not at all. Naming a file barely helps: it was already found 62.4% of the time. What pays is indexing the *body*, where the pasted line lives, and the body is exactly what our symbol documents never contained.
 
-**Where the graph helps.** Astropy is the one repository with a clear gain (0.458 → 0.792, six tasks); five repositories have zero one-hop reach and can only lose. With only 46% of edges definite, restricting expansion to the definite subgraph does not help either.
+
 
 **Reproducibility.** Each number here is re-derived from the released JSONL by a 70-assertion check script, so a claim that drifts from the data fails the build rather than the review.
 
@@ -180,7 +181,7 @@ The aggregate is a weighted average of a very large effect on 23% of the tasks a
 
 The practical claim is a reprioritisation. One-hop expansion is not where the error is: 88.1% of gold symbols are more than one hop from a strong text seed, and the exchange rate is seven to one against. The margin is in the source an issue quotes, and in candidate generation for the 27.6% of tasks whose gold never enters a top-500 pool.
 
-The measurement claim is about granularity. File-level numbers near 90% are quoted as evidence that the hard part is over; the same ranking is 62.4% on files and 27.5% on symbols — a different task, not a tighter definition of success.
+The measurement claim is about granularity. File-level numbers near 90% are quoted as evidence that the hard part is over; the same ranking is 62.4% on files and 27.5% on symbols — a different task.
 
 One thing would not overturn it: a stronger reranker over the same pool. A perfect text reranker reaches 0.600 and a perfect reranker over pool plus neighbours 0.630, so the graph's entire headroom is three points. What would overturn it is a different pool — a retriever that draws candidates by meaning rather than by name — or a graph built by type inference, since PyCG reports 99.2% precision at 69.9% recall [4] and our 46% is a property of the builder. Both replace a component we held fixed.
 
@@ -188,7 +189,7 @@ One thing would not overturn it: a stronger reranker over the same pool. A perfe
 
 ## 7. Limitations (130 words)
 
-Python only, though so are most benchmark tasks we compare against. One retriever: BM25, with no dense retriever or cross-encoder, so the result is about the graph's marginal value *given this ranking*. We measure retrieval, not resolution: a better shortlist is necessary for a better patch, not sufficient.
+Python only, though so are most benchmark tasks. The eight-arm comparison uses one retriever, so the graph result is about its marginal value *given this ranking*; the learned ranker is trained on six repositories and tested on six, which bounds overfitting but leaves only 290 tasks. The evidence channel is bounded by what an issue states: on the 53% that quote no source it does nothing, so terse reports fall back to BM25, and pytest (sixteen tasks) loses 12.5 points to tracebacks that point at test files. We measure retrieval, not resolution: a better shortlist is necessary for a better patch, not sufficient.
 
 ---
 
