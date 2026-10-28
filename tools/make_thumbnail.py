@@ -49,7 +49,7 @@ def main() -> int:
               "300 SWE-bench Lite tasks · 354 gold symbols · 8 graph arms · equal budget",
               fontsize=15, color="#666666")
     axes.text(0.7, 0.75,
-              "no graph arm improves symbol recall; a file-level lexical vote adds 3 points",
+              "no graph arm improves symbol recall; a learned ranker with evidence reaches 36.1%",
               fontsize=15, color="#666666")
 
     axes.plot([0.7, 11.3], [1.12, 1.12], color="#e0e0e0", lw=1.2)
