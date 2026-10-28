@@ -58,7 +58,7 @@ On a django snapshot (2,715 files, 38,651 nodes, 209,502 edges, 10.8 s) the dist
 
 **The arms.** Eight, all paired by task; `text` is BM25 over a per-symbol document (path, qualified name, signature, docstring), and the other seven fold in the graph. `graph_rerank` promotes anything one hop from the top five seeds without changing the pool, so it cannot add a candidate. `graph_open` keeps the top five and fills slots 6–10 with their neighbours from the whole graph — the only arm that can introduce a symbol BM25 never ranked; its two-hop variant fills from the distance-ordered ball. `graph_fuse` lets a candidate inherit λ = 0.5 of its best adjacent seed's score, **fixed before the run and never tuned**; `graph_fuse_precise` fuses over only the definite 46%. `graph_ppr` is personalised PageRank over the whole graph (restart 0.15, the convention, not tuned); `graph_ppr_text` adds half the diffusion mass to normalised BM25. Neighbours are unioned over `calls` and `inherits` and drawn round-robin so a hub cannot absorb the shortlist.
 
-**Two more rankings.** The evidence arm reads what the issue states: a traceback frame resolves through the same symbol table we built, a named path is a suffix match, and a quoted line is found by indexing the candidate's *body* — text our symbol documents never contain — and scoring the longest run of tokens it shares with the issue. The learned arm puts sixteen such signals into one ranker, described in §5.
+**Two more rankings.** The evidence arm reads what the issue states: a traceback frame resolves through the same symbol table we built, a named path is a suffix match, and a quoted line is found by indexing the candidate's *body* — text our symbol documents never contain — and scoring the longest run of tokens it shares with the issue. The learned arm puts sixteen signals into one ranker (§5).
 
 **Statistics.** Per-task differences, so arms are compared on the same issue and repository: mean difference with a bootstrap 95% interval (2,000 resamples, fixed seed) plus an exact sign test. Ties dominate, so the sign test decides.
 
@@ -79,7 +79,7 @@ Line granularity agrees: the ranking covers **23.9%** of the 1,010 changed lines
 
 **At ten slots, no graph arm improves symbol-level recall.** Table 2 and Figure 1.
 
-*Figure 1 — top: symbol recall@k for four of the eight arms over one pool. Bottom: the baseline ranking scored at both granularities. Reranking pulls ahead only past k ≈ 15.*
+*Figure 1 — top: symbol recall@k over one pool and one budget, for BM25, the best graph arm, the learned ranker and the ranker with evidence. Bottom left: the same ranking by file and by symbol. Bottom right: the ranker split by what the issue offers.*
 
 ![Figure 1](fig1.png)
 

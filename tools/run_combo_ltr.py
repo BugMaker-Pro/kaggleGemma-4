@@ -101,6 +101,7 @@ def main(argv=None) -> int:
     folds = ((half, set(repos) - half), (set(repos) - half, half))
 
     results: dict[str, dict[str, list[float]]] = {}
+    orders: dict[str, dict] = {}
     for train_repos, test_repos in folds:
         train_tasks = [task for task in tasks if task["repo"] in train_repos]
         test_tasks = [task for task in tasks if task["repo"] in test_repos]
@@ -114,11 +115,10 @@ def main(argv=None) -> int:
             arms = {
                 "bm25": [row[0] for row in task["rows"]],
                 "ltr": list(scores),
-                "ltr_ev2": None,
                 "ltr_ev5": None,
             }
             base_order = order_from(scores, labels)
-            for name, cap in (("ltr_ev2", 2), ("ltr_ev5", 5)):
+            for name, cap in (("ltr_ev5", 5),):
                 combined = prepend(base_order, task["rows"], cap)
                 # encode a permutation as scores: candidate at position p scores -p
                 values = [0.0] * len(combined)
@@ -126,6 +126,11 @@ def main(argv=None) -> int:
                     values[candidate] = -float(position)
                 arms[name] = values
 
+            orders[task["instance_id"]] = {
+                "gold_total": gold_total.get(task["instance_id"], 0),
+                "labels": labels,
+                "orders": {name: order_from(values, labels) for name, values in arms.items()},
+            }
             for name, values in arms.items():
                 order = order_from(values, labels)
                 results.setdefault(name, {}).setdefault(
@@ -134,7 +139,7 @@ def main(argv=None) -> int:
 
     print(f"tasks: {len(results['bm25'])}\n")
     print(f"{'arm':10s}{'r@10 (all tasks)':>18s}")
-    for name in ("bm25", "ltr", "ltr_ev2", "ltr_ev5"):
+    for name in ("bm25", "ltr", "ltr_ev5"):
         values = list(results[name].values())
         print(f"{name:10s}{statistics.fmean(values):18.3f}")
 
@@ -160,6 +165,18 @@ def main(argv=None) -> int:
                 **{name: round(values[instance_id], 4) for name, values in results.items()},
             }) + "\n")
     print(f"\nper-task results -> {out}")
+
+    # full curve data for the figure: store the ordering, not just r@10
+    curve_out = ROOT / "data" / "combo_ltr_orders.jsonl"
+    with curve_out.open("w", encoding="utf-8") as fh:
+        for instance_id, entry in orders.items():
+            fh.write(json.dumps({
+                "instance_id": instance_id,
+                "gold_total": entry["gold_total"],
+                "labels": entry["labels"],
+                "orders": entry["orders"],
+            }) + "\n")
+    print(f"per-task orders -> {curve_out}")
 
     # ablation on the same scale: does the ranker need the graph features?
     print("\n== ablation (all-task recall@10) ==")
