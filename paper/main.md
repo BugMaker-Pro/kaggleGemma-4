@@ -171,9 +171,7 @@ The learned combination is worth 5.7 points on repositories it has never seen; t
 
 The aggregate is a large effect on a quarter of the tasks and nothing elsewhere: on the 66 whose issue quotes source the arm reaches **74.6%**, on the 71 that name a file or line it moves 3 points, on the 153 that do neither not at all. Naming a file barely helps: it was already found 62.4% of the time. What pays is indexing the *body*, where the pasted line lives, and the body is exactly what our symbol documents never contained.
 
-
-
-**Reproducibility.** Each number here is re-derived from the released JSONL by a 70-assertion check script, so a claim that drifts from the data fails the build rather than the review.
+**Reproducibility.** Each number here is re-derived from the released JSONL by a 160-assertion check script, so a claim that drifts from the data fails the build rather than the review.
 
 ---
 
