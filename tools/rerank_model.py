@@ -140,6 +140,12 @@ def main(argv=None) -> int:
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--dry-run", action="store_true",
                     help="build the pairs and print samples without loading a model")
+    ap.add_argument("--resume", action="store_true",
+                    help="skip tasks already scored in --out and append to it")
+    ap.add_argument("--max-length", type=int, default=512)
+    ap.add_argument("--dtype", default="fp16", choices=("fp16", "fp32"))
+    ap.add_argument("--doc-format", default="full", choices=("full", "plain"),
+                    help="full = 'path :: id' header + body; plain = body only")
     args = ap.parse_args(argv)
 
     if args.dry_run:
@@ -153,12 +159,19 @@ def main(argv=None) -> int:
     print(f"device {device}", flush=True)
     tokenizer = AutoTokenizer.from_pretrained(args.model)
     model = AutoModelForSequenceClassification.from_pretrained(
-        args.model, torch_dtype=torch.float16 if device == "cuda" else torch.float32)
+        args.model, torch_dtype=(torch.float16 if args.dtype == "fp16" and device == "cuda"
+                                 else torch.float32))
     model.to(device).eval()
 
     tasks = [json.loads(line) for line in Path(args.rows).open(encoding="utf-8") if line.strip()]
     if args.limit:
         tasks = tasks[: args.limit]
+    out = Path(args.out)
+    done_ids: set[str] = set()
+    if args.resume and out.exists():
+        done_ids = {json.loads(line)["instance_id"] for line in out.open(encoding="utf-8") if line.strip()}
+        tasks = [task for task in tasks if task["instance_id"] not in done_ids]
+        print(f"{len(done_ids)} already scored, {len(tasks)} to go", flush=True)
     issues = {row["instance_id"]: row.get("problem_statement") or "" for row in
               (json.loads(line) for line in Path(args.tasks).open(encoding="utf-8") if line.strip())}
     commits = {row["instance_id"]: row.get("base_commit") or "" for row in
@@ -169,13 +182,16 @@ def main(argv=None) -> int:
 
     index = SnapshotIndex(args.repos)
     work: queue.Queue = queue.Queue(maxsize=48)
-    out = Path(args.out)
     started = time.time()
     scored_tasks = 0
     pairs_total = 0
 
-    def produce():
-        for task in tasks:
+    def produce(worker: int):
+        # each thread takes a stride of the list: running the whole list on every
+        # thread produced each task once per thread the first time this ran
+        for position, task in enumerate(tasks):
+            if position % args.workers != worker:
+                continue
             path = index.path_for(task)
             if path is None:
                 continue
@@ -192,31 +208,39 @@ def main(argv=None) -> int:
                     cache[path_i] = python_symbols(texts.get(path_i) or "")
                 body = source_of(cache[path_i], texts.get(path_i) or "",
                                  qualname_of(ids[i], path_i))
-                document = f"{path_i} :: {ids[i]}\n{body[:MAX_SYMBOL]}"
+                document = (f"{path_i} :: {ids[i]}\n{body[:MAX_SYMBOL]}" if args.doc_format == "full"
+                            else body[:MAX_SYMBOL])
                 pairs.append((i, task["problem_statement"][:MAX_ISSUE], document))
             work.put((task, keep, pairs))
         work.put(None)
 
-    threads = [threading.Thread(target=produce, daemon=True) for _ in range(args.workers)]
+    threads = [threading.Thread(target=produce, args=(worker,), daemon=True)
+               for worker in range(args.workers)]
     for thread in threads:
         thread.start()
 
-    with out.open("w", encoding="utf-8") as fh:
+    finished = 0
+    seen: set[str] = set()
+    with out.open("a" if args.resume else "w", encoding="utf-8") as fh:
         while True:
             item = work.get()
             if item is None:
-                break
-            task, keep, pairs = item
-            if not pairs:
+                finished += 1
+                if finished >= args.workers:
+                    break
                 continue
+            task, keep, pairs = item
+            if not pairs or task["instance_id"] in seen:
+                continue
+            seen.add(task["instance_id"])
             flat = [(issue, document) for _, issue, document in pairs]
             scores: list[float] = []
             with torch.no_grad():
                 for start in range(0, len(flat), args.batch):
                     batch = flat[start:start + args.batch]
                     encoded = tokenizer([pair[0] for pair in batch], [pair[1] for pair in batch],
-                                        padding=True, truncation="only_second",
-                                        max_length=512, return_tensors="pt").to(device)
+                                        padding=True, truncation="longest_first",
+                                        max_length=args.max_length, return_tensors="pt").to(device)
                     logits = model(**encoded).logits.view(-1).float().cpu().tolist()
                     scores.extend(logits)
             order = sorted(range(len(pairs)), key=lambda position: -scores[position])
