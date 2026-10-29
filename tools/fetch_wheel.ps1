@@ -1,4 +1,4 @@
-﻿# Fetch the cu128 torch wheel as eight parallel ranges, verifying every part and
+# Fetch the cu128 torch wheel as eight parallel ranges, verifying every part and
 # retrying only the short ones. The SJTU mirror answers 206 for ranges; aliyun
 # does not, which is why this script exists at all.
 $ErrorActionPreference = 'Stop'
@@ -48,14 +48,21 @@ for ($round = 1; $round -le 6; $round++) {
     }
 }
 
-$total = (Get-ChildItem $dir -Filter 'p[0-9]' -File | Measure-Object Length -Sum).Sum
+$total = (Get-ChildItem $dir -File | Where-Object { $_.Name -match '^p\d$' } | Measure-Object Length -Sum).Sum
 Write-Output ("total {0:N2} GB of {1:N2} GB" -f ($total / 1GB), ($size / 1GB))
 if ($total -eq $size) {
     $target = Join-Path $PSScriptRoot 'torch-2.11.0+cu128-cp312-cp312-win_amd64.whl'
     if (Test-Path $target) { Remove-Item $target -Force }
-    $list = @()
-    for ($i = 0; $i -lt $n; $i++) { $list += (Join-Path $dir ("p{0}" -f $i)) }
-    & cmd.exe /c ("copy /b " + ($list -join '+') + " `"$target`"") | Out-Null
+    # concatenate in Python: copy /b silently produced nothing for eight sources
+    & (Join-Path (Split-Path $PSScriptRoot -Parent) '.venv\Scripts\python.exe') -c @"
+from pathlib import Path
+parts = [Path(r'$dir') / f'p{i}' for i in range($n)]
+target = Path(r'$target')
+with target.open('wb') as out:
+    for part in parts:
+        out.write(part.read_bytes())
+print('assembled', target.stat().st_size)
+"@ | Out-Null
     Write-Output ("wheel {0:N2} GB -> {1}" -f ((Get-Item $target).Length / 1GB), $target)
 } else {
     Write-Output "INCOMPLETE"

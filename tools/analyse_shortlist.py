@@ -1,4 +1,4 @@
-"""Third view: the model only reorders the ranker's shortlist, then re-scores.
+﻿"""Third view: the model only reorders the ranker's shortlist, then re-scores.
 
 Reranking all 200 pool candidates asks a natural-language cross-encoder to rank
 Python source against a bug report from scratch, which is not what it was trained
@@ -34,7 +34,7 @@ def main() -> int:
     tasks = {row["instance_id"]: row for row in
              (json.loads(line) for line in (ROOT / "data" / "features_full.jsonl").open(encoding="utf-8") if line.strip())}
     model = {row["instance_id"]: row for row in
-             (json.loads(line) for line in (ROOT / "data" / "rerank_model.jsonl").open(encoding="utf-8") if line.strip())}
+             (json.loads(line) for line in (ROOT / "data" / "rerank_full_1024.jsonl").open(encoding="utf-8") if line.strip())}
     orders = {row["instance_id"]: row for row in
               (json.loads(line) for line in (ROOT / "data" / "combo_ltr_orders_full.jsonl").open(encoding="utf-8") if line.strip())}
 
@@ -70,3 +70,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
