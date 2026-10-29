@@ -1,7 +1,7 @@
-"""A code-trained bi-encoder over the same candidates.
+﻿"""A code-trained bi-encoder over the same candidates.
 
 The cross-encoder in `rerank_model.py` is a general-domain model, and it lost to
-sixteen lexical features by a wide margin — its strongest cue turned out to be
+sixteen lexical features by a wide margin 鈥?its strongest cue turned out to be
 the path and qualname header, which is what BM25 already has. That result says
 something about *that* model, not necessarily about semantics, so this repeats
 the measurement with a model trained on code retrieval:
@@ -67,8 +67,8 @@ def main(argv=None) -> int:
     from transformers import AutoModel, AutoTokenizer  # noqa: PLC0415
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    tokenizer = AutoTokenizer.from_pretrained(args.model, trust_remote_code=True)
-    model = AutoModel.from_pretrained(args.model, trust_remote_code=True,
+    tokenizer = AutoTokenizer.from_pretrained(args.model)
+    model = AutoModel.from_pretrained(args.model,
                                       torch_dtype=torch.float16).to(device).eval()
     print(f"device {device}", flush=True)
 
@@ -162,3 +162,4 @@ def main(argv=None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
