@@ -39,6 +39,35 @@ def check(label: str, claimed, actual, tol: float, fmt: str = "{:.3f}") -> None:
         failures.append(f"{label}: paper={claimed}, data={actual}")
 
 
+def recall_files(order, files, gold_files) -> float:
+    """File-level recall@10: distinct gold files reached by the first ten slots."""
+    if not gold_files:
+        return float("nan")
+    seen: list[str] = []
+    for index in order[:10]:
+        path = files[index] if index < len(files) else ""
+        if path and path not in seen:
+            seen.append(path)
+    return len(set(seen) & set(gold_files)) / len(set(gold_files))
+
+
+def strict_bucket(task: dict) -> str:
+    """What the issue offers, from the features file alone — same rule at any scale.
+
+    quotes   the gold symbol's own body contains a line the issue pastes
+    names    the issue names a file or prints a traceback frame
+    neither  no source at all
+    """
+    rows, labels = task["rows"], task["labels"]
+    for index, label in enumerate(labels):
+        if label and rows[index][3]:
+            return "quotes"
+    for index, label in enumerate(labels):
+        if label and (rows[index][4] or rows[index][6] or rows[index][8]):
+            return "names"
+    return "neither"
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--fast", action="store_true")
@@ -61,7 +90,10 @@ def main(argv=None) -> int:
     check("tasks with a symbol", 290, sum(1 for row in gold if row["has_symbols"]), 0)
     outside = sum(f.get("unresolved_anchors", 0) for row in gold for f in row["files"])
     check("changed lines outside any definition", 87, outside, 0)
-    size = sum(p.stat().st_size for p in (ROOT / "data" / "repos").glob("*.tar.gz"))
+    # only the Lite snapshots: data/repos now also holds the 2,174-snapshot full set
+    lite_files = {f"{t['repo'].replace('/', '__')}@{t['base_commit'][:12]}.tar.gz" for t in tasks}
+    size = sum(p.stat().st_size for p in (ROOT / "data" / "repos").glob("*.tar.gz")
+               if p.name in lite_files)
     check("snapshot bytes (GB)", 2.5, round(size / 1024 ** 3, 1), 0.1, fmt="{:.1f}")
 
     print("\n== headline ==")
@@ -248,28 +280,80 @@ def main(argv=None) -> int:
     check("ltr_ev5 losses", 13, losses, 0)
     check("ltr_ev5 p", 0.0004, round(sign_test(wins, losses), 4), 0.002)
 
-    def bucket(instance_id: str) -> str:
-        if quoted(instance_id):
-            return "quotes code"
-        row = next((item for item in issue if item["instance_id"] == instance_id), None)
-        if row and (row["paths"] or row["frames"]):
-            return "names only"
-        return "no signal"
-
-    groups: dict[str, list[dict]] = {}
-    for row in ltr:
-        groups.setdefault(bucket(row["instance_id"]), []).append(row)
-    for name, claimed_n, claimed_bm25, claimed_arm in (
-        ("quotes code", 66, 0.394, 0.746),
-        ("names only", 71, 0.222, 0.254),
-        ("no signal", 153, 0.248, 0.245),
+    print("\n== the split at both scales (tools/split_scales.py) ==")
+    for scale, rows_name, results_name, claims in (
+        ("290", "features.jsonl", "combo_ltr.jsonl",
+         (("quotes", 54, 0.481, 0.776), ("names", 16, 0.406, 0.469),
+          ("neither", 220, 0.215, 0.214))),
+        ("2,232", "features_full.jsonl", "combo_ltr_full.jsonl",
+         (("quotes", 355, 0.459, 0.755), ("names", 224, 0.380, 0.659),
+          ("neither", 1653, 0.185, 0.236))),
     ):
-        group = groups.get(name, [])
-        check(f"split {name}: n", claimed_n, len(group), 0)
-        check(f"split {name}: bm25", claimed_bm25,
-              statistics.fmean(row["bm25"] for row in group), 0.002)
-        check(f"split {name}: arm", claimed_arm,
-              statistics.fmean(row["ltr_ev5"] for row in group), 0.002)
+        rows = {row["instance_id"]: row for row in
+                (json.loads(x) for x in (ROOT / "data" / rows_name).open(encoding="utf-8") if x.strip())}
+        res = {row["instance_id"]: row for row in
+               (json.loads(x) for x in (ROOT / "data" / results_name).open(encoding="utf-8") if x.strip())}
+        groups: dict[str, list[str]] = {}
+        for instance_id, task in rows.items():
+            if instance_id in res and task.get("labels"):
+                groups.setdefault(strict_bucket(task), []).append(instance_id)
+        for name, claimed_n, claimed_bm25, claimed_ranker in claims:
+            ids = groups.get(name, [])
+            check(f"{scale} {name}: n", claimed_n, len(ids), 0)
+            check(f"{scale} {name}: bm25", claimed_bm25,
+                  statistics.fmean(res[i]["bm25"] for i in ids), 0.002)
+            check(f"{scale} {name}: ranker", claimed_ranker,
+                  statistics.fmean(res[i]["ltr"] for i in ids), 0.002)
+
+    print("\n== scale check on 2,232 tasks (Table 7) ==")
+    full = {row["instance_id"]: row for row in
+            (json.loads(x) for x in (ROOT / "data" / "combo_ltr_full.jsonl").open(encoding="utf-8") if x.strip())}
+    check("scorable tasks", 2232, len(full), 0)
+    for arm, claimed in (("bm25", 0.248), ("ltr", 0.361), ("ltr_ev5", 0.359)):
+        check(f"{arm} r@10", claimed, statistics.fmean(row[arm] for row in full.values()), 0.002)
+    full_deltas = [full[key]["ltr"] - full[key]["bm25"] for key in full]
+    check("ranker delta", 0.113, statistics.fmean(full_deltas), 0.002)
+    check("ranker wins", 488, sum(1 for value in full_deltas if value > 0), 0)
+    check("ranker losses", 123, sum(1 for value in full_deltas if value < 0), 0)
+    check("override delta", -0.002,
+          statistics.fmean(full[key]["ltr_ev5"] - full[key]["ltr"] for key in full), 0.002)
+
+    full_rows = [json.loads(x) for x in
+                 (ROOT / "data" / "features_full.jsonl").open(encoding="utf-8") if x.strip()]
+    bm25_symbol, rerank_symbol = [], []
+    bm25_file, rerank_file = [], []
+    for task in full_rows:
+        labels, files = task["labels"], task["files"]
+        total, gold_files = task.get("gold_total") or sum(labels), task.get("gold_files") or []
+        if not total:
+            continue
+        order = list(range(len(labels)))
+        bm25_symbol.append(sum(1 for i in order[:10] if labels[i]) / total)
+        rerank_symbol.append(sum(1 for i in task["rerank_top10"][:10] if labels[i]) / total)
+        if gold_files:
+            bm25_file.append(recall_files(order, files, gold_files))
+            rerank_file.append(recall_files(task["rerank_top10"], files, gold_files))
+    check("bm25 symbol", 0.248, statistics.fmean(bm25_symbol), 0.002)
+    check("bm25 file", 0.564, statistics.fmean(bm25_file), 0.002)
+    check("graph symbol", 0.270, statistics.fmean(rerank_symbol), 0.002)
+    check("graph file", 0.564, statistics.fmean(rerank_file), 0.002)
+    check("gap", 2.28, statistics.fmean(bm25_file) / statistics.fmean(bm25_symbol), 0.005,
+          fmt="{:.2f}")
+    graph_delta = [a - b for a, b in zip(rerank_symbol, bm25_symbol)]
+    check("graph symbol delta", 0.022, statistics.fmean(graph_delta), 0.002)
+    check("graph wins", 169, sum(1 for value in graph_delta if value > 0), 0)
+    check("graph losses", 90, sum(1 for value in graph_delta if value < 0), 0)
+    graph_file_delta = [a - b for a, b in zip(rerank_file, bm25_file)]
+    check("graph file delta", 0.000, statistics.fmean(graph_file_delta), 0.002)
+
+    orders = {row["instance_id"]: row for row in
+              (json.loads(x) for x in (ROOT / "data" / "combo_ltr_orders_full.jsonl").open(encoding="utf-8") if x.strip())}
+    files_of = {task["instance_id"]: task["files"] for task in full_rows}
+    gold_of = {task["instance_id"]: task.get("gold_files") or [] for task in full_rows}
+    for arm, claimed in (("ltr", 0.643),):
+        values = [recall_files(row["orders"][arm], files_of[key], gold_of[key])
+                  for key, row in orders.items() if key in files_of and gold_of.get(key)]
+        check(f"{arm} file r@10", claimed, statistics.fmean(values), 0.002)
 
     print("\n== budget decomposition and the file vote ==")
     ff = [json.loads(x) for x in (ROOT / "data" / "experiment_ff.jsonl").open(encoding="utf-8") if x.strip()]
@@ -336,9 +420,11 @@ def main(argv=None) -> int:
 
     print("\n== the draft still says the same thing ==")
     for token in ("62.4%", "27.5%", "2.3×", "0.42%", "3.1%", "11.9", "35.7",
-                  "9,855", "44%", "46%", "seven times", "seven to one",
-                  "66.5%", "0.361", "0.332", "74.6%", "p = 0.035",
-                  "22.8%", "17.2%", "41.7%", "23.9%", "25.8%", "0.352"):
+                  "9,855", "44%", "46%", "seven to one",
+                  "66.5%", "0.361", "0.332", "p = 0.035",
+                  "22.8%", "17.2%", "41.7%", "23.9%",
+                  "2,232", "2.28×", "0.564", "0.248", "0.113", "0.643",
+                  "0.776", "0.755", "0.659", "27.8", "29.4", "29.6"):
         present = token in paper
         print(f"  [{'ok  ' if present else 'FAIL'}] draft contains {token!r}")
         if not present:

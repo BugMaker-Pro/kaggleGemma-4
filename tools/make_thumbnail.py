@@ -46,10 +46,10 @@ def main() -> int:
     axes.text(4.6, 3.28, "2.3×", fontsize=25, color="#c0392b", ha="center")
 
     axes.text(0.7, 1.35,
-              "300 SWE-bench Lite tasks · 354 gold symbols · 8 graph arms · equal budget",
+              "300 SWE-bench Lite tasks, re-checked on 2,232 · 8 graph arms · equal budget",
               fontsize=15, color="#666666")
     axes.text(0.7, 0.75,
-              "no graph arm improves symbol recall; a learned ranker with evidence reaches 36.1%",
+              "the graph buys 2 points of symbol recall and 0 of file recall; a ranker reaches 36.1%",
               fontsize=15, color="#666666")
 
     axes.plot([0.7, 11.3], [1.12, 1.12], color="#e0e0e0", lw=1.2)

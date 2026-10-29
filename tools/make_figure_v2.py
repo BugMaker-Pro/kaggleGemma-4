@@ -59,31 +59,39 @@ def graph_curve(path: Path) -> dict[str, list[float]]:
     return curves
 
 
-def split_numbers() -> list[tuple[str, int, float, float]]:
-    results = {row["instance_id"]: row for row in
-               (json.loads(line) for line in (ROOT / "data" / "combo_ltr.jsonl").open(encoding="utf-8") if line.strip())}
-    quoted = {row["instance_id"]: row for row in
-              (json.loads(line) for line in (ROOT / "data" / "body_evidence.jsonl").open(encoding="utf-8") if line.strip())}
-    named = {row["instance_id"]: row for row in
-             (json.loads(line) for line in (ROOT / "data" / "issue_evidence.jsonl").open(encoding="utf-8") if line.strip())}
+def load_rows(path: Path) -> dict[str, dict]:
+    return {row["instance_id"]: row for row in
+            (json.loads(line) for line in path.open(encoding="utf-8") if line.strip())}
 
-    def bucket(instance_id: str) -> str:
-        if quoted.get(instance_id, {}).get("line_quote"):
-            return "quotes code"
-        info = named.get(instance_id, {})
-        if info.get("paths") or info.get("frames"):
-            return "names only"
-        return "no signal"
 
+def bucket(task: dict) -> str:
+    """What the issue offers, from the features file alone (both scales agree).
+
+    quotes  the gold symbol's body contains a line the issue pastes
+    names   the issue names a file or prints a traceback frame
+    neither no source in the issue at all
+    """
+    rows, labels = task["rows"], task["labels"]
+    for index, label in enumerate(labels):
+        if label and rows[index][3]:
+            return "quotes"
+    for index, label in enumerate(labels):
+        if label and (rows[index][4] or rows[index][6] or rows[index][8]):
+            return "names"
+    return "neither"
+
+
+def split_numbers(rows_path: Path, results_path: Path) -> dict[str, tuple[int, float]]:
+    tasks = load_rows(rows_path)
+    results = load_rows(results_path)
     groups: dict[str, list[str]] = {}
-    for instance_id in results:
-        groups.setdefault(bucket(instance_id), []).append(instance_id)
-    out = []
-    for name in ("quotes code", "names only", "no signal"):
-        ids = groups.get(name, [])
-        base = sum(results[i]["bm25"] for i in ids) / len(ids)
-        arm = sum(results[i]["ltr_ev5"] for i in ids) / len(ids)
-        out.append((name, len(ids), base, arm))
+    for instance_id, task in tasks.items():
+        if instance_id in results and task.get("labels"):
+            groups.setdefault(bucket(task), []).append(instance_id)
+    out = {}
+    for name, ids in groups.items():
+        gain = sum(results[i]["ltr"] - results[i]["bm25"] for i in ids) / len(ids)
+        out[name] = (len(ids), gain)
     return out
 
 
@@ -140,23 +148,30 @@ def main() -> int:
     left.legend(frameon=False, fontsize=6, loc="upper left", borderaxespad=0.1)
     left.annotate("2.3×", xy=(0.5, 0.40), fontsize=7.5, color="#c0392b", ha="center")
 
-    # right: where the gain lives
-    rows = split_numbers()
+    # right: where the ranker's gain lives, at both scales
+    lite = split_numbers(ROOT / "data" / "features.jsonl", ROOT / "data" / "combo_ltr.jsonl")
+    full = split_numbers(ROOT / "data" / "features_full.jsonl",
+                         ROOT / "data" / "combo_ltr_full.jsonl")
+    names = ("quotes", "names", "neither")
     xs = [0, 1, 2]
-    base = [row[2] for row in rows]
-    arm = [row[3] for row in rows]
-    right.bar([x - 0.19 for x in xs], base, 0.36, color="#c9ccd1", label="BM25")
-    right.bar([x + 0.19 for x in xs], arm, 0.36, color="#c0392b", label="ranker + evidence")
-    for x, value in zip(xs, arm):
-        right.text(x + 0.19, value + 0.02, f"{value:.2f}", ha="center", fontsize=6.2)
+    lite_gain = [lite[name][1] for name in names]
+    full_gain = [full[name][1] for name in names]
+    right.bar([x - 0.19 for x in xs], lite_gain, 0.36, color="#c9ccd1", label="290 tasks")
+    right.bar([x + 0.19 for x in xs], full_gain, 0.36, color="#c0392b", label="2,232 tasks")
+    for x, value in zip(xs, lite_gain):
+        right.text(x - 0.19, value + 0.010, f"{value * 100:+.0f}", ha="center", fontsize=5.6)
+    for x, value in zip(xs, full_gain):
+        right.text(x + 0.19, value + 0.010, f"{value * 100:+.0f}", ha="center", fontsize=5.6)
     right.set_xticks(xs)
-    right.set_xticklabels([name.replace(" ", "\n") + f"\n(n={count})"
-                           for name, count, _, _ in rows], fontsize=5.6)
-    right.set_ylim(0, 0.88)
-    right.set_ylabel("recall@10", fontsize=6.8)
+    right.set_xticklabels([f"{name}\n{lite[name][0]} · {full[name][0]}" for name in names],
+                          fontsize=5.6)
+    right.set_ylim(-0.03, 0.52)
+    right.set_ylabel("ranker gain, points", fontsize=6.8)
     right.tick_params(labelsize=6.2)
-    right.set_title("split by what the issue offers", fontsize=7.2, pad=3)
-    right.legend(frameon=False, fontsize=5.8, loc="upper right", borderaxespad=0.1)
+    right.axhline(0, color="#888888", lw=0.5)
+    right.set_title("gain by what the issue offers", fontsize=7.2, pad=3)
+    right.legend(frameon=False, fontsize=5.5, loc="upper center", ncol=2,
+                 handlelength=1.2, columnspacing=1.0, borderaxespad=0.0)
 
     for axes in (top, left, right):
         axes.spines["top"].set_visible(False)
