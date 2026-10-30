@@ -68,7 +68,7 @@ The second-hop variant has the most reach (35.7%, Table 3) and is still negative
 
 ![paper/table_3.png](table_3.png)
 
-One-hop expansion has an arithmetic ceiling: 38 of 290 tasks (13.1%; 41 of 354 symbols) hold a gold symbol one hop from a top-five seed, so perfect conversion is worth 11.9 points; two hops lift the ceiling to 35.7%, which is why the radius sweep looks promising. Conversion is not the failure — diffusion places 18 of the 41 reachable symbols in its top ten (44%) and still lands below text, because 15 gained cost 17 lost. The rate is the finding: 9,855 neighbours hold 41 answers, 0.42%, against 3.1% gold per text slot.
+One-hop expansion has an arithmetic ceiling: 38 of 290 tasks (13.1%; 41 of 354 symbols) hold a gold symbol one hop from a top-five seed, so perfect conversion is worth 11.9 points; two hops lift the ceiling to 35.7%. Conversion is not the failure — diffusion places 18 of the 41 reachable symbols in its top ten (44%) and still lands below text, because 15 gained cost 17 lost. The rate is the finding: 9,855 neighbours hold 41 answers, 0.42%, against 3.1% gold per text slot.
 
 **Where the gap is.** Ten slots are a budget: recall@10 ≈ P(gold file selected) × E[recovered | depth], and the product stays near 0.25 whether the slots go to one file or ten. Given the *right* file, ten slots recover **66.5%** of gold symbols.
 
@@ -88,13 +88,15 @@ On the tasks whose issue pastes a line from the gold body the ranker gains **29.
 
 Three things move and one does not. The **gap is invariant**, 2.27× against 2.28×, which is what a property of ten slots and a file's definition count should do. The **graph is worth two points at symbol level and zero at file level**: at 290 tasks the first was invisible; at 2,232 it is +0.022 with an interval excluding zero, 169 wins to 90, positive in 8 of 12 repositories — real, and small, because it reorders symbols inside files text already found, while its file-level exchange is 81 wins to 94 losses. The **evidence override does not survive**: with 7.6× the training data the ranker reaches 0.361 alone and the override subtracts 0.2 points at five slots, 2.5 at ten, adds nothing at one. The 2.9 points it appeared to add were the four features it duplicates, finally able to learn.
 
-The resolution is the finding: 290 tasks adjudicate differences of about five points and no smaller; every claim that moved sits at two, and the one that did not is nine.
+**How many tasks a claim needs.** That a 2.9-point rule evaporated is arithmetic, not luck. Resampling the 2,232 paired differences and running the same sign test — 400 draws per cell — gives the share of n-task studies that would call an effect real: the ranker's +11.3 points is detected at n = 100 in 88% of draws, the graph's +2.2 in 39% at 290 and 87% at 800, the evidence rule's −0.2 never, at 1–4%. A 300-task comparison sees five-point effects or larger.
 
-**Reproducibility.** Each number here is re-derived from the released JSONL by a 210-assertion check script, so a claim that drifts from the data fails the build rather than the review.
+![paper/table_7.png](table_7.png)
+
+**Reproducibility.** Each number here is re-derived from the released JSONL by a 220-assertion check script, so a claim that drifts from the data fails the build rather than the review.
 
 ## 6. Discussion
 
-The practical claim is a reprioritisation. One-hop expansion is not where the error is: 88.1% of gold symbols are more than one hop from a strong text seed, and the exchange rate is seven to one against. The margin is in the source an issue quotes, and in candidate generation for the 27.6% of tasks whose gold never enters a top-500 pool.
+The practical claim is a reprioritisation. One-hop expansion is not where the error is: 88.1% of gold symbols are more than one hop from a strong text seed. The margin is in the source an issue quotes, and in candidate generation for the 27.6% of tasks whose gold never enters a top-500 pool.
 
 The measurement claim is about granularity: file-level numbers near 90% are quoted as evidence that the hard part is over, yet the same ranking is 62.4% on files and 27.5% on symbols.
 

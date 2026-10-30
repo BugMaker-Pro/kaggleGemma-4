@@ -96,6 +96,9 @@ def crop(path: Path) -> None:
 def main() -> int:
     import tempfile
 
+    if not CLI:
+        print("table images need the LibreOffice Kit CLI: set LIBREOFFICE_KIT_CLI", file=sys.stderr)
+        return 2
     lines = (ROOT / "paper" / "submission_body.md").read_text(encoding="utf-8").splitlines()
     produced = []
     index = 0

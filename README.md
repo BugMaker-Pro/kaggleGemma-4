@@ -25,13 +25,17 @@ graph buys there.
   features reaches 36.1% of symbols and 64.3% of files. A hand-written evidence
   rule worth 2.9 points on 290 tasks is worth −0.002 on 2,232: it was a ranker
   short of training data.
+- **Most 300-task comparisons cannot see this.** Resampling the 2,232 paired
+  differences: a true +2.2-point effect is detected at n = 290 in 39% of draws
+  and at 800 in 87%, while a +11.3-point effect is detected at n = 100 in 88%.
+  The usual sample size resolves five-point effects and no smaller.
 
 ## Reproduce the numbers
 
 ```bash
 uv venv --python 3.12 .venv
 uv sync --frozen
-uv run python tools/audit_numbers.py     # 210 assertions, 0 failures
+uv run python tools/audit_numbers.py     # 220 assertions, 0 failures
 ```
 
 That is the whole check: every number in the paper is re-derived from the tracked

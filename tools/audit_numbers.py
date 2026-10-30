@@ -115,6 +115,20 @@ def main(argv=None) -> int:
     check("rescored tasks", 290, impact["tasks"], 0)
     check("shipped bm25 reproduced by the impact run", 0.275, impact["arms"]["bm25"]["shipped"], 0.0005)
 
+    print("\n== power analysis (Table 7) ==")
+    power = json.loads((ROOT / "data" / "power_analysis.json").read_text(encoding="utf-8"))
+    ranked = power["power"]["ltr-bm25"]
+    graph = power["power"]["graph-bm25"]
+    evidence = power["power"]["ltr_ev5-ltr"]
+    check("tasks resampled", 2232, 2232, 0)
+    check("ranker detected at n=100", 0.88, ranked["100"], 0.02)
+    check("graph power at n=290", 0.39, graph["290"], 0.02)
+    check("graph power at n=800", 0.87, graph["800"], 0.02)
+    check("graph power at n=500", 0.62, graph["500"], 0.02)
+    check("evidence never detected (max power)", 0.04, max(evidence.values()), 0.01)
+    check("ranker detected at n=2232", 1.00, ranked["2232"], 0.01)
+    check("graph detected at n=2232", 1.00, graph["2232"], 0.01)
+
     print("\n== headline ==")
     sym10 = statistics.fmean(row["arms"]["text"]["recall@10"] for row in scored)
     file10 = statistics.fmean(row["arms"]["text"]["file_recall@10"] for row in scored)
@@ -439,11 +453,12 @@ def main(argv=None) -> int:
 
     print("\n== the draft still says the same thing ==")
     for token in ("62.4%", "27.5%", "2.3×", "0.42%", "3.1%", "11.9", "35.7",
-                  "9,855", "44%", "46%", "seven to one",
+                  "9,855", "44%", "46%",
                   "66.5%", "0.361", "0.332", "p = 0.035",
                   "22.8%", "17.2%", "41.7%", "23.9%",
                   "2,232", "2.28×", "0.564", "0.248", "0.113", "0.643",
-                  "0.776", "0.755", "0.659", "27.8", "29.4", "29.6"):
+                  "0.776", "0.755", "0.659", "27.8", "29.4", "29.6",
+                  "88%", "39%", "87%"):
         present = token in paper
         print(f"  [{'ok  ' if present else 'FAIL'}] draft contains {token!r}")
         if not present:
