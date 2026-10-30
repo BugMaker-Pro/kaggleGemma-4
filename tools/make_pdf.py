@@ -17,8 +17,10 @@ gets separated from what it labels.
 from __future__ import annotations
 
 import argparse
+import os
 import re
 import subprocess
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -33,9 +35,12 @@ from docx.shared import Cm, Pt, RGBColor  # noqa: E402
 
 TOKEN = re.compile(r"(\*\*.+?\*\*|(?<![\*\w])\*[^*\n]+?\*(?![\*\w])|`[^`]+`)")
 CAPTION = re.compile(r"^(Figure \d+|Table \d+)\s*[—–-]\s*(.*)$")
-NODE = r"D:\deepseekharness\resources\runtime\primary-runtime\dependencies\node\bin\node.exe"
-CLI = ("D:\\deepseekharness\\resources\\app.asar.unpacked\\dsh\\node_modules\\"
-       "@deepseek-ai\\libreoffice-kit\\lib\\cli.js")
+# PDF export is optional tooling, so the converter is located by environment
+# variable rather than by a path that only exists on the machine that built it:
+#   NODE_BIN              node executable (default: node on PATH)
+#   LIBREOFFICE_KIT_CLI   the LibreOffice Kit CLI entry (required for export)
+NODE = os.environ.get("NODE_BIN", "node")
+CLI = os.environ.get("LIBREOFFICE_KIT_CLI", "")
 
 INK = RGBColor(0x1A, 0x1A, 0x1A)
 MUTED = RGBColor(0x44, 0x44, 0x44)
@@ -321,6 +326,12 @@ def main(argv=None) -> int:
     out = Path(args.out)
     stats = build(Path(args.body), out, title, subtitle)
     print(f"wrote {out}  ({stats['tables']} tables, {stats['figures']} figure)")
+
+    if not CLI:
+        print("PDF export needs the LibreOffice Kit CLI: set LIBREOFFICE_KIT_CLI.\n"
+              "  https://github.com/deepseek-ai/libreoffice-kit\n"
+              "The docx is still written; only the conversion is skipped.", file=sys.stderr)
+        return 2
 
     pdf = out.with_suffix(".pdf")
     if pdf.exists():  # the converter refuses to overwrite
