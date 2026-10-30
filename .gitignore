@@ -17,7 +17,7 @@ wheels/
 *.zip
 !submission.zip
 
-# ...但发布用的四个结果文件要入库：没有它们，别人无法复算论文里的任何一个数字
+# ...但发布用的结果文件要入库：没有它们，别人无法复算论文里的任何一个数字
 !data/gold_symbols.jsonl
 !data/swebench_lite.jsonl
 !data/ablation.jsonl
@@ -27,6 +27,14 @@ wheels/
 !data/experiment_ev.jsonl
 !data/experiment_body.jsonl
 !data/experiment_combo2.jsonl
+# 全量尺度的审计输入：没有它们，tools/audit_numbers.py 里 2,232 任务的断言跑不起来
+!data/features_full.jsonl
+!data/combo_ltr.jsonl
+!data/combo_ltr_full.jsonl
+!data/combo_ltr_orders_full.jsonl
+!data/rerank_full_1024.jsonl
+!data/gold_fixed.jsonl
+!data/gold_impact.json
 
 # 实验产物
 runs/
@@ -55,4 +63,7 @@ docs/papers/*.pdf
 # 模型权重与临时虚拟环境（GB 级，绝不入库）
 models/
 .venv-gpu/
+# torch 的 CUDA 轮子：分片下载的临时目录和 .whl 本体都太大，绝不入库
+tools/tmp_wheel/
+*.whl
 

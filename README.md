@@ -15,6 +15,19 @@
 | 主赛道组队合并截止 | 2026-11-25 23:59 | 2026-11-26 07:59 |
 | 主赛道提交截止 | 2026-12-02 23:59 | 2026-12-03 07:59 |
 
+## 论文赛道提交清单（2026-11-13 07:59 前）
+
+| 字段 | 内容 |
+| --- | --- |
+| **Title** | `File-Level Is Not Symbol-Level: What Code Graphs Miss and the Issue Already States` |
+| **Subtitle** | `300 tasks, then 2,232: the granularity gap is invariant, the graph is worth two points at symbol level and none at file level, and a three-point hand-written rule was really training data` |
+| **Body** | [paper/submission.md](paper/submission.md) 全文粘贴；**删掉开头两行**（标题和副标题已经进了上面的字段） |
+| **字数** | 2,992（Kaggle 口径，上限 3,000；`python tools/make_submission.py` 复核） |
+| **图片** | [paper/fig1.png](paper/fig1.png) 插在正文 `![Figure 1](fig1.png)` 那一行；[paper/thumbnail.png](paper/thumbnail.png) 作为 writeup 封面 |
+| **Project link** | `https://github.com/BugMaker-Pro/kaggleGemma-4`（**必须先设 public**，当前匿名访问返回 404） |
+
+提交后仍可编辑并重新提交，所以先把这一版交上去，再用同一套 harness 补实验。
+
 ## 文档
 
 | 文档 | 内容 |
@@ -24,7 +37,7 @@
 | [docs/data-assets.md](docs/data-assets.md) | **官方数据资产清单**（主赛道 Data 页原文）：22.42 GB / 524 文件、graph 与 embedding 的 schema、策展流程 |
 | [docs/competition.md](docs/competition.md) | 两个赛道的完整机制：任务形态、约束、数据构成、评分方式 |
 | [docs/task-walkthrough.md](docs/task-walkthrough.md) | 主赛道单任务流程：任务包字段、两阶段评测、六步循环、七个吃分的坑 |
-| [paper/main.md](paper/main.md) | 论文正文（v7，2,984 词）：八臂 + 四表一图 + References |
+| [paper/main.md](paper/main.md) | 论文正文（2,992 词，Kaggle 口径）：两尺度八臂 + 四表一图 + References；[paper/submission.md](paper/submission.md) 是可直接粘贴的版本 |
 | [docs/file-first.md](docs/file-first.md) | **2026-10-27 新实验**：file-first 分层基线 + 乘积分解（预算同时买文件与符号） |
 | [docs/papers/notes.md](docs/papers/notes.md) | 10 篇参考文献的逐条核实（引文原句 + 页码位置） |
 | [agent/README.md](agent/README.md) | 主赛道提交包结构（11/14 之后才用） |
@@ -48,18 +61,22 @@
 - [x] **加 PPR 臂**（`graph_ppr` / `graph_ppr_text`）+ 完整排名导出 + 球内构成 → `data/experiment_v3.jsonl`
 - [x] 主图 `paper/fig1.png`（八臂 recall@k 曲线 + 两种粒度对照）
 - [x] 3000 词初稿收尾：正文 **2,984 词**（含 References），三个占位符全部填掉
-- [x] **数字审计** `tools/audit_numbers.py`：37 项逐一重算并比对正文，抓出 4 处错并已修
+- [x] **数字审计** `tools/audit_numbers.py`：210 项逐一重算并比对正文，0 失败
 - [x] 引用补齐：References 7 条（标题/作者从 PDF 原页抽），删掉未核实的 OrcaLoca / RepoGraph
 - [x] 图在 50% 缩放下复核可读（1050×367）
 - [x] **file-first 分层基线**（`ff_k1..k5` / `ff_graph` / `file_oracle`）：不赢；但乘积分解 r@10 ≈ P(文件) × 回收率 成立，`file_oracle` = 0.665 → `docs/file-first.md`
 - [x] **文件排序改进 + 消融**：`fr_mix_nop` = **0.305**（+3.0 点，p=0.031）；去掉图信号反而更好 → 增益来自词法聚合，不是图
 - [x] **三个证据通道**（2026-10-28）：路径 / traceback 帧 / issue 引用的代码 → 合并 **0.352**（+7.7 点，30 胜 4 负，p<0.001），字符 1535<1615 → `docs/evidence.md`
-- [x] 正文并入（§5 新增证据一节 + 表 5；摘要/§1/§6/§8 改口径），**2,977 词**；审计扩到 **100+ 项**，0 失败
+- [x] 正文并入（§5 新增证据一节 + 表 5；摘要/§1/§6/§8 改口径）
+- [x] **扩到全量 2,232 任务**（2,174 快照 / 18.45 GB）：gap 2.27×→2.28× 不变；图从"看不见"变成 +2.2 点（CI 0.013–0.031）；2.9 点的证据规则**不复现** → 表 6/7、`docs/scale-check.md`
+- [x] **模型当特征 / 当重排器**：bge-reranker-v2-m3 fp16@1024，当特征 +4.1 点（非引用桶 +7.2），当短名单重排器 −2.8 → −37.8 → `docs/model-rerank.md`
+- [x] **答案纸审计**：独立实现复算 279/300 完全一致；换修复版金标 recall 变化 ≤0.7 点；10 个掉标任务实际是 2 个模块级 + 8 个只新增定义 → `docs/gold-audit.md`
+- [x] 定稿 **2,992 词**（Kaggle 口径），审计 210 项 0 失败
 - [ ] 更新线上 writeup（新版正文 + 图 + 证据表）
 - [ ] 把仓库设为 public 并在 Project Links 填入 `https://github.com/BugMaker-Pro/kaggleGemma-4`
 - [ ] 11/12 之前提交；提交后按 Non-Archival 规则再公开
 - [ ] 官方 129 任务那一路（可选：需在主赛道 Join + 接受 Rules）
-- [ ] 主赛道首次提交（11/14 之后）
+- [ ] 主赛道首次提交（论文赛道交完再开；主赛道 12/03 截止，时间够）
 
 ## 实验流水线
 
@@ -117,13 +134,22 @@ $py = 'D:\pyenv\cpython-3.12.13-windows-x86_64-none\python.exe'
 | `data/experiment_v3.jsonl` | 6.6 MB | 八臂主实验，含每臂前 50 名与每个符号的名次 |
 | `data/experiment_ff.jsonl` | 5.7 MB | file-first 分层臂与 `file_oracle` |
 | `data/experiment_fr2.jsonl` | 10.4 MB | 文件级投票、5/5 混合与消融 |
+| `data/features_full.jsonl` | 90.7 MB | 全量 2,232 任务的候选池 + 16 特征 + 标签（表 6/7 与 stack 的输入） |
+| `data/combo_ltr.jsonl` / `data/combo_ltr_full.jsonl` | 0.2 / 0.2 MB | 学习排序每折的分数（Lite / 全量） |
+| `data/combo_ltr_orders_full.jsonl` | 7.6 MB | 全量每任务、每 arm 的完整排名（任意 k 可复算） |
+| `data/rerank_full_1024.jsonl` | 5.9 MB | bge-reranker-v2-m3 在 2,232 任务上的分数（“模型当特征”那一列） |
+| `data/gold_fixed.jsonl` | 0.16 MB | 答案纸审计：原版 / 修复版 / 独立实现三套金标（`docs/gold-audit.md`） |
+| `data/gold_impact.json` | 0.5 KB | 换金标重算的 recall 变化 |
 
 复算全部数字：
 
 ```powershell
 $py = 'D:\pyenv\cpython-3.12.13-windows-x86_64-none\python.exe'
-& $py tools/audit_numbers.py      # 70 条断言，0 failure
+& $py tools/audit_numbers.py      # 210 条断言，0 failure
 & $py tools/analyse_v3.py         # 表 1–3
+& $py tools/analyse_full.py       # 表 7（2,232 任务）
+& $py tools/gold_fix.py --limit 300   # 答案纸审计（需 data/repos 快照）
+& $py tools/gold_impact.py        # 换金标后的 recall 变化
 & $py tools/decompose.py          # 预算乘积分解
 & $py tools/analyse_filerank.py   # 正结果与消融
 ```

@@ -178,7 +178,7 @@ Three things move and one does not. The **gap is invariant**, 2.27× against 2.2
 
 The resolution is the finding: 290 tasks adjudicate differences of about five points and no smaller; every claim that moved sits at two, and the one that did not is nine.
 
-**Reproducibility.** Each number here is re-derived from the released JSONL by a 198-assertion check script, so a claim that drifts from the data fails the build rather than the review.
+**Reproducibility.** Each number here is re-derived from the released JSONL by a 210-assertion check script, so a claim that drifts from the data fails the build rather than the review.
 
 ---
 
