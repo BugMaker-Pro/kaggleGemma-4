@@ -69,10 +69,23 @@ def main(argv=None) -> int:
     out = ROOT / "paper" / "submission.md"
     out.write_text(text, encoding="utf-8", newline="\n")
 
+    # Kaggle takes the title and subtitle in their own fields, so the body that
+    # gets pasted must not start with them. Emitting it separately removes a
+    # hand edit from the submission step -- the kind of edit that ships the
+    # title twice.
+    lines = text.splitlines()
+    first = next((i for i, line in enumerate(lines) if line.strip()), 0)
+    second = next((i for i in range(first + 1, len(lines)) if lines[i].strip()), None)
+    body = "\n".join(lines[second + 1:]).lstrip("\n") if second is not None else text
+    body_out = ROOT / "paper" / "submission_body.md"
+    body_out.write_text(body, encoding="utf-8", newline="\n")
+
     words = len(WORD.findall(text))
     print(f"wrote {out}")
+    print(f"wrote {body_out}   (title and subtitle removed: paste this one)")
     print(f"words as Kaggle will count them: {words}  (limit 3000)")
     print(f"headroom: {3000 - words}")
+    print(f"body words: {len(WORD.findall(body))}")
     for line in text.splitlines():
         if line.startswith("## "):
             print(f"  {line}")
