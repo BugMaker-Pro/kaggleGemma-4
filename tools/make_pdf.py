@@ -5,11 +5,13 @@ survives it badly. The Paper Track also accepts a PDF, and a PDF is what a
 reviewer will actually read, so this produces one from the same
 `paper/submission_body.md` the writeup uses.
 
-Word and LibreOffice do the typography; this only maps the constructs the paper
-uses -- headings, bold, italic, inline code, pipe tables, one figure -- onto
-docx objects. The bundled Python has python-docx; the LibreOffice kit converts.
+Layout follows the convention a reviewer expects: a table's caption sits above
+the table (it introduces the columns), a figure's caption below the figure (the
+image is read first). Labels are bold-italic in both cases so the two read as
+one family, the table rules are light and horizontal only, and a caption never
+gets separated from what it labels.
 
-    python tools/make_pdf.py        # writes paper/submission.docx and .pdf
+    python tools/make_pdf.py        # writes paper/submission.pdf
 """
 
 from __future__ import annotations
@@ -17,7 +19,6 @@ from __future__ import annotations
 import argparse
 import re
 import subprocess
-import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -31,9 +32,14 @@ from docx.oxml.ns import qn  # noqa: E402
 from docx.shared import Cm, Pt, RGBColor  # noqa: E402
 
 TOKEN = re.compile(r"(\*\*.+?\*\*|(?<![\*\w])\*[^*\n]+?\*(?![\*\w])|`[^`]+`)")
+CAPTION = re.compile(r"^(Figure \d+|Table \d+)\s*[—–-]\s*(.*)$")
 NODE = r"D:\deepseekharness\resources\runtime\primary-runtime\dependencies\node\bin\node.exe"
 CLI = ("D:\\deepseekharness\\resources\\app.asar.unpacked\\dsh\\node_modules\\"
        "@deepseek-ai\\libreoffice-kit\\lib\\cli.js")
+
+INK = RGBColor(0x1A, 0x1A, 0x1A)
+MUTED = RGBColor(0x44, 0x44, 0x44)
+RULE = "BFBFBF"
 
 
 def split_cells(line: str) -> list[str]:
@@ -70,15 +76,100 @@ def add_runs(paragraph, text: str, size: float, color: RGBColor | None = None) -
         if piece.startswith("**") and piece.endswith("**"):
             run.text, run.bold = piece[2:-2], True
         elif piece.startswith("`") and piece.endswith("`"):
-            run.text, run.font.name, run.font.size = piece[1:-1], "Consolas", Pt(size - 1.0)
+            run.text, run.font.name, run.font.size = piece[1:-1], "Consolas", Pt(size - 0.8)
         elif piece.startswith("*") and piece.endswith("*"):
             run.text, run.italic = piece[1:-1], True
         else:
             run.text = piece
         if run.font.size is None:
             run.font.size = Pt(size)
-        if color is not None:
-            run.font.color.rgb = color
+        run.font.color.rgb = color if color is not None else INK
+
+
+def caption(document, text: str, keep_with_next: bool) -> None:
+    """'Figure 1 — ...' / 'Table 2 — ...' with the label bold-italic."""
+    match = CAPTION.match(text)
+    paragraph = document.add_paragraph()
+    paragraph.paragraph_format.space_before = Pt(6)
+    paragraph.paragraph_format.space_after = Pt(2)
+    paragraph.paragraph_format.keep_with_next = keep_with_next
+    if match:
+        label = paragraph.add_run(f"{match.group(1)} — ")
+        label.bold = label.italic = True
+        label.font.size = Pt(8.6)
+        label.font.color.rgb = MUTED
+        add_runs(paragraph, match.group(2), 8.6, MUTED)
+        for run in paragraph.runs[1:]:
+            run.italic = True
+    else:
+        add_runs(paragraph, text, 8.6, MUTED)
+        for run in paragraph.runs:
+            run.italic = True
+
+
+def light_rules(table) -> None:
+    """Horizontal rules only: a top rule, a rule under the header, a bottom rule."""
+    properties = OxmlElement("w:tblBorders")
+    for edge, size, color in (("top", 8, "555555"), ("bottom", 8, "555555"),
+                              ("insideH", 4, RULE), ("left", 0, "auto"),
+                              ("right", 0, "auto"), ("insideV", 0, "auto")):
+        element = OxmlElement(f"w:{edge}")
+        element.set(qn("w:val"), "single" if size else "none")
+        element.set(qn("w:sz"), str(size))
+        element.set(qn("w:color"), color)
+        properties.append(element)
+    table._tbl.tblPr.append(properties)
+
+
+def keep_rows_together(table) -> None:
+    for row in table.rows:
+        row._tr.get_or_add_trPr().append(OxmlElement("w:cantSplit"))
+
+
+def rule_under(paragraph) -> None:
+    borders = OxmlElement("w:pBdr")
+    bottom = OxmlElement("w:bottom")
+    bottom.set(qn("w:val"), "single")
+    bottom.set(qn("w:sz"), "4")
+    bottom.set(qn("w:space"), "2")
+    bottom.set(qn("w:color"), "D0D0D0")
+    borders.append(bottom)
+    paragraph._p.get_or_add_pPr().append(borders)
+
+
+def footer(section) -> None:
+    paragraph = section.footer.paragraphs[0]
+    paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+    def field(name: str) -> None:
+        run = paragraph.add_run()
+        run.font.size = Pt(8)
+        run.font.color.rgb = RGBColor(0x90, 0x90, 0x90)
+        begin = OxmlElement("w:fldChar")
+        begin.set(qn("w:fldCharType"), "begin")
+        instruction = OxmlElement("w:instrText")
+        instruction.set(qn("xml:space"), "preserve")
+        instruction.text = f" {name} "
+        run._r.append(begin)
+        run._r.append(instruction)
+        end = OxmlElement("w:fldChar")
+        end.set(qn("w:fldCharType"), "end")
+        run._r.append(end)
+
+    field("PAGE")
+
+
+def column_widths(rows: list[list[str]], header: list[str], total: float) -> list[float]:
+    """Proportional widths, so a confidence interval does not wrap while 'arm' fits."""
+    columns = max(len(header), max((len(row) for row in rows), default=0))
+    longest = []
+    for position in range(columns):
+        values = [header[position] if position < len(header) else ""]
+        values += [row[position] for row in rows if position < len(row)]
+        longest.append(max(len(value) for value in values) + 2)
+    weight = sum(longest)
+    widths = [total * value / weight for value in longest]
+    return [max(width, 1.35) for width in widths]
 
 
 def build(body: Path, out_docx: Path, title: str, subtitle: str) -> dict:
@@ -88,30 +179,35 @@ def build(body: Path, out_docx: Path, title: str, subtitle: str) -> dict:
     section.page_width, section.page_height = Cm(21.0), Cm(29.7)
     for attr in ("left_margin", "right_margin"):
         setattr(section, attr, Cm(1.9))
-    section.top_margin, section.bottom_margin = Cm(1.8), Cm(1.8)
+    section.top_margin, section.bottom_margin = Cm(1.8), Cm(1.7)
+    footer(section)
 
     normal = document.styles["Normal"]
     normal.font.name = "Times New Roman"
     normal.font.size = Pt(10)
-    normal.paragraph_format.space_after = Pt(4)
-    normal.paragraph_format.line_spacing = 1.12
+    normal.paragraph_format.space_after = Pt(4.5)
+    normal.paragraph_format.line_spacing = 1.14
 
     heading = document.styles["Heading 1"]
     heading.font.name = "Times New Roman"
     heading.font.size = Pt(12.5)
     heading.font.bold = True
-    heading.font.color.rgb = RGBColor(0, 0, 0)
-    heading.paragraph_format.space_before = Pt(12)
-    heading.paragraph_format.space_after = Pt(3)
+    heading.font.color.rgb = INK
+    heading.paragraph_format.space_before = Pt(13)
+    heading.paragraph_format.space_after = Pt(5)
     heading.paragraph_format.keep_with_next = True
 
     head = document.add_paragraph()
     head.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    head.paragraph_format.space_after = Pt(3)
     run = head.add_run(title)
     run.bold, run.font.size = True, Pt(15.5)
     sub = document.add_paragraph()
     sub.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    add_runs(sub, subtitle, 9.5, RGBColor(0x44, 0x44, 0x44))
+    sub.paragraph_format.space_after = Pt(12)
+    add_runs(sub, subtitle, 9.5, MUTED)
+    for run in sub.runs:
+        run.italic = True
 
     lines = body.read_text(encoding="utf-8").splitlines()
     image = ROOT / "paper" / "fig1.png"
@@ -123,7 +219,8 @@ def build(body: Path, out_docx: Path, title: str, subtitle: str) -> dict:
             index += 1
             continue
         if line.startswith("## "):
-            document.add_heading(line[3:].strip(), level=1)
+            heading_paragraph = document.add_heading(line[3:].strip(), level=1)
+            rule_under(heading_paragraph)
             index += 1
             continue
         if line.lstrip().startswith("|"):
@@ -137,7 +234,11 @@ def build(body: Path, out_docx: Path, title: str, subtitle: str) -> dict:
             table = document.add_table(rows=1, cols=width)
             table.style = "Table Grid"
             table.alignment = WD_TABLE_ALIGNMENT.CENTER
-            table.autofit = True
+            table.autofit = False
+            widths = column_widths(rows, header, 17.0)
+            for position, column in enumerate(table.columns):
+                column.width = Cm(widths[position])
+            light_rules(table)
             size = 7.0 if width >= 7 else 7.8 if width >= 5 else 8.4
             for position, cell in enumerate(table.rows[0].cells):
                 cell.text = ""
@@ -147,7 +248,6 @@ def build(body: Path, out_docx: Path, title: str, subtitle: str) -> dict:
                     add_runs(paragraph, header[position], size)
                     for run in paragraph.runs:
                         run.bold = True
-            # a table that spills onto the next page must carry its header there
             property_ = OxmlElement("w:tblHeader")
             property_.set(qn("w:val"), "true")
             table.rows[0]._tr.get_or_add_trPr().append(property_)
@@ -159,21 +259,32 @@ def build(body: Path, out_docx: Path, title: str, subtitle: str) -> dict:
                     paragraph.paragraph_format.space_after = Pt(0)
                     if position < len(row):
                         add_runs(paragraph, row[position], size)
-                        if row[position].replace("+", "").replace("-", "").replace(".", "").isdigit():
+                        plain = row[position].replace("+", "").replace("-", "").replace(".", "")
+                        if plain.isdigit():
                             paragraph.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+            keep_rows_together(table)
             tables += 1
-            document.add_paragraph().paragraph_format.space_after = Pt(2)
+            spacer = document.add_paragraph()
+            spacer.paragraph_format.space_after = Pt(0)
+            spacer.paragraph_format.line_spacing = 0.6
             continue
         if line.lstrip().startswith("!["):
+            paragraph = document.add_paragraph()
+            paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            paragraph.paragraph_format.space_before = Pt(4)
+            paragraph.paragraph_format.space_after = Pt(2)
+            paragraph.paragraph_format.keep_with_next = True  # its caption follows
             if image.exists():
-                document.add_picture(str(image), width=Cm(16.4))
-                document.paragraphs[-1].alignment = WD_ALIGN_PARAGRAPH.CENTER
+                paragraph.add_run().add_picture(str(image), width=Cm(16.4))
                 figures += 1
             index += 1
             continue
         if line.startswith("*") and line.rstrip().endswith("*") and not line.startswith("**"):
-            paragraph = document.add_paragraph()
-            add_runs(paragraph, line.strip()[1:-1], 8.6, RGBColor(0x33, 0x33, 0x33))
+            inner = line.strip()[1:-1]
+            is_table = inner.lstrip().startswith("Table ")
+            # a table caption belongs to the table below it; a figure caption
+            # belongs to the figure above it, which already keeps with next
+            caption(document, inner, keep_with_next=is_table)
             index += 1
             continue
         paragraph_lines = [line]
@@ -184,6 +295,12 @@ def build(body: Path, out_docx: Path, title: str, subtitle: str) -> dict:
         paragraph = document.add_paragraph()
         add_runs(paragraph, " ".join(paragraph_lines), 10)
         paragraph.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+        if paragraph_lines[0].startswith("["):
+            paragraph.paragraph_format.left_indent = Cm(0.55)
+            paragraph.paragraph_format.first_line_indent = Cm(-0.55)
+            paragraph.paragraph_format.space_after = Pt(2)
+            for run in paragraph.runs:
+                run.font.size = Pt(9)
 
     out_docx.parent.mkdir(parents=True, exist_ok=True)
     document.save(out_docx)

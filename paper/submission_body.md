@@ -120,14 +120,13 @@ One-hop expansion has an arithmetic ceiling: 38 of 290 tasks (13.1%; 41 of 354 s
 
 The learned combination is worth 5.7 points on repositories it has never seen and the evidence override 2.9 (12 wins, 3 losses, p = 0.035); removing the four graph features costs 1.7 with an interval through zero (12 wins, 8 losses, p = 0.50). Both readings are what a larger sample overturns.
 
-*Table 6 — the ranker split by what the issue offers, at both scales*
+*Table 6 — the ranker split by what the issue offers, at both scales (left 290 tasks, right 2,232)*
 
 | subset | n | BM25 | ranker | n | BM25 | ranker |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | quotes the gold body | 54 | 0.481 | **0.776** | 355 | 0.459 | **0.755** |
 | names a path or a frame | 16 | 0.406 | 0.469 | 224 | 0.380 | **0.659** |
 | neither | 220 | 0.215 | 0.214 | 1,653 | 0.185 | 0.236 |
-| *left 290 tasks, right 2,232* | | | | | | |
 
 On the tasks whose issue pastes a line from the gold body the ranker gains **29.4 points at 290 tasks and 29.6 at 2,232** — a finding that does not care about sample size. The bucket 290 tasks badly misjudged is the middle one: naming a file or printing a frame looked worth 6 points on sixteen tasks and is worth **27.8** on 224. What the issue *states* is the signal; the graph is not.
 
