@@ -23,13 +23,13 @@
 | --- | --- |
 | **Title** | `File-Level Is Not Symbol-Level: What Code Graphs Miss and the Issue Already States` |
 | **Subtitle** | `300 tasks, then 2,232: the granularity gap is invariant, the graph is worth two points at symbol level and none at file level, and a three-point hand-written rule was really training data` |
-| **Body** | [paper/submission_body.md](paper/submission_body.md) 直接粘（实测比 HTML 富文本更干净）；标题/副标题已剥掉，从 `## Abstract` 开始 |
+| **Body** | [paper/kaggle_body.md](paper/kaggle_body.md) —— **830 词、0 张表、1 张图**，粘进编辑器怎么排都不会散。完整版正文 [paper/submission_body.md](paper/submission_body.md)（2,946 词、7 张表）留作备用，表格在 writeup 里必然走形，不值得为它折腾 |
 | **PDF** | [paper/submission.pdf](paper/submission.pdf)，5 页 / 436 KB，`python tools/make_pdf.py` 重新生成；放进 Project Links（表格不会变形的那份） |
-| **字数** | 2,946（正文）/ 2,992（含标题副标题）/ 上限 3,000；`python tools/make_submission.py` 复核 |
-| **图片** | 粘完后把 `![Figure 1](fig1.png)` 那一行删掉，光标留在原位 → 编辑器图片按钮 → 上传 [paper/fig1.png](paper/fig1.png)（1152×864） |
+| **字数** | 短版 830 / 全文版 2,946 / 含标题副标题 2,992，上限 3,000；`python tools/make_submission.py` 与 `tools/count_short.py` 复核 |
+| **图片** | 短版里图注在正文、图要手动传：删掉 `![Figure 1](fig1.png)` 那一行，光标留在原位 → 编辑器图片按钮 → 上传 [paper/fig1.png](paper/fig1.png)（1152×864） |
 | **Project link** | `https://github.com/BugMaker-Pro/kaggleGemma-4`（**必须先设 public**，当前匿名访问返回 404） |
 
-**粘贴方式：md 优先，HTML 撤下。** 我先做了 `paper/submission_body.html`（渲染好的富文本，图 base64 内联），实测粘进 Kaggle 反而更差——富文本导入会把表格和内联图弄坏，175 KB 的 base64 也拖慢粘贴。所以结论是：直接粘 `submission_body.md`，让 Kaggle 自己解析；`tools/make_html.py` 保留只为本地预览/打印，**不要**用它当提交载体。表格若在编辑器里错位，不跟它较劲——PDF 那份是权威版面。
+**粘贴方式：短版正文 + PDF。** writeup 编辑器排不出论文版式（7 张表必散架），而规则明确允许用 PDF 承载论文本体。所以正文用 [paper/kaggle_body.md](paper/kaggle_body.md)（830 词：摘要原文 + 四个结论段 + 图 + 局限 + 指向 PDF），完整论文在 Project Links 的 PDF 里。`paper/submission_body.md` 是全文版，只在你想让评委在页面内读到全部表格时用。[paper/submission_body.html](paper/submission_body.html) 已废弃（实测更差），`tools/make_html.py` 只留给本地预览。
 
 提交后仍可编辑并重新提交，所以先把这一版交上去，再用同一套 harness 补实验。
 
