@@ -73,9 +73,10 @@ Line granularity agrees: the ranking covers **23.9%** of the 1,010 changed lines
 
 **At ten slots, no graph arm improves symbol-level recall.** Table 2 and Figure 1.
 
+![Figure 1](fig1.png)
+
 *Figure 1 — top: symbol recall@k for BM25, the best graph arm, the learned ranker and the ranker with evidence. Bottom left: the same ranking by file and by symbol. Bottom right: the ranker's gain over BM25 by what the issue offers, at both scales.*
 
-![Figure 1](fig1.png)
 *Table 2 — the eight arms of §4, paired, equal pool and equal character budget*
 
 | arm | r@1 | r@5 | r@10 | file r@10 | Δr@10 (95% CI) | p |

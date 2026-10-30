@@ -21,9 +21,9 @@
 | --- | --- |
 | **Title** | `File-Level Is Not Symbol-Level: What Code Graphs Miss and the Issue Already States` |
 | **Subtitle** | `300 tasks, then 2,232: the granularity gap is invariant, the graph is worth two points at symbol level and none at file level, and a three-point hand-written rule was really training data` |
-| **Body** | [paper/submission.md](paper/submission.md) 全文粘贴；**删掉开头两行**（标题和副标题已经进了上面的字段） |
-| **字数** | 2,992（Kaggle 口径，上限 3,000；`python tools/make_submission.py` 复核） |
-| **图片** | [paper/fig1.png](paper/fig1.png) 插在正文 `![Figure 1](fig1.png)` 那一行；[paper/thumbnail.png](paper/thumbnail.png) 作为 writeup 封面 |
+| **Body** | [paper/submission_body.md](paper/submission_body.md) 全文粘贴（标题/副标题已剥掉，直接从 `## Abstract` 开始） |
+| **字数** | 2,946（正文）/ 2,992（含标题副标题）/ 上限 3,000；`python tools/make_submission.py` 复核 |
+| **图片** | 粘贴后找到 `![Figure 1](fig1.png)` 那一行，**删掉它**，光标留在原位 → 编辑器图片按钮 → 上传 [paper/fig1.png](paper/fig1.png)（1152×864）；[paper/thumbnail.png](paper/thumbnail.png) 作为 writeup 封面 |
 | **Project link** | `https://github.com/BugMaker-Pro/kaggleGemma-4`（**必须先设 public**，当前匿名访问返回 404） |
 
 提交后仍可编辑并重新提交，所以先把这一版交上去，再用同一套 harness 补实验。
