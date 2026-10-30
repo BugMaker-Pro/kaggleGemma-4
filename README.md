@@ -17,11 +17,14 @@
 
 ## 论文赛道提交清单（2026-11-13 07:59 前）
 
+官方规则原文（[docs/kaggle-paper-track-raw.md](docs/kaggle-paper-track-raw.md)）允许两种载体：正文直接写在 **Kaggle Writeup** 里，或者 *"(Optional) Public Project Link: optionally, instead of writing your paper in the Kaggle Writeup, you can also upload an arXiv-ready (LaTeX/Word) PDF"*。所以下面两条都做：正文用富文本（评委在页面里直接读），PDF 放 Project Links（表格不会变形）。
+
 | 字段 | 内容 |
 | --- | --- |
 | **Title** | `File-Level Is Not Symbol-Level: What Code Graphs Miss and the Issue Already States` |
 | **Subtitle** | `300 tasks, then 2,232: the granularity gap is invariant, the graph is worth two points at symbol level and none at file level, and a three-point hand-written rule was really training data` |
 | **Body** | 用 [paper/submission_body.html](paper/submission_body.html)：浏览器打开 → `Ctrl+A` → `Ctrl+C` → 粘进编辑器（**粘渲染后的富文本，不要粘 markdown**；见下） |
+| **PDF** | [paper/submission.pdf](paper/submission.pdf)，5 页 / 436 KB，`python tools/make_pdf.py` 重新生成；放进 Project Links |
 | **字数** | 2,946（正文）/ 2,992（含标题副标题）/ 上限 3,000；`python tools/make_submission.py` 复核 |
 | **图片** | 富文本粘贴通常会把图一起带过去（HTML 里是 base64 内联）；若没带过去，就光标停在图注上方 → 编辑器图片按钮 → 上传 [paper/fig1.png](paper/fig1.png)（1152×864） |
 | **Project link** | `https://github.com/BugMaker-Pro/kaggleGemma-4`（**必须先设 public**，当前匿名访问返回 404） |
