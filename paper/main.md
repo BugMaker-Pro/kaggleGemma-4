@@ -97,9 +97,7 @@ On a django snapshot (2,715 files, 38,651 nodes, 209,502 edges, 10.8 s) the dist
 | symbol | 0.091 | 0.214 | **0.275** |
 | file | — | 0.548 | **0.624** |
 
-Line granularity agrees: the ranking covers **23.9%** of the 1,010 changed lines, so the gap is not a matching artefact.
-
-**At ten slots, no graph arm improves symbol-level recall.** Table 2 and Figure 1.
+Line granularity agrees: the ranking covers **23.9%** of the 1,010 changed lines, so the gap is not a matching artefact. **At ten slots, no graph arm improves symbol-level recall** — Table 2 and Figure 1.
 
 ![Figure 1](fig1.png)
 
