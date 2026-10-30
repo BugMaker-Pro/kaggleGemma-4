@@ -25,6 +25,10 @@ graph buys there.
   features reaches 36.1% of symbols and 64.3% of files. A hand-written evidence
   rule worth 2.9 points on 290 tasks is worth −0.002 on 2,232: it was a ranker
   short of training data.
+- **What you index moves the gap.** Adding the candidate's own body to the index
+  raises symbol recall from 0.248 to 0.286 (+3.8 points, CI 2.1–5.4) with file
+  recall flat, so the 2.28× gap becomes 1.97× — and another symbol's body instead
+  drops recall to 0.128, so the gain is the candidate's own text, not more text.
 - **Most 300-task comparisons cannot see this.** Resampling the 2,232 paired
   differences: a true +2.2-point effect is detected at n = 290 in 39% of draws
   and at 800 in 87%, while a +11.3-point effect is detected at n = 100 in 88%.

@@ -115,6 +115,30 @@ def main(argv=None) -> int:
     check("rescored tasks", 290, impact["tasks"], 0)
     check("shipped bm25 reproduced by the impact run", 0.275, impact["arms"]["bm25"]["shipped"], 0.0005)
 
+    print("\n== body ablation (section 5) ==")
+    body = [json.loads(x) for x in (ROOT / "data" / "body_ablation.jsonl").open(encoding="utf-8") if x.strip()]
+    check("tasks in the body ablation", 2232, len(body), 0)
+
+    def mean_of(variant: str, field: str) -> float:
+        return statistics.fmean(row["variant"][variant][field] for row in body)
+
+    out_symbol = mean_of("body_out", "symbol")
+    in_symbol = mean_of("body_in", "symbol")
+    noise_symbol = mean_of("body_noise", "symbol")
+    out_file = mean_of("body_out", "file")
+    in_file = mean_of("body_in", "file")
+    check("symbol recall without the body", 0.248, round(out_symbol, 3), 0.001)
+    check("symbol recall with the body", 0.286, round(in_symbol, 3), 0.001)
+    check("symbol recall with another symbol's body", 0.128, round(noise_symbol, 3), 0.001)
+    check("symbol delta", 0.038, round(in_symbol - out_symbol, 3), 0.001)
+    check("file delta", -0.003, round(in_file - out_file, 3), 0.002)
+    check("gap without the body", 2.28, round(out_file / out_symbol, 2), 0.01, fmt="{:.2f}")
+    check("gap with the body", 1.97, round(in_file / in_symbol, 2), 0.01, fmt="{:.2f}")
+    deltas = [row["variant"]["body_in"]["chars"] - row["variant"]["body_out"]["chars"] for row in body]
+    check("presentation characters saved", 424, round(-statistics.fmean(deltas)), 2, fmt="{:.0f}")
+    check("pool hit without the body", 0.711, round(mean_of("body_out", "pool_hit"), 3), 0.001)
+    check("pool hit with the body", 0.776, round(mean_of("body_in", "pool_hit"), 3), 0.001)
+
     print("\n== power analysis (Table 7) ==")
     power = json.loads((ROOT / "data" / "power_analysis.json").read_text(encoding="utf-8"))
     ranked = power["power"]["ltr-bm25"]
