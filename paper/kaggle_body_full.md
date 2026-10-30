@@ -1,8 +1,6 @@
 ## Abstract
 
-Repository-level coding agents are evaluated on whether they resolve an issue, and the retrieval that feeds them is usually reported at file granularity. We measure the other granularity. On 300 SWE-bench Lite tasks across 12 Python repositories we extract the **354 symbols the reference patches actually touch** and ask how often retrieval surfaces them. The same ranking that recovers **62.4%** of gold files at rank 10 recovers **27.5%** of gold symbols: a 2.3× gap that is the real frontier, not an artefact.
-
-We test five ways of adding a code graph — reranking, slot substitution at one and two hops, score fusion, fusion over only deterministically resolved edges, and personalised PageRank — under an identical candidate pool and character budget. **No graph arm improves symbol-level recall, and three significantly degrade file-level recall.** Then we repeat the measurement on all **2,232 scorable instances of the SWE-bench test split**. The gap does not move (2.28×) and the graph's file-level effect is still exactly zero, but two claims do: the best graph arm is worth **2.2 symbol-level points** once the sample can see it, and a hand-written evidence rule worth 2.9 points at 290 tasks is worth **nothing** at 2,232 — what we had read as a rule was a ranker short of training data. A ranker over sixteen cheap features reaches **36.1%** of symbols and **64.3%** of files. We release the benchmark and the harness.
+Repository-level agents are judged on whether they resolve an issue; the retrieval that feeds them is reported at file granularity. We measure the granularity an agent edits. On 300 SWE-bench Lite tasks we extract the **354 symbols the reference patches actually touch**: the same ranking that recovers **62.4%** of gold files at rank 10 recovers **27.5%** of gold symbols, a 2.3× gap that is 2.28× again on 2,232 tasks. **Eight ways of adding a code graph leave symbol-level recall unchanged** on 300 tasks and buy 2.2 points on 2,232 — none of it at file level. What pays is what the issue states: a ranker over sixteen cheap features reaches **36.1%** of symbols and **64.3%** of files, and an evidence rule that looked worth 2.9 points was a ranker short of training data. We release the benchmark and the harness.
 
 ## 1. Introduction
 
@@ -84,9 +82,7 @@ Line granularity agrees: the ranking covers **23.9%** of the 1,010 changed lines
 
 The second-hop variant has the most reach (35.7%, Table 3) and is still negative. Reranking survives a wider budget: +2.9 at k = 20 (13 wins, 3 losses, p = 0.021), +0.8 at k = 50.
 
-**Diffusion is a lateral move; expansion is worse.** Personalised PageRank is the only arm that improves the first slot (0.106 against 0.091), and it gains 15 gold symbols while losing 17; at file level it loses 4.5 points (p = 0.019). `graph_open` trades slots 6–10 for neighbours: 18 tasks lose a gold file, 4 gain one, −4.8 points (p = 0.004).
-
-**Reach bounds the arm; the exchange rate eats the bound.** Table 3.
+**Diffusion is a lateral move; expansion is worse.** Personalised PageRank is the only arm that improves the first slot (0.106 against 0.091), and it gains 15 gold symbols while losing 17; at file level it loses 4.5 points (p = 0.019). `graph_open` trades slots 6–10 for neighbours: 18 tasks lose a gold file, 4 gain one, −4.8 points (p = 0.004). **Reach bounds the arm; the exchange rate eats the bound** — Table 3.
 
 *Table 3 — diagnostics, ceilings and the ablation grid (n = 290)*
 
@@ -102,7 +98,7 @@ One-hop expansion has an arithmetic ceiling: 38 of 290 tasks (13.1%; 41 of 354 s
 
 **A learned ranker.** Sixteen features — lexical score and rank, body-quote overlap, path and frame matches, four graph statistics, size and shape terms — feed a LightGBM ranker trained on six repositories, tested on the other six, three seeds averaged, nothing tuned on the test fold.
 
-*Table 5 — learned ranking and evidence (n = 290) — ranking: r@10 · Δ vs BM25, 95% CI · wins/losses · p*
+*Table 4 — learned ranking and evidence (n = 290) — ranking: r@10 · Δ vs BM25, 95% CI · wins/losses · p*
 
 - **BM25** — 0.275 · — · — · —
 - **learned ranker, 16 features** — 0.332 · +0.057 (0.019, 0.096) · 31/14 · 0.016
@@ -110,7 +106,7 @@ One-hop expansion has an arithmetic ceiling: 38 of 290 tasks (13.1%; 41 of 354 s
 
 The learned combination is worth 5.7 points on repositories it has never seen and the evidence override 2.9 (12 wins, 3 losses, p = 0.035); removing the four graph features costs 1.7 with an interval through zero (12 wins, 8 losses, p = 0.50). Both readings are what a larger sample overturns.
 
-*Table 6 — the ranker split by what the issue offers, at both scales (left 290 tasks, right 2,232) — each row: n · BM25 · ranker, for 290 tasks then 2,232*
+*Table 5 — the ranker split by what the issue offers, at both scales (left 290 tasks, right 2,232) — each row: n · BM25 · ranker, for 290 tasks then 2,232*
 
 - **quotes the gold body** — 54 · 0.481 · **0.776** · 355 · 0.459 · **0.755**
 - **names a path or a frame** — 16 · 0.406 · 0.469 · 224 · 0.380 · **0.659**
@@ -118,9 +114,9 @@ The learned combination is worth 5.7 points on repositories it has never seen an
 
 On the tasks whose issue pastes a line from the gold body the ranker gains **29.4 points at 290 tasks and 29.6 at 2,232** — a finding that does not care about sample size. The bucket 290 tasks badly misjudged is the middle one: naming a file or printing a frame looked worth 6 points on sixteen tasks and is worth **27.8** on 224. What the issue *states* is the signal; the graph is not.
 
-**The same claims on 2,232 tasks.** Table 7 repeats them on the full test split — 2,174 snapshots, the same twelve repositories, the same code and denominators.
+**The same claims on 2,232 tasks.** Table 6 repeats them on the full test split — 2,174 snapshots, the same twelve repositories, the same code and denominators.
 
-*Table 7 — what survives a 7.7× larger sample — reading: 290 tasks · 2,232 tasks*
+*Table 6 — what survives a 7.7× larger sample — reading: 290 tasks · 2,232 tasks*
 
 - **file / symbol recall@10** — 0.624 / 0.275 = 2.27× · 0.564 / 0.248 = **2.28×**
 - **best graph arm, symbol** — +0.012 (−0.026, 0.050) · +0.022 (0.013, 0.031)

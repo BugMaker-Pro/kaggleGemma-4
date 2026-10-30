@@ -16,11 +16,9 @@ Subtitle: *300 tasks, then 2,232: the granularity gap is invariant, the graph is
 
 ---
 
-## Abstract (180 words)
+## Abstract (143 words)
 
-Repository-level coding agents are evaluated on whether they resolve an issue, and the retrieval that feeds them is usually reported at file granularity. We measure the other granularity. On 300 SWE-bench Lite tasks across 12 Python repositories we extract the **354 symbols the reference patches actually touch** and ask how often retrieval surfaces them. The same ranking that recovers **62.4%** of gold files at rank 10 recovers **27.5%** of gold symbols: a 2.3× gap that is the real frontier, not an artefact.
-
-We test five ways of adding a code graph — reranking, slot substitution at one and two hops, score fusion, fusion over only deterministically resolved edges, and personalised PageRank — under an identical candidate pool and character budget. **No graph arm improves symbol-level recall, and three significantly degrade file-level recall.** Then we repeat the measurement on all **2,232 scorable instances of the SWE-bench test split**. The gap does not move (2.28×) and the graph's file-level effect is still exactly zero, but two claims do: the best graph arm is worth **2.2 symbol-level points** once the sample can see it, and a hand-written evidence rule worth 2.9 points at 290 tasks is worth **nothing** at 2,232 — what we had read as a rule was a ranker short of training data. A ranker over sixteen cheap features reaches **36.1%** of symbols and **64.3%** of files. We release the benchmark and the harness.
+Repository-level agents are judged on whether they resolve an issue; the retrieval that feeds them is reported at file granularity. We measure the granularity an agent edits. On 300 SWE-bench Lite tasks we extract the **354 symbols the reference patches actually touch**: the same ranking that recovers **62.4%** of gold files at rank 10 recovers **27.5%** of gold symbols, a 2.3× gap that is 2.28× again on 2,232 tasks. **Eight ways of adding a code graph leave symbol-level recall unchanged** on 300 tasks and buy 2.2 points on 2,232 — none of it at file level. What pays is what the issue states: a ranker over sixteen cheap features reaches **36.1%** of symbols and **64.3%** of files, and an evidence rule that looked worth 2.9 points was a ranker short of training data. We release the benchmark and the harness.
 
 ---
 
