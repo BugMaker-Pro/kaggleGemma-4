@@ -1,6 +1,18 @@
 # 2026 年这半年，和我们撞题的论文
 
-收集日期 2026-10-30。每条只记**核实过摘要原文**的内容（链接在标题上），后面写"这对我们意味着什么"。
+收集日期 2026-10-30 至 2026-10-31。每条只记**核实过原文**的内容（链接在标题上），后面写"这对我们意味着什么"。第二轮补了三篇顶会/预印本：FuseSearch（ACL 2026 Findings）、CoQuIR（ACL 2026）、SWE-Bench Pro Verified，以及一个方法论预印本 falsify-eval。
+
+## 0. 撞车地图（先看这个）
+
+| 我们的想法 | 谁先到了 | 严重程度 |
+| --- | --- | --- |
+| 文件级指标掩盖了函数级问题 | CORE-Bench（EMNLP 26）、RepoNav（EMNLP 26）、FuseSearch（ACL 26 Findings，报告的是文件级 F1） | **红**：必须引用并说明分工 |
+| 代码图对定位不值钱 | 小模型 agent 研究（arXiv 2610.33958）；FuseSearch 直接把"不需要知识图谱"写进设计 | **橙**：结论被独立复现，我们要把"定价"作为差异 |
+| 检索结论需要声明统计功效 | falsify-eval（个人站预印本，非顶会） | **橙**：方法学近邻，必须引用 |
+| 金标/任务质量要审计 | SWE-Bench Pro Verified（arXiv 2609.08149）、SWE-Bench Illusion | 绿：支持我们，不是抢 |
+| 索引文本组成决定差距大小 | 没找到同类 | **绿**：可当自己的结果 |
+| 两尺度经验功效曲线（真 benchmark、配对差值、n 到 2,232） | 没找到同类 | **绿**：最可能站住的一节 |
+
 
 ## 1. CORE-Bench: A Comprehensive Benchmark for Code Retrieval in the Era of Agentic Coding
 
@@ -46,13 +58,53 @@
 
 [The SWE-Bench Illusion: When State-of-the-Art LLMs Remember Instead of Reason](https://openreview.net/pdf?id=ZJCyrBpgnW) —— 讨论 SWE-bench 上的记忆/污染。和我们"图不如读 issue"的结论互补：如果模型记得住，那"读 issue"的收益也可能被高估。可在 Limitations 里一句带过（我们测的是检索，不涉及模型是否记住）。
 
-## 落到行动上的四件事（按性价比排序）
+## 7. FuseSearch: Learning Adaptive Parallel Execution for Efficient Code Localization
+
+ACL 2026 Findings（蚂蚁集团）· [项目页](https://github.com/sxthunder/FuseSearch) · [中文报道](https://hub-assets-cache.baai.ac.cn/view/55532)
+
+报道里的关键句：代码定位吃掉 agent 超过 **50%** 的计算；固定并行 8 个工具会产生 **34.9% 冗余调用**；他们的工具箱只有 `glob`/`grep`/`read_file` 三把，**"不需要代码知识图谱，不需要语法解析器，零依赖"**；4B 模型在 SWE-bench Verified（386 实例）上 **84.7% 文件级 F1**，比基线快 93.6%、省 68.9% token；RL 让模型学会"该搜多少"，奖励 = 0.8×定位准确率 + 0.2×(准确率×工具效率)。
+
+**意味着**：这是最直接的竞争者，而且立场和我们一致——**别建图，聪明地搜就够**。两点要写进 Related Work：
+1. 他们报告的是**文件级 F1**，正是我们论文说会高估的那个粒度；可以说"最强的 agentic 定位器仍在文件级汇报"；
+2. 他们用 386 个实例做评测——我们的功效表说明这个量级只能分辨 5 点以上的效应（他们效应大，不受影响，但这句话对我们有利）。
+
+差异：他们做**多轮 agent 策略**（学并行度），我们做**单轮排序的定价**（8 臂受控、同池同预算、两尺度）。
+
+## 8. CoQuIR: A Comprehensive Benchmark for Code Quality-Aware Information Retrieval
+
+[ACL 2026 Long](https://aclanthology.org/2026.acl-long.512/)（Geng et al.）
+
+> "current benchmarks primarily emphasize functional relevance while neglecting code quality... 42,725 queries and 134,907 code snippets in 11 languages... Evaluating 23 retrievers... even state-of-the-art models often fail to separate buggy or insecure code from robust counterparts."
+
+**意味着**：又一篇"现有 code retrieval benchmark 缺了 X"的顶会论文，但 X 是**质量**（正确/效率/安全/可维护），不是**粒度**。可以在 §2 一句带过：这类工作补的是检索目标的维度，我们补的是同一排序的评分粒度——两者正交。
+
+## 9. Calibrated Falsification Harnesses for Retrieval Evaluation（预印本，非顶会）
+
+[PREPRINT](https://spalsh-spec.github.io/falsify-eval/PREPRINT.md) · Sparsh Sharma · v7-10K · 2026-05
+
+> "Retrieval and ranking system claims are routinely reported as bare aggregate metrics, without (a) a calibrated null-distribution comparison..., (c) explicit per-feature statistical significance with declared sample-size power..."
+
+他们给了"bench-size calibration curve at N ∈ {21,40,80,120,141}"并把结果**投影**到 N=10,000。
+
+**意味着**：这是我们功效那一节最近的近邻，**必须引用**，否则"样本量功效"会显得是我们在重新发明。差异很清楚：他们是**小语料 + 投影**（N 最大 141，10k 是外推），我们是**真 benchmark 上直接量到 2,232**、用配对差值重采样、并且给出每臂的检出概率曲线。一句话："prior work argues the point on a niche corpus; we measure it on the benchmark the field actually uses."
+
+## 10. SWE-Bench Pro Verified: A Reliable Benchmark for Software Engineering Agents
+
+[arXiv:2609.08149](https://arxiv.org/abs/2609.08149)
+
+> "its evaluation is undermined by two sources of unreliability: reward hacking, enabled by leakage of gold solutions or hidden evaluation information, and task quality issues, including misleading problem statements and improperly scoped tests."
+
+**意味着**：他们修的是**任务与评测**的可信度，我们修的是**答案纸**（金标）的可信度，两条线可以互相引用：都说明"benchmark 的数字需要先验一遍再比"。也支持我们 §3 的"misleading problem statement"式的分析（issue 文本是仪器）。
+
+
+## 落到行动上的五件事（按性价比排序，2026-10-31 更新）
 
 | | 做什么 | 成本 | 收益 |
 | --- | --- | --- | --- |
-| A | **引用 CORE-Bench / RepoNav / 小模型图工具 / 仓库记忆**，§2 加一段"谁做了什么、我们不重复什么" | 1 小时，约 +40 词（当前余 99） | 直接挡掉"你们不知道已有工作"的质疑，是 Novelty 与 Quality 两维 |
-| B | **同文件兄弟符号分析**：在"文件已进 top-10 但符号没进"的任务里，数这 10 个槽位有多少来自金标文件的其他符号 | 半小时，纯离线 | 把 RepoNav 的前提在我们的数据上量化，给"剩余 33.5% 丢在哪"一个具体答案 |
-| C | **hop 深度分层**（照 2610.33958 的做法）：按 issue→金标的图距离分层，看图臂是否只在 ≤1 跳有增益 | 半天 | 把我们的负结果和他们的正结果接上：不是图无用，是两跳以上没人能兑现 |
-| D | **置换查询地板** | 1 小时（重跑 BM25） | 给 27.5% 一个随机基线，防"就是蒙的"质疑 |
+| A | **引用 CORE-Bench / RepoNav / FuseSearch / CoQuIR / falsify-eval**，§2 加一段"谁做了什么、我们不重复什么" | 1 小时，+50 词左右（当前全文余 16，需先砍 40） | 挡掉"不知道已有工作"，Novelty 与 Quality 两维 |
+| B | **body ablation 全量 + noise 控制**：把 2.3×→1.9× 的结论钉在 2,232 上 | 机器时间（已在跑 / 待补） | 把"你的差距是模板造成的"这个最大漏洞变成结果 |
+| C | **同文件兄弟符号分析**：文件进 top-10 但符号没进时，数槽位里有多少兄弟符号 | 半小时，纯离线 | 量化 RepoNav 的前提，给"剩余 33.5%"一个答案 |
+| D | **hop 深度分层**（照 2610.33958）：按 issue→金标的图距离分层看图臂增益 | 半天 | 把我们的负结果和他们的正结果接上 |
+| E | **置换查询地板** | 1 小时 | 给 27.5% 一个随机基线 |
 
-我的建议：先 A（保护新颖性，必须做），再 B（便宜且让结论可操作）。C 如果时间允许，是唯一能"加新结果"的；D 优先级最低。
+现状：功效分析（§5 新节 + Table 7）已完成并进论文——这是和 falsify-eval 唯一正面对上的地方，且我们是真 benchmark 直接量到 2,232。剩下的优先级：B（在跑）→ A（引用定位）→ C。
