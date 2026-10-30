@@ -154,10 +154,34 @@ $py = 'D:\pyenv\cpython-3.12.13-windows-x86_64-none\python.exe'
 & $py tools/analyse_filerank.py   # 正结果与消融
 ```
 
-不含入仓库的：`data/repos/*.tar.gz`（2.5 GB，`tools/fetch_repos.py` 按 commit 重拉）、`docs/papers/*.pdf`（版权）。
+不含入仓库的：`data/repos/*.tar.gz`（18.45 GB，`tools/fetch_repos.py` 按 commit 重拉）、`models/`（2.12 GB 权重，`tools/fetch_model.py`）、`docs/papers/*.pdf`（版权）。
+
+## 复原环境（uv，仓库里没有任何二进制）
+
+没有提交 `.whl`、没有模型权重、没有快照。Python 侧由 `uv.lock` 决定（71 个包；torch 钉在 `2.11.0+cu128` 与 cu128 索引上，属于可选 `model` extra），重数据由 fetch 脚本拉：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\tools\setup.ps1          # 依赖 + 2.12 GB 重排器权重
+powershell -ExecutionPolicy Bypass -File .\tools\setup.ps1 -Data    # 再加 SWE-bench 元数据与 18 GB 快照，最后跑审计
+```
+
+手动等价：
+
+```powershell
+uv venv --python 3.12 .venv
+uv sync --frozen --all-extras         # 完全还原（含 torch/transformers 的 model extra）
+uv run python tools/fetch_model.py    # 默认走 hf-mirror；直连可用时加 --endpoint
+uv run python tools/audit_numbers.py  # 只跑论文数字的话，到这一步就够
+```
+
+- **只跑论文里的数字**（审计、表 1–3、表 7、换金标重算）不需要 torch、模型和快照：`uv sync --frozen` 装核心依赖即可，`uv run python tools/audit_numbers.py` 直接跑完。
+- **cu128 索引慢的时候**：`tools/fetch_wheel.ps1` 从 SJTU 镜像用 8 段并行拉同一个 wheel（断点续传、校验总大小），拼好后 `uv pip install .\torch-2.11.0+cu128-cp312-cp312-win_amd64.whl`。
+- **本机别急着 `uv sync`**：这台机器的 torch 是用本地拼装的 wheel 装的，`uv sync` 会把同一版本从 cu128 索引重下 2.6 GB；`setup.ps1` 检测到已装好就跳过同步。
+- **`uv.lock` 是唯一的环境事实**：改依赖请改 `pyproject.toml` 再 `uv lock`，不要手改 lock。
+- Windows 默认 `Restricted` 执行策略会拒绝 `.\tools\setup.ps1`，所以上面用 `powershell -ExecutionPolicy Bypass -File`。
 
 ## 环境备注
 
-- **`pwsh` 默认模式必崩**（`0xC0000142` = `STATUS_DLL_INIT_FAILED`）。已定位：不是 Windows 或 PowerShell 损坏，是 DSH 沙箱层给子进程装配受限令牌失败；同一条命令在完全权限下正常。**解法：本会话切「完全权限」。**
 - 本机 `pwsh` 实际是 **Windows PowerShell 5.1**，脚本不要用 7 才有的语法（`??`、三元、`-Parallel`）。
 - 代码默认在 **Kaggle Notebook** 上跑（Linux、数据可直接挂载），本地只写代码。
+- 2026-10-30 之前 `4f48dc7` 误把 2.6 GB 的 CUDA wheel 和 8 个分片提交进了历史，已从全部 47 个 commit 里清除（`.git` 5.2 GB → 19 MB）；`.gitignore` 现在挡 `*.whl` 与 `tools/tmp_wheel/`。

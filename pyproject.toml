@@ -1,0 +1,48 @@
+[project]
+name = "kagglegemma-4"
+version = "0.1.0"
+description = "Symbol-level coverage and localization benchmark over SWE-bench, from patches to gold symbols to ranked candidates"
+readme = "README.md"
+requires-python = ">=3.12"
+# Pinned to what the paper's numbers were produced with. Most of the code is
+# stdlib-only; lightgbm is the ranker, and the model column lives in the
+# optional `model` extra below.
+dependencies = [
+    "lightgbm==4.7.0",
+    "numpy==2.5.4",
+    "scipy==1.18.1",
+    "matplotlib==3.11.2",
+    "pillow==13.0.0",
+    # only tools/pdfmeta.py and tools/run_pycg.py need these two, but they are
+    # what verifies the citations and the PyCG baseline, so they stay in.
+    "pypdf==6.21.2",
+    "pycg==0.0.8",
+]
+
+[project.optional-dependencies]
+# The model column of the paper ("the model as a feature"). 2.6 GB of CUDA
+# wheel, so it is an extra: `uv sync --all-extras` reproduces the full
+# environment, plain `uv sync` reproduces everything the tables need.
+model = [
+    "torch==2.11.0+cu128",
+    "transformers==5.21.0",
+    "tokenizers==0.23.3",
+    "safetensors==0.8.0",
+    "huggingface-hub==2.3.0",
+]
+
+[[tool.uv.index]]
+# The CUDA build does not live on PyPI; this is the canonical source. The
+# assembly path actually used on this machine (SJTU mirror, 8 parallel ranges,
+# because the connection kept dropping) is tools/fetch_wheel.ps1.
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv]
+# This is a scripts-and-data repository, not a distributable package: `uv sync`
+# should build the environment and nothing else.
+package = false
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu128" }]
