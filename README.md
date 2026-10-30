@@ -27,7 +27,7 @@
 | **PDF** | [paper/submission.pdf](paper/submission.pdf)，5 页 / 452 KB，`python tools/make_pdf.py` 重新生成；放进 Project Links（表格的排版版） |
 | **字数** | 短版 830 / 全文版 2,946 / 含标题副标题 2,992，上限 3,000；`python tools/make_submission.py` 与 `tools/count_short.py` 复核 |
 | **图片** | 短版里图注在正文、图要手动传：删掉 `![Figure 1](fig1.png)` 那一行，光标留在原位 → 编辑器图片按钮 → 上传 [paper/fig1.png](paper/fig1.png)（1152×864） |
-| **Project link** | `https://github.com/BugMaker-Pro/kaggleGemma-4`（**必须先设 public**，当前匿名访问返回 404） |
+| **Project link** | 仓库 `https://github.com/BugMaker-Pro/kaggleGemma-4`（已公开，匿名 200）+ PDF `https://github.com/BugMaker-Pro/kaggleGemma-4/blob/main/paper/submission.pdf`（已核对：文件 462,923 字节，公开可访问；`raw` 域名在部分网络下不稳，用 `blob` 更保险） |
 
 **粘贴方式：全文 + 表格图片。** 表格在富文本框里没救——竖线会散，纯数字列表又难读（要默记列序）。所以正文用 [paper/kaggle_body_img.md](paper/kaggle_body_img.md)：全文 2,532 词，**7 张表各自渲染成一张书版风格的 PNG**（表题已烘进图里），在正文里用 8 个占位图（7 表 + Figure 1）落位。上传顺序就是文档顺序，每个占位图的 alt 文字写着该传哪个文件。列表化版本 [paper/kaggle_body_full.md](paper/kaggle_body_full.md)（2,947 词）保留作对照，[paper/kaggle_body.md](paper/kaggle_body.md) 是 830 词摘要版。
 
@@ -78,7 +78,7 @@
 - [x] **答案纸审计**：独立实现复算 279/300 完全一致；换修复版金标 recall 变化 ≤0.7 点；10 个掉标任务实际是 2 个模块级 + 8 个只新增定义 → `docs/gold-audit.md`
 - [x] 定稿 **2,992 词**（Kaggle 口径），审计 210 项 0 失败
 - [ ] 更新线上 writeup（新版正文 + 图 + 证据表）
-- [ ] 把仓库设为 public 并在 Project Links 填入 `https://github.com/BugMaker-Pro/kaggleGemma-4`
+- [x] 仓库已 public（2026-10-30，匿名访问 200），PDF 已入库并在 Project Links 可用
 - [ ] 11/12 之前提交；提交后按 Non-Archival 规则再公开
 - [ ] 官方 129 任务那一路（可选：需在主赛道 Join + 接受 Rules）
 - [ ] 主赛道首次提交（论文赛道交完再开；主赛道 12/03 截止，时间够）
