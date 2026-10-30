@@ -96,6 +96,25 @@ def main(argv=None) -> int:
                if p.name in lite_files)
     check("snapshot bytes (GB)", 2.5, round(size / 1024 ** 3, 1), 0.1, fmt="{:.1f}")
 
+    print("\n== answer key audit (docs/gold-audit.md) ==")
+    fixed = [json.loads(x) for x in (ROOT / "data" / "gold_fixed.jsonl").open(encoding="utf-8") if x.strip()]
+    check("tasks re-derived", 300, len(fixed), 0)
+    check("keys identical to the independent implementation", 279,
+          sum(1 for row in fixed if set(row["gold_a"]) == set(row["gold_b3"])), 0)
+    check("gold symbols (audited copy)", 354, sum(len(row["gold_a"]) for row in fixed), 0)
+    empty = [row for row in fixed if not row["gold_a"]]
+    check("tasks with no symbol", 10, len(empty), 0)
+    add_only = sum(1 for row in empty if any(f["added"] for f in row["files"]))
+    check("  of which add only new definitions", 8, add_only, 0)
+    check("  of which touch only module-level lines", 2, len(empty) - add_only, 0)
+    stale = sum(1 for row in fixed if any(f["offset"] for f in row["files"]))
+    check("tasks with a hunk header that disagrees with the snapshot", 6, stale, 0)
+    impact = json.loads((ROOT / "data" / "gold_impact.json").read_text(encoding="utf-8"))
+    check("rescoring delta, largest arm (points)", 0.7,
+          round(impact["max_delta"] * 100, 1), 0.05, fmt="{:.1f}")
+    check("rescored tasks", 290, impact["tasks"], 0)
+    check("shipped bm25 reproduced by the impact run", 0.275, impact["arms"]["bm25"]["shipped"], 0.0005)
+
     print("\n== headline ==")
     sym10 = statistics.fmean(row["arms"]["text"]["recall@10"] for row in scored)
     file10 = statistics.fmean(row["arms"]["text"]["file_recall@10"] for row in scored)

@@ -48,6 +48,12 @@ PATH_RE = re.compile(r"[\w./\\-]+\.py\b")
 FRAME_RE = re.compile(r'File "([^"]+)", line (\d+)')
 NGRAM = 4
 BODY_LINES = 80
+# Audit switch: a task whose reference patch resolves to no symbol is normally
+# dropped (nothing to score). With the gold-repair audit we still want the pool
+# and the BM25 ranking for such a task, so the corrected gold set can be scored
+# against the same instrument. Set from the environment because the workers are
+# separate processes.
+KEEP_EMPTY_GOLD = os.environ.get("KEEP_EMPTY_GOLD") == "1"
 
 FEATURES = ("bm25_score", "bm25_rank", "body_run", "body_line", "path_in_issue",
             "path_overlap", "frame_hit", "frame_file", "named_file", "in_degree",
@@ -108,9 +114,10 @@ def _work(task: dict) -> dict:
     nodes = graph.nodes
     record = build_record(task, None, snap=DictSnapshot(files))
     gold, _ = target_ids(record, set(nodes))
-    if not gold:
+    if not gold and not KEEP_EMPTY_GOLD:
         return {"instance_id": task["instance_id"], "repo": task.get("repo", ""),
                 "skipped": True, "seconds": round(time.time() - started, 2)}
+
 
     docs = {node_id: document_text(node) for node_id, node in nodes.items()}
     bm25 = BM25(docs)

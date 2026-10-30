@@ -14,7 +14,7 @@ An agent that cannot see a repository must search it: the context holds a few hu
 
 LocAgent reports 92.7% file-level accuracy on SWE-bench-style tasks [2] — but a large module holds dozens of definitions, and opening the right file still leaves the agent to find the one function the fix belongs in.
 
-We measure the fine granularity. For each of 300 SWE-bench Lite tasks we take the reference patch, map every changed line to its enclosing definition, and record the symbols the fix touched. The same ranking that finds 62.4% of gold files at rank 10 finds 27.5% of gold symbols. **The gap is 2.3×, and it is not an artefact — it is one list, scored two ways.**
+We measure the fine granularity. For each of 300 SWE-bench Lite tasks the reference patch gives the symbols the fix touched, and the same ranking that finds 62.4% of gold files at rank 10 finds 27.5% of gold symbols. **The gap is 2.3×, and it is not an artefact — it is one list, scored two ways.**
 
 One instance: `matplotlib__matplotlib-24970` reports NumPy 1.24 deprecation warnings and its traceback prints file and line, so the file is never in doubt — every arm puts `lib/matplotlib/colors.py` in its top five. Not one puts `Colormap.__call__` in its top ten, though the 200-candidate pool contains it.
 
@@ -24,7 +24,7 @@ The explanation is arithmetic. One-hop balls reach a gold symbol in 13% of tasks
 
 ## 2. Related Work
 
-**Repository-level benchmarks.** SWE-bench and its Lite and Verified subsets score whether a patch makes the failing tests pass [1], and say nothing about whether the model could have found the code. Our targets derive from SWE-bench Lite's patches, but symbol-level retrieval is orthogonal to resolved rate and reported as such.
+**Repository-level benchmarks.** SWE-bench and its Lite and Verified subsets score whether a patch makes the failing tests pass [1], and say nothing about whether the code could have been found. Our targets derive from SWE-bench Lite's patches, but symbol-level retrieval is orthogonal to resolved rate and reported as such.
 
 **Agents over repositories.** SWE-agent fixes the interface and lets the model act [5]; LocAgent navigates with graph structure [2]; ARISE builds a repository graph and lifts Function R@1 from 0.43 to 0.60 [3]. These systems co-design retrieval with a model, so their numbers are not comparable to ours: the graph's marginal value is the only thing that varies.
 
@@ -32,9 +32,9 @@ The explanation is arithmetic. One-hop balls reach a gold symbol in 13% of tasks
 
 ## 3. Setup
 
-**Tasks.** All 300 instances of SWE-bench Lite, 12 repositories, dominated by django (114) and sympy (77). We fetch each instance's base commit as a tarball (297 distinct commits, 2.5 GB). Nothing is executed: the measurement is over source.
+**Tasks.** All 300 instances of SWE-bench Lite, 12 repositories, dominated by django (114) and sympy (77). We fetch each base commit as a tarball (297 distinct commits, 2.5 GB). Nothing is executed: the measurement is over source.
 
-**Gold symbols.** For each task we parse the reference patch, and map every changed line to the innermost definition containing it in the *pre-fix* tree: a deleted line anchors itself, an added line anchors the line before it, since the added text does not exist before the fix. The result is 354 definitions over 290 tasks; the other 10 change only module-level statements and contribute no symbol. We record rather than drop the 87 changed lines outside any definition, because a benchmark that discards hard cases reports inflated numbers. A symbol is `<module>.<qualname>`, where the module is the repository-relative path without `.py`; file-level metrics group the same ranking by file.
+**Gold symbols.** For each task we parse the reference patch and map every changed line to the innermost definition containing it in the *pre-fix* tree: a deleted line anchors itself, an added line the line before it, since the added text does not exist before the fix. That gives 354 definitions over 290 tasks; the other 10 are dropped: 2 change only module-level lines, 8 only add definitions. We record rather than drop the 87 changed lines outside any definition, so hard cases cannot inflate the score. A symbol is `<module>.<qualname>`, module being the file path without `.py`; file-level metrics group the same ranking by file. A second implementation — each definition's own text, before and after the patch — reproduces 279 of 300 keys; rescoring with it moves recall by at most 0.7 points.
 
 **Query and budget.** The issue text as given: no rewrite, no file hints, no LLM preprocessing — the weakest defensible query, so that no improvement can be attributed to query engineering. Every arm fills exactly 10 slots, and we report the characters those ten symbols would add to a prompt, so an arm cannot win by retrieving more.
 
@@ -73,11 +73,11 @@ On a django snapshot (2,715 files, 38,651 nodes, 209,502 edges, 10.8 s) the dist
 | symbol | 0.091 | 0.214 | **0.275** |
 | file | — | 0.548 | **0.624** |
 
-Line granularity agrees: the ranking covers **23.9%** of the 1,010 changed lines, so the gap is not an artefact of coarse matching.
+Line granularity agrees: the ranking covers **23.9%** of the 1,010 changed lines, so the gap is not a matching artefact.
 
 **At ten slots, no graph arm improves symbol-level recall.** Table 2 and Figure 1.
 
-*Figure 1 — top: symbol recall@k for BM25, the best graph arm, the learned ranker and the ranker with evidence, on the 290-task study. Bottom left: the same ranking by file and by symbol. Bottom right: the ranker's gain over BM25 by what the issue offers, at both scales.*
+*Figure 1 — top: symbol recall@k for BM25, the best graph arm, the learned ranker and the ranker with evidence. Bottom left: the same ranking by file and by symbol. Bottom right: the ranker's gain over BM25 by what the issue offers, at both scales.*
 
 ![Figure 1](fig1.png)
 *Table 2 — the eight arms of §4, paired, equal pool and equal character budget*
