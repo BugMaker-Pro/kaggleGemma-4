@@ -23,13 +23,13 @@
 | --- | --- |
 | **Title** | `File-Level Is Not Symbol-Level: What Code Graphs Miss and the Issue Already States` |
 | **Subtitle** | `300 tasks, then 2,232: the granularity gap is invariant, the graph is worth two points at symbol level and none at file level, and a three-point hand-written rule was really training data` |
-| **Body** | [paper/kaggle_body.md](paper/kaggle_body.md) —— **830 词、0 张表、1 张图**，粘进编辑器怎么排都不会散。完整版正文 [paper/submission_body.md](paper/submission_body.md)（2,946 词、7 张表）留作备用，表格在 writeup 里必然走形，不值得为它折腾 |
+| **Body** | [paper/kaggle_body_full.md](paper/kaggle_body_full.md) —— **全文 2,947 词**，7 张表改写成 35 条列表（列顺序写进表题），9 个章节 + 图；`tools/make_kaggle_full.py` 生成，缺任何一个表里的数字都会报错。想更短就用 [paper/kaggle_body.md](paper/kaggle_body.md)（830 词摘要版） |
 | **PDF** | [paper/submission.pdf](paper/submission.pdf)，5 页 / 436 KB，`python tools/make_pdf.py` 重新生成；放进 Project Links（表格不会变形的那份） |
 | **字数** | 短版 830 / 全文版 2,946 / 含标题副标题 2,992，上限 3,000；`python tools/make_submission.py` 与 `tools/count_short.py` 复核 |
 | **图片** | 短版里图注在正文、图要手动传：删掉 `![Figure 1](fig1.png)` 那一行，光标留在原位 → 编辑器图片按钮 → 上传 [paper/fig1.png](paper/fig1.png)（1152×864） |
 | **Project link** | `https://github.com/BugMaker-Pro/kaggleGemma-4`（**必须先设 public**，当前匿名访问返回 404） |
 
-**粘贴方式：短版正文 + PDF。** writeup 编辑器排不出论文版式（7 张表必散架），而规则明确允许用 PDF 承载论文本体。所以正文用 [paper/kaggle_body.md](paper/kaggle_body.md)（830 词：摘要原文 + 四个结论段 + 图 + 局限 + 指向 PDF），完整论文在 Project Links 的 PDF 里。`paper/submission_body.md` 是全文版，只在你想让评委在页面内读到全部表格时用。[paper/submission_body.html](paper/submission_body.html) 已废弃（实测更差），`tools/make_html.py` 只留给本地预览。
+**粘贴方式：全文 + 列表化表格。** writeup 应该写详细，所以正文用 [paper/kaggle_body_full.md](paper/kaggle_body_full.md)：全文 2,947 词，**唯一改动是把 7 张表换成 35 条列表**（`- **graph_rerank** — 0.103 · 0.217 · 0.287 · 0.614 · +0.012 (−0.026, 0.050) · 0.50`），列顺序写进每条表题，所以数字不会失去含义。列表在任何编辑器里都不会散，这是全文能进 writeup 的唯一办法。表格的**排版版**在 [paper/submission.pdf](paper/submission.pdf)（Project Links）。[paper/kaggle_body.md](paper/kaggle_body.md) 是 830 词摘要版，只在你不想要全文时用；[paper/submission_body.html](paper/submission_body.html) 已废弃（实测更差）。
 
 提交后仍可编辑并重新提交，所以先把这一版交上去，再用同一套 harness 补实验。
 
