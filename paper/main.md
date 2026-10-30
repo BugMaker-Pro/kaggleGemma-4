@@ -136,7 +136,7 @@ One-hop expansion has an arithmetic ceiling: 38 of 290 tasks (13.1%; 41 of 354 s
 
 **A learned ranker.** Sixteen features — lexical score and rank, body-quote overlap, path and frame matches, four graph statistics, size and shape terms — feed a LightGBM ranker trained on six repositories, tested on the other six, three seeds averaged, nothing tuned on the test fold.
 
-*Table 5 — learned ranking and evidence (n = 290)*
+*Table 4 — learned ranking and evidence (n = 290)*
 
 | ranking | r@10 | Δ vs BM25 | W/L | p |
 | --- | ---: | ---: | --- | ---: |
@@ -146,7 +146,7 @@ One-hop expansion has an arithmetic ceiling: 38 of 290 tasks (13.1%; 41 of 354 s
 
 The learned combination is worth 5.7 points on repositories it has never seen and the evidence override 2.9 (12 wins, 3 losses, p = 0.035); removing the four graph features costs 1.7 with an interval through zero (12 wins, 8 losses, p = 0.50). Both readings are what a larger sample overturns.
 
-*Table 6 — the ranker split by what the issue offers, at both scales (left 290 tasks, right 2,232)*
+*Table 5 — the ranker split by what the issue offers, at both scales (left 290 tasks, right 2,232)*
 
 | subset | n | BM25 | ranker | n | BM25 | ranker |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -156,9 +156,9 @@ The learned combination is worth 5.7 points on repositories it has never seen an
 
 On the tasks whose issue pastes a line from the gold body the ranker gains **29.4 points at 290 tasks and 29.6 at 2,232** — a finding that does not care about sample size. The bucket 290 tasks badly misjudged is the middle one: naming a file or printing a frame looked worth 6 points on sixteen tasks and is worth **27.8** on 224. What the issue *states* is the signal; the graph is not.
 
-**The same claims on 2,232 tasks.** Table 7 repeats them on the full test split — 2,174 snapshots, the same twelve repositories, the same code and denominators.
+**The same claims on 2,232 tasks.** Table 6 repeats them on the full test split — 2,174 snapshots, the same twelve repositories, the same code and denominators.
 
-*Table 7 — what survives a 7.7× larger sample*
+*Table 6 — what survives a 7.7× larger sample*
 
 | reading | 290 tasks | 2,232 tasks |
 | --- | --- | --- |
@@ -223,20 +223,20 @@ Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Eig
 | 5 | the ball is 0.42% gold vs 3.1% per text slot | Table 3 + `tools/displacement.py` | ✅ measured |
 | 6 | the budget is a product: 0.222–0.275 across five allocations | `tools/decompose.py` | ✅ measured |
 | 7 | with the right file, ten slots recover 66.5% | `file_oracle`, run_filefirst | ✅ measured |
-| 8 | a lexical file vote + 5/5 split gives 0.305 (p=0.031) | Table 5 | ✅ measured |
+| 8 | a lexical file vote + 5/5 split gives 0.305 (p=0.031) | Table 4 | ✅ measured |
 | 9 | adding file-level PageRank to the vote does not help (0.300) | `fr_borda_mix` ablation | ✅ measured |
 | 10 | 17.2% of issues carry a traceback frame, 41.7% a path | `tools/issue_evidence.py` | ✅ measured |
 | 11 | 22.8% of issues quote the gold symbol's body | `tools/body_evidence.py` | ✅ measured |
-| 12 | the evidence override adds 2.9 over the ranker at 290 tasks (p=0.035) | Table 5 | ✅ measured, **does not replicate** |
+| 12 | the evidence override adds 2.9 over the ranker at 290 tasks (p=0.035) | Table 4 | ✅ measured, **does not replicate** |
 | 13 | the capped variant gives 0.348 with one loss instead of four | `tools/run_combined.py` | ✅ measured |
-| 14 | at 2,232 tasks the same override is −0.002 (p=0.41), at any cap | Table 7, `--caps 1,2,5,10` | ✅ measured |
-| 15 | the ranker gains 29.4 and 29.6 points on quoting tasks at both scales | Table 6 | ✅ measured |
+| 14 | at 2,232 tasks the same override is −0.002 (p=0.41), at any cap | Table 6, `--caps 1,2,5,10` | ✅ measured |
+| 15 | the ranker gains 29.4 and 29.6 points on quoting tasks at both scales | Table 5 | ✅ measured |
 | 16 | only 46% of call sites resolve | §4, §5 | ✅ measured on django |
 | 17 | precise-only edges do not rescue the arms | Table 2 | ✅ measured |
 | 18 | a perfect reranker's graph headroom is 3 points (0.600 → 0.630) | Table 3 | ✅ measured |
 | 19 | the gap is the remaining frontier for agents | — | ⬜ argument, §6 |
-| 20 | the granularity gap is 2.28× at 2,232 (2.27× at 290) | Table 7 | ✅ measured |
-| 21 | the best graph arm is +0.022 symbol, +0.000 file at 2,232 | Table 7 | ✅ measured |
+| 20 | the granularity gap is 2.28× at 2,232 (2.27× at 290) | Table 6 | ✅ measured |
+| 21 | the best graph arm is +0.022 symbol, +0.000 file at 2,232 | Table 6 | ✅ measured |
 | 22 | graph features inside the ranker are worth +0.027 at 2,232 | `tools/run_combo_ltr.py` | ✅ measured |
 | 23 | the answer key survives a second, independent derivation (279/300 identical; rescoring moves recall ≤0.7 points) | `tools/gold_fix.py`, `tools/gold_impact.py` | ✅ audited |
 

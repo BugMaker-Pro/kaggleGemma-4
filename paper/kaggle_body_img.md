@@ -76,17 +76,17 @@ One-hop expansion has an arithmetic ceiling: 38 of 290 tasks (13.1%; 41 of 354 s
 
 **A learned ranker.** Sixteen features — lexical score and rank, body-quote overlap, path and frame matches, four graph statistics, size and shape terms — feed a LightGBM ranker trained on six repositories, tested on the other six, three seeds averaged, nothing tuned on the test fold.
 
-![paper/table_5.png](table_5.png)
+![paper/table_4.png](table_4.png)
 
 The learned combination is worth 5.7 points on repositories it has never seen and the evidence override 2.9 (12 wins, 3 losses, p = 0.035); removing the four graph features costs 1.7 with an interval through zero (12 wins, 8 losses, p = 0.50). Both readings are what a larger sample overturns.
 
-![paper/table_6.png](table_6.png)
+![paper/table_5.png](table_5.png)
 
 On the tasks whose issue pastes a line from the gold body the ranker gains **29.4 points at 290 tasks and 29.6 at 2,232** — a finding that does not care about sample size. The bucket 290 tasks badly misjudged is the middle one: naming a file or printing a frame looked worth 6 points on sixteen tasks and is worth **27.8** on 224. What the issue *states* is the signal; the graph is not.
 
-**The same claims on 2,232 tasks.** Table 7 repeats them on the full test split — 2,174 snapshots, the same twelve repositories, the same code and denominators.
+**The same claims on 2,232 tasks.** Table 6 repeats them on the full test split — 2,174 snapshots, the same twelve repositories, the same code and denominators.
 
-![paper/table_7.png](table_7.png)
+![paper/table_6.png](table_6.png)
 
 Three things move and one does not. The **gap is invariant**, 2.27× against 2.28×, which is what a property of ten slots and a file's definition count should do. The **graph is worth two points at symbol level and zero at file level**: at 290 tasks the first was invisible; at 2,232 it is +0.022 with an interval excluding zero, 169 wins to 90, positive in 8 of 12 repositories — real, and small, because it reorders symbols inside files text already found, while its file-level exchange is 81 wins to 94 losses. The **evidence override does not survive**: with 7.6× the training data the ranker reaches 0.361 alone and the override subtracts 0.2 points at five slots, 2.5 at ten, adds nothing at one. The 2.9 points it appeared to add were the four features it duplicates, finally able to learn.
 

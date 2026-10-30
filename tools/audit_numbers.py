@@ -324,7 +324,7 @@ def main(argv=None) -> int:
             check(f"{scale} {name}: ranker", claimed_ranker,
                   statistics.fmean(res[i]["ltr"] for i in ids), 0.002)
 
-    print("\n== scale check on 2,232 tasks (Table 7) ==")
+    print("\n== scale check on 2,232 tasks (Table 6) ==")
     full = {row["instance_id"]: row for row in
             (json.loads(x) for x in (ROOT / "data" / "combo_ltr_full.jsonl").open(encoding="utf-8") if x.strip())}
     check("scorable tasks", 2232, len(full), 0)

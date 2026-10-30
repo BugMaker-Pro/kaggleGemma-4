@@ -108,7 +108,7 @@ One-hop expansion has an arithmetic ceiling: 38 of 290 tasks (13.1%; 41 of 354 s
 
 **A learned ranker.** Sixteen features — lexical score and rank, body-quote overlap, path and frame matches, four graph statistics, size and shape terms — feed a LightGBM ranker trained on six repositories, tested on the other six, three seeds averaged, nothing tuned on the test fold.
 
-*Table 5 — learned ranking and evidence (n = 290)*
+*Table 4 — learned ranking and evidence (n = 290)*
 
 | ranking | r@10 | Δ vs BM25 | W/L | p |
 | --- | ---: | ---: | --- | ---: |
@@ -118,7 +118,7 @@ One-hop expansion has an arithmetic ceiling: 38 of 290 tasks (13.1%; 41 of 354 s
 
 The learned combination is worth 5.7 points on repositories it has never seen and the evidence override 2.9 (12 wins, 3 losses, p = 0.035); removing the four graph features costs 1.7 with an interval through zero (12 wins, 8 losses, p = 0.50). Both readings are what a larger sample overturns.
 
-*Table 6 — the ranker split by what the issue offers, at both scales (left 290 tasks, right 2,232)*
+*Table 5 — the ranker split by what the issue offers, at both scales (left 290 tasks, right 2,232)*
 
 | subset | n | BM25 | ranker | n | BM25 | ranker |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -128,9 +128,9 @@ The learned combination is worth 5.7 points on repositories it has never seen an
 
 On the tasks whose issue pastes a line from the gold body the ranker gains **29.4 points at 290 tasks and 29.6 at 2,232** — a finding that does not care about sample size. The bucket 290 tasks badly misjudged is the middle one: naming a file or printing a frame looked worth 6 points on sixteen tasks and is worth **27.8** on 224. What the issue *states* is the signal; the graph is not.
 
-**The same claims on 2,232 tasks.** Table 7 repeats them on the full test split — 2,174 snapshots, the same twelve repositories, the same code and denominators.
+**The same claims on 2,232 tasks.** Table 6 repeats them on the full test split — 2,174 snapshots, the same twelve repositories, the same code and denominators.
 
-*Table 7 — what survives a 7.7× larger sample*
+*Table 6 — what survives a 7.7× larger sample*
 
 | reading | 290 tasks | 2,232 tasks |
 | --- | --- | --- |

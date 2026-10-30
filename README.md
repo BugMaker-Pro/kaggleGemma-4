@@ -23,7 +23,7 @@
 | --- | --- |
 | **Title** | `File-Level Is Not Symbol-Level: What Code Graphs Miss and the Issue Already States` |
 | **Subtitle** | `300 tasks, then 2,232: the granularity gap is invariant, the graph is worth two points at symbol level and none at file level, and a three-point hand-written rule was really training data` |
-| **Body** | [paper/kaggle_body_img.md](paper/kaggle_body_img.md) —— 全文 **2,532 词**（表格变成图片，所以数字不占词），9 章 + **8 个图片位**。逐个上传 `paper/` 下的：`table_resolution` → `table_1` → `fig1` → `table_2` → `table_3` → `table_5` → `table_6` → `table_7`（每个占位图的 alt 文字就是文件名，从上往下点即可） |
+| **Body** | [paper/kaggle_body_img.md](paper/kaggle_body_img.md) —— 全文 **2,532 词**（表格是图片，数字不占词），9 章 + **8 个图片位**。按文档顺序上传：`table_resolution` → `table_1` → `fig1` → `table_2` → `table_3` → `table_4` → `table_5` → `table_6`（每个占位图的 alt 文字就是文件名） |
 | **PDF** | [paper/submission.pdf](paper/submission.pdf)，5 页 / 452 KB，`python tools/make_pdf.py` 重新生成；放进 Project Links（表格的排版版） |
 | **字数** | 短版 830 / 全文版 2,946 / 含标题副标题 2,992，上限 3,000；`python tools/make_submission.py` 与 `tools/count_short.py` 复核 |
 | **图片** | 短版里图注在正文、图要手动传：删掉 `![Figure 1](fig1.png)` 那一行，光标留在原位 → 编辑器图片按钮 → 上传 [paper/fig1.png](paper/fig1.png)（1152×864） |
