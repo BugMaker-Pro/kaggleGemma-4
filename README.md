@@ -23,13 +23,13 @@
 | --- | --- |
 | **Title** | `File-Level Is Not Symbol-Level: What Code Graphs Miss and the Issue Already States` |
 | **Subtitle** | `300 tasks, then 2,232: the granularity gap is invariant, the graph is worth two points at symbol level and none at file level, and a three-point hand-written rule was really training data` |
-| **Body** | [paper/kaggle_body_full.md](paper/kaggle_body_full.md) —— **全文 2,947 词**，7 张表改写成 35 条列表（列顺序写进表题），9 个章节 + 图；`tools/make_kaggle_full.py` 生成，缺任何一个表里的数字都会报错。想更短就用 [paper/kaggle_body.md](paper/kaggle_body.md)（830 词摘要版） |
-| **PDF** | [paper/submission.pdf](paper/submission.pdf)，5 页 / 436 KB，`python tools/make_pdf.py` 重新生成；放进 Project Links（表格不会变形的那份） |
+| **Body** | [paper/kaggle_body_img.md](paper/kaggle_body_img.md) —— 全文 **2,532 词**（表格变成图片，所以数字不占词），9 章 + **8 个图片位**。逐个上传 `paper/` 下的：`table_resolution` → `table_1` → `fig1` → `table_2` → `table_3` → `table_5` → `table_6` → `table_7`（每个占位图的 alt 文字就是文件名，从上往下点即可） |
+| **PDF** | [paper/submission.pdf](paper/submission.pdf)，5 页 / 452 KB，`python tools/make_pdf.py` 重新生成；放进 Project Links（表格的排版版） |
 | **字数** | 短版 830 / 全文版 2,946 / 含标题副标题 2,992，上限 3,000；`python tools/make_submission.py` 与 `tools/count_short.py` 复核 |
 | **图片** | 短版里图注在正文、图要手动传：删掉 `![Figure 1](fig1.png)` 那一行，光标留在原位 → 编辑器图片按钮 → 上传 [paper/fig1.png](paper/fig1.png)（1152×864） |
 | **Project link** | `https://github.com/BugMaker-Pro/kaggleGemma-4`（**必须先设 public**，当前匿名访问返回 404） |
 
-**粘贴方式：全文 + 列表化表格。** writeup 应该写详细，所以正文用 [paper/kaggle_body_full.md](paper/kaggle_body_full.md)：全文 2,947 词，**唯一改动是把 7 张表换成 35 条列表**（`- **graph_rerank** — 0.103 · 0.217 · 0.287 · 0.614 · +0.012 (−0.026, 0.050) · 0.50`），列顺序写进每条表题，所以数字不会失去含义。列表在任何编辑器里都不会散，这是全文能进 writeup 的唯一办法。表格的**排版版**在 [paper/submission.pdf](paper/submission.pdf)（Project Links）。[paper/kaggle_body.md](paper/kaggle_body.md) 是 830 词摘要版，只在你不想要全文时用；[paper/submission_body.html](paper/submission_body.html) 已废弃（实测更差）。
+**粘贴方式：全文 + 表格图片。** 表格在富文本框里没救——竖线会散，纯数字列表又难读（要默记列序）。所以正文用 [paper/kaggle_body_img.md](paper/kaggle_body_img.md)：全文 2,532 词，**7 张表各自渲染成一张书版风格的 PNG**（表题已烘进图里），在正文里用 8 个占位图（7 表 + Figure 1）落位。上传顺序就是文档顺序，每个占位图的 alt 文字写着该传哪个文件。列表化版本 [paper/kaggle_body_full.md](paper/kaggle_body_full.md)（2,947 词）保留作对照，[paper/kaggle_body.md](paper/kaggle_body.md) 是 830 词摘要版。
 
 提交后仍可编辑并重新提交，所以先把这一版交上去，再用同一套 harness 补实验。
 

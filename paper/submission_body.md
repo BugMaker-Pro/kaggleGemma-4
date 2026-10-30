@@ -90,9 +90,7 @@ Line granularity agrees: the ranking covers **23.9%** of the 1,010 changed lines
 
 The second-hop variant has the most reach (35.7%, Table 3) and is still negative. Reranking survives a wider budget: +2.9 at k = 20 (13 wins, 3 losses, p = 0.021), +0.8 at k = 50.
 
-**Diffusion is a lateral move; expansion is worse.** Personalised PageRank is the only arm that improves the first slot (0.106 against 0.091), and it gains 15 gold symbols while losing 17; at file level it loses 4.5 points (p = 0.019). `graph_open` trades slots 6–10 for neighbours: 18 tasks lose a gold file, 4 gain one, −4.8 points (p = 0.004).
-
-**Reach bounds the arm; the exchange rate eats the bound.** Table 3.
+**Diffusion is a lateral move; expansion is worse.** Personalised PageRank is the only arm that improves the first slot (0.106 against 0.091), and it gains 15 gold symbols while losing 17; at file level it loses 4.5 points (p = 0.019). `graph_open` trades slots 6–10 for neighbours: 18 tasks lose a gold file, 4 gain one, −4.8 points (p = 0.004). **Reach bounds the arm; the exchange rate eats the bound** — Table 3.
 
 *Table 3 — diagnostics, ceilings and the ablation grid (n = 290)*
 
