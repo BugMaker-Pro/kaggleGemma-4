@@ -21,10 +21,12 @@
 | --- | --- |
 | **Title** | `File-Level Is Not Symbol-Level: What Code Graphs Miss and the Issue Already States` |
 | **Subtitle** | `300 tasks, then 2,232: the granularity gap is invariant, the graph is worth two points at symbol level and none at file level, and a three-point hand-written rule was really training data` |
-| **Body** | [paper/submission_body.md](paper/submission_body.md) 全文粘贴（标题/副标题已剥掉，直接从 `## Abstract` 开始） |
+| **Body** | 用 [paper/submission_body.html](paper/submission_body.html)：浏览器打开 → `Ctrl+A` → `Ctrl+C` → 粘进编辑器（**粘渲染后的富文本，不要粘 markdown**；见下） |
 | **字数** | 2,946（正文）/ 2,992（含标题副标题）/ 上限 3,000；`python tools/make_submission.py` 复核 |
-| **图片** | 粘贴后找到 `![Figure 1](fig1.png)` 那一行，**删掉它**，光标留在原位 → 编辑器图片按钮 → 上传 [paper/fig1.png](paper/fig1.png)（1152×864）；[paper/thumbnail.png](paper/thumbnail.png) 作为 writeup 封面 |
+| **图片** | 富文本粘贴通常会把图一起带过去（HTML 里是 base64 内联）；若没带过去，就光标停在图注上方 → 编辑器图片按钮 → 上传 [paper/fig1.png](paper/fig1.png)（1152×864） |
 | **Project link** | `https://github.com/BugMaker-Pro/kaggleGemma-4`（**必须先设 public**，当前匿名访问返回 404） |
+
+**为什么用 HTML 而不是 markdown**：Kaggle 的 writeup 编辑器是富文本框，整段粘贴 markdown 会把 `##`、`**`、表格的 `|` 原样留在正文里，看起来就是"乱"。`paper/submission_body.html` 已经把标题、加粗、斜体、代码、7 张表、图（base64 内联）都渲染好了，浏览器里全选复制的是**富文本**，粘进去才是排好版的；粘完核对三件事：标题层级在、表格是格子不是竖线、图在。
 
 提交后仍可编辑并重新提交，所以先把这一版交上去，再用同一套 harness 补实验。
 
