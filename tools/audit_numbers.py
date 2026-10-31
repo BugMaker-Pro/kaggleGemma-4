@@ -153,6 +153,25 @@ def main(argv=None) -> int:
     check("ranker detected at n=2232", 1.00, ranked["2232"], 0.01)
     check("graph detected at n=2232", 1.00, graph["2232"], 0.01)
 
+    print("\n== dense baseline (section 5) ==")
+    dense = [json.loads(x) for x in (ROOT / "data" / "dense_scores.jsonl").open(encoding="utf-8") if x.strip()]
+    check("tasks with a dense score", 2232, len(dense), 0)
+
+    def arm_mean(arm: str, field: str) -> float:
+        return statistics.fmean(row[f"{arm}_{field}"] for row in dense)
+
+    check("16 features, symbol", 0.361, round(arm_mean("base", "symbol"), 3), 0.001)
+    check("dense alone, symbol", 0.366, round(arm_mean("cosine", "symbol"), 3), 0.001)
+    check("16 features + dense, symbol", 0.447, round(arm_mean("dense", "symbol"), 3), 0.001)
+    check("16 features, file", 0.643, round(arm_mean("base", "file"), 3), 0.001)
+    check("16 features + dense, file", 0.727, round(arm_mean("dense", "file"), 3), 0.001)
+    check("dense delta", 0.086, round(arm_mean("dense", "symbol") - arm_mean("base", "symbol"), 3), 0.001)
+    check("gap at 16 features", 1.78, round(arm_mean("base", "file") / arm_mean("base", "symbol"), 2), 0.01, fmt="{:.2f}")
+    check("gap with the dense score", 1.63, round(arm_mean("dense", "file") / arm_mean("dense", "symbol"), 2), 0.01, fmt="{:.2f}")
+    deltas = [row["dense_symbol"] - row["base_symbol"] for row in dense]
+    check("dense wins", 418, sum(1 for d in deltas if d > 1e-9), 0)
+    check("dense losses", 83, sum(1 for d in deltas if d < -1e-9), 0)
+
     print("\n== headline ==")
     sym10 = statistics.fmean(row["arms"]["text"]["recall@10"] for row in scored)
     file10 = statistics.fmean(row["arms"]["text"]["file_recall@10"] for row in scored)

@@ -25,6 +25,11 @@ graph buys there.
   features reaches 36.1% of symbols and 64.3% of files. A hand-written evidence
   rule worth 2.9 points on 290 tasks is worth −0.002 on 2,232: it was a ranker
   short of training data.
+- **A dense score is complementary, not an alternative.** A 33M bi-encoder scores
+  36.6% of symbols and 69.3% of files alone — on the same pool — and as one more
+  column it takes the sixteen features to **44.7% / 72.7%** (+8.6 points, 418 wins
+  to 83 losses). The gap narrows as the retriever strengthens — 2.28×, 1.89×,
+  1.78×, **1.63×** — and does not close.
 - **What you index moves the gap.** Adding the candidate's own body to the index
   raises symbol recall from 0.248 to 0.286 (+3.8 points, CI 2.1–5.4) with file
   recall flat, so the 2.28× gap becomes 1.97× — and another symbol's body instead
@@ -39,7 +44,7 @@ graph buys there.
 ```bash
 uv venv --python 3.12 .venv
 uv sync --frozen
-uv run python tools/audit_numbers.py     # 220 assertions, 0 failures
+uv run python tools/audit_numbers.py     # 242 assertions, 0 failures
 ```
 
 That is the whole check: every number in the paper is re-derived from the tracked
