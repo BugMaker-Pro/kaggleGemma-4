@@ -18,9 +18,9 @@
 | --- | --- |
 | **Title** | `File-Level Is Not Symbol-Level: What Code Graphs Miss and the Issue Already States` |
 | **Subtitle** | `300 tasks, then 2,232: the granularity gap is invariant, the graph is worth two points at symbol level and none at file level, and a three-point hand-written rule was really training data` |
-| **Body** | [paper/kaggle_body_img.md](../paper/kaggle_body_img.md)：全文 2,492 词、9 章、**9 个图片位**，按文档顺序上传 `table_resolution` → `table_1` → `fig1` → `table_2` → `table_3` → `table_4` → `table_5` → `table_6` → `table_7`（占位图的 alt 文字就是文件名） |
+| **Body** | [paper/kaggle_body_img.md](../paper/kaggle_body_img.md)：全文 2,487 词、9 章、**9 个图片位**，按文档顺序上传 `table_resolution` → `table_1` → `fig1` → `table_2` → `table_3` → `table_4` → `table_5` → `table_6` → `table_7`（占位图的 alt 文字就是文件名） |
 | **PDF** | [paper/submission.pdf](../paper/submission.pdf)，5 页，`uv run python tools/make_pdf.py` 重新生成 |
-| **字数** | 2,492（含图版正文）/ 2,995（全文本 + 标题副标题），上限 3,000；`tools/make_submission.py`、`tools/count_short.py` 复核 |
+| **字数** | 2,487（含图版正文）/ 2,990（全文本 + 标题副标题），上限 3,000；`tools/make_submission.py`、`tools/count_short.py` 复核 |
 | **Project Links** | `https://github.com/BugMaker-Pro/kaggleGemma-4` + `https://github.com/BugMaker-Pro/kaggleGemma-4/blob/main/paper/submission.pdf`（`blob` 比 `raw` 稳，raw 域名在国内常不通） |
 
 **为什么表格是图片**：富文本框里竖线表会散，纯数字列表又要默记列序。8 张表各自渲染成书版风格 PNG（表题烘进图里），`tools/make_table_images.py` 生成。

@@ -18,9 +18,11 @@ The explanation is arithmetic: one-hop balls are 0.42% gold against 3.1% per tex
 
 ## 2. Related Work
 
-**Repository-level benchmarks.** SWE-bench and its Lite and Verified subsets score whether a patch makes the failing tests pass [1], and say nothing about whether the code could have been found. Our targets derive from SWE-bench Lite's patches, but symbol-level retrieval is orthogonal to resolved rate and reported as such.
+**Repository-level benchmarks.** SWE-bench and its Lite and Verified subsets score whether a patch makes the failing tests pass [1], and say nothing about whether the code could have been found. Our targets derive from its patches, but symbol-level retrieval is orthogonal to resolved rate.
 
 **Agents over repositories.** SWE-agent fixes the interface and lets the model act [5]; LocAgent navigates with graph structure [2]; ARISE builds a repository graph and lifts Function R@1 from 0.43 to 0.60 [3]. These systems co-design retrieval with a model, so their numbers are not comparable: the graph's marginal value is the only thing that varies.
+
+**Granularity in 2026.** CORE-Bench [8] shows that repository search is not docstring matching, RepoNav [9] that flat snippet lists hide the target function, and FuseSearch [10] drops the code graph entirely while still reporting file-level F1. None of them prices the structure; that is what we do, at two scales.
 
 **Code graphs.** PyCG reports 99.2% precision and 69.9% recall on its own benchmark [4]; CodexGraph turns a repository into a queryable code graph [6], and RepoAtlas maintains evolving repository views for agents [7]. We report ours — 46% of call sites definite — and the ceiling that bounds one-hop expansion.
 
@@ -28,7 +30,7 @@ The explanation is arithmetic: one-hop balls are 0.42% gold against 3.1% per tex
 
 **Tasks.** All 300 SWE-bench Lite instances, 12 repositories, dominated by django (114) and sympy (77); 297 distinct base commits as tarballs (2.5 GB). Nothing is executed: the measurement is over source.
 
-**Gold symbols.** For each task we parse the reference patch and map every changed line to the innermost definition containing it in the *pre-fix* tree: a deleted line anchors itself, an added line the line before it, since the added text does not exist before the fix. That gives 354 definitions over 290 tasks; the other 10 are dropped: 2 change only module-level lines, 8 only add definitions. We record rather than drop the 87 changed lines outside any definition, so hard cases cannot inflate the score. A symbol is `<module>.<qualname>`, module being the file path without `.py`; file-level metrics group the same ranking by file. A second implementation — each definition's own text, before and after the patch — reproduces 279 of 300 keys; rescoring with it moves recall by at most 0.7 points.
+**Gold symbols.** For each task we parse the reference patch and map every changed line to the innermost definition containing it in the *pre-fix* tree: a deleted line anchors itself, an added line the line before it, since the added text does not exist before the fix. That gives 354 definitions over 290 tasks; the other 10 are dropped: 2 change only module-level lines, 8 only add definitions. We record rather than drop the 87 changed lines outside any definition, so hard cases cannot inflate the score. A symbol is `<module>.<qualname>`, module being the file path without `.py`; file-level metrics group the same ranking by file. A second implementation reproduces 279 of 300 keys; rescoring moves recall by at most 0.7 points.
 
 **Query and budget.** The issue text as given: no rewrite, no file hints, no LLM preprocessing — the weakest defensible query. Every arm fills exactly 10 slots, and we report the characters those ten symbols would add to a prompt, so an arm cannot win by retrieving more.
 
@@ -48,7 +50,7 @@ The explanation is arithmetic: one-hop balls are 0.42% gold against 3.1% per tex
 
 On a django snapshot (2,715 files, 38,651 nodes, 209,502 edges, 10.8 s) the distribution is 34.1% unresolved, 19.2% local, 15.6% import, 15.0% ambiguous, 11.2% unique, 4.9% external. **Only 46% of call sites resolve to a definite in-repository target** — the quality of the artefact the arms expand, and the reason `graph_fuse_precise` exists.
 
-**The arms.** Eight, all paired by task; `text` is BM25 over a per-symbol document (path, qualified name, signature, docstring), and the other seven fold in the graph. `graph_rerank` promotes anything one hop from the top five seeds without changing the pool, so it cannot add a candidate. `graph_open` keeps the top five and fills slots 6–10 with their neighbours from the whole graph — the only arm that can introduce a symbol BM25 never ranked. `graph_fuse` lets a candidate inherit λ = 0.5 of its best adjacent seed's score, **fixed before the run and never tuned**; `graph_fuse_precise` fuses over only the definite 46%. `graph_ppr` is personalised PageRank over the whole graph (restart 0.15, the convention, not tuned); `graph_ppr_text` adds half the diffusion mass to normalised BM25. Neighbours are unioned over `calls` and `inherits` and drawn round-robin so a hub cannot absorb the shortlist.
+**The arms.** Eight, all paired by task; `text` is BM25 over a per-symbol document (path, qualified name, signature, docstring), and the other seven fold in the graph. `graph_rerank` promotes anything one hop from the top five seeds without changing the pool, so it cannot add a candidate. `graph_open` fills slots 6–10 with neighbours of the top five — the only arm that can add a symbol BM25 never ranked. `graph_fuse` lets a candidate inherit λ = 0.5 of its best adjacent seed's score, **fixed before the run and never tuned**; `graph_fuse_precise` fuses over only the definite 46%. `graph_ppr` is personalised PageRank over the whole graph (restart 0.15, the convention, not tuned); `graph_ppr_text` adds half the diffusion mass to normalised BM25. Neighbours are unioned over `calls` and `inherits` and drawn round-robin so a hub cannot absorb the shortlist.
 
 **Two more rankings.** The evidence arm reads what the issue states: a traceback frame resolves through the same symbol table we built, a named path is a suffix match, and a quoted line is found by indexing the candidate's *body* — text our symbol documents never contain. The learned arm puts sixteen signals into one ranker (§5).
 
@@ -104,9 +106,9 @@ One-hop expansion has an arithmetic ceiling: 38 of 290 tasks (13.1%; 41 of 354 s
 - **learned ranker, 16 features** — 0.332 · +0.057 (0.019, 0.096) · 31/14 · 0.016
 - **+ evidence, 5 slots** — **0.361** · **+0.086 (0.046, 0.126)** · **39/13** · **<0.001**
 
-The learned combination is worth 5.7 points on repositories it has never seen; removing the four graph features costs 1.7 with an interval through zero (12 wins, 8 losses, p = 0.50).
+The learned combination is worth 5.7 points on repositories it has never seen.
 
-**A dense score is complementary, not an alternative.** A 33M bi-encoder (bge-small) scoring the same 200 candidates by cosine reaches 36.6% of symbols and 69.3% of files alone, and as one more column it takes the sixteen-feature ranker to **44.7%** and **72.7%** (+8.6 points, CI 7.4–9.8, 418 wins to 83 losses). The gap narrows with retriever strength — 2.28×, 1.89×, 1.78×, **1.63×** — so it shrinks, and does not close.
+**A dense score is complementary.** A 33M bi-encoder scoring the same 200 candidates by cosine reaches 36.6% of symbols and 69.3% of files alone; as one more column it takes the ranker to **44.7%** and **72.7%** (+8.6, 418 wins to 83 losses). The gap narrows with retriever strength — 2.28×, 1.89×, 1.78×, **1.63×** — and does not close.
 
 *Table 5 — the ranker split by what the issue offers, at both scales (left 290 tasks, right 2,232) — each row: n · BM25 · ranker, for 290 tasks then 2,232*
 
@@ -116,7 +118,7 @@ The learned combination is worth 5.7 points on repositories it has never seen; r
 
 On tasks whose issue pastes a line from the gold body the ranker gains **29.4 points at 290 tasks and 29.6 at 2,232**. The middle bucket: naming a file or printing a frame looked worth 6 points on sixteen tasks and is worth **27.8** on 224. What the issue *states* is the signal; the graph is not.
 
-**The same claims on 2,232 tasks.** Table 6 repeats them on the full test split — 2,174 snapshots, the same twelve repositories, the same code and denominators.
+**The same claims on 2,232 tasks.** Table 6 repeats them on the full split — 2,174 snapshots, same code, same denominators.
 
 *Table 6 — what survives a 7.7× larger sample — reading: 290 tasks · 2,232 tasks*
 
@@ -128,7 +130,7 @@ On tasks whose issue pastes a line from the gold body the ranker gains **29.4 po
 - **ranker without the graph features** — −0.017, p = 0.50 · +0.027 (0.017, 0.036)
 - **evidence override over the ranker** — +0.029, p = 0.035 · −0.002 (−0.008, 0.004)
 
-Three things move and one does not. The **gap is invariant to sample size**, 2.27× against 2.28×, which is what a property of ten slots and a file's definition count should do. The **graph is worth two points at symbol level and zero at file level**: at 290 tasks the first was invisible; at 2,232 it is +0.022 with an interval excluding zero, 169 wins to 90, positive in 8 of 12 repositories — real, and small, because it reorders symbols inside files text already found, while its file-level exchange is 81 wins to 94 losses. The **evidence override does not survive**: with 7.6× the training data the ranker reaches 0.361 alone and the override subtracts 0.2 points at five slots, 2.5 at ten, adds nothing at one. The 2.9 points it appeared to add were the four features it duplicates, finally able to learn.
+Three things move and one does not. The **gap is invariant to sample size**, 2.27× against 2.28×. The **graph is worth two points at symbol level and zero at file level**: invisible at 290 tasks, +0.022 at 2,232 with an interval excluding zero, 169 wins to 90, positive in 8 of 12 repositories — small, because it reorders symbols inside files text already found. The **evidence override does not survive**: the ranker reaches 0.361 alone and the override subtracts 2.5 points at ten slots; the 2.9 it appeared to add were the four features it duplicates, finally able to learn.
 
 **What you index moves the gap.** Adding the candidate's body raises symbol recall at 2,232 tasks from 0.248 to 0.286 (+3.8, CI 2.1–5.4) with file recall flat: the gap narrows from 2.28× to 1.97×. Another symbol's body instead drops recall to 0.128, so the gain is the candidate's own text; on 290 tasks the same ablation read +7.0.
 
@@ -173,3 +175,9 @@ Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Eig
 [6] Liu et al. CodexGraph: Bridging Large Language Models and Code Repositories via Code Graph Databases. NAACL 2025.
 
 [7] Zhang et al. RepoAtlas: Guiding Coding Agents via Evolving Multimodal Repository Views. 2026.
+
+[8] Zhang et al. CORE-Bench: A Comprehensive Benchmark for Code Retrieval in the Era of Agentic Coding. EMNLP 2026.
+
+[9] Chai et al. RepoNav: From Snippet Retrieval to File-Centered Repository Navigation for Code Agents. EMNLP 2026.
+
+[10] FuseSearch: Learning Adaptive Parallel Execution for Efficient Code Localization. ACL 2026 Findings.

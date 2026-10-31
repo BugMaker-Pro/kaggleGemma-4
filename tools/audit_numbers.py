@@ -508,8 +508,8 @@ def main(argv=None) -> int:
             failures.append(f"draft lost {token!r}")
 
     print("\n== citations ==")
-    cited = sorted({int(n) for n in __import__("re").findall(r"\[(\d)\]", paper)})
-    entries = __import__("re").findall(r"^\[(\d)\]", paper, flags=__import__("re").M)
+    cited = sorted({int(n) for n in __import__("re").findall(r"\[(\d+)\]", paper)})
+    entries = __import__("re").findall(r"^\[(\d+)\]", paper, flags=__import__("re").M)
     entries = sorted(int(n) for n in entries)
     ok = cited == entries and cited == list(range(1, len(cited) + 1))
     print(f"  [{'ok  ' if ok else 'FAIL'}] markers {cited} vs entries {entries}")
