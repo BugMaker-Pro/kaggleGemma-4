@@ -116,7 +116,7 @@ The learned combination is worth 5.7 points on repositories it has never seen.
 - **names a path or a frame** — 16 · 0.406 · 0.469 · 224 · 0.380 · **0.659**
 - **neither** — 220 · 0.215 · 0.214 · 1,653 · 0.185 · 0.236
 
-On tasks whose issue pastes a line from the gold body the ranker gains **29.4 points at 290 tasks and 29.6 at 2,232**. The middle bucket: naming a file or printing a frame looked worth 6 points on sixteen tasks and is worth **27.8** on 224. What the issue *states* is the signal; the graph is not.
+On tasks whose issue pastes a line from the gold body the ranker gains **29.4 points at 290 tasks and 29.6 at 2,232**. The middle bucket: naming a file or a frame looked worth 6 points on sixteen tasks and 27.8 on 224. What the issue *states* is the signal; the graph is not.
 
 **The same claims on 2,232 tasks.** Table 6 repeats them on the full split — 2,174 snapshots, same code, same denominators.
 
@@ -132,7 +132,7 @@ On tasks whose issue pastes a line from the gold body the ranker gains **29.4 po
 
 Three things move and one does not. The **gap is invariant to sample size**, 2.27× against 2.28×. The **graph is worth two points at symbol level and zero at file level**: invisible at 290 tasks, +0.022 at 2,232 with an interval excluding zero, 169 wins to 90, positive in 8 of 12 repositories — small, because it reorders symbols inside files text already found. The **evidence override does not survive**: the ranker reaches 0.361 alone and the override subtracts 2.5 points at ten slots; the 2.9 it appeared to add were the four features it duplicates, finally able to learn.
 
-**What you index moves the gap.** Adding the candidate's body raises symbol recall at 2,232 tasks from 0.248 to 0.286 (+3.8, CI 2.1–5.4) with file recall flat: the gap narrows from 2.28× to 1.97×. Another symbol's body instead drops recall to 0.128, so the gain is the candidate's own text; on 290 tasks the same ablation read +7.0.
+**What you index moves the gap.** Adding the candidate's body raises symbol recall at 2,232 tasks from 0.248 to 0.286 (+3.8, CI 2.1–5.4) with file recall flat: the gap narrows from 2.28× to 1.97×. Another symbol's body instead drops recall to 0.128, so the gain is the candidate's own text; as two columns besides the sixteen features it is still worth **+2.6 points** (202 wins to 94 losses).
 
 **How many tasks a claim needs.** That a 2.9-point rule evaporated is arithmetic. Resampling the 2,232 paired differences and running the same sign test — 400 draws per cell — gives the share of n-task studies that would call an effect real: the ranker's +11.3 points is detected at n = 100 in 88% of draws, the graph's +2.2 in 39% at 290 and 87% at 800, the evidence rule's −0.2 never, at 1–4%.
 
@@ -142,11 +142,11 @@ Three things move and one does not. The **gap is invariant to sample size**, 2.2
 - **graph, +2.2 points** — 0.09 · 0.39 · 0.62 · 0.87 · 1.00
 - **evidence, −0.2 points** — 0.01 · 0.02 · 0.03 · 0.04 · 0.00
 
-**Reproducibility.** Each number here is re-derived from the released JSONL by a 242-assertion check script, so a claim that drifts from the data fails the build rather than the review.
+**Reproducibility.** Each number here is re-derived from the released JSONL by a 248-assertion check script, so a claim that drifts from the data fails the build rather than the review.
 
 ## 6. Discussion
 
-The practical claim is a reprioritisation. One-hop expansion is not where the error is: 88.1% of gold symbols are more than one hop from a text seed. The margin is in what an issue states, and in candidate generation for the 27.6% of tasks whose gold never enters a top-500 pool.
+The practical claim is a reprioritisation: 88.1% of gold symbols are more than one hop from a text seed, so expansion is not where the error is. The margin is in what an issue states, and in candidate generation for the 27.6% of tasks whose gold never enters a top-500 pool.
 
 The measurement claim is granularity: file-level numbers near 90% are quoted as evidence the hard part is over, yet the same ranking is 27.5% on symbols.
 
@@ -154,7 +154,7 @@ One thing would not overturn it: a stronger reranker over the same pool, since a
 
 ## 7. Limitations
 
-Python only, as are most benchmark tasks. The eight-arm comparison uses one retriever, so the graph result is about its marginal value *given this ranking*; the learned ranker is trained on six repositories and tested on six, which bounds overfitting but leaves 290 tasks for the grid. The evidence channel is bounded by what an issue states: on the 74% that name no source it does nothing, and pytest loses 12.5 points to tracebacks that point at test files. We measure retrieval, not resolution: a better shortlist is necessary for a better patch, not sufficient.
+Python only, as are most tasks. The eight-arm comparison uses one retriever, so the graph result is about its marginal value *given this ranking*; the ranker trains on six repositories and is tested on six, which bounds overfitting but leaves 290 tasks. The evidence channel is bounded by what an issue states: on the 74% that name no source it does nothing, and pytest loses 12.5 points to tracebacks that point at test files. We measure retrieval, not resolution: a better shortlist is necessary for a better patch, not sufficient.
 
 ## 8. Conclusion
 

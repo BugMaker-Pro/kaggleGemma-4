@@ -172,6 +172,18 @@ def main(argv=None) -> int:
     check("dense wins", 418, sum(1 for d in deltas if d > 1e-9), 0)
     check("dense losses", 83, sum(1 for d in deltas if d < -1e-9), 0)
 
+    print("\n== body index as ranker columns ==")
+    body_rank = [json.loads(x) for x in (ROOT / "data" / "body_rank_scores.jsonl").open(encoding="utf-8") if x.strip()]
+    check("tasks with body-rank columns", 2232, len(body_rank), 0)
+    base_mean = statistics.fmean(row["base"] for row in body_rank)
+    full_mean = statistics.fmean(row["with_body"] for row in body_rank)
+    check("16 features, symbol", 0.361, round(base_mean, 3), 0.001)
+    check("16 features + body columns, symbol", 0.387, round(full_mean, 3), 0.001)
+    check("body-column delta", 0.026, round(full_mean - base_mean, 3), 0.001)
+    rank_deltas = [row["with_body"] - row["base"] for row in body_rank]
+    check("body-column wins", 202, sum(1 for d in rank_deltas if d > 1e-9), 0)
+    check("body-column losses", 94, sum(1 for d in rank_deltas if d < -1e-9), 0)
+
     print("\n== headline ==")
     sym10 = statistics.fmean(row["arms"]["text"]["recall@10"] for row in scored)
     file10 = statistics.fmean(row["arms"]["text"]["file_recall@10"] for row in scored)

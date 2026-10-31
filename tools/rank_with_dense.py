@@ -54,12 +54,18 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--rows", default=str(ROOT / "data" / "features_full.jsonl"))
     ap.add_argument("--embed", default=str(ROOT / "data" / "embed_retrieval.jsonl"))
+    ap.add_argument("--body-extra", default=str(ROOT / "data" / "body_rank_features.jsonl"))
     ap.add_argument("--out", default=str(ROOT / "data" / "dense_scores.jsonl"))
     args = ap.parse_args(argv)
 
     tasks = [json.loads(line) for line in Path(args.rows).open(encoding="utf-8") if line.strip()]
     embed = {row["instance_id"]: row for row in
              (json.loads(line) for line in Path(args.embed).open(encoding="utf-8") if line.strip())}
+    body_extra = {}
+    if Path(args.body_extra).exists():
+        body_extra = {row["instance_id"]: row for row in
+                      (json.loads(line) for line in Path(args.body_extra).open(encoding="utf-8")
+                       if line.strip())}
     assert tuple(tasks[0]["features"]) == ORDER
 
     kept = []
@@ -70,13 +76,19 @@ def main(argv=None) -> int:
         cosine = [0.0] * len(task["rows"])
         for rank, index in enumerate(row["candidates"]):
             cosine[index] = row["scores"][rank]
-        task["rows"] = [list(observation) + [cosine[i]] for i, observation in enumerate(task["rows"])]
+        extra = body_extra.get(task["instance_id"])
+        task["rows"] = [list(observation) + [cosine[i]]
+                        + ([extra["body_in_pool"][i], extra["body_rank"][i]] if extra else [])
+                        for i, observation in enumerate(task["rows"])]
         task["cosine"] = cosine
+        task["has_body"] = bool(extra)
         kept.append(task)
-    print(f"tasks with a dense score: {len(kept)}/{len(tasks)}")
+    print(f"tasks with a dense score: {len(kept)}/{len(tasks)}"
+          f", with body-rank columns: {sum(1 for t in kept if t['has_body'])}")
 
     base_columns = list(range(len(ORDER)))
     full_columns = base_columns + [len(ORDER)]
+    both_columns = full_columns + [len(ORDER) + 1, len(ORDER) + 2]
     repos = sorted({task["repo"] for task in kept})
     half = set(repos[::2])
     folds = ((half, set(repos) - half), (set(repos) - half, half))
@@ -86,13 +98,16 @@ def main(argv=None) -> int:
         train_tasks = [task for task in kept if task["repo"] in train_repos]
         test_tasks = [task for task in kept if task["repo"] in test_repos]
         models = {name: [train(train_tasks, seed, columns) for seed in SEEDS]
-                  for name, columns in (("base", base_columns), ("dense", full_columns))}
+                  for name, columns in (("base", base_columns), ("dense", full_columns),
+                                        ("both", both_columns))}
         for task in test_tasks:
             x_base = np.array([[row[i] for i in base_columns] for row in task["rows"]])
-            x_full = np.array(task["rows"])
+            x_full = np.array([[row[i] for i in full_columns] for row in task["rows"]])
+            x_both = np.array([[row[i] for i in both_columns] for row in task["rows"]])
             scores = {
                 "base": np.mean([m.predict(x_base) for m in models["base"]], axis=0),
                 "dense": np.mean([m.predict(x_full) for m in models["dense"]], axis=0),
+                "both": np.mean([m.predict(x_both) for m in models["both"]], axis=0),
                 "cosine": np.array(task["cosine"]),
             }
             total = task.get("gold_total") or 0
@@ -108,11 +123,11 @@ def main(argv=None) -> int:
 
     ids = sorted(per_task)
     print(f"tasks {len(ids)}")
-    for name in ("base", "cosine", "dense"):
+    for name in ("base", "cosine", "dense", "both"):
         symbol = statistics.fmean(per_task[i][f"{name}_symbol"] for i in ids)
         file = statistics.fmean(per_task[i][f"{name}_file"] for i in ids)
         print(f"  {name:7s} symbol {symbol:.4f}  file {file:.4f}  gap {file / symbol:.2f}x")
-    for base in ("base", "cosine"):
+    for base in ("base", "cosine", "dense"):
         deltas = [per_task[i]["dense_symbol"] - per_task[i][f"{base}_symbol"] for i in ids]
         wins = sum(1 for d in deltas if d > 1e-9)
         losses = sum(1 for d in deltas if d < -1e-9)

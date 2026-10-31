@@ -44,7 +44,7 @@ graph buys there.
 ```bash
 uv venv --python 3.12 .venv
 uv sync --frozen
-uv run python tools/audit_numbers.py     # 242 assertions, 0 failures
+uv run python tools/audit_numbers.py     # 248 assertions, 0 failures
 ```
 
 That is the whole check: every number in the paper is re-derived from the tracked
