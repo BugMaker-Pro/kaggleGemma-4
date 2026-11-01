@@ -4,7 +4,7 @@
 > Mandatory sections (missing any = ineligible): Title + Subtitle, Abstract, Introduction, Research description (methods & experiments), Related works & citations.
 > Protocol and changelog: [docs/paper-topic.md](../docs/paper-topic.md). Official rules: [docs/kaggle-paper-track-raw.md](../docs/kaggle-paper-track-raw.md).
 >
-> **Draft status**: no placeholders left. Body is 2,969 words (`tools/wordcount.py`); every number is re-derived from `data/*.jsonl` by `tools/audit_numbers.py` (100+ assertions, 0 failures).
+> **Draft status**: no placeholders left. Body is 2,951 words, 2,997 as Kaggle counts it (`tools/make_submission.py`); every number is re-derived from `data/*.jsonl` by `tools/audit_numbers.py` (251 assertions, 0 failures).
 
 ---
 
@@ -18,7 +18,7 @@ Subtitle: *300 tasks, then 2,232: the granularity gap is invariant, the graph is
 
 ## Abstract (158 words)
 
-Repository-level agents are judged on whether they resolve an issue, and the retrieval that feeds them is reported at file granularity. We measure the granularity an agent edits. On 300 SWE-bench Lite tasks we extract the **354 symbols the reference patches actually touch**: the same ranking that recovers **62.4%** of gold files at rank 10 recovers **27.5%** of gold symbols, a 2.3× gap that is 2.28× again on 2,232 tasks — **1.97×** once the documents include the body. **Eight ways of adding a code graph leave symbol-level recall unchanged** on 300 tasks and buy 2.2 points on 2,232, none at file level. The signal pays, not the structure: sixteen cheap features reach **36.1%** of symbols, a 33M bi-encoder matches them, and the two together reach **44.7%** and **72.7%** of files, while an evidence rule that looked worth 2.9 points was a ranker short of training data. We release the benchmark and the harness.
+Repository-level agents are judged on whether they resolve an issue, and the retrieval that feeds them is reported at file granularity. We measure the granularity an agent edits. On 300 SWE-bench Lite tasks we extract the **354 symbols the reference patches actually touch**: the same ranking that recovers **62.4%** of gold files at rank 10 recovers **27.5%** of gold symbols, a 2.3× gap that is 2.28× again on 2,232 tasks — **1.97×** once the documents include the body. **Eight ways of adding a code graph leave symbol-level recall unchanged** on 300 tasks and buy 2.2 points on 2,232, none at file level. The signal pays, not the structure: sixteen cheap features reach **33.2–36.1%** of symbols, a 33M bi-encoder matches them, and together they reach **44.7%** of symbols and **72.7%** of files, while a hand rule worth 2.9 points on Lite was a ranker short of training data. We release the benchmark and the harness.
 
 ---
 
@@ -146,7 +146,7 @@ One-hop expansion has an arithmetic ceiling: 38 of 290 tasks (13.1%; 41 of 354 s
 
 The learned combination is worth 5.7 points on repositories it has never seen.
 
-**A dense score is complementary.** A 33M bi-encoder scoring the same 200 candidates by cosine reaches 36.6% of symbols and 69.3% of files alone; as one more column it takes the ranker to **44.7%** and **72.7%** (+8.6, 418 wins to 83 losses). The gap narrows with retriever strength — 2.28×, 1.89×, 1.78×, **1.63×** — and does not close.
+**A dense score is complementary.** A 33M bi-encoder (bge-small-en-v1.5) scoring the same 200 candidates by cosine reaches 36.6% of symbols and 69.3% of files alone; as one more column it takes the ranker to **44.7%** and **72.7%** (+8.6, 418 wins to 83 losses). The gap narrows with retriever strength — 2.28×, 1.89×, 1.78×, **1.63×** — and does not close.
 
 *Table 5 — the ranker split by what the issue offers, at both scales (left 290 tasks, right 2,232)*
 
@@ -169,10 +169,10 @@ On tasks whose issue pastes a line from the gold body the ranker gains **29.4 po
 | best graph arm, file | −0.010 | +0.000 (−0.009, 0.008) |
 | learned ranker, symbol | +0.057 | +0.113 (0.098, 0.128) |
 | learned ranker, file | — | 0.564 → 0.643 |
-| ranker without the graph features | −0.017, p = 0.50 | +0.027 (0.017, 0.036) |
+| graph features, with − without | −0.017, p = 0.50 | +0.027 (0.017, 0.036) |
 | evidence override over the ranker | +0.029, p = 0.035 | −0.002 (−0.008, 0.004) |
 
-Three things move and one does not. The **gap is invariant to sample size**, 2.27× against 2.28×. The **graph is worth two points at symbol level and zero at file level**: invisible at 290 tasks, +0.022 at 2,232 with an interval excluding zero, 169 wins to 90, positive in 8 of 12 repositories — small, because it reorders symbols inside files text already found. The **evidence override does not survive**: the ranker reaches 0.361 alone and the override subtracts 2.5 points at ten slots; the 2.9 it appeared to add were the four features it duplicates, finally able to learn.
+Three things move and one does not. The **gap is invariant to sample size**, 2.27× against 2.28×. The **graph is worth two points at symbol level and zero at file level**: invisible at 290 tasks, +0.022 at 2,232 with an interval excluding zero, 169 wins to 90, positive in 8 of 12 repositories — small, because it reorders symbols inside files text already found. The **evidence override does not survive**: at full scale the ranker reaches 0.361 alone and the override costs it 0.2 points at the same five-slot cap; 2,232 tasks let the ranker learn the reorder, 290 did not.
 
 **What you index moves the gap.** Adding the candidate's body raises symbol recall at 2,232 tasks from 0.248 to 0.286 (+3.8, CI 2.1–5.4) with file recall flat: the gap narrows from 2.28× to 1.97×. Another symbol's body instead drops recall to 0.128, so the gain is the candidate's own text; as two ranker columns it is worth **+2.6 points** (202/94).
 
@@ -186,7 +186,7 @@ Three things move and one does not. The **gap is invariant to sample size**, 2.2
 | graph, +2.2 points | 0.09 | 0.39 | 0.62 | 0.87 | 1.00 |
 | evidence, −0.2 points | 0.01 | 0.02 | 0.03 | 0.04 | 0.00 |
 
-**Reproducibility.** Every number is re-derived from the released JSONL by a 251-assertion check script, so a claim that drifts from the data fails the build rather than the review.
+**Reproducibility.** Every number is re-derived from the released JSONL by a 251-assertion check script: a claim that drifts from the data fails the build, not the review.
 
 ---
 
@@ -202,13 +202,13 @@ One thing would not overturn it: a stronger reranker over the same pool, since a
 
 ## 7. Limitations (130 words)
 
-Python only, as are most tasks. The eight-arm comparison uses one retriever, so the graph result is about its marginal value *given this ranking*; the ranker trains on six repositories and is tested on six, which bounds overfitting but leaves 290 tasks. The evidence channel is bounded by what an issue states: on the 74% that name no source it does nothing, and pytest loses 12.5 points to test-file tracebacks. We measure retrieval, not resolution: a better shortlist is necessary for a better patch, not sufficient.
+Python only, as are most tasks. The eight-arm comparison uses one retriever, so the graph result is about its marginal value *given this ranking*; the ranker trains on six repositories and is tested on six, which bounds overfitting but leaves 290 tasks. The evidence channel is bounded by what an issue states: on the 74% naming no source it does nothing; pytest loses 12.5 points to test-file tracebacks. We measure retrieval, not resolution: a better shortlist is necessary for a better patch, not sufficient.
 
 ---
 
 ## 8. Conclusion (90 words)
 
-Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Eight graph arms, none improving symbol-level recall and three hurting file-level recall; on 2,232 tasks the best is worth two symbol points and zero file ones. The arithmetic explains why: an 11.9-point reach ceiling, a ball that is 0.42% gold against 3.1% for a text slot, and three points of graph headroom. The same ten slots reach **36.1%** once a ranker reads what the issue states — which is the difference between inferring structure and reading it.
+Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Eight graph arms, none improving symbol-level recall and three hurting file-level recall; on 2,232 tasks the best is worth two symbol points and zero file ones. The arithmetic explains why: an 11.9-point reach ceiling, a ball that is 0.42% gold against 3.1% for a text slot, and three points of graph headroom. The same ten slots reach **33.2–36.1%** once a ranker reads what the issue states — which is the difference between inferring structure and reading it.
 
 ---
 
@@ -244,7 +244,7 @@ Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Eig
 | 11 | 22.8% of issues quote the gold symbol's body | `tools/body_evidence.py` | ✅ measured |
 | 12 | the evidence override adds 2.9 over the ranker at 290 tasks (p=0.035) | Table 4 | ✅ measured, **does not replicate** |
 | 13 | the capped variant gives 0.348 with one loss instead of four | `tools/run_combined.py` | ✅ measured |
-| 14 | at 2,232 tasks the same override is −0.002 (p=0.41), at any cap | Table 6, `--caps 1,2,5,10` | ✅ measured |
+| 14 | at 2,232 tasks the same override is −0.002 at its five-slot cap and −0.025 at ten | Table 6, `--caps 1,2,5,10` | ✅ measured |
 | 15 | the ranker gains 29.4 and 29.6 points on quoting tasks at both scales | Table 5 | ✅ measured |
 | 16 | only 46% of call sites resolve | §4, §5 | ✅ measured on django |
 | 17 | precise-only edges do not rescue the arms | Table 2 | ✅ measured |
@@ -254,17 +254,20 @@ Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Eig
 | 21 | the best graph arm is +0.022 symbol, +0.000 file at 2,232 | Table 6 | ✅ measured |
 | 22 | graph features inside the ranker are worth +0.027 at 2,232 | `tools/run_combo_ltr.py` | ✅ measured |
 | 23 | the answer key survives a second, independent derivation (279/300 identical; rescoring moves recall ≤0.7 points) | `tools/gold_fix.py`, `tools/gold_impact.py` | ✅ audited |
-| 24 | a 33M bi-encoder ties the sixteen features alone (0.366 vs 0.361) and adds +8.6 on top of them (0.447), gap 1.63× | `tools/embed_retrieve.py`, `tools/rank_with_dense.py` | ✅ measured |
+| 24 | a 33M bi-encoder (bge-small-en-v1.5) ties the sixteen features alone (0.366 vs 0.361) and adds +8.6 on top of them (0.447), gap 1.63× | `tools/embed_retrieve.py`, `tools/rank_with_dense.py` | ✅ measured |
 | 25 | +2.2 points needs n ≈ 800 (39% power at 290); +11.3 is seen at n = 100 in 88% | `tools/power_analysis.py` | ✅ measured |
+| 26 | a dense index over the whole repository rescues none of the 27.6% tail: union 62.8% = BM25's rate, oracle flat | `tools/embed_retrieve_full.py`, `tools/analyse_union.py` | ✅ measured |
+
+**Retired rows.** 6, 8, 9 and 13 describe arms dropped from the final text (file vote 0.305, its PageRank variant 0.300, the capped override 0.348); they were measured and stay on record, but no claim in the paper now rests on them.
 
 ---
 
 ## Submission checklist
 
-- [x] **≤ 3,000 words** (counted with `tools/make_submission.py`: 2,992 as Kaggle counts it)
+- [x] **≤ 3,000 words** (counted with `tools/make_submission.py`: 2,997 as Kaggle counts it)
 - [x] five mandatory sections present
 - [ ] not previously published (Non-Archival permits posting only after submission)
-- [x] every number traceable to `data/*.jsonl` via `tools/audit_numbers.py` (200+ assertions)
+- [x] every number traceable to `data/*.jsonl` via `tools/audit_numbers.py` (251 assertions)
 - [x] answer key audited against an independent implementation: 279/300 identical, 290/300 scorable (`docs/gold-audit.md`)
 - [x] figures legible at 50% scale
 - [ ] submission confirmed well before the deadline
