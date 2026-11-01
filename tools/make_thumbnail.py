@@ -45,14 +45,17 @@ def main() -> int:
                   arrowprops=dict(arrowstyle="-|>", lw=2.2, color="#c0392b"))
     axes.text(4.6, 3.28, "2.3×", fontsize=25, color="#c0392b", ha="center")
 
-    axes.text(0.7, 1.35,
-              "300 SWE-bench Lite tasks, re-checked on 2,232 · 8 graph arms · equal budget",
+    axes.text(0.7, 1.55,
+              "and what arrives is 16× the code the fix touches: 29 KB to find 1.7 KB",
+              fontsize=18, color="#c0392b")
+    axes.text(0.7, 0.90,
+              "300 SWE-bench Lite tasks, re-checked on 2,232 · 8 graph arms add 2 points",
               fontsize=15, color="#666666")
-    axes.text(0.7, 0.75,
-              "the graph buys 2 points of symbol recall and 0 of file recall; a ranker reaches 36.1%",
+    axes.text(0.7, 0.45,
+              "a ranker reaches 33–36% of symbols; 85% of what the pool misses is never named",
               fontsize=15, color="#666666")
 
-    axes.plot([0.7, 11.3], [1.12, 1.12], color="#e0e0e0", lw=1.2)
+    axes.plot([0.7, 11.3], [2.02, 2.02], color="#e0e0e0", lw=1.2)
 
     out = ROOT / "paper" / "thumbnail.png"
     fig.savefig(out, dpi=100)
