@@ -4,7 +4,7 @@
 > Mandatory sections (missing any = ineligible): Title + Subtitle, Abstract, Introduction, Research description (methods & experiments), Related works & citations.
 > Protocol and changelog: [docs/paper-topic.md](../docs/paper-topic.md). Official rules: [docs/kaggle-paper-track-raw.md](../docs/kaggle-paper-track-raw.md).
 >
-> **Draft status**: no placeholders left. Body is 2,951 words, 2,997 as Kaggle counts it (`tools/make_submission.py`); every number is re-derived from `data/*.jsonl` by `tools/audit_numbers.py` (251 assertions, 0 failures).
+> **Draft status**: no placeholders left. Body is 2,948 words, 2,994 as Kaggle counts it (`tools/make_submission.py`); every number is re-derived from `data/*.jsonl` by `tools/audit_numbers.py` (259 assertions, 0 failures).
 
 ---
 
@@ -116,7 +116,7 @@ Line granularity agrees: the ranking covers **23.9%** of the 1,010 changed lines
 | graph_ppr | **0.106** | 0.214 | 0.268 | 0.579 | −0.007 (−0.040, 0.027) | 0.72 |
 | graph_ppr_text | 0.091 | 0.217 | 0.272 | 0.624 | −0.003 (−0.010, 0.000) | 1.00 |
 
-The second-hop variant has the most reach (35.7%, Table 3) and is still negative. Reranking survives a wider budget: +2.9 at k = 20 (13 wins, 3 losses, p = 0.021), +0.8 at k = 50.
+The second-hop variant reaches furthest (35.7%, Table 3) and is still negative. Reranking survives a wider budget: +2.9 at k = 20 (13 wins, 3 losses, p = 0.021).
 
 **Diffusion is a lateral move; expansion is worse.** Personalised PageRank is the only arm that improves the first slot (0.106 against 0.091), and it gains 15 gold symbols while losing 17; at file level it loses 4.5 points (p = 0.019). `graph_open` trades slots 6–10 for neighbours: 18 tasks lose a gold file, 4 gain one, −4.8 points (p = 0.004). **Reach bounds the arm; the exchange rate eats the bound** — Table 3.
 
@@ -186,23 +186,23 @@ Three things move and one does not. The **gap is invariant to sample size**, 2.2
 | graph, +2.2 points | 0.09 | 0.39 | 0.62 | 0.87 | 1.00 |
 | evidence, −0.2 points | 0.01 | 0.02 | 0.03 | 0.04 | 0.00 |
 
-**Reproducibility.** Every number is re-derived from the released JSONL by a 251-assertion check script: a claim that drifts from the data fails the build, not the review.
+**Reproducibility.** Every number is re-derived from the released JSONL by a 259-assertion check script: a claim that drifts from the data fails the build, not the review.
 
 ---
 
 ## 6. Discussion (300 words)
 
-The practical claim is a reprioritisation: 88.1% of gold symbols are more than one hop from a text seed, so expansion is not where the error is. The margin is in what an issue states, and in candidate generation for the 27.6% of tasks whose gold never enters a top-500 pool — a dense index over every definition does not close it: its union with that pool covers 62.8% of Lite tasks, the lexical rate.
+The practical claim is a reprioritisation: 88.1% of gold symbols are more than one hop from a text seed, so expansion is not where the error is; the margin is what an issue states. The 27.6% of tasks whose gold never enters a top-500 pool bound that: on those 80, the issue quotes the gold body once, names its file once, shows a frame naming the file eight times, and names the symbol five — 15% in all. The other 68 describe behaviour and never name code, and a dense index over every definition fails the same way: union with the pool covers 62.8% of Lite tasks, the lexical rate.
 
-The measurement claim is granularity: file-level numbers near 90% are quoted as evidence the hard part is over, yet the same ranking is 27.5% on symbols.
+The measurement claim is granularity: file-level numbers near 90% are quoted as evidence the hard part is over; the same ranking is 27.5% on symbols.
 
-One thing would not overturn it: a stronger reranker over the same pool, since a perfect one reaches 0.600 and the graph's headroom is three points. What would overturn it is a different pool — a retriever that draws candidates by meaning rather than by name, which a bi-encoder over the same pool only partly emulates — or a graph built by type inference [4].
+A stronger reranker would not overturn it: a perfect one reaches 0.600, and the graph's headroom is three points. What would is a pool drawn by behaviour rather than by name, or a graph built by type inference [4].
 
 ---
 
 ## 7. Limitations (130 words)
 
-Python only, as are most tasks. The eight-arm comparison uses one retriever, so the graph result is about its marginal value *given this ranking*; the ranker trains on six repositories and is tested on six, which bounds overfitting but leaves 290 tasks. The evidence channel is bounded by what an issue states: on the 74% naming no source it does nothing; pytest loses 12.5 points to test-file tracebacks. We measure retrieval, not resolution: a better shortlist is necessary for a better patch, not sufficient.
+Python only, as are most tasks. The eight-arm comparison uses one retriever, so the graph result is about its marginal value *given this ranking*; the ranker trains on six repositories and is tested on six, which bounds overfitting but leaves 290 tasks. The evidence channel does nothing on the 74% naming no source, and pytest loses 12.5 points to test-file tracebacks. We measure retrieval, not resolution: a better shortlist is necessary for a better patch, not sufficient.
 
 ---
 
@@ -257,6 +257,7 @@ Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Eig
 | 24 | a 33M bi-encoder (bge-small-en-v1.5) ties the sixteen features alone (0.366 vs 0.361) and adds +8.6 on top of them (0.447), gap 1.63× | `tools/embed_retrieve.py`, `tools/rank_with_dense.py` | ✅ measured |
 | 25 | +2.2 points needs n ≈ 800 (39% power at 290); +11.3 is seen at n = 100 in 88% | `tools/power_analysis.py` | ✅ measured |
 | 26 | a dense index over the whole repository rescues none of the 27.6% tail: union 62.8% = BM25's rate, oracle flat | `tools/embed_retrieve_full.py`, `tools/analyse_union.py` | ✅ measured |
+| 27 | on the tail (80 tasks) the issue supplies an exact channel in 15%: name 5, body 1, path 1, frame 8; 68 of 80 describe behaviour without naming code | `tools/tail_numbers.py` | ✅ measured |
 
 **Retired rows.** 6, 8, 9 and 13 describe arms dropped from the final text (file vote 0.305, its PageRank variant 0.300, the capped override 0.348); they were measured and stay on record, but no claim in the paper now rests on them.
 
@@ -267,7 +268,7 @@ Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Eig
 - [x] **≤ 3,000 words** (counted with `tools/make_submission.py`: 2,997 as Kaggle counts it)
 - [x] five mandatory sections present
 - [ ] not previously published (Non-Archival permits posting only after submission)
-- [x] every number traceable to `data/*.jsonl` via `tools/audit_numbers.py` (251 assertions)
+- [x] every number traceable to `data/*.jsonl` via `tools/audit_numbers.py` (259 assertions)
 - [x] answer key audited against an independent implementation: 279/300 identical, 290/300 scorable (`docs/gold-audit.md`)
 - [x] figures legible at 50% scale
 - [ ] submission confirmed well before the deadline

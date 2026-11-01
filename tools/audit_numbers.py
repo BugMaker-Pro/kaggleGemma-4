@@ -23,6 +23,7 @@ sys.path.insert(0, str(ROOT))
 from experiments.buildgraph import build_graph, read_snapshot  # noqa: E402
 from experiments.snapindex import SnapshotIndex  # noqa: E402
 from tools.analyse import paired, sign_test  # noqa: E402
+from tools.tail_numbers import census as tail_census  # noqa: E402
 
 failures: list[str] = []
 
@@ -285,6 +286,17 @@ def main(argv=None) -> int:
         row["pool_recall"]["500"] for row in ablation if row.get("pool_recall")), 0.001)
     oracle = statistics.fmean(row["oracle@10"] for row in scored if row.get("oracle@10") is not None)
     check("oracle@10", 0.630, oracle, 0.001)
+
+    print("\n== the tail the pool never reaches ==")
+    tail = tail_census()
+    check("tasks with no gold in the pool", 80, tail["tail"], 0)
+    check("tail share", "27.6%", f"{tail['tail'] / len(scored) * 100:.1f}%", 0, fmt="{}")
+    check("tail: issue names the symbol", 5, tail["name"], 0)
+    check("tail: issue quotes the body", 1, tail["body"], 0)
+    check("tail: issue names the file", 1, tail["path"], 0)
+    check("tail: frame names a patch file", 8, tail["frame"], 0)
+    check("tail: any exact channel", 12, tail["any"], 0)
+    check("tail: any channel share", "15%", f"{tail['any'] / tail['tail'] * 100:.0f}%", 0, fmt="{}")
 
     if not args.fast:
         print("\n== django edge resolution ==")

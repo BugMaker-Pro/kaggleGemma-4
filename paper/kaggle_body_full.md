@@ -82,7 +82,7 @@ Line granularity agrees: the ranking covers **23.9%** of the 1,010 changed lines
 - **graph_ppr** — **0.106** · 0.214 · 0.268 · 0.579 · −0.007 (−0.040, 0.027) · 0.72
 - **graph_ppr_text** — 0.091 · 0.217 · 0.272 · 0.624 · −0.003 (−0.010, 0.000) · 1.00
 
-The second-hop variant has the most reach (35.7%, Table 3) and is still negative. Reranking survives a wider budget: +2.9 at k = 20 (13 wins, 3 losses, p = 0.021), +0.8 at k = 50.
+The second-hop variant reaches furthest (35.7%, Table 3) and is still negative. Reranking survives a wider budget: +2.9 at k = 20 (13 wins, 3 losses, p = 0.021).
 
 **Diffusion is a lateral move; expansion is worse.** Personalised PageRank is the only arm that improves the first slot (0.106 against 0.091), and it gains 15 gold symbols while losing 17; at file level it loses 4.5 points (p = 0.019). `graph_open` trades slots 6–10 for neighbours: 18 tasks lose a gold file, 4 gain one, −4.8 points (p = 0.004). **Reach bounds the arm; the exchange rate eats the bound** — Table 3.
 
@@ -146,15 +146,15 @@ Three things move and one does not. The **gap is invariant to sample size**, 2.2
 
 ## 6. Discussion
 
-The practical claim is a reprioritisation: 88.1% of gold symbols are more than one hop from a text seed, so expansion is not where the error is. The margin is in what an issue states, and in candidate generation for the 27.6% of tasks whose gold never enters a top-500 pool — a dense index over every definition does not close it: its union with that pool covers 62.8% of Lite tasks, the lexical rate.
+The practical claim is a reprioritisation: 88.1% of gold symbols are more than one hop from a text seed, so expansion is not where the error is; the margin is what an issue states. The 27.6% of tasks whose gold never enters a top-500 pool bound that: on those 80, the issue quotes the gold body once, names its file once, shows a frame naming the file eight times, and names the symbol five — 15% in all. The other 68 describe behaviour and never name code, and a dense index over every definition fails the same way: union with the pool covers 62.8% of Lite tasks, the lexical rate.
 
-The measurement claim is granularity: file-level numbers near 90% are quoted as evidence the hard part is over, yet the same ranking is 27.5% on symbols.
+The measurement claim is granularity: file-level numbers near 90% are quoted as evidence the hard part is over; the same ranking is 27.5% on symbols.
 
-One thing would not overturn it: a stronger reranker over the same pool, since a perfect one reaches 0.600 and the graph's headroom is three points. What would overturn it is a different pool — a retriever that draws candidates by meaning rather than by name, which a bi-encoder over the same pool only partly emulates — or a graph built by type inference [4].
+A stronger reranker would not overturn it: a perfect one reaches 0.600, and the graph's headroom is three points. What would is a pool drawn by behaviour rather than by name, or a graph built by type inference [4].
 
 ## 7. Limitations
 
-Python only, as are most tasks. The eight-arm comparison uses one retriever, so the graph result is about its marginal value *given this ranking*; the ranker trains on six repositories and is tested on six, which bounds overfitting but leaves 290 tasks. The evidence channel is bounded by what an issue states: on the 74% naming no source it does nothing; pytest loses 12.5 points to test-file tracebacks. We measure retrieval, not resolution: a better shortlist is necessary for a better patch, not sufficient.
+Python only, as are most tasks. The eight-arm comparison uses one retriever, so the graph result is about its marginal value *given this ranking*; the ranker trains on six repositories and is tested on six, which bounds overfitting but leaves 290 tasks. The evidence channel does nothing on the 74% naming no source, and pytest loses 12.5 points to test-file tracebacks. We measure retrieval, not resolution: a better shortlist is necessary for a better patch, not sufficient.
 
 ## 8. Conclusion
 
