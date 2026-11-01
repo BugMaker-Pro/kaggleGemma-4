@@ -1,6 +1,6 @@
 ## Abstract
 
-Repository-level agents are judged on whether they resolve an issue, and the retrieval that feeds them is reported at file granularity. We measure the granularity an agent edits. On 300 SWE-bench Lite tasks we extract the **354 symbols the reference patches actually touch**: the same ranking that recovers **62.4%** of gold files at rank 10 recovers **27.5%** of gold symbols, a 2.3× gap that is 2.28× again on 2,232 tasks — **1.97×** once the documents include the body. **Eight ways of adding a code graph leave symbol-level recall unchanged** on 300 tasks and buy 2.2 points on 2,232, none at file level. The signal pays, not the structure: sixteen cheap features reach **33.2–36.1%** of symbols, a 33M bi-encoder matches them, and together they reach **44.7%** of symbols and **72.7%** of files, while a hand rule worth 2.9 points on Lite was a ranker short of training data. We release the benchmark and the harness.
+An agent reads characters, not slots, yet the retrieval that feeds it is reported at file granularity. A file-level hit at the median Lite task hands over 29 KB — 16× the 1.7 KB definition the fix touches, one of 48 in that file — and the metric counts the hit. On 300 SWE-bench Lite tasks we extract the **354 symbols the reference patches actually touch**: the same ranking that recovers **62.4%** of gold files at rank 10 recovers **27.5%** of gold symbols, a 2.3× gap that is 2.28× again on 2,232 tasks — **1.97×** once the documents include the body. **Eight ways of adding a code graph leave symbol-level recall unchanged** on 300 tasks and buy 2.2 points on 2,232, none at file level. The signal pays, not the structure: sixteen cheap features reach **33.2–36.1%** of symbols, a 33M bi-encoder matches them, and together they reach **44.7%** of symbols and **72.7%** of files; the 27.6% the pool never reaches is 85% unnamed. We release the benchmark and the harness.
 
 ## 1. Introduction
 
@@ -14,11 +14,11 @@ One instance: `matplotlib__matplotlib-24970`'s traceback names file and line, so
 
 Second, we test the standard remedy: build a call graph and let structure carry the rest. None of eight arms improves symbol-level recall at ten slots — not even personalised PageRank — and the most aggressive costs 4.8 points of file-level recall (p = 0.004). What does gain is the source the issue quotes (§5).
 
-The explanation is arithmetic: one-hop balls are 0.42% gold against 3.1% per text slot, and 54% of the call sites that would carry the hop resolve to no definite target.
+The explanation is arithmetic: one-hop balls are 0.42% gold against 3.1% per text slot.
 
 ## 2. Related Work
 
-**Repository-level benchmarks.** SWE-bench and its subsets score whether a patch makes the failing tests pass [1], and say nothing about whether the code could have been found. Our targets derive from its patches, but symbol-level retrieval is orthogonal to resolved rate.
+**Repository-level benchmarks.** SWE-bench and its subsets score whether a patch makes the failing tests pass [1], and say nothing about whether the code could be found. Our targets derive from its patches, but symbol-level retrieval is orthogonal to resolved rate.
 
 **Agents over repositories.** SWE-agent fixes the interface and lets the model act [5]; LocAgent navigates with graph structure [2]; ARISE builds a repository graph and lifts Function R@1 from 0.43 to 0.60 [3]. These systems co-design retrieval with a model, so their numbers are not comparable: the graph's marginal value is the only thing that varies.
 
@@ -32,7 +32,7 @@ The explanation is arithmetic: one-hop balls are 0.42% gold against 3.1% per tex
 
 **Gold symbols.** For each task we parse the reference patch and map every changed line to the innermost definition containing it in the *pre-fix* tree: a deleted line anchors itself, an added line the line before it, since the added text does not exist before the fix. That gives 354 definitions over 290 tasks; the other 10 are dropped: 2 change only module-level lines, 8 only add definitions. We record rather than drop the 87 changed lines outside any definition, so hard cases cannot inflate the score. A symbol is `<module>.<qualname>`, module being the file path without `.py`; file-level metrics group the same ranking by file. A second implementation reproduces 279 of 300 keys; rescoring moves recall by at most 0.7 points.
 
-**Query and budget.** The issue text as given: no rewrite, no file hints, no LLM preprocessing — the weakest defensible query. Every arm fills exactly 10 slots, and we report the characters those ten symbols would add to a prompt, so an arm cannot win by retrieving more.
+**Query and budget.** The issue text as given: no rewrite, no file hints, no LLM preprocessing — the weakest defensible query. Every arm fills exactly 10 slots, so an arm cannot win by retrieving more.
 
 ## 4. Method
 
@@ -67,6 +67,8 @@ On a django snapshot (2,715 files, 38,651 nodes, 209,502 edges, 10.8 s) the dist
 
 Line granularity agrees: the ranking covers **23.9%** of the 1,010 changed lines, so the gap is not a matching artefact. **At ten slots, no graph arm improves symbol-level recall** — Table 2 and Figure 1.
 
+**The file costs sixteen times the fix.** At the median Lite task the gold file is 28,950 characters and the definition the patch touches is 1,726 — 6.2% of the file, one of 48; 112 of 290 tasks exceed 25×. A file-level hit buys the agent the search, not the answer.
+
 ![Figure 1](fig1.png)
 
 *Figure 1 — top: symbol recall@k for BM25, the best graph arm, the learned ranker and the ranker with evidence. Bottom left: the same ranking by file and by symbol. Bottom right: the ranker's gain over BM25 by what the issue offers, at both scales.*
@@ -84,7 +86,7 @@ Line granularity agrees: the ranking covers **23.9%** of the 1,010 changed lines
 
 The second-hop variant reaches furthest (35.7%, Table 3) and is still negative. Reranking survives a wider budget: +2.9 at k = 20 (13 wins, 3 losses, p = 0.021).
 
-**Diffusion is a lateral move; expansion is worse.** Personalised PageRank is the only arm that improves the first slot (0.106 against 0.091), and it gains 15 gold symbols while losing 17; at file level it loses 4.5 points (p = 0.019). `graph_open` trades slots 6–10 for neighbours: 18 tasks lose a gold file, 4 gain one, −4.8 points (p = 0.004). **Reach bounds the arm; the exchange rate eats the bound** — Table 3.
+**Diffusion is a lateral move; expansion is worse.** Personalised PageRank wins the first slot (0.106 against 0.091) and still trades 15 gained gold symbols for 17 lost; at file level it loses 4.5 points (p = 0.019). `graph_open` swaps slots 6–10 for neighbours: 18 tasks lose a gold file, 4 gain one, −4.8 points (p = 0.004). **Reach bounds the arm; the exchange rate eats the bound** — Table 3.
 
 *Table 3 — diagnostics, ceilings and the ablation grid (n = 290)*
 
@@ -132,9 +134,9 @@ On tasks whose issue pastes a line from the gold body the ranker gains **29.4 po
 
 Three things move and one does not. The **gap is invariant to sample size**, 2.27× against 2.28×. The **graph is worth two points at symbol level and zero at file level**: invisible at 290 tasks, +0.022 at 2,232 with an interval excluding zero, 169 wins to 90, positive in 8 of 12 repositories — small, because it reorders symbols inside files text already found. The **evidence override does not survive**: at full scale the ranker reaches 0.361 alone and the override costs it 0.2 points at the same five-slot cap; 2,232 tasks let the ranker learn the reorder, 290 did not.
 
-**What you index moves the gap.** Adding the candidate's body raises symbol recall at 2,232 tasks from 0.248 to 0.286 (+3.8, CI 2.1–5.4) with file recall flat: the gap narrows from 2.28× to 1.97×. Another symbol's body instead drops recall to 0.128, so the gain is the candidate's own text; as two ranker columns it is worth **+2.6 points** (202/94).
+**What you index moves the gap.** Adding the candidate's body raises symbol recall at 2,232 tasks from 0.248 to 0.286 (+3.8, CI 2.1–5.4): the gap narrows from 2.28× to 1.97×. Another symbol's body instead drops recall to 0.128, so the gain is the candidate's own text; as two ranker columns it is worth **+2.6 points** (202/94).
 
-**How many tasks a claim needs.** That a 2.9-point rule evaporated is arithmetic. Resampling the 2,232 paired differences and running the same sign test — 400 draws per cell — gives the share of n-task studies that would call an effect real: the ranker's +11.3 points is detected at n = 100 in 88% of draws, the graph's +2.2 in 39% at 290 and 87% at 800, the evidence rule's −0.2 never, at 1–4%.
+**How many tasks a claim needs.** Resampling the 2,232 paired differences and running the same sign test — 400 draws per cell — gives the share of n-task studies that would call an effect real: +11.3 points is detected at n = 100 in 88% of draws, +2.2 in 39% at 290 and 87% at 800, −0.2 never.
 
 *Table 7 — share of resamples whose sign test reaches p < 0.05, by sample size*
 
@@ -142,19 +144,19 @@ Three things move and one does not. The **gap is invariant to sample size**, 2.2
 - **graph, +2.2 points** — 0.09 · 0.39 · 0.62 · 0.87 · 1.00
 - **evidence, −0.2 points** — 0.01 · 0.02 · 0.03 · 0.04 · 0.00
 
-**Reproducibility.** Every number is re-derived from the released JSONL by a 251-assertion check script: a claim that drifts from the data fails the build, not the review.
+**Reproducibility.** Every number is re-derived from the released JSONL by a 259-assertion check: a claim that drifts from the data fails the build, not the review.
 
 ## 6. Discussion
 
-The practical claim is a reprioritisation: 88.1% of gold symbols are more than one hop from a text seed, so expansion is not where the error is; the margin is what an issue states. The 27.6% of tasks whose gold never enters a top-500 pool bound that: on those 80, the issue quotes the gold body once, names its file once, shows a frame naming the file eight times, and names the symbol five — 15% in all. The other 68 describe behaviour and never name code, and a dense index over every definition fails the same way: union with the pool covers 62.8% of Lite tasks, the lexical rate.
+The practical claim is a trade — 2.3× harder to hit, 16× cheaper when it does — and expansion is not where the error is (88.1% of gold symbols sit beyond one hop); the margin is what an issue states. The 27.6% whose gold never enters a top-500 pool bounds that margin: on those 80, the issue quotes the gold body once, names its file once, shows a frame naming it eight times, and names the symbol five — 15% in all. The other 68 describe behaviour and never name code, and a dense index over every definition fails the same way: union with the pool covers 62.8% of Lite tasks, the lexical rate.
 
 The measurement claim is granularity: file-level numbers near 90% are quoted as evidence the hard part is over; the same ranking is 27.5% on symbols.
 
-A stronger reranker would not overturn it: a perfect one reaches 0.600, and the graph's headroom is three points. What would is a pool drawn by behaviour rather than by name, or a graph built by type inference [4].
+A stronger reranker would not overturn it: a perfect one reaches 0.600, and the graph's headroom is three points. What would is a pool drawn by behaviour, or a graph built by type inference [4].
 
 ## 7. Limitations
 
-Python only, as are most tasks. The eight-arm comparison uses one retriever, so the graph result is about its marginal value *given this ranking*; the ranker trains on six repositories and is tested on six, which bounds overfitting but leaves 290 tasks. The evidence channel does nothing on the 74% naming no source, and pytest loses 12.5 points to test-file tracebacks. We measure retrieval, not resolution: a better shortlist is necessary for a better patch, not sufficient.
+Python only, as are most tasks. The eight-arm comparison uses one retriever, so the graph result is about its marginal value *given this ranking*; the ranker trains on six repositories and is tested on six. The evidence channel does nothing on the 74% naming no source, and pytest loses 12.5 points to test-file tracebacks. We measure retrieval, not resolution: a better shortlist is necessary for a better patch, not sufficient.
 
 ## 8. Conclusion
 

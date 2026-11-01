@@ -71,4 +71,11 @@ models/
 # torch 的 CUDA 轮子：分片下载的临时目录和 .whl 本体都太大，绝不入库
 tools/tmp_wheel/
 *.whl
-
+!data/body_ablation.jsonl
+!data/body_evidence.jsonl
+!data/body_rank_scores.jsonl
+!data/context_cost.jsonl
+!data/dense_scores.jsonl
+!data/embed_full_lite.jsonl
+!data/issue_evidence.jsonl
+!data/power_analysis.json

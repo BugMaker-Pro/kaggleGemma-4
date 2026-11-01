@@ -93,9 +93,12 @@ def main(argv=None) -> int:
     check("changed lines outside any definition", 87, outside, 0)
     # only the Lite snapshots: data/repos now also holds the 2,174-snapshot full set
     lite_files = {f"{t['repo'].replace('/', '__')}@{t['base_commit'][:12]}.tar.gz" for t in tasks}
-    size = sum(p.stat().st_size for p in (ROOT / "data" / "repos").glob("*.tar.gz")
-               if p.name in lite_files)
-    check("snapshot bytes (GB)", 2.5, round(size / 1024 ** 3, 1), 0.1, fmt="{:.1f}")
+    snapshots = list((ROOT / "data" / "repos").glob("*.tar.gz"))
+    if snapshots:
+        size = sum(p.stat().st_size for p in snapshots if p.name in lite_files)
+        check("snapshot bytes (GB)", 2.5, round(size / 1024 ** 3, 1), 0.1, fmt="{:.1f}")
+    else:
+        print("  [skip] snapshot bytes: data/repos is empty (a clone ships no snapshots)")
 
     print("\n== answer key audit (docs/gold-audit.md) ==")
     fixed = [json.loads(x) for x in (ROOT / "data" / "gold_fixed.jsonl").open(encoding="utf-8") if x.strip()]
@@ -297,6 +300,21 @@ def main(argv=None) -> int:
     check("tail: frame names a patch file", 8, tail["frame"], 0)
     check("tail: any exact channel", 12, tail["any"], 0)
     check("tail: any channel share", "15%", f"{tail['any'] / tail['tail'] * 100:.0f}%", 0, fmt="{}")
+
+    print("\n== what a shortlist costs ==")
+    cost = [json.loads(line) for line in
+            (ROOT / "data" / "context_cost.jsonl").open(encoding="utf-8") if line.strip()]
+    files = [row["file_chars"] for row in cost]
+    symbols = [row["symbol_chars"] for row in cost]
+    ratios = [f / s for f, s in zip(files, symbols)]
+    check("median gold file (chars)", "28,950", f"{statistics.median(files):,.0f}", 0, fmt="{}")
+    check("median touched definition (chars)", "1,726", f"{statistics.median(symbols):,.0f}", 0, fmt="{}")
+    check("median file/definition ratio", 16.1, statistics.median(ratios), 0.05, fmt="{:.1f}")
+    check("definition share of the file", "6.2%",
+          f"{statistics.median(s / f for f, s in zip(files, symbols)) * 100:.1f}%", 0, fmt="{}")
+    check("tasks above 25x", 112, sum(1 for ratio in ratios if ratio >= 25), 0)
+    check("definitions in the gold file", 48,
+          round(statistics.median(row["definitions"] for row in cost)), 0)
 
     if not args.fast:
         print("\n== django edge resolution ==")
