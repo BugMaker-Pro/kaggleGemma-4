@@ -1,6 +1,6 @@
 ## Abstract
 
-Repository-level agents are judged on whether they resolve an issue, and the retrieval that feeds them is reported at file granularity. We measure the granularity an agent edits. On 300 SWE-bench Lite tasks we extract the **354 symbols the reference patches actually touch**: the same ranking that recovers **62.4%** of gold files at rank 10 recovers **27.5%** of gold symbols, a 2.3× gap that is 2.28× again on 2,232 tasks — **1.97×** once the documents include the body. **Eight ways of adding a code graph leave symbol-level recall unchanged** on 300 tasks and buy 2.2 points on 2,232 — none of it at file level. The signal pays, not the structure: sixteen cheap features reach **36.1%** of symbols, a 33M bi-encoder matches them, and the two together reach **44.7%** and **72.7%** of files, while an evidence rule that looked worth 2.9 points was a ranker short of training data. We release the benchmark and the harness.
+Repository-level agents are judged on whether they resolve an issue, and the retrieval that feeds them is reported at file granularity. We measure the granularity an agent edits. On 300 SWE-bench Lite tasks we extract the **354 symbols the reference patches actually touch**: the same ranking that recovers **62.4%** of gold files at rank 10 recovers **27.5%** of gold symbols, a 2.3× gap that is 2.28× again on 2,232 tasks — **1.97×** once the documents include the body. **Eight ways of adding a code graph leave symbol-level recall unchanged** on 300 tasks and buy 2.2 points on 2,232, none at file level. The signal pays, not the structure: sixteen cheap features reach **36.1%** of symbols, a 33M bi-encoder matches them, and the two together reach **44.7%** and **72.7%** of files, while an evidence rule that looked worth 2.9 points was a ranker short of training data. We release the benchmark and the harness.
 
 ## 1. Introduction
 
@@ -18,7 +18,7 @@ The explanation is arithmetic: one-hop balls are 0.42% gold against 3.1% per tex
 
 ## 2. Related Work
 
-**Repository-level benchmarks.** SWE-bench and its Lite and Verified subsets score whether a patch makes the failing tests pass [1], and say nothing about whether the code could have been found. Our targets derive from its patches, but symbol-level retrieval is orthogonal to resolved rate.
+**Repository-level benchmarks.** SWE-bench and its subsets score whether a patch makes the failing tests pass [1], and say nothing about whether the code could have been found. Our targets derive from its patches, but symbol-level retrieval is orthogonal to resolved rate.
 
 **Agents over repositories.** SWE-agent fixes the interface and lets the model act [5]; LocAgent navigates with graph structure [2]; ARISE builds a repository graph and lifts Function R@1 from 0.43 to 0.60 [3]. These systems co-design retrieval with a model, so their numbers are not comparable: the graph's marginal value is the only thing that varies.
 
@@ -54,7 +54,7 @@ On a django snapshot (2,715 files, 38,651 nodes, 209,502 edges, 10.8 s) the dist
 
 **Two more rankings.** The evidence arm reads what the issue states: a traceback frame resolves through the same symbol table we built, a named path is a suffix match, and a quoted line is found by indexing the candidate's *body* — text our symbol documents never contain. The learned arm puts sixteen signals into one ranker (§5).
 
-**Statistics.** Per-task differences, so arms are compared on the same issue and repository: mean difference with a bootstrap 95% interval (2,000 resamples, fixed seed) plus an exact sign test, which decides, because ties dominate.
+**Statistics.** Per-task differences, so arms are compared on the same issue and repository: mean difference with a bootstrap 95% interval (2,000 resamples, fixed seed) plus an exact sign test, which decides because ties dominate.
 
 ## 5. Results
 
@@ -96,7 +96,7 @@ The second-hop variant has the most reach (35.7%, Table 3) and is still negative
 
 One-hop expansion has an arithmetic ceiling: 38 of 290 tasks (13.1%; 41 of 354 symbols) hold a gold symbol one hop from a top-five seed, so perfect conversion is worth 11.9 points; two hops lift the ceiling to 35.7%. Conversion is not the failure — diffusion places 18 of the 41 reachable symbols in its top ten (44%) and still lands below text, because 15 gained cost 17 lost. The rate is the finding: 9,855 neighbours hold 41 answers, 0.42%, against 3.1% gold per text slot.
 
-**Where the gap is.** Ten slots are a budget: recall@10 ≈ P(gold file selected) × E[recovered | depth]. Given the *right* file, ten slots recover **66.5%** of gold symbols.
+**Where the gap is.** Ten slots are a budget: recall@10 ≈ P(gold file selected) × E[recovered | depth]. Given the *right* file they recover **66.5%** of gold symbols.
 
 **A learned ranker.** Sixteen features — lexical score and rank, body-quote overlap, path and frame matches, four graph statistics, size and shape terms — feed a LightGBM ranker trained on six repositories, tested on the other six, three seeds averaged, nothing tuned on test.
 
@@ -132,7 +132,7 @@ On tasks whose issue pastes a line from the gold body the ranker gains **29.4 po
 
 Three things move and one does not. The **gap is invariant to sample size**, 2.27× against 2.28×. The **graph is worth two points at symbol level and zero at file level**: invisible at 290 tasks, +0.022 at 2,232 with an interval excluding zero, 169 wins to 90, positive in 8 of 12 repositories — small, because it reorders symbols inside files text already found. The **evidence override does not survive**: the ranker reaches 0.361 alone and the override subtracts 2.5 points at ten slots; the 2.9 it appeared to add were the four features it duplicates, finally able to learn.
 
-**What you index moves the gap.** Adding the candidate's body raises symbol recall at 2,232 tasks from 0.248 to 0.286 (+3.8, CI 2.1–5.4) with file recall flat: the gap narrows from 2.28× to 1.97×. Another symbol's body instead drops recall to 0.128, so the gain is the candidate's own text; as two columns besides the sixteen features it is still worth **+2.6 points** (202 wins to 94 losses).
+**What you index moves the gap.** Adding the candidate's body raises symbol recall at 2,232 tasks from 0.248 to 0.286 (+3.8, CI 2.1–5.4) with file recall flat: the gap narrows from 2.28× to 1.97×. Another symbol's body instead drops recall to 0.128, so the gain is the candidate's own text; as two ranker columns it is worth **+2.6 points** (202/94).
 
 **How many tasks a claim needs.** That a 2.9-point rule evaporated is arithmetic. Resampling the 2,232 paired differences and running the same sign test — 400 draws per cell — gives the share of n-task studies that would call an effect real: the ranker's +11.3 points is detected at n = 100 in 88% of draws, the graph's +2.2 in 39% at 290 and 87% at 800, the evidence rule's −0.2 never, at 1–4%.
 
@@ -142,11 +142,11 @@ Three things move and one does not. The **gap is invariant to sample size**, 2.2
 - **graph, +2.2 points** — 0.09 · 0.39 · 0.62 · 0.87 · 1.00
 - **evidence, −0.2 points** — 0.01 · 0.02 · 0.03 · 0.04 · 0.00
 
-**Reproducibility.** Each number here is re-derived from the released JSONL by a 248-assertion check script, so a claim that drifts from the data fails the build rather than the review.
+**Reproducibility.** Every number is re-derived from the released JSONL by a 251-assertion check script, so a claim that drifts from the data fails the build rather than the review.
 
 ## 6. Discussion
 
-The practical claim is a reprioritisation: 88.1% of gold symbols are more than one hop from a text seed, so expansion is not where the error is. The margin is in what an issue states, and in candidate generation for the 27.6% of tasks whose gold never enters a top-500 pool.
+The practical claim is a reprioritisation: 88.1% of gold symbols are more than one hop from a text seed, so expansion is not where the error is. The margin is in what an issue states, and in candidate generation for the 27.6% of tasks whose gold never enters a top-500 pool — a dense index over every definition does not close it: its union with that pool covers 62.8% of Lite tasks, the lexical rate.
 
 The measurement claim is granularity: file-level numbers near 90% are quoted as evidence the hard part is over, yet the same ranking is 27.5% on symbols.
 
@@ -154,11 +154,11 @@ One thing would not overturn it: a stronger reranker over the same pool, since a
 
 ## 7. Limitations
 
-Python only, as are most tasks. The eight-arm comparison uses one retriever, so the graph result is about its marginal value *given this ranking*; the ranker trains on six repositories and is tested on six, which bounds overfitting but leaves 290 tasks. The evidence channel is bounded by what an issue states: on the 74% that name no source it does nothing, and pytest loses 12.5 points to tracebacks that point at test files. We measure retrieval, not resolution: a better shortlist is necessary for a better patch, not sufficient.
+Python only, as are most tasks. The eight-arm comparison uses one retriever, so the graph result is about its marginal value *given this ranking*; the ranker trains on six repositories and is tested on six, which bounds overfitting but leaves 290 tasks. The evidence channel is bounded by what an issue states: on the 74% that name no source it does nothing, and pytest loses 12.5 points to test-file tracebacks. We measure retrieval, not resolution: a better shortlist is necessary for a better patch, not sufficient.
 
 ## 8. Conclusion
 
-Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Eight graph arms, none improving symbol-level recall and three significantly hurting file-level recall; on 2,232 tasks the best is worth two symbol-level points and zero file-level ones. The arithmetic explains why: an 11.9-point reach ceiling, a ball that is 0.42% gold against 3.1% for a text slot, and three points of graph headroom. The same ten slots reach **36.1%** once a ranker reads what the issue states — which is the difference between inferring structure and reading it.
+Same ranking, two granularities: 62.4% of gold files, 27.5% of gold symbols. Eight graph arms, none improving symbol-level recall and three hurting file-level recall; on 2,232 tasks the best is worth two symbol points and zero file ones. The arithmetic explains why: an 11.9-point reach ceiling, a ball that is 0.42% gold against 3.1% for a text slot, and three points of graph headroom. The same ten slots reach **36.1%** once a ranker reads what the issue states — which is the difference between inferring structure and reading it.
 
 ## References
 

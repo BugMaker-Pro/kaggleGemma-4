@@ -184,6 +184,26 @@ def main(argv=None) -> int:
     check("body-column wins", 202, sum(1 for d in rank_deltas if d > 1e-9), 0)
     check("body-column losses", 94, sum(1 for d in rank_deltas if d < -1e-9), 0)
 
+    print("\n== whole-repository dense index (section 6) ==")
+    full = {json.loads(x)["instance_id"]: json.loads(x) for x in
+            (ROOT / "data" / "embed_full_lite.jsonl").open(encoding="utf-8") if x.strip()}
+    rows_by_id = {json.loads(x)["instance_id"]: json.loads(x) for x in
+                  (ROOT / "data" / "features_full.jsonl").open(encoding="utf-8") if x.strip()}
+    covered_bm25 = covered_dense = covered_union = 0
+    total_tasks = 0
+    for iid, row in rows_by_id.items():
+        if iid not in full or not (row.get("gold_total") or 0):
+            continue
+        total_tasks += 1
+        gold_ids = {node_id for node_id, label in zip(row["ids"], row["labels"]) if label}
+        dense = set(full[iid]["ids"])
+        covered_bm25 += 1 if gold_ids & set(row["ids"]) else 0
+        covered_dense += 1 if gold_ids & dense else 0
+        covered_union += 1 if gold_ids & (set(row["ids"]) | dense) else 0
+    check("Lite tasks with a whole-repo dense index", 290, total_tasks, 0)
+    check("gold in the lexical pool (share)", 0.628, round(covered_bm25 / total_tasks, 3), 0.001)
+    check("gold in the union (share)", 0.628, round(covered_union / total_tasks, 3), 0.001)
+
     print("\n== headline ==")
     sym10 = statistics.fmean(row["arms"]["text"]["recall@10"] for row in scored)
     file10 = statistics.fmean(row["arms"]["text"]["file_recall@10"] for row in scored)

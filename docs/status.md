@@ -18,9 +18,9 @@
 | --- | --- |
 | **Title** | `File-Level Is Not Symbol-Level: What Code Graphs Miss and the Issue Already States` |
 | **Subtitle** | `300 tasks, then 2,232: the granularity gap is invariant, the graph is worth two points at symbol level and none at file level, and a three-point hand-written rule was really training data` |
-| **Body** | [paper/kaggle_body_img.md](../paper/kaggle_body_img.md)：全文 2,489 词、9 章、**9 个图片位**，按文档顺序上传 `table_resolution` → `table_1` → `fig1` → `table_2` → `table_3` → `table_4` → `table_5` → `table_6` → `table_7`（占位图的 alt 文字就是文件名） |
+| **Body** | [paper/kaggle_body_img.md](../paper/kaggle_body_img.md)：全文 2,493 词、9 章、**9 个图片位**，按文档顺序上传 `table_resolution` → `table_1` → `fig1` → `table_2` → `table_3` → `table_4` → `table_5` → `table_6` → `table_7`（占位图的 alt 文字就是文件名） |
 | **PDF** | [paper/submission.pdf](../paper/submission.pdf)，5 页，`uv run python tools/make_pdf.py` 重新生成 |
-| **字数** | 2,489（含图版正文）/ 2,992（全文本 + 标题副标题），上限 3,000；`tools/make_submission.py`、`tools/count_short.py` 复核 |
+| **字数** | 2,493（含图版正文）/ 2,996（全文本 + 标题副标题），上限 3,000；`tools/make_submission.py`、`tools/count_short.py` 复核 |
 | **Project Links** | `https://github.com/BugMaker-Pro/kaggleGemma-4` + `https://github.com/BugMaker-Pro/kaggleGemma-4/blob/main/paper/submission.pdf`（`blob` 比 `raw` 稳，raw 域名在国内常不通） |
 
 **为什么表格是图片**：富文本框里竖线表会散，纯数字列表又要默记列序。8 张表各自渲染成书版风格 PNG（表题烘进图里），`tools/make_table_images.py` 生成。
@@ -39,7 +39,7 @@
 - [x] **扩到全量 2,232 任务**（2,174 快照 / 18.45 GB）：gap 2.27×→2.28×；图从"看不见"变成 +2.2 点；2.9 点证据规则不复现
 - [x] 模型当特征 / 当重排器（bge-reranker-v2-m3 fp16@1024）：+4.1 / −2.8…−37.8
 - [x] **答案纸审计**：独立实现 279/300 一致；换修复金标 recall 变化 ≤0.7 点
-- [x] 数字审计 `tools/audit_numbers.py`：248 项，0 失败
+- [x] 数字审计 `tools/audit_numbers.py`：251 项，0 失败
 - [x] 仓库 public（2026-10-30，匿名 200），PDF 已入库
 - [ ] 线上 writeup 修正 Figure 1 错位 + 填 Project Links + 点提交
 - [ ] 官方 129 任务那一路（可选，需在主赛道 Join + 接受 Rules）
@@ -72,7 +72,7 @@
 
 同时记录：无论哪一档，**摘要里的 1.97× 不变**（那是索引层面、已由 noise 控制验证的结论）。
 
-## 实验结论汇总（2026-11-01）\n\n| 信号 | 用法 | 结果 |\n| --- | --- | --- |\n| 候选自身 body | 文档文本（BM25） | **+3.8 点**（CI 2.1–5.4，399/274）；noise 控制 −12.0 |\n| 候选自身 body | 两个额外特征 | **+2.6 点**（202/94，0.361→0.387） |\n| 稠密语义分数 | 一个额外特征 | **+8.6 点**（418/83，0.361→0.447） |\n| 稠密 + body 特征 | 三个额外特征 | 0.444（比只加稠密还低，body 被稠密吸收） |\n| 图 | 排序先验（8 臂） | 0 或负；全量 +2.2 符号 / +0.0 文件 |\n| 图（调用点行） | 文档文本 | −0.3 符号 / +1.0 文件，仅 5 个任务变化 → 未观察到效应 |\n\n一句话：值钱的是**候选自身的内容**和**语义分数**；图结构换到哪种用法都不值钱。\n\n## 本机环境备注（Windows）
+## 实验结论汇总（2026-11-01）\n\n| 信号 | 用法 | 结果 |\n| --- | --- | --- |\n| 候选自身 body | 文档文本（BM25） | **+3.8 点**（CI 2.1–5.4，399/274）；noise 控制 −12.0 |\n| 候选自身 body | 两个额外特征 | **+2.6 点**（202/94，0.361→0.387） |\n| 稠密语义分数 | 一个额外特征 | **+8.6 点**（418/83，0.361→0.447） |\n| 稠密 + body 特征 | 三个额外特征 | 0.444（比只加稠密还低，body 被稠密吸收） |\n| 图 | 排序先验（8 臂） | 0 或负；全量 +2.2 符号 / +0.0 文件 |\n| 图（调用点行） | 文档文本 | −0.3 符号 / +1.0 文件，仅 5 个任务变化 → 未观察到效应 |`n| 稠密全库索引 | 扩大候选池（并集） | **一个都没捞回来**：BM25 62.8% → 并集 62.8%，天花板 0.600 不变；单独稠密只有 51.7% |`n| BM25+余弦 50/50 融合（无训练） | Lite 排序 | 0.354，介于 16 特征 0.332 和 +证据 0.361 之间 |\n\n一句话：值钱的是**候选自身的内容**和**语义分数**；图结构换到哪种用法都不值钱。\n\n## 本机环境备注（Windows）
 
 - 本机 `pwsh` 实际是 **Windows PowerShell 5.1**，脚本别用 7 才有的语法（`??`、三元、`-Parallel`）。
 - 主解释器 `D:\pyenv\cpython-3.12.13-windows-x86_64-none\python.exe`；实验用 `.venv\Scripts\python.exe`。
