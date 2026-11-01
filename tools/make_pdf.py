@@ -19,8 +19,10 @@ from __future__ import annotations
 import argparse
 import os
 import re
+import shutil
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -127,8 +129,13 @@ def light_rules(table) -> None:
 
 
 def keep_rows_together(table) -> None:
-    for row in table.rows:
+    for index, row in enumerate(table.rows):
         row._tr.get_or_add_trPr().append(OxmlElement("w:cantSplit"))
+        # These are short publication tables. Keep the complete table together;
+        # the native converter can lose continuation rows at a page boundary.
+        for cell in row.cells:
+            for paragraph in cell.paragraphs:
+                paragraph.paragraph_format.keep_with_next = index < len(table.rows) - 1
 
 
 def rule_under(paragraph) -> None:
@@ -190,8 +197,8 @@ def build(body: Path, out_docx: Path, title: str, subtitle: str) -> dict:
     normal = document.styles["Normal"]
     normal.font.name = "Times New Roman"
     normal.font.size = Pt(10)
-    normal.paragraph_format.space_after = Pt(4.5)
-    normal.paragraph_format.line_spacing = 1.14
+    normal.paragraph_format.space_after = Pt(3.0)
+    normal.paragraph_format.line_spacing = 1.08
 
     heading = document.styles["Heading 1"]
     heading.font.name = "Times New Roman"
@@ -226,6 +233,8 @@ def build(body: Path, out_docx: Path, title: str, subtitle: str) -> dict:
         if line.startswith("## "):
             heading_paragraph = document.add_heading(line[3:].strip(), level=1)
             rule_under(heading_paragraph)
+            if line[3:].strip() == "References":
+                heading_paragraph.paragraph_format.page_break_before = True
             index += 1
             continue
         if line.lstrip().startswith("|"):
@@ -280,7 +289,7 @@ def build(body: Path, out_docx: Path, title: str, subtitle: str) -> dict:
             paragraph.paragraph_format.space_after = Pt(2)
             paragraph.paragraph_format.keep_with_next = True  # its caption follows
             if image.exists():
-                paragraph.add_run().add_picture(str(image), width=Cm(16.4))
+                paragraph.add_run().add_picture(str(image), width=Cm(14.5))
                 figures += 1
             index += 1
             continue
@@ -334,14 +343,27 @@ def main(argv=None) -> int:
         return 2
 
     pdf = out.with_suffix(".pdf")
-    if pdf.exists():  # the converter refuses to overwrite
-        pdf.unlink()
-    result = subprocess.run([NODE, CLI, "convert", "--input", str(out), "--output", str(pdf)],
-                            capture_output=True, text=True)
-    if result.returncode != 0 or not pdf.exists():
-        print(result.stderr.strip() or result.stdout.strip())
-        return 1
-    signature = pdf.open("rb").read(5)
+    with tempfile.TemporaryDirectory(prefix="pdf-build-", dir=out.parent) as directory:
+        staged = Path(directory) / pdf.name
+        result = subprocess.run([NODE, CLI, "convert", "--input", str(out), "--output", str(staged)],
+                                capture_output=True, text=True, encoding="utf-8", errors="replace")
+        if result.returncode != 0 or not staged.exists():
+            print(result.stderr.strip() or result.stdout.strip()
+                  or f"PDF converter exited with code {result.returncode}")
+            return 1
+        with staged.open("rb") as handle:
+            signature = handle.read(5)
+        if signature != b"%PDF-":
+            print("Converter output is not a PDF; existing publication preserved.")
+            return 1
+        # Copy into the publication directory before replacing: on Windows a
+        # move from TemporaryDirectory retains its restrictive inherited ACL.
+        publication_stage = pdf.parent / (Path(directory).name + ".pdf")
+        try:
+            shutil.copyfile(staged, publication_stage)
+            publication_stage.replace(pdf)
+        finally:
+            publication_stage.unlink(missing_ok=True)
     print(f"wrote {pdf}  ({pdf.stat().st_size / 1024:.0f} KB, {signature!r})")
     if not args.keep_docx:
         out.unlink()

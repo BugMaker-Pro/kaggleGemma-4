@@ -23,6 +23,7 @@ def main(argv=None) -> int:
     ap.add_argument("--dest", default=str(ROOT / "models"))
     ap.add_argument("--endpoint", default="https://hf-mirror.com")
     ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--revision", default=None, help="pin a checkpoint commit for reproduction")
     args = ap.parse_args(argv)
 
     # huggingface_hub reads HF_ENDPOINT at import time, so set it first.
@@ -34,7 +35,8 @@ def main(argv=None) -> int:
         return 2
 
     target = Path(args.dest) / args.model.split("/")[-1]
-    local = snapshot_download(repo_id=args.model, local_dir=target, max_workers=args.workers)
+    local = snapshot_download(repo_id=args.model, local_dir=target, max_workers=args.workers,
+                              revision=args.revision)
     total = sum(path.stat().st_size for path in Path(local).rglob("*") if path.is_file())
     print(f"{local}  ({total / 1024 ** 3:.2f} GB)")
     return 0

@@ -1,97 +1,74 @@
-# Symbol-level retrieval on SWE-bench: what a code graph is worth
+# Beyond File Hits: Candidate Coverage and Graph Utility in Code Localization
 
-Retrieval for coding agents is usually reported at file granularity. We measure
-the granularity an agent actually edits — the definition — and ask what a code
-graph buys there.
+A controlled study of symbol retrieval for coding agents on SWE-bench Lite and the full test split.
 
-**[Paper (PDF)](paper/submission.pdf)** · Kaggle *Gemma 4 Developer Agent* Paper Track, 2026
+**[Paper (PDF)](paper/submission.pdf)** · Kaggle Gemma 4 Developer Agent Paper Track, 2026
 
-![Top: symbol recall@k for BM25, the best graph arm, the learned ranker and the ranker with evidence. Bottom left: the same ranking by file and by symbol. Bottom right: the ranker's gain over BM25 by what the issue offers, at both scales.](paper/fig1.png)
+![Symbol recall curves, file/symbol scoring, and issue-evidence subsets.](paper/fig1.png)
 
-## Findings
+## What the study measures
 
-- **The gap.** One ranking, two granularities: 62.4% of gold files at rank 10,
-  27.5% of gold symbols. 2.3×, and not a matching artefact — line-level coverage
-  of the changed lines is 23.9%. At 2,232 tasks the same ratio is 2.28×.
-- **A code graph buys two points, and only inside a file.** Eight arms — rerank,
-  one- and two-hop substitution, score fusion, fusion over definite edges only,
-  personalised PageRank, PPR + text — leave symbol-level recall at ten slots
-  unchanged on 300 tasks, and gain +0.022 (95% CI 0.013–0.031) on 2,232 with
-  exactly +0.000 at file level.
-- **The arithmetic says why.** One-hop balls hold 0.42% gold against 3.1% per
-  text slot, 54% of call sites resolve to no definite target, and even perfect
-  conversion is worth 11.9 points.
-- **Reading the issue beats inferring structure.** A ranker over sixteen cheap
-  features reaches 36.1% of symbols and 64.3% of files. A hand-written evidence
-  rule worth 2.9 points on 290 tasks is worth −0.002 on 2,232: it was a ranker
-  short of training data.
-- **A dense score is complementary, not an alternative.** A 33M bi-encoder scores
-  36.6% of symbols and 69.3% of files alone — on the same pool — and as one more
-  column it takes the sixteen features to **44.7% / 72.7%** (+8.6 points, 418 wins
-  to 83 losses). The gap narrows as the retriever strengthens — 2.28×, 1.89×,
-  1.78×, **1.63×** — and does not close.
-- **What you index moves the gap.** Adding the candidate's own body to the index
-  raises symbol recall from 0.248 to 0.286 (+3.8 points, CI 2.1–5.4) with file
-  recall flat, so the 2.28× gap becomes 1.97× — and another symbol's body instead
-  drops recall to 0.128, so the gain is the candidate's own text, not more text.
-- **Most 300-task comparisons cannot see this.** Resampling the 2,232 paired
-  differences: a true +2.2-point effect is detected at n = 290 in 39% of draws
-  and at 800 in 87%, while a +11.3-point effect is detected at n = 100 in 88%.
-  The usual sample size resolves five-point effects and no smaller.
+We distinguish candidate coverage, selection within a shortlist, and the granularity at which a hit is credited. The contribution is an audited empirical diagnosis of these mechanisms, not a new localization algorithm or the first function-level evaluation.
 
-## Reproduce the numbers
+- **One ranking, two scores.** On 290 scorable Lite tasks, the first ten symbols cover 62.4% of gold files and 27.5% of gold symbols. File recall scores these same ten symbol slots, not ten distinct retrieved files.
+- **A small positive graph effect.** Seven graph variants show no statistically significant symbol improvement over BM25 on Lite. Graph reranking gains +2.2 percentage points on 2,232 tasks; graph features inside the learned ranker add +2.7 points. These results do not establish that graphs are ineffective.
+- **Reach and displacement differ.** In the Lite setup, the 200-candidate pool's oracle recall is 0.600, rising to 0.630 with neighbours. Sparse useful neighbours and displacement of existing hits limit net gains.
+- **Index content changes the comparison.** Adding each candidate's body raises full-scale BM25 symbol recall from 0.248 to 0.286. The granularity ratio is a property of the retrieval setup, not a constant.
+- **Dense and explicit scores complement each other.** On the same 200 candidates, the held-out 16-feature ranker reaches 0.361 symbol / 0.643 file recall; adding a frozen dense score reaches **0.447 / 0.727**. Dense inputs include body text, unlike the metadata BM25 baseline.
+- **Scale can change the conclusion.** A hand-written evidence override gains 2.9 points on Lite but −0.2 points at full scale. Lite is included in the full split; sample composition and training size both change, so this is not independent replication or a causal training-size experiment.
+
+All principal comparisons use ten slots, not equal character or token budgets. The 16× file/definition source-length ratio is not a measured agent-cost saving. We evaluate retrieval, not resolved rate.
+
+## Topology-control follow-up (November 1)
+
+All 2,232 tasks now have a fixed-pool, seed-retaining comparison across metadata,
+body BM25, and frozen dense ranking. Real graphs beat degree/file-constrained
+rewiring by 2.14 / 0.90 / 1.76 points; metadata and dense contrasts survive the
+five-test Holm correction. Gains over each original ranking are 2.19 / -0.01 /
+0.64 points. The representation interactions do not survive correction.
+
+This distinguishes topology carrying information from a simple reranking policy
+improving retrieval. It does not show that stronger text makes graphs redundant.
+Historical Lite seed handling and dense rounding ties differ; both are disclosed.
+
+[Results and figure](docs/graph-control-results.md) ·
+[Frozen protocol](docs/graph-control-protocol.md) ·
+[Interpretation](docs/graph-control-interpretation.md) ·
+[Reproduce](docs/graph-control-reproduction.md)
+
+```bash
+uv run python tools/audit_graph_controls.py
+uv run python tools/analyse_graph_controls.py
+```
+
+## Recompute the reported metrics
 
 ```bash
 uv venv --python 3.12 .venv
 uv sync --frozen
-uv run python tools/audit_numbers.py     # 265 assertions, 0 failures
+uv run python tools/audit_numbers.py
+uv run python -m unittest discover -s tests
 ```
 
-That is the whole check: every number in the paper is re-derived from the tracked
-JSONL, so a claim that drifts from the data fails the run rather than the review.
-It needs no GPU, no model and no repository snapshots.
+The numerical audit recomputes metrics from released outputs; it does not independently rerun every retrieval or training step. It needs no GPU or model weights. Full input preparation, repository folds, encoder revision, and rerun commands are in [docs/reproduction.md](docs/reproduction.md).
 
-For the full environment — the reranker weights and 18 GB of base-commit
-snapshots — use the same script on any OS:
-
-```bash
-uv run python tools/setup.py           # + 2.12 GB reranker weights
-uv run python tools/setup.py --data    # + SWE-bench metadata and snapshots
-```
-
-`uv.lock` is the environment: change `pyproject.toml` and re-lock rather than
-pinning by hand. Nothing binary is tracked — no wheel, no weights, no snapshots.
-
-## Layout
+## Resource and scope
 
 | path | contents |
 | --- | --- |
-| `experiments/` | gold-symbol extraction, `ast` graph builder, BM25 pool, snapshot reader |
-| `tools/` | the eight arms, the ranker, ablations, the audit, the figure, the PDF |
-| `data/` | the answer key and per-arm rankings (JSONL, tracked) |
-| `paper/` | source, PDF, table figures |
-| `docs/` | design notes, the answer-key audit, the scale check |
+| `experiments/` | patch-derived targets, AST graph builder, BM25, snapshot readers |
+| `tools/` | graph interventions, learned ranking, diagnostics, audits, publication build |
+| `data/` | tracked gold labels and per-task experiment outputs |
+| `paper/` | manuscript sources, PDF, figures and writeup variants |
+| `docs/` | protocols, gold audit, reproduction instructions and novelty review |
 
-## The answer key has its own audit
+An independent gold derivation matches 279 of 300 Lite answer keys exactly; rescoring with repaired targets changes recall by at most 0.7 points. Details: [docs/gold-audit.md](docs/gold-audit.md).
 
-Every number divides by the gold symbol set, so a second, independent
-implementation re-derives it: apply the patch, then compare each definition's own
-source text before and after. It reproduces 279 of 300 keys exactly; the 21
-differences are added definitions, renamed classes, and patch hunk headers that
-do not match the snapshot. Rescoring with the repaired key moves recall by at
-most 0.7 points. Full table: [docs/gold-audit.md](docs/gold-audit.md).
-
-## Scope
-
-Python only. The eight-arm comparison uses one retriever, so the graph result is
-about its marginal value *given this ranking*. We measure retrieval, not
-resolution: a better shortlist is necessary for a better patch, not sufficient.
+The graph results concern one heuristic Python graph and static retrieval. Existing work already studies function-level localization and graph-tool ablations, including a closely related October 2026 study. Our [novelty review](docs/novelty-review.md) records the overlap and the completed follow-up distinguishing topology signal from intervention value under stronger representations.
 
 ## Cite
 
-> File-Level Is Not Symbol-Level: What Code Graphs Miss and the Issue Already
-> States. Kaggle Gemma 4 Developer Agent Paper Track, 2026.
+> Beyond File Hits: Candidate Coverage and Graph Utility in Code Localization. Kaggle Gemma 4 Developer Agent Paper Track submission, 2026.
 > <https://github.com/BugMaker-Pro/kaggleGemma-4>
 
-Working notes — schedule, submission checklist, local environment quirks — are in
-[docs/status.md](docs/status.md).
+Submission status and local build notes: [docs/status.md](docs/status.md).

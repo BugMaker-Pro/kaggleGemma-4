@@ -124,3 +124,12 @@
 - [ ] Jarvis 的 0.82 / 0.66 分别对应哪个基准
 - [ ] CodexGraph 是否报告图规模（想写才查，不写就不用查）
 - [ ] RepoAtlas 是否值得一句更具体的引用
+
+
+## 11. Bellam: How Do Small Coding Agents Use Code Graphs and Embeddings? (2026)
+
+核实日期：2026-11-01。官方摘要 https://arxiv.org/abs/2610.33958 与全文 https://arxiv.org/html/2610.33958v1。作者 Saurav Bellam，v1 提交日期 2026-10-25，均从 arXiv citation metadata 核对。
+
+直接相关：grep、embedding、graph 工具组合的消融，按图距离分层，多种小模型（包括 Gemma 4），以及固定修复模型的下游验证。正文讨论图工具收益来自名称查找和短程扩展。这与本稿图的边际价值和字面证据明显重叠，不能忽略或声称首次。
+
+本稿引用用于定位研究范围：该文研究多轮 agent 工具使用；本稿研究固定槽位静态排序中的候选覆盖、金标替换及索引正文干预。两者不是可直接比较的性能基线。详细新颖性评估和待做实验见 `docs/novelty-review.md`。

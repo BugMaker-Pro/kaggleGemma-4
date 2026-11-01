@@ -46,13 +46,13 @@ def main() -> int:
     axes.text(4.6, 3.28, "2.3×", fontsize=25, color="#c0392b", ha="center")
 
     axes.text(0.7, 1.55,
-              "and what arrives is 16× the code the fix touches: 29 KB to find 1.7 KB",
+              "gold files contain 16× the source text of the touched definitions",
               fontsize=18, color="#c0392b")
     axes.text(0.7, 0.90,
-              "300 SWE-bench Lite tasks, re-checked on 2,232 · 8 graph arms add 2 points",
+              "290 scorable Lite tasks · graph reranking gains 2.2 points on 2,232",
               fontsize=15, color="#666666")
     axes.text(0.7, 0.45,
-              "a ranker reaches 33–36% of symbols; 85% of what the pool misses is never named",
+              "a ranker plus a dense score reaches 44.7% of symbols on the full split",
               fontsize=15, color="#666666")
 
     axes.plot([0.7, 11.3], [2.02, 2.02], color="#e0e0e0", lw=1.2)

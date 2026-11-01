@@ -61,19 +61,19 @@ def chain(row: list[str]) -> str:
 # The column order is declared once in the caption, so a row is just its numbers.
 # That is what keeps the writeup inside 3,000 words once the tables become text.
 LEGEND = {
-    2: "granularity: recall@1 · recall@5 · recall@10",
-    3: "arm: r@1 · r@5 · r@10 · file r@10 · Δ r@10, 95% CI, p",
-    5: "ranking: r@10 · Δ vs BM25, 95% CI · wins/losses · p",
+    1: "granularity: recall@1 · recall@5 · recall@10",
+    2: "arm: r@1 · r@5 · r@10 · file r@10 · Δ r@10, 95% CI, p",
+    4: "ranking: r@10 · Δ vs BM25, 95% CI · wins/losses · p",
+    5: "ranking: symbol recall@10 · file recall@10",
     6: "each row: n · BM25 · ranker, for 290 tasks then 2,232",
     7: "reading: 290 tasks · 2,232 tasks",
+    8: "representation: base · real · same-file · rewired · file-pair rewired · Holm p",
 }
 
 
 def render(table: int, header: list[str], row: list[str]) -> str:
     """One table row -> one bullet line."""
-    if table == 1:  # resolution states: state -> meaning
-        return f"- **{row[0]}** — {row[1]}"
-    if table == 4:  # diagnostics: quantity, value, meaning
+    if table == 3:  # diagnostics: quantity, value, meaning
         return f"- **{row[0]}** — {row[1]}; {row[2]}"
     return f"- **{row[0]}** — {chain(row[1:])}"
 

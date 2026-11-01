@@ -80,3 +80,17 @@ models/
 # The torch CUDA wheel and its download shards are too large to commit.
 tools/tmp_wheel/
 *.whl
+
+# Local build caches and publication review intermediates.
+.cache/
+tmp/
+
+# Prospective topology-control follow-up: auditable inputs and per-task outputs.
+!data/graph_controls.jsonl
+!data/graph_controls_context.jsonl
+!data/graph_controls.manifest.json
+!data/graph_controls_summary.json
+!data/embed_retrieval.jsonl
+!data/swebench_full.jsonl
+!data/graph_controls.portable.json
+!data/graph_controls_tie_sensitivity.json

@@ -1,18 +1,9 @@
-﻿"""A code-trained bi-encoder over the same candidates.
+"""Frozen bge-small-en-v1.5 cosine scores over the shared candidate pool.
 
-The cross-encoder in `rerank_model.py` is a general-domain model, and it lost to
-sixteen lexical features by a wide margin 鈥?its strongest cue turned out to be
-the path and qualname header, which is what BM25 already has. That result says
-something about *that* model, not necessarily about semantics, so this repeats
-the measurement with a model trained on code retrieval:
-
-  jinaai/jina-embeddings-v2-base-code   (161M, 768-d, ALiBi, code corpus)
-
-Both the issue and each candidate are embedded and compared by cosine. Same pool,
-same ten slots, same denominator as every other arm. Nothing is fine-tuned.
-
-    python tools/embed_retrieve.py --limit 50          # smoke test
-    python tools/embed_retrieve.py                     # all tasks
+Reproduce the paper with --model models/bge-small-en-v1.5. Inputs include the
+candidate body (first 800 characters), so this is not an equal-input comparison
+with metadata-only BM25. The issue uses its first 1,200 characters; both inputs
+are capped at 512 tokens. No fine-tuning is performed.
 """
 
 from __future__ import annotations
@@ -56,7 +47,7 @@ def main(argv=None) -> int:
     ap.add_argument("--rows", default=str(ROOT / "data" / "features_full.jsonl"))
     ap.add_argument("--tasks", default=str(ROOT / "data" / "swebench_full.jsonl"))
     ap.add_argument("--repos", default=str(ROOT / "data" / "repos"))
-    ap.add_argument("--model", default=str(ROOT / "models" / "jina-code"))
+    ap.add_argument("--model", default=str(ROOT / "models" / "bge-small-en-v1.5"))
     ap.add_argument("--out", default=str(ROOT / "data" / "embed_retrieval.jsonl"))
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--batch", type=int, default=32)

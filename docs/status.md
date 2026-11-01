@@ -16,18 +16,24 @@
 
 | 字段 | 内容 |
 | --- | --- |
-| **Title** | `File-Level Is Not Symbol-Level: What Code Graphs Miss and the Issue Already States` |
-| **Subtitle** | `300 tasks, then 2,232: the granularity gap is invariant, the graph is worth two points at symbol level and none at file level, and a three-point hand-written rule was really training data` |
-| **Body** | [paper/kaggle_body_img.md](../paper/kaggle_body_img.md)：全文 2,493 词、9 章、**9 个图片位**，按文档顺序上传 `table_resolution` → `table_1` → `fig1` → `table_2` → `table_3` → `table_4` → `table_5` → `table_6` → `table_7`（占位图的 alt 文字就是文件名） |
-| **PDF** | [paper/submission.pdf](../paper/submission.pdf)，5 页，`uv run python tools/make_pdf.py` 重新生成 |
-| **字数** | 2,493（含图版正文）/ 2,996（全文本 + 标题副标题），上限 3,000；`tools/make_submission.py`、`tools/count_short.py` 复核 |
-| **Project Links** | `https://github.com/BugMaker-Pro/kaggleGemma-4` + `https://github.com/BugMaker-Pro/kaggleGemma-4/blob/main/paper/submission.pdf`（`blob` 比 `raw` 稳，raw 域名在国内常不通） |
+| **Title** | `Beyond File Hits: Candidate Coverage and Graph Utility in Code Localization` |
+| **Subtitle** | `A controlled retrieval study of graph reach, shortlist displacement, and index content on SWE-bench Lite and the full test split` |
+| **Body** | [paper/kaggle_body_img.md](../paper/kaggle_body_img.md)：2,478 词（仅文字，另含表图内容）、10 个小节、**9 个图片位**；顺序为 `table_1` → `fig1` → `table_2` → `table_3` → `table_4` → `table_5` → `table_6` → `table_7` → `table_8` |
+| **PDF** | [paper/submission.pdf](../paper/submission.pdf)，6 页（参考文献独立一页）；与 Markdown 同源生成，并检查正文与表格一致性 |
+| **字数** | 完整文本含标题、副标题和表格，按仓库计数规则 **2,949 词**；限额 3,000，预留 51。图片版文字少不代表字数豁免；线上计数最终核对 |
+| **Project Links** | `https://github.com/BugMaker-Pro/kaggleGemma-4` + `https://github.com/BugMaker-Pro/kaggleGemma-4/blob/main/paper/submission.pdf` |
 
-**为什么表格是图片**：富文本框里竖线表会散，纯数字列表又要默记列序。8 张表各自渲染成书版风格 PNG（表题烘进图里），`tools/make_table_images.py` 生成。
+表格图共有 8 张（Table 1–8）。另有 Figure 1，共 9 个图片位；旧 `table_resolution.png` 不再使用。新增 Table 5 汇总全量的 BM25、图重排、排序器、dense 和融合结果；Table 8 已替换为全量拓扑对照，原样本量结果保留在补充记录。
 
-**备选正文**：[paper/kaggle_body_full.md](../paper/kaggle_body_full.md)（2,947 词，表格改成列表）、[paper/kaggle_body.md](../paper/kaggle_body.md)（830 词摘要版，缺 Related Work，**不合规，别用**）。
+备选全文：[paper/kaggle_body_full.md](../paper/kaggle_body_full.md)，2,925 词，表格转列表。`paper/kaggle_body.md` 仅是简短项目介绍，不能代替完整论文提交。
+
+2026-11-01 修订：收窄图效应与粒度结论，纠正等字符预算，补全两折仓库评估，说明 Lite/全量重叠与子采样统计边界，补入 Bellam（2026-10-25）近邻引用。新颖性风险和后续实验见 [novelty-review.md](novelty-review.md)，复现协议见 [reproduction.md](reproduction.md)。这些修改尚未上传或替换线上 Writeup。
 
 ## 状态
+
+- [x] **拓扑控制实验完成**：2,232/2,232；三种表示、两类匹配随机图、同文件控制；输入哈希固定；734,354 项独立审计检查零失败。见 [结果](graph-control-results.md) 与 [解释](graph-control-interpretation.md)。
+- [x] dense 历史并列处理敏感性：一个任务的基线 recall 改变，五项主要推断不变。
+- [x] 投稿摘要/方法/结果/讨论已纳入新实验；强调结构信号与具体干预净收益的区别，交互不显著。
 
 - [x] 规则核实（3000 词、五维评分、奖项、评委、Non-Archival）
 - [x] 选题 v4 定稿：候选生成才是天花板（底座 SWE-bench Lite，不依赖 22 GB 比赛数据）
@@ -39,9 +45,9 @@
 - [x] **扩到全量 2,232 任务**（2,174 快照 / 18.45 GB）：gap 2.27×→2.28×；图从"看不见"变成 +2.2 点；2.9 点证据规则不复现
 - [x] 模型当特征 / 当重排器（bge-reranker-v2-m3 fp16@1024）：+4.1 / −2.8…−37.8
 - [x] **答案纸审计**：独立实现 279/300 一致；换修复金标 recall 变化 ≤0.7 点
-- [x] 数字审计 `tools/audit_numbers.py`：251 项，0 失败
+- [x] 数字审计 `tools/audit_numbers.py`：零失败；不再在论文中维护易漂移的固定断言数量
 - [x] 仓库 public（2026-10-30，匿名 200），PDF 已入库
-- [ ] 线上 writeup 修正 Figure 1 错位 + 填 Project Links + 点提交
+- [ ] 线上 Writeup 更新为本轮标题与正文、重新上传 Figure 1 和表格图、填 Project Links 并确认正式提交
 - [ ] 官方 129 任务那一路（可选，需在主赛道 Join + 接受 Rules）
 - [ ] 主赛道首次提交（论文交完再开，主赛道 12/03 截止）
 

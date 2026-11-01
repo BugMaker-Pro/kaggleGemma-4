@@ -579,7 +579,7 @@ def main(argv=None) -> int:
         failures.append(f"citation markers {cited} do not match entries {entries}")
     notes = (ROOT / "docs" / "papers" / "notes.md").read_text(encoding="utf-8")
     for name in ("LocAgent", "ARISE", "PyCG", "CodexGraph", "RepoAtlas",
-                 "SWE-agent", "SWE-bench"):
+                 "SWE-agent", "SWE-bench", "Bellam"):
         verified = name in notes
         print(f"  [{'ok  ' if verified else 'FAIL'}] {name} has a verified note")
         if not verified:

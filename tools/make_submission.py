@@ -11,6 +11,7 @@ the draft's body count, because it is what Kaggle will measure.
 
 from __future__ import annotations
 
+import argparse
 import re
 import sys
 from pathlib import Path
@@ -21,6 +22,9 @@ HEADING = re.compile(r"^## (.+?)(?:\s*\(\d+ words\))?$")
 
 
 def main(argv=None) -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--check", action="store_true", help="check generated text without writing")
+    args = ap.parse_args(argv)
     try:
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     except AttributeError:  # pragma: no cover
@@ -67,7 +71,8 @@ def main(argv=None) -> int:
         text = head + "## References\n\n" + "\n\n".join(entries) + "\n"
 
     out = ROOT / "paper" / "submission.md"
-    out.write_text(text, encoding="utf-8", newline="\n")
+    if not args.check:
+        out.write_text(text, encoding="utf-8", newline="\n")
 
     # Kaggle takes the title and subtitle in their own fields, so the body that
     # gets pasted must not start with them. Emitting it separately removes a
@@ -78,12 +83,19 @@ def main(argv=None) -> int:
     second = next((i for i in range(first + 1, len(lines)) if lines[i].strip()), None)
     body = "\n".join(lines[second + 1:]).lstrip("\n") if second is not None else text
     body_out = ROOT / "paper" / "submission_body.md"
-    body_out.write_text(body, encoding="utf-8", newline="\n")
+    if args.check:
+        stale = [path.name for path, expected in ((out, text), (body_out, body))
+                 if not path.exists() or path.read_text(encoding="utf-8") != expected]
+        if stale:
+            print("stale submission sources:", ", ".join(stale))
+            return 1
+    else:
+        body_out.write_text(body, encoding="utf-8", newline="\n")
 
     words = len(WORD.findall(text))
-    print(f"wrote {out}")
-    print(f"wrote {body_out}   (title and subtitle removed: paste this one)")
-    print(f"words as Kaggle will count them: {words}  (limit 3000)")
+    print(f"{'checked' if args.check else 'wrote'} {out}")
+    print(f"{'checked' if args.check else 'wrote'} {body_out}   (title and subtitle removed: paste this one)")
+    print(f"word estimate (repository counter): {words}  (limit 3000)")
     print(f"headroom: {3000 - words}")
     print(f"body words: {len(WORD.findall(body))}")
     for line in text.splitlines():
