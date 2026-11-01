@@ -8,17 +8,15 @@ venv/
 .pytest_cache/
 .ruff_cache/
 
-# 数据（体积大，绝不入库）。用 data/* 而不是 data/，否则 git 不会进入该目录，
-# 下面的例外规则就没有机会生效。
-data/*
+# 鏁版嵁锛堜綋绉ぇ锛岀粷涓嶅叆搴擄級銆傜敤 data/* 鑰屼笉鏄?data/锛屽惁鍒?git 涓嶄細杩涘叆璇ョ洰褰曪紝
+# 涓嬮潰鐨勪緥澶栬鍒欏氨娌℃湁鏈轰細鐢熸晥銆?data/*
 snapshots/
 wheels/
 *.tgz
 *.zip
 !submission.zip
 
-# ...但发布用的结果文件要入库：没有它们，别人无法复算论文里的任何一个数字
-!data/gold_symbols.jsonl
+# ...浣嗗彂甯冪敤鐨勭粨鏋滄枃浠惰鍏ュ簱锛氭病鏈夊畠浠紝鍒汉鏃犳硶澶嶇畻璁烘枃閲岀殑浠讳綍涓€涓暟瀛?!data/gold_symbols.jsonl
 !data/swebench_lite.jsonl
 !data/ablation.jsonl
 !data/experiment_v3.jsonl
@@ -27,7 +25,7 @@ wheels/
 !data/experiment_ev.jsonl
 !data/experiment_body.jsonl
 !data/experiment_combo2.jsonl
-# 全量尺度的审计输入：没有它们，tools/audit_numbers.py 里 2,232 任务的断言跑不起来
+# 鍏ㄩ噺灏哄害鐨勫璁¤緭鍏ワ細娌℃湁瀹冧滑锛宼ools/audit_numbers.py 閲?2,232 浠诲姟鐨勬柇瑷€璺戜笉璧锋潵
 !data/features_full.jsonl
 !data/combo_ltr.jsonl
 !data/combo_ltr_full.jsonl
@@ -36,39 +34,37 @@ wheels/
 !data/gold_fixed.jsonl
 !data/gold_impact.json
 
-# 实验产物
+# 瀹為獙浜х墿
 runs/
 traces/
 results/
 *.log
 
-# 论文构建产物（图表例外：主图要跟随正文一起版本化）
-paper/build/
+# 璁烘枃鏋勫缓浜х墿锛堝浘琛ㄤ緥澶栵細涓诲浘瑕佽窡闅忔鏂囦竴璧风増鏈寲锛?paper/build/
 paper/*.aux
 paper/*.pdf
 !paper/fig*.pdf
-# 提交用的 PDF 必须入库：Project Links 指向它，评委点开就是论文
+# 鎻愪氦鐢ㄧ殑 PDF 蹇呴』鍏ュ簱锛歅roject Links 鎸囧悜瀹冿紝璇勫鐐瑰紑灏辨槸璁烘枃
 !paper/submission.pdf
 
-# 编辑器 / 系统
+# 缂栬緫鍣?/ 绯荤粺
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
 
-# 临时探针
+# 涓存椂鎺㈤拡
 .dsh-probe.txt
 
-# 论文 PDF（体积大，本地保留）
+# 璁烘枃 PDF锛堜綋绉ぇ锛屾湰鍦颁繚鐣欙級
 docs/papers/*.pdf
-# 离线发布包（git bundle）：给没法连 GitHub 的机器用，本身不入库
+# 绂荤嚎鍙戝竷鍖咃紙git bundle锛夛細缁欐病娉曡繛 GitHub 鐨勬満鍣ㄧ敤锛屾湰韬笉鍏ュ簱
 release.bundle
 *.bundle
 
-# 模型权重与临时虚拟环境（GB 级，绝不入库）
-models/
+# 妯″瀷鏉冮噸涓庝复鏃惰櫄鎷熺幆澧冿紙GB 绾э紝缁濅笉鍏ュ簱锛?models/
 .venv-gpu/
-# torch 的 CUDA 轮子：分片下载的临时目录和 .whl 本体都太大，绝不入库
+# torch 鐨?CUDA 杞瓙锛氬垎鐗囦笅杞界殑涓存椂鐩綍鍜?.whl 鏈綋閮藉お澶э紝缁濅笉鍏ュ簱
 tools/tmp_wheel/
 *.whl
 !data/body_ablation.jsonl
@@ -79,3 +75,4 @@ tools/tmp_wheel/
 !data/embed_full_lite.jsonl
 !data/issue_evidence.jsonl
 !data/power_analysis.json
+!data/features.jsonl
