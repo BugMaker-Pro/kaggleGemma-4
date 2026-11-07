@@ -44,6 +44,8 @@ Our contribution is an audited empirical decomposition: controlled graph interve
 
 **Historical-arm statistics.** Paired task differences: mean difference with a bootstrap 95% interval (2,000 resamples, fixed seed) plus an exact sign test. Follow-up inference is specified with Table 8.
 
+**Null-derived denoiser.** We treat real edges removed by rewiring as positives and added edges as negatives, train on six repositories, and filter seed neighbours on held-out repositories without repair labels.
+
 ## 5. Results
 
 **Scoring granularity.** Table 1 scores one ranking two ways; all 354 gold symbols resolve into the graph.
@@ -160,9 +162,9 @@ Each randomized graph preserves every candidate's within-file and cross-file deg
 
 Real-minus-rewired effects are +2.14 (CI 1.34–2.66), +0.90 (0.01–1.58), and +1.76 (1.04–2.82) points. The body and dense interactions are −1.24 and −0.38 points (Holm p = 0.126 and 0.598): neither establishes attenuation. Real-minus-base effects are +2.19, −0.01, and +0.64 points; the dense secondary repository test has p = 0.069. Thus rejecting a randomized topology does not establish a useful improvement over dense retrieval.
 
-The primary null replaces 54.2% of edges on average; 28 graphs accept no swap. The stricter null replaces 19.0%, with 273 immobile graphs: smaller residual differences need that qualification. Same-file promotion is a coarse, unmatched-density control; real-versus-file effects are not significant under repository tests. All controls and mobility subsets are released.
+The primary null replaces 54.2% of edges; 28 graphs accept no swap. The stricter null replaces 19.0%; 273 are immobile. The exploratory denoiser raises body recall from 0.3171 to 0.3195, but its repository interval crosses zero; metadata and dense variants trail unfiltered real promotion. Thus null controls provide algorithmic supervision, not yet robust selection gains.
 
-**Reproducibility.** We release per-task rankings, labels, and numerical checks (`tools/audit_numbers.py`), with protocols in `docs/reproduction.md` and `docs/graph-control-protocol.md`. Auditing saved outputs is distinct from rerunning retrieval and training.
+**Reproducibility.** We release per-task rankings, labels, and audits (`tools/audit_numbers.py`; `tools/audit_counterfactual_topology.py`), with protocols in `docs/reproduction.md` and `docs/graph-control-protocol.md`. Auditing saved outputs is distinct from rerunning retrieval and training.
 
 ## 6. Discussion
 
