@@ -43,11 +43,11 @@
 | **Title** | `Beyond File Hits: Candidate Coverage and Graph Utility in Code Localization` |
 | **Subtitle** | `A controlled retrieval study of graph reach, shortlist displacement, and index content on SWE-bench Lite and the full test split` |
 | **Body** | [paper/kaggle_body_img.md](../paper/kaggle_body_img.md)：2,480 词（仅文字，另含表图内容）、10 个小节、**5 个图片位**；顺序为 `table_1` → `table_2` → `table_3` → `fig1` → `table_4` |
-| **PDF** | [paper/submission.pdf](../paper/submission.pdf)，5 页（参考文献独立一页）；与 Markdown 同源生成，`check_publication.py` 已对照 PDF 核对 68 个源块 |
-| **字数** | 完整文本含标题、副标题和表格，按仓库计数规则 **2,850 词**；限额 3,000，预留 **150**。图片版文字少不代表字数豁免；线上计数最终核对 |
+| **PDF** | [paper/submission.pdf](../paper/submission.pdf)，6 页（参考文献独立一页）；与 Markdown 同源生成，`check_publication.py` 已对照 PDF 核对 69 个源块 |
+| **字数** | 完整文本含标题、副标题和表格，按仓库计数规则 **2,916 词**；限额 3,000，预留 **84**。图片版文字少不代表字数豁免；线上计数最终核对 |
 | **Project Links** | `https://github.com/BugMaker-Pro/kaggleGemma-4` + `https://github.com/BugMaker-Pro/kaggleGemma-4/blob/main/paper/submission.pdf` |
 
-2026-11-08 叙事重排：主结果改为全定量表拓扑对照（Table 1），学习排序与全量结果合并为一张两尺度表（Table 2）。随后按“删掉不承载主张的实验”精简：删除 null-derived denoiser 段、证据子集表、覆盖与位移表；学习排序的 290 任务数字并入正文。表格从 8 张降到 4 张，PDF 从 6 页降到 5 页，字数从 2,996 降到 2,728（余量 150），并把 Figure 1 前移以消除半页空白。
+2026-11-08 叙事重排：主结果改为全定量表拓扑对照（Table 1），学习排序与全量结果合并为一张两尺度表（Table 2）。随后按“删掉不承载主张的实验”精简：删除 null-derived denoiser 段、证据子集表、覆盖与位移表；学习排序的 290 任务数字并入正文。表格从 8 张降到 4 张，PDF 从 6 页降到 5 页，字数从 2,996 降到 2,728（余量 84），并把 Figure 1 前移以消除半页空白。
 
 表格图共 4 张：Table 1 全量拓扑对照、Table 2 两尺度召回、Table 3 符号/文件粒度、Table 4 Lite 八臂；另有 Figure 1，共 5 个图片位。旧 `table_resolution.png` 与 `table_5`–`table_8.png` 已删除。
 

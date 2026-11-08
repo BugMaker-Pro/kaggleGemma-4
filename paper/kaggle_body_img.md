@@ -76,6 +76,8 @@ Line granularity agrees: the ranking covers **23.9%** of the 1,010 changed lines
 
 **Source size.** Median gold-file and touched-definition lengths are 28,950 and 1,726 characters; 112 tasks exceed a 25× ratio, which motivates scoring symbols rather than files. These lengths do not establish token, latency, or repair savings.
 
+**Cost, not just slots.** Charging each presentation for the text it makes an agent read changes the comparison. Ten BM25 symbols cost 14,685 characters as definitions and 251,893 as whole files. At a 16,000-character budget the definition list covers 0.257 of gold symbols and the file list 0.110; files need 32,000 characters to reach 0.234, still below the definition plateau of 0.266.
+
 ![paper/table_4.png](table_4.png)
 
 Second-hop reach increases to 35.7% without a recall gain. Reranking gains +2.9 at k = 20 (p = 0.021).

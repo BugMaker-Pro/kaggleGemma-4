@@ -80,6 +80,7 @@ img { max-width: 100%; display: block; margin: 6px auto 4px; }
 </tbody></table>
 <p>Line granularity agrees: the ranking covers <strong>23.9%</strong> of the 1,010 changed lines, so the gap is not a matching artefact. <strong>No graph variant has a statistically significant symbol improvement on Lite at ten slots</strong> — Table 4 and Figure 1.</p>
 <p><strong>Source size.</strong> Median gold-file and touched-definition lengths are 28,950 and 1,726 characters; 112 tasks exceed a 25× ratio, which motivates scoring symbols rather than files. These lengths do not establish token, latency, or repair savings.</p>
+<p><strong>Cost, not just slots.</strong> Charging each presentation for the text it makes an agent read changes the comparison. Ten BM25 symbols cost 14,685 characters as definitions and 251,893 as whole files. At a 16,000-character budget the definition list covers 0.257 of gold symbols and the file list 0.110; files need 32,000 characters to reach 0.234, still below the definition plateau of 0.266.</p>
 <p class="caption">Table 4 — BM25 and seven graph variants, paired at ten symbol slots; candidate access differs</p>
 <table>
 <thead><tr><th class="">arm</th><th class="n">r@1</th><th class="n">r@5</th><th class="n">r@10</th><th class="n">file r@10</th><th class="">Δr@10 (95% CI)</th><th class="n">p</th></tr></thead><tbody>
