@@ -1,4 +1,4 @@
-# 引用核实笔记（17 篇 PDF）
+# 引用核实笔记（20 篇 PDF）
 
 > 核实时间：2026-10-25。方法：`pypdf` 抽全文 → 定位到具体行 → 抄原句。
 > 状态标记：✅ 已核实原文 ｜ ⚠️ 原文有歧义或不支持我们的说法 ｜ ⬜ 未读/仅摘要
@@ -542,6 +542,41 @@ ACL 2026 Findings（蚂蚁集团）· [项目页](https://github.com/sxthunder/F
 > "they may return different types of relevant document that were not identified in the original pooling. If so, test collections constructed using traditional methods are likely to lead to biased and unfair evaluation results"
 
 **用在哪**：支撑“候选池决定指标上限”的论证；与我们的 oracle@10 = 0.600 呼应。
+
+---
+
+## 7. 2026 年最新三篇（仅读摘要，待精读）
+
+### 7.1 SemNav（arXiv:2609.31176，2026-09）⬜
+
+**做什么**：确定性检索播种候选集，LLM agent 带证据反复修正；三个组件是语义导航图（走 language server）、issue 条件化语义卡片、候选工作区。
+
+**可引的句子**：
+> "SemNav, a framework that leverages deterministic retrieval to seed a broad candidate set and an LLM agent to continually refine that set"
+> "improving File Hit@10 from 68.33% to 82.67% with Gemma 4B"
+
+**我们的边界**：它报**文件级、含 LLM 迭代**；我们报**符号级、固定池、无模型**。正文不能暗示同一量纲，只能作为“文件级天花板已被推高”的动机。
+
+### 7.2 How Should Agents See Code?（arXiv:2611.07286，2026-11）⬜
+
+**做什么**：五种代码表示工作流作为 agent 的检索视图，在 LinuxFLBench、SWE-bench Pro、SWT-bench、SecBench 上评估。
+
+**可引的句子**：
+> "representation workflows are most useful as token-saving tools when localization is the bottleneck, while their success gains narrow when the decisive step is patch or test authoring"
+> "On LinuxFLBench, all five workflows improve recall@10 over the baseline (0.757-0.829 vs. 0.717) and reduce token usage by 25-39%"
+
+**用在哪**：Discussion 里作为**独立、同向**的证据：表示改进拉高定位，但不自动转化为修复——这正是我们“信号 ≠ 干预价值”的 agent 层版本。也提供 LinuxFLBench 这个外部基准。
+
+### 7.3 FeatLens（arXiv:2609.26480，2026-09/10）⬜
+
+**做什么**：离线建“自然语言特征 → 函数实体”索引；给定需求与目标位置选特征作种子，扩图后用语义与结构启发式在固定预算内挑依赖。
+
+**可引的句子**：
+> "applies semantic and structural heuristics to select dependencies for inclusion in the generation context"
+> "reaching DR@15 values of 0.527 and 0.529"
+> "without LLM calls in the online dependency retrieval stage"
+
+**用在哪**：Related Work 里说明“固定预算下的依赖选择可以不用在线 LLM”，即我们控制实验所隔离的那个选择步骤；也是我们后续做“干预选择器”的最接近范式。
 
 ---
 

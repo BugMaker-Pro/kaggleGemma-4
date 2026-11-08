@@ -31,6 +31,7 @@ img { max-width: 100%; display: block; margin: 6px auto 4px; }
 <h2>2. Related Work</h2>
 <p><strong>Localization and repair.</strong> SWE-bench evaluates patches [1]; SWE-agent studies agent interfaces [5]. LocAgent evaluates multiple localization granularities and graph tools [2], while ARISE reports function and line localization alongside repair [3]. Their agent results cannot be compared numerically with our static retrieval recall.</p>
 <p><strong>Closest graph study.</strong> Bellam [11] ablates grep, embedding, and graph tools across small coding agents, stratifies tasks by graph depth, and measures downstream repair. Our complementary scope is the retrieval layer: fixed-slot target displacement, candidate ceilings, degree/file-matched topology controls across retrieval representations, and an independently audited answer key.</p>
+<p><strong>Agentic localization.</strong> SemNav [12] seeds a candidate set with deterministic retrieval and has an LLM agent revise it with evidence, reporting file hit@10 from 68.33% to 82.67% and improved downstream resolution. A concurrent study of five code-representation workflows [13] finds the same split we do one level down: recall@10 rises from 0.717 to 0.757–0.829 while resolution stays near baseline. We hold the model out and ask what a fixed pool and a static ranking can deliver; FeatLens [14] shows that selecting dependencies at a fixed budget is possible without online LLM calls, which is the selection step our controls isolate.</p>
 <p><strong>Retrieval representations.</strong> CORE-Bench [8], RepoNav [9], and FuseSearch [10] study repository retrieval and navigation. PyCG [4] evaluates call-graph construction; CodexGraph [6] and RepoAtlas [7] expose repository structure to agents. Our graph resolution rate describes one implementation, not the quality of these systems.</p>
 <h2>3. Setup</h2>
 <p><strong>Tasks.</strong> Lite has 300 instances across 12 Python repositories, dominated by django (114) and sympy (77), with 297 base commits. The full test split has 2,294 tasks; 2,232 are scorable and 62 lack resolvable gold symbols. Lite is contained in this split, so the larger study is a scale extension, not independent replication. We measure source retrieval without executing patches.</p>
@@ -116,4 +117,7 @@ img { max-width: 100%; display: block; margin: 6px auto 4px; }
 <p>[9] Chai et al. RepoNav: From Snippet Retrieval to File-Centered Repository Navigation for Code Agents. EMNLP 2026.</p>
 <p>[10] FuseSearch: Learning Adaptive Parallel Execution for Efficient Code Localization. ACL 2026 Findings.</p>
 <p>[11] Saurav Bellam. How Do Small Coding Agents Use Code Graphs and Embeddings? arXiv:2610.33958, 2026.</p>
+<p>[12] Wei et al. Semantic Navigation for Issue Localization in Code Repository. arXiv:2609.31176, 2026.</p>
+<p>[13] Sepidband et al. How Should Agents See Code? Rethinking Code Representations for Agentic Software Engineering. arXiv:2611.07286, 2026.</p>
+<p>[14] Li et al. FeatLens: Feature-Guided Dependency Retrieval for Repository-Level Code Generation. arXiv:2609.26480, 2026.</p>
 </main></body></html>

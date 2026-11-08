@@ -1,4 +1,4 @@
-# 论文 PDF 索引（17 篇）
+# 论文 PDF 索引（20 篇）
 
 > 下载：2026-10-20，来源 arXiv / ACL Anthology。
 > PDF 已在 `.gitignore` 里（不进仓库）。这份索引进仓库。
@@ -45,6 +45,14 @@
 | `LostInTheMiddle.pdf` | Lost in the Middle: How Language Models Use Long Contexts | TACL 2024 | 位置偏差的实验设置，只引一句 |
 | `RAG_NeurIPS2020.pdf` | Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks | NeurIPS 2020 | 只引“检索质量决定下游”这一句 |
 | `TestCollectionReliability.pdf` | On the Reliability of Test Collections for Evaluating Systems of Different Types | arXiv 2020 | pooling bias 的定义与结论，支撑“候选池决定上限” |
+
+## 2026 年最新（直接影响我们的贡献表述）
+
+| 文件 | 题目 | 出处 | 读的时候只盯 |
+| --- | --- | --- | --- |
+| `SemNav_2026.pdf` | Semantic Navigation for Repository-Level Issue Localization | arXiv:2609.31176（2026-09） | 它的 File Hit@10 82.67% 是 agent + LLM；和我们静态 BM25 不可直接比，但必须划界 |
+| `AgentsSeeCode_2026.pdf` | How Should Agents See Code? Rethinking Code Representations | arXiv:2611.07286（2026-11） | LinuxFLBench 上 recall@10 0.717→0.757–0.829、token −25–39%，但 resolved 基本不变——和我们同向 |
+| `FeatLens_2026.pdf` | Feature-Guided Dependency Retrieval for Repository-Level Code Generation | arXiv:2609.26480（2026-09/10） | “语义 + 结构启发式在固定预算内挑依赖”，正是我们缺的选择器范式 |
 
 ---
 

@@ -18,6 +18,8 @@ We contribute (i) a pre-specified, degree- and file-matched topology control acr
 
 **Closest graph study.** Bellam [11] ablates grep, embedding, and graph tools across small coding agents, stratifies tasks by graph depth, and measures downstream repair. Our complementary scope is the retrieval layer: fixed-slot target displacement, candidate ceilings, degree/file-matched topology controls across retrieval representations, and an independently audited answer key.
 
+**Agentic localization.** SemNav [12] seeds a candidate set with deterministic retrieval and has an LLM agent revise it with evidence, reporting file hit@10 from 68.33% to 82.67% and improved downstream resolution. A concurrent study of five code-representation workflows [13] finds the same split we do one level down: recall@10 rises from 0.717 to 0.757–0.829 while resolution stays near baseline. We hold the model out and ask what a fixed pool and a static ranking can deliver; FeatLens [14] shows that selecting dependencies at a fixed budget is possible without online LLM calls, which is the selection step our controls isolate.
+
 **Retrieval representations.** CORE-Bench [8], RepoNav [9], and FuseSearch [10] study repository retrieval and navigation. PyCG [4] evaluates call-graph construction; CodexGraph [6] and RepoAtlas [7] expose repository structure to agents. Our graph resolution rate describes one implementation, not the quality of these systems.
 
 ## 3. Setup
@@ -125,3 +127,9 @@ Matched topology controls reveal structure that constrained random graphs lack u
 [10] FuseSearch: Learning Adaptive Parallel Execution for Efficient Code Localization. ACL 2026 Findings.
 
 [11] Saurav Bellam. How Do Small Coding Agents Use Code Graphs and Embeddings? arXiv:2610.33958, 2026.
+
+[12] Wei et al. Semantic Navigation for Issue Localization in Code Repository. arXiv:2609.31176, 2026.
+
+[13] Sepidband et al. How Should Agents See Code? Rethinking Code Representations for Agentic Software Engineering. arXiv:2611.07286, 2026.
+
+[14] Li et al. FeatLens: Feature-Guided Dependency Retrieval for Repository-Level Code Generation. arXiv:2609.26480, 2026.
