@@ -94,3 +94,186 @@ tmp/
 !data/swebench_full.jsonl
 !data/graph_controls.portable.json
 !data/graph_controls_tie_sensitivity.json
+
+# Small frozen fixed-menu pilot: keep its inputs and audit trail reviewable.
+!experiments/runs/
+experiments/runs/*
+!experiments/runs/query-pilot-20261102-v1/
+experiments/runs/query-pilot-20261102-v1/*
+!experiments/runs/query-pilot-20261102-v1/manifest.json
+!experiments/runs/query-pilot-20261102-v1/tasks.jsonl
+!experiments/runs/query-pilot-20261102-v1/trace.jsonl
+!experiments/runs/query-pilot-20261102-v1/scores.jsonl
+!experiments/runs/query-pilot-20261102-v1/summary.json
+
+# Frozen candidate-retention control and its offline audit.
+!experiments/runs/retention-pilot-20261102-v1/
+experiments/runs/retention-pilot-20261102-v1/*
+!experiments/runs/retention-pilot-20261102-v1/manifest.json
+!experiments/runs/retention-pilot-20261102-v1/replay.jsonl
+!experiments/runs/retention-pilot-20261102-v1/diagnostics.jsonl
+!experiments/runs/retention-pilot-20261102-v1/summary.json
+
+# Paired feedback inputs only; no generated model outcomes yet.
+!experiments/runs/feedback-inputs-20261102-v1/
+experiments/runs/feedback-inputs-20261102-v1/*
+!experiments/runs/feedback-inputs-20261102-v1/manifest.json
+!experiments/runs/feedback-inputs-20261102-v1/requests.jsonl
+!experiments/runs/feedback-inputs-20261102-v1/contexts.jsonl
+
+# Local API credentials (including Windows case variants).
+.[eE][nN][vV]
+.[eE][nN][vV].*
+!.env.example
+
+# Frozen Flash API experiment; receipts exclude authentication headers.
+!experiments/runs/deepseek-flash-feedback-20261102-v1/
+experiments/runs/deepseek-flash-feedback-20261102-v1/*
+!experiments/runs/deepseek-flash-feedback-20261102-v1/manifest.json
+!experiments/runs/deepseek-flash-feedback-20261102-v1/continuation.json
+!experiments/runs/deepseek-flash-feedback-20261102-v1/continuation-v1.json
+!experiments/runs/deepseek-flash-feedback-20261102-v1/continuation-v2.json
+!experiments/runs/deepseek-flash-feedback-20261102-v1/responses.jsonl
+!experiments/runs/deepseek-flash-feedback-20261102-v1/retrieval.jsonl
+!experiments/runs/deepseek-flash-feedback-20261102-v1/scores.jsonl
+!experiments/runs/deepseek-flash-feedback-20261102-v1/summary.json
+!experiments/runs/deepseek-flash-feedback-20261102-v1/sensitivity.json
+!experiments/runs/deepseek-flash-feedback-20261102-v1/receipts/
+
+# Disjoint stratified Flash replication; explicit audit artifacts only.
+!experiments/runs/flash-replication-20261102-v1/
+experiments/runs/flash-replication-20261102-v1/*
+!experiments/runs/flash-replication-20261102-v1/manifest.json
+!experiments/runs/flash-replication-20261102-v1/tasks.jsonl
+!experiments/runs/flash-replication-20261102-v1/inputs.seal.json
+!experiments/runs/flash-replication-20261102-v1/responses.jsonl
+!experiments/runs/flash-replication-20261102-v1/scores.jsonl
+!experiments/runs/flash-replication-20261102-v1/summary.json
+!experiments/runs/flash-replication-20261102-v1/input_tasks/
+!experiments/runs/flash-replication-20261102-v1/receipts/
+!experiments/runs/flash-replication-20261102-v1/retrieval_tasks/
+!experiments/runs/flash-replication-20261102-v1/audit.json
+
+# Strong scorer diagnostic and per-task candidate audit.
+!experiments/runs/strong-query-20261103-v1/
+experiments/runs/strong-query-20261103-v1/*
+!experiments/runs/strong-query-20261103-v1/manifest.json
+!experiments/runs/strong-query-20261103-v1/anchors.jsonl
+!experiments/runs/strong-query-20261103-v1/training_audit.json
+!experiments/runs/strong-query-20261103-v1/historical_predictions.jsonl
+!experiments/runs/strong-query-20261103-v1/predictions.jsonl
+!experiments/runs/strong-query-20261103-v1/scores.jsonl
+!experiments/runs/strong-query-20261103-v1/summary.json
+!experiments/runs/strong-query-20261103-v1/models/
+!experiments/runs/strong-query-20261103-v1/candidates/
+
+# Import-corrected strong scorer; original version and model audit retained.
+!experiments/runs/strong-query-20261103-v2/
+experiments/runs/strong-query-20261103-v2/*
+!experiments/runs/strong-query-20261103-v2/manifest.json
+!experiments/runs/strong-query-20261103-v2/revision.json
+!experiments/runs/strong-query-20261103-v2/anchors.jsonl
+!experiments/runs/strong-query-20261103-v2/training_audit.json
+!experiments/runs/strong-query-20261103-v2/historical_predictions.jsonl
+!experiments/runs/strong-query-20261103-v2/predictions.jsonl
+!experiments/runs/strong-query-20261103-v2/scores.jsonl
+!experiments/runs/strong-query-20261103-v2/summary.json
+!experiments/runs/strong-query-20261103-v2/audit.json
+!experiments/runs/strong-query-20261103-v2/models/
+!experiments/runs/strong-query-20261103-v2/candidates/
+
+# Fixed cheap-fusion control: frozen replay and audit only.
+!experiments/runs/simple-fusion-20261103-v1/
+experiments/runs/simple-fusion-20261103-v1/*
+!experiments/runs/simple-fusion-20261103-v1/manifest.json
+!experiments/runs/simple-fusion-20261103-v1/replay.jsonl
+!experiments/runs/simple-fusion-20261103-v1/scores.jsonl
+!experiments/runs/simple-fusion-20261103-v1/summary.json
+!experiments/runs/simple-fusion-20261103-v1/audit.json
+
+# Disjoint query validation: frozen inputs, responses, scores and audit.
+!experiments/runs/query-validation-20261103-v1/
+experiments/runs/query-validation-20261103-v1/*
+!experiments/runs/query-validation-20261103-v1/manifest.json
+!experiments/runs/query-validation-20261103-v1/inputs.seal.json
+!experiments/runs/query-validation-20261103-v1/tasks.jsonl
+!experiments/runs/query-validation-20261103-v1/anchors.jsonl
+!experiments/runs/query-validation-20261103-v1/requests.jsonl
+!experiments/runs/query-validation-20261103-v1/responses.jsonl
+!experiments/runs/query-validation-20261103-v1/receipts/
+!experiments/runs/query-validation-20261103-v1/scored_candidates/
+!experiments/runs/query-validation-20261103-v1/scores.jsonl
+!experiments/runs/query-validation-20261103-v1/summary.json
+!experiments/runs/query-validation-20261103-v1/audit.json
+
+# Repository-local build tools and disposable root-level test/render output.
+/.tools/
+/tmp????????/
+/.dsh-office-*/
+
+# Lossless small archive replacing unreferenced historical loose files.
+!artifacts/archive/legacy-workspace-20261108.zip
+
+# Frozen main-track engineering outputs, without credentials or model weights.
+!experiments/runs/main-track-smoke-20261108-v2/
+!experiments/runs/main-track-smoke-20261108-v2/**
+
+# Frozen main-track engineering outputs, without credentials or model weights.
+!experiments/runs/main-track-verification-20261108-v1/
+!experiments/runs/main-track-verification-20261108-v1/**
+
+!experiments/runs/main-track-verification-20261108-v2/
+!experiments/runs/main-track-verification-20261108-v2/**
+
+!experiments/runs/main-track-rich-preflight-20261108-v1/
+!experiments/runs/main-track-rich-preflight-20261108-v1/**
+
+!experiments/runs/main-track-verification-20261108-v3/
+!experiments/runs/main-track-verification-20261108-v3/**
+
+!experiments/runs/main-track-rich-smoke-20261108-v1/
+!experiments/runs/main-track-rich-smoke-20261108-v1/**
+
+# Frozen strong-ranker graph-feature ablation and saved models.
+!experiments/runs/dense-graph-ablation-20261108-v1/
+!experiments/runs/dense-graph-ablation-20261108-v1/**
+
+!experiments/runs/main-track-requests-repaired-20261108-v1/
+!experiments/runs/main-track-requests-repaired-20261108-v1/**
+
+!experiments/runs/main-track-development-preflight-20261108-v1/
+!experiments/runs/main-track-development-preflight-20261108-v1/**
+
+!experiments/runs/main-track-throughput-20261108-v1/
+!experiments/runs/main-track-throughput-20261108-v1/**
+
+!experiments/runs/main-track-fastapi-preflight-20261108-v2/
+!experiments/runs/main-track-fastapi-preflight-20261108-v2/**
+
+!experiments/runs/main-track-canonical-preflight-20261108-v1/
+!experiments/runs/main-track-canonical-preflight-20261108-v1/**
+
+!experiments/runs/main-track-ranker-tool-20261108-v1/
+!experiments/runs/main-track-ranker-tool-20261108-v1/**
+
+!experiments/runs/main-track-development-nonrequests-20261108-v1/
+!experiments/runs/main-track-development-nonrequests-20261108-v1/**
+
+!experiments/runs/main-track-development-requests-20261108-v1/
+!experiments/runs/main-track-development-requests-20261108-v1/**
+
+!experiments/runs/main-track-ranker-agent-20261108-v1/
+!experiments/runs/main-track-ranker-agent-20261108-v1/**
+
+!experiments/runs/main-track-ranker-agent-20261108-v2/
+!experiments/runs/main-track-ranker-agent-20261108-v2/**
+
+!experiments/runs/main-track-ranker-control-startup-failure-20261108-v1/
+!experiments/runs/main-track-ranker-control-startup-failure-20261108-v1/**
+
+# Encoder weights are rebuilt by the packaging tools; keep only scripts and cards.
+agent/ranker/assets/
+
+# Workspace scratch space used by the PDF/table build.
+/.tmp/
+

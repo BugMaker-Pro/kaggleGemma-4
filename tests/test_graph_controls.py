@@ -143,7 +143,7 @@ class HeadroomDiagnosticTests(unittest.TestCase):
                      'metadata':list(range(12)),
                      'body':[0,10,1,2,3,4,5,6,7,8,9,11],
                      'dense':list(range(12))}}
-        with tempfile.TemporaryDirectory(dir=Path(__file__).resolve().parents[1]/'tmp') as directory:
+        with tempfile.TemporaryDirectory() as directory:
             path=Path(directory)/'context.jsonl'
             path.write_text(json.dumps(context)+'\n',encoding='utf-8')
             result=retained_seed_diagnostics(path,{'fixture'})

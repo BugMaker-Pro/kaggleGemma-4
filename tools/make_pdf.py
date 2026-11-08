@@ -37,16 +37,22 @@ from docx.shared import Cm, Pt, RGBColor  # noqa: E402
 
 TOKEN = re.compile(r"(\*\*.+?\*\*|(?<![\*\w])\*[^*\n]+?\*(?![\*\w])|`[^`]+`)")
 CAPTION = re.compile(r"^(Figure \d+|Table \d+)\s*[—–-]\s*(.*)$")
-# PDF export is optional tooling, so the converter is located by environment
-# variable rather than by a path that only exists on the machine that built it:
+# Keep optional build tooling outside temporary directories. An explicit
+# environment setting still takes precedence over this repository-local install.
 #   NODE_BIN              node executable (default: node on PATH)
-#   LIBREOFFICE_KIT_CLI   the LibreOffice Kit CLI entry (required for export)
+#   LIBREOFFICE_KIT_CLI   optional override for the LibreOffice Kit CLI
 NODE = os.environ.get("NODE_BIN", "node")
-CLI = os.environ.get("LIBREOFFICE_KIT_CLI", "")
+DEFAULT_CLI = ROOT / ".tools/libreoffice-kit/node_modules/@deepseek-ai/libreoffice-kit/lib/cli.js"
+CLI = os.environ.get("LIBREOFFICE_KIT_CLI") or (str(DEFAULT_CLI) if DEFAULT_CLI.is_file() else "")
 
 INK = RGBColor(0x1A, 0x1A, 0x1A)
 MUTED = RGBColor(0x44, 0x44, 0x44)
 RULE = "BFBFBF"
+
+
+def is_numeric_cell(text: str) -> bool:
+    plain = text.replace("*", "").replace("`", "").strip()
+    return re.fullmatch(r"[<≤>≥]?[+\-−]?\d[\d,]*(?:\.\d+)?%?", plain) is not None
 
 
 def split_cells(line: str) -> list[str]:
@@ -273,8 +279,7 @@ def build(body: Path, out_docx: Path, title: str, subtitle: str) -> dict:
                     paragraph.paragraph_format.space_after = Pt(0)
                     if position < len(row):
                         add_runs(paragraph, row[position], size)
-                        plain = row[position].replace("+", "").replace("-", "").replace(".", "")
-                        if plain.isdigit():
+                        if is_numeric_cell(row[position]):
                             paragraph.alignment = WD_ALIGN_PARAGRAPH.RIGHT
             keep_rows_together(table)
             tables += 1

@@ -70,6 +70,18 @@ def main() -> int:
             p_value = controls['primary'][f'interaction:{representation}-metadata']['holm_p']
             if f"{p_value:.3f}" not in body:
                 problems.append(f"Topology interaction p-value missing: {representation}")
+    ablation_summary = ROOT / "experiments/runs/dense-graph-ablation-20261108-v1/summary.json"
+    if ablation_summary.exists() and "fusion without topology features" in body:
+        ablation = json.loads(ablation_summary.read_text(encoding="utf-8"))
+        reduced = ablation["arms"]["without_graph"]
+        expected = f"| fusion without topology features | {reduced['symbol']:.3f} | {reduced['file']:.3f} |"
+        if expected not in body:
+            problems.append("Strong-fusion ablation row differs from audited result")
+        effect = ablation["symbol"]
+        for value in (f"{100*effect['delta']:.2f}", f"{effect['repository_signflip_p']:.4f}",
+                      f"{100*effect['cluster_ci95'][0]:.2f}", f"{100*effect['cluster_ci95'][1]:.2f}"):
+            if value not in body:
+                problems.append(f"Strong-fusion ablation statistic missing: {value}")
     reader = PdfReader(ROOT / "paper/submission.pdf")
     pages = []
     for page_number, page in enumerate(reader.pages, 1):

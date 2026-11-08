@@ -34,15 +34,15 @@ GRAPH = {
 }
 
 
-def _write_graph(payload: object) -> Path:
-    path = Path(tempfile.mkdtemp()) / "g.json"
+def _write_graph(payload: object, directory: Path) -> Path:
+    path = directory / "g.json"
     path.write_text(json.dumps(payload), encoding="utf-8")
     return path
 
 
 class GraphSummaryTests(unittest.TestCase):
     def test_reads_nodes_and_edges(self) -> None:
-        summary = summarize(_write_graph(GRAPH))
+        summary = summarize(_write_graph(GRAPH, Path(self.enterContext(tempfile.TemporaryDirectory()))))
         self.assertTrue(summary.ok)
         self.assertEqual(summary.node_count, 3)
         self.assertEqual(summary.edge_count, 1)
@@ -52,7 +52,7 @@ class GraphSummaryTests(unittest.TestCase):
         self.assertIn("pkg.mod.A.m", summary.node_ids)
 
     def test_zero_byte_file_is_flagged(self) -> None:
-        path = Path(tempfile.mkdtemp()) / "empty.json"
+        path = Path(self.enterContext(tempfile.TemporaryDirectory())) / "empty.json"
         path.write_bytes(b"")
         summary = summarize(path)
         self.assertFalse(summary.ok)
@@ -60,14 +60,14 @@ class GraphSummaryTests(unittest.TestCase):
         self.assertEqual(summary.node_count, 0)
 
     def test_bad_json_is_flagged_not_raised(self) -> None:
-        path = Path(tempfile.mkdtemp()) / "bad.json"
+        path = Path(self.enterContext(tempfile.TemporaryDirectory())) / "bad.json"
         path.write_text("{not json", encoding="utf-8")
         summary = summarize(path)
         self.assertFalse(summary.ok)
         self.assertTrue(summary.error.startswith("unreadable:"))
 
     def test_missing_schema_keys(self) -> None:
-        summary = summarize(_write_graph({"directed": True}))
+        summary = summarize(_write_graph({"directed": True}, Path(self.enterContext(tempfile.TemporaryDirectory()))))
         self.assertFalse(summary.ok)
         self.assertEqual(summary.error, "missing-nodes-or-edges")
 

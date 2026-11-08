@@ -21,12 +21,13 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 import docx  # noqa: E402
-from docx.enum.table import WD_TABLE_ALIGNMENT  # noqa: E402
+from docx.enum.table import WD_TABLE_ALIGNMENT
+from docx.enum.text import WD_ALIGN_PARAGRAPH  # noqa: E402
 from docx.shared import Cm, Pt  # noqa: E402
 from PIL import Image, ImageChops  # noqa: E402
 
 from tools.make_pdf import (CLI, NODE, add_runs, caption, column_widths,  # noqa: E402
-                            keep_rows_together, light_rules, split_cells as cells)
+                            keep_rows_together, light_rules, is_numeric_cell, split_cells as cells)
 
 CAPTION = __import__("re").compile(r"^(Table \d+|Figure \d+)")
 # the state table has no caption line of its own: its lead-in sentence is prose
@@ -74,9 +75,8 @@ def build_document(table_label: str, caption_text: str, header: list[str],
             paragraph.paragraph_format.space_after = Pt(0)
             if position < len(row):
                 add_runs(paragraph, row[position], size)
-                plain = row[position].replace("+", "").replace("-", "").replace(".", "")
-                if plain.isdigit():
-                    paragraph.alignment = 3  # right
+                if is_numeric_cell(row[position]):
+                    paragraph.alignment = WD_ALIGN_PARAGRAPH.RIGHT
     keep_rows_together(table)
     document.save(path)
 

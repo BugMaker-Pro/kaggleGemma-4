@@ -1,92 +1,57 @@
-# agent/ — 主赛道提交包
+# agent/ — 主赛道准备与评测
 
-这个目录的内容最终会被打成 `submission.zip` 提交（解压后 < 3 GiB）。它**不是**一个普通的 Python 项目：Kaggle 不会执行任意入口脚本，只接受**声明式 agent 配置**，由官方 harness 编译成 agent 再运行。
+已取得官方运行说明、样例和 129 个公开任务。2026-11-08 用户确认已加入比赛；下载链路已修复并实际成功。完整计划见 [main-track-plan](../docs/competition/competition.md#main-track-plan)，执行状态见 [main-track-status](../docs/competition/competition.md#main-track-status)。
 
-## 你实际设计的只有四件事
+## 官方运行合约
 
-循环、工具实现、沙箱、补丁提取、验证——**全部由官方 harness 提供**，你写不了，也不需要写。能改的只有：
+来源：本地 `.cache/main-track/official/HARNESS_README.md` 和官方 `ryanholbrook/getting-started-gemma-4-developer-agent` v3。
 
-| 旋钮 | 内容 | 影响什么 |
-| --- | --- | --- |
-| **prompt** | 系统提示词：工作流、纪律、输出格式 | 模型怎么想、何时停、改多大 |
-| **工具** | 启用哪些已注册工具、怎么引导使用 | 观察质量（搜索粒度、读窗口） |
-| **委派** | 单 agent 还是 subagent 分工 | 探索广度 vs 上下文消耗 |
-| **限额** | 轮数、超时、输出 token | 预算分配，单任务 vs 全局 |
-| （可选）adapter | LoRA 权重 | 模型行为，需自带权重 |
+- ZIP 根目录放 `agent.yaml`；可选 `eval_config.yaml`、提示词、子 agent、skill 与 adapter。
+- 顶层只能使用声明式 agent 配置，不能放任意 Python agent 入口；允许沙箱中的 ADK skill 脚本。
+- 每包统一使用一种获准模型：`gemma-4-31b-it-qat-w4a16-ct`、`gemma-4-12b-it-qat-w4a16-ct`、`gemma-4-e4b-it-qat-w4a16-ct` 或 `gemma-4-e2b-it-qat-w4a16-ct`。旧记录中“只能用 31B”已经过时。
+- 包解压后小于 3 GiB；单 skill 目录上限 50 MiB；文件扩展名受限。32,768 是上下文上限，不能当作额外可用输入预算。
+- `run_command`、`read_file`、`edit_file`、`write_file`、`get_status`、`submit_patch`、`get_code_neighbors`、`search_similar_code`、`get_code_subgraph` 是官方注册工具。
+- `search_similar_code` 主要以已有符号查询向量邻居；多词输入存在词法回退，不能等同于实时 issue 编码器。
+- 主赛道截止：北京时间 2026-12-03 07:59；每日最多提交 1 次。
 
-没有 `while True:` 可以写。你想「加一个门控」「改一下循环」——在提交包里都做不到，只能在 prompt 里表达，或者用 sandboxed skill（⚠️ 待核实是否允许）。
+## 当前三个包
 
-> 这也决定了论文的边界：如果 harness 固定了循环，那么可研究/可改进的空间就是上面四行，不是「设计一个更聪明的 agent 架构」。
+运行 `tools/build_main_track.py` 生成三个根目录正确、配置匹配的包及私有 Kaggle 流程测试 Notebook。
 
-## 已确认的规则
-
-| 项 | 值 |
+| 包 | 定位指令 |
 | --- | --- |
-| 提交文件 | `submission.zip` |
-| 解压后大小 | < 3 GiB |
-| 模型 | 固定 `gemma-4-31b-it-qat-w4a16-ct`，不可换 |
-| agent 类型 | ADK `LlmAgent` 等受支持类型 |
-| 提示词 | 外部文件（样例路径 `agent/prompts/system.md`） |
-| 工具 | 必须来自 harness 已注册的工具集，不能自定义 host 侧 Python |
-| adapter | 可选 LoRA，需自带权重 |
-| 运行环境 | 离线；仓库沙箱 4 GiB RAM / 2 vCPU |
+| baseline | 官方根提示词 |
+| evidence | 替换官方定位段为显式证据优先和候选保留策略 |
+| evidence_graph | evidence 加按需一跳图查询 |
 
-## 目录
+所有包统一为 12B、无 adapter、单 agent，采样和预算相同（3 分钟、30 次工具调用、最多 50 轮、单命令 60 秒）。官方样例的 dummy LoRA 和 AgentTool 委派从全部实验臂中移除。因此 baseline 是 **匹配配置上的官方提示词基线**，并非未经修改的官方样例成绩。非定位流程保持一致。
 
-```
-agent/
-├── README.md            # 本文件
-├── prompts/
-│   └── system.md        # 系统提示词（已写第一版）
-├── config.yaml          # ⚠️ 待按 sample_submission 对齐，尚未创建
-└── tools/               # ⚠️ 工具声明，取决于 harness schema
+`prompts/system.md` 是早期草稿，不作为这三个包的共用主提示词；构建器从下载的官方提示词生成。`prompts/localization/` 是两种实验策略的来源。
+
+## 可重复命令
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/fetch_main_track.ps1 -IncludeSample
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/fetch_main_track.ps1 -Files tasks.jsonl
+.venv/Scripts/python.exe tools/build_main_track.py --out .cache/main-track/build-v2 --run-suffix v2
+.venv/Scripts/python.exe -m unittest tests.test_main_track -v
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/run_main_track_notebook.ps1 -Action Status -BuildDirectory .cache/main-track/build-v2
 ```
 
-## ⚠️ 必须先用 `sample_submission/` 校准的部分
+`Launch` 会创建私有 Notebook 并消耗 Kaggle GPU 配额，最多一小时；`Status`/`Logs` 只读取状态或日志。脚本拒绝覆盖同名 Notebook。比赛提交是独立步骤，这里没有自动提交榜单的代码。
 
-我目前**没有拿到**提交包的精确 schema（官方 `HARNESS_README.md`、`sample_submission/` 和 Kaggle Getting Started notebook 都是 JS 渲染页面，抓取工具读不到正文）。以下字段名只能等真包确认，不要凭想象写：
+## 当前验证边界
 
-- [ ] 顶层配置文件名（`config.yaml` / `agent.yaml` / `submission.yaml`？）
-- [ ] agent 的类型声明字段（`type: LlmAgent`？`agent_class`？）
-- [ ] prompt 路径怎么写（相对包根？带 `agent/` 前缀？）
-- [ ] 工具注册的写法（列名字？带参数 schema？）
-- [ ] 模型引用的写法（别名？checkpoint 全名？）
-- [ ] adapter 声明字段（不写 adapter 时该字段是省略还是置空）
-- [ ] 限额字段（最大轮数、单任务超时、最大输出 token）在哪一层配置
-- [ ] 是否有 `requirements.txt` 式的依赖声明，还是只能用 wheelhouse
+已完成任务划分、配置控制、Notebook 代码语法和 ZIP 根目录检查；官方 `validate_directory` 与真实修复在 Kaggle 运行时执行。首次云端运行因默认 Python 3.13 与官方 cp312 wheels 不匹配而在安装阶段失败。第二次使用官方固定镜像，状态见执行记录。一个开发任务的流程测试不能证明方法提升 resolved rate。
 
-**校准方法**：解压 `sample_submission/`，把目录树和每个 YAML/MD 文件原样贴进本文件下方「样例原文」小节，再逐个字段改写。
+## ??????
 
-## 工具清单（按官方文档描述推断，名称以实际注册为准）
+- `tools/audit_main_track.py` ????????????????????????????????
+- `--completion-guardrails` ??????????? `prompts/completion.md`?????????????????
+- `--engineering-task-id` ????????????????????
+- Notebook ????? `append_task_result` ??????????????????
+- Requests ????????? src ?????????????????????????Rich ????????????????? Requests ???????????????????????????
 
-| 用途 | 典型工具 | 备注 |
-| --- | --- | --- |
-| 搜索 | `search_file` / 文本搜索 | 先搜后读 |
-| 读文件 | `read_file(filepath, start_line, end_line)` | 上限 150 行 / 10,000 字符 |
-| 编辑 | `edit_file` / 字符串替换 | 必须精确匹配 |
-| 执行 | `run_command` | 输出截断 5,000 字符，沙箱无网络 |
-| 提交 | `submit_patch()` | 内部执行 `git add -N . && git diff --binary` |
-| 代码图 | `get_code_neighbors` / `get_code_subgraph` | 公开数据里 129 个图为空 |
-| 相似代码 | `search_similar_code` | 查询的是**已索引符号**，不是自然语言 issue |
+`--max-output-tokens 8192` ???????????????????????????????????`--src-layout-repair` ????? subprocess ???????? ZIP?????????????
 
-后两个工具的坑见 [../docs/competition.md](../docs/competition.md) §4.1。
-
-## 打包检查清单
-
-提交前逐项确认：
-
-- [ ] 解压后总大小 < 3 GiB（`du -sh` 或资源管理器看解压后体积）
-- [ ] 没有把 base model 权重打进去
-- [ ] 没有把 `snapshots/`、`wheels/`、数据文件打进去
-- [ ] 没有 `.git`、`__pycache__`、`.venv`、日志
-- [ ] prompt 文件路径与实际引用一致
-- [ ] 配置里没有引用不存在的 adapter
-- [ ] 在本地用同一个 zip 跑通过至少 1 个任务
-
-## 样例原文
-
-<!-- 解压 sample_submission/ 后，把目录树和每个文件的原文贴在这里 -->
-
-```
-（待填）
-```
+批量入口为 `tools/build_main_track_batch.py`，只允许冻结开发集 ID，默认并发 2。模型运行前要求每个任务在相同环境中满足参考补丁通过、空补丁失败；运行后用 `tools/audit_main_track.py --batch-dir <目录>` 验证完整任务×配置矩阵、实际包、补丁和评分输出。

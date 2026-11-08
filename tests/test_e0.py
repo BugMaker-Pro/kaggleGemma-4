@@ -128,7 +128,7 @@ class SymbolTests(unittest.TestCase):
 
 class SnapshotTests(unittest.TestCase):
     def _make_tar(self, prefix: str, files: dict[str, str]) -> Path:
-        tmp = Path(tempfile.mkdtemp())
+        tmp = Path(self.enterContext(tempfile.TemporaryDirectory()))
         target = tmp / "snap.tgz"
         with tarfile.open(target, "w:gz") as tar:
             for name, content in files.items():
@@ -147,14 +147,14 @@ class SnapshotTests(unittest.TestCase):
             self.assertEqual(snap.names(), ["pkg/mod.py"])
 
     def test_reads_directory(self) -> None:
-        root = Path(tempfile.mkdtemp())
+        root = Path(self.enterContext(tempfile.TemporaryDirectory()))
         (root / "pkg").mkdir()
         (root / "pkg" / "mod.py").write_text("y = 2\n", encoding="utf-8")
         with Snapshot(root) as snap:
             self.assertEqual(snap.read_text("pkg/mod.py"), "y = 2\n")
 
     def test_binary_returns_none(self) -> None:
-        root = Path(tempfile.mkdtemp())
+        root = Path(self.enterContext(tempfile.TemporaryDirectory()))
         (root / "blob.py").write_bytes(b"\x00\x01\x02")
         with Snapshot(root) as snap:
             self.assertIsNone(snap.read_text("blob.py"))
@@ -173,7 +173,7 @@ class SnapshotTests(unittest.TestCase):
             self.assertEqual(set(only_py), {"pkg/a.py", "pkg/b.py"})
 
     def test_read_all_text_from_directory_matches_names(self) -> None:
-        root = Path(tempfile.mkdtemp())
+        root = Path(self.enterContext(tempfile.TemporaryDirectory()))
         (root / "pkg").mkdir()
         (root / "pkg" / "mod.py").write_text("z = 3\n", encoding="utf-8")
         with Snapshot(root) as snap:
@@ -199,7 +199,7 @@ class SnapshotTests(unittest.TestCase):
 
 class EndToEndTests(unittest.TestCase):
     def test_gold_record_from_fixture(self) -> None:
-        root = Path(tempfile.mkdtemp())
+        root = Path(self.enterContext(tempfile.TemporaryDirectory()))
         snap = root / "snapshots" / "repo__repo-1"
         (snap / "pkg").mkdir(parents=True)
         (snap / "pkg" / "mod.py").write_text(FIXTURE_SOURCE, encoding="utf-8")
@@ -232,7 +232,7 @@ class EndToEndTests(unittest.TestCase):
         self.assertEqual(entry["unresolved_anchors"], 0)
 
     def test_missing_snapshot_is_reported_not_dropped(self) -> None:
-        root = Path(tempfile.mkdtemp())
+        root = Path(self.enterContext(tempfile.TemporaryDirectory()))
         tasks = root / "tasks.jsonl"
         tasks.write_text(
             json.dumps(
