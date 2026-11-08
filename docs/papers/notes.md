@@ -1,4 +1,4 @@
-# 引用核实笔记（10 篇 PDF）
+# 引用核实笔记（17 篇 PDF）
 
 > 核实时间：2026-10-25。方法：`pypdf` 抽全文 → 定位到具体行 → 抄原句。
 > 状态标记：✅ 已核实原文 ｜ ⚠️ 原文有歧义或不支持我们的说法 ｜ ⬜ 未读/仅摘要
@@ -472,3 +472,76 @@ ACL 2026 Findings（蚂蚁集团）· [项目页](https://github.com/sxthunder/F
 - [ ] 把本文档压缩成论文 §2 的 280 词
 
 ---
+
+## 6. 新增论文（2026-11-08 下载，只读摘要，待精读）
+
+> 以下引文均从本地 PDF 第一页摘要抽取，未经全文核对；正文引用前需回到原文确认语境。
+
+### 6.1 CrossCodeEval（NeurIPS 2023 Datasets & Benchmarks）⬜
+
+**做什么**：跨文件代码补全基准，用静态分析挑出“必须看别的文件才能写对”的位置，同时提供跨文件上下文检索的评测。
+
+**可引的句子**：
+> "to create examples that strictly require cross-file context for accurate completion, we propose a straightforward yet efficient static-analysis-based approach"
+> "we benchmarked various methods in retrieving cross-file context, and show that CrossCodeEval can also be used to measure the capability of code retrievers"
+
+**用在哪**：§2 说明“跨文件检索已是公开问题”，并立刻区分：它评测**补全**，我们评测**定位到可编辑符号**。
+
+### 6.2 RepoBench（ICLR 2024）⬜
+
+**做什么**：仓库级补全基准，拆成检索、补全、流水线三个任务。
+
+**可引的句子**：
+> "three interconnected evaluation tasks: RepoBench-R (Retrieval), RepoBench-C (Code Completion), and RepoBench-P (Pipeline)"
+
+**用在哪**：与 CrossCodeEval 并列；RepoBench-R 的检索口径可作为“我们的符号 recall 与社区的 R@k 不同”的对照。
+
+### 6.3 Agentless（arXiv 2024）⬜
+
+**做什么**：去掉自由 agent 循环，改成定位 → 修复 → 补丁验证三段式。
+
+**可引的句子**：
+> "Agentless employs a simplistic three-phase process of localization, repair, and patch validation, without letting the LLM decide future actions"
+> "we construct SWE-bench Lite-S by excluding such problematic issues"
+
+**用在哪**：Intro 里证明“定位是可独立评测的瓶颈”；Lite-S 的构造与我们“答案纸审计”是同一动机，可互相印证。
+
+### 6.4 AutoCodeRover（ISSTA 2024）⬜
+
+**做什么**：用 AST 结构检索 + 谱系故障定位，在 SWE-bench Lite 上做到 19%。
+
+**可引的句子**：
+> "We work on a program representation (abstract syntax tree) as opposed to viewing a software project as a mere collection of files"
+> "19% on SWE-bench-lite ... lower cost (on average, $0.43 USD)"
+
+**用在哪**：§2 说明以 AST 为单位检索已有先例，我们的图构建与其同源但目标不同（它要修，我们要评估检索层）。
+
+### 6.5 Lost in the Middle（TACL 2024）⬜
+
+**做什么**：位置对长上下文利用的影响。
+
+**可引的句子**：
+> "performance can degrade significantly when changing the position of relevant information, indicating that current language models do not robustly make use of information in long input contexts"
+
+**用在哪**：Discussion 一句，解释为什么比较固定槽位而不是“把整库塞进上下文”。
+
+### 6.6 Retrieval-Augmented Generation（NeurIPS 2020）⬜
+
+**做什么**：把检索到的非参数记忆接入生成模型。
+
+**可引的句子**：
+> "Pre-trained models with a differentiable access mechanism to explicit non-parametric memory have so far been only investigated for extractive downstream tasks"
+
+**用在哪**：Intro 一句，确立“检索质量决定生成质量”的链条；不展开。
+
+### 6.7 On the Reliability of Test Collections（arXiv 2020）⬜
+
+**做什么**：池化构造的测试集对新型系统是否仍然可靠。
+
+**可引的句子**：
+> "they may return different types of relevant document that were not identified in the original pooling. If so, test collections constructed using traditional methods are likely to lead to biased and unfair evaluation results"
+
+**用在哪**：支撑“候选池决定指标上限”的论证；与我们的 oracle@10 = 0.600 呼应。
+
+---
+

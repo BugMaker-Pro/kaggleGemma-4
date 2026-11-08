@@ -1,4 +1,4 @@
-# 论文 PDF 索引（10 篇）
+# 论文 PDF 索引（17 篇）
 
 > 下载：2026-10-20，来源 arXiv / ACL Anthology。
 > PDF 已在 `.gitignore` 里（不进仓库）。这份索引进仓库。
@@ -34,6 +34,18 @@
 | `ReAct.pdf` | ReAct: Synergizing Reasoning and Acting in Language Models | ICLR 2023 | 引用一句就够 |
 | `PagedAttention.pdf` | Efficient Memory Management for LLMs with PagedAttention | SOSP 2023 | 32K 上下文的显存账 |
 
+## 新增（2026-11-08 下载，待精读）
+
+| 文件 | 题目 | 出处 | 读的时候只盯 |
+| --- | --- | --- | --- |
+| `CrossCodeEval.pdf` | CrossCodeEval: A Diverse and Multilingual Benchmark for Cross-File Code Completion | NeurIPS 2023 Datasets & Benchmarks | 它怎么用静态分析判定“必须跨文件”；retrieval 的指标定义 |
+| `RepoBench.pdf` | RepoBench: Benchmarking Repository-Level Code Auto-Completion Systems | ICLR 2024 | RepoBench-R 的检索评测口径，和我们“符号 recall@10”差在哪 |
+| `Agentless.pdf` | Agentless: Demystifying LLM-based Software Engineering Agents | arXiv 2024 | 三阶段流水线里 localization 的输入、输出与预算 |
+| `AutoCodeRover.pdf` | AutoCodeRover: Autonomous Program Improvement | ISSTA 2024 | AST 结构检索 + 谱系故障定位；19% 与 $0.43 的成本对照 |
+| `LostInTheMiddle.pdf` | Lost in the Middle: How Language Models Use Long Contexts | TACL 2024 | 位置偏差的实验设置，只引一句 |
+| `RAG_NeurIPS2020.pdf` | Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks | NeurIPS 2020 | 只引“检索质量决定下游”这一句 |
+| `TestCollectionReliability.pdf` | On the Reliability of Test Collections for Evaluating Systems of Different Types | arXiv 2020 | pooling bias 的定义与结论，支撑“候选池决定上限” |
+
 ---
 
 ## 没下到的（要另找）
@@ -41,7 +53,6 @@
 | 目标 | 状态 | 备注 |
 | --- | --- | --- |
 | **The SWE-Bench Illusion** | ✗ | ACM DOI `10.1145/3786583.3786882`，可能需要机构登录；先找 arXiv 版 |
-| **RepoBench** | ✗ | 只有 PyPI 包，没定位到论文页 |
 | **CodeRAG-Bench** | ✗ | 还没确认 arXiv 号 |
 | **CLARC**（ICLR 2026） | ✗ | 只看到二手笔记 |
 | **SWE-bench Verified** | ✗ | 是 OpenAI 的博客，不是论文；用的时候引 URL |
