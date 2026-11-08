@@ -1,0 +1,34 @@
+{
+  "request_sha256": "e05f490857ca696d958965ce072012e91d5811c20d660b4a730efff24e33271f",
+  "manifest_sha256": "d537eb7c5ecd9599d7f0c43dee9a074cdaf677151fd186d3946113fa5f47e1fe",
+  "received_utc": "2026-11-02T17:03:26.266178+00:00",
+  "seconds": 1.9804385999996157,
+  "response": {
+    "id": "d7192894-91ac-415b-bf70-0df33f503a93",
+    "object": "chat.completion",
+    "created": 1793639004,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"matplotlib 3d axes set_visible not working projection 3d\",\"Axes3D set_visible implementation draw visibility\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 482,
+      "completion_tokens": 33,
+      "total_tokens": 515,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 354
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

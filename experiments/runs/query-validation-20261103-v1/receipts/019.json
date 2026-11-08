@@ -1,0 +1,34 @@
+{
+  "request_sha256": "ba4bd77a56c1c783608d13581b5fbf87d2ac6c4e0f591485a3f2b69702442950",
+  "manifest_sha256": "d537eb7c5ecd9599d7f0c43dee9a074cdaf677151fd186d3946113fa5f47e1fe",
+  "received_utc": "2026-11-02T17:03:55.572604+00:00",
+  "seconds": 1.6458533000004536,
+  "response": {
+    "id": "ee1ee9ea-e0f0-45c6-a6fd-6fede7a55d96",
+    "object": "chat.completion",
+    "created": 1793639033,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\": [\"pytest skip allow_module_level error message outside of a test is not allowed\", \"pytest skip_module API module level skip implementation\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 737,
+      "completion_tokens": 33,
+      "total_tokens": 770,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 609
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

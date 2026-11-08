@@ -1,0 +1,42 @@
+diff --git a/src/httpx/_parsers.py b/src/httpx/_parsers.py
+index 830fccd..29451a2 100644
+--- a/src/httpx/_parsers.py
++++ b/src/httpx/_parsers.py
+@@ -106,6 +106,10 @@ class HTTPParser:
+         self.send_keep_alive = True
+         self.recv_keep_alive = True
+ 
++    @property
++    def keep_alive(self) -> bool:
++        return self.recv_keep_alive
++
+         # Special states...
+         self.processing_1xx = False
+ 
+diff --git a/src/httpx/_server.py b/src/httpx/_server.py
+index 95226d9..5408024 100644
+--- a/src/httpx/_server.py
++++ b/src/httpx/_server.py
+@@ -89,7 +89,7 @@ class HTTPConnection:
+ 
+     # Start it all over again...
+     def _complete(self):
+-        self._parser.complete
++        self._parser.complete()
+         self._idle_expiry = time.monotonic() + self._keepalive_duration
+ 
+ 
+diff --git a/src/httpx/_streams.py b/src/httpx/_streams.py
+index c88a63f..1486356 100644
+--- a/src/httpx/_streams.py
++++ b/src/httpx/_streams.py
+@@ -127,6 +127,9 @@ class HTTPStream(Stream):
+         return output
+ 
+     def close(self) -> None:
++        # Drain the buffer
++        while self._buffer.tell() < self._buffer.getbuffer().nbytes:
++            self._buffer.read(64 * 1024)
+         self._buffer.close()
+         if self._complete is not None:
+             self._complete()

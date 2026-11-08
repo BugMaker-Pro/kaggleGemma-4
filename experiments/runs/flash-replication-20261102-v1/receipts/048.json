@@ -1,0 +1,34 @@
+{
+  "request_sha256": "31eba31b8c0dc66e7a0b792b421f3219990e4d476b46373bcdf0f241e882d167",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "received_utc": "2026-11-02T15:54:06.414518+00:00",
+  "seconds": 0.9994802000001073,
+  "response": {
+    "id": "d80be9f5-0e1d-46bd-ad51-6a44a905298c",
+    "object": "chat.completion",
+    "created": 1793634844,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"pytest junitxml testsuite hostname timestamp attributes\",\"pytest JUnit XML report testsuite element add hostname timestamp\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 572,
+      "completion_tokens": 32,
+      "total_tokens": 604,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 444
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

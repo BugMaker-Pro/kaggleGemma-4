@@ -1,0 +1,42 @@
+{
+  "status": "post-run sensitivity, not replacement of main analysis",
+  "source_sha256": "1ba08771f155b2f98ff3a53799e64c84688f97784b5f4926cb3317df070268d0",
+  "input_hashes": {
+    "summary.json": "fa2bbc33ac8ddba6be080b86020344f6f8601d25ae644d7625c4305a4a23ef1b",
+    "scores.jsonl": "9cb3ad0939ed59e2077a6fde544adac89a411ae4514de17808a444dbc852352f",
+    "responses.jsonl": "ce350c8d4e410351e1f2dd4b04e8e1e02dd30c799b6fea0f4543201c48a86054",
+    "retrieval.jsonl": "6577b01d10e0a36883b72620141caf1aeff677c33a44d47a011d0d84cca4514d"
+  },
+  "complete_pairs": 11,
+  "excluded_transport_pair": [
+    "psf__requests-2148"
+  ],
+  "complete_pair_means": {
+    "preplanned": {
+      "coverage": 0.9090909090909091,
+      "recall_at_10": 0.4090909090909091
+    },
+    "feedback": {
+      "coverage": 1.0,
+      "recall_at_10": 0.5
+    }
+  },
+  "complete_pair_primary_delta": 0.09090909090909091,
+  "complete_pair_descriptive_95": [
+    0.0,
+    0.2727272727272727
+  ],
+  "complete_pair_improvements": [
+    "django__django-15996"
+  ],
+  "complete_pair_harms": [],
+  "known_usage": {
+    "input_tokens": 37470,
+    "output_tokens": 887
+  },
+  "known_idle_estimate_cny": 0.03399336,
+  "unknown_billing_requests": 1,
+  "known_peak_plus_unknown_reservation_cny": 0.09184872,
+  "credential_scan": "passed: no credential in run artifacts",
+  "remaining_limit": "API alias is mutable; actual billing for failed request unknown; 11 historical complete pairs do not establish general effect"
+}

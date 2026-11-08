@@ -1,0 +1,34 @@
+{
+  "request_sha256": "76c366726dbb6f89fa806d60d9d2503bc100e0be33651e202e2181204ee8fc34",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "received_utc": "2026-11-02T15:53:19.611910+00:00",
+  "seconds": 1.0659961000001204,
+  "response": {
+    "id": "bd414f85-10c2-45d8-b38a-b153c8691d7e",
+    "object": "chat.completion",
+    "created": 1793634797,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"fitsrec.py replace exponent separator D chararray output_field.replace encode_ascii\",\"io.fits FITS_rec D exponent separator replace not in-place chararray\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 280,
+      "completion_tokens": 40,
+      "total_tokens": 320,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 152
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

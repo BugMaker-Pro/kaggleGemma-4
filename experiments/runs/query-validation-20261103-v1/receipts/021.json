@@ -1,0 +1,34 @@
+{
+  "request_sha256": "1a18f972041287149d619a9e01b531326c04a404e259973b1dcf66ebff795dbc",
+  "manifest_sha256": "d537eb7c5ecd9599d7f0c43dee9a074cdaf677151fd186d3946113fa5f47e1fe",
+  "received_utc": "2026-11-02T17:03:59.563316+00:00",
+  "seconds": 1.0481228000007832,
+  "response": {
+    "id": "efadd423-6500-4202-b30a-ad6dd5fb1e6e",
+    "object": "chat.completion",
+    "created": 1793639037,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\": [\"pytest cached_eval _pytest/mark/evaluate.py MarkEvaluator._istrue skipif xfail string condition caching\", \"pytest skipif xfail string condition evaluation cache globals item incorrect results remove caching\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 479,
+      "completion_tokens": 52,
+      "total_tokens": 531,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 351
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

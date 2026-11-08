@@ -1,0 +1,34 @@
+{
+  "request_sha256": "70f50cca9ae33a7b42851c67b8a85c4d16856eda9fbbe3624577ab5302838285",
+  "manifest_sha256": "d537eb7c5ecd9599d7f0c43dee9a074cdaf677151fd186d3946113fa5f47e1fe",
+  "received_utc": "2026-11-02T17:03:21.857249+00:00",
+  "seconds": 3.2986166999999114,
+  "response": {
+    "id": "dd012f92-6b19-4933-92b6-4b5f581aec19",
+    "object": "chat.completion",
+    "created": 1793638999,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\": [\"django autoreload iter_modules_and_files path.resolve().absolute() embedded null byte\", \"StatReloader snapshot_files watched_files iter_all_python_module_files pathlib resolve\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1666,
+      "completion_tokens": 42,
+      "total_tokens": 1708,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 1538
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

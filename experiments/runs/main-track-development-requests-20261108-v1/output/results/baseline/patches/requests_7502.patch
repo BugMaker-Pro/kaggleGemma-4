@@ -1,0 +1,51 @@
+diff --git a/repro.py b/repro.py
+new file mode 100644
+index 00000000..b8ed973a
+--- /dev/null
++++ b/repro.py
+@@ -0,0 +1,12 @@
++from requests._types import SupportsRead
++from typing import Any
++
++class MockFile:
++    def __getattr__(self, name):
++        if name == "read":
++            return lambda length=None: b"data"
++        raise AttributeError(name)
++
++fp = MockFile()
++print(f"isinstance(fp, SupportsRead): {isinstance(fp, SupportsRead)}")
++print(f"hasattr(fp, 'read'): {hasattr(fp, 'read')}")
+diff --git a/repro2.py b/repro2.py
+new file mode 100644
+index 00000000..b8ed973a
+--- /dev/null
++++ b/repro2.py
+@@ -0,0 +1,12 @@
++from requests._types import SupportsRead
++from typing import Any
++
++class MockFile:
++    def __getattr__(self, name):
++        if name == "read":
++            return lambda length=None: b"data"
++        raise AttributeError(name)
++
++fp = MockFile()
++print(f"isinstance(fp, SupportsRead): {isinstance(fp, SupportsRead)}")
++print(f"hasattr(fp, 'read'): {hasattr(fp, 'read')}")
+diff --git a/src/requests/models.py b/src/requests/models.py
+index c4cc028e..26789055 100644
+--- a/src/requests/models.py
++++ b/src/requests/models.py
+@@ -161,8 +161,8 @@ class RequestEncodingMixin:
+ 
+         if isinstance(data, (str, bytes)):
+             return data
+-        elif isinstance(data, _SupportsRead):
+-            return data
++        elif hasattr(data, "read") and callable(data.read):
++            return data\
+         elif hasattr(data, "__iter__"):
+             result: list[tuple[bytes, bytes]] = []
+             for k, vs in to_key_val_list(data):

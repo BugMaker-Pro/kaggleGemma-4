@@ -1,0 +1,472 @@
+[
+  {
+    "stream_name": "stderr",
+    "time": 7.318861245,
+    "data": "0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 7.318909839,
+    "data": "0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 7.318913236,
+    "data": "0.00s - to python to disable frozen modules.\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 7.318915292,
+    "data": "0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 7.927215606,
+    "data": "0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 7.927238883,
+    "data": "0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 7.927241908,
+    "data": "0.00s - to python to disable frozen modules.\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 7.927244128,
+    "data": "0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 9.294524495,
+    "data": "Installing 41 wheels from /kaggle/input/datasets/metric/gemma-4-developer-agent-wheelhouse...\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 70.687093456,
+    "data": "Wheelhouse installation complete.\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.666234277,
+    "data": "Looking in links: /kaggle/input/notebooks/yyyyhhhhwww/gemma4-requests-test-wheels-20261108-v2/request-test-wheels\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.697809426,
+    "data": "Processing /kaggle/input/notebooks/yyyyhhhhwww/gemma4-requests-test-wheels-20261108-v2/request-test-wheels/pytest_httpbin-2.1.0-py3-none-any.whl\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.708314618,
+    "data": "Processing /kaggle/input/notebooks/yyyyhhhhwww/gemma4-requests-test-wheels-20261108-v2/request-test-wheels/httpbin-0.10.4-py2.py3-none-any.whl (from pytest-httpbin==2.1.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.721967878,
+    "data": "Processing /kaggle/input/notebooks/yyyyhhhhwww/gemma4-requests-test-wheels-20261108-v2/request-test-wheels/brotlicffi-1.2.1.0-cp39-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from httpbin->pytest-httpbin==2.1.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.731343973,
+    "data": "Requirement already satisfied: decorator in /usr/local/lib/python3.12/dist-packages (from httpbin->pytest-httpbin==2.1.0) (5.3.1)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.732409385,
+    "data": "Requirement already satisfied: flask>=2.2.4 in /usr/local/lib/python3.12/dist-packages (from httpbin->pytest-httpbin==2.1.0) (3.1.3)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.73365262,
+    "data": "Requirement already satisfied: greenlet>=3.0.0a1 in /usr/local/lib/python3.12/dist-packages (from httpbin->pytest-httpbin==2.1.0) (3.4.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.734486836,
+    "data": "Requirement already satisfied: six in /usr/local/lib/python3.12/dist-packages (from httpbin->pytest-httpbin==2.1.0) (1.17.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.735507879,
+    "data": "Requirement already satisfied: werkzeug>=2.2.2 in /usr/local/lib/python3.12/dist-packages (from httpbin->pytest-httpbin==2.1.0) (3.1.8)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.738042788,
+    "data": "Requirement already satisfied: blinker>=1.9.0 in /usr/local/lib/python3.12/dist-packages (from flask>=2.2.4->httpbin->pytest-httpbin==2.1.0) (1.9.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.738987863,
+    "data": "Requirement already satisfied: click>=8.1.3 in /usr/local/lib/python3.12/dist-packages (from flask>=2.2.4->httpbin->pytest-httpbin==2.1.0) (8.3.3)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.739882135,
+    "data": "Requirement already satisfied: itsdangerous>=2.2.0 in /usr/local/lib/python3.12/dist-packages (from flask>=2.2.4->httpbin->pytest-httpbin==2.1.0) (2.2.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.740865926,
+    "data": "Requirement already satisfied: jinja2>=3.1.2 in /usr/local/lib/python3.12/dist-packages (from flask>=2.2.4->httpbin->pytest-httpbin==2.1.0) (3.1.6)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.741925047,
+    "data": "Requirement already satisfied: markupsafe>=2.1.1 in /usr/local/lib/python3.12/dist-packages (from flask>=2.2.4->httpbin->pytest-httpbin==2.1.0) (3.0.3)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.746935327,
+    "data": "Requirement already satisfied: cffi>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from brotlicffi->httpbin->pytest-httpbin==2.1.0) (2.0.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.751078557,
+    "data": "Requirement already satisfied: pycparser in /usr/local/lib/python3.12/dist-packages (from cffi>=1.0.0->brotlicffi->httpbin->pytest-httpbin==2.1.0) (3.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.868281339,
+    "data": "Looking in links: /kaggle/input/notebooks/yyyyhhhhwww/gemma4-requests-test-wheels-20261108-v2/request-test-wheels\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.868290427,
+    "data": "Processing /kaggle/input/notebooks/yyyyhhhhwww/gemma4-requests-test-wheels-20261108-v2/request-test-wheels/pytest_httpbin-2.1.0-py3-none-any.whl\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.868292896,
+    "data": "Processing /kaggle/input/notebooks/yyyyhhhhwww/gemma4-requests-test-wheels-20261108-v2/request-test-wheels/httpbin-0.10.4-py2.py3-none-any.whl (from pytest-httpbin==2.1.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.86829527,
+    "data": "Processing /kaggle/input/notebooks/yyyyhhhhwww/gemma4-requests-test-wheels-20261108-v2/request-test-wheels/brotlicffi-1.2.1.0-cp39-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from httpbin->pytest-httpbin==2.1.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.868299476,
+    "data": "Requirement already satisfied: decorator in /usr/local/lib/python3.12/dist-packages (from httpbin->pytest-httpbin==2.1.0) (5.3.1)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.868301589,
+    "data": "Requirement already satisfied: flask>=2.2.4 in /usr/local/lib/python3.12/dist-packages (from httpbin->pytest-httpbin==2.1.0) (3.1.3)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.868303753,
+    "data": "Requirement already satisfied: greenlet>=3.0.0a1 in /usr/local/lib/python3.12/dist-packages (from httpbin->pytest-httpbin==2.1.0) (3.4.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.868305913,
+    "data": "Requirement already satisfied: six in /usr/local/lib/python3.12/dist-packages (from httpbin->pytest-httpbin==2.1.0) (1.17.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.868308244,
+    "data": "Requirement already satisfied: werkzeug>=2.2.2 in /usr/local/lib/python3.12/dist-packages (from httpbin->pytest-httpbin==2.1.0) (3.1.8)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.868310399,
+    "data": "Requirement already satisfied: blinker>=1.9.0 in /usr/local/lib/python3.12/dist-packages (from flask>=2.2.4->httpbin->pytest-httpbin==2.1.0) (1.9.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.868312666,
+    "data": "Requirement already satisfied: click>=8.1.3 in /usr/local/lib/python3.12/dist-packages (from flask>=2.2.4->httpbin->pytest-httpbin==2.1.0) (8.3.3)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.868314873,
+    "data": "Requirement already satisfied: itsdangerous>=2.2.0 in /usr/local/lib/python3.12/dist-packages (from flask>=2.2.4->httpbin->pytest-httpbin==2.1.0) (2.2.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.868317109,
+    "data": "Requirement already satisfied: jinja2>=3.1.2 in /usr/local/lib/python3.12/dist-packages (from flask>=2.2.4->httpbin->pytest-httpbin==2.1.0) (3.1.6)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.868319573,
+    "data": "Requirement already satisfied: markupsafe>=2.1.1 in /usr/local/lib/python3.12/dist-packages (from flask>=2.2.4->httpbin->pytest-httpbin==2.1.0) (3.0.3)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.868330136,
+    "data": "Requirement already satisfied: cffi>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from brotlicffi->httpbin->pytest-httpbin==2.1.0) (2.0.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 73.868332491,
+    "data": "Requirement already satisfied: pycparser in /usr/local/lib/python3.12/dist-packages (from cffi>=1.0.0->brotlicffi->httpbin->pytest-httpbin==2.1.0) (3.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 76.016992258,
+    "data": "Installing collected packages: brotlicffi, httpbin, pytest-httpbin\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 76.151157781,
+    "data": "Successfully installed brotlicffi-1.2.1.0 httpbin-0.10.4 pytest-httpbin-2.1.0\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 76.219053219,
+    "data": "Installing collected packages: brotlicffi, httpbin, pytest-httpbin\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 76.219071041,
+    "data": "Successfully installed brotlicffi-1.2.1.0 httpbin-0.10.4 pytest-httpbin-2.1.0\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 76.29191946,
+    "data": "Test plugin installed offline; unchanged pytest: 8.4.2\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 106.764286204,
+    "data": "Local src-layout import correction enabled; test files and verifier unchanged.\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 108.080939291,
+    "data": "Looking in links: /kaggle/input/notebooks/yyyyhhhhwww/gemma4-fastapi-test-wheels-20261108/fastapi-test-wheels\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 108.111614971,
+    "data": "Processing /kaggle/input/notebooks/yyyyhhhhwww/gemma4-fastapi-test-wheels-20261108/fastapi-test-wheels/dirty_equals-0.11-py3-none-any.whl\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 108.115726543,
+    "data": "Installing collected packages: dirty-equals\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 108.165448409,
+    "data": "Successfully installed dirty-equals-0.11\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 108.22903396,
+    "data": "Looking in links: /kaggle/input/notebooks/yyyyhhhhwww/gemma4-fastapi-test-wheels-20261108/fastapi-test-wheels\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 108.229044887,
+    "data": "Processing /kaggle/input/notebooks/yyyyhhhhwww/gemma4-fastapi-test-wheels-20261108/fastapi-test-wheels/dirty_equals-0.11-py3-none-any.whl\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 108.229047987,
+    "data": "Installing collected packages: dirty-equals\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 108.229050628,
+    "data": "Successfully installed dirty-equals-0.11\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 108.229053217,
+    "data": "Installed real FastAPI test dependency offline: 0.11\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 108.283013507,
+    "data": "Official structure validation passed: baseline\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 108.283024621,
+    "data": "Engineering smoke only; task: requests_7433\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 110.299945368,
+    "data": "Full ranker attached; matched model/sampling/time/tool budgets; no reference labels in skill.\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 355.264668561,
+    "data": "vLLM server started on http://127.0.0.1:8000/v1 (tp=4)\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 355.4155357,
+    "data": "/usr/local/lib/python3.12/dist-packages/google/adk/features/_feature_decorator.py:72: UserWarning: [EXPERIMENTAL] feature FeatureName.AGENT_CONFIG is enabled.\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 355.415567969,
+    "data": "  check_feature_enabled()\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 355.415571781,
+    "data": "/tmp/ipykernel_65/214400964.py:72: UserWarning: [EXPERIMENTAL] EventsCompactionConfig: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 355.415575773,
+    "data": "  events_compaction_config=EventsCompactionConfig(\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 355.415578831,
+    "data": "WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox 8a61667c-d02, creating venv without pip: Command '['/tmp/swegemma_sandbox_8a61667c-d02_5f30xxlm/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 355.415590455,
+    "data": "\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 355.41559246,
+    "data": "/usr/local/lib/python3.12/dist-packages/google/adk/features/_feature_decorator.py:72: UserWarning: [EXPERIMENTAL] feature FeatureName.AGENT_CONFIG is enabled.\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 355.415594629,
+    "data": "  check_feature_enabled()\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 355.415596495,
+    "data": "/tmp/ipykernel_65/214400964.py:72: UserWarning: [EXPERIMENTAL] EventsCompactionConfig: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 355.415599004,
+    "data": "  events_compaction_config=EventsCompactionConfig(\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 355.415600909,
+    "data": "WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox 8a61667c-d02, creating venv without pip: Command '['/tmp/swegemma_sandbox_8a61667c-d02_5f30xxlm/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 355.461695473,
+    "data": "[1/1] Evaluating requests_7433 (psf/requests)...\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 357.786272243,
+    "data": "/usr/local/lib/python3.12/dist-packages/google/adk/features/_feature_decorator.py:72: UserWarning: [EXPERIMENTAL] feature FeatureName.SKILL_TOOLSET is enabled.\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 357.786304423,
+    "data": "  check_feature_enabled()\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 357.786307271,
+    "data": "\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 357.786309377,
+    "data": "/usr/local/lib/python3.12/dist-packages/google/adk/features/_feature_decorator.py:72: UserWarning: [EXPERIMENTAL] feature FeatureName.SKILL_TOOLSET is enabled.\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 357.786311803,
+    "data": "  check_feature_enabled()\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 368.257311241,
+    "data": "WARNING:google_adk.google.adk.tools.skill_toolset:Skill 'ranker' resources total 41337079 bytes, exceeding the recommended limit of 16777216 bytes.\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 368.257341594,
+    "data": "\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 368.257344536,
+    "data": "WARNING:google_adk.google.adk.tools.skill_toolset:Skill 'ranker' resources total 41337079 bytes, exceeding the recommended limit of 16777216 bytes.\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 518.594966757,
+    "data": "WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox 0ce6fa73-d89, creating venv without pip: Command '['/tmp/swegemma_sandbox_0ce6fa73-d89_m5y_i8bp/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 518.595004199,
+    "data": "\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 518.595008218,
+    "data": "WARNING:swegemma.sandbox.subprocess:ensurepip unavailable in sandbox 0ce6fa73-d89, creating venv without pip: Command '['/tmp/swegemma_sandbox_0ce6fa73-d89_m5y_i8bp/venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 624.120869536,
+    "data": "  -> resolved=True, exit_code=0, patch_chars=583, tool_calls=15, duration=268.8s\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 631.620750262,
+    "data": "Prepared archive: ranker_submission.zip\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 636.921096186,
+    "data": "/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 636.92112719,
+    "data": "  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 637.077606603,
+    "data": "/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 637.077626555,
+    "data": "  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 637.776252774,
+    "data": "[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 638.102068683,
+    "data": "[NbConvertApp] Writing 130874 bytes to __notebook__.ipynb\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 640.735571215,
+    "data": "[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 641.636192967,
+    "data": "[NbConvertApp] Writing 459306 bytes to __results__.html\n"
+  }
+]

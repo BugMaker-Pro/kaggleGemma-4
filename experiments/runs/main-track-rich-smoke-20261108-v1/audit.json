@@ -1,0 +1,105 @@
+{
+  "purpose": "engineering_smoke_not_confirmation",
+  "task_id": "rich_3942",
+  "checks": 31,
+  "arms": [
+    {
+      "arm": "baseline",
+      "task_id": "rich_3942",
+      "resolved": false,
+      "test_exit_code": -1,
+      "tool_calls": 20,
+      "duration_seconds": 183.492271137,
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "patch_chars": 0,
+      "purpose": "engineering_smoke",
+      "tool_invocations_including_rejected_and_free": {
+        "read_file": 9,
+        "run_command": 10,
+        "write_file": 1
+      },
+      "graph_calls": 0,
+      "first_edit_elapsed_seconds": null,
+      "explicit_submit": false,
+      "workspace_scratch_files_observed": [],
+      "tool_errors": {
+        "FileWriteError": 1
+      },
+      "model_usage_from_trace": {
+        "total_prompt_tokens": 194035,
+        "total_completion_tokens": 9586,
+        "total_cached_tokens": 0,
+        "total_tokens": 203621,
+        "total_steps": 24
+      },
+      "full_patch_saved": false,
+      "verification_log_saved": false,
+      "empty_patch_recorded": true,
+      "harness_error": "Agent exceeded session timeout (3.0 min)"
+    },
+    {
+      "arm": "evidence",
+      "task_id": "rich_3942",
+      "resolved": false,
+      "test_exit_code": -1,
+      "tool_calls": 14,
+      "duration_seconds": 90.26801239499991,
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "patch_chars": 0,
+      "purpose": "engineering_smoke",
+      "tool_invocations_including_rejected_and_free": {
+        "read_file": 9,
+        "run_command": 5
+      },
+      "graph_calls": 0,
+      "first_edit_elapsed_seconds": null,
+      "explicit_submit": false,
+      "workspace_scratch_files_observed": [],
+      "tool_errors": {},
+      "model_usage_from_trace": {
+        "total_prompt_tokens": 144557,
+        "total_completion_tokens": 3643,
+        "total_cached_tokens": 0,
+        "total_tokens": 148200,
+        "total_steps": 18
+      },
+      "full_patch_saved": false,
+      "verification_log_saved": false,
+      "empty_patch_recorded": true,
+      "harness_error": "Sandbox execution error: litellm.ContextWindowExceededError: litellm.BadRequestError: ContextWindowExceededError: OpenAIException - This model's maximum context length is 32768 tokens. However, you requested 16384 output tokens and your prompt contains at least 16385 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=16385)"
+    },
+    {
+      "arm": "evidence_graph",
+      "task_id": "rich_3942",
+      "resolved": false,
+      "test_exit_code": 1,
+      "tool_calls": 18,
+      "duration_seconds": 184.2751413379999,
+      "patch_sha256": "0ca7387a7955693c159357a60ad279154fecd7013c34bb05e5b5a54fc5d68d2a",
+      "patch_chars": 358,
+      "purpose": "engineering_smoke",
+      "tool_invocations_including_rejected_and_free": {
+        "read_file": 10,
+        "run_command": 7,
+        "edit_file": 1
+      },
+      "graph_calls": 0,
+      "first_edit_elapsed_seconds": 175.97602820396423,
+      "explicit_submit": false,
+      "workspace_scratch_files_observed": [],
+      "tool_errors": {},
+      "model_usage_from_trace": {
+        "total_prompt_tokens": 182144,
+        "total_completion_tokens": 9836,
+        "total_cached_tokens": 0,
+        "total_tokens": 191980,
+        "total_steps": 22
+      },
+      "full_patch_saved": true,
+      "verification_log_saved": true,
+      "empty_patch_recorded": false,
+      "harness_error": "Agent exceeded session timeout (3.0 min)"
+    }
+  ],
+  "interpretation_limit": "One development task cannot establish method effectiveness; missing verification logs prevent attributing unresolved outcomes."
+}

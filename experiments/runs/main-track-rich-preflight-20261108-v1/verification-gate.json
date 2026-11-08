@@ -1,0 +1,32 @@
+{
+  "task_id": "rich_3942",
+  "passed": true,
+  "controls": {
+    "empty_control": {
+      "resolved": false,
+      "test_exit_code": 1,
+      "test_output_sha256": "dad4c60e649100536f0a7383ffde62b4b2e8ab43163ff71c0b9132faa5cc3805"
+    },
+    "reference_control": {
+      "resolved": true,
+      "test_exit_code": 0,
+      "test_output_sha256": "745648c8e8c46f51a571832cb922abc741838d73af00b82d90da36fe081410c6"
+    }
+  },
+  "environment": {
+    "dockerImage": "gcr.io/kaggle-private-byod/python@sha256:37c64f7dd9c54116ecd1bcc88817c5469b88387388fade02bfa8bf3fc647d461",
+    "datasetDataSources": [
+      "metric/gemma-4-developer-agent-wheelhouse"
+    ],
+    "competitionDataSources": [
+      "gemma-4-developer-agent"
+    ],
+    "kernelDataSources": null,
+    "enableInternet": false
+  },
+  "environment_setup_sha256": [
+    "c3032e216b0a393aec76180338e56f3ae5d7d995b5de9913f78b79a1fa1105af"
+  ],
+  "source_results_sha256": "773392e1882f585ca0355fd30bcc7911322f44ba2b859767b30de4e6fba6a82b",
+  "scope": "Expected reference-pass/empty-fail controls only; not a method-effectiveness result"
+}

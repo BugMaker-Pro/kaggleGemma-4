@@ -1,0 +1,3674 @@
+{
+  "instance_id": "sympy__sympy-13031",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "results": [
+    {
+      "instance_id": "sympy__sympy-13031",
+      "repo": "sympy/sympy",
+      "base_commit": "2dfa7457f20ee187fbb09b5b6a1631da4458388c",
+      "arm": "preplanned",
+      "status": "ok",
+      "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+      "request_sha256": "b0c54766e640f0dbaf84f0294b3d93cd29e36052b804cc900a99c338d353d939",
+      "response_sha256": "f1e88d5b1bb5280028ad4ce7e3909f8dc533b86b22360b70de647df1cda5bd24",
+      "raw_response_sha256": "f1e88d5b1bb5280028ad4ce7e3909f8dc533b86b22360b70de647df1cda5bd24",
+      "actions": [
+        {
+          "query": "sympy Matrix hstack vstack shape zero rows regression 1.1",
+          "candidates": [
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_hstack",
+              "score": 36.09237448849363
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_issue_5320",
+              "score": 26.46047745034813
+            },
+            {
+              "id": "sympy.holonomic.linearsolver.NewMatrix",
+              "score": 25.64578387707119
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_issue_11944",
+              "score": 25.234709410760274
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_vstack",
+              "score": 25.213815245418843
+            },
+            {
+              "id": "sympy.holonomic.linearsolver",
+              "score": 23.32275955072292
+            },
+            {
+              "id": "sympy.holonomic.linearsolver.NewMatrix.gauss_jordan_solve",
+              "score": 22.417510299495124
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_rank_regression_from_so",
+              "score": 21.207444723049637
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_matexpr",
+              "score": 20.678006524168595
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.shape",
+              "score": 19.55038463107351
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase._handle_creation_inputs",
+              "score": 19.133409829899367
+            },
+            {
+              "id": "sympy.matrices.expressions.matexpr.ZeroMatrix",
+              "score": 18.839204934098383
+            },
+            {
+              "id": "sympy.matrices.sparsetools",
+              "score": 18.79141663184129
+            },
+            {
+              "id": "sympy.matrices.sparsetools._doktocsr",
+              "score": 18.592566382632846
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.vstack",
+              "score": 18.511507104934555
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.inverse_GE",
+              "score": 17.92437240707887
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.hstack",
+              "score": 17.69716572116631
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.print_nonzero",
+              "score": 17.53591459392481
+            },
+            {
+              "id": "sympy.matrices.common._MatrixWrapper",
+              "score": 17.461778200439927
+            },
+            {
+              "id": "sympy.matrices.matrices._MatrixWrapper",
+              "score": 17.461778200439927
+            },
+            {
+              "id": "sympy.matrices.sparse.SparseMatrix",
+              "score": 17.22992253703104
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.cross",
+              "score": 17.039417240013787
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_matexpr.test_ZeroMatrix",
+              "score": 16.827685654243275
+            },
+            {
+              "id": "sympy.printing.ccode.C89CodePrinter._traverse_matrix_indices",
+              "score": 16.813813172893393
+            },
+            {
+              "id": "sympy.printing.fcode.FCodePrinter._traverse_matrix_indices",
+              "score": 16.813813172893393
+            },
+            {
+              "id": "sympy.printing.jscode.JavascriptCodePrinter._traverse_matrix_indices",
+              "score": 16.813813172893393
+            },
+            {
+              "id": "sympy.printing.rcode.RCodePrinter._traverse_matrix_indices",
+              "score": 16.813813172893393
+            },
+            {
+              "id": "sympy.printing.rust.RustCodePrinter._traverse_matrix_indices",
+              "score": 16.813813172893393
+            },
+            {
+              "id": "sympy.matrices.expressions.slice.MatrixSlice",
+              "score": 16.686665055615983
+            },
+            {
+              "id": "sympy.matrices.expressions.matmul.MatMul.shape",
+              "score": 16.58273957932016
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.dot",
+              "score": 16.548284852120663
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_zeros_ones_fill",
+              "score": 16.48689369026208
+            },
+            {
+              "id": "sympy.printing.julia.JuliaCodePrinter._traverse_matrix_indices",
+              "score": 16.311901463292568
+            },
+            {
+              "id": "sympy.printing.octave.OctaveCodePrinter._traverse_matrix_indices",
+              "score": 16.311901463292568
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_matexpr.test_multiplication",
+              "score": 16.24448765499076
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_echelon_form",
+              "score": 16.07306110742951
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_matexpr.test_ZeroMatrix_doit",
+              "score": 15.944805549873063
+            },
+            {
+              "id": "sympy.matrices.sparse.MutableSparseMatrix.col_join",
+              "score": 15.918531196435834
+            },
+            {
+              "id": "sympy.matrices.expressions.blockmatrix.BlockMatrix",
+              "score": 15.80084872623913
+            },
+            {
+              "id": "sympy.matrices.immutable.ImmutableDenseMatrix",
+              "score": 15.662418672074015
+            },
+            {
+              "id": "sympy.matrices.immutable.ImmutableSparseMatrix",
+              "score": 15.585248202606442
+            },
+            {
+              "id": "sympy.holonomic.linearsolver.NewMatrix.col_join",
+              "score": 15.557993454119778
+            },
+            {
+              "id": "sympy.holonomic.linearsolver.NewMatrix.row_join",
+              "score": 15.557993454119778
+            },
+            {
+              "id": "sympy.matrices.expressions.blockmatrix",
+              "score": 15.514636707342275
+            },
+            {
+              "id": "sympy.matrices.expressions.slice",
+              "score": 15.5133651850596
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial",
+              "score": 15.498862669513214
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic",
+              "score": 15.457785543500542
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_matexpr.test_addition",
+              "score": 15.440038865250353
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.D",
+              "score": 15.266008901007629
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping",
+              "score": 15.173025561556484
+            },
+            {
+              "id": "sympy.matrices.dense.MutableDenseMatrix.copyin_matrix",
+              "score": 15.152077314800117
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_funcmatrix.test_funcmatrix",
+              "score": 15.12638299745355
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_funcmatrix",
+              "score": 14.971001596862285
+            },
+            {
+              "id": "sympy.matrices.expressions.matexpr.MatrixExpr.__pow__",
+              "score": 14.88695463538492
+            },
+            {
+              "id": "sympy.physics.quantum.matrixutils.matrix_to_zero",
+              "score": 14.869709424278948
+            },
+            {
+              "id": "sympy.matrices.expressions.slice.MatrixSlice.shape",
+              "score": 14.867258877354496
+            },
+            {
+              "id": "sympy.printing.octave.OctaveCodePrinter._print_MatrixBase",
+              "score": 14.845244063736349
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties.is_square",
+              "score": 14.68931315434554
+            },
+            {
+              "id": "sympy.matrices.expressions.matexpr.Identity",
+              "score": 14.662357887929915
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.row_insert",
+              "score": 14.659909441897048
+            },
+            {
+              "id": "sympy.matrices.sparse.MutableSparseMatrix.row_join",
+              "score": 14.599597148624424
+            },
+            {
+              "id": "sympy.matrices.sparse",
+              "score": 14.579817101488038
+            },
+            {
+              "id": "sympy.printing.julia.JuliaCodePrinter._print_MatrixBase",
+              "score": 14.567825244155733
+            },
+            {
+              "id": "sympy.tensor.tensor.TensExpr.get_matrix",
+              "score": 14.524956865407713
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties",
+              "score": 14.519434556712849
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.row_join",
+              "score": 14.439498775641995
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_matexpr.test_matexpr",
+              "score": 14.379755209595412
+            },
+            {
+              "id": "sympy.matrices.sparse.MutableSparseMatrix.copyin_matrix",
+              "score": 14.314155528787307
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_inverse",
+              "score": 14.205277290541433
+            },
+            {
+              "id": "sympy.matrices.expressions.funcmatrix.FunctionMatrix",
+              "score": 14.165812756245023
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_columnspace",
+              "score": 14.13807161983072
+            },
+            {
+              "id": "sympy.matrices.common.MatrixOperations",
+              "score": 14.114357284141457
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.LUdecomposition",
+              "score": 14.113824016320773
+            },
+            {
+              "id": "sympy.matrices.sparse.SparseMatrix._eval_inverse",
+              "score": 14.000810704078656
+            },
+            {
+              "id": "sympy.matrices.expressions.matmul.any_zeros",
+              "score": 13.971014256984628
+            },
+            {
+              "id": "sympy.matrices.expressions.matexpr.MatrixExpr.rows",
+              "score": 13.9130005489618
+            },
+            {
+              "id": "sympy.matrices.expressions.matexpr.ZeroMatrix.__pow__",
+              "score": 13.912740476156257
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase._format_str",
+              "score": 13.870821761411976
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_zero_dimension_multiply",
+              "score": 13.845205845289847
+            },
+            {
+              "id": "sympy.matrices.common._MinimalMatrix.shape",
+              "score": 13.784842668454909
+            },
+            {
+              "id": "sympy.matrices.matrices._MinimalMatrix.shape",
+              "score": 13.784842668454909
+            },
+            {
+              "id": "sympy.matrices.dense.matrix2numpy",
+              "score": 13.746330177329554
+            },
+            {
+              "id": "sympy.matrices.expressions.funcmatrix",
+              "score": 13.729182215326636
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.lower_triangular_solve",
+              "score": 13.682792092445736
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.col_insert",
+              "score": 13.633440429009653
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices",
+              "score": 13.626742694575693
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixReductions.is_echelon",
+              "score": 13.603310056175804
+            },
+            {
+              "id": "examples.intermediate.sample.sample3d.meshgrid",
+              "score": 13.552127725703272
+            },
+            {
+              "id": "sympy.matrices.dense.DenseMatrix",
+              "score": 13.54523865226024
+            },
+            {
+              "id": "sympy.matrices.common._MinimalMatrix.__init__",
+              "score": 13.519585262905276
+            },
+            {
+              "id": "sympy.matrices.matrices._MinimalMatrix.__init__",
+              "score": 13.519585262905276
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.pinv_solve",
+              "score": 13.485760781256099
+            },
+            {
+              "id": "sympy.matrices.common._MatrixWrapper.__init__",
+              "score": 13.432295406963545
+            },
+            {
+              "id": "sympy.matrices.matrices._MatrixWrapper.__init__",
+              "score": 13.432295406963545
+            },
+            {
+              "id": "sympy.matrices.normalforms.invariant_factors",
+              "score": 13.323442977812794
+            },
+            {
+              "id": "sympy.printing.tests.test_numpy.test_numpy_piecewise_regression",
+              "score": 13.238177997208766
+            },
+            {
+              "id": "sympy.matrices.expressions.diagonal.DiagonalMatrix",
+              "score": 13.213253569413801
+            },
+            {
+              "id": "sympy.matrices.expressions.blockmatrix.BlockDiagMatrix.shape",
+              "score": 13.137973006620253
+            },
+            {
+              "id": "sympy.matrices.sparse.MutableSparseMatrix.col_op",
+              "score": 13.103796884442731
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.diagonal_solve",
+              "score": 13.10135089406328
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties._eval_is_matrix_hermitian",
+              "score": 12.991364024428117
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_args",
+              "score": 12.922365071195646
+            },
+            {
+              "id": "sympy.matrices.dense",
+              "score": 12.921917130694624
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.normalized",
+              "score": 12.889404429320964
+            },
+            {
+              "id": "sympy.matrices.expressions.matexpr.ZeroMatrix._eval_transpose",
+              "score": 12.880055804978777
+            },
+            {
+              "id": "sympy.tensor.indexed.IndexedBase.__new__",
+              "score": 12.854229471476138
+            },
+            {
+              "id": "sympy.assumptions.ask.AssumptionKeys.fullrank",
+              "score": 12.84691472616673
+            },
+            {
+              "id": "sympy.matrices.common",
+              "score": 12.845930064887428
+            },
+            {
+              "id": "sympy.matrices.expressions.blockmatrix.BlockDiagMatrix",
+              "score": 12.810286583876241
+            },
+            {
+              "id": "sympy.assumptions.ask.AssumptionKeys.square",
+              "score": 12.803167099665304
+            },
+            {
+              "id": "sympy.matrices.common._MinimalMatrix",
+              "score": 12.740370868340126
+            },
+            {
+              "id": "sympy.matrices.matrices._MinimalMatrix",
+              "score": 12.740370868340126
+            },
+            {
+              "id": "sympy.matrices.expressions.matpow.MatPow.doit",
+              "score": 12.703374565453228
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial.eye",
+              "score": 12.69334571171549
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial.ones",
+              "score": 12.69334571171549
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial.zeros",
+              "score": 12.69334571171549
+            },
+            {
+              "id": "sympy.matrices.sparse.SparseMatrix._eval_has",
+              "score": 12.641831435414893
+            },
+            {
+              "id": "sympy.matrices.expressions.matpow",
+              "score": 12.639373332157085
+            },
+            {
+              "id": "sympy.matrices.dense.DenseMatrix._eval_matrix_mul",
+              "score": 12.597142070149506
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeterminant._eval_berkowitz_toeplitz_matrix",
+              "score": 12.570235868085874
+            },
+            {
+              "id": "sympy.matrices.common.ShapeError",
+              "score": 12.553286260548925
+            },
+            {
+              "id": "sympy.matrices.dense.matrix_multiply_elementwise",
+              "score": 12.502313456199406
+            },
+            {
+              "id": "sympy.matrices.common.MatrixRequired",
+              "score": 12.498869518217093
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.inverse_ADJ",
+              "score": 12.48278407645065
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_determinant",
+              "score": 12.474186194197724
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.reshape",
+              "score": 12.443867942390266
+            },
+            {
+              "id": "sympy.matrices.expressions.blockmatrix.BlockDiagMatrix.blocks",
+              "score": 12.423630841804744
+            },
+            {
+              "id": "sympy.matrices.sparse.SparseMatrix.liupc",
+              "score": 12.414294290468007
+            },
+            {
+              "id": "sympy.matrices.expressions.diagonal",
+              "score": 12.409336723542012
+            },
+            {
+              "id": "sympy.matrices.immutable.ImmutableDenseMatrix._eval_Eq",
+              "score": 12.38924871356641
+            },
+            {
+              "id": "sympy.matrices.normalforms",
+              "score": 12.313925680812886
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_slice.test_slicing",
+              "score": 12.268614196117293
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.gauss_jordan_solve",
+              "score": 12.203869286456694
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixReductions._row_reduce",
+              "score": 12.184288175377986
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.extract",
+              "score": 12.15679196594717
+            },
+            {
+              "id": "sympy.matrices.expressions.matpow.MatPow",
+              "score": 12.153771417806826
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.is_nilpotent",
+              "score": 12.123851306398262
+            },
+            {
+              "id": "sympy.physics.vector.vector.Vector.to_matrix",
+              "score": 12.105046133731012
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_diagonal.test_DiagonalOf",
+              "score": 12.08695642889863
+            },
+            {
+              "id": "sympy.matrices.dense.ones",
+              "score": 12.020865304991645
+            },
+            {
+              "id": "sympy.matrices.dense.zeros",
+              "score": 12.020865304991645
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_diagonal",
+              "score": 12.016865415578634
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties.is_upper",
+              "score": 12.012804346660396
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeterminant._eval_det_lu",
+              "score": 12.001710230998464
+            },
+            {
+              "id": "sympy.matrices.dense.DenseMatrix.__getitem__",
+              "score": 11.99310078146252
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_blockmatrix.test_BlockMatrix",
+              "score": 11.983394685891714
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_diagonal.test_DiagonalMatrix",
+              "score": 11.975175154029905
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial.jordan_block",
+              "score": 11.956811877601695
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_get_diag_blocks2",
+              "score": 11.91624837098046
+            },
+            {
+              "id": "sympy.matrices.sparse.SparseMatrix._eval_add",
+              "score": 11.864003601200196
+            },
+            {
+              "id": "sympy.solvers.solvers.solve_linear_system_LU",
+              "score": 11.82277060205463
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic.__mul__",
+              "score": 11.820911701979664
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixReductions.rank",
+              "score": 11.763479834883826
+            },
+            {
+              "id": "sympy.matrices.expressions.blockmatrix.deblock",
+              "score": 11.759400447189257
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic.__add__",
+              "score": 11.752710252017296
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic.multiply_elementwise",
+              "score": 11.710415214680959
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_slice",
+              "score": 11.699937397841161
+            },
+            {
+              "id": "sympy.matrices.sparse.MutableSparseMatrix.fill",
+              "score": 11.698925452307288
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_echelon_form.verify_row_null_space",
+              "score": 11.690922176927216
+            },
+            {
+              "id": "sympy.matrices.expressions.matexpr.MatrixSymbol",
+              "score": 11.627274696226973
+            },
+            {
+              "id": "sympy.solvers.solvers.solve_linear_system",
+              "score": 11.548603189475768
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.tolist",
+              "score": 11.489822902513641
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixCalculus.jacobian",
+              "score": 11.488784578552721
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeterminant.cofactor_matrix",
+              "score": 11.485446444092274
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_shape",
+              "score": 11.471783634282708
+            },
+            {
+              "id": "sympy.assumptions.handlers.matrices.AskSquareHandler.MatrixExpr",
+              "score": 11.459079677667951
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic.__rmul__",
+              "score": 11.433816176472876
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeprecated.permuteFwd",
+              "score": 11.425939189388497
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_shape",
+              "score": 11.422253061214251
+            },
+            {
+              "id": "sympy.matrices.common.NonSquareMatrixError",
+              "score": 11.411331962913277
+            },
+            {
+              "id": "sympy.polys.subresultants_qq_zz.correct_sign",
+              "score": 11.407699095610639
+            },
+            {
+              "id": "sympy.matrices.sparse.SparseMatrix._upper_triangular_solve",
+              "score": 11.389158715011972
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_slice.test_shape",
+              "score": 11.373283613895453
+            },
+            {
+              "id": "sympy.tensor.array.ndim_array.NDimArray._handle_ndarray_creation_inputs",
+              "score": 11.368806251285692
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeprecated.permuteBkwd",
+              "score": 11.342334926586883
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.pinv",
+              "score": 11.300667596501803
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeterminant._eval_det_bareiss.bareiss",
+              "score": 11.245499433526916
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_creation",
+              "score": 11.242289079541452
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_blockmatrix.test_reblock_2x2",
+              "score": 11.232826857844145
+            },
+            {
+              "id": "sympy.matrices.sparse.SparseMatrix._lower_triangular_solve",
+              "score": 11.226806086750575
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.vech",
+              "score": 11.21741007512866
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_LUdecomp",
+              "score": 11.201215747738106
+            },
+            {
+              "id": "sympy.matrices.sparse.SparseMatrix.__getitem__",
+              "score": 11.198905550408808
+            },
+            {
+              "id": "sympy.matrices.expressions.matmul",
+              "score": 11.183183050310992
+            },
+            {
+              "id": "sympy.physics.quantum.qubit.matrix_to_qubit",
+              "score": 11.172126110274846
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_factorizations",
+              "score": 11.152225400084387
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_errors",
+              "score": 11.142996986050921
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.__str__",
+              "score": 11.133679708729359
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial.diag",
+              "score": 11.132473565916843
+            },
+            {
+              "id": "sympy.matrices.expressions.hadamard.validate",
+              "score": 11.119291679039117
+            },
+            {
+              "id": "sympy.matrices.expressions.matadd.validate",
+              "score": 11.119291679039117
+            },
+            {
+              "id": "sympy.matrices.dense.MutableDenseMatrix",
+              "score": 11.116102312765056
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase",
+              "score": 11.09248959866374
+            },
+            {
+              "id": "sympy.matrices.dense.MutableDenseMatrix.row_swap",
+              "score": 11.063834859343405
+            },
+            {
+              "id": "sympy.polys.polymatrix.MutablePolyDenseMatrix._eval_matrix_mul",
+              "score": 11.052508188783287
+            },
+            {
+              "id": "sympy.matrices.expressions.matexpr.MatrixExpr.__array__",
+              "score": 11.035831602219698
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_inverse.test_inverse",
+              "score": 11.009587919105314
+            },
+            {
+              "id": "sympy.matrices.expressions.dotproduct.DotProduct",
+              "score": 10.996484515718144
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial._eval_zeros",
+              "score": 10.995232827432154
+            },
+            {
+              "id": "sympy.printing.repr.ReprPrinter._print_MatrixBase",
+              "score": 10.97702020802266
+            }
+          ],
+          "scored_documents": 24203,
+          "seconds": 0.03634369999963383
+        },
+        {
+          "query": "Matrix.hstack implementation sympy matrices common.py",
+          "candidates": [
+            {
+              "id": "sympy.matrices.common.MatrixShaping.hstack",
+              "score": 26.174131310964167
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_hstack",
+              "score": 22.111220018398253
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_issue_5320",
+              "score": 20.853849326004983
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_issue_11944",
+              "score": 19.106111317752557
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_columnspace",
+              "score": 17.505105933163875
+            },
+            {
+              "id": "sympy.matrices.common.MatrixCommon",
+              "score": 17.23298897307213
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.inverse_GE",
+              "score": 15.101080831823776
+            },
+            {
+              "id": "sympy.matrices.common.MatrixError",
+              "score": 14.76452262081902
+            },
+            {
+              "id": "sympy.matrices.matrices._MatrixWrapper",
+              "score": 14.275744881973797
+            },
+            {
+              "id": "sympy.matrices.common.NonSquareMatrixError",
+              "score": 14.019822106592779
+            },
+            {
+              "id": "sympy.matrices.common.ShapeError",
+              "score": 13.877708438556926
+            },
+            {
+              "id": "sympy.matrices.common.MatrixOperations.conjugate",
+              "score": 13.874721152513802
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties.free_symbols",
+              "score": 13.846859081741314
+            },
+            {
+              "id": "sympy.matrices.common._MatrixWrapper",
+              "score": 13.694151474510061
+            },
+            {
+              "id": "sympy.matrices.common.MatrixOperations.H",
+              "score": 13.64458062151734
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties.is_symbolic",
+              "score": 13.50088610966215
+            },
+            {
+              "id": "sympy.matrices.common.MatrixOperations.xreplace",
+              "score": 13.476159073129462
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.shape",
+              "score": 13.426524907280971
+            },
+            {
+              "id": "sympy.matrices.common.MatrixRequired.__len__",
+              "score": 13.412796994195944
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties.is_lower_hessenberg",
+              "score": 13.411016440958436
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties.is_upper_hessenberg",
+              "score": 13.411016440958436
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.get_diag_blocks",
+              "score": 13.36996286098995
+            },
+            {
+              "id": "sympy.matrices.common.MatrixOperations.subs",
+              "score": 13.326642651863313
+            },
+            {
+              "id": "sympy.matrices.common._MinimalMatrix.__getitem__._coord_to_index",
+              "score": 13.324919410042876
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic._eval_matrix_mul_elementwise",
+              "score": 13.27463382665433
+            },
+            {
+              "id": "sympy.matrices.common.MatrixOperations.transpose",
+              "score": 13.24354194545534
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic.__rmul__",
+              "score": 13.225150837337178
+            },
+            {
+              "id": "sympy.matrices.common.MatrixOperations.simplify",
+              "score": 13.201507824206992
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.vec",
+              "score": 13.191453743538325
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic.__abs__",
+              "score": 13.15270556390697
+            },
+            {
+              "id": "sympy.matrices.common._MinimalMatrix.__repr__",
+              "score": 13.12236218259438
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties._eval_is_matrix_hermitian",
+              "score": 13.120648734789574
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixEigen.diagonalize",
+              "score": 13.107650408292779
+            },
+            {
+              "id": "sympy.assumptions.handlers.matrices.AskSquareHandler",
+              "score": 13.090155203466795
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic.__mul__",
+              "score": 13.074093383547764
+            },
+            {
+              "id": "sympy.matrices.common.MatrixOperations.applyfunc",
+              "score": 13.047072482049238
+            },
+            {
+              "id": "sympy.matrices.common.classof",
+              "score": 13.009728410082882
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties.atoms",
+              "score": 12.983287395353067
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic._eval_matrix_rmul",
+              "score": 12.970523166025806
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.vstack",
+              "score": 12.966905779855086
+            },
+            {
+              "id": "sympy.matrices.common.MatrixOperations.replace",
+              "score": 12.920910782932301
+            },
+            {
+              "id": "sympy.matrices.common._MatrixWrapper.__getattr__",
+              "score": 12.902878776904293
+            },
+            {
+              "id": "sympy.simplify.cse_main.cse",
+              "score": 12.88964068698232
+            },
+            {
+              "id": "sympy.assumptions.handlers.matrices.AskIntegerElementsHandler",
+              "score": 12.877459110174437
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixCalculus",
+              "score": 12.838279779659235
+            },
+            {
+              "id": "sympy.matrices.common.MatrixOperations.as_real_imag",
+              "score": 12.82177701602312
+            },
+            {
+              "id": "sympy.matrices.sparse.SparseMatrix._eval_inverse",
+              "score": 12.779073355468375
+            },
+            {
+              "id": "sympy.matrices.common.MatrixOperations.trace",
+              "score": 12.745856174956485
+            },
+            {
+              "id": "sympy.assumptions.handlers.matrices.AskLowerTriangularHandler",
+              "score": 12.730488816152054
+            },
+            {
+              "id": "sympy.assumptions.handlers.matrices.AskUpperTriangularHandler",
+              "score": 12.730488816152054
+            },
+            {
+              "id": "sympy.matrices.common",
+              "score": 12.718315305775945
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties.is_hermitian",
+              "score": 12.71302056277704
+            },
+            {
+              "id": "sympy.assumptions.handlers.matrices.AskFullRankHandler",
+              "score": 12.652095834306822
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic.__add__",
+              "score": 12.636180551485147
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixEigen",
+              "score": 12.589412901872716
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties.is_square",
+              "score": 12.550759512287685
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic.multiply_elementwise",
+              "score": 12.421757101078134
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties.is_diagonal",
+              "score": 12.393496623421902
+            },
+            {
+              "id": "sympy.assumptions.handlers.matrices.AskComplexElementsHandler",
+              "score": 12.393040607829755
+            },
+            {
+              "id": "sympy.matrices.common.MatrixOperations.refine",
+              "score": 12.388292566892476
+            },
+            {
+              "id": "sympy.matrices.common._matrixify",
+              "score": 12.338760831606287
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties.has",
+              "score": 12.33663899937052
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties.is_lower",
+              "score": 12.306232339228831
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic._eval_matrix_mul.entry",
+              "score": 12.297914654780932
+            },
+            {
+              "id": "sympy.assumptions.handlers.matrices.AskDiagonalHandler",
+              "score": 12.27623429839041
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeprecated",
+              "score": 12.247807279859439
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial.diag",
+              "score": 12.122286028890041
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties.is_upper",
+              "score": 12.118289518710688
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.tolist",
+              "score": 12.114893945448165
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixEigen.jordan_form.pick_vec",
+              "score": 12.060090213508085
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties.is_zero",
+              "score": 12.030642033849652
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic._eval_matrix_mul",
+              "score": 11.984945030736723
+            },
+            {
+              "id": "sympy.matrices.common.MatrixOperations.expand",
+              "score": 11.950576186014917
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.reshape",
+              "score": 11.906381948281412
+            },
+            {
+              "id": "sympy.holonomic.linearsolver.NewMatrix",
+              "score": 11.882046304606934
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial.eye",
+              "score": 11.875414808669035
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial.ones",
+              "score": 11.875414808669035
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial.zeros",
+              "score": 11.875414808669035
+            },
+            {
+              "id": "sympy.assumptions.handlers.matrices.AskRealElementsHandler",
+              "score": 11.862642545683169
+            },
+            {
+              "id": "sympy.matrices.common.MatrixRequired._new",
+              "score": 11.720603724097057
+            },
+            {
+              "id": "sympy.assumptions.handlers.matrices.AskInvertibleHandler",
+              "score": 11.697474142124673
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.cross",
+              "score": 11.684266895192906
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial._eval_diag",
+              "score": 11.654093655654309
+            },
+            {
+              "id": "sympy.holonomic.linearsolver",
+              "score": 11.640873667607107
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.col",
+              "score": 11.517823703310889
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.row",
+              "score": 11.517823703310889
+            },
+            {
+              "id": "sympy.polys.agca.homomorphisms.MatrixHomomorphism",
+              "score": 11.43652016246082
+            },
+            {
+              "id": "sympy.assumptions.handlers.matrices.AskUnitaryHandler",
+              "score": 11.431649946634174
+            },
+            {
+              "id": "sympy.polys.agca.homomorphisms.MatrixHomomorphism._restrict_codomain",
+              "score": 11.329414483076953
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase",
+              "score": 11.322058806356724
+            },
+            {
+              "id": "sympy.polys.agca.homomorphisms.MatrixHomomorphism._restrict_domain",
+              "score": 11.269980626619878
+            },
+            {
+              "id": "sympy.polys.agca.homomorphisms.MatrixHomomorphism._quotient_domain",
+              "score": 11.211199241341749
+            },
+            {
+              "id": "sympy.assumptions.handlers.matrices.AskOrthogonalHandler",
+              "score": 11.206172949925033
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial",
+              "score": 11.19290963101594
+            },
+            {
+              "id": "sympy.holonomic.linearsolver.NewMatrix.gauss_jordan_solve",
+              "score": 11.151605865386248
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.col_join",
+              "score": 11.111876369737356
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.row_join",
+              "score": 11.111876369737356
+            },
+            {
+              "id": "sympy.assumptions.handlers.matrices.AskSymmetricHandler",
+              "score": 11.092817873470176
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.row_insert",
+              "score": 11.058893962171828
+            },
+            {
+              "id": "sympy.assumptions.handlers.matrices",
+              "score": 11.01530588627738
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeterminant",
+              "score": 11.003953110342499
+            },
+            {
+              "id": "sympy.matrices.common.MatrixRequired.__getitem__",
+              "score": 10.970748371360955
+            },
+            {
+              "id": "sympy.assumptions.handlers.matrices.AskPositiveDefiniteHandler",
+              "score": 10.859626079644267
+            },
+            {
+              "id": "sympy.matrices.matrices",
+              "score": 10.833835656163528
+            },
+            {
+              "id": "sympy.physics.quantum.gate",
+              "score": 10.671347996112546
+            },
+            {
+              "id": "sympy.matrices.sparse.SparseMatrix._eval_matrix_mul",
+              "score": 10.497716156460589
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties._eval_is_Identity.dirac",
+              "score": 10.480882613203596
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial._eval_ones.entry",
+              "score": 10.480882613203596
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial._eval_zeros.entry",
+              "score": 10.480882613203596
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties.is_symmetric",
+              "score": 10.479340215117173
+            },
+            {
+              "id": "sympy.polys.agca.homomorphisms.MatrixHomomorphism._quotient_codomain",
+              "score": 10.450920815642693
+            },
+            {
+              "id": "sympy.matrices.common.MatrixOperations._eval_permute_cols.entry",
+              "score": 10.393419150915658
+            },
+            {
+              "id": "sympy.matrices.common.MatrixOperations._eval_permute_rows.entry",
+              "score": 10.393419150915658
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial._eval_diag.entry",
+              "score": 10.393419150915658
+            },
+            {
+              "id": "sympy.polys.domains.compositedomain",
+              "score": 10.371098433887576
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic.__pow__",
+              "score": 10.3315758956883
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic.__rsub__",
+              "score": 10.307403381044441
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic.__sub__",
+              "score": 10.307403381044441
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial._eval_eye.entry",
+              "score": 10.307403381044441
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping._eval_col_del.entry",
+              "score": 10.222799655376459
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping._eval_row_del.entry",
+              "score": 10.222799655376459
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping._eval_col_join.entry",
+              "score": 10.139573486579524
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping._eval_row_join.entry",
+              "score": 10.139573486579524
+            },
+            {
+              "id": "sympy.polys.fglmtools",
+              "score": 10.08911947273173
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix",
+              "score": 10.069692618451045
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic.__neg__",
+              "score": 10.057691501329337
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic.__radd__",
+              "score": 10.057691501329337
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic._eval_matrix_rmul.entry",
+              "score": 10.057691501329337
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial._eval_jordan_block.entry",
+              "score": 10.057691501329337
+            },
+            {
+              "id": "sympy.matrices.common._MinimalMatrix.__len__",
+              "score": 10.057691501329337
+            },
+            {
+              "id": "sympy.matrices.common._MinimalMatrix.shape",
+              "score": 10.057691501329337
+            },
+            {
+              "id": "sympy.matrices.expressions.blockmatrix.bc_matmul",
+              "score": 10.014394281109897
+            },
+            {
+              "id": "sympy.matrices.expressions.blockmatrix.BlockMatrix.as_real_imag",
+              "score": 9.991896296421519
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic.__div__",
+              "score": 9.977121395689055
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic.__matmul__",
+              "score": 9.977121395689055
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic.__rmatmul__",
+              "score": 9.977121395689055
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic.__truediv__",
+              "score": 9.977121395689055
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties._eval_has",
+              "score": 9.977121395689055
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties._eval_is_symbolic",
+              "score": 9.977121395689055
+            },
+            {
+              "id": "sympy.core.tests.test_wester.test_P11",
+              "score": 9.949334748689713
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.col_insert",
+              "score": 9.929621885569023
+            },
+            {
+              "id": "sympy.matrices.common.MatrixOperations._eval_adjoint",
+              "score": 9.897831892616459
+            },
+            {
+              "id": "sympy.matrices.common.MatrixOperations.doit",
+              "score": 9.897831892616459
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties._eval_values",
+              "score": 9.897831892616459
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping._eval_vec.entry",
+              "score": 9.897831892616459
+            },
+            {
+              "id": "sympy.matrices.common._MatrixWrapper.__getitem__",
+              "score": 9.897831892616459
+            },
+            {
+              "id": "sympy.matrices.common.MatrixRequired",
+              "score": 9.866640934424078
+            },
+            {
+              "id": "sympy.core.tests.test_args.test_sympy__matrices__expressions__blockmatrix__BlockMatrix",
+              "score": 9.856551025862192
+            },
+            {
+              "id": "sympy.matrices.common.MatrixOperations._eval_conjugate",
+              "score": 9.819792701481349
+            },
+            {
+              "id": "sympy.matrices.common._MinimalMatrix._new",
+              "score": 9.819792701481349
+            },
+            {
+              "id": "sympy.core.tests.test_args.test_sympy__matrices__expressions__slice__MatrixSlice",
+              "score": 9.77341774368285
+            },
+            {
+              "id": "sympy.core.tests.test_args.test_sympy__matrices__expressions__diagonal__DiagonalMatrix",
+              "score": 9.755923806789028
+            },
+            {
+              "id": "sympy.matrices.common.MatrixOperations._eval_trace",
+              "score": 9.74297447948305
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties.is_Identity",
+              "score": 9.74297447948305
+            },
+            {
+              "id": "sympy.matrices.common.MatrixRequired.__eq__",
+              "score": 9.74297447948305
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping._eval_tolist",
+              "score": 9.74297447948305
+            },
+            {
+              "id": "sympy.core.tests.test_args.test_sympy__matrices__expressions__blockmatrix__BlockDiagMatrix",
+              "score": 9.725393772682072
+            },
+            {
+              "id": "sympy.utilities.tests.test_pickling.test_matrices",
+              "score": 9.694966638046997
+            },
+            {
+              "id": "sympy.core.tests.test_args.test_sympy__matrices__expressions__matexpr__MatrixElement",
+              "score": 9.630147176543211
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic",
+              "score": 9.619583160282671
+            },
+            {
+              "id": "sympy.physics.quantum.matrixutils._sympy_tensor_product",
+              "score": 9.610386565073089
+            },
+            {
+              "id": "sympy.matrices.common._MinimalMatrix.__eq__",
+              "score": 9.5928880918281
+            },
+            {
+              "id": "sympy.core.tests.test_args.test_sympy__matrices__expressions__matexpr__MatrixSymbol",
+              "score": 9.558327021093124
+            },
+            {
+              "id": "sympy.core.tests.test_args.test_sympy__matrices__expressions__matexpr__ZeroMatrix",
+              "score": 9.558327021093124
+            },
+            {
+              "id": "sympy.assumptions.handlers.sets.AskComplexHandler",
+              "score": 9.54255579727966
+            },
+            {
+              "id": "sympy.matrices.expressions.matmul",
+              "score": 9.525507534548119
+            },
+            {
+              "id": "sympy.matrices.common.MatrixOperations._eval_transpose",
+              "score": 9.519565657056232
+            },
+            {
+              "id": "sympy.matrices.common.MatrixOperations.adjoint",
+              "score": 9.519565657056232
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties._eval_free_symbols",
+              "score": 9.519565657056232
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial.diag.size",
+              "score": 9.519565657056232
+            },
+            {
+              "id": "sympy.matrices.dense.diag",
+              "score": 9.491977210506251
+            },
+            {
+              "id": "sympy.core.tests.test_args.test_sympy__matrices__expressions__funcmatrix__FunctionMatrix",
+              "score": 9.450069159406917
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic._eval_Abs",
+              "score": 9.447355587761217
+            },
+            {
+              "id": "sympy.matrices.common.MatrixOperations._eval_applyfunc",
+              "score": 9.447355587761217
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties._eval_is_lower",
+              "score": 9.447355587761217
+            },
+            {
+              "id": "sympy.matrices.expressions.matmul.MatMul",
+              "score": 9.432635755280298
+            },
+            {
+              "id": "sympy.matrices.expressions.blockmatrix.BlockMatrix._eval_transpose",
+              "score": 9.420618058764056
+            },
+            {
+              "id": "sympy.matrices",
+              "score": 9.418751933538514
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties._eval_atoms",
+              "score": 9.376232761174192
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties._eval_is_diagonal",
+              "score": 9.376232761174192
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties.values",
+              "score": 9.376232761174192
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping._eval_col_insert.entry",
+              "score": 9.376232761174192
+            },
+            {
+              "id": "sympy.matrices.expressions.matmul.any_zeros",
+              "score": 9.373235273632432
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_diag",
+              "score": 9.370708422950562
+            },
+            {
+              "id": "sympy.matrices.expressions.matmul.MatMul.as_coeff_matrices",
+              "score": 9.343135428479897
+            },
+            {
+              "id": "sympy.geometry.entity",
+              "score": 9.310121856228806
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic._eval_add",
+              "score": 9.306172805403602
+            },
+            {
+              "id": "sympy.matrices.matrices.classof",
+              "score": 9.301519463082663
+            },
+            {
+              "id": "sympy.matrices.expressions.hadamard.hadamard_product",
+              "score": 9.294105695215858
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeprecated.cofactorMatrix",
+              "score": 9.268306559400717
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_division",
+              "score": 9.268306559400717
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeprecated.minorMatrix",
+              "score": 9.266169602641288
+            },
+            {
+              "id": "sympy.matrices.expressions.blockmatrix",
+              "score": 9.243666116373511
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties._eval_is_lower_hessenberg",
+              "score": 9.237152071590167
+            },
+            {
+              "id": "sympy.core.tests.test_args.test_sympy__matrices__expressions__matexpr__MatrixBase",
+              "score": 9.235764061291677
+            },
+            {
+              "id": "sympy.core.tests.test_args.test_sympy__matrices__expressions__matexpr__MatrixExpr",
+              "score": 9.235764061291677
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_conjugate",
+              "score": 9.234619940163341
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_from_ndarray",
+              "score": 9.234097015482357
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_addition",
+              "score": 9.228127382040254
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_len",
+              "score": 9.227385068491131
+            }
+          ],
+          "scored_documents": 24480,
+          "seconds": 0.05487609999909182
+        }
+      ],
+      "order": [
+        "sympy.matrices.tests.test_commonmatrix.test_hstack",
+        "sympy.matrices.tests.test_matrices.test_issue_5320",
+        "sympy.matrices.tests.test_matrices.test_issue_11944",
+        "sympy.matrices.common.MatrixShaping.hstack",
+        "sympy.matrices.common.MatrixShaping.shape",
+        "sympy.holonomic.linearsolver.NewMatrix",
+        "sympy.holonomic.linearsolver",
+        "sympy.holonomic.linearsolver.NewMatrix.gauss_jordan_solve",
+        "sympy.matrices.matrices.MatrixBase.inverse_GE",
+        "sympy.matrices.common.MatrixShaping.vstack",
+        "sympy.matrices.tests.test_commonmatrix.test_vstack",
+        "sympy.matrices.tests.test_commonmatrix.test_columnspace",
+        "sympy.matrices.matrices._MatrixWrapper",
+        "sympy.matrices.common._MatrixWrapper",
+        "sympy.matrices.matrices.MatrixBase.cross",
+        "sympy.matrices.common.MatrixShaping.row_insert",
+        "sympy.matrices.common.MatrixShaping.row_join",
+        "sympy.matrices.common.ShapeError",
+        "sympy.matrices.expressions.tests.test_matexpr",
+        "sympy.matrices.common.MatrixSpecial.zeros",
+        "sympy.matrices.common.MatrixShaping.col_insert",
+        "sympy.matrices.common.NonSquareMatrixError",
+        "sympy.matrices.tests.test_matrices.test_zeros_ones_fill",
+        "sympy.matrices.expressions.blockmatrix",
+        "sympy.holonomic.linearsolver.NewMatrix.col_join",
+        "sympy.matrices.common.MatrixArithmetic.multiply_elementwise",
+        "sympy.holonomic.linearsolver.NewMatrix.row_join",
+        "sympy.matrices.common.MatrixProperties.is_square",
+        "sympy.matrices.common.MatrixProperties._eval_is_matrix_hermitian",
+        "sympy.matrices.sparse.SparseMatrix._eval_inverse",
+        "sympy.matrices.matrices.MatrixBase.dot",
+        "sympy.matrices.sparse.MutableSparseMatrix.col_join",
+        "sympy.physics.hep.tests.test_gamma_matrices.test_gamma_matrix_trace",
+        "sympy.matrices.common.MatrixSpecial",
+        "sympy.matrices.common.MatrixArithmetic.__rmul__",
+        "sympy.solvers.diophantine.diop_general_pythagorean",
+        "sympy.physics.quantum.tests.test_spin.test_couple_symbolic",
+        "sympy.core.tests.test_expr.test_relational_assumptions",
+        "sympy.matrices.common.MatrixArithmetic.__mul__",
+        "sympy.matrices.common.MatrixCommon",
+        "sympy.physics.quantum.tests.test_spin.test_uncouple_symbolic",
+        "sympy.matrices.common",
+        "sympy.physics.optics.tests.test_medium",
+        "sympy.matrices.dense.MutableDenseMatrix.copyin_matrix",
+        "sympy.matrices.common.MatrixError",
+        "sympy.matrices.tests.test_matrices.test_rank_regression_from_so",
+        "sympy.physics.optics.tests.test_medium.test_medium",
+        "sympy.matrices.sparse.MutableSparseMatrix.row_join",
+        "sympy.matrices.tests.test_matrices.test_zero_dimension_multiply",
+        "sympy.matrices.tests.test_matrices.test_as_real_imag",
+        "sympy.matrices.tests.test_matrices",
+        "sympy.external.tests.test_autowrap.runtest_autowrap_matrix_matrix",
+        "sympy.matrices.matrices.MatrixBase._handle_creation_inputs",
+        "sympy.physics.quantum.matrixutils.matrix_to_zero",
+        "sympy.matrices.common.MatrixArithmetic",
+        "sympy.matrices.common.MatrixOperations.conjugate",
+        "sympy.matrices.expressions.matexpr.ZeroMatrix",
+        "sympy.tensor.tests.test_tensor.test_riemann_cyclic_replace",
+        "sympy.matrices.common.MatrixProperties.free_symbols",
+        "sympy.matrices.sparsetools",
+        "sympy.tensor.array",
+        "sympy.matrices.sparsetools._doktocsr",
+        "sympy.physics.quantum.cg.Wigner3j.__new__",
+        "sympy.matrices.common.MatrixArithmetic.__add__",
+        "sympy.matrices.common.MatrixOperations.H",
+        "sympy.tensor.tensor._IndexStructure.from_indices",
+        "sympy.matrices.dense",
+        "sympy.matrices.common.MatrixShaping.col_join",
+        "sympy.matrices.common.MatrixProperties.is_symbolic",
+        "sympy.physics.tests.test_clebsch_gordan.test_gaunt.gaunt_ref",
+        "sympy.matrices.common.MatrixSpecial.eye",
+        "sympy.physics.quantum.matrixutils._sympy_tensor_product",
+        "sympy.matrices.common.MatrixSpecial.ones",
+        "sympy.matrices.common.MatrixOperations.xreplace",
+        "sympy.physics.mechanics.tests.test_models",
+        "sympy.matrices.common.MatrixShaping.reshape",
+        "sympy.matrices.matrices.MatrixBase.print_nonzero",
+        "sympy.polys.agca.tests.test_modules.test_FreeModule",
+        "sympy.matrices.common.MatrixProperties.is_upper",
+        "sympy.matrices.common.MatrixRequired.__len__",
+        "sympy.matrices.tests.test_matrices.test_slicing",
+        "sympy.matrices.common.MatrixProperties.is_lower_hessenberg",
+        "sympy.matrices.common._MinimalMatrix.shape",
+        "sympy.matrices.common.MatrixProperties.is_upper_hessenberg",
+        "sympy.matrices.sparse.SparseMatrix",
+        "sympy.physics.tests.test_clebsch_gordan.test_gaunt",
+        "sympy.matrices.dense.zeros",
+        "sympy.matrices.sparse.MutableSparseMatrix.copyin_matrix",
+        "sympy.matrices.common.MatrixShaping.tolist",
+        "sympy.matrices.common.MatrixShaping.get_diag_blocks",
+        "sympy.physics.mechanics.tests.test_models.test_multi_mass_spring_damper_higher_order",
+        "sympy.matrices.matrices.MatrixReductions.is_echelon",
+        "sympy.matrices.common.MatrixOperations.subs",
+        "sympy.matrices.expressions.tests.test_matexpr.test_ZeroMatrix",
+        "sympy.matrices.tests.test_matrices.test_issue_11238",
+        "sympy.matrices.common._MinimalMatrix.__getitem__._coord_to_index",
+        "sympy.printing.ccode.C89CodePrinter._traverse_matrix_indices",
+        "sympy.matrices.common.MatrixSpecial.diag",
+        "sympy.matrices.tests.test_matrices.test_args",
+        "sympy.matrices.expressions.tests.test_inverse",
+        "sympy.matrices.common.MatrixArithmetic._eval_matrix_mul_elementwise",
+        "sympy.printing.fcode.FCodePrinter._traverse_matrix_indices",
+        "sympy.matrices.common.MatrixOperations.transpose",
+        "sympy.polys.agca.tests.test_modules",
+        "sympy.printing.jscode.JavascriptCodePrinter._traverse_matrix_indices",
+        "sympy.matrices.common.MatrixProperties.is_zero",
+        "sympy.matrices.expressions.matmul.any_zeros",
+        "sympy.physics.quantum.cg.Wigner3j",
+        "sympy.printing.rcode.RCodePrinter._traverse_matrix_indices",
+        "sympy.matrices.common.MatrixOperations.simplify",
+        "sympy.polys.agca.tests.test_modules.test_QuotientModuleElement",
+        "sympy.printing.rust.RustCodePrinter._traverse_matrix_indices",
+        "sympy.matrices.common.MatrixShaping.vec",
+        "sympy.matrices.expressions.slice.MatrixSlice",
+        "sympy.matrices.common.MatrixArithmetic.__abs__",
+        "sympy.matrices.expressions.matmul.MatMul.shape",
+        "sympy.matrices.immutable.ImmutableDenseMatrix._eval_Eq",
+        "sympy.matrices.common._MinimalMatrix.__repr__",
+        "sympy.physics.mechanics.tests.test_models.test_n_link_pendulum_on_cart_higher_order",
+        "sympy.tensor.tests.test_tensor.test_div",
+        "sympy.matrices.matrices.MatrixEigen.diagonalize",
+        "sympy.printing.julia.JuliaCodePrinter._traverse_matrix_indices",
+        "sympy.tensor.tensor._IndexStructure",
+        "sympy.matrices.tests.test_commonmatrix",
+        "sympy.assumptions.handlers.matrices.AskSquareHandler",
+        "sympy.printing.octave.OctaveCodePrinter._traverse_matrix_indices",
+        "sympy.tensor.tensor.TIDS.get_components_with_free_indices",
+        "sympy.matrices.matrices.MatrixBase",
+        "sympy.matrices.expressions.tests.test_matexpr.test_multiplication",
+        "sympy.tensor.tensor.TensMul.get_free_indices",
+        "sympy.matrices.matrices.MatrixCalculus.jacobian",
+        "sympy.matrices.matrices.MatrixReductions.rank",
+        "sympy.assumptions.handlers.matrices",
+        "sympy.matrices.common.MatrixOperations.applyfunc",
+        "sympy.matrices.tests.test_commonmatrix.test_echelon_form",
+        "sympy.tensor.tensor.TensMul.get_indices",
+        "sympy.matrices.dense.matrix_multiply_elementwise",
+        "sympy.matrices.common.classof",
+        "sympy.matrices.expressions.tests.test_matexpr.test_ZeroMatrix_doit",
+        "sympy.tensor.array.arrayop.tensorcontraction",
+        "sympy.matrices.common.MatrixRequired",
+        "sympy.matrices.common.MatrixProperties.atoms",
+        "sympy.matrices.tests.test_commonmatrix.test_as_real_imag",
+        "sympy.matrices.common.MatrixArithmetic._eval_matrix_rmul",
+        "sympy.matrices.expressions.blockmatrix.BlockMatrix",
+        "sympy.tensor.tensor.TensorHead.__call__",
+        "sympy.matrices.dense.ones",
+        "sympy.matrices.immutable.ImmutableDenseMatrix",
+        "sympy.matrices.tests.test_matrices.test_GramSchmidt",
+        "sympy.matrices.common.MatrixOperations.replace",
+        "sympy.matrices.immutable.ImmutableSparseMatrix",
+        "sympy.physics.quantum.cg",
+        "sympy.matrices.common._MatrixWrapper.__getattr__",
+        "sympy.tensor.tests.test_tensor.test_TensorIndexType",
+        "sympy.printing.pretty.tests.test_pretty.test_pretty_ndim_arrays",
+        "sympy.simplify.cse_main.cse",
+        "sympy.matrices.matrices.MatrixBase.vech",
+        "sympy.assumptions.handlers.matrices.AskIntegerElementsHandler",
+        "sympy.physics.quantum.cg.CG",
+        "sympy.physics.vector.vector.Vector.to_matrix",
+        "sympy.matrices.expressions.slice",
+        "sympy.matrices.matrices.MatrixCalculus",
+        "sympy.solvers.tests.test_diophantine.test_diopcoverage",
+        "sympy.matrices.common.MatrixOperations.as_real_imag",
+        "sympy.printing.tests.test_latex.test_latex_NDimArray",
+        "sympy.matrices.expressions.tests.test_diagonal",
+        "sympy.physics.quantum.cg.CG._latex",
+        "sympy.matrices.common.MatrixOperations.trace",
+        "sympy.matrices.expressions.tests.test_matexpr.test_addition",
+        "sympy.physics.quantum.cg.CG.doit",
+        "sympy.assumptions.handlers.matrices.AskLowerTriangularHandler",
+        "sympy.matrices.matrices.MatrixBase.D",
+        "sympy.physics.quantum.cg.Wigner3j.doit",
+        "sympy.assumptions.handlers.matrices.AskUpperTriangularHandler",
+        "sympy.matrices.common.MatrixShaping",
+        "sympy.tensor.tensor.TIDS.free_dum_from_indices",
+        "sympy.tensor.tensor._IndexStructure._free_dum_from_indices",
+        "sympy.matrices.expressions.tests.test_slice",
+        "sympy.matrices.common.MatrixProperties.is_hermitian",
+        "sympy.matrices.expressions.tests.test_funcmatrix.test_funcmatrix",
+        "sympy.physics.quantum.spin.uncouple",
+        "sympy.assumptions.handlers.matrices.AskFullRankHandler",
+        "sympy.matrices.expressions.tests.test_funcmatrix",
+        "sympy.tensor.tensor.TIDS",
+        "sympy.matrices.expressions.matexpr.MatrixExpr.__pow__",
+        "sympy.matrices.expressions.blockmatrix.deblock",
+        "sympy.matrices.matrices.MatrixEigen",
+        "sympy.physics.mechanics.tests.test_models.test_n_link_pendulum_on_cart_inputs",
+        "sympy.matrices.expressions.slice.MatrixSlice.shape",
+        "sympy.physics.quantum.cg.Wigner3j._latex",
+        "sympy.printing.octave.OctaveCodePrinter._print_MatrixBase",
+        "sympy.matrices.expressions.matmul",
+        "sympy.matrices.common.MatrixProperties.is_diagonal",
+        "sympy.physics.optics.tests.test_utils",
+        "sympy.matrices.expressions.dotproduct.DotProduct",
+        "sympy.assumptions.handlers.matrices.AskComplexElementsHandler",
+        "sympy.matrices.expressions.matexpr.Identity",
+        "sympy.physics.quantum.spin.couple",
+        "sympy.matrices",
+        "sympy.matrices.common.MatrixOperations.refine"
+      ],
+      "retrieval_calls": 3,
+      "index_nodes": 24480,
+      "scored_documents": 72920,
+      "source_chars_read": 15643257,
+      "shared_index_seconds": 19.755824800000482
+    },
+    {
+      "instance_id": "sympy__sympy-13031",
+      "repo": "sympy/sympy",
+      "base_commit": "2dfa7457f20ee187fbb09b5b6a1631da4458388c",
+      "arm": "feedback",
+      "status": "ok",
+      "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+      "request_sha256": "03bb965a64853fb5eec60fc9dc53d283aa3b9535d79c3fb2654f1a5d68d780cd",
+      "response_sha256": "1e803613b5fcb3d8ffc5708ce91e0f3ec93de95fbacf3c53595021d3ec4a7802",
+      "raw_response_sha256": "1e803613b5fcb3d8ffc5708ce91e0f3ec93de95fbacf3c53595021d3ec4a7802",
+      "actions": [
+        {
+          "query": "sympy Matrix hstack vstack implementation zero rows columns shape",
+          "candidates": [
+            {
+              "id": "sympy.holonomic.linearsolver.NewMatrix",
+              "score": 29.859539970849838
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_hstack",
+              "score": 27.661318181976633
+            },
+            {
+              "id": "sympy.holonomic.linearsolver",
+              "score": 27.590795768348748
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_issue_5320",
+              "score": 26.46047745034813
+            },
+            {
+              "id": "sympy.holonomic.linearsolver.NewMatrix.gauss_jordan_solve",
+              "score": 26.25777088144414
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_issue_11944",
+              "score": 25.234709410760274
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_vstack",
+              "score": 25.213815245418843
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.dot",
+              "score": 23.95674027695041
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties.is_square",
+              "score": 22.84408455309928
+            },
+            {
+              "id": "sympy.holonomic.linearsolver.NewMatrix.col_join",
+              "score": 21.211020976153005
+            },
+            {
+              "id": "sympy.matrices.normalforms.invariant_factors",
+              "score": 21.063615808591702
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.pinv_solve",
+              "score": 20.907725495715404
+            },
+            {
+              "id": "sympy.matrices.sparse.MutableSparseMatrix.col_join",
+              "score": 20.771204501284195
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.col_insert",
+              "score": 20.688479699491836
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_matexpr",
+              "score": 20.678006524168595
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.extract",
+              "score": 20.62138465623503
+            },
+            {
+              "id": "sympy.matrices.sparse.SparseMatrix",
+              "score": 20.11243315057418
+            },
+            {
+              "id": "sympy.matrices.dense.ones",
+              "score": 20.10927810839399
+            },
+            {
+              "id": "sympy.matrices.dense.zeros",
+              "score": 20.10927810839399
+            },
+            {
+              "id": "sympy.tensor.tensor.TensExpr.get_matrix",
+              "score": 19.857772673844284
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.gauss_jordan_solve",
+              "score": 19.752989734105633
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.shape",
+              "score": 19.55038463107351
+            },
+            {
+              "id": "sympy.matrices.sparse.MutableSparseMatrix.row_join",
+              "score": 19.548922064351753
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.row_insert",
+              "score": 19.536390019010984
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase._handle_creation_inputs",
+              "score": 19.133409829899367
+            },
+            {
+              "id": "sympy.matrices.expressions.matexpr.ZeroMatrix",
+              "score": 18.839204934098383
+            },
+            {
+              "id": "sympy.matrices.sparsetools",
+              "score": 18.79141663184129
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial",
+              "score": 18.75961635858363
+            },
+            {
+              "id": "sympy.matrices.sparsetools._doktocsr",
+              "score": 18.592566382632846
+            },
+            {
+              "id": "sympy.assumptions.ask.AssumptionKeys.fullrank",
+              "score": 18.56498254023669
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.vstack",
+              "score": 18.511507104934555
+            },
+            {
+              "id": "sympy.assumptions.ask.AssumptionKeys.square",
+              "score": 18.456194621698526
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.inverse_GE",
+              "score": 17.92437240707887
+            },
+            {
+              "id": "sympy.matrices.dense.MutableDenseMatrix.col_swap",
+              "score": 17.900912425175573
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.hstack",
+              "score": 17.69716572116631
+            },
+            {
+              "id": "sympy.matrices.sparse.MutableSparseMatrix.col_swap",
+              "score": 17.673278292994713
+            },
+            {
+              "id": "sympy.matrices.sparse.MutableSparseMatrix.row_swap",
+              "score": 17.673278292994713
+            },
+            {
+              "id": "sympy.matrices.sparse",
+              "score": 17.539576547682326
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.print_nonzero",
+              "score": 17.53591459392481
+            },
+            {
+              "id": "sympy.matrices.common.MatrixOperations.permute",
+              "score": 17.49758930883349
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.tolist",
+              "score": 17.48374016369252
+            },
+            {
+              "id": "sympy.matrices.common._MatrixWrapper",
+              "score": 17.461778200439927
+            },
+            {
+              "id": "sympy.matrices.matrices._MatrixWrapper",
+              "score": 17.461778200439927
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.LUdecomposition",
+              "score": 17.385309815486522
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.cross",
+              "score": 17.039417240013787
+            },
+            {
+              "id": "sympy.polys.subresultants_qq_zz.correct_sign",
+              "score": 17.0269183593769
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_matexpr.test_ZeroMatrix",
+              "score": 16.827685654243275
+            },
+            {
+              "id": "sympy.printing.ccode.C89CodePrinter._traverse_matrix_indices",
+              "score": 16.813813172893393
+            },
+            {
+              "id": "sympy.printing.fcode.FCodePrinter._traverse_matrix_indices",
+              "score": 16.813813172893393
+            },
+            {
+              "id": "sympy.printing.jscode.JavascriptCodePrinter._traverse_matrix_indices",
+              "score": 16.813813172893393
+            },
+            {
+              "id": "sympy.printing.rcode.RCodePrinter._traverse_matrix_indices",
+              "score": 16.813813172893393
+            },
+            {
+              "id": "sympy.printing.rust.RustCodePrinter._traverse_matrix_indices",
+              "score": 16.813813172893393
+            },
+            {
+              "id": "sympy.vector.dyadic.Dyadic.to_matrix",
+              "score": 16.710215565522645
+            },
+            {
+              "id": "sympy.matrices.expressions.slice.MatrixSlice",
+              "score": 16.686665055615983
+            },
+            {
+              "id": "sympy.matrices.expressions.matmul.MatMul.shape",
+              "score": 16.58273957932016
+            },
+            {
+              "id": "sympy.matrices.normalforms.invariant_factors.add_columns",
+              "score": 16.532131183163795
+            },
+            {
+              "id": "sympy.solvers.solvers.solve_linear_system_LU",
+              "score": 16.493039626661833
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_zeros_ones_fill",
+              "score": 16.48689369026208
+            },
+            {
+              "id": "sympy.printing.julia.JuliaCodePrinter._traverse_matrix_indices",
+              "score": 16.311901463292568
+            },
+            {
+              "id": "sympy.printing.octave.OctaveCodePrinter._traverse_matrix_indices",
+              "score": 16.311901463292568
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_matexpr.test_multiplication",
+              "score": 16.24448765499076
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.QRdecomposition",
+              "score": 16.152490594077207
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_echelon_form",
+              "score": 16.07306110742951
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixReductions._row_reduce",
+              "score": 15.97970875497571
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_matexpr.test_ZeroMatrix_doit",
+              "score": 15.944805549873063
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.col_join",
+              "score": 15.928123254078491
+            },
+            {
+              "id": "sympy.matrices.expressions.blockmatrix.BlockMatrix",
+              "score": 15.80084872623913
+            },
+            {
+              "id": "sympy.matrices.normalforms",
+              "score": 15.731644977648134
+            },
+            {
+              "id": "sympy.matrices.expressions.matexpr.MatrixExpr.__getitem__",
+              "score": 15.717104264805313
+            },
+            {
+              "id": "sympy.matrices.immutable.ImmutableDenseMatrix",
+              "score": 15.662418672074015
+            },
+            {
+              "id": "sympy.printing.tableform.TableForm.__init__",
+              "score": 15.612172223561304
+            },
+            {
+              "id": "sympy.matrices.immutable.ImmutableSparseMatrix",
+              "score": 15.585248202606442
+            },
+            {
+              "id": "sympy.holonomic.linearsolver.NewMatrix.row_join",
+              "score": 15.557993454119778
+            },
+            {
+              "id": "sympy.matrices.expressions.blockmatrix",
+              "score": 15.514636707342275
+            },
+            {
+              "id": "sympy.matrices.expressions.slice",
+              "score": 15.5133651850596
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic",
+              "score": 15.457785543500542
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_matexpr.test_addition",
+              "score": 15.440038865250353
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.D",
+              "score": 15.266008901007629
+            },
+            {
+              "id": "sympy.printing.tableform",
+              "score": 15.223234870420116
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping._eval_vec.entry",
+              "score": 15.196025093839733
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping",
+              "score": 15.173025561556484
+            },
+            {
+              "id": "sympy.matrices.dense.MutableDenseMatrix.copyin_matrix",
+              "score": 15.152077314800117
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_funcmatrix.test_funcmatrix",
+              "score": 15.12638299745355
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_funcmatrix",
+              "score": 14.971001596862285
+            },
+            {
+              "id": "sympy.physics.vector.dyadic.Dyadic.to_matrix",
+              "score": 14.947428352625732
+            },
+            {
+              "id": "sympy.printing.tableform.TableForm",
+              "score": 14.93503652815728
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial.jordan_block",
+              "score": 14.899049221965967
+            },
+            {
+              "id": "sympy.matrices.expressions.matexpr.MatrixExpr.__pow__",
+              "score": 14.88695463538492
+            },
+            {
+              "id": "sympy.physics.quantum.matrixutils.matrix_to_zero",
+              "score": 14.869709424278948
+            },
+            {
+              "id": "sympy.matrices.expressions.slice.MatrixSlice.shape",
+              "score": 14.867258877354496
+            },
+            {
+              "id": "sympy.printing.octave.OctaveCodePrinter._print_MatrixBase",
+              "score": 14.845244063736349
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping._eval_vec",
+              "score": 14.803886780587407
+            },
+            {
+              "id": "sympy.matrices.expressions.matexpr.Identity",
+              "score": 14.662357887929915
+            },
+            {
+              "id": "sympy.integrals.prde.param_poly_rischDE",
+              "score": 14.644641882882587
+            },
+            {
+              "id": "sympy.matrices.dense.MutableDenseMatrix",
+              "score": 14.618111163499426
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial.diag",
+              "score": 14.59785455475138
+            },
+            {
+              "id": "sympy.printing.julia.JuliaCodePrinter._print_MatrixBase",
+              "score": 14.567825244155733
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties",
+              "score": 14.519434556712849
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.row_join",
+              "score": 14.439498775641995
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_matexpr.test_matexpr",
+              "score": 14.379755209595412
+            },
+            {
+              "id": "sympy.matrices.sparse.MutableSparseMatrix.copyin_matrix",
+              "score": 14.314155528787307
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_inverse",
+              "score": 14.205277290541433
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixEigen.diagonalize",
+              "score": 14.199559193646275
+            },
+            {
+              "id": "sympy.solvers.solvers.solve_linear_system",
+              "score": 14.172409479688469
+            },
+            {
+              "id": "sympy.matrices.expressions.funcmatrix.FunctionMatrix",
+              "score": 14.165812756245023
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_columnspace",
+              "score": 14.13807161983072
+            },
+            {
+              "id": "sympy.matrices.common.MatrixOperations",
+              "score": 14.114357284141457
+            },
+            {
+              "id": "sympy.matrices.sparse.SparseMatrix._eval_inverse",
+              "score": 14.000810704078656
+            },
+            {
+              "id": "sympy.matrices.expressions.matmul.any_zeros",
+              "score": 13.971014256984628
+            },
+            {
+              "id": "sympy.matrices.sparse.SparseMatrix.__new__",
+              "score": 13.932944757342865
+            },
+            {
+              "id": "sympy.matrices.expressions.matexpr.MatrixExpr.rows",
+              "score": 13.9130005489618
+            },
+            {
+              "id": "sympy.matrices.expressions.matexpr.ZeroMatrix.__pow__",
+              "score": 13.912740476156257
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase._format_str",
+              "score": 13.870821761411976
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_zero_dimension_multiply",
+              "score": 13.845205845289847
+            },
+            {
+              "id": "sympy.matrices.common._MinimalMatrix.shape",
+              "score": 13.784842668454909
+            },
+            {
+              "id": "sympy.matrices.matrices._MinimalMatrix.shape",
+              "score": 13.784842668454909
+            },
+            {
+              "id": "sympy.matrices.dense.matrix2numpy",
+              "score": 13.746330177329554
+            },
+            {
+              "id": "sympy.matrices.expressions.funcmatrix",
+              "score": 13.729182215326636
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.lower_triangular_solve",
+              "score": 13.682792092445736
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices",
+              "score": 13.626742694575693
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixReductions.is_echelon",
+              "score": 13.603310056175804
+            },
+            {
+              "id": "examples.intermediate.sample.sample3d.meshgrid",
+              "score": 13.552127725703272
+            },
+            {
+              "id": "sympy.matrices.dense.DenseMatrix",
+              "score": 13.54523865226024
+            },
+            {
+              "id": "sympy.matrices.common._MinimalMatrix.__init__",
+              "score": 13.519585262905276
+            },
+            {
+              "id": "sympy.matrices.matrices._MinimalMatrix.__init__",
+              "score": 13.519585262905276
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixEigen",
+              "score": 13.508491027422187
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.vec",
+              "score": 13.433720423454409
+            },
+            {
+              "id": "sympy.matrices.common._MatrixWrapper.__init__",
+              "score": 13.432295406963545
+            },
+            {
+              "id": "sympy.matrices.matrices._MatrixWrapper.__init__",
+              "score": 13.432295406963545
+            },
+            {
+              "id": "sympy.matrices.expressions.diagonal.DiagonalMatrix",
+              "score": 13.213253569413801
+            },
+            {
+              "id": "sympy.matrices.expressions.blockmatrix.BlockDiagMatrix.shape",
+              "score": 13.137973006620253
+            },
+            {
+              "id": "sympy.matrices.sparse.MutableSparseMatrix.col_op",
+              "score": 13.103796884442731
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.diagonal_solve",
+              "score": 13.10135089406328
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties._eval_is_matrix_hermitian",
+              "score": 12.991364024428117
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_args",
+              "score": 12.922365071195646
+            },
+            {
+              "id": "sympy.matrices.dense",
+              "score": 12.921917130694624
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.normalized",
+              "score": 12.889404429320964
+            },
+            {
+              "id": "sympy.matrices.expressions.matexpr.ZeroMatrix._eval_transpose",
+              "score": 12.880055804978777
+            },
+            {
+              "id": "sympy.tensor.indexed.IndexedBase.__new__",
+              "score": 12.854229471476138
+            },
+            {
+              "id": "sympy.matrices.common",
+              "score": 12.845930064887428
+            },
+            {
+              "id": "sympy.matrices.expressions.blockmatrix.BlockDiagMatrix",
+              "score": 12.810286583876241
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixReductions._permute_complexity_right",
+              "score": 12.79051150552708
+            },
+            {
+              "id": "sympy.matrices.common._MinimalMatrix",
+              "score": 12.740370868340126
+            },
+            {
+              "id": "sympy.matrices.matrices._MinimalMatrix",
+              "score": 12.740370868340126
+            },
+            {
+              "id": "sympy.matrices.expressions.matpow.MatPow.doit",
+              "score": 12.703374565453228
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial.eye",
+              "score": 12.69334571171549
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial.ones",
+              "score": 12.69334571171549
+            },
+            {
+              "id": "sympy.matrices.common.MatrixSpecial.zeros",
+              "score": 12.69334571171549
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.table",
+              "score": 12.684118932333178
+            },
+            {
+              "id": "sympy.printing.pretty.pretty.PrettyPrinter._print_matrix_contents",
+              "score": 12.654919690215035
+            },
+            {
+              "id": "sympy.matrices.sparse.SparseMatrix._eval_has",
+              "score": 12.641831435414893
+            },
+            {
+              "id": "sympy.matrices.expressions.matpow",
+              "score": 12.639373332157085
+            },
+            {
+              "id": "sympy.matrices.dense.DenseMatrix._eval_matrix_mul",
+              "score": 12.597142070149506
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeterminant._eval_berkowitz_toeplitz_matrix",
+              "score": 12.570235868085874
+            },
+            {
+              "id": "sympy.matrices.common.ShapeError",
+              "score": 12.553286260548925
+            },
+            {
+              "id": "sympy.matrices.dense.matrix_multiply_elementwise",
+              "score": 12.502313456199406
+            },
+            {
+              "id": "sympy.matrices.common.MatrixRequired",
+              "score": 12.498869518217093
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.inverse_ADJ",
+              "score": 12.48278407645065
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_determinant",
+              "score": 12.474186194197724
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.reshape",
+              "score": 12.443867942390266
+            },
+            {
+              "id": "sympy.matrices.expressions.blockmatrix.BlockDiagMatrix.blocks",
+              "score": 12.423630841804744
+            },
+            {
+              "id": "sympy.matrices.sparse.SparseMatrix.liupc",
+              "score": 12.414294290468007
+            },
+            {
+              "id": "sympy.matrices.expressions.diagonal",
+              "score": 12.409336723542012
+            },
+            {
+              "id": "sympy.matrices.immutable.ImmutableDenseMatrix._eval_Eq",
+              "score": 12.38924871356641
+            },
+            {
+              "id": "sympy.polys.fglmtools",
+              "score": 12.36679625268334
+            },
+            {
+              "id": "sympy.utilities.codegen.CodeGen.routine",
+              "score": 12.268810224112725
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_slice.test_slicing",
+              "score": 12.268614196117293
+            },
+            {
+              "id": "sympy.matrices.expressions.matpow.MatPow",
+              "score": 12.153771417806826
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.is_nilpotent",
+              "score": 12.123851306398262
+            },
+            {
+              "id": "sympy.physics.vector.vector.Vector.to_matrix",
+              "score": 12.105046133731012
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_diagonal.test_DiagonalOf",
+              "score": 12.08695642889863
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_matrix_norm",
+              "score": 12.066759920129726
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_diagonal",
+              "score": 12.016865415578634
+            },
+            {
+              "id": "sympy.matrices.common.MatrixProperties.is_upper",
+              "score": 12.012804346660396
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeterminant._eval_det_lu",
+              "score": 12.001710230998464
+            },
+            {
+              "id": "sympy.matrices.dense.DenseMatrix.__getitem__",
+              "score": 11.99310078146252
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_blockmatrix.test_BlockMatrix",
+              "score": 11.983394685891714
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_diagonal.test_DiagonalMatrix",
+              "score": 11.975175154029905
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_get_diag_blocks2",
+              "score": 11.91624837098046
+            },
+            {
+              "id": "sympy.matrices.sparse.SparseMatrix._eval_add",
+              "score": 11.864003601200196
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic.__mul__",
+              "score": 11.820911701979664
+            },
+            {
+              "id": "sympy.matrices.normalforms.invariant_factors.clear_row",
+              "score": 11.774683914508307
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixReductions.rank",
+              "score": 11.763479834883826
+            },
+            {
+              "id": "sympy.matrices.expressions.blockmatrix.deblock",
+              "score": 11.759400447189257
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic.__add__",
+              "score": 11.752710252017296
+            },
+            {
+              "id": "sympy.matrices.sparse.SparseMatrix.solve",
+              "score": 11.748237004439188
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic.multiply_elementwise",
+              "score": 11.710415214680959
+            },
+            {
+              "id": "sympy.matrices.expressions.tests.test_slice",
+              "score": 11.699937397841161
+            },
+            {
+              "id": "sympy.matrices.sparse.MutableSparseMatrix.fill",
+              "score": 11.698925452307288
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_echelon_form.verify_row_null_space",
+              "score": 11.690922176927216
+            },
+            {
+              "id": "sympy.matrices.expressions.matexpr.MatrixSymbol",
+              "score": 11.627274696226973
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase._setitem",
+              "score": 11.602276872498619
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.solve",
+              "score": 11.520892907096181
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixCalculus.jacobian",
+              "score": 11.488784578552721
+            },
+            {
+              "id": "sympy.polys.orthopolys.dup_spherical_bessel_fn_minus",
+              "score": 11.487682361882172
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeterminant.cofactor_matrix",
+              "score": 11.485446444092274
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_shape",
+              "score": 11.471783634282708
+            },
+            {
+              "id": "sympy.assumptions.handlers.matrices.AskSquareHandler.MatrixExpr",
+              "score": 11.459079677667951
+            },
+            {
+              "id": "sympy.matrices.common.MatrixArithmetic.__rmul__",
+              "score": 11.433816176472876
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeprecated.permuteFwd",
+              "score": 11.425939189388497
+            }
+          ],
+          "scored_documents": 24206,
+          "seconds": 0.036627299999963725
+        },
+        {
+          "query": "sympy matrices commonmatrix hstack vstack class method source",
+          "candidates": [
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_issue_5320",
+              "score": 25.93927821583909
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_vstack",
+              "score": 25.311867061950608
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_issue_11944",
+              "score": 24.91315752386744
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_hstack",
+              "score": 22.736162375884888
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_columnspace",
+              "score": 19.698608041345537
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.vstack",
+              "score": 17.95942055942678
+            },
+            {
+              "id": "sympy.matrices.common.MatrixShaping.hstack",
+              "score": 17.145079175658534
+            },
+            {
+              "id": "sympy.holonomic.linearsolver.NewMatrix.gauss_jordan_solve",
+              "score": 15.692651368275405
+            },
+            {
+              "id": "sympy.holonomic.linearsolver.NewMatrix",
+              "score": 15.294952762746778
+            },
+            {
+              "id": "sympy.matrices.sparse.SparseMatrix._eval_inverse",
+              "score": 14.937879058095707
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.ArithmeticOnlyMatrix",
+              "score": 14.88423956904271
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.CalculusOnlyMatrix",
+              "score": 14.88423956904271
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.DeterminantOnlyMatrix",
+              "score": 14.88423956904271
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.EigenOnlyMatrix",
+              "score": 14.88423956904271
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.OperationsOnlyMatrix",
+              "score": 14.88423956904271
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.PropertiesOnlyMatrix",
+              "score": 14.88423956904271
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.ReductionsOnlyMatrix",
+              "score": 14.88423956904271
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.ShapingOnlyMatrix",
+              "score": 14.88423956904271
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.SpecialOnlyMatrix",
+              "score": 14.88423956904271
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.SubspaceOnlyMatrix",
+              "score": 14.88423956904271
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_adjugate",
+              "score": 13.79181435582158
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_det",
+              "score": 13.67463540916207
+            },
+            {
+              "id": "sympy.holonomic.linearsolver",
+              "score": 12.135701080593487
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixEigen.jordan_form.pick_vec",
+              "score": 12.060068006151694
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_shape",
+              "score": 11.792018948738232
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeprecated",
+              "score": 11.758267968627564
+            },
+            {
+              "id": "sympy.utilities.tests.test_source",
+              "score": 11.754882363728148
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.zeros_Arithmetic",
+              "score": 11.699045090362652
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.zeros_Determinant",
+              "score": 11.699045090362652
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.zeros_Operations",
+              "score": 11.699045090362652
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.zeros_Properties",
+              "score": 11.699045090362652
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.zeros_Reductions",
+              "score": 11.699045090362652
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.zeros_Shaping",
+              "score": 11.699045090362652
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.eye_Arithmetic",
+              "score": 11.607525862794438
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.eye_Determinant",
+              "score": 11.607525862794438
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.eye_Operations",
+              "score": 11.607525862794438
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.eye_Properties",
+              "score": 11.607525862794438
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.eye_Reductions",
+              "score": 11.607525862794438
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.eye_Shaping",
+              "score": 11.607525862794438
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_trace",
+              "score": 11.607525862794438
+            },
+            {
+              "id": "sympy.utilities.source",
+              "score": 11.539993931598005
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_diff",
+              "score": 11.517427393179583
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_div",
+              "score": 11.517427393179583
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_integrate",
+              "score": 11.517427393179583
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_limit",
+              "score": 11.517427393179583
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_neg",
+              "score": 11.517427393179583
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_sub",
+              "score": 11.517427393179583
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_atoms",
+              "score": 11.428716852257987
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeprecated.minorEntry",
+              "score": 11.349039513276566
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_free_symbols",
+              "score": 11.341362414480308
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeprecated.cofactorMatrix",
+              "score": 11.309695477236879
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_abs",
+              "score": 11.255333219940066
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_adjoint",
+              "score": 11.255333219940066
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_col_join",
+              "score": 11.255333219940066
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_doit",
+              "score": 11.255333219940066
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_has",
+              "score": 11.255333219940066
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_row_join",
+              "score": 11.255333219940066
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_is_symmetric",
+              "score": 11.170599338025212
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_vec",
+              "score": 11.170599338025212
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_conjugate",
+              "score": 11.08713173269936
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_is_lower",
+              "score": 11.08713173269936
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_is_upper",
+              "score": 11.08713173269936
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_row_col",
+              "score": 11.08713173269936
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_xreplace",
+              "score": 11.08713173269936
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_is_square",
+              "score": 11.00490222932792
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_inv_iszerofunc",
+              "score": 10.968459465771895
+            },
+            {
+              "id": "sympy.plotting.plot.centers_of_segments",
+              "score": 10.959532883872656
+            },
+            {
+              "id": "sympy.utilities.codegen.FCodeGen._indent_code",
+              "score": 10.822145751730915
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_add",
+              "score": 10.765372849406083
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_col_insert",
+              "score": 10.765372849406083
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_row_insert",
+              "score": 10.765372849406083
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.inverse_GE",
+              "score": 10.69811376732809
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_evalf",
+              "score": 10.687830154454982
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_rowspace",
+              "score": 10.687830154454982
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_values",
+              "score": 10.687830154454982
+            },
+            {
+              "id": "sympy.polys.polyoptions.Method",
+              "score": 10.632014159383248
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeprecated.berkowitz_det",
+              "score": 10.622505904422924
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_replace",
+              "score": 10.61537435820372
+            },
+            {
+              "id": "sympy.utilities.tests.test_source.test_get_class",
+              "score": 10.561518665242083
+            },
+            {
+              "id": "sympy.utilities.source.get_mod_func",
+              "score": 10.540438351901088
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_tolist",
+              "score": 10.536048400393971
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_det_LU_decomposition",
+              "score": 10.513656067427977
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_applyfunc",
+              "score": 10.461762755940455
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_charpoly",
+              "score": 10.461762755940455
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_eigenvals",
+              "score": 10.461762755940455
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_eigenvects",
+              "score": 10.461762755940455
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_reshape",
+              "score": 10.461762755940455
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_replace_map",
+              "score": 10.392562464404715
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_get_diag_blocks1",
+              "score": 10.38851729682862
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeterminant.cofactor",
+              "score": 10.27494572642138
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_is_hermitian",
+              "score": 10.24506075020575
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix",
+              "score": 10.223458477385027
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixEigen",
+              "score": 10.184421130247927
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_left_eigenvects",
+              "score": 10.174808047947904
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_is_diagonalizable",
+              "score": 10.105512261288844
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeterminant.adjugate",
+              "score": 10.091734895049457
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_determinant",
+              "score": 10.083451309121223
+            },
+            {
+              "id": "sympy.matrices.immutable.ImmutableDenseMatrix._eval_Eq",
+              "score": 10.049716701000632
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_as_real_imag",
+              "score": 10.037153971189024
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_extract",
+              "score": 10.037153971189024
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_is_Identity",
+              "score": 10.037153971189024
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_nullspace",
+              "score": 10.037153971189024
+            },
+            {
+              "id": "sympy.physics.quantum.qexpr.dispatch_method",
+              "score": 10.035894329985382
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_cofactor_and_minors",
+              "score": 10.03262833135315
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeprecated.berkowitz_eigenvals",
+              "score": 9.994322773612875
+            },
+            {
+              "id": "bin.coverage_doctest.process_class",
+              "score": 9.975920246037758
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_echelon_form.verify_row_null_space",
+              "score": 9.9697142805154
+            },
+            {
+              "id": "sympy.physics.mechanics.lagrange.LagrangesMethod.rhs",
+              "score": 9.934339877885328
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeterminant.minor",
+              "score": 9.91555047012952
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_expand",
+              "score": 9.903174796625022
+            },
+            {
+              "id": "sympy.matrices.dense.DenseMatrix._eval_inverse",
+              "score": 9.900862703929766
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.solve",
+              "score": 9.85706322117262
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeprecated.det_LU_decomposition",
+              "score": 9.844480033585729
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.solve_least_squares",
+              "score": 9.840189026279608
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeterminant.det",
+              "score": 9.833931059251082
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_inv_block",
+              "score": 9.828800569670038
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.inv",
+              "score": 9.7921430805358
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_eye",
+              "score": 9.772725301391654
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_is_hessenberg",
+              "score": 9.772725301391654
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeterminant.cofactor_matrix",
+              "score": 9.711278736507
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test__MinimalMatrix",
+              "score": 9.70878087997461
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_simplify",
+              "score": 9.70878087997461
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeprecated.det_bareis",
+              "score": 9.70360166383283
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_subs",
+              "score": 9.64566781493032
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeprecated.berkowitz_minors",
+              "score": 9.610881623462022
+            },
+            {
+              "id": "sympy.core.tests.test_sympify.test_int_float.I5c",
+              "score": 9.572913316321934
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixDeprecated.det_bareiss",
+              "score": 9.569650773926854
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.QRsolve",
+              "score": 9.502753677802263
+            },
+            {
+              "id": "sympy.polys.domains.domainelement.DomainElement",
+              "score": 9.450590431103771
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_ones",
+              "score": 9.401213076592557
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_zeros",
+              "score": 9.401213076592557
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_refine",
+              "score": 9.342023244133392
+            },
+            {
+              "id": "sympy.printing.tests.test_fcode.test_fcode_Logical",
+              "score": 9.302950415004112
+            },
+            {
+              "id": "sympy.matrices.dense.wronskian",
+              "score": 9.302213337232796
+            },
+            {
+              "id": "sympy.physics.mechanics.kane.KanesMethod.rhs",
+              "score": 9.278893487697747
+            },
+            {
+              "id": "sympy.utilities.tests.test_codegen_octave",
+              "score": 9.26350379156004
+            },
+            {
+              "id": "sympy.utilities.source.source",
+              "score": 9.251643597923689
+            },
+            {
+              "id": "sympy.matrices.matrices.classof",
+              "score": 9.239586546599227
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_inverse",
+              "score": 9.205806135206933
+            },
+            {
+              "id": "sympy.matrices.sparse.SparseMatrix.solve_least_squares",
+              "score": 9.137317781152902
+            },
+            {
+              "id": "sympy.matrices.common.classof",
+              "score": 9.10883588216446
+            },
+            {
+              "id": "sympy.printing.tests.test_fcode.test_fcode_Xlogical",
+              "score": 9.090925385679029
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_is_symbolic",
+              "score": 9.05691262257837
+            },
+            {
+              "id": "sympy.geometry.line.Ray3D",
+              "score": 8.983230183890598
+            },
+            {
+              "id": "sympy.matrices.sparse.SparseMatrix.solve",
+              "score": 8.969399117833136
+            },
+            {
+              "id": "setup.audit",
+              "score": 8.957997481448002
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_diagonalize",
+              "score": 8.947682353688212
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_is_zero",
+              "score": 8.947682353688212
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_invertible_check",
+              "score": 8.9466551735734
+            },
+            {
+              "id": "sympy.utilities.tests.test_codegen_julia",
+              "score": 8.946594829051163
+            },
+            {
+              "id": "sympy.physics.mechanics.linearize.Linearizer._setup",
+              "score": 8.912139907978917
+            },
+            {
+              "id": "sympy.geometry.line.Ray2D",
+              "score": 8.885679235272686
+            },
+            {
+              "id": "sympy.matrices.immutable.ImmutableDenseMatrix",
+              "score": 8.87187235750145
+            },
+            {
+              "id": "sympy.printing.tests.test_fcode.test_fcode_Relational",
+              "score": 8.864852423699386
+            },
+            {
+              "id": "sympy.geometry.line.Ray",
+              "score": 8.85539490461154
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_is_echelon",
+              "score": 8.84105541572647
+            },
+            {
+              "id": "sympy.utilities.tests.test_codegen_rust",
+              "score": 8.812656415105488
+            },
+            {
+              "id": "sympy.utilities.source.get_class",
+              "score": 8.74947623718705
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_singular_values",
+              "score": 8.73693983529248
+            },
+            {
+              "id": "sympy.physics.mechanics.lagrange.LagrangesMethod",
+              "score": 8.72452919370867
+            },
+            {
+              "id": "sympy.polys.domains.domainelement",
+              "score": 8.707357103621383
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_get_diag_blocks2",
+              "score": 8.685796240181132
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_power",
+              "score": 8.685796240181132
+            },
+            {
+              "id": "release.fabfile.source_tarball",
+              "score": 8.68203596268705
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_issue_3981.Index1",
+              "score": 8.672954064736144
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_issue_3981.Index2",
+              "score": 8.672954064736144
+            },
+            {
+              "id": "sympy.plotting.pygletplot.managed_window.ManagedWindow.setup",
+              "score": 8.667175586894363
+            },
+            {
+              "id": "sympy.geometry.line.Ray.source",
+              "score": 8.65313012384819
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_is_anti_symmetric",
+              "score": 8.63524792101172
+            },
+            {
+              "id": "sympy.interactive.session._make_message",
+              "score": 8.627067315358197
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixEigen.diagonalize",
+              "score": 8.613150502356508
+            },
+            {
+              "id": "sympy.matrices.expressions.inverse.Inverse",
+              "score": 8.59175806771298
+            },
+            {
+              "id": "sympy.printing.tests.test_cxxcode.test_subclass_print_method",
+              "score": 8.577077203751916
+            },
+            {
+              "id": "sympy.printing.fcode.FCodePrinter._lead",
+              "score": 8.570114882689792
+            },
+            {
+              "id": "sympy.printing.tests.test_cxxcode.test_subclass_print_method__ns",
+              "score": 8.542016716853274
+            },
+            {
+              "id": "sympy.printing.tests.test_fcode.test_fcode_precedence",
+              "score": 8.50576747060588
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_jacobian2",
+              "score": 8.487072473530683
+            },
+            {
+              "id": "sympy.core.basic.Basic._hashable_content",
+              "score": 8.474948802862896
+            },
+            {
+              "id": "doc.ext.numpydoc.NumpyPythonDomain",
+              "score": 8.42657862352884
+            },
+            {
+              "id": "sympy.matrices.tests.test_matrices.test_wronskian",
+              "score": 8.394313999406016
+            },
+            {
+              "id": "sympy.printing.printer.Printer",
+              "score": 8.36125418502528
+            },
+            {
+              "id": "sympy.printing.printer",
+              "score": 8.333230668021168
+            },
+            {
+              "id": "doc.generate_logos.main",
+              "score": 8.317626355539007
+            },
+            {
+              "id": "sympy.utilities.runtests.SymPyTests._enhance_asserts",
+              "score": 8.299270908584338
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_row_col_del",
+              "score": 8.297238581719023
+            },
+            {
+              "id": "sympy.matrices.immutable",
+              "score": 8.292727824823066
+            },
+            {
+              "id": "sympy.liealgebras.type_a",
+              "score": 8.264570012699233
+            },
+            {
+              "id": "sympy.core.relational._Inequality",
+              "score": 8.261787461286614
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.LDLdecomposition",
+              "score": 8.247558964939804
+            },
+            {
+              "id": "sympy.matrices.matrices.MatrixBase.inv_mod",
+              "score": 8.215996863151268
+            },
+            {
+              "id": "sympy.physics.mechanics.kane.KanesMethod",
+              "score": 8.211077931548203
+            },
+            {
+              "id": "sympy.core.numbers.Number.ceiling",
+              "score": 8.170573066500932
+            },
+            {
+              "id": "sympy.core.numbers.Number.floor",
+              "score": 8.170573066500932
+            },
+            {
+              "id": "sympy.polys.polytools._symbolic_factor",
+              "score": 8.167131736458147
+            },
+            {
+              "id": "sympy.matrices.tests.test_commonmatrix.test_permute",
+              "score": 8.164818317081759
+            },
+            {
+              "id": "sympy.utilities.tests.test_codegen_julia.test_global_vars_octave",
+              "score": 8.100391673366188
+            },
+            {
+              "id": "sympy.utilities.tests.test_codegen_octave.test_global_vars_octave",
+              "score": 8.100391673366188
+            },
+            {
+              "id": "sympy.series.series_class.SeriesBase.free_symbols",
+              "score": 8.086047010906555
+            },
+            {
+              "id": "sympy.polys.subresultants_qq_zz.bezout",
+              "score": 8.067600092162966
+            },
+            {
+              "id": "sympy.core.numbers.Number.__eq__",
+              "score": 8.045670887932284
+            }
+          ],
+          "scored_documents": 24239,
+          "seconds": 0.03656810000029509
+        }
+      ],
+      "order": [
+        "sympy.matrices.tests.test_commonmatrix.test_hstack",
+        "sympy.matrices.tests.test_commonmatrix.test_vstack",
+        "sympy.matrices.tests.test_matrices.test_issue_5320",
+        "sympy.holonomic.linearsolver.NewMatrix",
+        "sympy.matrices.tests.test_matrices.test_issue_11944",
+        "sympy.holonomic.linearsolver.NewMatrix.gauss_jordan_solve",
+        "sympy.holonomic.linearsolver",
+        "sympy.matrices.common.MatrixShaping.vstack",
+        "sympy.matrices.common.MatrixShaping.hstack",
+        "sympy.matrices.tests.test_commonmatrix.test_columnspace",
+        "sympy.matrices.matrices.MatrixBase.inverse_GE",
+        "sympy.holonomic.linearsolver.NewMatrix.col_join",
+        "sympy.matrices.common.MatrixShaping.shape",
+        "sympy.matrices.common.MatrixShaping.col_insert",
+        "sympy.matrices.sparse.SparseMatrix._eval_inverse",
+        "sympy.matrices.dense.zeros",
+        "sympy.matrices.matrices.MatrixBase.dot",
+        "sympy.matrices.sparse.MutableSparseMatrix.col_join",
+        "sympy.matrices.common.MatrixShaping.row_insert",
+        "sympy.matrices.sparse.MutableSparseMatrix.row_join",
+        "sympy.matrices.expressions.tests.test_matexpr",
+        "sympy.matrices.dense.ones",
+        "sympy.matrices.immutable.ImmutableDenseMatrix._eval_Eq",
+        "sympy.matrices.tests.test_commonmatrix.test_as_real_imag",
+        "sympy.matrices.tests.test_matrices.test_zeros_ones_fill",
+        "sympy.physics.hep.tests.test_gamma_matrices.test_gamma_matrix_trace",
+        "sympy.solvers.diophantine.diop_general_pythagorean",
+        "sympy.physics.quantum.tests.test_spin.test_couple_symbolic",
+        "sympy.matrices.matrices.MatrixBase.cross",
+        "sympy.core.tests.test_expr.test_relational_assumptions",
+        "sympy.physics.quantum.tests.test_spin.test_uncouple_symbolic",
+        "sympy.holonomic.linearsolver.NewMatrix.row_join",
+        "sympy.physics.optics.tests.test_medium",
+        "sympy.matrices.common.MatrixShaping.col_join",
+        "sympy.physics.optics.tests.test_medium.test_medium",
+        "sympy.matrices.common.MatrixProperties.is_square",
+        "sympy.matrices.tests.test_matrices.test_as_real_imag",
+        "sympy.external.tests.test_autowrap.runtest_autowrap_matrix_matrix",
+        "sympy.matrices.normalforms.invariant_factors",
+        "sympy.matrices.tests.test_commonmatrix.ArithmeticOnlyMatrix",
+        "sympy.matrices.matrices.MatrixBase.pinv_solve",
+        "sympy.matrices.tests.test_commonmatrix.CalculusOnlyMatrix",
+        "sympy.tensor.tests.test_tensor.test_riemann_cyclic_replace",
+        "sympy.matrices.tests.test_commonmatrix.DeterminantOnlyMatrix",
+        "sympy.tensor.array",
+        "sympy.matrices.tests.test_commonmatrix.EigenOnlyMatrix",
+        "sympy.physics.quantum.cg.Wigner3j.__new__",
+        "sympy.matrices.tests.test_commonmatrix.OperationsOnlyMatrix",
+        "sympy.tensor.tensor._IndexStructure.from_indices",
+        "sympy.matrices.common.MatrixShaping.extract",
+        "sympy.matrices.tests.test_commonmatrix.PropertiesOnlyMatrix",
+        "sympy.physics.tests.test_clebsch_gordan.test_gaunt.gaunt_ref",
+        "sympy.matrices.common.MatrixShaping.row_join",
+        "sympy.matrices.sparse.SparseMatrix",
+        "sympy.matrices.tests.test_commonmatrix.ReductionsOnlyMatrix",
+        "sympy.physics.mechanics.tests.test_models",
+        "sympy.matrices.dense.MutableDenseMatrix.copyin_matrix",
+        "sympy.matrices.tests.test_matrices.test_zero_dimension_multiply",
+        "sympy.matrices.tests.test_commonmatrix.ShapingOnlyMatrix",
+        "sympy.polys.agca.tests.test_modules.test_FreeModule",
+        "sympy.matrices.tests.test_matrices",
+        "sympy.matrices.tests.test_commonmatrix.SpecialOnlyMatrix",
+        "sympy.matrices.tests.test_matrices.test_slicing",
+        "sympy.matrices.tests.test_commonmatrix.SubspaceOnlyMatrix",
+        "sympy.tensor.tensor.TensExpr.get_matrix",
+        "sympy.matrices.immutable.ImmutableDenseMatrix",
+        "sympy.matrices.matrices.MatrixBase.gauss_jordan_solve",
+        "sympy.matrices.tests.test_commonmatrix.test_adjugate",
+        "sympy.physics.tests.test_clebsch_gordan.test_gaunt",
+        "sympy.matrices.tests.test_commonmatrix.test_det",
+        "sympy.physics.mechanics.tests.test_models.test_multi_mass_spring_damper_higher_order",
+        "sympy.matrices.dense",
+        "sympy.matrices.tests.test_commonmatrix.test_is_square",
+        "sympy.matrices.tests.test_matrices.test_issue_11238",
+        "sympy.physics.quantum.matrixutils.matrix_to_zero",
+        "sympy.matrices.matrices.MatrixEigen",
+        "sympy.matrices.matrices.MatrixEigen.jordan_form.pick_vec",
+        "sympy.matrices.tests.test_commonmatrix",
+        "sympy.matrices.tests.test_commonmatrix.test_expand",
+        "sympy.matrices.matrices.MatrixBase._handle_creation_inputs",
+        "sympy.matrices.tests.test_commonmatrix.test_shape",
+        "sympy.matrices.expressions.matexpr.ZeroMatrix",
+        "sympy.matrices.matrices.MatrixDeprecated",
+        "sympy.polys.agca.tests.test_modules",
+        "sympy.matrices.expressions.blockmatrix",
+        "sympy.matrices.sparsetools",
+        "sympy.physics.quantum.cg.Wigner3j",
+        "sympy.utilities.tests.test_source",
+        "sympy.matrices.common.MatrixSpecial",
+        "sympy.matrices.tests.test_commonmatrix.zeros_Arithmetic",
+        "sympy.polys.agca.tests.test_modules.test_QuotientModuleElement",
+        "sympy.matrices.tests.test_commonmatrix.test_reshape",
+        "sympy.matrices.sparsetools._doktocsr",
+        "sympy.matrices.tests.test_commonmatrix.zeros_Determinant",
+        "sympy.assumptions.ask.AssumptionKeys.fullrank",
+        "sympy.matrices.tests.test_commonmatrix.zeros_Operations",
+        "sympy.matrices.common.MatrixSpecial.zeros",
+        "sympy.matrices.tests.test_commonmatrix.zeros_Properties",
+        "sympy.physics.mechanics.tests.test_models.test_n_link_pendulum_on_cart_higher_order",
+        "sympy.matrices.matrices.MatrixReductions.is_echelon",
+        "sympy.assumptions.ask.AssumptionKeys.square",
+        "sympy.matrices.tests.test_commonmatrix.zeros_Reductions",
+        "sympy.tensor.tests.test_tensor.test_div",
+        "sympy.matrices.tests.test_matrices.test_args",
+        "sympy.matrices.tests.test_commonmatrix.zeros_Shaping",
+        "sympy.tensor.tensor._IndexStructure",
+        "sympy.matrices.sparse.MutableSparseMatrix.copyin_matrix",
+        "sympy.matrices.dense.MutableDenseMatrix.col_swap",
+        "sympy.matrices.tests.test_commonmatrix.eye_Arithmetic",
+        "sympy.tensor.tensor.TIDS.get_components_with_free_indices",
+        "sympy.matrices.tests.test_commonmatrix.eye_Determinant",
+        "sympy.tensor.tensor.TensMul.get_free_indices",
+        "sympy.matrices.matrices.MatrixEigen.diagonalize",
+        "sympy.matrices.sparse.MutableSparseMatrix.col_swap",
+        "sympy.matrices.tests.test_commonmatrix.eye_Operations",
+        "sympy.tensor.tensor.TensMul.get_indices",
+        "sympy.matrices.sparse.MutableSparseMatrix.row_swap",
+        "sympy.matrices.tests.test_commonmatrix.eye_Properties",
+        "sympy.tensor.array.arrayop.tensorcontraction",
+        "sympy.matrices.expressions.tests.test_inverse",
+        "sympy.matrices.sparse",
+        "sympy.matrices.tests.test_commonmatrix.eye_Reductions",
+        "sympy.matrices.tests.test_commonmatrix.test_refine",
+        "sympy.matrices.matrices.MatrixBase.print_nonzero",
+        "sympy.matrices.tests.test_commonmatrix.eye_Shaping",
+        "sympy.tensor.tensor.TensorHead.__call__",
+        "sympy.matrices.common.MatrixOperations.permute",
+        "sympy.matrices.tests.test_commonmatrix.test_trace",
+        "sympy.matrices.tests.test_matrices.test_GramSchmidt",
+        "sympy.matrices.tests.test_commonmatrix.test_echelon_form.verify_row_null_space",
+        "sympy.matrices.matrices.MatrixCalculus.jacobian",
+        "sympy.matrices.common.MatrixShaping.tolist",
+        "sympy.physics.quantum.cg",
+        "sympy.utilities.source",
+        "sympy.matrices.matrices.MatrixReductions.rank",
+        "sympy.matrices.common._MatrixWrapper",
+        "sympy.matrices.tests.test_commonmatrix.test_diff",
+        "sympy.tensor.tests.test_tensor.test_TensorIndexType",
+        "sympy.matrices.matrices.MatrixBase.solve",
+        "sympy.matrices.matrices._MatrixWrapper",
+        "sympy.matrices.tests.test_commonmatrix.test_div",
+        "sympy.printing.pretty.tests.test_pretty.test_pretty_ndim_arrays",
+        "sympy.matrices.matrices.MatrixBase.LUdecomposition",
+        "sympy.matrices.tests.test_commonmatrix.test_integrate",
+        "sympy.physics.quantum.cg.CG",
+        "sympy.matrices.tests.test_commonmatrix.test_limit",
+        "sympy.solvers.tests.test_diophantine.test_diopcoverage",
+        "sympy.matrices.tests.test_commonmatrix.test_zeros",
+        "sympy.matrices.matrices.MatrixDeterminant.cofactor_matrix",
+        "sympy.matrices.dense.matrix_multiply_elementwise",
+        "sympy.matrices.tests.test_commonmatrix.test_neg",
+        "sympy.polys.subresultants_qq_zz.correct_sign",
+        "sympy.printing.tests.test_latex.test_latex_NDimArray",
+        "sympy.matrices.expressions.tests.test_matexpr.test_ZeroMatrix",
+        "sympy.matrices.tests.test_commonmatrix.test_sub",
+        "sympy.physics.quantum.cg.CG._latex",
+        "sympy.matrices.tests.test_commonmatrix.test_atoms",
+        "sympy.physics.quantum.cg.CG.doit",
+        "sympy.printing.ccode.C89CodePrinter._traverse_matrix_indices",
+        "sympy.matrices.matrices.MatrixDeprecated.minorEntry",
+        "sympy.physics.quantum.cg.Wigner3j.doit",
+        "sympy.printing.fcode.FCodePrinter._traverse_matrix_indices",
+        "sympy.matrices.tests.test_commonmatrix.test_free_symbols",
+        "sympy.printing.jscode.JavascriptCodePrinter._traverse_matrix_indices",
+        "sympy.tensor.tensor.TIDS.free_dum_from_indices",
+        "sympy.matrices.matrices.MatrixDeprecated.cofactorMatrix",
+        "sympy.printing.rcode.RCodePrinter._traverse_matrix_indices",
+        "sympy.tensor.tensor._IndexStructure._free_dum_from_indices",
+        "sympy.matrices.sparse.SparseMatrix.solve",
+        "sympy.matrices.tests.test_commonmatrix.test_abs",
+        "sympy.physics.quantum.spin.uncouple",
+        "sympy.printing.rust.RustCodePrinter._traverse_matrix_indices",
+        "sympy.physics.vector.vector.Vector.to_matrix",
+        "sympy.matrices.tests.test_commonmatrix.test_adjoint",
+        "sympy.tensor.tensor.TIDS",
+        "sympy.vector.dyadic.Dyadic.to_matrix",
+        "sympy.matrices.expressions.slice.MatrixSlice",
+        "sympy.matrices.tests.test_commonmatrix.test_col_join",
+        "sympy.matrices.expressions.tests.test_diagonal",
+        "sympy.matrices.expressions.matmul.MatMul.shape",
+        "sympy.matrices.tests.test_commonmatrix.test_doit",
+        "sympy.physics.mechanics.tests.test_models.test_n_link_pendulum_on_cart_inputs",
+        "sympy.matrices.tests.test_commonmatrix.test_get_diag_blocks2",
+        "sympy.matrices.normalforms.invariant_factors.add_columns",
+        "sympy.matrices.tests.test_commonmatrix.test_has",
+        "sympy.physics.quantum.cg.Wigner3j._latex",
+        "sympy.matrices.tests.test_commonmatrix.test_row_join",
+        "sympy.physics.quantum.matrixutils._sympy_tensor_product",
+        "sympy.solvers.solvers.solve_linear_system_LU",
+        "sympy.matrices.tests.test_commonmatrix.test_is_symmetric",
+        "sympy.physics.optics.tests.test_utils",
+        "sympy.matrices.tests.test_commonmatrix.test_vec",
+        "sympy.physics.quantum.spin.couple",
+        "sympy.printing.julia.JuliaCodePrinter._traverse_matrix_indices",
+        "sympy.matrices.expressions.tests.test_slice",
+        "sympy.matrices.tests.test_commonmatrix.test_conjugate",
+        "sympy.printing.octave.OctaveCodePrinter._traverse_matrix_indices",
+        "sympy.matrices.expressions.tests.test_matexpr.test_multiplication",
+        "sympy.matrices.tests.test_commonmatrix.test_is_lower",
+        "sympy.tensor.array.ndim_array.NDimArray.__eq__"
+      ],
+      "retrieval_calls": 3,
+      "index_nodes": 24480,
+      "scored_documents": 72682,
+      "source_chars_read": 15643257,
+      "shared_index_seconds": 19.755824800000482
+    }
+  ]
+}

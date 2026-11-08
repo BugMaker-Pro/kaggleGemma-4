@@ -1,0 +1,3674 @@
+{
+  "instance_id": "django__django-11620",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "results": [
+    {
+      "instance_id": "django__django-11620",
+      "repo": "django/django",
+      "base_commit": "514efa3129792ec2abb2444f3e7aeb3f21a38386",
+      "arm": "preplanned",
+      "status": "ok",
+      "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+      "request_sha256": "e0dbfdc02dbebedd1c8afbcf9ceb3faca22b89d179792c528afc2eca7fbd3db7",
+      "response_sha256": "21071f5b9c7c55e3e9a435df6b84e5030bda55ccf60c38463f842becab7ff7a8",
+      "raw_response_sha256": "21071f5b9c7c55e3e9a435df6b84e5030bda55ccf60c38463f842becab7ff7a8",
+      "actions": [
+        {
+          "query": "Django path converter to_python Http404 DEBUG technical 404 response",
+          "candidates": [
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewTests.test_classbased_technical_404",
+              "score": 37.8146477607073
+            },
+            {
+              "id": "django.views.debug.technical_404_response",
+              "score": 36.96326558313061
+            },
+            {
+              "id": "tests.view_tests.views",
+              "score": 33.061031936879345
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewTests.test_technical_404",
+              "score": 31.230565486876692
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewTests",
+              "score": 29.75938581025846
+            },
+            {
+              "id": "django.contrib.flatpages.middleware",
+              "score": 28.738493590070767
+            },
+            {
+              "id": "django.core.handlers.exception",
+              "score": 28.437482437693152
+            },
+            {
+              "id": "django.contrib.flatpages.middleware.FlatpageFallbackMiddleware.process_response",
+              "score": 28.104816683657155
+            },
+            {
+              "id": "tests.view_tests.views.Http404View",
+              "score": 27.55799734747903
+            },
+            {
+              "id": "django.contrib.flatpages.middleware.FlatpageFallbackMiddleware",
+              "score": 27.076227740303484
+            },
+            {
+              "id": "django.core.handlers.exception.response_for_exception",
+              "score": 26.7898277408952
+            },
+            {
+              "id": "tests.view_tests.views.technical404",
+              "score": 26.093474422746844
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.NonDjangoTemplatesDebugViewTests",
+              "score": 25.99824965782461
+            },
+            {
+              "id": "tests.view_tests.views.Http404View.get",
+              "score": 25.325098499106016
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewTests.test_default_urlconf_template",
+              "score": 25.226957155701434
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewTests.test_regression_21530",
+              "score": 24.648478059172565
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug",
+              "score": 24.116051027098145
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewTests.test_404_empty_path_not_in_urls",
+              "score": 23.700007487624653
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewTests.test_template_encoding",
+              "score": 23.466274727976938
+            },
+            {
+              "id": "tests.view_tests.tests.test_defaults.DefaultsTests.test_custom_templates",
+              "score": 22.90292084782773
+            },
+            {
+              "id": "django.views.debug.default_urlconf",
+              "score": 22.8085958178858
+            },
+            {
+              "id": "tests.staticfiles_tests.test_management.TestRunserver.test_404_response",
+              "score": 22.553647917017184
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewTests.test_404_not_in_urls",
+              "score": 22.11370834691826
+            },
+            {
+              "id": "django.urls.converters",
+              "score": 21.167498057909434
+            },
+            {
+              "id": "django.middleware.common.BrokenLinkEmailsMiddleware.process_response",
+              "score": 21.16658420459568
+            },
+            {
+              "id": "django.views.debug.technical_500_response",
+              "score": 21.011090181154373
+            },
+            {
+              "id": "tests.view_tests.views.raises_template_does_not_exist",
+              "score": 20.385513652613795
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewTests.test_400",
+              "score": 20.344667170994953
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.NonDjangoTemplatesDebugViewTests.test_400",
+              "score": 20.344667170994953
+            },
+            {
+              "id": "tests.staticfiles_tests.test_management.TestRunserver",
+              "score": 19.833246504283387
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.NonDjangoTemplatesDebugViewTests.test_404",
+              "score": 19.74712235644933
+            },
+            {
+              "id": "django.test.testcases.FSFilesHandler.get_response",
+              "score": 19.66738582361383
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewTests.test_404",
+              "score": 19.485757110750612
+            },
+            {
+              "id": "django.views.debug.ExceptionReporter.get_traceback_html",
+              "score": 19.42962558890899
+            },
+            {
+              "id": "tests.get_object_or_404.tests",
+              "score": 19.286814274549016
+            },
+            {
+              "id": "django.views.debug.ExceptionReporter.get_traceback_text",
+              "score": 19.093819529805863
+            },
+            {
+              "id": "django.urls.resolvers.RoutePattern.match",
+              "score": 18.946378714032804
+            },
+            {
+              "id": "django.contrib.staticfiles.views",
+              "score": 18.88941931555122
+            },
+            {
+              "id": "django.contrib.staticfiles.views.serve",
+              "score": 18.78854040435596
+            },
+            {
+              "id": "tests.get_object_or_404.tests.GetObjectOr404Tests.test_get_object_or_404",
+              "score": 18.42543178586584
+            },
+            {
+              "id": "django.middleware.common.CommonMiddleware.process_response",
+              "score": 18.390913166980912
+            },
+            {
+              "id": "django.urls.converters.PathConverter",
+              "score": 18.365112470414466
+            },
+            {
+              "id": "django.core.handlers.exception.handle_uncaught_exception",
+              "score": 18.203317683996037
+            },
+            {
+              "id": "django.contrib.flatpages.views",
+              "score": 18.12937633029003
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewQueriesAllowedTests.test_handle_db_exception",
+              "score": 18.12289067095621
+            },
+            {
+              "id": "django.urls.resolvers._route_to_regex",
+              "score": 18.10188105387692
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewQueriesAllowedTests",
+              "score": 18.006966812623425
+            },
+            {
+              "id": "tests.get_object_or_404.tests.GetObjectOr404Tests",
+              "score": 17.673091331752744
+            },
+            {
+              "id": "tests.handlers.tests.HandlerTests.test_bad_path_info",
+              "score": 17.55184188071743
+            },
+            {
+              "id": "tests.view_tests.views.raises500",
+              "score": 17.48300022152884
+            },
+            {
+              "id": "django.contrib.flatpages.views.flatpage",
+              "score": 17.449185800844212
+            },
+            {
+              "id": "django.contrib.redirects.middleware.RedirectFallbackMiddleware.process_response",
+              "score": 17.410530867718023
+            },
+            {
+              "id": "django.shortcuts.get_list_or_404",
+              "score": 17.149939610686417
+            },
+            {
+              "id": "django.urls.converters.StringConverter",
+              "score": 17.13400939909123
+            },
+            {
+              "id": "django.urls.converters.IntConverter",
+              "score": 16.97556658268287
+            },
+            {
+              "id": "tests.urlpatterns.path_dynamic_urls",
+              "score": 16.94430627606263
+            },
+            {
+              "id": "django.http.response.Http404",
+              "score": 16.84397065378899
+            },
+            {
+              "id": "django.shortcuts.get_object_or_404",
+              "score": 16.79412910654549
+            },
+            {
+              "id": "tests.context_processors.tests",
+              "score": 16.733069488368997
+            },
+            {
+              "id": "tests.redirects_tests.tests.RedirectTests",
+              "score": 16.62657162355069
+            },
+            {
+              "id": "django.contrib.redirects.middleware.RedirectFallbackMiddleware",
+              "score": 16.561405503498158
+            },
+            {
+              "id": "django.shortcuts",
+              "score": 16.41008677201345
+            },
+            {
+              "id": "django.contrib.redirects.middleware",
+              "score": 16.37202157979592
+            },
+            {
+              "id": "tests.urlpatterns.converter_urls",
+              "score": 16.213398954684585
+            },
+            {
+              "id": "tests.redirects_tests.tests",
+              "score": 16.151008165490204
+            },
+            {
+              "id": "django.views.static.serve",
+              "score": 16.087105695049516
+            },
+            {
+              "id": "tests.middleware.tests.BrokenLinkEmailsMiddlewareTest.test_404_error_reporting_ignored_url",
+              "score": 15.87513673781364
+            },
+            {
+              "id": "tests.urlpatterns.converters.DynamicConverter",
+              "score": 15.85274383400868
+            },
+            {
+              "id": "tests.view_tests.urls",
+              "score": 15.84314448463621
+            },
+            {
+              "id": "django.views.static",
+              "score": 15.723365926933747
+            },
+            {
+              "id": "django.middleware.common.BrokenLinkEmailsMiddleware",
+              "score": 15.689782401818798
+            },
+            {
+              "id": "tests.staticfiles_tests.test_management",
+              "score": 15.66711259949623
+            },
+            {
+              "id": "django.test.testcases.FSFilesHandler",
+              "score": 15.58830661057793
+            },
+            {
+              "id": "tests.urlpatterns.path_base64_urls",
+              "score": 15.392677858173958
+            },
+            {
+              "id": "django.views.defaults",
+              "score": 15.37172495366295
+            },
+            {
+              "id": "tests.urlpatterns.converters.Base64Converter",
+              "score": 15.282312571041087
+            },
+            {
+              "id": "tests.urlpatterns.tests.ConversionExceptionTests",
+              "score": 15.02494629969273
+            },
+            {
+              "id": "django.core.handlers.base.BaseHandler.load_middleware",
+              "score": 14.96136828347929
+            },
+            {
+              "id": "tests.view_tests.views.raises",
+              "score": 14.94543863326718
+            },
+            {
+              "id": "tests.view_tests.tests.test_defaults.DefaultsTests",
+              "score": 14.840910175289121
+            },
+            {
+              "id": "tests.test_client.tests.ClientTest.test_url_parameters",
+              "score": 14.684830394759377
+            },
+            {
+              "id": "django.contrib.staticfiles.handlers",
+              "score": 14.650651449207217
+            },
+            {
+              "id": "tests.redirects_tests.tests.RedirectTests.test_redirect",
+              "score": 14.63987636953285
+            },
+            {
+              "id": "django.views.defaults.page_not_found",
+              "score": 14.610699049751512
+            },
+            {
+              "id": "django.middleware.locale.LocaleMiddleware.process_response",
+              "score": 14.562870690952538
+            },
+            {
+              "id": "tests.view_tests.tests.test_defaults",
+              "score": 14.460853571386743
+            },
+            {
+              "id": "django.contrib.staticfiles.handlers.StaticFilesHandlerMixin.get_response",
+              "score": 14.394630426722925
+            },
+            {
+              "id": "django.core.handlers.base",
+              "score": 14.314952896718639
+            },
+            {
+              "id": "tests.redirects_tests.tests.RedirectTests.test_redirect_shortcircuits_non_404_response",
+              "score": 14.306827600084294
+            },
+            {
+              "id": "tests.urlpatterns.tests.SimplifiedURLTests.test_invalid_converter",
+              "score": 14.236515151975151
+            },
+            {
+              "id": "tests.redirects_tests.tests.RedirectTests.test_redirect_with_append_slash",
+              "score": 14.220149083363566
+            },
+            {
+              "id": "tests.urlpatterns.converters",
+              "score": 14.15878783784593
+            },
+            {
+              "id": "django.urls.resolvers.RoutePattern",
+              "score": 14.143172975638393
+            },
+            {
+              "id": "tests.context_processors.tests.DebugContextProcessorTests",
+              "score": 14.095475088853672
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.NonDjangoTemplatesDebugViewTests.test_template_not_found_error",
+              "score": 14.089334222578543
+            },
+            {
+              "id": "django.contrib.staticfiles.storage.HashedFilesMixin.url_converter",
+              "score": 14.03355283908841
+            },
+            {
+              "id": "tests.get_object_or_404.models",
+              "score": 13.973090841259127
+            },
+            {
+              "id": "tests.view_tests.tests.test_static.StaticTests.test_404",
+              "score": 13.884984370146801
+            },
+            {
+              "id": "tests.messages_tests.urls",
+              "score": 13.8817377110091
+            },
+            {
+              "id": "tests.context_processors.urls",
+              "score": 13.876188839155553
+            },
+            {
+              "id": "tests.test_client.tests.ClientTest.test_notfound_response",
+              "score": 13.78590376300523
+            },
+            {
+              "id": "tests.test_utils.views",
+              "score": 13.760056746724649
+            },
+            {
+              "id": "django.http.response.HttpResponseNotFound",
+              "score": 13.705364580837546
+            },
+            {
+              "id": "tests.redirects_tests.tests.RedirectTests.test_redirect_with_append_slash_and_query_string",
+              "score": 13.698098749163043
+            },
+            {
+              "id": "tests.view_tests.tests.test_defaults.DefaultsTests.test_csrf_token_in_404",
+              "score": 13.660819177580667
+            },
+            {
+              "id": "django.http",
+              "score": 13.59658276663568
+            },
+            {
+              "id": "django.core.handlers.base.BaseHandler",
+              "score": 13.572222642877783
+            },
+            {
+              "id": "tests.staticfiles_tests.test_views",
+              "score": 13.572001453277384
+            },
+            {
+              "id": "django.middleware.locale",
+              "score": 13.5640693519734
+            },
+            {
+              "id": "django.contrib.gis.views",
+              "score": 13.554402125866499
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewTests.test_template_loader_postmortem",
+              "score": 13.475717592234352
+            },
+            {
+              "id": "tests.i18n.patterns.tests.URLResponseTests",
+              "score": 13.441517820306878
+            },
+            {
+              "id": "tests.handlers.tests.HandlerRequestTests.test_invalid_urls",
+              "score": 13.323930158140382
+            },
+            {
+              "id": "tests.context_processors.tests.DebugContextProcessorTests.test_debug",
+              "score": 13.321733865507664
+            },
+            {
+              "id": "setup",
+              "score": 13.269867135145894
+            },
+            {
+              "id": "django.utils.autoreload.BaseReloader.watch_dir",
+              "score": 13.221167390453173
+            },
+            {
+              "id": "tests.servers.tests.LiveServerViews.test_404",
+              "score": 13.196634588771712
+            },
+            {
+              "id": "django.urls.converters.get_converter",
+              "score": 13.071804628459178
+            },
+            {
+              "id": "django.contrib.staticfiles.handlers.StaticFilesHandlerMixin",
+              "score": 13.034890813198235
+            },
+            {
+              "id": "django.urls.converters.SlugConverter",
+              "score": 12.985969510960112
+            },
+            {
+              "id": "django.utils.autoreload.BaseReloader",
+              "score": 12.949551028531879
+            },
+            {
+              "id": "tests.contenttypes_tests.test_views.ShortcutViewTests.test_model_without_get_absolute_url",
+              "score": 12.942878883912044
+            },
+            {
+              "id": "django.urls.converters.register_converter",
+              "score": 12.891993556674556
+            },
+            {
+              "id": "tests.csrf_tests.tests.CsrfInErrorHandlingViewsTests.test_csrf_token_on_404_stays_constant",
+              "score": 12.883230183180167
+            },
+            {
+              "id": "tests.test_client_regress.tests.TemplateExceptionTests",
+              "score": 12.853788308923342
+            },
+            {
+              "id": "tests.test_client.tests.ClientTest.test_unknown_page",
+              "score": 12.764149899045748
+            },
+            {
+              "id": "tests.logging_tests.views",
+              "score": 12.72849456482125
+            },
+            {
+              "id": "tests.view_tests.tests.test_defaults.DefaultsTests.test_page_not_found",
+              "score": 12.707181533979432
+            },
+            {
+              "id": "django.urls",
+              "score": 12.636424418528097
+            },
+            {
+              "id": "django.middleware.locale.LocaleMiddleware",
+              "score": 12.63306783305579
+            },
+            {
+              "id": "django.contrib.auth.admin.UserAdmin._add_view",
+              "score": 12.591315253805753
+            },
+            {
+              "id": "tests.i18n.tests.UnprefixedDefaultLanguageTests.test_no_redirect_on_404",
+              "score": 12.586431745648934
+            },
+            {
+              "id": "tests.flatpages_tests.test_csrf.FlatpageCSRFTests.test_fallback_non_existent_flatpage",
+              "score": 12.584331772813044
+            },
+            {
+              "id": "tests.flatpages_tests.test_middleware.FlatpageMiddlewareTests.test_fallback_non_existent_flatpage",
+              "score": 12.584331772813044
+            },
+            {
+              "id": "tests.responses.test_fileresponse.FileResponseTests.test_file_from_disk_response",
+              "score": 12.539535757287428
+            },
+            {
+              "id": "django.views.debug",
+              "score": 12.53369526030195
+            },
+            {
+              "id": "tests.flatpages_tests.test_views.FlatpageViewTests.test_view_non_existent_flatpage",
+              "score": 12.503400698572268
+            },
+            {
+              "id": "tests.urlpatterns.tests.ConverterTests",
+              "score": 12.445516959439264
+            },
+            {
+              "id": "django.db.backends.oracle.base.FormatStylePlaceholderCursor._output_type_handler",
+              "score": 12.313515114504515
+            },
+            {
+              "id": "tests.urlpatterns_reverse.tests.RequestURLconfTests.test_urlconf_overridden",
+              "score": 12.288187913410791
+            },
+            {
+              "id": "tests.flatpages_tests.test_csrf.FlatpageCSRFTests.test_view_non_existent_flatpage",
+              "score": 12.266858017008941
+            },
+            {
+              "id": "tests.flatpages_tests.test_middleware.FlatpageMiddlewareTests.test_view_non_existent_flatpage",
+              "score": 12.266858017008941
+            },
+            {
+              "id": "tests.flatpages_tests.test_middleware.FlatpageMiddlewareAppendSlashTests.test_redirect_fallback_non_existent_flatpage",
+              "score": 12.228318910440127
+            },
+            {
+              "id": "django.conf.urls.static.static",
+              "score": 12.224292256426098
+            },
+            {
+              "id": "tests.responses.test_fileresponse.FileResponseTests.test_file_from_disk_as_attachment",
+              "score": 12.19354913680696
+            },
+            {
+              "id": "django.views.generic.dates._date_from_string",
+              "score": 12.186675580957832
+            },
+            {
+              "id": "tests.middleware_exceptions.tests.MiddlewareTests.test_exception_in_middleware_converted_before_prior_middleware",
+              "score": 12.17557233905873
+            },
+            {
+              "id": "django.conf.urls.static",
+              "score": 12.169609214388638
+            },
+            {
+              "id": "django.contrib.staticfiles.storage.HashedFilesMixin.url_converter.converter",
+              "score": 12.162881321852302
+            },
+            {
+              "id": "tests.flatpages_tests.test_middleware.FlatpageMiddlewareAppendSlashTests.test_redirect_view_non_existent_flatpage",
+              "score": 12.151976804076785
+            },
+            {
+              "id": "tests.flatpages_tests.test_views.FlatpageViewAppendSlashTests.test_redirect_view_non_existent_flatpage",
+              "score": 12.151976804076785
+            },
+            {
+              "id": "django.urls.exceptions.Resolver404",
+              "score": 12.08309823625602
+            },
+            {
+              "id": "tests.middleware.tests.BrokenLinkEmailsMiddlewareTest.test_404_error_reporting_no_referer",
+              "score": 12.081263221039634
+            },
+            {
+              "id": "django.db.backends.base.introspection.BaseDatabaseIntrospection.identifier_converter",
+              "score": 12.066701564182171
+            },
+            {
+              "id": "django.contrib.messages.middleware.MessageMiddleware.process_response",
+              "score": 12.05944665791941
+            },
+            {
+              "id": "tests.urlpatterns.tests.ConverterTests.test_matching_urls",
+              "score": 12.046602403962673
+            },
+            {
+              "id": "tests.handlers.tests",
+              "score": 12.040617335660581
+            },
+            {
+              "id": "django.contrib.gis.db.backends.base.operations.BaseSpatialOperations.get_geometry_converter",
+              "score": 12.03240747417654
+            },
+            {
+              "id": "django.contrib.staticfiles.finders.get_finder",
+              "score": 12.027078473058591
+            },
+            {
+              "id": "django.urls.exceptions",
+              "score": 11.96554322986049
+            },
+            {
+              "id": "django.contrib.gis.db.backends.postgis.operations.PostGISOperations.get_geometry_converter",
+              "score": 11.964198946342345
+            },
+            {
+              "id": "django.contrib.gis.db.backends.spatialite.operations.SpatiaLiteOperations.get_geometry_converter",
+              "score": 11.964198946342345
+            },
+            {
+              "id": "django.db.backends.oracle.base.FormatStylePlaceholderCursor._output_number_converter",
+              "score": 11.923289643357792
+            },
+            {
+              "id": "tests.admin_views.tests.AdminJavaScriptTest.test_js_minified_only_if_debug_is_false",
+              "score": 11.900077858330283
+            },
+            {
+              "id": "django.utils.autoreload.BaseReloader.notify_file_changed",
+              "score": 11.897771703860396
+            },
+            {
+              "id": "tests.responses.tests.HttpResponseTests.test_valid_status_code_string",
+              "score": 11.880977680251938
+            },
+            {
+              "id": "django.middleware.common.CommonMiddleware.get_full_path_with_slash",
+              "score": 11.868376556137697
+            },
+            {
+              "id": "tests.handlers.tests.HandlerTests",
+              "score": 11.86655575208691
+            },
+            {
+              "id": "django.core.management.commands.migrate.Command.sync_apps.model_installed",
+              "score": 11.864386436937561
+            },
+            {
+              "id": "tests.backends.sqlite.tests.EscapingChecks",
+              "score": 11.850297438915508
+            },
+            {
+              "id": "django.contrib.gis.views.feed",
+              "score": 11.836986075118643
+            },
+            {
+              "id": "tests.view_tests.tests.test_static",
+              "score": 11.836646786236319
+            },
+            {
+              "id": "django.contrib.gis.db.backends.postgis.operations.PostGISOperations.get_geometry_converter.converter",
+              "score": 11.796577750180997
+            },
+            {
+              "id": "django.contrib.gis.db.backends.spatialite.operations.SpatiaLiteOperations.get_geometry_converter.converter",
+              "score": 11.796577750180997
+            },
+            {
+              "id": "django.middleware.common.CommonMiddleware",
+              "score": 11.765149763218494
+            },
+            {
+              "id": "tests.middleware.tests.BrokenLinkEmailsMiddlewareTest.test_404_error_reporting",
+              "score": 11.759565015492504
+            },
+            {
+              "id": "django.db.backends.sqlite3.operations.DatabaseOperations.get_decimalfield_converter.converter",
+              "score": 11.713757444150186
+            },
+            {
+              "id": "django.core.files.storage.Storage.path",
+              "score": 11.7134672800642
+            },
+            {
+              "id": "tests.middleware.tests.CommonMiddlewareTest.test_append_slash_no_redirect_on_POST_in_DEBUG_custom_urlconf",
+              "score": 11.673045647680688
+            },
+            {
+              "id": "django.db.backends.oracle.introspection.DatabaseIntrospection.identifier_converter",
+              "score": 11.672830169448464
+            },
+            {
+              "id": "tests.wsgi.urls",
+              "score": 11.67005578982753
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.AjaxResponseExceptionReporterFilter",
+              "score": 11.645569670202455
+            },
+            {
+              "id": "tests.contenttypes_tests.test_views.ContentTypesViewsTests.test_shortcut_no_absolute_url",
+              "score": 11.64361291151002
+            },
+            {
+              "id": "django.middleware.common",
+              "score": 11.63167470079442
+            },
+            {
+              "id": "tests.i18n.urls_default_unprefixed",
+              "score": 11.623974478452183
+            },
+            {
+              "id": "tests.contenttypes_tests.test_views",
+              "score": 11.614194058739134
+            },
+            {
+              "id": "tests.admin_scripts.configured_settings_manage",
+              "score": 11.611583406568862
+            },
+            {
+              "id": "tests.test_client.views.bad_view",
+              "score": 11.595398278841229
+            },
+            {
+              "id": "django.contrib.gis.db.backends.mysql.operations.MySQLOperations.get_geometry_converter",
+              "score": 11.590131611877005
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.PlainTextReportTests.test_template_exception",
+              "score": 11.58785804237706
+            },
+            {
+              "id": "tests.admin_docs.test_views.TestModelDetailView.test_app_not_found",
+              "score": 11.587084952512223
+            },
+            {
+              "id": "tests.i18n.urls",
+              "score": 11.568044730466113
+            },
+            {
+              "id": "django.contrib.gis.db.backends.oracle.operations.OracleOperations.get_geometry_converter",
+              "score": 11.564517135830918
+            },
+            {
+              "id": "tests.view_tests.views.sensitive_args_function_caller",
+              "score": 11.55587028598135
+            },
+            {
+              "id": "tests.view_tests.views.sensitive_kwargs_function_caller",
+              "score": 11.55587028598135
+            },
+            {
+              "id": "django.contrib.gis.db.backends.mysql.operations.MySQLOperations.get_geometry_converter.converter",
+              "score": 11.551928699315145
+            },
+            {
+              "id": "django.core.handlers.exception.convert_exception_to_response",
+              "score": 11.540762853786237
+            },
+            {
+              "id": "django.contrib.gis.db.backends.oracle.operations.OracleOperations.get_geometry_converter.converter",
+              "score": 11.512241287213792
+            },
+            {
+              "id": "tests.handlers.urls",
+              "score": 11.486971717309757
+            },
+            {
+              "id": "tests.middleware.tests.CommonMiddlewareTest.test_append_slash_no_redirect_on_POST_in_DEBUG",
+              "score": 11.486635047833206
+            }
+          ],
+          "scored_documents": 15809,
+          "seconds": 0.024414299999989453
+        },
+        {
+          "query": "Django URL resolver converter to_python ValueError Http404 handling",
+          "candidates": [
+            {
+              "id": "tests.urlpatterns.tests.ConversionExceptionTests",
+              "score": 26.5393628389027
+            },
+            {
+              "id": "django.urls.converters",
+              "score": 25.18053323797286
+            },
+            {
+              "id": "django.urls.converters.StringConverter",
+              "score": 25.092256535356526
+            },
+            {
+              "id": "tests.urlpatterns.converters.DynamicConverter",
+              "score": 25.056971240269224
+            },
+            {
+              "id": "django.urls.converters.IntConverter",
+              "score": 24.85600628232872
+            },
+            {
+              "id": "tests.urlpatterns.converters",
+              "score": 23.445448320879205
+            },
+            {
+              "id": "tests.urlpatterns.converters.Base64Converter",
+              "score": 22.97609442683703
+            },
+            {
+              "id": "django.urls",
+              "score": 22.439858665362735
+            },
+            {
+              "id": "django.utils.http.urlquote",
+              "score": 21.845750719298344
+            },
+            {
+              "id": "django.utils.http.urlunquote",
+              "score": 21.845750719298344
+            },
+            {
+              "id": "django.utils.http.urlquote_plus",
+              "score": 21.307837062844065
+            },
+            {
+              "id": "django.utils.http.urlunquote_plus",
+              "score": 21.307837062844065
+            },
+            {
+              "id": "django.urls.resolvers",
+              "score": 19.708562211601347
+            },
+            {
+              "id": "django.utils.http",
+              "score": 19.60316467605098
+            },
+            {
+              "id": "django.forms.fields.URLField.to_python",
+              "score": 19.414292429649674
+            },
+            {
+              "id": "django.urls.resolvers.RoutePattern.match",
+              "score": 19.206711791292886
+            },
+            {
+              "id": "tests.urlpatterns.tests.ConverterTests.test_matching_urls",
+              "score": 18.984763464426873
+            },
+            {
+              "id": "django.urls.resolvers._route_to_regex",
+              "score": 18.89497958557752
+            },
+            {
+              "id": "django.views.debug.technical_404_response",
+              "score": 18.53981133339986
+            },
+            {
+              "id": "tests.urlpatterns.tests.ConverterTests",
+              "score": 18.536219878835904
+            },
+            {
+              "id": "tests.urlpatterns.tests.ConversionExceptionTests.test_resolve_value_error_means_no_match",
+              "score": 18.429652566718985
+            },
+            {
+              "id": "django.core.checks.urls",
+              "score": 18.295869545446696
+            },
+            {
+              "id": "django.core.checks.urls.check_url_config",
+              "score": 17.96842831938374
+            },
+            {
+              "id": "tests.urlpatterns.tests.ConversionExceptionTests.test_reverse_value_error_propagates",
+              "score": 17.74778265853627
+            },
+            {
+              "id": "django.contrib.gis.views",
+              "score": 17.64621478554058
+            },
+            {
+              "id": "django.forms.fields.URLField",
+              "score": 17.497479608758695
+            },
+            {
+              "id": "tests.urlpatterns.tests.ConversionExceptionTests.test_resolve_type_error_propagates",
+              "score": 17.01369733285859
+            },
+            {
+              "id": "django.urls.base.clear_url_caches",
+              "score": 16.530286352443863
+            },
+            {
+              "id": "tests.urlpatterns.tests.SimplifiedURLTests.test_converter_reverse",
+              "score": 16.42271654691388
+            },
+            {
+              "id": "tests.urlpatterns_reverse.tests.ResolverTests",
+              "score": 16.400047879504008
+            },
+            {
+              "id": "django.utils.translation.ugettext",
+              "score": 16.36287426870312
+            },
+            {
+              "id": "django.db.backends.oracle.base.FormatStylePlaceholderCursor",
+              "score": 16.35150246909403
+            },
+            {
+              "id": "tests.urlpatterns.tests.SimplifiedURLTests.test_converter_reverse_with_second_layer_instance_namespace",
+              "score": 16.332350306524237
+            },
+            {
+              "id": "tests.view_tests.views",
+              "score": 16.24422369836723
+            },
+            {
+              "id": "django.contrib.gis.views.feed",
+              "score": 16.177637936093838
+            },
+            {
+              "id": "tests.urlpatterns.tests.SimplifiedURLTests.test_converter_resolve",
+              "score": 16.177326022035896
+            },
+            {
+              "id": "django.core.checks.urls.check_url_namespaces_unique",
+              "score": 16.147782073823546
+            },
+            {
+              "id": "django.core.checks.urls._load_all_namespaces",
+              "score": 16.086689083207094
+            },
+            {
+              "id": "django.urls.resolvers.RoutePattern",
+              "score": 16.066079240437002
+            },
+            {
+              "id": "django.utils.translation.ungettext",
+              "score": 16.0071059736822
+            },
+            {
+              "id": "django.urls.resolvers.get_ns_resolver",
+              "score": 15.979783426934365
+            },
+            {
+              "id": "django.template.defaultfilters._property_resolver",
+              "score": 15.947270184441749
+            },
+            {
+              "id": "tests.annotations.tests.cxOracle_py3_bug",
+              "score": 15.902800258381916
+            },
+            {
+              "id": "django.utils.translation.ugettext_lazy",
+              "score": 15.892026849164068
+            },
+            {
+              "id": "django.utils.translation.ugettext_noop",
+              "score": 15.892026849164068
+            },
+            {
+              "id": "tests.urlpatterns_reverse.tests.ResolverTests.test_reverse_lazy_object_coercion_by_resolve",
+              "score": 15.888389591958457
+            },
+            {
+              "id": "django.urls.resolvers.ResolverMatch",
+              "score": 15.813137966218004
+            },
+            {
+              "id": "django.core.handlers.exception",
+              "score": 15.752903023028665
+            },
+            {
+              "id": "django.db.backends.oracle.base.FormatStylePlaceholderCursor._output_number_converter",
+              "score": 15.751894340822728
+            },
+            {
+              "id": "django.contrib.staticfiles.storage.HashedFilesMixin.url_converter",
+              "score": 15.714391976978629
+            },
+            {
+              "id": "django.db.backends.sqlite3.operations.DatabaseOperations.get_decimalfield_converter.converter",
+              "score": 15.504090003305734
+            },
+            {
+              "id": "django.utils.translation.ungettext_lazy",
+              "score": 15.50231317796891
+            },
+            {
+              "id": "django.contrib.gis.db.backends.postgis.operations.PostGISOperations.get_geometry_converter.converter",
+              "score": 15.49720121660583
+            },
+            {
+              "id": "django.contrib.gis.db.backends.spatialite.operations.SpatiaLiteOperations.get_geometry_converter.converter",
+              "score": 15.49720121660583
+            },
+            {
+              "id": "django.utils.http.escape_leading_slashes",
+              "score": 15.496647734324743
+            },
+            {
+              "id": "tests.urlpatterns_reverse.tests.ResolverMatchTests.test_resolver_match_on_request",
+              "score": 15.350179246991326
+            },
+            {
+              "id": "tests.backends.tests.ParameterHandlingTest",
+              "score": 15.306165020313124
+            },
+            {
+              "id": "django.contrib.gis.db.backends.postgis.operations.PostGISOperations.get_geometry_converter",
+              "score": 15.285313995829062
+            },
+            {
+              "id": "django.contrib.gis.db.backends.spatialite.operations.SpatiaLiteOperations.get_geometry_converter",
+              "score": 15.285313995829062
+            },
+            {
+              "id": "django.urls.resolvers.URLResolver.check",
+              "score": 15.244700842743823
+            },
+            {
+              "id": "tests.utils_tests.test_baseconv.TestBaseConv.test_exception",
+              "score": 15.228031412236659
+            },
+            {
+              "id": "django.contrib.gis.db.backends.mysql.operations.MySQLOperations.get_geometry_converter.converter",
+              "score": 15.199157963172084
+            },
+            {
+              "id": "tests.check_framework.test_urls.CheckUrlConfigTests.test_check_resolver_recursive",
+              "score": 15.193847080946757
+            },
+            {
+              "id": "django.contrib.gis.db.backends.oracle.operations.OracleOperations.get_geometry_converter.converter",
+              "score": 15.150720956924129
+            },
+            {
+              "id": "django.db.backends.sqlite3.operations.DatabaseOperations.get_decimalfield_converter",
+              "score": 15.035302867747962
+            },
+            {
+              "id": "django.forms.fields.UUIDField.to_python",
+              "score": 14.957697944462879
+            },
+            {
+              "id": "django.db.models.fields.Field.to_python",
+              "score": 14.94197479114672
+            },
+            {
+              "id": "django.db.models.fields.AutoField.to_python",
+              "score": 14.932977327748652
+            },
+            {
+              "id": "django.db.models.fields.FloatField.to_python",
+              "score": 14.932977327748652
+            },
+            {
+              "id": "django.db.models.fields.IntegerField.to_python",
+              "score": 14.932977327748652
+            },
+            {
+              "id": "tests.file_uploads.tests.FileUploadTests.test_file_error_blocking",
+              "score": 14.869475149778136
+            },
+            {
+              "id": "django.contrib.gis.db.backends.mysql.operations.MySQLOperations.get_geometry_converter",
+              "score": 14.780827616997861
+            },
+            {
+              "id": "django.contrib.gis.db.backends.oracle.operations.OracleOperations.get_geometry_converter",
+              "score": 14.746288350953666
+            },
+            {
+              "id": "tests.urlpatterns_reverse.views",
+              "score": 14.737755682300842
+            },
+            {
+              "id": "tests.urlpatterns_reverse.tests.ResolverMatchTests",
+              "score": 14.686734558199497
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.ExceptionReporterTests.test_unprintable_values_handling",
+              "score": 14.663398360100414
+            },
+            {
+              "id": "tests.gis_tests.test_geoforms.GeometryFieldTest.test_geom_type",
+              "score": 14.619765700836552
+            },
+            {
+              "id": "django.forms.fields.BaseTemporalField.to_python",
+              "score": 14.57747248831679
+            },
+            {
+              "id": "tests.urlpatterns.tests.SimplifiedURLTests.test_invalid_converter",
+              "score": 14.49088837065408
+            },
+            {
+              "id": "tests.i18n.test_compilation.CompilationErrorHandling",
+              "score": 14.456607216875364
+            },
+            {
+              "id": "django.forms.fields.MultipleChoiceField.to_python",
+              "score": 14.420898791447387
+            },
+            {
+              "id": "tests.urlpatterns_reverse.tests.ResolverTests.test_resolver_reverse_conflict",
+              "score": 14.390527599111227
+            },
+            {
+              "id": "django.forms.models.ModelChoiceField.to_python",
+              "score": 14.375071239169843
+            },
+            {
+              "id": "django.urls.converters.UUIDConverter",
+              "score": 14.374825927508011
+            },
+            {
+              "id": "django.db.models.fields.UUIDField.to_python",
+              "score": 14.367780706044346
+            },
+            {
+              "id": "django.db.models.fields.DurationField.to_python",
+              "score": 14.36151956650017
+            },
+            {
+              "id": "django.contrib.gis.db.backends.base.operations.BaseSpatialOperations.get_geometry_converter",
+              "score": 14.328441096887238
+            },
+            {
+              "id": "django.forms.fields.FloatField.to_python",
+              "score": 14.32818471988565
+            },
+            {
+              "id": "django.contrib.postgres.forms.array.SimpleArrayField.to_python",
+              "score": 14.32234153486111
+            },
+            {
+              "id": "django.db.backends.oracle.base.FormatStylePlaceholderCursor._get_decimal_converter",
+              "score": 14.310674173708698
+            },
+            {
+              "id": "django.utils.autoreload.BaseReloader.run",
+              "score": 14.23027057530742
+            },
+            {
+              "id": "django.utils.baseconv.BaseConverter",
+              "score": 14.228906358431132
+            },
+            {
+              "id": "tests.test_client.tests.ClientTest.test_response_resolver_match_redirect_follow",
+              "score": 14.193177395428954
+            },
+            {
+              "id": "tests.test_client.tests.ClientTest.test_response_resolver_match_regular_view",
+              "score": 14.193177395428954
+            },
+            {
+              "id": "tests.urlpatterns.path_dynamic_urls",
+              "score": 14.179777437971321
+            },
+            {
+              "id": "django.forms.fields.IntegerField.to_python",
+              "score": 14.151720835985358
+            },
+            {
+              "id": "django.db.models.fields.DecimalField.to_python",
+              "score": 14.092313739247146
+            },
+            {
+              "id": "django.forms.fields.DurationField.to_python",
+              "score": 14.087889349742694
+            },
+            {
+              "id": "django.forms.fields.Field.clean",
+              "score": 14.038044014552312
+            },
+            {
+              "id": "django.core.handlers.base.BaseHandler._get_response",
+              "score": 13.940029247875387
+            },
+            {
+              "id": "django.contrib.auth.admin.UserAdmin._add_view",
+              "score": 13.911247515820461
+            },
+            {
+              "id": "django.contrib.postgres.forms.hstore.HStoreField.to_python",
+              "score": 13.90817333227314
+            },
+            {
+              "id": "tests.forms_tests.widget_tests.test_clearablefileinput.ClearableFileInputTest.test_url_as_property",
+              "score": 13.90650273378988
+            },
+            {
+              "id": "django.contrib.postgres.forms.jsonb.JSONField.to_python",
+              "score": 13.848767717053327
+            },
+            {
+              "id": "django.db.models.fields.GenericIPAddressField.to_python",
+              "score": 13.81700658034367
+            },
+            {
+              "id": "django.utils.baseconv.BaseConverter.__init__",
+              "score": 13.813322330425343
+            },
+            {
+              "id": "django.utils.baseconv",
+              "score": 13.80177051059045
+            },
+            {
+              "id": "django.db.backends.oracle.base.FormatStylePlaceholderCursor._output_type_handler",
+              "score": 13.729193195871567
+            },
+            {
+              "id": "django.contrib.contenttypes.views",
+              "score": 13.723110483313809
+            },
+            {
+              "id": "django.template.defaultfilters.dictsort",
+              "score": 13.72084830521278
+            },
+            {
+              "id": "django.contrib.staticfiles.storage.HashedFilesMixin.url_converter.converter",
+              "score": 13.695222567347102
+            },
+            {
+              "id": "django.template.defaulttags.URLNode.render",
+              "score": 13.693688566968707
+            },
+            {
+              "id": "django.db.models.fields.BooleanField.to_python",
+              "score": 13.662275137207784
+            },
+            {
+              "id": "django.template.defaultfilters.urlencode",
+              "score": 13.59617278011373
+            },
+            {
+              "id": "django.db.models.fields.TimeField.to_python",
+              "score": 13.595124761451657
+            },
+            {
+              "id": "django.db.models.fields.Field.clean",
+              "score": 13.587930420517537
+            },
+            {
+              "id": "django.db.models.sql.compiler.SQLCompiler.apply_converters",
+              "score": 13.55819656947894
+            },
+            {
+              "id": "django.urls.base.is_valid_path",
+              "score": 13.528548669833857
+            },
+            {
+              "id": "django.urls.resolvers.URLResolver._reverse_with_prefix",
+              "score": 13.490460071871027
+            },
+            {
+              "id": "django.contrib.gis.forms.fields.GeometryField.to_python",
+              "score": 13.483583247365077
+            },
+            {
+              "id": "django.db.models.fields.DateField.to_python",
+              "score": 13.362532291686016
+            },
+            {
+              "id": "django.contrib.gis.gdal.field.OFTDate.value",
+              "score": 13.357572093240439
+            },
+            {
+              "id": "django.urls.resolvers.ResolverMatch.__repr__",
+              "score": 13.344211213707698
+            },
+            {
+              "id": "django.forms.fields.UUIDField",
+              "score": 13.301142503650675
+            },
+            {
+              "id": "django.template.defaultfilters.stringformat",
+              "score": 13.290812307159026
+            },
+            {
+              "id": "django.template.defaultfilters.dictsortreversed",
+              "score": 13.289741065780596
+            },
+            {
+              "id": "django.forms.fields.BooleanField",
+              "score": 13.276032012273705
+            },
+            {
+              "id": "django.forms.fields.URLField.to_python.split_url",
+              "score": 13.25626188966043
+            },
+            {
+              "id": "django.core.handlers.exception.response_for_exception",
+              "score": 13.217261324174263
+            },
+            {
+              "id": "tests.urlpatterns.path_base64_urls",
+              "score": 13.200064578000074
+            },
+            {
+              "id": "django.conf.urls.i18n",
+              "score": 13.116000362924616
+            },
+            {
+              "id": "django.core.handlers.exception.get_exception_response",
+              "score": 13.11212215077113
+            },
+            {
+              "id": "django.core.handlers.asgi.ASGIRequest",
+              "score": 13.10124215737807
+            },
+            {
+              "id": "django.urls.converters.get_converter",
+              "score": 13.071804628459178
+            },
+            {
+              "id": "django.urls.converters.PathConverter",
+              "score": 13.020744128632883
+            },
+            {
+              "id": "django.db.models.query.RawQuerySet.resolve_model_init_order",
+              "score": 13.009565219173268
+            },
+            {
+              "id": "django.views.generic.dates",
+              "score": 12.988188221187258
+            },
+            {
+              "id": "django.urls.converters.SlugConverter",
+              "score": 12.985969510960112
+            },
+            {
+              "id": "django.core.checks.urls.check_resolver",
+              "score": 12.931839178163715
+            },
+            {
+              "id": "django.forms",
+              "score": 12.926569734877505
+            },
+            {
+              "id": "django.utils.html.smart_urlquote",
+              "score": 12.920331383243534
+            },
+            {
+              "id": "django.urls.converters.register_converter",
+              "score": 12.891993556674556
+            },
+            {
+              "id": "tests.forms_tests.tests.test_forms.FormsTestCase.test_changed_data.PedanticField.to_python",
+              "score": 12.884747333372088
+            },
+            {
+              "id": "django.template.defaulttags.URLNode",
+              "score": 12.862068770926864
+            },
+            {
+              "id": "tests.gis_tests.test_geoforms",
+              "score": 12.821705498844088
+            },
+            {
+              "id": "django.contrib.gis.gdal.field.OFTTime.value",
+              "score": 12.812137090612264
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.ExceptionReporterTests.test_too_large_values_handling",
+              "score": 12.805658835268849
+            },
+            {
+              "id": "django.template.defaultfilters.slice_filter",
+              "score": 12.78624178645617
+            },
+            {
+              "id": "django.http.response.Http404",
+              "score": 12.753168915568793
+            },
+            {
+              "id": "tests.utils_tests.test_baseconv",
+              "score": 12.741103331843474
+            },
+            {
+              "id": "django.forms.fields.DecimalField.to_python",
+              "score": 12.683605105451502
+            },
+            {
+              "id": "django.core.handlers.asgi.ASGIHandler.handle_uncaught_exception",
+              "score": 12.678172270303154
+            },
+            {
+              "id": "tests.auth_tests.test_views.PasswordResetTest.test_confirm_custom_reset_url_token_link_redirects_to_set_password_page",
+              "score": 12.569375974756994
+            },
+            {
+              "id": "django.core.handlers.exception.handle_uncaught_exception",
+              "score": 12.561738535334845
+            },
+            {
+              "id": "tests.postgres_tests.test_array.TestSaveLoad.test_null_from_db_value_handling",
+              "score": 12.50044593825805
+            },
+            {
+              "id": "django.contrib.admin.widgets.ForeignKeyRawIdWidget.label_and_url_for_value",
+              "score": 12.475314563395678
+            },
+            {
+              "id": "django.contrib.staticfiles.views",
+              "score": 12.474147110879361
+            },
+            {
+              "id": "django.urls.base",
+              "score": 12.467707749335936
+            },
+            {
+              "id": "tests.get_object_or_404.tests.GetObjectOr404Tests",
+              "score": 12.442240538156994
+            },
+            {
+              "id": "django.urls.resolvers.get_resolver",
+              "score": 12.440961838412532
+            },
+            {
+              "id": "tests.multiple_database.tests.AttributeErrorRouter",
+              "score": 12.437370471682112
+            },
+            {
+              "id": "django.shortcuts.get_list_or_404",
+              "score": 12.43080665087059
+            },
+            {
+              "id": "django.contrib.postgres.forms.array.SplitArrayField.to_python",
+              "score": 12.422255659936972
+            },
+            {
+              "id": "django.urls.base.reverse",
+              "score": 12.409983301330186
+            },
+            {
+              "id": "tests.validation.tests.BaseModelValidationTests.test_wrong_url_value_raises_error",
+              "score": 12.354097939318912
+            },
+            {
+              "id": "django.db.models.fields.DateTimeField.to_python",
+              "score": 12.329037099394004
+            },
+            {
+              "id": "django.template.defaultfilters.join",
+              "score": 12.321105955885464
+            },
+            {
+              "id": "django.forms.fields.TimeField",
+              "score": 12.296468342882957
+            },
+            {
+              "id": "tests.template_tests.syntax_tests.test_url.UrlTagTests.test_url_namespace01",
+              "score": 12.294106606036085
+            },
+            {
+              "id": "tests.template_tests.syntax_tests.test_url.UrlTagTests.test_url_namespace02",
+              "score": 12.294106606036085
+            },
+            {
+              "id": "tests.admin_filters.tests.ListFiltersTests.test_listfilter_genericrelation",
+              "score": 12.278787839556228
+            },
+            {
+              "id": "django.contrib.syndication.views",
+              "score": 12.274806474385553
+            },
+            {
+              "id": "django.contrib.auth.forms.UsernameField.to_python",
+              "score": 12.208720270618503
+            },
+            {
+              "id": "django.db.models.fields.related.ForeignKey.to_python",
+              "score": 12.208720270618503
+            },
+            {
+              "id": "django.forms.fields.Field.to_python",
+              "score": 12.208427679789253
+            },
+            {
+              "id": "django.urls.converters.StringConverter.to_python",
+              "score": 12.208427679789253
+            },
+            {
+              "id": "django.forms.fields.DateField",
+              "score": 12.18257077384595
+            },
+            {
+              "id": "tests.urlpatterns_reverse.tests.ErrorHandlerResolutionTests",
+              "score": 12.18157645168169
+            },
+            {
+              "id": "tests.get_object_or_404.tests",
+              "score": 12.174715523486663
+            },
+            {
+              "id": "django.forms.fields.FloatField",
+              "score": 12.164087729217039
+            },
+            {
+              "id": "django.urls.converters.IntConverter.to_python",
+              "score": 12.162212709620315
+            },
+            {
+              "id": "tests.utils_tests.test_baseconv.TestBaseConv",
+              "score": 12.142646867883313
+            },
+            {
+              "id": "tests.gis_tests.test_geoforms.GeometryFieldTest.test_null",
+              "score": 12.138635817019075
+            },
+            {
+              "id": "django.contrib.staticfiles.views.serve",
+              "score": 12.130263166163898
+            },
+            {
+              "id": "django.contrib.postgres.fields.hstore.HStoreField.to_python",
+              "score": 12.119968714238523
+            },
+            {
+              "id": "django.urls.converters.UUIDConverter.to_python",
+              "score": 12.116395839480916
+            },
+            {
+              "id": "django.urls.resolvers._get_cached_resolver",
+              "score": 12.114233353993825
+            },
+            {
+              "id": "django.contrib.contenttypes.views.shortcut",
+              "score": 12.112670997630744
+            },
+            {
+              "id": "django.core.files.storage.FileSystemStorage.url",
+              "score": 12.096928562441814
+            },
+            {
+              "id": "django.shortcuts.get_object_or_404",
+              "score": 12.096033400643556
+            },
+            {
+              "id": "django.views.generic.dates.YearMixin",
+              "score": 12.087679288241688
+            },
+            {
+              "id": "django.forms.fields.TimeField.to_python",
+              "score": 12.08394751665752
+            },
+            {
+              "id": "django.urls.exceptions.Resolver404",
+              "score": 12.08309823625602
+            },
+            {
+              "id": "django.db.models.fields.CharField.to_python",
+              "score": 12.08178115404646
+            },
+            {
+              "id": "django.db.models.fields.TextField.to_python",
+              "score": 12.08178115404646
+            },
+            {
+              "id": "django.db.backends.base.introspection.BaseDatabaseIntrospection.identifier_converter",
+              "score": 12.066701564182171
+            },
+            {
+              "id": "django.contrib.gis.gdal.field.OFTDateTime.value",
+              "score": 12.066146376329076
+            },
+            {
+              "id": "django.contrib.postgres.fields.array.ArrayField.to_python",
+              "score": 12.041063178365848
+            },
+            {
+              "id": "django.views.generic.dates.YearMixin._get_next_year",
+              "score": 12.040747126341019
+            },
+            {
+              "id": "django.forms.models.ModelMultipleChoiceField.to_python",
+              "score": 12.039049048081077
+            }
+          ],
+          "scored_documents": 18225,
+          "seconds": 0.032642100000884966
+        }
+      ],
+      "order": [
+        "django.views.debug.technical_404_response",
+        "tests.view_tests.views",
+        "django.urls.resolvers._route_to_regex",
+        "django.core.handlers.exception",
+        "django.urls.converters",
+        "django.urls.resolvers.RoutePattern.match",
+        "django.core.handlers.exception.response_for_exception",
+        "tests.urlpatterns.tests.ConversionExceptionTests",
+        "django.urls",
+        "tests.view_tests.tests.test_debug.DebugViewTests",
+        "tests.view_tests.tests.test_debug.DebugViewTests.test_classbased_technical_404",
+        "tests.view_tests.tests.test_debug.DebugViewTests.test_default_urlconf_template",
+        "django.urls.converters.StringConverter",
+        "tests.view_tests.tests.test_debug.DebugViewTests.test_technical_404",
+        "tests.view_tests.tests.test_debug.DebugViewTests.test_404_not_in_urls",
+        "django.views.debug.ExceptionReporter.get_traceback_text",
+        "django.contrib.flatpages.views.flatpage",
+        "django.urls.converters.IntConverter",
+        "tests.urlpatterns_reverse.tests.ResolverTests",
+        "tests.view_tests.tests.test_debug.DebugViewTests.test_regression_21530",
+        "tests.view_tests.tests.test_defaults.DefaultsTests.test_custom_templates",
+        "django.views.debug.technical_500_response",
+        "django.contrib.flatpages.views",
+        "django.core.handlers.exception.handle_uncaught_exception",
+        "tests.urlpatterns.converters.DynamicConverter",
+        "django.views.debug.default_urlconf",
+        "django.core.checks.urls",
+        "django.shortcuts.get_object_or_404",
+        "django.contrib.gis.views",
+        "django.views.defaults.page_not_found",
+        "tests.get_object_or_404.tests.GetObjectOr404Tests",
+        "tests.view_tests.tests.test_debug",
+        "tests.urlpatterns.converters.Base64Converter",
+        "tests.urlpatterns.converters",
+        "django.shortcuts",
+        "tests.urlpatterns.tests.ConverterTests.test_matching_urls",
+        "tests.staticfiles_tests.test_management.TestRunserver.test_404_response",
+        "django.urls.base.is_valid_path",
+        "tests.view_tests.tests.test_debug.NonDjangoTemplatesDebugViewTests",
+        "django.views.defaults",
+        "django.contrib.flatpages.middleware",
+        "django.urls.resolvers",
+        "django.utils.autoreload.BaseReloader",
+        "django.contrib.flatpages.middleware.FlatpageFallbackMiddleware.process_response",
+        "django.contrib.staticfiles.storage.HashedFilesMixin.url_converter",
+        "django.core.handlers.asgi.ASGIHandler.handle_uncaught_exception",
+        "tests.get_object_or_404.tests",
+        "django.contrib.staticfiles.views.serve",
+        "django.contrib.gis.views.feed",
+        "django.contrib.flatpages.middleware.FlatpageFallbackMiddleware",
+        "django.core.handlers.base.BaseHandler._get_response",
+        "django.middleware.locale.LocaleMiddleware.process_response",
+        "django.views.debug.ExceptionReporter.get_traceback_html",
+        "tests.view_tests.tests.test_debug.DebugViewTests.test_404_empty_path_not_in_urls",
+        "tests.staticfiles_tests.test_management.TestRunserver",
+        "tests.urlpatterns.tests.ConverterTests",
+        "django.db.backends.oracle.base.FormatStylePlaceholderCursor",
+        "django.middleware.locale",
+        "django.middleware.locale.LocaleMiddleware",
+        "tests.view_tests.tests.test_debug.DebugViewTests.test_template_encoding",
+        "django.urls.resolvers.RoutePattern",
+        "django.contrib.auth.admin.UserAdmin._add_view",
+        "django.core.checks.urls._load_all_namespaces",
+        "tests.view_tests.urls",
+        "django.forms.fields.URLField",
+        "tests.view_tests.tests.test_debug.DebugViewQueriesAllowedTests",
+        "django.urls.resolvers.URLResolver._reverse_with_prefix",
+        "django.contrib.redirects.middleware.RedirectFallbackMiddleware.process_response",
+        "tests.view_tests.tests.test_defaults",
+        "django.core.handlers.base.BaseHandler",
+        "tests.urlpatterns.path_dynamic_urls",
+        "django.urls.converters.PathConverter",
+        "django.contrib.staticfiles.views",
+        "django.contrib.syndication.views",
+        "tests.view_tests.tests.test_defaults.DefaultsTests",
+        "django.utils.http.urlquote",
+        "tests.view_tests.views.Http404View",
+        "tests.test_client.tests.ClientTest.test_url_parameters",
+        "django.test.testcases.FSFilesHandler",
+        "django.urls.base.reverse",
+        "tests.get_object_or_404.models",
+        "django.utils.http.urlunquote",
+        "tests.urlpatterns_reverse.tests.ResolverTests.test_404_tried_urls_have_names",
+        "django.urls.base",
+        "django.contrib.contenttypes.views",
+        "django.utils.http.urlquote_plus",
+        "tests.get_object_or_404.tests.GetObjectOr404Tests.test_get_object_or_404",
+        "django.utils.http.urlunquote_plus",
+        "tests.view_tests.views.technical404",
+        "tests.urlpatterns.tests.SimplifiedURLTests.test_invalid_converter",
+        "django.views.generic.dates",
+        "django.db.backends.oracle.base.FormatStylePlaceholderCursor._output_number_converter",
+        "django.middleware.common.BrokenLinkEmailsMiddleware",
+        "django.utils.http",
+        "tests.view_tests.views.Http404View.get",
+        "django.core.handlers.base",
+        "django.shortcuts.get_list_or_404",
+        "django.forms.fields.URLField.to_python",
+        "django.urls.resolvers.URLResolver.resolve",
+        "django.http.response.Http404",
+        "django.db.backends.sqlite3.operations.DatabaseOperations.get_decimalfield_converter.converter",
+        "django.contrib.gis.db.backends.postgis.operations.PostGISOperations.get_geometry_converter.converter",
+        "django.contrib.gis.db.backends.spatialite.operations.SpatiaLiteOperations.get_geometry_converter.converter",
+        "django.contrib.gis.db.backends.postgis.operations.PostGISOperations.get_geometry_converter",
+        "tests.staticfiles_tests.test_management",
+        "django.contrib.gis.db.backends.spatialite.operations.SpatiaLiteOperations.get_geometry_converter",
+        "django.contrib.redirects.middleware.RedirectFallbackMiddleware",
+        "tests.urlpatterns.path_base64_urls",
+        "django.views.generic.dates._get_next_prev",
+        "django.contrib.staticfiles.handlers",
+        "setup",
+        "django.views.static.serve",
+        "tests.urlpatterns.tests.ConversionExceptionTests.test_resolve_value_error_means_no_match",
+        "django.contrib.redirects.middleware",
+        "tests.context_processors.tests",
+        "django.contrib.gis.db.backends.mysql.operations.MySQLOperations.get_geometry_converter.converter",
+        "django.core.checks.urls.check_url_config",
+        "django.contrib.contenttypes.views.shortcut",
+        "tests.middleware.tests.CommonMiddlewareTest.test_append_slash_no_redirect_on_POST_in_DEBUG",
+        "django.conf.urls.i18n",
+        "django.contrib.gis.db.backends.oracle.operations.OracleOperations.get_geometry_converter.converter",
+        "tests.urlpatterns.tests.ConversionExceptionTests.test_reverse_value_error_propagates",
+        "django.middleware.common.BrokenLinkEmailsMiddleware.process_response",
+        "tests.forms_tests.tests.test_forms.FormsTestCase.test_validating_multiple_fields",
+        "django.contrib.gis.db.backends.mysql.operations.MySQLOperations.get_geometry_converter",
+        "tests.urlpatterns.tests.ConversionExceptionTests.test_resolve_type_error_propagates",
+        "tests.view_tests.views.raises_template_does_not_exist",
+        "django.contrib.gis.db.backends.oracle.operations.OracleOperations.get_geometry_converter",
+        "django.contrib.gis.db.backends.base.operations.BaseSpatialOperations.get_geometry_converter",
+        "django.urls.base.clear_url_caches",
+        "tests.view_tests.tests.test_debug.DebugViewTests.test_400",
+        "tests.urlpatterns.tests.SimplifiedURLTests.test_converter_reverse",
+        "tests.view_tests.tests.test_debug.NonDjangoTemplatesDebugViewTests.test_400",
+        "tests.messages_tests.urls",
+        "django.utils.translation.trans_real.gettext",
+        "django.utils.translation.ugettext",
+        "tests.view_tests.tests.test_debug.NonDjangoTemplatesDebugViewTests.test_404",
+        "tests.view_tests.tests.test_debug.PlainTextReportTests",
+        "django.db.backends.oracle.base.FormatStylePlaceholderCursor._output_type_handler",
+        "django.contrib.staticfiles.handlers.StaticFilesHandlerMixin",
+        "django.core.management.commands.runserver.Command",
+        "django.test.testcases.FSFilesHandler.get_response",
+        "tests.auth_tests.test_views.PasswordResetTest.test_confirm_custom_reset_url_token_link_redirects_to_set_password_page",
+        "django.urls.converters.get_converter",
+        "tests.urlpatterns.tests.SimplifiedURLTests.test_converter_reverse_with_second_layer_instance_namespace",
+        "tests.view_tests.tests.test_debug.DebugViewTests.test_404",
+        "django.views.generic.dates.YearMixin",
+        "tests.view_tests.tests.test_defaults.DefaultsTests.test_page_not_found",
+        "django.core.management.commands.runserver",
+        "django.contrib.staticfiles.storage.HashedFilesMixin.url_converter.converter",
+        "django.urls.converters.SlugConverter",
+        "django.template.defaulttags.URLNode.render",
+        "django.views.debug",
+        "tests.urlpatterns.tests.SimplifiedURLTests.test_converter_resolve",
+        "django.urls.converters.register_converter",
+        "django.core.checks.urls.check_url_namespaces_unique",
+        "django.middleware.common.CommonMiddleware",
+        "django.db.migrations.questioner.InteractiveMigrationQuestioner",
+        "django.utils.translation.ungettext",
+        "django.middleware.common.CommonMiddleware.process_response",
+        "django.urls.resolvers.get_ns_resolver",
+        "django.template.defaultfilters._property_resolver",
+        "django.middleware.common.CommonMiddleware.get_full_path_with_slash",
+        "django.contrib.auth.management.get_system_username",
+        "tests.annotations.tests.cxOracle_py3_bug",
+        "django.utils.translation.ugettext_lazy",
+        "django.test.client.Client.request",
+        "django.utils.translation.ugettext_noop",
+        "tests.view_tests.tests.test_debug.DebugViewQueriesAllowedTests.test_handle_db_exception",
+        "tests.urlpatterns_reverse.tests.ResolverTests.test_reverse_lazy_object_coercion_by_resolve",
+        "django.urls.resolvers.ResolverMatch",
+        "tests.auth_tests.test_views.LoginRedirectAuthenticatedUser",
+        "django.contrib.staticfiles.management.commands.runserver.Command",
+        "tests.handlers.tests.HandlerTests.test_bad_path_info",
+        "tests.view_tests.views.raises500",
+        "django.utils.translation.ungettext_lazy",
+        "django.contrib.sitemaps._get_sitemap_full_url",
+        "django.utils.http.escape_leading_slashes",
+        "django.urls.exceptions.Resolver404",
+        "tests.urlpatterns_reverse.tests.ResolverMatchTests.test_resolver_match_on_request",
+        "django.db.backends.base.introspection.BaseDatabaseIntrospection.identifier_converter",
+        "django.template.base.Template.get_exception_info",
+        "tests.backends.tests.ParameterHandlingTest",
+        "tests.logging_tests.tests.HandlerLoggingTests",
+        "django.core.files.storage.Storage.path",
+        "tests.handlers.tests.HandlerTests",
+        "django.contrib.auth.views.LogoutView",
+        "django.urls.resolvers.URLResolver.check",
+        "tests.redirects_tests.tests.RedirectTests",
+        "tests.utils_tests.test_baseconv.TestBaseConv.test_exception",
+        "tests.auth_tests.test_forms.PasswordResetFormTest.test_save_html_email_template_name",
+        "tests.check_framework.test_urls.CheckUrlConfigTests.test_check_resolver_recursive",
+        "tests.middleware.tests.CommonMiddlewareTest.test_append_slash_no_redirect_on_POST_in_DEBUG_custom_urlconf",
+        "django.contrib.admin.options.ModelAdmin.get_action",
+        "tests.urlpatterns.converter_urls",
+        "django.db.backends.sqlite3.operations.DatabaseOperations.get_decimalfield_converter",
+        "tests.redirects_tests.tests",
+        "django.forms.fields.UUIDField.to_python",
+        "django.contrib.staticfiles.management.commands.runserver",
+        "django.db.models.fields.Field.to_python"
+      ],
+      "retrieval_calls": 3,
+      "index_nodes": 34846,
+      "scored_documents": 62645,
+      "source_chars_read": 13424786,
+      "shared_index_seconds": 13.80080260000068
+    },
+    {
+      "instance_id": "django__django-11620",
+      "repo": "django/django",
+      "base_commit": "514efa3129792ec2abb2444f3e7aeb3f21a38386",
+      "arm": "feedback",
+      "status": "ok",
+      "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+      "request_sha256": "77fee3ffdc3ad36ede348f1a8fcf8528ad57694ea162418d2d466aff10a06eae",
+      "response_sha256": "206d50e9221471444d0f4b5ad846287151b00034e75afcaa2ee8e1daa4f0e7d0",
+      "raw_response_sha256": "206d50e9221471444d0f4b5ad846287151b00034e75afcaa2ee8e1daa4f0e7d0",
+      "actions": [
+        {
+          "query": "Django path converter to_python Http404 DEBUG technical response URL resolver",
+          "candidates": [
+            {
+              "id": "django.views.debug.technical_404_response",
+              "score": 38.37483863821482
+            },
+            {
+              "id": "tests.view_tests.views",
+              "score": 35.915248210041405
+            },
+            {
+              "id": "django.core.handlers.exception",
+              "score": 31.12862115133054
+            },
+            {
+              "id": "django.core.handlers.exception.response_for_exception",
+              "score": 30.27596240161482
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewTests.test_classbased_technical_404",
+              "score": 28.367513095188123
+            },
+            {
+              "id": "django.urls",
+              "score": 27.31419454184639
+            },
+            {
+              "id": "django.core.handlers.exception.handle_uncaught_exception",
+              "score": 27.300432506819064
+            },
+            {
+              "id": "django.urls.converters",
+              "score": 25.339653398280422
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug",
+              "score": 24.129744193131963
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.NonDjangoTemplatesDebugViewTests",
+              "score": 23.79816524969665
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewTests",
+              "score": 22.217942183225496
+            },
+            {
+              "id": "tests.context_processors.tests",
+              "score": 22.1393852641852
+            },
+            {
+              "id": "django.contrib.flatpages.middleware",
+              "score": 21.850217144501926
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewTests.test_technical_404",
+              "score": 21.709651265952722
+            },
+            {
+              "id": "tests.auth_tests.test_views.PasswordResetTest.test_confirm_custom_reset_url_token_link_redirects_to_set_password_page",
+              "score": 21.607938677265466
+            },
+            {
+              "id": "django.urls.converters.StringConverter",
+              "score": 21.345928928275193
+            },
+            {
+              "id": "tests.urlpatterns.converters.DynamicConverter",
+              "score": 21.294375343429554
+            },
+            {
+              "id": "django.contrib.staticfiles.views.serve",
+              "score": 21.275407870830584
+            },
+            {
+              "id": "django.urls.resolvers._route_to_regex",
+              "score": 21.233323145047034
+            },
+            {
+              "id": "django.urls.resolvers",
+              "score": 21.224704091826922
+            },
+            {
+              "id": "django.urls.converters.IntConverter",
+              "score": 21.128095136894103
+            },
+            {
+              "id": "django.contrib.staticfiles.views",
+              "score": 21.10499591430803
+            },
+            {
+              "id": "django.test.testcases.FSFilesHandler",
+              "score": 21.065757175996
+            },
+            {
+              "id": "django.views.debug.technical_500_response",
+              "score": 21.011090181154373
+            },
+            {
+              "id": "tests.urlpatterns_reverse.tests.ResolverMatchTests",
+              "score": 20.9629674663164
+            },
+            {
+              "id": "django.core.handlers.base.BaseHandler",
+              "score": 20.72965116430329
+            },
+            {
+              "id": "django.contrib.flatpages.middleware.FlatpageFallbackMiddleware.process_response",
+              "score": 20.721118084977974
+            },
+            {
+              "id": "tests.view_tests.views.Http404View",
+              "score": 20.633059553774604
+            },
+            {
+              "id": "tests.view_tests.views.raises_template_does_not_exist",
+              "score": 20.385513652613795
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewTests.test_400",
+              "score": 20.344667170994953
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.NonDjangoTemplatesDebugViewTests.test_400",
+              "score": 20.344667170994953
+            },
+            {
+              "id": "tests.urlpatterns_reverse.tests.ResolverTests",
+              "score": 20.147849790970902
+            },
+            {
+              "id": "django.contrib.staticfiles.storage.HashedFilesMixin.url_converter",
+              "score": 20.142260227226096
+            },
+            {
+              "id": "django.contrib.staticfiles.handlers",
+              "score": 20.085698168059388
+            },
+            {
+              "id": "django.core.handlers.base",
+              "score": 20.05655488146987
+            },
+            {
+              "id": "django.contrib.flatpages.middleware.FlatpageFallbackMiddleware",
+              "score": 19.88313017215652
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewTests.test_regression_21530",
+              "score": 19.71182202632337
+            },
+            {
+              "id": "django.test.testcases.FSFilesHandler.get_response",
+              "score": 19.66738582361383
+            },
+            {
+              "id": "tests.urlpatterns.converters",
+              "score": 19.591219187988084
+            },
+            {
+              "id": "tests.urlpatterns_reverse.tests.ResolverMatchTests.test_resolver_match_on_request",
+              "score": 19.582820706763872
+            },
+            {
+              "id": "django.views.debug.ExceptionReporter.get_traceback_html",
+              "score": 19.42962558890899
+            },
+            {
+              "id": "tests.test_client.tests.ClientTest.test_response_resolver_match_redirect_follow",
+              "score": 19.32425743621057
+            },
+            {
+              "id": "tests.test_client.tests.ClientTest.test_response_resolver_match_regular_view",
+              "score": 19.32425743621057
+            },
+            {
+              "id": "tests.urlpatterns.converters.Base64Converter",
+              "score": 19.29344188951478
+            },
+            {
+              "id": "tests.urlpatterns.tests.ConversionExceptionTests",
+              "score": 19.22686665141049
+            },
+            {
+              "id": "django.views.debug.ExceptionReporter.get_traceback_text",
+              "score": 19.093819529805863
+            },
+            {
+              "id": "django.urls.resolvers.ResolverMatch",
+              "score": 19.028497915078958
+            },
+            {
+              "id": "tests.auth_tests.test_views.PasswordResetTest.test_confirm_link_redirects_to_set_password_page",
+              "score": 19.024043898039587
+            },
+            {
+              "id": "django.urls.base.is_valid_path",
+              "score": 18.99587100319113
+            },
+            {
+              "id": "tests.context_processors.tests.DebugContextProcessorTests",
+              "score": 18.961635773039596
+            },
+            {
+              "id": "django.urls.resolvers.RoutePattern.match",
+              "score": 18.946378714032804
+            },
+            {
+              "id": "django.core.handlers.base.BaseHandler.get_response",
+              "score": 18.852789630510095
+            },
+            {
+              "id": "django.utils.autoreload.BaseReloader",
+              "score": 18.798428413055372
+            },
+            {
+              "id": "tests.view_tests.views.technical404",
+              "score": 18.695798099888954
+            },
+            {
+              "id": "django.contrib.gis.views",
+              "score": 18.67770758309664
+            },
+            {
+              "id": "django.contrib.staticfiles.handlers.StaticFilesHandlerMixin",
+              "score": 18.648140034852737
+            },
+            {
+              "id": "tests.urlpatterns.tests.ConverterTests",
+              "score": 18.569621638993574
+            },
+            {
+              "id": "tests.context_processors.tests.DebugContextProcessorTests.test_debug",
+              "score": 18.54152109019949
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.NonDjangoTemplatesDebugViewTests.test_template_not_found_error",
+              "score": 18.465567071054608
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewTests.test_template_encoding",
+              "score": 18.38233625090936
+            },
+            {
+              "id": "django.urls.converters.PathConverter",
+              "score": 18.365112470414466
+            },
+            {
+              "id": "django.contrib.staticfiles.storage.HashedFilesMixin.url_converter.converter",
+              "score": 18.286918772805677
+            },
+            {
+              "id": "django.core.handlers.asgi.ASGIHandler.handle_uncaught_exception",
+              "score": 18.22081743180038
+            },
+            {
+              "id": "django.utils.autoreload.BaseReloader.run",
+              "score": 18.211414802695863
+            },
+            {
+              "id": "tests.urlpatterns.tests.ConverterTests.test_matching_urls",
+              "score": 18.17500138670376
+            },
+            {
+              "id": "tests.view_tests.views.Http404View.get",
+              "score": 18.14526194282274
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewQueriesAllowedTests.test_handle_db_exception",
+              "score": 18.12289067095621
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewTests.test_default_urlconf_template",
+              "score": 18.060287971142706
+            },
+            {
+              "id": "tests.urlpatterns.tests.SimplifiedURLTests.test_invalid_converter",
+              "score": 18.040400530900627
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewQueriesAllowedTests",
+              "score": 18.006966812623425
+            },
+            {
+              "id": "django.views.static.serve",
+              "score": 18.000398259328215
+            },
+            {
+              "id": "django.core.checks.urls.check_url_config",
+              "score": 17.96842831938374
+            },
+            {
+              "id": "tests.view_tests.tests.test_defaults.DefaultsTests.test_custom_templates",
+              "score": 17.871332080600354
+            },
+            {
+              "id": "tests.view_tests.views.raises500",
+              "score": 17.48300022152884
+            },
+            {
+              "id": "django.core.checks.urls",
+              "score": 17.32433403745502
+            },
+            {
+              "id": "django.contrib.gis.views.feed",
+              "score": 17.209130733649896
+            },
+            {
+              "id": "django.views.static",
+              "score": 17.05639656088536
+            },
+            {
+              "id": "django.contrib.flatpages.views.flatpage",
+              "score": 16.94624561230607
+            },
+            {
+              "id": "tests.urlpatterns.path_dynamic_urls",
+              "score": 16.94430627606263
+            },
+            {
+              "id": "django.middleware.common.CommonMiddleware",
+              "score": 16.936065640036688
+            },
+            {
+              "id": "django.urls.resolvers.ResolverMatch.__repr__",
+              "score": 16.893723373954245
+            },
+            {
+              "id": "django.core.handlers.base.BaseHandler._get_response",
+              "score": 16.887495960006017
+            },
+            {
+              "id": "django.middleware.common.CommonMiddleware.get_full_path_with_slash",
+              "score": 16.858215099771783
+            },
+            {
+              "id": "django.http.response.Http404",
+              "score": 16.84397065378899
+            },
+            {
+              "id": "django.conf.urls.static.static",
+              "score": 16.831603107557704
+            },
+            {
+              "id": "django.contrib.auth.admin.UserAdmin._add_view",
+              "score": 16.695632145687846
+            },
+            {
+              "id": "tests.staticfiles_tests.test_management.TestRunserver.test_404_response",
+              "score": 16.683514168318872
+            },
+            {
+              "id": "django.contrib.flatpages.views",
+              "score": 16.632445148830815
+            },
+            {
+              "id": "django.urls.base.clear_url_caches",
+              "score": 16.530286352443863
+            },
+            {
+              "id": "django.middleware.common",
+              "score": 16.52429767305052
+            },
+            {
+              "id": "tests.test_client.tests.ClientTest.test_response_resolver_match",
+              "score": 16.498137378658527
+            },
+            {
+              "id": "django.middleware.common.BrokenLinkEmailsMiddleware.process_response",
+              "score": 16.492529463186553
+            },
+            {
+              "id": "tests.urlpatterns.tests.SimplifiedURLTests.test_converter_reverse",
+              "score": 16.42271654691388
+            },
+            {
+              "id": "django.conf.urls.i18n",
+              "score": 16.395474406071553
+            },
+            {
+              "id": "django.urls.resolvers.RoutePattern",
+              "score": 16.33402556230626
+            },
+            {
+              "id": "tests.urlpatterns_reverse.views",
+              "score": 16.324579531396967
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.WithoutEmptyPathUrls",
+              "score": 16.26159906929989
+            },
+            {
+              "id": "tests.urlpatterns.converter_urls",
+              "score": 16.213398954684585
+            },
+            {
+              "id": "django.core.handlers.exception.get_exception_response",
+              "score": 16.18258525204552
+            },
+            {
+              "id": "django.forms.fields.URLField.to_python",
+              "score": 16.17818925626394
+            },
+            {
+              "id": "tests.urlpatterns.tests.SimplifiedURLTests.test_converter_resolve",
+              "score": 16.177326022035896
+            },
+            {
+              "id": "django.core.checks.urls.check_url_namespaces_unique",
+              "score": 16.147782073823546
+            },
+            {
+              "id": "tests.urlpatterns_reverse.views.pass_resolver_match_view",
+              "score": 16.13297611564917
+            },
+            {
+              "id": "django.core.checks.urls._load_all_namespaces",
+              "score": 16.086689083207094
+            },
+            {
+              "id": "django.urls.base",
+              "score": 16.07814953345919
+            },
+            {
+              "id": "django.test.testcases.SimpleTestCase.assertRedirects",
+              "score": 16.042909721108263
+            },
+            {
+              "id": "django.urls.resolvers.get_ns_resolver",
+              "score": 15.979783426934365
+            },
+            {
+              "id": "django.conf.urls.static",
+              "score": 15.979656774327076
+            },
+            {
+              "id": "tests.urlpatterns.test_resolvers.ResolverCacheTests",
+              "score": 15.928238174884388
+            },
+            {
+              "id": "tests.urlpatterns.test_resolvers",
+              "score": 15.908744889214724
+            },
+            {
+              "id": "django.urls.base.reverse",
+              "score": 15.883754201640237
+            },
+            {
+              "id": "django.test.client.Client._handle_redirects",
+              "score": 15.829406768527225
+            },
+            {
+              "id": "django.middleware.locale.LocaleMiddleware.process_response",
+              "score": 15.733721878284554
+            },
+            {
+              "id": "tests.context_processors.tests.RequestContextProcessorTests",
+              "score": 15.70925019528935
+            },
+            {
+              "id": "tests.urlpatterns_reverse.urlconf_inner",
+              "score": 15.677327332730842
+            },
+            {
+              "id": "django.contrib.syndication.views",
+              "score": 15.672025580097378
+            },
+            {
+              "id": "tests.middleware.tests.CommonMiddlewareTest.test_append_slash_no_redirect_on_POST_in_DEBUG_custom_urlconf",
+              "score": 15.610445779270364
+            },
+            {
+              "id": "tests.urlpatterns.test_resolvers.ResolverCacheTests.test_resolver_cache_default__root_urlconf",
+              "score": 15.538599808768573
+            },
+            {
+              "id": "tests.urlpatterns.path_base64_urls",
+              "score": 15.392677858173958
+            },
+            {
+              "id": "tests.messages_tests.urls",
+              "score": 15.318851133815953
+            },
+            {
+              "id": "tests.staticfiles_tests.test_management.TestRunserver",
+              "score": 15.3173968658777
+            },
+            {
+              "id": "django.views.debug.default_urlconf",
+              "score": 15.253298491468023
+            },
+            {
+              "id": "tests.check_framework.test_urls.CheckUrlConfigTests.test_check_resolver_recursive",
+              "score": 15.193847080946757
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewTests.test_404_not_in_urls",
+              "score": 15.153201064738925
+            },
+            {
+              "id": "django.middleware.locale",
+              "score": 15.045984478944575
+            },
+            {
+              "id": "django.urls.resolvers.ResolverMatch.__init__",
+              "score": 15.045859807911064
+            },
+            {
+              "id": "tests.view_tests.urls",
+              "score": 15.031300689846011
+            },
+            {
+              "id": "django.core.handlers.base.BaseHandler.load_middleware",
+              "score": 14.96136828347929
+            },
+            {
+              "id": "tests.view_tests.views.raises",
+              "score": 14.94543863326718
+            },
+            {
+              "id": "tests.urlpatterns_reverse.tests.ResolverMatchTests.test_urlpattern_resolve",
+              "score": 14.913329588270571
+            },
+            {
+              "id": "tests.middleware.tests.CommonMiddlewareTest.test_append_slash_no_redirect_on_POST_in_DEBUG",
+              "score": 14.889453618805852
+            },
+            {
+              "id": "tests.context_processors.tests.RequestContextProcessorTests.test_request_attributes",
+              "score": 14.88632829965082
+            },
+            {
+              "id": "tests.httpwrappers.tests.HttpResponseSubclassesTests.test_invalid_redirect_repr",
+              "score": 14.846573392654577
+            },
+            {
+              "id": "setup",
+              "score": 14.772997907309051
+            },
+            {
+              "id": "tests.auth_tests.test_views.PasswordResetTest.test_confirm_custom_reset_url_token",
+              "score": 14.697780266585205
+            },
+            {
+              "id": "django.contrib.admin.options.ModelAdmin.response_change",
+              "score": 14.674305471234769
+            },
+            {
+              "id": "django.urls.base.resolve",
+              "score": 14.62114210121776
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewTests.test_404_empty_path_not_in_urls",
+              "score": 14.517492552157751
+            },
+            {
+              "id": "tests.test_client.tests.ClientTest.test_url_parameters",
+              "score": 14.500392761398292
+            },
+            {
+              "id": "django.views.generic.base.RedirectView.get",
+              "score": 14.441892510227833
+            },
+            {
+              "id": "django.contrib.staticfiles.storage.HashedFilesMixin._url",
+              "score": 14.40000863349815
+            },
+            {
+              "id": "django.contrib.staticfiles.handlers.StaticFilesHandlerMixin.get_response",
+              "score": 14.394630426722925
+            },
+            {
+              "id": "tests.urlpatterns_reverse.tests.ResolverTests.test_resolver_reverse_conflict",
+              "score": 14.390527599111227
+            },
+            {
+              "id": "tests.urlpatterns.tests",
+              "score": 14.385900747722468
+            },
+            {
+              "id": "tests.test_client_regress.urls",
+              "score": 14.271174838904798
+            },
+            {
+              "id": "django.shortcuts",
+              "score": 14.202140508932585
+            },
+            {
+              "id": "django.forms.fields.URLField",
+              "score": 14.145689122257535
+            },
+            {
+              "id": "tests.urlpatterns.tests.SimplifiedURLTests.test_converter_reverse_with_second_layer_instance_namespace",
+              "score": 14.13854369852082
+            },
+            {
+              "id": "django.middleware.locale.LocaleMiddleware",
+              "score": 14.099057278929658
+            },
+            {
+              "id": "tests.test_client.tests.RequestFactoryTest.test_trace_request_from_factory",
+              "score": 14.098742744491968
+            },
+            {
+              "id": "django.contrib.staticfiles.storage.HashedFilesMixin.url",
+              "score": 14.092630465336555
+            },
+            {
+              "id": "django.middleware.common.BrokenLinkEmailsMiddleware",
+              "score": 13.973033960880175
+            },
+            {
+              "id": "tests.context_processors.urls",
+              "score": 13.876188839155553
+            },
+            {
+              "id": "django.contrib.sitemaps.views",
+              "score": 13.836071983785768
+            },
+            {
+              "id": "tests.handlers.tests.HandlerTests.test_bad_path_info",
+              "score": 13.770531224922049
+            },
+            {
+              "id": "django.views.static.directory_index",
+              "score": 13.712468727421921
+            },
+            {
+              "id": "tests.staticfiles_tests.test_utils",
+              "score": 13.707796505399525
+            },
+            {
+              "id": "tests.urlpatterns.tests.SimplifiedURLTests",
+              "score": 13.659734463013514
+            },
+            {
+              "id": "django.middleware.common.CommonMiddleware.process_response",
+              "score": 13.640271931730185
+            },
+            {
+              "id": "django.http",
+              "score": 13.59658276663568
+            },
+            {
+              "id": "tests.cache.tests.CacheUtils.test_cache_key_varies_by_url",
+              "score": 13.526063201381422
+            },
+            {
+              "id": "tests.check_framework.test_urls",
+              "score": 13.509593700599517
+            },
+            {
+              "id": "django.contrib.contenttypes.views",
+              "score": 13.50860814918933
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewTests.test_template_loader_postmortem",
+              "score": 13.475717592234352
+            },
+            {
+              "id": "django.contrib.staticfiles.utils",
+              "score": 13.407976633561418
+            },
+            {
+              "id": "tests.urlpatterns_reverse.tests.ResolverTests.test_reverse_lazy_object_coercion_by_resolve",
+              "score": 13.39085102619168
+            },
+            {
+              "id": "tests.auth_tests.test_views.PasswordResetTest.test_invalid_link_if_going_directly_to_the_final_reset_password_url",
+              "score": 13.390609666584623
+            },
+            {
+              "id": "tests.auth_tests.test_views.PasswordResetTest.test_confirm_login_post_reset_custom_backend",
+              "score": 13.376085334825058
+            },
+            {
+              "id": "django.core.management.templates.TemplateCommand.download",
+              "score": 13.33577945363634
+            },
+            {
+              "id": "tests.staticfiles_tests.test_views",
+              "score": 13.331887949847845
+            },
+            {
+              "id": "tests.messages_tests.base.BaseTests.test_full_request_response_cycle",
+              "score": 13.3234744035413
+            },
+            {
+              "id": "tests.admin_custom_urls.tests.AdminCustomUrlsTest.test_admin_URLs_no_clash",
+              "score": 13.320157514075877
+            },
+            {
+              "id": "tests.urlpatterns_reverse.tests.ResolverTests.test_view_detail_as_method",
+              "score": 13.279098351242983
+            },
+            {
+              "id": "tests.messages_tests.base.BaseTests.test_middleware_disabled_fail_silently",
+              "score": 13.2463463210577
+            },
+            {
+              "id": "django.utils.autoreload.BaseReloader.watch_dir",
+              "score": 13.221167390453173
+            },
+            {
+              "id": "django.urls.resolvers.URLPattern.resolve",
+              "score": 13.220738526529068
+            },
+            {
+              "id": "django.utils.http.urlquote",
+              "score": 13.147538229947031
+            },
+            {
+              "id": "django.utils.http.urlunquote",
+              "score": 13.147538229947031
+            },
+            {
+              "id": "django.urls.converters.get_converter",
+              "score": 13.071804628459178
+            },
+            {
+              "id": "tests.auth_tests.test_views.PasswordResetTest.test_confirm_redirect_custom",
+              "score": 13.060888785565423
+            },
+            {
+              "id": "tests.messages_tests.base.BaseTests.test_multiple_posts",
+              "score": 13.03812742515926
+            },
+            {
+              "id": "tests.auth_tests.test_views.LoginTest.test_security_check_https",
+              "score": 13.009036669316025
+            },
+            {
+              "id": "django.urls.converters.SlugConverter",
+              "score": 12.985969510960112
+            },
+            {
+              "id": "tests.auth_tests.test_views.PasswordResetTest.test_confirm_invalid",
+              "score": 12.970281615619797
+            },
+            {
+              "id": "tests.i18n.patterns.tests.PathUnusedTests",
+              "score": 12.967198551823406
+            },
+            {
+              "id": "tests.context_processors.tests.DebugContextProcessorTests.test_sql_queries",
+              "score": 12.949344890844786
+            },
+            {
+              "id": "django.utils.html.smart_urlquote",
+              "score": 12.944120682616877
+            },
+            {
+              "id": "django.core.checks.urls.check_resolver",
+              "score": 12.931839178163715
+            },
+            {
+              "id": "django.urls.converters.register_converter",
+              "score": 12.891993556674556
+            },
+            {
+              "id": "django.urls.resolvers.URLResolver.check",
+              "score": 12.886543847075213
+            },
+            {
+              "id": "django.utils.http.urlquote_plus",
+              "score": 12.870076226315472
+            },
+            {
+              "id": "django.utils.http.urlunquote_plus",
+              "score": 12.870076226315472
+            },
+            {
+              "id": "tests.auth_tests.test_views.PasswordResetTest.test_confirm_redirect_custom_named",
+              "score": 12.83855143816302
+            },
+            {
+              "id": "tests.middleware.tests.BrokenLinkEmailsMiddlewareTest.test_404_error_reporting_ignored_url",
+              "score": 12.82518344048724
+            },
+            {
+              "id": "tests.view_tests.generic_urls",
+              "score": 12.801667687874307
+            },
+            {
+              "id": "tests.view_tests.tests.test_defaults",
+              "score": 12.762110609797531
+            },
+            {
+              "id": "tests.logging_tests.views",
+              "score": 12.72849456482125
+            },
+            {
+              "id": "django.test.testcases.FSFilesHandler.file_path",
+              "score": 12.718962370588327
+            },
+            {
+              "id": "tests.contenttypes_tests.test_views.ShortcutViewTests",
+              "score": 12.65318052955098
+            },
+            {
+              "id": "tests.middleware.tests.CommonMiddlewareTest",
+              "score": 12.649887224918967
+            }
+          ],
+          "scored_documents": 16340,
+          "seconds": 0.026529099999606842
+        },
+        {
+          "query": "django.urls.resolvers _route_to_regex converter to_python ValueError Http404 handling",
+          "candidates": [
+            {
+              "id": "django.urls.resolvers._route_to_regex",
+              "score": 43.778309571884726
+            },
+            {
+              "id": "django.urls.resolvers.RoutePattern.match",
+              "score": 43.11710357132386
+            },
+            {
+              "id": "django.urls.resolvers.RoutePattern",
+              "score": 43.06339031804549
+            },
+            {
+              "id": "django.urls.resolvers.RoutePattern._compile",
+              "score": 34.94177818561593
+            },
+            {
+              "id": "django.urls.resolvers.RoutePattern.__init__",
+              "score": 34.1697959228054
+            },
+            {
+              "id": "django.urls.converters.StringConverter",
+              "score": 32.78344712212243
+            },
+            {
+              "id": "django.urls.resolvers.RegexPattern._check_include_trailing_dollar",
+              "score": 32.75276827965633
+            },
+            {
+              "id": "django.urls.converters.IntConverter",
+              "score": 32.438745768715314
+            },
+            {
+              "id": "django.urls.converters",
+              "score": 31.62325589111947
+            },
+            {
+              "id": "tests.urlpatterns.test_resolvers",
+              "score": 31.522190363018
+            },
+            {
+              "id": "django.urls.resolvers.RoutePattern.check",
+              "score": 27.427834318359366
+            },
+            {
+              "id": "tests.urlpatterns.converters.DynamicConverter",
+              "score": 27.06098463191049
+            },
+            {
+              "id": "django.urls.resolvers.CheckURLMixin._check_pattern_startswith_slash",
+              "score": 26.25283356186474
+            },
+            {
+              "id": "django.urls.resolvers.RoutePattern.__str__",
+              "score": 26.16068417886338
+            },
+            {
+              "id": "django.urls.resolvers.RegexPattern",
+              "score": 26.060122798594488
+            },
+            {
+              "id": "django.urls.resolvers.URLResolver._join_route",
+              "score": 26.056216787623768
+            },
+            {
+              "id": "django.urls.resolvers",
+              "score": 25.697339295646728
+            },
+            {
+              "id": "tests.urlpatterns.converters",
+              "score": 25.64984398852265
+            },
+            {
+              "id": "django.urls.converters.PathConverter",
+              "score": 25.64614665579405
+            },
+            {
+              "id": "django.urls.converters.SlugConverter",
+              "score": 25.51632773283826
+            },
+            {
+              "id": "tests.urlpatterns.converters.Base64Converter",
+              "score": 25.12600734711248
+            },
+            {
+              "id": "tests.urlpatterns.tests",
+              "score": 25.017328731232276
+            },
+            {
+              "id": "django.urls.resolvers.CheckURLMixin",
+              "score": 25.007493992555336
+            },
+            {
+              "id": "django.urls.resolvers.RegexPattern._compile",
+              "score": 24.846710030643383
+            },
+            {
+              "id": "django.urls.resolvers.LocalePrefixPattern.regex",
+              "score": 24.18846477236185
+            },
+            {
+              "id": "django.urls.resolvers.ResolverMatch.__repr__",
+              "score": 24.148046509269015
+            },
+            {
+              "id": "django.urls.resolvers.RegexPattern.__init__",
+              "score": 23.532036725397937
+            },
+            {
+              "id": "django.urls.resolvers.RegexPattern.__str__",
+              "score": 23.485542768647573
+            },
+            {
+              "id": "tests.urlpatterns.tests.SimplifiedURLTests",
+              "score": 23.3882859945337
+            },
+            {
+              "id": "tests.urlpatterns_reverse.test_localeregexdescriptor",
+              "score": 23.272408452465967
+            },
+            {
+              "id": "tests.urlpatterns_reverse.test_localeregexdescriptor.LocaleRegexDescriptorTests.test_nontranslated_regex_compiled_once",
+              "score": 22.407998694665107
+            },
+            {
+              "id": "tests.urlpatterns.tests.ConversionExceptionTests",
+              "score": 22.33744248718494
+            },
+            {
+              "id": "django.urls.resolvers._get_cached_resolver",
+              "score": 22.12245222425089
+            },
+            {
+              "id": "django.urls.converters.UUIDConverter",
+              "score": 22.011405940677808
+            },
+            {
+              "id": "tests.urlpatterns_reverse.test_localeregexdescriptor.LocaleRegexDescriptorTests",
+              "score": 21.618772266115528
+            },
+            {
+              "id": "tests.urlpatterns_reverse.test_localeregexdescriptor.LocaleRegexDescriptorTests.test_translated_regex_compiled_per_language",
+              "score": 21.276783647172927
+            },
+            {
+              "id": "tests.urlpatterns.path_dynamic_urls",
+              "score": 21.182584067236313
+            },
+            {
+              "id": "django.urls.resolvers.URLPattern.resolve",
+              "score": 20.859048443855468
+            },
+            {
+              "id": "django.urls.resolvers.ResolverMatch.__init__",
+              "score": 20.379531667989585
+            },
+            {
+              "id": "tests.urlpatterns.test_resolvers.RoutePatternTests",
+              "score": 20.11120827254182
+            },
+            {
+              "id": "django.urls.conf",
+              "score": 20.103298234983388
+            },
+            {
+              "id": "tests.urlpatterns.path_base64_urls",
+              "score": 19.27043019757491
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewTests.test_404_not_in_urls",
+              "score": 19.259259349818276
+            },
+            {
+              "id": "django.urls.resolvers.get_ns_resolver",
+              "score": 19.238288774911894
+            },
+            {
+              "id": "django.urls.resolvers.ResolverMatch",
+              "score": 18.905391804954824
+            },
+            {
+              "id": "django.urls.resolvers.LocaleRegexDescriptor",
+              "score": 18.817926609438906
+            },
+            {
+              "id": "tests.urlpatterns.tests.SimplifiedURLTests.test_invalid_converter",
+              "score": 18.772934076879608
+            },
+            {
+              "id": "django.urls.converters.get_converter",
+              "score": 18.66546654254858
+            },
+            {
+              "id": "django.urls.resolvers.LocaleRegexDescriptor.__get__",
+              "score": 18.551762772511868
+            },
+            {
+              "id": "tests.urlpatterns.tests.ConversionExceptionTests.test_resolve_value_error_means_no_match",
+              "score": 18.429652566718985
+            },
+            {
+              "id": "django.urls.resolvers.URLResolver.resolve_error_handler",
+              "score": 18.41614023566251
+            },
+            {
+              "id": "django.urls.converters.register_converter",
+              "score": 18.2490319794244
+            },
+            {
+              "id": "tests.urlpatterns.converter_urls",
+              "score": 18.187336262142786
+            },
+            {
+              "id": "django.urls.exceptions.Resolver404",
+              "score": 18.073670738453067
+            },
+            {
+              "id": "django.urls.converters.StringConverter.to_python",
+              "score": 18.060582670946605
+            },
+            {
+              "id": "django.forms.fields.URLField.to_python",
+              "score": 18.056396133887688
+            },
+            {
+              "id": "django.urls.converters.IntConverter.to_python",
+              "score": 17.969639114971656
+            },
+            {
+              "id": "tests.urlpatterns.tests.ConverterTests.test_matching_urls",
+              "score": 17.90494002815382
+            },
+            {
+              "id": "django.urls.converters.UUIDConverter.to_python",
+              "score": 17.87977220265428
+            },
+            {
+              "id": "django.urls.resolvers.RegexPattern.match",
+              "score": 17.849134225804182
+            },
+            {
+              "id": "tests.urlpatterns_reverse.erroneous_urls",
+              "score": 17.737625728706092
+            },
+            {
+              "id": "tests.urlpatterns.test_resolvers.RoutePatternTests.test_str",
+              "score": 17.732500371705594
+            },
+            {
+              "id": "django.urls.conf._path",
+              "score": 17.68510550160259
+            },
+            {
+              "id": "django.urls.exceptions",
+              "score": 17.64279430046548
+            },
+            {
+              "id": "django.urls",
+              "score": 17.54105933668286
+            },
+            {
+              "id": "tests.check_framework.test_urls",
+              "score": 17.346535858476976
+            },
+            {
+              "id": "django.conf.urls",
+              "score": 17.30685186856733
+            },
+            {
+              "id": "tests.urlpatterns.tests.ConversionExceptionTests.test_resolve_type_error_propagates",
+              "score": 17.01369733285859
+            },
+            {
+              "id": "django.urls.resolvers.LocalePrefixPattern.check",
+              "score": 16.908500411045353
+            },
+            {
+              "id": "django.urls.resolvers.URLResolver.check",
+              "score": 16.86483340870127
+            },
+            {
+              "id": "django.utils.http.urlquote",
+              "score": 16.761148585287803
+            },
+            {
+              "id": "django.utils.http.urlunquote",
+              "score": 16.761148585287803
+            },
+            {
+              "id": "tests.urlpatterns.test_resolvers.RegexPatternTests",
+              "score": 16.754087170306377
+            },
+            {
+              "id": "django.urls.resolvers.LocalePrefixPattern.describe",
+              "score": 16.64602150440504
+            },
+            {
+              "id": "django.urls.resolvers.LocalePrefixPattern.__str__",
+              "score": 16.517814455495667
+            },
+            {
+              "id": "tests.urlpatterns.tests.SimplifiedURLTests.test_path_lookup_with_double_inclusion",
+              "score": 16.50764079120447
+            },
+            {
+              "id": "django.urls.resolvers.LocaleRegexDescriptor.__init__",
+              "score": 16.391567204300724
+            },
+            {
+              "id": "django.utils.translation.ugettext",
+              "score": 16.36287426870312
+            },
+            {
+              "id": "tests.urlpatterns_reverse.tests.ErrorHandlerResolutionTests.setUp",
+              "score": 16.35530137164352
+            },
+            {
+              "id": "django.db.backends.oracle.base.FormatStylePlaceholderCursor",
+              "score": 16.35150246909403
+            },
+            {
+              "id": "django.utils.http.urlquote_plus",
+              "score": 16.337653341046938
+            },
+            {
+              "id": "django.utils.http.urlunquote_plus",
+              "score": 16.337653341046938
+            },
+            {
+              "id": "tests.urlpatterns.tests.SimplifiedURLTests.test_re_path",
+              "score": 16.27275046773494
+            },
+            {
+              "id": "django.urls.resolvers.URLPattern.__repr__",
+              "score": 16.14477505425544
+            },
+            {
+              "id": "tests.check_framework.test_urls.CheckUrlConfigTests.test_include_with_dollar",
+              "score": 16.10945920482477
+            },
+            {
+              "id": "django.urls.resolvers.URLResolver.resolve",
+              "score": 16.058442495029777
+            },
+            {
+              "id": "django.utils.translation.ungettext",
+              "score": 16.0071059736822
+            },
+            {
+              "id": "tests.annotations.tests.cxOracle_py3_bug",
+              "score": 15.902800258381916
+            },
+            {
+              "id": "django.utils.translation.ugettext_lazy",
+              "score": 15.892026849164068
+            },
+            {
+              "id": "django.utils.translation.ugettext_noop",
+              "score": 15.892026849164068
+            },
+            {
+              "id": "tests.urlpatterns.tests.ConverterTests",
+              "score": 15.841142001316594
+            },
+            {
+              "id": "django.forms.fields.URLField",
+              "score": 15.840860593331135
+            },
+            {
+              "id": "django.urls.resolvers.ResolverMatch.__getitem__",
+              "score": 15.788213019530598
+            },
+            {
+              "id": "django.db.backends.oracle.base.FormatStylePlaceholderCursor._output_number_converter",
+              "score": 15.751894340822728
+            },
+            {
+              "id": "django.urls.resolvers.URLPattern.check",
+              "score": 15.559127789397316
+            },
+            {
+              "id": "django.urls.resolvers.URLResolver._is_callback",
+              "score": 15.559127789397316
+            },
+            {
+              "id": "django.utils.http",
+              "score": 15.531004939094778
+            },
+            {
+              "id": "django.db.backends.sqlite3.operations.DatabaseOperations.get_decimalfield_converter.converter",
+              "score": 15.504090003305734
+            },
+            {
+              "id": "django.utils.translation.ungettext_lazy",
+              "score": 15.50231317796891
+            },
+            {
+              "id": "django.contrib.gis.db.backends.postgis.operations.PostGISOperations.get_geometry_converter.converter",
+              "score": 15.49720121660583
+            },
+            {
+              "id": "django.contrib.gis.db.backends.spatialite.operations.SpatiaLiteOperations.get_geometry_converter.converter",
+              "score": 15.49720121660583
+            },
+            {
+              "id": "tests.backends.tests.ParameterHandlingTest",
+              "score": 15.306165020313124
+            },
+            {
+              "id": "django.contrib.gis.db.backends.postgis.operations.PostGISOperations.get_geometry_converter",
+              "score": 15.285313995829062
+            },
+            {
+              "id": "django.contrib.gis.db.backends.spatialite.operations.SpatiaLiteOperations.get_geometry_converter",
+              "score": 15.285313995829062
+            },
+            {
+              "id": "tests.check_framework.test_urls.CheckUrlConfigTests",
+              "score": 15.245440938411377
+            },
+            {
+              "id": "django.conf.urls.url",
+              "score": 15.23592795471576
+            },
+            {
+              "id": "tests.utils_tests.test_baseconv.TestBaseConv.test_exception",
+              "score": 15.228031412236659
+            },
+            {
+              "id": "django.urls.resolvers.get_resolver",
+              "score": 15.22769942977655
+            },
+            {
+              "id": "tests.urlpatterns.test_resolvers.RegexPatternTests.test_str",
+              "score": 15.212622989113498
+            },
+            {
+              "id": "tests.urlpatterns.tests.SimplifiedURLTests.test_re_path_with_optional_parameter",
+              "score": 15.211581175474244
+            },
+            {
+              "id": "django.contrib.gis.db.backends.mysql.operations.MySQLOperations.get_geometry_converter.converter",
+              "score": 15.199157963172084
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.DebugViewTests",
+              "score": 15.154297696020492
+            },
+            {
+              "id": "django.contrib.gis.db.backends.oracle.operations.OracleOperations.get_geometry_converter.converter",
+              "score": 15.150720956924129
+            },
+            {
+              "id": "django.urls.resolvers.LocalePrefixPattern.__init__",
+              "score": 15.120338889118106
+            },
+            {
+              "id": "django.urls.resolvers.URLResolver.reverse",
+              "score": 15.120338889118106
+            },
+            {
+              "id": "tests.urlpatterns_reverse.tests.ResolverTests.test_non_regex",
+              "score": 15.040103609364387
+            },
+            {
+              "id": "django.db.backends.sqlite3.operations.DatabaseOperations.get_decimalfield_converter",
+              "score": 15.035302867747962
+            },
+            {
+              "id": "django.forms.fields.UUIDField.to_python",
+              "score": 14.957697944462879
+            },
+            {
+              "id": "django.db.models.fields.Field.to_python",
+              "score": 14.94197479114672
+            },
+            {
+              "id": "django.db.models.fields.AutoField.to_python",
+              "score": 14.932977327748652
+            },
+            {
+              "id": "django.db.models.fields.FloatField.to_python",
+              "score": 14.932977327748652
+            },
+            {
+              "id": "django.db.models.fields.IntegerField.to_python",
+              "score": 14.932977327748652
+            },
+            {
+              "id": "django.urls.resolvers.LocalePrefixPattern.match",
+              "score": 14.910096232287405
+            },
+            {
+              "id": "django.urls.resolvers.URLResolver.urlconf_module",
+              "score": 14.807152275234873
+            },
+            {
+              "id": "tests.forms_tests.field_tests.test_regexfield",
+              "score": 14.791694200507713
+            },
+            {
+              "id": "django.contrib.gis.db.backends.mysql.operations.MySQLOperations.get_geometry_converter",
+              "score": 14.780827616997861
+            },
+            {
+              "id": "django.contrib.gis.db.backends.oracle.operations.OracleOperations.get_geometry_converter",
+              "score": 14.746288350953666
+            },
+            {
+              "id": "tests.urlpatterns.path_urls",
+              "score": 14.715319410513533
+            },
+            {
+              "id": "django.urls.resolvers.RegexPattern.check",
+              "score": 14.705620085307455
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.ExceptionReporterTests.test_unprintable_values_handling",
+              "score": 14.663398360100414
+            },
+            {
+              "id": "tests.gis_tests.test_geoforms.GeometryFieldTest.test_geom_type",
+              "score": 14.619765700836552
+            },
+            {
+              "id": "django.urls.resolvers.URLResolver.app_dict",
+              "score": 14.605470818952607
+            },
+            {
+              "id": "django.urls.resolvers.URLResolver.namespace_dict",
+              "score": 14.605470818952607
+            },
+            {
+              "id": "django.urls.resolvers.URLResolver.reverse_dict",
+              "score": 14.605470818952607
+            },
+            {
+              "id": "django.forms.fields.BaseTemporalField.to_python",
+              "score": 14.57747248831679
+            },
+            {
+              "id": "tests.i18n.test_compilation.CompilationErrorHandling",
+              "score": 14.456607216875364
+            },
+            {
+              "id": "django.core.validators.RegexValidator.__call__",
+              "score": 14.423502189541113
+            },
+            {
+              "id": "django.forms.fields.MultipleChoiceField.to_python",
+              "score": 14.420898791447387
+            },
+            {
+              "id": "django.forms.models.ModelChoiceField.to_python",
+              "score": 14.375071239169843
+            },
+            {
+              "id": "django.db.models.fields.UUIDField.to_python",
+              "score": 14.367780706044346
+            },
+            {
+              "id": "django.db.models.fields.DurationField.to_python",
+              "score": 14.36151956650017
+            },
+            {
+              "id": "django.contrib.gis.db.backends.base.operations.BaseSpatialOperations.get_geometry_converter",
+              "score": 14.328441096887238
+            },
+            {
+              "id": "django.forms.fields.FloatField.to_python",
+              "score": 14.32818471988565
+            },
+            {
+              "id": "django.contrib.postgres.forms.array.SimpleArrayField.to_python",
+              "score": 14.32234153486111
+            },
+            {
+              "id": "django.urls.resolvers.CheckURLMixin.describe",
+              "score": 14.313043675768363
+            },
+            {
+              "id": "django.db.backends.oracle.base.FormatStylePlaceholderCursor._get_decimal_converter",
+              "score": 14.310674173708698
+            },
+            {
+              "id": "django.utils.baseconv.BaseConverter",
+              "score": 14.228906358431132
+            },
+            {
+              "id": "tests.forms_tests.field_tests.test_regexfield.RegexFieldTest",
+              "score": 14.225573737377013
+            },
+            {
+              "id": "django.urls.resolvers.LocalePrefixPattern.language_prefix",
+              "score": 14.21815288946955
+            },
+            {
+              "id": "tests.urlpatterns.tests.ConversionExceptionTests.test_reverse_value_error_propagates",
+              "score": 14.21749737053005
+            },
+            {
+              "id": "django.core.validators.RegexValidator",
+              "score": 14.201295633117033
+            },
+            {
+              "id": "django.forms.fields.IntegerField.to_python",
+              "score": 14.151720835985358
+            },
+            {
+              "id": "django.core.validators",
+              "score": 14.143179705156617
+            },
+            {
+              "id": "tests.urlpatterns.tests.SimplifiedURLTests.test_path_lookup_with_inclusion",
+              "score": 14.105346348206727
+            },
+            {
+              "id": "django.db.models.fields.DecimalField.to_python",
+              "score": 14.092313739247146
+            },
+            {
+              "id": "django.forms.fields.DurationField.to_python",
+              "score": 14.087889349742694
+            },
+            {
+              "id": "django.utils.regex_helper.walk_to_end",
+              "score": 14.065341726887628
+            },
+            {
+              "id": "django.forms.fields.Field.clean",
+              "score": 14.038044014552312
+            },
+            {
+              "id": "django.urls.resolvers.URLPattern.__init__",
+              "score": 14.032096492278871
+            },
+            {
+              "id": "django.contrib.staticfiles.storage.HashedFilesMixin.url_converter",
+              "score": 14.027484257116768
+            },
+            {
+              "id": "django.urls.resolvers.URLResolver.url_patterns",
+              "score": 14.019840870502238
+            },
+            {
+              "id": "tests.urlpatterns_reverse.tests.ErroneousViewTests",
+              "score": 13.938394133562078
+            },
+            {
+              "id": "django.contrib.postgres.forms.hstore.HStoreField.to_python",
+              "score": 13.90817333227314
+            },
+            {
+              "id": "django.contrib.postgres.forms.jsonb.JSONField.to_python",
+              "score": 13.848767717053327
+            },
+            {
+              "id": "django.db.models.fields.GenericIPAddressField.to_python",
+              "score": 13.81700658034367
+            },
+            {
+              "id": "django.utils.baseconv.BaseConverter.__init__",
+              "score": 13.813322330425343
+            },
+            {
+              "id": "django.utils.baseconv",
+              "score": 13.80177051059045
+            },
+            {
+              "id": "django.urls.resolvers.URLResolver._check_custom_error_handlers",
+              "score": 13.800003421967196
+            },
+            {
+              "id": "django.forms.fields.URLField.to_python.split_url",
+              "score": 13.77895747889212
+            },
+            {
+              "id": "django.db.backends.oracle.base.FormatStylePlaceholderCursor._output_type_handler",
+              "score": 13.729193195871567
+            },
+            {
+              "id": "tests.check_framework.test_urls.UpdatedToPathTests",
+              "score": 13.72168713333371
+            },
+            {
+              "id": "django.urls.resolvers.URLPattern._check_pattern_name",
+              "score": 13.694849541269443
+            },
+            {
+              "id": "django.db.models.fields.BooleanField.to_python",
+              "score": 13.662275137207784
+            },
+            {
+              "id": "django.urls.resolvers.URLResolver._reverse_with_prefix",
+              "score": 13.648994933373043
+            },
+            {
+              "id": "django.urls.resolvers.URLResolver.__init__",
+              "score": 13.635457325830789
+            },
+            {
+              "id": "django.db.models.fields.TimeField.to_python",
+              "score": 13.595124761451657
+            },
+            {
+              "id": "django.db.models.fields.Field.clean",
+              "score": 13.587930420517537
+            },
+            {
+              "id": "django.db.models.sql.compiler.SQLCompiler.apply_converters",
+              "score": 13.55819656947894
+            },
+            {
+              "id": "django.urls.resolvers.LocalePrefixPattern",
+              "score": 13.502183618698943
+            },
+            {
+              "id": "tests.urlpatterns_reverse.tests.ErrorHandlerResolutionTests",
+              "score": 13.491572408540026
+            },
+            {
+              "id": "django.contrib.gis.forms.fields.GeometryField.to_python",
+              "score": 13.483583247365077
+            },
+            {
+              "id": "django.db.utils.ConnectionRouter._router_func._route_db",
+              "score": 13.407744408184788
+            },
+            {
+              "id": "django.db.models.fields.DateField.to_python",
+              "score": 13.362532291686016
+            },
+            {
+              "id": "django.contrib.gis.gdal.field.OFTDate.value",
+              "score": 13.357572093240439
+            },
+            {
+              "id": "django.forms.fields.UUIDField",
+              "score": 13.301142503650675
+            },
+            {
+              "id": "django.template.defaultfilters.stringformat",
+              "score": 13.290812307159026
+            },
+            {
+              "id": "tests.forms_tests.field_tests.test_regexfield.RegexFieldTest.test_change_regex_after_init",
+              "score": 13.277176467735838
+            },
+            {
+              "id": "django.forms.fields.BooleanField",
+              "score": 13.276032012273705
+            },
+            {
+              "id": "django.contrib.sitemaps.views.sitemap",
+              "score": 13.020829872735389
+            },
+            {
+              "id": "django.db.models.query.RawQuerySet.resolve_model_init_order",
+              "score": 13.009565219173268
+            },
+            {
+              "id": "tests.check_framework.test_urls.CheckUrlConfigTests.test_beginning_with_slash",
+              "score": 12.97179302662883
+            },
+            {
+              "id": "django.forms",
+              "score": 12.926569734877505
+            },
+            {
+              "id": "tests.forms_tests.tests.test_forms.FormsTestCase.test_changed_data.PedanticField.to_python",
+              "score": 12.884747333372088
+            },
+            {
+              "id": "django.urls.resolvers.URLPattern",
+              "score": 12.868657067196331
+            },
+            {
+              "id": "tests.gis_tests.test_geoforms",
+              "score": 12.821705498844088
+            },
+            {
+              "id": "django.contrib.gis.gdal.field.OFTTime.value",
+              "score": 12.812137090612264
+            },
+            {
+              "id": "tests.urlpatterns.test_resolvers.ResolverCacheTests",
+              "score": 12.807997097506457
+            },
+            {
+              "id": "tests.view_tests.tests.test_debug.ExceptionReporterTests.test_too_large_values_handling",
+              "score": 12.805658835268849
+            },
+            {
+              "id": "django.template.defaultfilters.slice_filter",
+              "score": 12.78624178645617
+            },
+            {
+              "id": "django.http.response.Http404",
+              "score": 12.753168915568793
+            }
+          ],
+          "scored_documents": 17675,
+          "seconds": 0.03140799999891897
+        }
+      ],
+      "order": [
+        "django.urls.resolvers._route_to_regex",
+        "django.urls.converters",
+        "tests.view_tests.tests.test_debug.DebugViewTests",
+        "django.urls",
+        "django.urls.resolvers.RoutePattern.match",
+        "django.views.debug.technical_404_response",
+        "tests.view_tests.views",
+        "django.urls.resolvers",
+        "django.core.handlers.exception",
+        "django.urls.converters.StringConverter",
+        "tests.view_tests.tests.test_debug.DebugViewTests.test_classbased_technical_404",
+        "tests.view_tests.tests.test_debug.DebugViewTests.test_404_not_in_urls",
+        "django.core.handlers.exception.response_for_exception",
+        "django.urls.converters.IntConverter",
+        "tests.urlpatterns.converters.DynamicConverter",
+        "tests.urlpatterns.tests.ConversionExceptionTests",
+        "django.urls.base.is_valid_path",
+        "django.core.handlers.exception.handle_uncaught_exception",
+        "django.views.debug.technical_500_response",
+        "tests.view_tests.tests.test_debug",
+        "tests.urlpatterns_reverse.tests.ResolverTests",
+        "django.views.debug.ExceptionReporter.get_traceback_text",
+        "django.utils.autoreload.BaseReloader",
+        "tests.urlpatterns.converters",
+        "django.core.handlers.asgi.ASGIHandler.handle_uncaught_exception",
+        "tests.view_tests.tests.test_debug.DebugViewTests.test_default_urlconf_template",
+        "tests.view_tests.tests.test_debug.DebugViewTests.test_technical_404",
+        "django.contrib.flatpages.views.flatpage",
+        "django.urls.resolvers.RoutePattern",
+        "tests.urlpatterns.converters.Base64Converter",
+        "tests.view_tests.tests.test_debug.NonDjangoTemplatesDebugViewTests",
+        "tests.view_tests.tests.test_debug.DebugViewTests.test_regression_21530",
+        "django.urls.converters.PathConverter",
+        "django.core.handlers.base.BaseHandler",
+        "django.contrib.flatpages.views",
+        "tests.urlpatterns.tests.ConverterTests.test_matching_urls",
+        "django.urls.resolvers.URLResolver.resolve",
+        "tests.urlpatterns.test_resolvers",
+        "tests.auth_tests.test_views.PasswordResetTest.test_confirm_custom_reset_url_token_link_redirects_to_set_password_page",
+        "django.contrib.staticfiles.storage.HashedFilesMixin.url_converter",
+        "django.core.handlers.base.BaseHandler._get_response",
+        "django.test.testcases.FSFilesHandler",
+        "django.urls.resolvers.ResolverMatch",
+        "django.contrib.flatpages.middleware",
+        "tests.view_tests.tests.test_defaults.DefaultsTests.test_custom_templates",
+        "django.urls.resolvers.ResolverMatch.__repr__",
+        "django.shortcuts",
+        "django.core.checks.urls",
+        "django.contrib.staticfiles.views.serve",
+        "tests.context_processors.tests",
+        "tests.urlpatterns.path_dynamic_urls",
+        "django.views.debug.ExceptionReporter.get_traceback_html",
+        "django.core.handlers.base",
+        "django.middleware.locale.LocaleMiddleware.process_response",
+        "tests.urlpatterns.tests.SimplifiedURLTests.test_invalid_converter",
+        "tests.urlpatterns.tests",
+        "django.middleware.locale",
+        "django.middleware.locale.LocaleMiddleware",
+        "django.urls.converters.SlugConverter",
+        "django.contrib.flatpages.middleware.FlatpageFallbackMiddleware.process_response",
+        "django.contrib.staticfiles.handlers",
+        "django.forms.fields.URLField",
+        "django.contrib.syndication.views",
+        "django.views.debug.default_urlconf",
+        "tests.urlpatterns.tests.SimplifiedURLTests",
+        "django.urls.base.reverse",
+        "tests.staticfiles_tests.test_management.TestRunserver.test_404_response",
+        "django.urls.base",
+        "django.urls.resolvers.RoutePattern._compile",
+        "django.views.defaults.page_not_found",
+        "django.urls.resolvers.get_ns_resolver",
+        "django.urls.resolvers.ResolverMatch.__init__",
+        "tests.urlpatterns.path_base64_urls",
+        "django.urls.resolvers.RoutePattern.__init__",
+        "tests.urlpatterns.converter_urls",
+        "tests.urlpatterns.tests.ConverterTests",
+        "django.urls.resolvers.RegexPattern._check_include_trailing_dollar",
+        "django.forms.fields.URLField.to_python",
+        "django.contrib.flatpages.middleware.FlatpageFallbackMiddleware",
+        "django.urls.resolvers.URLPattern.resolve",
+        "tests.urlpatterns_reverse.tests.ResolverTests.test_404_tried_urls_have_names",
+        "django.urls.resolvers.RoutePattern.check",
+        "django.urls.resolvers.URLResolver._reverse_with_prefix",
+        "tests.auth_tests.test_views.PasswordResetTest.test_confirm_link_redirects_to_set_password_page",
+        "tests.view_tests.urls",
+        "django.contrib.staticfiles.handlers.StaticFilesHandlerMixin",
+        "tests.view_tests.tests.test_debug.DebugViewQueriesAllowedTests",
+        "django.db.backends.oracle.base.FormatStylePlaceholderCursor",
+        "django.urls.resolvers.CheckURLMixin._check_pattern_startswith_slash",
+        "django.contrib.gis.views",
+        "django.urls.resolvers.RoutePattern.__str__",
+        "django.urls.converters.get_converter",
+        "tests.middleware.tests.CommonMiddlewareTest.test_append_slash_no_redirect_on_POST_in_DEBUG",
+        "django.urls.resolvers.RegexPattern",
+        "django.conf.urls.i18n",
+        "django.middleware.common.CommonMiddleware",
+        "django.urls.resolvers.URLResolver._join_route",
+        "django.views.defaults",
+        "django.urls.converters.register_converter",
+        "django.contrib.contenttypes.views",
+        "tests.view_tests.tests.test_debug.DebugViewTests.test_template_encoding",
+        "django.views.generic.dates._get_next_prev",
+        "django.test.client.Client._handle_redirects",
+        "tests.check_framework.test_urls",
+        "django.core.checks.urls._load_all_namespaces",
+        "tests.test_client.tests.ClientTest.test_url_parameters",
+        "django.middleware.common.CommonMiddleware.get_full_path_with_slash",
+        "tests.view_tests.tests.test_defaults",
+        "django.views.static.serve",
+        "django.contrib.staticfiles.views",
+        "django.urls.resolvers.CheckURLMixin",
+        "tests.staticfiles_tests.test_management.TestRunserver",
+        "setup",
+        "django.contrib.auth.admin.UserAdmin._add_view",
+        "django.urls.resolvers.RegexPattern._compile",
+        "django.utils.http.urlquote",
+        "django.utils.http.urlunquote",
+        "django.urls.resolvers.LocalePrefixPattern.regex",
+        "tests.forms_tests.tests.test_forms.FormsTestCase.test_validating_multiple_fields",
+        "tests.urlpatterns_reverse.tests.ResolverMatchTests",
+        "django.urls.resolvers.URLResolver.check",
+        "django.urls.resolvers.RegexPattern.__init__",
+        "django.contrib.gis.views.feed",
+        "django.urls.resolvers.RegexPattern.__str__",
+        "tests.view_tests.views.Http404View",
+        "tests.view_tests.views.raises_template_does_not_exist",
+        "django.utils.translation.trans_real.gettext",
+        "tests.urlpatterns_reverse.test_localeregexdescriptor",
+        "tests.view_tests.tests.test_debug.DebugViewTests.test_400",
+        "django.utils.http.urlquote_plus",
+        "django.utils.http.urlunquote_plus",
+        "tests.urlpatterns_reverse.test_localeregexdescriptor.LocaleRegexDescriptorTests.test_nontranslated_regex_compiled_once",
+        "tests.view_tests.tests.test_debug.NonDjangoTemplatesDebugViewTests.test_400",
+        "tests.view_tests.tests.test_debug.PlainTextReportTests",
+        "django.core.management.commands.runserver.Command",
+        "django.http.response.Http404",
+        "django.urls.resolvers._get_cached_resolver",
+        "django.middleware.common.BrokenLinkEmailsMiddleware",
+        "django.core.management.commands.runserver",
+        "django.urls.converters.UUIDConverter",
+        "tests.urlpatterns_reverse.test_localeregexdescriptor.LocaleRegexDescriptorTests",
+        "tests.urlpatterns_reverse.test_localeregexdescriptor.LocaleRegexDescriptorTests.test_translated_regex_compiled_per_language",
+        "tests.messages_tests.urls",
+        "django.shortcuts.get_object_or_404",
+        "django.test.testcases.FSFilesHandler.get_response",
+        "django.db.migrations.questioner.InteractiveMigrationQuestioner",
+        "tests.urlpatterns.test_resolvers.RoutePatternTests",
+        "tests.urlpatterns_reverse.tests.ResolverMatchTests.test_resolver_match_on_request",
+        "django.urls.conf",
+        "tests.view_tests.tests.test_debug.DebugViewTests.test_404_empty_path_not_in_urls",
+        "tests.urlpatterns.test_resolvers.ResolverCacheTests",
+        "tests.test_client.tests.ClientTest.test_response_resolver_match_redirect_follow",
+        "django.contrib.auth.management.get_system_username",
+        "tests.test_client.tests.ClientTest.test_response_resolver_match_regular_view",
+        "tests.middleware.tests.CommonMiddlewareTest.test_append_slash_no_redirect_on_POST_in_DEBUG_custom_urlconf",
+        "django.test.client.Client.request",
+        "django.urls.resolvers.LocaleRegexDescriptor",
+        "tests.auth_tests.test_views.LoginRedirectAuthenticatedUser",
+        "django.contrib.staticfiles.management.commands.runserver.Command",
+        "django.urls.resolvers.LocaleRegexDescriptor.__get__",
+        "tests.context_processors.tests.DebugContextProcessorTests",
+        "tests.urlpatterns.tests.ConversionExceptionTests.test_resolve_value_error_means_no_match",
+        "django.urls.resolvers.URLResolver.resolve_error_handler",
+        "django.core.handlers.base.BaseHandler.get_response",
+        "django.contrib.sitemaps._get_sitemap_full_url",
+        "django.urls.exceptions.Resolver404",
+        "django.views.generic.dates",
+        "tests.view_tests.views.technical404",
+        "tests.middleware.tests.CommonMiddlewareTest",
+        "django.urls.converters.StringConverter.to_python",
+        "tests.get_object_or_404.tests.GetObjectOr404Tests",
+        "django.template.base.Template.get_exception_info",
+        "django.urls.converters.IntConverter.to_python",
+        "django.urls.resolvers.URLResolver.url_patterns",
+        "tests.context_processors.tests.DebugContextProcessorTests.test_debug",
+        "tests.logging_tests.tests.HandlerLoggingTests",
+        "tests.contenttypes_tests.test_views.ShortcutViewTests",
+        "django.urls.converters.UUIDConverter.to_python",
+        "tests.view_tests.tests.test_debug.NonDjangoTemplatesDebugViewTests.test_template_not_found_error",
+        "django.contrib.auth.views.LogoutView",
+        "django.urls.resolvers.RegexPattern.match",
+        "tests.urlpatterns_reverse.erroneous_urls",
+        "django.contrib.staticfiles.storage.HashedFilesMixin.url_converter.converter",
+        "tests.auth_tests.test_forms.PasswordResetFormTest.test_save_html_email_template_name",
+        "tests.urlpatterns.test_resolvers.RoutePatternTests.test_str",
+        "django.urls.conf._path",
+        "django.contrib.admin.options.ModelAdmin.get_action",
+        "django.urls.exceptions",
+        "django.utils.autoreload.BaseReloader.run",
+        "django.contrib.contenttypes.views.shortcut",
+        "tests.get_object_or_404.models",
+        "tests.view_tests.views.Http404View.get",
+        "django.conf.urls",
+        "django.contrib.staticfiles.management.commands.runserver",
+        "tests.view_tests.tests.test_debug.DebugViewQueriesAllowedTests.test_handle_db_exception",
+        "tests.auth_tests.test_views.PasswordResetTest",
+        "tests.urlpatterns.tests.ConversionExceptionTests.test_resolve_type_error_propagates",
+        "django.urls.resolvers.LocalePrefixPattern.check",
+        "django.views.defaults.server_error",
+        "django.contrib.sitemaps"
+      ],
+      "retrieval_calls": 3,
+      "index_nodes": 34846,
+      "scored_documents": 62626,
+      "source_chars_read": 13424786,
+      "shared_index_seconds": 13.80080260000068
+    }
+  ]
+}

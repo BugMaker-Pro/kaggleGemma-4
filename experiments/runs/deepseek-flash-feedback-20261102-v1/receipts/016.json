@@ -1,0 +1,34 @@
+{
+  "request_sha256": "c953c4a36dc6b78329f96af19e1240479c9e89c408ed4f418da7cb995ad61b20",
+  "manifest_sha256": "001bb1a61aa999d022ac9922671f7f4ad59838c785e7cb011f1a2a59241bef31",
+  "received_utc": "2026-11-02T15:21:07.962043+00:00",
+  "seconds": 0.8895345999999336,
+  "response": {
+    "id": "f9f52db4-b324-453d-bc4d-cfde7fcd844c",
+    "object": "chat.completion",
+    "created": 1793632865,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\": [\"pytest raises context variable str ExceptionInfo __str__ implementation\", \"pytest ExceptionInfo __str__ repr exception message raises context manager\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1279,
+      "completion_tokens": 34,
+      "total_tokens": 1313,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 1151
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

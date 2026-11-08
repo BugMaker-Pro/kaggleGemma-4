@@ -1,0 +1,34 @@
+{
+  "request_sha256": "c31daf9b862891a9895a712b5945d2dc6f9f5e617945d7fc7b284865c2a17ad5",
+  "manifest_sha256": "d537eb7c5ecd9599d7f0c43dee9a074cdaf677151fd186d3946113fa5f47e1fe",
+  "received_utc": "2026-11-02T17:03:09.533960+00:00",
+  "seconds": 6.874224299999696,
+  "response": {
+    "id": "fc0d7a6d-db2c-4864-9bf1-c48f8a6c4377",
+    "object": "chat.completion",
+    "created": 1793638986,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\": [\"sqlite3 schema _remake_table unique constraint index expressions operator prohibited\", \"django sqlite _remake_table UniqueConstraint F expressions index expression quoting\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2088,
+      "completion_tokens": 38,
+      "total_tokens": 2126,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 2088
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

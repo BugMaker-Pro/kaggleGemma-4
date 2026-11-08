@@ -1,0 +1,66 @@
+{
+  "manifest_sha256": "2d5681d1e9f1f7a0395d07b0a0403ac05e211af73b3167862ea7866092f2a108",
+  "predictions_sha256": "1eb05368d6ed0d5fd7d106d9cc2933a534aa6cb2a599b430a8ea430f27964ecc",
+  "gold_sha256": "2fa161dc437993153e2d0b1834a88a89553270c3ca1978bcd3db08e65eba25ad",
+  "training_audit_sha256": "585129bd08c248013be2a7d050de71f3cc99a040b6807942e5912684ef5eb3dc",
+  "tasks": 35,
+  "scorable_tasks": 35,
+  "means": {
+    "historical": {
+      "coverage": 0.5857142857142857,
+      "recall_at_10": 0.5428571428571428
+    },
+    "body_original": {
+      "coverage": 0.8333333333333334,
+      "recall_at_10": 0.6047619047619047
+    },
+    "generated": {
+      "coverage": 0.9571428571428572,
+      "recall_at_10": 0.7
+    }
+  },
+  "comparisons": {
+    "body_original": {
+      "delta": 0.09523809523809523,
+      "descriptive_repo_bootstrap_95": [
+        0.0,
+        0.19607843137254902
+      ],
+      "improved_tasks": [
+        "matplotlib__matplotlib-22711",
+        "matplotlib__matplotlib-18869",
+        "sphinx-doc__sphinx-11445",
+        "sympy__sympy-11400"
+      ],
+      "harmed_tasks": []
+    },
+    "historical": {
+      "delta": 0.15714285714285714,
+      "descriptive_repo_bootstrap_95": [
+        0.05555555555555555,
+        0.2638888888888889
+      ],
+      "improved_tasks": [
+        "matplotlib__matplotlib-18869",
+        "pylint-dev__pylint-5859",
+        "pytest-dev__pytest-5103",
+        "pytest-dev__pytest-5692",
+        "scikit-learn__scikit-learn-14092",
+        "sphinx-doc__sphinx-8273"
+      ],
+      "harmed_tasks": []
+    }
+  },
+  "decision": "uncertain",
+  "new_dense_candidates": 7288,
+  "new_api_calls": 0,
+  "limits": [
+    "35 already observed historical-development tasks; diagnostic not unseen confirmation",
+    "new candidates extend feature distribution outside historical top200; no refitting or tuning on 35 task labels",
+    "candidate pools fixed at200 but candidate scoring/encoding cost can differ; recorded",
+    "query-generation API costs from parent already incurred; new API calls zero",
+    "historic dense values reused, new dense values freshly computed from local frozen encoder",
+    "body BM25 versus metadata pool differences isolated by body_original control"
+  ],
+  "automatic_expansion": false
+}

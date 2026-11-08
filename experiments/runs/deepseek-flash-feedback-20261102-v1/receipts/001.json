@@ -1,0 +1,34 @@
+{
+  "request_sha256": "87428139813ae52c999e4fed6fb612ba99968acf135eed389da22ba9de701f97",
+  "manifest_sha256": "001bb1a61aa999d022ac9922671f7f4ad59838c785e7cb011f1a2a59241bef31",
+  "received_utc": "2026-11-02T15:14:38.990693+00:00",
+  "seconds": 1.190213599999879,
+  "response": {
+    "id": "b0102133-d89a-4b56-9118-c8cb45630733",
+    "object": "chat.completion",
+    "created": 1793632476,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"astropy nddata ndarithmetic _arithmetic_mask handle_mask bitwise_or None mask propagation\",\"NDDataRef multiply handle_mask np.bitwise_or TypeError unsupported operand int NoneType mask\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3104,
+      "completion_tokens": 46,
+      "total_tokens": 3150,
+      "prompt_tokens_details": {
+        "cached_tokens": 896
+      },
+      "prompt_cache_hit_tokens": 896,
+      "prompt_cache_miss_tokens": 2208
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

@@ -1,0 +1,12 @@
+diff --git a/fastapi/openapi/utils.py b/fastapi/openapi/utils.py
+index 75ff2610..9650b661 100644
+--- a/fastapi/openapi/utils.py
++++ b/fastapi/openapi/utils.py
+@@ -1,6 +1,7 @@
+ import http.client
+ import inspect
+ import warnings
++import copy
+ from collections.abc import Sequence
+ from typing import Any, Optional, Union, cast
+ 

@@ -1,0 +1,10 @@
+name: full_ranker_locator
+model: gemma-4-12b-it-qat-w4a16-ct
+instruction: !include prompts/localize.md
+skills:
+  - skills/ranker
+tools: []
+output_key: localization_report
+disallow_transfer_to_parent: true
+disallow_transfer_to_peers: true
+generate_content_config: !include configs/sampling.yaml

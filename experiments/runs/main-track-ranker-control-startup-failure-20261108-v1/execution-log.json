@@ -1,0 +1,472 @@
+[
+  {
+    "stream_name": "stderr",
+    "time": 10.751233291,
+    "data": "0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 10.751267897,
+    "data": "0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 10.751271501,
+    "data": "0.00s - to python to disable frozen modules.\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 10.751273699,
+    "data": "0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 11.480789825,
+    "data": "0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 11.480848149,
+    "data": "0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 11.480854122,
+    "data": "0.00s - to python to disable frozen modules.\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 11.48085652,
+    "data": "0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 13.261885744,
+    "data": "Installing 41 wheels from /kaggle/input/datasets/metric/gemma-4-developer-agent-wheelhouse...\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 67.617184777,
+    "data": "Wheelhouse installation complete.\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 69.899125301,
+    "data": "Looking in links: /kaggle/input/notebooks/yyyyhhhhwww/gemma4-requests-test-wheels-20261108-v2/request-test-wheels\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 69.93249812,
+    "data": "Processing /kaggle/input/notebooks/yyyyhhhhwww/gemma4-requests-test-wheels-20261108-v2/request-test-wheels/pytest_httpbin-2.1.0-py3-none-any.whl\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 69.943349529,
+    "data": "Processing /kaggle/input/notebooks/yyyyhhhhwww/gemma4-requests-test-wheels-20261108-v2/request-test-wheels/httpbin-0.10.4-py2.py3-none-any.whl (from pytest-httpbin==2.1.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 69.956448966,
+    "data": "Processing /kaggle/input/notebooks/yyyyhhhhwww/gemma4-requests-test-wheels-20261108-v2/request-test-wheels/brotlicffi-1.2.1.0-cp39-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from httpbin->pytest-httpbin==2.1.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 69.965386621,
+    "data": "Requirement already satisfied: decorator in /usr/local/lib/python3.12/dist-packages (from httpbin->pytest-httpbin==2.1.0) (5.3.1)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 69.966446717,
+    "data": "Requirement already satisfied: flask>=2.2.4 in /usr/local/lib/python3.12/dist-packages (from httpbin->pytest-httpbin==2.1.0) (3.1.3)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 69.967695586,
+    "data": "Requirement already satisfied: greenlet>=3.0.0a1 in /usr/local/lib/python3.12/dist-packages (from httpbin->pytest-httpbin==2.1.0) (3.4.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 69.968524363,
+    "data": "Requirement already satisfied: six in /usr/local/lib/python3.12/dist-packages (from httpbin->pytest-httpbin==2.1.0) (1.17.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 69.969554257,
+    "data": "Requirement already satisfied: werkzeug>=2.2.2 in /usr/local/lib/python3.12/dist-packages (from httpbin->pytest-httpbin==2.1.0) (3.1.8)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 69.972075849,
+    "data": "Requirement already satisfied: blinker>=1.9.0 in /usr/local/lib/python3.12/dist-packages (from flask>=2.2.4->httpbin->pytest-httpbin==2.1.0) (1.9.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 69.973048824,
+    "data": "Requirement already satisfied: click>=8.1.3 in /usr/local/lib/python3.12/dist-packages (from flask>=2.2.4->httpbin->pytest-httpbin==2.1.0) (8.3.3)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 69.973987339,
+    "data": "Requirement already satisfied: itsdangerous>=2.2.0 in /usr/local/lib/python3.12/dist-packages (from flask>=2.2.4->httpbin->pytest-httpbin==2.1.0) (2.2.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 69.975047359,
+    "data": "Requirement already satisfied: jinja2>=3.1.2 in /usr/local/lib/python3.12/dist-packages (from flask>=2.2.4->httpbin->pytest-httpbin==2.1.0) (3.1.6)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 69.976099417,
+    "data": "Requirement already satisfied: markupsafe>=2.1.1 in /usr/local/lib/python3.12/dist-packages (from flask>=2.2.4->httpbin->pytest-httpbin==2.1.0) (3.0.3)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 69.981172303,
+    "data": "Requirement already satisfied: cffi>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from brotlicffi->httpbin->pytest-httpbin==2.1.0) (2.0.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 69.985351319,
+    "data": "Requirement already satisfied: pycparser in /usr/local/lib/python3.12/dist-packages (from cffi>=1.0.0->brotlicffi->httpbin->pytest-httpbin==2.1.0) (3.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 70.101245843,
+    "data": "Looking in links: /kaggle/input/notebooks/yyyyhhhhwww/gemma4-requests-test-wheels-20261108-v2/request-test-wheels\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 70.101259707,
+    "data": "Processing /kaggle/input/notebooks/yyyyhhhhwww/gemma4-requests-test-wheels-20261108-v2/request-test-wheels/pytest_httpbin-2.1.0-py3-none-any.whl\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 70.10126222,
+    "data": "Processing /kaggle/input/notebooks/yyyyhhhhwww/gemma4-requests-test-wheels-20261108-v2/request-test-wheels/httpbin-0.10.4-py2.py3-none-any.whl (from pytest-httpbin==2.1.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 70.101264499,
+    "data": "Processing /kaggle/input/notebooks/yyyyhhhhwww/gemma4-requests-test-wheels-20261108-v2/request-test-wheels/brotlicffi-1.2.1.0-cp39-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from httpbin->pytest-httpbin==2.1.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 70.101268376,
+    "data": "Requirement already satisfied: decorator in /usr/local/lib/python3.12/dist-packages (from httpbin->pytest-httpbin==2.1.0) (5.3.1)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 70.101270477,
+    "data": "Requirement already satisfied: flask>=2.2.4 in /usr/local/lib/python3.12/dist-packages (from httpbin->pytest-httpbin==2.1.0) (3.1.3)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 70.101272648,
+    "data": "Requirement already satisfied: greenlet>=3.0.0a1 in /usr/local/lib/python3.12/dist-packages (from httpbin->pytest-httpbin==2.1.0) (3.4.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 70.101274784,
+    "data": "Requirement already satisfied: six in /usr/local/lib/python3.12/dist-packages (from httpbin->pytest-httpbin==2.1.0) (1.17.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 70.101276864,
+    "data": "Requirement already satisfied: werkzeug>=2.2.2 in /usr/local/lib/python3.12/dist-packages (from httpbin->pytest-httpbin==2.1.0) (3.1.8)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 70.101278878,
+    "data": "Requirement already satisfied: blinker>=1.9.0 in /usr/local/lib/python3.12/dist-packages (from flask>=2.2.4->httpbin->pytest-httpbin==2.1.0) (1.9.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 70.101281051,
+    "data": "Requirement already satisfied: click>=8.1.3 in /usr/local/lib/python3.12/dist-packages (from flask>=2.2.4->httpbin->pytest-httpbin==2.1.0) (8.3.3)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 70.101283118,
+    "data": "Requirement already satisfied: itsdangerous>=2.2.0 in /usr/local/lib/python3.12/dist-packages (from flask>=2.2.4->httpbin->pytest-httpbin==2.1.0) (2.2.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 70.101285399,
+    "data": "Requirement already satisfied: jinja2>=3.1.2 in /usr/local/lib/python3.12/dist-packages (from flask>=2.2.4->httpbin->pytest-httpbin==2.1.0) (3.1.6)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 70.10128828,
+    "data": "Requirement already satisfied: markupsafe>=2.1.1 in /usr/local/lib/python3.12/dist-packages (from flask>=2.2.4->httpbin->pytest-httpbin==2.1.0) (3.0.3)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 70.101297456,
+    "data": "Requirement already satisfied: cffi>=1.0.0 in /usr/local/lib/python3.12/dist-packages (from brotlicffi->httpbin->pytest-httpbin==2.1.0) (2.0.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 70.101299871,
+    "data": "Requirement already satisfied: pycparser in /usr/local/lib/python3.12/dist-packages (from cffi>=1.0.0->brotlicffi->httpbin->pytest-httpbin==2.1.0) (3.0)\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 72.124037576,
+    "data": "Installing collected packages: brotlicffi, httpbin, pytest-httpbin\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 72.269349489,
+    "data": "Successfully installed brotlicffi-1.2.1.0 httpbin-0.10.4 pytest-httpbin-2.1.0\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 72.326230353,
+    "data": "Installing collected packages: brotlicffi, httpbin, pytest-httpbin\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 72.32625379,
+    "data": "Successfully installed brotlicffi-1.2.1.0 httpbin-0.10.4 pytest-httpbin-2.1.0\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 72.414397599,
+    "data": "Test plugin installed offline; unchanged pytest: 8.4.2\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 106.199773453,
+    "data": "Local src-layout import correction enabled; test files and verifier unchanged.\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 107.605158453,
+    "data": "Looking in links: /kaggle/input/notebooks/yyyyhhhhwww/gemma4-fastapi-test-wheels-20261108/fastapi-test-wheels\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 107.638001776,
+    "data": "Processing /kaggle/input/notebooks/yyyyhhhhwww/gemma4-fastapi-test-wheels-20261108/fastapi-test-wheels/dirty_equals-0.11-py3-none-any.whl\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 107.642351793,
+    "data": "Installing collected packages: dirty-equals\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 107.695583524,
+    "data": "Successfully installed dirty-equals-0.11\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 107.76616538,
+    "data": "Looking in links: /kaggle/input/notebooks/yyyyhhhhwww/gemma4-fastapi-test-wheels-20261108/fastapi-test-wheels\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 107.766179159,
+    "data": "Processing /kaggle/input/notebooks/yyyyhhhhwww/gemma4-fastapi-test-wheels-20261108/fastapi-test-wheels/dirty_equals-0.11-py3-none-any.whl\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 107.76618222,
+    "data": "Installing collected packages: dirty-equals\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 107.766185274,
+    "data": "Successfully installed dirty-equals-0.11\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 107.766187751,
+    "data": "Installed real FastAPI test dependency offline: 0.11\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 107.844079498,
+    "data": "Official structure validation passed: evidence\n"
+  },
+  {
+    "stream_name": "stdout",
+    "time": 107.844101387,
+    "data": "Engineering smoke only; task: rich_3942\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086554212,
+    "data": "Traceback (most recent call last):\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086580049,
+    "data": "  File \"<string>\", line 1, in <module>\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086584229,
+    "data": "  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086695805,
+    "data": "    raise_for_execution_errors(nb, output_path)\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086721452,
+    "data": "  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086736272,
+    "data": "    raise error\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086892037,
+    "data": "papermill.exceptions.PapermillExecutionError: \n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086915369,
+    "data": "---------------------------------------------------------------------------\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.08691927,
+    "data": "Exception encountered at \"In [6]\":\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086931167,
+    "data": "---------------------------------------------------------------------------\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086933347,
+    "data": "SubmissionValidationError                 Traceback (most recent call last)\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086935428,
+    "data": "/tmp/ipykernel_65/1335950904.py in <cell line: 0>()\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086938232,
+    "data": "     25 # Note: sample_submission includes dummy LoRA adapters (adapters/main_lora and adapters/tool_lora)\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086940132,
+    "data": "     26 # shaped for gemma-4-31b-it-qat-w4a16-ct; Cell 2 removes them automatically when MODEL_NAME != 31B.\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086942052,
+    "data": "---> 27 declared_models = discover_declared_models(AGENT_DIR)\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086943943,
+    "data": "     28 assert len(declared_models) == 1, f'Expected exactly 1 declared model, got: {sorted(declared_models)}'\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086945993,
+    "data": "     29 declared_model = next(iter(declared_models))\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086947843,
+    "data": "\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086949526,
+    "data": "/usr/local/lib/python3.12/dist-packages/adk_submission/discovery.py in discover_declared_models(submission_dir, normalize_fn)\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086951572,
+    "data": "    683     root = Path(submission_dir).resolve()\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086953467,
+    "data": "    684     if not root.is_dir():\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086955267,
+    "data": "--> 685         raise SubmissionValidationError(f\"Agent directory not found: {submission_dir}\")\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086957362,
+    "data": "    686 \n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086959137,
+    "data": "    687     root_config_path = find_root_config(root)\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086961085,
+    "data": "\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086962771,
+    "data": "SubmissionValidationError: Agent directory not found: /kaggle/working/agents/baseline\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 123.086964685,
+    "data": "\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 125.638297968,
+    "data": "/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 125.63833073,
+    "data": "  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 125.816980295,
+    "data": "/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 125.817000015,
+    "data": "  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 126.613290553,
+    "data": "[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 126.93600452,
+    "data": "[NbConvertApp] Writing 40885 bytes to __notebook__.ipynb\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 129.656116989,
+    "data": "[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"
+  },
+  {
+    "stream_name": "stderr",
+    "time": 130.577778812,
+    "data": "[NbConvertApp] Writing 370810 bytes to __results__.html\n"
+  }
+]

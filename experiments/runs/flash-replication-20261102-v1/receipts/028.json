@@ -1,0 +1,34 @@
+{
+  "request_sha256": "a2e5e93c0e4b345799ae69fdcf85c3bee920d511fa302cd2efabe48c3a4b53d5",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "received_utc": "2026-11-02T15:53:45.934001+00:00",
+  "seconds": 0.5708101999998689,
+  "response": {
+    "id": "fc23819f-9d07-46cf-805b-deddc5d15988",
+    "object": "chat.completion",
+    "created": 1793634824,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"requests Response.iter_content decode_unicode True returns bytes instead of str\",\"iter_content decode_unicode implementation requests models.py Response text encoding\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2082,
+      "completion_tokens": 33,
+      "total_tokens": 2115,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 1954
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

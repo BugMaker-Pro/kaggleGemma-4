@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "stage": "fixed_menu_exploratory_pilot",
+  "date": "2026-11-02",
+  "source_tasks_sha256": "4bd3fa3c55befb5c566f9a601a93dfb7f614edd8e5a9f9313693d7d0db466b2f",
+  "source_tasks_path": "D:\\pycharm_project\\kaggleGemma-4\\data\\swebench_lite.jsonl",
+  "tasks_sha256": "4245ecf8f8697c434691e48a5bd50d8a6d892c0acd86a1b25397ae02bb042372",
+  "task_ids": [
+    "astropy__astropy-14995",
+    "django__django-15996",
+    "matplotlib__matplotlib-23562",
+    "mwaskom__seaborn-2848",
+    "pallets__flask-4045",
+    "psf__requests-2148",
+    "pydata__xarray-5131",
+    "pylint-dev__pylint-7993",
+    "pytest-dev__pytest-5413",
+    "scikit-learn__scikit-learn-10508",
+    "sphinx-doc__sphinx-7686",
+    "sympy__sympy-14024"
+  ],
+  "selection": {
+    "seed": 20261102,
+    "per_repo": 1,
+    "rule": "lowest SHA256(seed, instance_id) per repo; no labels or outcomes"
+  },
+  "source_hashes": {
+    "experiments/query_pilot.py": "50150cc5017ed1de5a270b61532088782785eabdde512891fcfa009890e8a6c9",
+    "tools/run_query_pilot.py": "c52b1582476802b65941918701ec2e29c258be199628a9d28d5341d81489fa61",
+    "tools/evaluate_query_pilot.py": "632b9bf2bc21c142c5ae5f59b750dfa9e0a08cb989f8c1d38cbedb2446c5e303",
+    "experiments/retrieve.py": "4d9167c03ac006a83c83786818d1211c8ba0cbc1cfd50a1422ffa20ead1f880c",
+    "experiments/buildgraph.py": "935d20fa8de473a2bbc8ead95d6bf3d09600d0a7c28da0690d38d2c3d7da2ba0",
+    "experiments/snapshot.py": "4a8a22bbdd6ee50bf18cfdc250b71035b5a961b0b7e9e8bb693e1632ac167478",
+    "experiments/snapindex.py": "18db1a3377a29e796d35c5af95a78b2b15ddc47dd370f0c804770308459c78cb",
+    "experiments/symbols.py": "c780e76779a74294cf6b21eb6b1717d4d96aa34e57746dbe484983b7ec3a41f7",
+    "experiments/coverage.py": "3df442364df9f59dce0ffd80e54ab8eca9ea5920aba99343731988572c16db6a"
+  },
+  "config": {
+    "actions": [
+      "identifiers",
+      "code",
+      "prose",
+      "traceback"
+    ],
+    "fixed_actions": [
+      "identifiers",
+      "prose"
+    ],
+    "max_supplemental_actions": 2,
+    "max_retrieval_calls": 3,
+    "per_action_candidates": 200,
+    "candidate_cap": 200,
+    "final_k": 10,
+    "rrf_k": 60,
+    "issue_char_limit": 20000,
+    "query_char_limit": 4000,
+    "max_total_query_chars": 28000,
+    "max_scored_documents": 300000,
+    "max_index_nodes": 100000,
+    "max_source_chars": 50000000,
+    "body_lines": 80,
+    "model_calls": 0,
+    "retries": 0,
+    "feedback_rounds": 0,
+    "cache": "fresh snapshot and index per task",
+    "failure_policy": "empty candidates; retain task in coverage denominator if gold exists"
+  },
+  "evaluation": {
+    "primary": "macro candidate coverage: menu oracle minus fixed identifiers+prose",
+    "oracle_objective": "candidate coverage only; ties by fewer actions then action names",
+    "minimum_worthwhile_coverage_delta": 0.02,
+    "threshold_status": "engineering continuation threshold, not expected improvement",
+    "interval": "paired repository-cluster bootstrap; descriptive only on reused data",
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20261102,
+    "automatic_expansion": false,
+    "multiplicity": "one primary contrast; other contrasts descriptive",
+    "gold_policy": "exact canonical IDs; retain unindexed targets in denominator",
+    "failure_policy": "empty candidates; retain task in coverage denominator if gold exists"
+  },
+  "limits": [
+    "historically used Lite tasks; not an unseen test set",
+    "lexical menu only; no adaptive evidence state",
+    "RRF pilot ranking, not the strongest learned fusion ranker",
+    "all-menu execution is diagnostic and may exceed deployment budget",
+    "source size cap is checked after snapshot read, not a hard IO limit",
+    "no wall-time cutoff; elapsed time reported, not claimed equal"
+  ],
+  "manifest_sha256": "c676df0fe8a2f1b730701dcf068ed7a0b34a9e90249de86fe37600fa3e982c4d"
+}

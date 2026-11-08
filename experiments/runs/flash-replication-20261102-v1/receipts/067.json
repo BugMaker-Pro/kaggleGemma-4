@@ -1,0 +1,34 @@
+{
+  "request_sha256": "b0c54766e640f0dbaf84f0294b3d93cd29e36052b804cc900a99c338d353d939",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "received_utc": "2026-11-02T15:54:25.904067+00:00",
+  "seconds": 1.2059251999999105,
+  "response": {
+    "id": "c4d508ea-8f54-4301-9a70-4faf7f83df21",
+    "object": "chat.completion",
+    "created": 1793634863,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"sympy Matrix hstack vstack shape zero rows regression 1.1\",\"Matrix.hstack implementation sympy matrices common.py\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 518,
+      "completion_tokens": 32,
+      "total_tokens": 550,
+      "prompt_tokens_details": {
+        "cached_tokens": 384
+      },
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 134
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

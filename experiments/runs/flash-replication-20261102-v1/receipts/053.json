@@ -1,0 +1,34 @@
+{
+  "request_sha256": "f6e2b78998d0380d2124e78777455f145d87705a3c76ce3903563cb514e21565",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "received_utc": "2026-11-02T15:54:10.637351+00:00",
+  "seconds": 1.0256166999988636,
+  "response": {
+    "id": "a7db5e8c-5bd4-4521-b9ec-cc4ab8c0430d",
+    "object": "chat.completion",
+    "created": 1793634848,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\": [\"NeighborhoodComponentsAnalysis parameter validation tol n_components type check\", \"GridSearchCV NeighborhoodComponentsAnalysis tol n_components np.int64 not int error\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1018,
+      "completion_tokens": 37,
+      "total_tokens": 1055,
+      "prompt_tokens_details": {
+        "cached_tokens": 768
+      },
+      "prompt_cache_hit_tokens": 768,
+      "prompt_cache_miss_tokens": 250
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

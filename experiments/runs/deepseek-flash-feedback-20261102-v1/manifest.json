@@ -1,0 +1,115 @@
+{
+  "schema": 1,
+  "date": "2026-11-02",
+  "created_utc": "2026-11-02T15:08:03.939048+00:00",
+  "stage": "frozen_deepseek_flash_single_round",
+  "bundle_sha256": "d420d2a6f459e113a2a4ad4b4eb7007ebf4e063a0d6768c129c6585091092fcb",
+  "task_ids": [
+    "astropy__astropy-14995",
+    "django__django-15996",
+    "matplotlib__matplotlib-23562",
+    "mwaskom__seaborn-2848",
+    "pallets__flask-4045",
+    "psf__requests-2148",
+    "pydata__xarray-5131",
+    "pylint-dev__pylint-7993",
+    "pytest-dev__pytest-5413",
+    "scikit-learn__scikit-learn-10508",
+    "sphinx-doc__sphinx-7686",
+    "sympy__sympy-14024"
+  ],
+  "request_ids": [
+    "4e37e45d95dd2b869fd8bdc165e6502766fdfb080a49ae1638792a64111789fb",
+    "87428139813ae52c999e4fed6fb612ba99968acf135eed389da22ba9de701f97",
+    "abf88584583ca23f358e334d4da847f431152f14005e7dad516104e5f15307ef",
+    "c853a1e9ef076962b38caf31777e8729e94a1b846cdd1969a15df9712f05dd09",
+    "e81fcb21a49fa72ee922a032f05507e61377a56fb46975b8bf5f04e9f96b5eb6",
+    "5d01cd5b81146998c057b195a14d71fe16cf6ce758fe6aaa6114bd0845232e35",
+    "6f627c11d426ebcad393433b9afd4450e58a7957bc30728ae122513b54f95cd6",
+    "f93ae34036eb3797dded854b31a06a67479446d1ef49d7db2f52d919b12eec30",
+    "26ff2fcb889a1ac9da12ad19d093759064eea4c84dc8b71c1c60402ff470c10e",
+    "b1c146c9915bae487dae30e7a7a01e7ee2713d667eb5d8b43c05edfca7acbc84",
+    "43dfc7f4436879c99e98be464df87bc871f4424279aa6cf1d3f6806c8ce02f4b",
+    "33305f73adf0e3e45fa973d026a83e47bd9021172971c970a64622860797685a",
+    "b47ac9a700fbe821b4d78a9505722d1405587db35e53ac9c7a0b9246709e75a8",
+    "c7ee0ed262f2a812ab15c68124630c3761c4ee52b0c24fc4add58e0bd35203d7",
+    "9753b6a6c5783ff02d402ae7957686d947a5d379565a6619e3d24919d40dff5d",
+    "41d56601139d8cd292e7b835d718e3e281106840165718a6c84cb8a55a85c3cd",
+    "c953c4a36dc6b78329f96af19e1240479c9e89c408ed4f418da7cb995ad61b20",
+    "ea7d0f48a1c82a841562f14e53c04760f4f5787c88476601e244e6c112161c08",
+    "cbf15ad1f1603b081ad7abe7ae5ec4083274e9bffe50443e82bcae82903c5708",
+    "705890b6d246a512a02b90774d82d13fc1a1a298d290c2c74bb5e0822a729972",
+    "e7bfb97dfc227e3bc2233eb07e377a363310e61f4601195cd8aa55074e15725c",
+    "cba255cae70d876a5acc394df47489bbb572c2736651fad0bb9007286eecafd9",
+    "c1afa616a45ed4676a4841a753d4cf39b55f3ac9c3b597327cf9511232682592",
+    "6c6949b9d7f8951bc07329654561bbc8b9cf8d67140e7d2376e61ea4295cd081"
+  ],
+  "config": {
+    "issue_chars": 6000,
+    "snippet_count": 5,
+    "snippet_lines": 60,
+    "snippet_chars": 1200,
+    "total_code_chars": 6000,
+    "query_count": 2,
+    "query_chars": 1000,
+    "max_input_tokens": 8192,
+    "max_output_tokens": 256,
+    "max_total_tokens": 8448,
+    "model_calls": 1,
+    "retrieval_calls": 3,
+    "per_action_candidates": 200,
+    "candidate_cap": 200,
+    "final_k": 10,
+    "rrf_k": 60,
+    "max_scored_documents": 300000,
+    "max_source_chars": 50000000,
+    "max_index_nodes": 100000,
+    "body_lines": 80,
+    "retries": 0
+  },
+  "api": {
+    "model": "deepseek-flash",
+    "thinking": {
+      "type": "disabled"
+    },
+    "response_format": {
+      "type": "json_object"
+    },
+    "temperature": 0,
+    "max_tokens": 256,
+    "stream": false
+  },
+  "endpoint": "https://api.deepseek.com/chat/completions",
+  "source_hashes": {
+    "tools/run_deepseek_feedback.py": "deb7a6cbf60b63b9d3ca95ba0316f2b2666ceea6a9ea1404448f2b411fafba67"
+  },
+  "model_sha256": "833dda7d19426990424b5a841e61e588683c2c6ce34e5d7074b84a43103beffc",
+  "max_calls": 24,
+  "retries": 0,
+  "budget_cny": 5.0,
+  "planning_reservation_cny": 0.380344,
+  "prices_cny_per_million": {
+    "idle": {
+      "input_hit": 0.02,
+      "input_miss": 1.0,
+      "output": 4.0
+    },
+    "peak": {
+      "input_hit": 0.04,
+      "input_miss": 2.0,
+      "output": 8.0
+    }
+  },
+  "price_date": "2026-11-02",
+  "token_preflight": "Exact remote tokenizer unavailable; postcheck provider usage against frozen caps. Budget planning uses UTF-8 bytes plus 1024 overhead per request, not an exact token guarantee.",
+  "version_policy": "Record API response model and system_fingerprint; alias is mutable, not an immutable checkpoint.",
+  "evaluation": {
+    "primary": "feedback minus preplanned macro recall@10",
+    "minimum_worthwhile_delta": 0.02,
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20261102,
+    "failure_policy": "invalid completed output -> original-only fallback; transport or accounting uncertainty -> stop without retry",
+    "automatic_expansion": false
+  },
+  "manifest_sha256": "001bb1a61aa999d022ac9922671f7f4ad59838c785e7cb011f1a2a59241bef31"
+}

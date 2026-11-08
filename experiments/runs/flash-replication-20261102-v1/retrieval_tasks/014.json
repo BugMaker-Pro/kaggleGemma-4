@@ -1,0 +1,3674 @@
+{
+  "instance_id": "psf__requests-3362",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "results": [
+    {
+      "instance_id": "psf__requests-3362",
+      "repo": "psf/requests",
+      "base_commit": "36453b95b13079296776d11b09cab2567ea3e703",
+      "arm": "preplanned",
+      "status": "ok",
+      "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+      "request_sha256": "61e03e849f9286ca4e9ad50f4766d24cfd9476360185bfa4fdbd6ee096b0bce5",
+      "response_sha256": "45c97924292898d93f8eed46f48591960b356f645151092b706944098ede763f",
+      "raw_response_sha256": "45c97924292898d93f8eed46f48591960b356f645151092b706944098ede763f",
+      "actions": [
+        {
+          "query": "requests iter_content decode_unicode True returns bytes instead of unicode",
+          "candidates": [
+            {
+              "id": "tests.test_requests.TestRequests.test_response_decode_unicode",
+              "score": 28.933353778178766
+            },
+            {
+              "id": "requests.models.Response.iter_content",
+              "score": 26.858893056852565
+            },
+            {
+              "id": "requests.models.Response.iter_lines",
+              "score": 21.97036104680577
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse",
+              "score": 16.194111018979093
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.stream",
+              "score": 15.98948803404442
+            },
+            {
+              "id": "requests.models.Response.content",
+              "score": 15.27372699169316
+            },
+            {
+              "id": "requests.models.Response.json",
+              "score": 14.886939221971568
+            },
+            {
+              "id": "requests.utils.get_unicode_from_response",
+              "score": 14.865137268034793
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.read",
+              "score": 14.798082576758954
+            },
+            {
+              "id": "requests.utils.stream_decode_response_unicode",
+              "score": 14.633988305839871
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.__init__",
+              "score": 14.253862993967182
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_manual_redirect_with_partial_body_read",
+              "score": 14.121124357734907
+            },
+            {
+              "id": "requests.packages.urllib3.filepost.iter_fields",
+              "score": 12.937033749546435
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_response_chunk_size_int",
+              "score": 12.783710148040733
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.read_chunked",
+              "score": 12.737009819825992
+            },
+            {
+              "id": "requests.models.Response.text",
+              "score": 12.627062321948625
+            },
+            {
+              "id": "requests.models",
+              "score": 12.464036289408758
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.multiple_domains",
+              "score": 11.947053707807886
+            },
+            {
+              "id": "requests.models.Response.iter_content.generate",
+              "score": 11.940505217640446
+            },
+            {
+              "id": "requests.packages.urllib3.filepost",
+              "score": 11.710466050681621
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_body",
+              "score": 11.536482660758175
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse._decode",
+              "score": 11.224465443457042
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_response_is_iterable",
+              "score": 10.670256704879794
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin._encode_files",
+              "score": 10.546008516052142
+            },
+            {
+              "id": "requests.packages.chardet.detect",
+              "score": 10.4059873911083
+            },
+            {
+              "id": "requests.exceptions.ContentDecodingError",
+              "score": 10.268381184248147
+            },
+            {
+              "id": "requests.packages.urllib3.exceptions.DecodeError",
+              "score": 10.102174747963694
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_response_is_iterable.read_mock",
+              "score": 9.9474895589533
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin",
+              "score": 9.92849318902108
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_url",
+              "score": 9.893420591142249
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unicode_header_name",
+              "score": 9.797977429776193
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six.print_",
+              "score": 9.406234694019869
+            },
+            {
+              "id": "requests.models.Response.__iter__",
+              "score": 9.380879026281615
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin.resolve_redirects",
+              "score": 9.290448476519453
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.tell",
+              "score": 9.118414370109637
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin._encode_params",
+              "score": 8.967532910807611
+            },
+            {
+              "id": "requests.packages.urllib3.util.ssl_._const_compare_digest_backport",
+              "score": 8.917526802391148
+            },
+            {
+              "id": "requests.packages.urllib3.fields",
+              "score": 8.86317595636756
+            },
+            {
+              "id": "tests.compat",
+              "score": 8.704738565638277
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin",
+              "score": 8.585530888180106
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.send",
+              "score": 8.553566111241153
+            },
+            {
+              "id": "requests.utils.get_encodings_from_content",
+              "score": 8.486339596034153
+            },
+            {
+              "id": "requests.utils.get_encoding_from_headers",
+              "score": 8.468114796519302
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.iterkeys",
+              "score": 8.449655414532895
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.itervalues",
+              "score": 8.449655414532895
+            },
+            {
+              "id": "requests.models.RequestHooksMixin",
+              "score": 8.43951456305099
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_response_iter_lines_reentrant",
+              "score": 8.398920614176067
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_response_iter_lines",
+              "score": 8.393808576221833
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.iteritems",
+              "score": 8.286110227000915
+            },
+            {
+              "id": "requests.compat",
+              "score": 8.262936421707293
+            },
+            {
+              "id": "requests.packages.urllib3.fields.format_header_param",
+              "score": 8.210925343918412
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_decompress_gzip",
+              "score": 8.06261274552178
+            },
+            {
+              "id": "requests.models.Response.__bool__",
+              "score": 8.041555407131298
+            },
+            {
+              "id": "requests.models.Response.__nonzero__",
+              "score": 8.041555407131298
+            },
+            {
+              "id": "requests.packages.chardet",
+              "score": 8.031828843543764
+            },
+            {
+              "id": "requests.packages.urllib3.filepost.encode_multipart_formdata",
+              "score": 7.932559192841579
+            },
+            {
+              "id": "requests.utils.super_len",
+              "score": 7.897319398156688
+            },
+            {
+              "id": "requests.utils.get_netrc_auth",
+              "score": 7.858183297448136
+            },
+            {
+              "id": "requests.utils.should_bypass_proxies",
+              "score": 7.819135768988969
+            },
+            {
+              "id": "requests.models.RequestHooksMixin.deregister_hook",
+              "score": 7.6202447878859685
+            },
+            {
+              "id": "requests.models.Response",
+              "score": 7.519851728530206
+            },
+            {
+              "id": "requests.sessions.Session.request",
+              "score": 7.518985679403307
+            },
+            {
+              "id": "requests.utils.to_native_string",
+              "score": 7.490250749495524
+            },
+            {
+              "id": "requests.adapters.BaseAdapter.send",
+              "score": 7.419081470086611
+            },
+            {
+              "id": "requests.models.Response.__init__",
+              "score": 7.403938164315003
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.appengine",
+              "score": 7.384700854270339
+            },
+            {
+              "id": "requests.api",
+              "score": 7.357092594168582
+            },
+            {
+              "id": "requests.sessions.Session.patch",
+              "score": 7.297625081781455
+            },
+            {
+              "id": "requests.sessions.Session.put",
+              "score": 7.297625081781455
+            },
+            {
+              "id": "requests.api.request",
+              "score": 7.269749373761978
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.get_dict",
+              "score": 7.242550161432385
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.appengine.AppEngineManager.__init__",
+              "score": 7.230352726120695
+            },
+            {
+              "id": "requests.structures",
+              "score": 7.105983004523189
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.HTTPConnectionPool.urlopen",
+              "score": 6.998131550494323
+            },
+            {
+              "id": "tests.test_testserver.TestTestServer.test_basic_response",
+              "score": 6.993759238934836
+            },
+            {
+              "id": "requests.utils.address_in_network",
+              "score": 6.988431616457753
+            },
+            {
+              "id": "requests.utils",
+              "score": 6.963852225259011
+            },
+            {
+              "id": "requests.packages.urllib3.fields.RequestField.from_tuples",
+              "score": 6.942799395671976
+            },
+            {
+              "id": "requests.sessions.Session.post",
+              "score": 6.911632900446564
+            },
+            {
+              "id": "requests.packages.urllib3.util.connection.is_connection_dropped",
+              "score": 6.784789879393857
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.appengine.AppEngineManager._urlfetch_response_to_http_response",
+              "score": 6.7154114994505365
+            },
+            {
+              "id": "requests.packages.urllib3.fields.RequestField",
+              "score": 6.688212897989445
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unicode_get",
+              "score": 6.637725916477518
+            },
+            {
+              "id": "requests.structures.CaseInsensitiveDict",
+              "score": 6.63747412566397
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar",
+              "score": 6.61589883516108
+            },
+            {
+              "id": "requests.sessions.Session.get",
+              "score": 6.559812206827859
+            },
+            {
+              "id": "requests.sessions.Session.options",
+              "score": 6.559812206827859
+            },
+            {
+              "id": "tests.test_utils.TestGuessFilename",
+              "score": 6.538636675720088
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_can_send_file_object_with_non_string_filename",
+              "score": 6.479963014698951
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unicode_method_name",
+              "score": 6.432622622754625
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unicode_multipart_post",
+              "score": 6.410986145501656
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar._find",
+              "score": 6.353345653006166
+            },
+            {
+              "id": "requests.models.PreparedRequest",
+              "score": 6.301243809153829
+            },
+            {
+              "id": "requests.packages.urllib3.packages.ordered_dict.OrderedDict.__iter__",
+              "score": 6.274117530177572
+            },
+            {
+              "id": "requests.packages.urllib3.util.request",
+              "score": 6.0984636147428475
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unicode_multipart_post_fieldnames",
+              "score": 6.042743702434773
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unicode_method_name_with_request_object",
+              "score": 6.027007929257277
+            },
+            {
+              "id": "requests.packages.urllib3.util.request.make_headers",
+              "score": 6.019863938723436
+            },
+            {
+              "id": "tests.test_requests.TestCaseInsensitiveDict.test_iter",
+              "score": 5.94577724062272
+            },
+            {
+              "id": "requests.packages.urllib3.util.url.get_host",
+              "score": 5.942657312190832
+            },
+            {
+              "id": "requests.structures.CaseInsensitiveDict.__iter__",
+              "score": 5.940477468966909
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.data",
+              "score": 5.938403222574958
+            },
+            {
+              "id": "requests.adapters.BaseAdapter",
+              "score": 5.927904135520665
+            },
+            {
+              "id": "tests.test_utils.test_iter_slices",
+              "score": 5.889045362843295
+            },
+            {
+              "id": "requests.packages.urllib3._collections.RecentlyUsedContainer.__iter__",
+              "score": 5.868503540235374
+            },
+            {
+              "id": "requests.packages.chardet.chardetect",
+              "score": 5.859909734974824
+            },
+            {
+              "id": "requests.packages.urllib3._collections.HTTPHeaderDict.__iter__",
+              "score": 5.833189801776937
+            },
+            {
+              "id": "requests.models.Response.__setstate__",
+              "score": 5.826126152924065
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.appengine.AppEngineManager",
+              "score": 5.825879745165409
+            },
+            {
+              "id": "requests.packages.chardet.compat",
+              "score": 5.777385798322518
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry.__init__",
+              "score": 5.748660492016644
+            },
+            {
+              "id": "tests.test_requests.TestRequests._patch_adapter_gzipped_redirect.build_response",
+              "score": 5.648144222294929
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_header_keys_are_native",
+              "score": 5.644811452872444
+            },
+            {
+              "id": "tests.test_requests.test_json_encodes_as_bytes",
+              "score": 5.634663726729103
+            },
+            {
+              "id": "requests.packages.urllib3.filepost.iter_field_objects",
+              "score": 5.620264039673108
+            },
+            {
+              "id": "requests.utils.iter_slices",
+              "score": 5.581691872486495
+            },
+            {
+              "id": "requests.cookies.cookiejar_from_dict",
+              "score": 5.581323875891464
+            },
+            {
+              "id": "tests.test_lowlevel.test_chunked_upload",
+              "score": 5.580482351453384
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.__setitem__",
+              "score": 5.5514075276191726
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar._find_no_duplicates",
+              "score": 5.546811991593193
+            },
+            {
+              "id": "requests.api.get",
+              "score": 5.535575453201503
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.__getitem__",
+              "score": 5.531184759915121
+            },
+            {
+              "id": "tests.test_requests.TestRequests",
+              "score": 5.509473556630471
+            },
+            {
+              "id": "requests.packages.chardet.jpcntx.JapaneseContextAnalysis.reset",
+              "score": 5.416990902637549
+            },
+            {
+              "id": "requests.packages.urllib3._collections.HTTPHeaderDict",
+              "score": 5.372616395772618
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unconsumed_session_response_closes_connection",
+              "score": 5.354439901098807
+            },
+            {
+              "id": "tests.test_utils",
+              "score": 5.310635801665155
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_params_bytes_are_encoded",
+              "score": 5.285358976819971
+            },
+            {
+              "id": "requests.packages.urllib3.request.RequestMethods.request_encode_body",
+              "score": 5.23456644215497
+            },
+            {
+              "id": "requests.packages.chardet.jpcntx.JapaneseContextAnalysis.feed",
+              "score": 5.197643491296097
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.pyopenssl.get_subj_alt_name",
+              "score": 5.154651702339711
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_http_301_doesnt_change_head_to_get",
+              "score": 5.093057596013835
+            },
+            {
+              "id": "requests.packages.chardet.jpcntx.JapaneseContextAnalysis",
+              "score": 5.063893505855535
+            },
+            {
+              "id": "tests.test_lowlevel",
+              "score": 4.971312388119859
+            },
+            {
+              "id": "requests.packages.urllib3._collections.HTTPHeaderDict.getlist",
+              "score": 4.907088463869357
+            },
+            {
+              "id": "requests.packages.urllib3.fields.RequestField.make_multipart",
+              "score": 4.872314190101309
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.build_response",
+              "score": 4.825299566591712
+            },
+            {
+              "id": "requests.sessions.session",
+              "score": 4.814908539974839
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_response_json_when_content_is_None",
+              "score": 4.723002111887095
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_DIGEST_AUTH_RETURNS_COOKIE",
+              "score": 4.718282187243348
+            },
+            {
+              "id": "requests.utils.dict_to_sequence",
+              "score": 4.715864828902046
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six",
+              "score": 4.693235301091708
+            },
+            {
+              "id": "tests.test_requests.TestRequests._patch_adapter_gzipped_redirect",
+              "score": 4.676650762316351
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_override_content_length",
+              "score": 4.675085260940781
+            },
+            {
+              "id": "tests.test_utils.TestContentEncodingDetection",
+              "score": 4.674273498773847
+            },
+            {
+              "id": "tests.testserver.server.consume_socket_content",
+              "score": 4.669360978206628
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse._error_catcher",
+              "score": 4.658034234600472
+            },
+            {
+              "id": "requests.packages.urllib3.fields.guess_content_type",
+              "score": 4.638505196848747
+            },
+            {
+              "id": "requests.packages.urllib3.packages.ordered_dict.OrderedDict",
+              "score": 4.58981155370602
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six.int2byte",
+              "score": 4.560473910706906
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse._init_decoder",
+              "score": 4.554881115630599
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.keys",
+              "score": 4.511820332979167
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.values",
+              "score": 4.511820332979167
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_content_length",
+              "score": 4.506183810949325
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_no_content_length",
+              "score": 4.502494384963152
+            },
+            {
+              "id": "requests.models.Response.__getstate__",
+              "score": 4.493014293199427
+            },
+            {
+              "id": "requests.auth._basic_auth_str",
+              "score": 4.4766203748242175
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_custom_content_type",
+              "score": 4.476516417371579
+            },
+            {
+              "id": "tests.test_utils.TestContentEncodingDetection.test_precedence",
+              "score": 4.463087374720298
+            },
+            {
+              "id": "tests.test_utils.TestContentEncodingDetection.test_pragmas",
+              "score": 4.463084965667568
+            },
+            {
+              "id": "requests.packages.urllib3.util.ssl_.assert_fingerprint",
+              "score": 4.453814324659745
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six.iterkeys",
+              "score": 4.443365065293243
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six.itervalues",
+              "score": 4.443365065293243
+            },
+            {
+              "id": "requests.packages.urllib3.util.ssl_.resolve_cert_reqs",
+              "score": 4.433920014861187
+            },
+            {
+              "id": "requests.packages.urllib3.response",
+              "score": 4.433050373258007
+            },
+            {
+              "id": "requests.packages.urllib3._collections.HTTPHeaderDict.extend",
+              "score": 4.382812750134926
+            },
+            {
+              "id": "requests.utils.dict_from_cookiejar",
+              "score": 4.357664935736951
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_json_param_post_content_type_works",
+              "score": 4.345596430183288
+            },
+            {
+              "id": "requests.packages.urllib3.packages.ordered_dict.OrderedDict.iterkeys",
+              "score": 4.328454297990504
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six.iteritems",
+              "score": 4.328454297990504
+            },
+            {
+              "id": "requests.models.Response.links",
+              "score": 4.324839079615905
+            },
+            {
+              "id": "requests.sessions.Session.delete",
+              "score": 4.324839079615905
+            },
+            {
+              "id": "requests.sessions.Session.get_adapter",
+              "score": 4.308612314043883
+            },
+            {
+              "id": "requests.packages.urllib3.fields.RequestField._render_part",
+              "score": 4.293847054264921
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_POSTBIN_SEEKED_OBJECT_WITH_NO_ITER",
+              "score": 4.291482100309271
+            },
+            {
+              "id": "requests.sessions.Session.head",
+              "score": 4.2449136256225595
+            },
+            {
+              "id": "tests.testserver.server",
+              "score": 4.234302007431215
+            },
+            {
+              "id": "tests.testserver.server.Server.text_response_server.text_response_handler",
+              "score": 4.197581770059252
+            },
+            {
+              "id": "requests.utils.dotted_netmask",
+              "score": 4.183083834675442
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.HTTPConnectionPool._get_timeout",
+              "score": 4.167908701640962
+            },
+            {
+              "id": "requests.utils.add_dict_to_cookiejar",
+              "score": 4.167908701640962
+            },
+            {
+              "id": "tests.test_testserver",
+              "score": 4.158530471953158
+            },
+            {
+              "id": "requests.models.Request.prepare",
+              "score": 4.1230410827743516
+            },
+            {
+              "id": "requests.utils.unquote_unreserved",
+              "score": 4.108516790311281
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.HTTPConnectionPool._make_request",
+              "score": 4.097310456859751
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.list_domains",
+              "score": 4.065600965215324
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.list_paths",
+              "score": 4.065600965215324
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.items",
+              "score": 4.05774969066054
+            },
+            {
+              "id": "requests.exceptions.StreamConsumedError",
+              "score": 4.038228665745249
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_binary_put",
+              "score": 4.015049350503032
+            },
+            {
+              "id": "tests.test_testserver.TestTestServer",
+              "score": 4.011218448608208
+            },
+            {
+              "id": "requests.packages.urllib3.util.ssl_",
+              "score": 4.0111001924060785
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.ConnectionPool.__init__",
+              "score": 3.983456769578961
+            },
+            {
+              "id": "tests.testserver.server.Server.text_response_server",
+              "score": 3.9831967266573987
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.HTTPConnectionPool",
+              "score": 3.963658866671616
+            },
+            {
+              "id": "tests.test_requests.TestTimeout.test_none_timeout",
+              "score": 3.9362067279684996
+            },
+            {
+              "id": "requests.packages.urllib3.fields.RequestField.render_headers",
+              "score": 3.856550654692137
+            },
+            {
+              "id": "requests.auth",
+              "score": 3.7966490754008815
+            },
+            {
+              "id": "requests.packages.urllib3.util.connection",
+              "score": 3.7493787327512
+            },
+            {
+              "id": "requests.cookies.merge_cookies",
+              "score": 3.7225739100247845
+            }
+          ],
+          "scored_documents": 1037,
+          "seconds": 0.0015507999996771105
+        },
+        {
+          "query": "requests Response text vs iter_content decode_unicode implementation",
+          "candidates": [
+            {
+              "id": "tests.test_requests.TestRequests.test_response_decode_unicode",
+              "score": 26.42551785486475
+            },
+            {
+              "id": "requests.models.Response.iter_lines",
+              "score": 21.859361541441796
+            },
+            {
+              "id": "requests.models.Response.iter_content",
+              "score": 21.40264355388625
+            },
+            {
+              "id": "requests.models.Response.text",
+              "score": 20.118049531411913
+            },
+            {
+              "id": "requests.models.Response.json",
+              "score": 17.78723817194267
+            },
+            {
+              "id": "requests.utils.stream_decode_response_unicode",
+              "score": 15.505037952766187
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin._encode_params",
+              "score": 15.362587183612863
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin",
+              "score": 14.687867894177309
+            },
+            {
+              "id": "requests.utils.get_unicode_from_response",
+              "score": 14.531136410899297
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_response_is_iterable",
+              "score": 14.040813142180472
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse._decode",
+              "score": 13.846234048179245
+            },
+            {
+              "id": "tests.testserver.server.Server.text_response_server",
+              "score": 13.652483716230094
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.read_chunked",
+              "score": 13.537322138407927
+            },
+            {
+              "id": "tests.testserver.server.Server.text_response_server.text_response_handler",
+              "score": 13.427921236784144
+            },
+            {
+              "id": "requests.exceptions.ContentDecodingError",
+              "score": 13.37846677015738
+            },
+            {
+              "id": "tests.test_testserver.TestTestServer.test_text_response",
+              "score": 13.341378576097231
+            },
+            {
+              "id": "requests.models.Response.__iter__",
+              "score": 12.579700154217981
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.__init__",
+              "score": 12.532130259545642
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.stream",
+              "score": 12.264433071273556
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.read",
+              "score": 12.220676320606454
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_response_chunk_size_int",
+              "score": 11.97476115212812
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse",
+              "score": 11.92728049375497
+            },
+            {
+              "id": "requests.models.Response.__init__",
+              "score": 11.59223123106813
+            },
+            {
+              "id": "tests.testserver.server",
+              "score": 11.437279724661447
+            },
+            {
+              "id": "requests.models.Response.content",
+              "score": 11.174277700729219
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_manual_redirect_with_partial_body_read",
+              "score": 11.115717474457288
+            },
+            {
+              "id": "tests.test_testserver",
+              "score": 11.084604435666542
+            },
+            {
+              "id": "requests.models.Response",
+              "score": 11.0396967216221
+            },
+            {
+              "id": "requests.packages.urllib3.fields.format_header_param",
+              "score": 10.964832442501992
+            },
+            {
+              "id": "tests.testserver.server.Server.basic_response_server",
+              "score": 10.952323235608066
+            },
+            {
+              "id": "requests.models",
+              "score": 10.920292440457846
+            },
+            {
+              "id": "tests.test_testserver.TestTestServer",
+              "score": 10.877775547414615
+            },
+            {
+              "id": "requests.packages.urllib3.fields",
+              "score": 10.62744951078616
+            },
+            {
+              "id": "tests.testserver.server.Server",
+              "score": 10.282262708200399
+            },
+            {
+              "id": "tests.test_testserver.TestTestServer.test_basic_response",
+              "score": 10.251588417945946
+            },
+            {
+              "id": "requests.packages.urllib3.exceptions.DecodeError",
+              "score": 10.102174747963694
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_response_is_iterable.read_mock",
+              "score": 9.9474895589533
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unicode_header_name",
+              "score": 9.797977429776193
+            },
+            {
+              "id": "tests.test_utils.TestContentEncodingDetection",
+              "score": 9.58669006544849
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_response_iter_lines_reentrant",
+              "score": 9.580645665130346
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_response_iter_lines",
+              "score": 9.178286462102497
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_custom_content_type",
+              "score": 9.17143776764344
+            },
+            {
+              "id": "requests.models.Response.iter_content.generate",
+              "score": 8.760517830906434
+            },
+            {
+              "id": "tests.compat",
+              "score": 8.704738565638277
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_body",
+              "score": 8.632710013484864
+            },
+            {
+              "id": "tests.test_utils.TestContentEncodingDetection.test_precedence",
+              "score": 8.439691244052241
+            },
+            {
+              "id": "requests.packages.urllib3.filepost.encode_multipart_formdata",
+              "score": 8.129619813614804
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_decompress_gzip",
+              "score": 8.06261274552178
+            },
+            {
+              "id": "requests.utils.get_encoding_from_headers",
+              "score": 7.99911118518381
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_response_json_when_content_is_None",
+              "score": 7.921828432259722
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.appengine.AppEngineManager._urlfetch_response_to_http_response",
+              "score": 7.757186952076621
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.pyopenssl.SubjectAltName",
+              "score": 7.587176908107309
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_url",
+              "score": 7.382095861990214
+            },
+            {
+              "id": "requests.packages.urllib3.packages.ssl_match_hostname._implementation.CertificateError",
+              "score": 7.336112646539845
+            },
+            {
+              "id": "requests.exceptions.StreamConsumedError",
+              "score": 7.148314251654481
+            },
+            {
+              "id": "requests.packages.chardet.hebrewprober",
+              "score": 7.033873871518707
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin._encode_files",
+              "score": 7.021997873517794
+            },
+            {
+              "id": "requests.packages.urllib3.fields.RequestField.from_tuples",
+              "score": 6.942799395671976
+            },
+            {
+              "id": "tests.test_requests.TestRequests._patch_adapter_gzipped_redirect.build_response",
+              "score": 6.774075326822892
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six.print_",
+              "score": 6.752810981666202
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin.resolve_redirects",
+              "score": 6.734192453254719
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse._init_decoder",
+              "score": 6.703013891837177
+            },
+            {
+              "id": "requests.packages.urllib3.fields.RequestField",
+              "score": 6.688212897989445
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unicode_get",
+              "score": 6.637725916477518
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unconsumed_session_response_closes_connection",
+              "score": 6.56968032941335
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin",
+              "score": 6.514188446471824
+            },
+            {
+              "id": "requests.utils.super_len",
+              "score": 6.452309407518346
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.build_response",
+              "score": 6.438833261632207
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unicode_method_name",
+              "score": 6.432622622754625
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unicode_multipart_post",
+              "score": 6.410986145501656
+            },
+            {
+              "id": "requests.structures",
+              "score": 6.384323070356414
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.send",
+              "score": 6.310665388203675
+            },
+            {
+              "id": "requests.packages.urllib3.packages.ordered_dict.OrderedDict.__iter__",
+              "score": 6.274117530177572
+            },
+            {
+              "id": "tests.test_requests.TestRequests._patch_adapter_gzipped_redirect",
+              "score": 6.232936238195213
+            },
+            {
+              "id": "requests.packages.urllib3.response",
+              "score": 6.212834259973967
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unicode_multipart_post_fieldnames",
+              "score": 6.042743702434773
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unicode_method_name_with_request_object",
+              "score": 6.027007929257277
+            },
+            {
+              "id": "tests.test_requests.TestCaseInsensitiveDict.test_iter",
+              "score": 5.94577724062272
+            },
+            {
+              "id": "requests.structures.CaseInsensitiveDict",
+              "score": 5.940511438136454
+            },
+            {
+              "id": "requests.structures.CaseInsensitiveDict.__iter__",
+              "score": 5.940477468966909
+            },
+            {
+              "id": "requests.packages.urllib3.packages.ssl_match_hostname",
+              "score": 5.93051046305353
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.tell",
+              "score": 5.891551045646857
+            },
+            {
+              "id": "tests.test_utils.test_iter_slices",
+              "score": 5.889045362843295
+            },
+            {
+              "id": "requests.packages.urllib3._collections.RecentlyUsedContainer.__iter__",
+              "score": 5.868503540235374
+            },
+            {
+              "id": "requests.api",
+              "score": 5.8657781449519835
+            },
+            {
+              "id": "requests.packages.urllib3._collections.HTTPHeaderDict.__iter__",
+              "score": 5.833189801776937
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.data",
+              "score": 5.817065132662588
+            },
+            {
+              "id": "requests.packages.chardet.detect",
+              "score": 5.784086974645666
+            },
+            {
+              "id": "tests.test_requests.TestTimeout.test_invalid_timeout",
+              "score": 5.700941009532034
+            },
+            {
+              "id": "requests.api.request",
+              "score": 5.681976508086113
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_header_keys_are_native",
+              "score": 5.644811452872444
+            },
+            {
+              "id": "requests.packages.urllib3.filepost.iter_fields",
+              "score": 5.632565397912288
+            },
+            {
+              "id": "requests.packages.urllib3.filepost.iter_field_objects",
+              "score": 5.620264039673108
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.HTTPConnectionPool.urlopen",
+              "score": 5.616605501086186
+            },
+            {
+              "id": "requests.utils.iter_slices",
+              "score": 5.581691872486495
+            },
+            {
+              "id": "tests.test_lowlevel",
+              "score": 5.568695053736152
+            },
+            {
+              "id": "tests.test_testserver.TestTestServer.test_basic",
+              "score": 5.538419401953349
+            },
+            {
+              "id": "requests.utils",
+              "score": 5.502801428632164
+            },
+            {
+              "id": "tests.test_lowlevel.test_chunked_upload",
+              "score": 5.482951787323454
+            },
+            {
+              "id": "tests.test_testserver.TestTestServer.test_basic.handler",
+              "score": 5.447366722143384
+            },
+            {
+              "id": "tests.test_testserver.TestTestServer.test_request_recovery",
+              "score": 5.3197663326864815
+            },
+            {
+              "id": "requests.exceptions.FileModeWarning",
+              "score": 5.246440694429598
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_links",
+              "score": 5.173587974481448
+            },
+            {
+              "id": "requests.utils.get_netrc_auth",
+              "score": 4.9947790713198525
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth.handle_401",
+              "score": 4.937196316424349
+            },
+            {
+              "id": "requests.packages.urllib3.fields.RequestField.make_multipart",
+              "score": 4.872314190101309
+            },
+            {
+              "id": "requests",
+              "score": 4.862042752261434
+            },
+            {
+              "id": "requests.packages.urllib3.packages.backports.makefile.backport_makefile",
+              "score": 4.86108378616356
+            },
+            {
+              "id": "requests.utils.get_encodings_from_content",
+              "score": 4.80572860277297
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six",
+              "score": 4.781448688149934
+            },
+            {
+              "id": "requests.packages.urllib3.packages.backports.makefile",
+              "score": 4.773475914046237
+            },
+            {
+              "id": "requests.packages.urllib3.exceptions",
+              "score": 4.770960060053173
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_override_content_length",
+              "score": 4.675085260940781
+            },
+            {
+              "id": "tests.testserver.server.consume_socket_content",
+              "score": 4.669360978206628
+            },
+            {
+              "id": "requests.packages.urllib3.filepost",
+              "score": 4.656445746507442
+            },
+            {
+              "id": "requests.packages.urllib3.fields.guess_content_type",
+              "score": 4.638505196848747
+            },
+            {
+              "id": "requests.adapters.BaseAdapter.send",
+              "score": 4.58841634017017
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_content_length",
+              "score": 4.506183810949325
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_no_content_length",
+              "score": 4.502494384963152
+            },
+            {
+              "id": "requests.models.Response.__getstate__",
+              "score": 4.493014293199427
+            },
+            {
+              "id": "tests.test_utils.TestContentEncodingDetection.test_pragmas",
+              "score": 4.463084965667568
+            },
+            {
+              "id": "requests.packages.chardet",
+              "score": 4.459924392631153
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six.iterkeys",
+              "score": 4.443365065293243
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six.itervalues",
+              "score": 4.443365065293243
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_json_param_post_content_type_works",
+              "score": 4.345596430183288
+            },
+            {
+              "id": "requests.packages.urllib3.packages.ordered_dict.OrderedDict.iterkeys",
+              "score": 4.328454297990504
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six.iteritems",
+              "score": 4.328454297990504
+            },
+            {
+              "id": "requests.models.PreparedRequest",
+              "score": 4.295325439615688
+            },
+            {
+              "id": "requests.packages.urllib3.fields.RequestField._render_part",
+              "score": 4.293847054264921
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_POSTBIN_SEEKED_OBJECT_WITH_NO_ITER",
+              "score": 4.291482100309271
+            },
+            {
+              "id": "requests.packages.urllib3.packages.ssl_match_hostname._implementation",
+              "score": 4.26697180523357
+            },
+            {
+              "id": "requests.packages.chardet.hebrewprober.HebrewProber.feed",
+              "score": 4.251456337662041
+            },
+            {
+              "id": "tests.test_lowlevel.test_use_proxy_from_environment",
+              "score": 4.193193593589961
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_user_agent_transfers",
+              "score": 4.112571524524952
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.iterkeys",
+              "score": 4.090440918555282
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.itervalues",
+              "score": 4.090440918555282
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.list_domains",
+              "score": 4.065600965215324
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.list_paths",
+              "score": 4.065600965215324
+            },
+            {
+              "id": "requests.compat",
+              "score": 4.002310718713342
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.iteritems",
+              "score": 3.9928588600836292
+            },
+            {
+              "id": "requests.packages.chardet.hebrewprober.HebrewProber",
+              "score": 3.9816927400067192
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_HTTP_200_OK_GET_WITH_PARAMS",
+              "score": 3.9584839534167386
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_http_error",
+              "score": 3.938515668722084
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar",
+              "score": 3.886775811068811
+            },
+            {
+              "id": "tests.test_requests.TestTimeout",
+              "score": 3.8750627708594143
+            },
+            {
+              "id": "requests.packages.urllib3.fields.RequestField.render_headers",
+              "score": 3.856550654692137
+            },
+            {
+              "id": "requests.cookies.extract_cookies_to_jar",
+              "score": 3.8520420158652913
+            },
+            {
+              "id": "requests.exceptions.RequestException.__init__",
+              "score": 3.7815799176950535
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.multiple_domains",
+              "score": 3.7681266361852037
+            },
+            {
+              "id": "requests.packages.urllib3.util.response.is_response_to_head",
+              "score": 3.764156912948865
+            },
+            {
+              "id": "requests.sessions.Session.request",
+              "score": 3.7349674551005814
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.from_httplib",
+              "score": 3.705173458156261
+            },
+            {
+              "id": "requests.exceptions.RequestException",
+              "score": 3.7013586109693937
+            },
+            {
+              "id": "requests.packages.urllib3.exceptions.ResponseNotChunked",
+              "score": 3.6896230472552034
+            },
+            {
+              "id": "requests.models.RequestHooksMixin.register_hook",
+              "score": 3.6649874069529673
+            },
+            {
+              "id": "requests.utils.to_native_string",
+              "score": 3.647631430167196
+            },
+            {
+              "id": "requests.packages.urllib3.packages.ssl_match_hostname._implementation.match_hostname",
+              "score": 3.62718248689947
+            },
+            {
+              "id": "requests.adapters.BaseAdapter",
+              "score": 3.598150834936964
+            },
+            {
+              "id": "requests.packages.urllib3.request.RequestMethods.request_encode_body",
+              "score": 3.577274128444089
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.appengine.AppEngineManager.urlopen",
+              "score": 3.570140258389324
+            },
+            {
+              "id": "requests.packages.urllib3._collections.HTTPHeaderDict",
+              "score": 3.5541039878075393
+            },
+            {
+              "id": "tests.test_requests.RedirectSession.build_response",
+              "score": 3.550894488245897
+            },
+            {
+              "id": "requests.sessions.Session",
+              "score": 3.5162846869182802
+            },
+            {
+              "id": "tests.test_utils.TestGuessFilename",
+              "score": 3.4980868512947936
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry.increment",
+              "score": 3.4940663857137633
+            },
+            {
+              "id": "requests.cookies.MockResponse",
+              "score": 3.4736163847140644
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_request_and_response_are_pickleable",
+              "score": 3.443253168765981
+            },
+            {
+              "id": "requests.api.delete",
+              "score": 3.3871813821044996
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.get_dict",
+              "score": 3.3868759165995432
+            },
+            {
+              "id": "requests.status_codes",
+              "score": 3.3769328874815834
+            },
+            {
+              "id": "requests.packages.urllib3.exceptions.ResponseError",
+              "score": 3.3465675382700324
+            },
+            {
+              "id": "tests.test_utils.TestContentEncodingDetection.test_none",
+              "score": 3.3448071778161714
+            },
+            {
+              "id": "requests.api.head",
+              "score": 3.340463086950237
+            },
+            {
+              "id": "requests.api.options",
+              "score": 3.340463086950237
+            },
+            {
+              "id": "requests.models.Response.apparent_encoding",
+              "score": 3.3176683433312277
+            },
+            {
+              "id": "tests.test_requests.TestRequests",
+              "score": 3.309055331967689
+            },
+            {
+              "id": "requests.hooks",
+              "score": 3.3082806311797124
+            },
+            {
+              "id": "requests.adapters",
+              "score": 3.286648113739707
+            },
+            {
+              "id": "requests.packages.urllib3.packages.ssl_match_hostname._implementation._dnsname_match",
+              "score": 3.286107993645324
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_session_hooks_are_used_with_no_request_hooks",
+              "score": 3.284082647514788
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin.rebuild_method",
+              "score": 3.278025999732915
+            },
+            {
+              "id": "requests.exceptions",
+              "score": 3.277048951242003
+            },
+            {
+              "id": "requests.packages.urllib3.util.request",
+              "score": 3.27502850893748
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_auth",
+              "score": 3.251869199553953
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_session_hooks_are_overridden_by_request_hooks",
+              "score": 3.2495145520144777
+            },
+            {
+              "id": "tests.test_hooks",
+              "score": 3.244890322573897
+            },
+            {
+              "id": "requests.models.Response.__setstate__",
+              "score": 3.234032374603314
+            },
+            {
+              "id": "requests.packages.urllib3.exceptions.ProtocolError",
+              "score": 3.2335249709270317
+            },
+            {
+              "id": "requests.api.patch",
+              "score": 3.2334524726872553
+            },
+            {
+              "id": "requests.api.put",
+              "score": 3.2334524726872553
+            },
+            {
+              "id": "requests.packages.urllib3.util.request.make_headers",
+              "score": 3.2233057301708024
+            },
+            {
+              "id": "requests.packages.chardet.compat",
+              "score": 3.2189155183875875
+            },
+            {
+              "id": "requests.api.get",
+              "score": 3.2077673649093073
+            },
+            {
+              "id": "requests.cookies.MockResponse.__init__",
+              "score": 3.2075033084290476
+            },
+            {
+              "id": "tests.test_testserver.TestTestServer.test_requests_after_timeout_are_not_received",
+              "score": 3.2073376503964077
+            },
+            {
+              "id": "requests.packages.urllib3.poolmanager.PoolManager.urlopen",
+              "score": 3.194129479848004
+            },
+            {
+              "id": "tests.test_hooks.test_hooks",
+              "score": 3.1349322313848624
+            },
+            {
+              "id": "requests.sessions.merge_hooks",
+              "score": 3.1340534192280423
+            },
+            {
+              "id": "requests.models.RequestHooksMixin",
+              "score": 3.133262648328798
+            },
+            {
+              "id": "requests.models.Response.is_permanent_redirect",
+              "score": 3.131922414933673
+            }
+          ],
+          "scored_documents": 1041,
+          "seconds": 0.0012588999998115469
+        }
+      ],
+      "order": [
+        "tests.test_requests.TestRequests.test_response_decode_unicode",
+        "requests.models.Response.iter_content",
+        "requests.models.Response.json",
+        "requests.models.Response.iter_lines",
+        "requests.packages.urllib3.response.HTTPResponse.stream",
+        "requests.models.Response.text",
+        "requests.packages.urllib3.response.HTTPResponse.read",
+        "requests.utils.get_unicode_from_response",
+        "requests.packages.urllib3.response.HTTPResponse",
+        "requests.models.RequestEncodingMixin",
+        "requests.models.Response.content",
+        "requests.packages.urllib3.response.HTTPResponse.__init__",
+        "requests.utils.stream_decode_response_unicode",
+        "requests.models.RequestEncodingMixin._encode_params",
+        "tests.test_requests.TestRequests.test_manual_redirect_with_partial_body_read",
+        "tests.test_requests.TestRequests.test_response_chunk_size_int",
+        "requests.models",
+        "tests.test_requests.TestRequests.test_response_is_iterable",
+        "requests.models.PreparedRequest.prepare_body",
+        "requests.packages.urllib3.response.HTTPResponse.read_chunked",
+        "requests.packages.urllib3.fields",
+        "requests.packages.urllib3.response.HTTPResponse._decode",
+        "requests.models.Response.__init__",
+        "requests.models.Response.iter_content.generate",
+        "requests.models.Response",
+        "tests.test_requests.TestRequests.test_unicode_header_name",
+        "requests.exceptions.ContentDecodingError",
+        "requests.adapters.HTTPAdapter.send",
+        "requests.packages.urllib3.fields.format_header_param",
+        "requests.models.Response.__iter__",
+        "requests.cookies.RequestsCookieJar.multiple_domains",
+        "requests.packages.urllib3.filepost.encode_multipart_formdata",
+        "requests.packages.chardet.detect",
+        "requests.structures",
+        "tests.test_requests.TestRequests.test_response_is_iterable.read_mock",
+        "tests.test_requests.TestRequests.test_response_iter_lines",
+        "requests.utils.get_encoding_from_headers",
+        "tests.test_requests.TestRequests.test_response_iter_lines_reentrant",
+        "requests.packages.urllib3.exceptions.DecodeError",
+        "requests.packages.urllib3.filepost",
+        "requests.models.PreparedRequest.prepare_url",
+        "requests.structures.CaseInsensitiveDict",
+        "requests.models.RequestEncodingMixin._encode_files",
+        "requests.packages.urllib3.packages.six.print_",
+        "requests.api",
+        "requests.api.request",
+        "requests.packages.urllib3.filepost.iter_fields",
+        "tests.compat",
+        "tests.testserver.server.Server.text_response_server",
+        "requests.compat",
+        "requests.sessions.Session.request",
+        "tests.testserver.server.Server.text_response_server.text_response_handler",
+        "tests.test_testserver.TestTestServer.test_basic_response",
+        "requests.sessions.SessionRedirectMixin.resolve_redirects",
+        "requests.utils.super_len",
+        "requests.models.RequestHooksMixin",
+        "requests.sessions.SessionRedirectMixin",
+        "tests.test_testserver",
+        "tests.testserver.server",
+        "tests.test_requests.TestRequests.test_response_json_when_content_is_None",
+        "requests.utils.get_netrc_auth",
+        "requests.packages.urllib3.response.HTTPResponse.tell",
+        "tests.test_requests.TestRequests.test_custom_content_type",
+        "requests.packages.urllib3._collections.HTTPHeaderDict.__iter__",
+        "tests.test_testserver.TestTestServer",
+        "tests.test_requests.TestRequests.test_decompress_gzip",
+        "requests.adapters.BaseAdapter.send",
+        "requests.packages.urllib3.packages.six",
+        "requests.packages.urllib3.fields.RequestField",
+        "tests.test_requests.TestRequests.test_links",
+        "requests.utils",
+        "requests.packages.urllib3.fields.RequestField.from_tuples",
+        "requests.packages.urllib3.contrib.appengine.AppEngineManager._urlfetch_response_to_http_response",
+        "requests.packages.chardet",
+        "requests.utils.get_encodings_from_content",
+        "requests.packages.urllib3.request.RequestMethods.request_encode_body",
+        "requests.packages.urllib3.response",
+        "requests.models.PreparedRequest",
+        "tests.test_utils.TestContentEncodingDetection",
+        "tests.test_requests.TestRequests.test_json_param_post_content_type_works",
+        "requests.utils.should_bypass_proxies",
+        "requests.packages.urllib3.fields.guess_content_type",
+        "requests.utils.to_native_string",
+        "requests.sessions.Session.post",
+        "requests.cookies.RequestsCookieJar.iterkeys",
+        "requests.packages.urllib3.connectionpool.HTTPConnectionPool.urlopen",
+        "requests.cookies.RequestsCookieJar.itervalues",
+        "requests.cookies.RequestsCookieJar.get_dict",
+        "tests.test_requests.TestRequests.test_unicode_method_name_with_request_object",
+        "requests.cookies.RequestsCookieJar.iteritems",
+        "tests.test_testserver.TestTestServer.test_text_response",
+        "tests.test_utils.TestContentEncodingDetection.test_precedence",
+        "requests.packages.urllib3.util.ssl_._const_compare_digest_backport",
+        "requests.cookies.RequestsCookieJar",
+        "tests.testserver.server.Server",
+        "tests.test_requests.TestRequests",
+        "tests.test_requests.TestRequests.test_unconsumed_session_response_closes_connection",
+        "requests.utils.address_in_network",
+        "requests.adapters.BaseAdapter",
+        "tests.test_requests.TestRequests.test_POSTBIN_SEEKED_OBJECT_WITH_NO_ITER",
+        "requests.adapters.HTTPAdapter.build_response",
+        "requests.packages.chardet.hebrewprober",
+        "requests.models.RequestHooksMixin.deregister_hook",
+        "requests.packages.urllib3.packages.ssl_match_hostname",
+        "tests.test_requests.test_json_encodes_as_bytes",
+        "requests.packages.urllib3.util.connection.is_connection_dropped",
+        "tests.test_utils.TestGuessFilename",
+        "requests.packages.urllib3.util.request",
+        "requests.packages.urllib3.util.request.make_headers",
+        "tests.testserver.server.Server.basic_response_server",
+        "requests.sessions.Session.patch",
+        "requests.sessions.Session.put",
+        "tests.test_requests.TestRequests.test_unicode_get",
+        "requests.packages.urllib3._collections.HTTPHeaderDict",
+        "requests.api.get",
+        "tests.test_requests.TestRequests.test_unicode_method_name",
+        "tests.test_requests.TestRequests.test_unicode_multipart_post",
+        "requests.packages.chardet.compat",
+        "tests.test_requests.TestRequests._patch_adapter_gzipped_redirect.build_response",
+        "requests.packages.urllib3.packages.ordered_dict.OrderedDict.__iter__",
+        "tests.test_requests.TestRequests.test_unicode_multipart_post_fieldnames",
+        "tests.test_requests.TestCaseInsensitiveDict.test_iter",
+        "requests.models.Response.__bool__",
+        "requests.structures.CaseInsensitiveDict.__iter__",
+        "requests.models.Response.__nonzero__",
+        "requests.sessions.Session.get",
+        "tests.test_utils.test_iter_slices",
+        "requests.sessions.Session.options",
+        "requests.packages.urllib3.contrib.appengine.AppEngineManager",
+        "requests.packages.urllib3._collections.RecentlyUsedContainer.__iter__",
+        "requests.packages.urllib3.response.HTTPResponse.data",
+        "requests.packages.urllib3.response.HTTPResponse._init_decoder",
+        "requests.packages.urllib3.contrib.appengine",
+        "requests.exceptions.StreamConsumedError",
+        "requests.cookies.RequestsCookieJar._find_no_duplicates",
+        "tests.test_requests.TestRequests.test_header_keys_are_native",
+        "tests.test_requests.TestRequests._patch_adapter_gzipped_redirect",
+        "requests.packages.chardet.jpcntx.JapaneseContextAnalysis.reset",
+        "tests.test_requests.TestCaseInsensitiveDict.test_docstring_example",
+        "requests.packages.urllib3.filepost.iter_field_objects",
+        "requests.utils.iter_slices",
+        "tests.test_requests.TestRequests.test_can_send_file_object_with_non_string_filename",
+        "tests.test_lowlevel.test_chunked_upload",
+        "requests",
+        "requests.packages.chardet.jpcntx.JapaneseContextAnalysis",
+        "tests.test_lowlevel",
+        "tests.test_requests.TestRequests.test_params_bytes_are_encoded",
+        "requests.packages.urllib3.packages.backports.makefile",
+        "requests.packages.urllib3.fields.RequestField.make_multipart",
+        "tests.test_utils",
+        "requests.packages.chardet.hebrewprober.HebrewProber.feed",
+        "requests.sessions.Session.head",
+        "tests.test_requests.TestRequests.test_override_content_length",
+        "requests.packages.urllib3.util.connection",
+        "tests.testserver.server.consume_socket_content",
+        "requests.models.PreparedRequest.prepare_content_length",
+        "requests.packages.urllib3.packages.backports.makefile.backport_makefile",
+        "tests.test_requests.TestRequests.test_no_content_length",
+        "requests.packages.urllib3.util.retry.Retry.__init__",
+        "requests.models.Response.__getstate__",
+        "tests.test_structures.TestCaseInsensitiveDict",
+        "tests.test_utils.TestContentEncodingDetection.test_pragmas",
+        "requests.models.Response.__setstate__",
+        "requests.packages.urllib3.packages.six.iterkeys",
+        "requests.packages.urllib3.packages.ordered_dict.OrderedDict",
+        "requests.packages.urllib3.packages.six.itervalues",
+        "requests.packages.chardet.chardetect",
+        "requests.adapters",
+        "requests.packages.urllib3.packages.ordered_dict.OrderedDict.iterkeys",
+        "requests.cookies.cookiejar_from_dict",
+        "requests.packages.urllib3.packages.six.iteritems",
+        "requests.packages.urllib3.packages.ssl_match_hostname._implementation",
+        "requests.packages.chardet.jpcntx.JapaneseContextAnalysis.feed",
+        "requests.packages.urllib3.fields.RequestField._render_part",
+        "requests.packages.chardet.hebrewprober.HebrewProber",
+        "requests.utils.dotted_netmask",
+        "requests.cookies.RequestsCookieJar.list_domains",
+        "requests.cookies.RequestsCookieJar.list_paths",
+        "requests.packages.urllib3.contrib.pyopenssl.SubjectAltName",
+        "requests.models.Request.prepare",
+        "requests.auth",
+        "requests.api.post",
+        "requests.packages.urllib3.packages.ssl_match_hostname._implementation.CertificateError",
+        "requests.sessions.Session.delete",
+        "requests.packages.urllib3.fields.RequestField.render_headers",
+        "tests.test_structures",
+        "requests.cookies.merge_cookies",
+        "requests.packages.urllib3.util.ssl_",
+        "requests.sessions.Session",
+        "requests.packages.urllib3.connectionpool.HTTPConnectionPool",
+        "requests.packages.urllib3.exceptions.ProtocolError",
+        "requests.utils.unquote_unreserved",
+        "requests.utils.dict_from_cookiejar",
+        "tests.test_requests.TestRequests.test_binary_put",
+        "requests.packages.urllib3.util.timeout",
+        "requests.cookies.RequestsCookieJar.items",
+        "requests.api.patch",
+        "requests.api.put",
+        "tests.test_requests.TestRequests.test_fixes_1329",
+        "requests.packages.urllib3.packages.ordered_dict.OrderedDict.popitem"
+      ],
+      "retrieval_calls": 3,
+      "index_nodes": 1116,
+      "scored_documents": 3146,
+      "source_chars_read": 916732,
+      "shared_index_seconds": 0.7298109999992448
+    },
+    {
+      "instance_id": "psf__requests-3362",
+      "repo": "psf/requests",
+      "base_commit": "36453b95b13079296776d11b09cab2567ea3e703",
+      "arm": "feedback",
+      "status": "ok",
+      "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+      "request_sha256": "a2e5e93c0e4b345799ae69fdcf85c3bee920d511fa302cd2efabe48c3a4b53d5",
+      "response_sha256": "a6d20d9cf18fdf77c1036437b20d7fedcc61b16dc8fea9768bb3dce9d623abed",
+      "raw_response_sha256": "a6d20d9cf18fdf77c1036437b20d7fedcc61b16dc8fea9768bb3dce9d623abed",
+      "actions": [
+        {
+          "query": "requests Response.iter_content decode_unicode True returns bytes instead of str",
+          "candidates": [
+            {
+              "id": "tests.test_requests.TestRequests.test_response_decode_unicode",
+              "score": 35.93204007519489
+            },
+            {
+              "id": "requests.models.Response.iter_content",
+              "score": 29.328066444645387
+            },
+            {
+              "id": "requests.models.Response.iter_lines",
+              "score": 24.276293354283933
+            },
+            {
+              "id": "requests.utils.get_unicode_from_response",
+              "score": 21.462011751538977
+            },
+            {
+              "id": "requests.models.Response.text",
+              "score": 19.26976305850672
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse",
+              "score": 19.169275454544746
+            },
+            {
+              "id": "requests.models.Response.content",
+              "score": 18.2843933823012
+            },
+            {
+              "id": "requests.utils.stream_decode_response_unicode",
+              "score": 17.781498360129838
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.stream",
+              "score": 17.626740740827586
+            },
+            {
+              "id": "requests.models.Response.json",
+              "score": 17.220295150969573
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.__init__",
+              "score": 17.129226235377846
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_manual_redirect_with_partial_body_read",
+              "score": 16.658140021500422
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.read",
+              "score": 16.564302919392066
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_response_chunk_size_int",
+              "score": 16.14129030806585
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.read_chunked",
+              "score": 16.009956210979944
+            },
+            {
+              "id": "requests.models",
+              "score": 15.769050658927041
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_url",
+              "score": 14.058913986237263
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_response_is_iterable",
+              "score": 14.040813142180472
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin._encode_files",
+              "score": 14.032229605919847
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unicode_header_name",
+              "score": 13.940344770859399
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse._decode",
+              "score": 13.846234048179245
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin",
+              "score": 13.5215759458928
+            },
+            {
+              "id": "requests.exceptions.ContentDecodingError",
+              "score": 13.37846677015738
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_body",
+              "score": 13.192189564608512
+            },
+            {
+              "id": "requests.packages.urllib3.filepost.iter_fields",
+              "score": 12.937033749546435
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin._encode_params",
+              "score": 12.912897570000448
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six.print_",
+              "score": 12.884956506860185
+            },
+            {
+              "id": "requests.compat",
+              "score": 12.845357916989828
+            },
+            {
+              "id": "requests.models.Response.__iter__",
+              "score": 12.579700154217981
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.multiple_domains",
+              "score": 11.947053707807886
+            },
+            {
+              "id": "requests.models.Response.iter_content.generate",
+              "score": 11.940505217640446
+            },
+            {
+              "id": "requests.packages.urllib3.util.ssl_._const_compare_digest_backport",
+              "score": 11.902037884542722
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_response_iter_lines_reentrant",
+              "score": 11.857106072493995
+            },
+            {
+              "id": "requests.packages.urllib3.filepost",
+              "score": 11.710466050681621
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_response_iter_lines",
+              "score": 11.691194544314392
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin.resolve_redirects",
+              "score": 11.418207712993025
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.tell",
+              "score": 11.314638277620963
+            },
+            {
+              "id": "requests.models.Response",
+              "score": 11.035358654419278
+            },
+            {
+              "id": "requests.packages.urllib3.filepost.encode_multipart_formdata",
+              "score": 11.028461249589716
+            },
+            {
+              "id": "requests.models.Response.__init__",
+              "score": 10.755785767055805
+            },
+            {
+              "id": "tests.test_testserver.TestTestServer.test_basic_response",
+              "score": 10.663797067847039
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin",
+              "score": 10.442290704535344
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.send",
+              "score": 10.440081067205877
+            },
+            {
+              "id": "requests.packages.chardet.detect",
+              "score": 10.4059873911083
+            },
+            {
+              "id": "requests.api",
+              "score": 10.300696589534134
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.appengine.AppEngineManager._urlfetch_response_to_http_response",
+              "score": 10.223060369578315
+            },
+            {
+              "id": "requests.utils.to_native_string",
+              "score": 10.204360156061343
+            },
+            {
+              "id": "requests.packages.urllib3.exceptions.DecodeError",
+              "score": 10.102174747963694
+            },
+            {
+              "id": "requests.packages.chardet.compat",
+              "score": 10.081794655993468
+            },
+            {
+              "id": "requests.sessions.Session.request",
+              "score": 10.064235832417772
+            },
+            {
+              "id": "requests.sessions.Session.patch",
+              "score": 10.038422446436044
+            },
+            {
+              "id": "requests.sessions.Session.put",
+              "score": 10.038422446436044
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_response_is_iterable.read_mock",
+              "score": 9.9474895589533
+            },
+            {
+              "id": "requests.adapters.BaseAdapter.send",
+              "score": 9.802031641700204
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.HTTPConnectionPool.urlopen",
+              "score": 9.761455518381398
+            },
+            {
+              "id": "requests.api.request",
+              "score": 9.736595318040706
+            },
+            {
+              "id": "requests.utils.get_netrc_auth",
+              "score": 9.657541933612555
+            },
+            {
+              "id": "requests.sessions.Session.post",
+              "score": 9.533401505168765
+            },
+            {
+              "id": "requests.utils",
+              "score": 9.458250203738352
+            },
+            {
+              "id": "requests.sessions.Session.get",
+              "score": 9.420494639276809
+            },
+            {
+              "id": "requests.sessions.Session.options",
+              "score": 9.420494639276809
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse._error_catcher",
+              "score": 9.296026672417572
+            },
+            {
+              "id": "tests.test_requests.TestRequests._patch_adapter_gzipped_redirect.build_response",
+              "score": 9.286983409034788
+            },
+            {
+              "id": "tests.test_utils.TestGuessFilename",
+              "score": 9.212371937522972
+            },
+            {
+              "id": "requests.structures.CaseInsensitiveDict",
+              "score": 9.117352537145937
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.appengine",
+              "score": 9.067598642946582
+            },
+            {
+              "id": "requests.auth._basic_auth_str",
+              "score": 9.007689878560436
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.appengine.AppEngineManager",
+              "score": 8.97633909421691
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unconsumed_session_response_closes_connection",
+              "score": 8.937895522670349
+            },
+            {
+              "id": "requests.packages.urllib3.fields",
+              "score": 8.86317595636756
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unicode_method_name_with_request_object",
+              "score": 8.854992960088868
+            },
+            {
+              "id": "tests.compat",
+              "score": 8.704738565638277
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.build_response",
+              "score": 8.61581084327524
+            },
+            {
+              "id": "requests.api.get",
+              "score": 8.609125668077631
+            },
+            {
+              "id": "requests.utils.get_encodings_from_content",
+              "score": 8.486339596034153
+            },
+            {
+              "id": "requests.utils.get_encoding_from_headers",
+              "score": 8.468114796519302
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.data",
+              "score": 8.459111947709825
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.iterkeys",
+              "score": 8.449655414532895
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.itervalues",
+              "score": 8.449655414532895
+            },
+            {
+              "id": "requests.models.RequestHooksMixin",
+              "score": 8.43951456305099
+            },
+            {
+              "id": "requests.models.PreparedRequest",
+              "score": 8.405783567717666
+            },
+            {
+              "id": "tests.test_requests.TestRequests._patch_adapter_gzipped_redirect",
+              "score": 8.31361850050688
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.iteritems",
+              "score": 8.286110227000915
+            },
+            {
+              "id": "requests.structures",
+              "score": 8.231406184006602
+            },
+            {
+              "id": "requests.packages.urllib3.fields.format_header_param",
+              "score": 8.210925343918412
+            },
+            {
+              "id": "requests.packages.chardet.chardetect",
+              "score": 8.197509797656947
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_content_length",
+              "score": 8.09686533504622
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_decompress_gzip",
+              "score": 8.06261274552178
+            },
+            {
+              "id": "requests.models.Response.__bool__",
+              "score": 8.041555407131298
+            },
+            {
+              "id": "requests.models.Response.__nonzero__",
+              "score": 8.041555407131298
+            },
+            {
+              "id": "requests.packages.chardet",
+              "score": 8.031828843543764
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_response_json_when_content_is_None",
+              "score": 7.921828432259722
+            },
+            {
+              "id": "requests.utils.super_len",
+              "score": 7.897319398156688
+            },
+            {
+              "id": "requests.utils.should_bypass_proxies",
+              "score": 7.819135768988969
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.HTTPConnectionPool._make_request",
+              "score": 7.808752616055584
+            },
+            {
+              "id": "requests.packages.urllib3.util.request",
+              "score": 7.676636150644576
+            },
+            {
+              "id": "requests.models.RequestHooksMixin.deregister_hook",
+              "score": 7.6202447878859685
+            },
+            {
+              "id": "tests.test_lowlevel.test_chunked_upload",
+              "score": 7.606607405401316
+            },
+            {
+              "id": "requests.packages.urllib3.util.request.make_headers",
+              "score": 7.5663527928338254
+            },
+            {
+              "id": "tests.testserver.server.Server.text_response_server.text_response_handler",
+              "score": 7.532330494085282
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six",
+              "score": 7.501593726444692
+            },
+            {
+              "id": "requests.adapters.BaseAdapter",
+              "score": 7.487090769524441
+            },
+            {
+              "id": "tests.testserver.server.Server.text_response_server",
+              "score": 7.453615874890248
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar",
+              "score": 7.444327588543418
+            },
+            {
+              "id": "requests.packages.urllib3.response",
+              "score": 7.3314739006542835
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.pyopenssl.get_subj_alt_name",
+              "score": 7.305739403104771
+            },
+            {
+              "id": "tests.test_testserver",
+              "score": 7.278519158156713
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.get_dict",
+              "score": 7.242550161432385
+            },
+            {
+              "id": "requests.models.Response.links",
+              "score": 7.238626434356551
+            },
+            {
+              "id": "requests.sessions.Session.delete",
+              "score": 7.238626434356551
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.appengine.AppEngineManager.__init__",
+              "score": 7.230352726120695
+            },
+            {
+              "id": "requests.exceptions.StreamConsumedError",
+              "score": 7.148314251654481
+            },
+            {
+              "id": "tests.test_testserver.TestTestServer.test_text_response",
+              "score": 7.121502947296492
+            },
+            {
+              "id": "requests.sessions.Session.head",
+              "score": 7.1055960580715105
+            },
+            {
+              "id": "tests.test_testserver.TestTestServer",
+              "score": 7.082369850353851
+            },
+            {
+              "id": "requests.auth",
+              "score": 7.081134713341191
+            },
+            {
+              "id": "requests.utils.address_in_network",
+              "score": 6.988431616457753
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_http_error",
+              "score": 6.956434488961822
+            },
+            {
+              "id": "requests.packages.urllib3.fields.RequestField.from_tuples",
+              "score": 6.942799395671976
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.appengine.AppEngineManager.urlopen",
+              "score": 6.9098244460919815
+            },
+            {
+              "id": "tests.test_lowlevel",
+              "score": 6.847303384400375
+            },
+            {
+              "id": "tests.testserver.server",
+              "score": 6.807930193460733
+            },
+            {
+              "id": "requests.packages.urllib3.util.connection.is_connection_dropped",
+              "score": 6.784789879393857
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse._init_decoder",
+              "score": 6.703013891837177
+            },
+            {
+              "id": "tests.testserver.server.Server.basic_response_server",
+              "score": 6.6947267251506535
+            },
+            {
+              "id": "requests.packages.urllib3.fields.RequestField",
+              "score": 6.688212897989445
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unicode_get",
+              "score": 6.637725916477518
+            },
+            {
+              "id": "requests.adapters",
+              "score": 6.610596863232073
+            },
+            {
+              "id": "requests.packages.urllib3.util.ssl_.resolve_cert_reqs",
+              "score": 6.602308328893452
+            },
+            {
+              "id": "requests.api.patch",
+              "score": 6.518325417389933
+            },
+            {
+              "id": "requests.api.put",
+              "score": 6.518325417389933
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_can_send_file_object_with_non_string_filename",
+              "score": 6.479963014698951
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unicode_method_name",
+              "score": 6.432622622754625
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unicode_multipart_post",
+              "score": 6.410986145501656
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar._find",
+              "score": 6.353345653006166
+            },
+            {
+              "id": "requests.models.Response.is_permanent_redirect",
+              "score": 6.291547219521095
+            },
+            {
+              "id": "requests.packages.urllib3.packages.ordered_dict.OrderedDict.__iter__",
+              "score": 6.274117530177572
+            },
+            {
+              "id": "requests.api.post",
+              "score": 6.172696844929153
+            },
+            {
+              "id": "requests.models.Response.is_redirect",
+              "score": 6.171724046687382
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.proxy_headers",
+              "score": 6.073458467687789
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unicode_multipart_post_fieldnames",
+              "score": 6.042743702434773
+            },
+            {
+              "id": "tests.test_requests.TestCaseInsensitiveDict.test_iter",
+              "score": 5.94577724062272
+            },
+            {
+              "id": "requests.packages.urllib3.util.url.get_host",
+              "score": 5.942657312190832
+            },
+            {
+              "id": "requests.structures.CaseInsensitiveDict.__iter__",
+              "score": 5.940477468966909
+            },
+            {
+              "id": "tests.test_utils.test_iter_slices",
+              "score": 5.889045362843295
+            },
+            {
+              "id": "requests.packages.urllib3._collections.RecentlyUsedContainer.__iter__",
+              "score": 5.868503540235374
+            },
+            {
+              "id": "requests.packages.chardet.chardetect.description_of",
+              "score": 5.867759939016139
+            },
+            {
+              "id": "requests.packages.urllib3._collections.HTTPHeaderDict.__iter__",
+              "score": 5.833189801776937
+            },
+            {
+              "id": "requests.models.Response.__setstate__",
+              "score": 5.826126152924065
+            },
+            {
+              "id": "tests.testserver.server.Server",
+              "score": 5.773629742177224
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry.__init__",
+              "score": 5.748660492016644
+            },
+            {
+              "id": "requests.api.options",
+              "score": 5.695120198145709
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.readable",
+              "score": 5.688126238266313
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.closed",
+              "score": 5.647169264505203
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_header_keys_are_native",
+              "score": 5.644811452872444
+            },
+            {
+              "id": "tests.test_requests.test_json_encodes_as_bytes",
+              "score": 5.634663726729103
+            },
+            {
+              "id": "requests.packages.urllib3.filepost.iter_field_objects",
+              "score": 5.620264039673108
+            },
+            {
+              "id": "requests.utils.iter_slices",
+              "score": 5.581691872486495
+            },
+            {
+              "id": "requests.cookies.cookiejar_from_dict",
+              "score": 5.581323875891464
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.__setitem__",
+              "score": 5.5514075276191726
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar._find_no_duplicates",
+              "score": 5.546811991593193
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.__getitem__",
+              "score": 5.531184759915121
+            },
+            {
+              "id": "tests.test_requests.TestRequests",
+              "score": 5.509473556630471
+            },
+            {
+              "id": "requests.utils.to_key_val_list",
+              "score": 5.509081151015517
+            },
+            {
+              "id": "requests.packages.urllib3.response.DeflateDecoder.__init__",
+              "score": 5.498106322343961
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.get_redirect_location",
+              "score": 5.47967589793498
+            },
+            {
+              "id": "requests.utils.from_key_val_list",
+              "score": 5.457755545838174
+            },
+            {
+              "id": "requests.packages.chardet.jpcntx.JapaneseContextAnalysis.reset",
+              "score": 5.416990902637549
+            },
+            {
+              "id": "requests.packages.urllib3._collections.HTTPHeaderDict",
+              "score": 5.372616395772618
+            },
+            {
+              "id": "requests.packages.urllib3.util.ssl_",
+              "score": 5.353532151528005
+            },
+            {
+              "id": "tests.test_testserver.TestTestServer.test_request_recovery",
+              "score": 5.3197663326864815
+            },
+            {
+              "id": "tests.test_utils",
+              "score": 5.310635801665155
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_params_bytes_are_encoded",
+              "score": 5.285358976819971
+            },
+            {
+              "id": "requests.sessions.Session",
+              "score": 5.246793973860466
+            },
+            {
+              "id": "requests.packages.urllib3.request.RequestMethods.request_encode_body",
+              "score": 5.23456644215497
+            },
+            {
+              "id": "requests.packages.chardet.jpcntx.JapaneseContextAnalysis.feed",
+              "score": 5.197643491296097
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_links",
+              "score": 5.173587974481448
+            },
+            {
+              "id": "requests.packages.chardet.chardetect.main",
+              "score": 5.12649542474112
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_http_301_doesnt_change_head_to_get",
+              "score": 5.093057596013835
+            },
+            {
+              "id": "requests.packages.chardet.jpcntx.JapaneseContextAnalysis",
+              "score": 5.063893505855535
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_basic_auth_str_is_always_native",
+              "score": 4.997067442742603
+            },
+            {
+              "id": "requests.packages.urllib3.util.url.Url.__str__",
+              "score": 4.9642582590026
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth.handle_401",
+              "score": 4.937196316424349
+            },
+            {
+              "id": "requests.packages.urllib3._collections.HTTPHeaderDict.getlist",
+              "score": 4.907088463869357
+            },
+            {
+              "id": "tests.test_requests",
+              "score": 4.890365103817229
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.ConnectionPool.__str__",
+              "score": 4.873789423611989
+            },
+            {
+              "id": "requests.packages.urllib3.fields.RequestField.make_multipart",
+              "score": 4.872314190101309
+            },
+            {
+              "id": "tests.test_requests.test_requests_are_updated_each_time",
+              "score": 4.865425695877175
+            },
+            {
+              "id": "requests.packages.urllib3.util.timeout.Timeout.__str__",
+              "score": 4.815360736008576
+            },
+            {
+              "id": "requests.sessions.session",
+              "score": 4.814908539974839
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.ConnectionPool",
+              "score": 4.806878918033709
+            },
+            {
+              "id": "requests.packages.urllib3.exceptions",
+              "score": 4.770960060053173
+            },
+            {
+              "id": "requests.sessions.Session.__init__",
+              "score": 4.739233864915185
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_DIGEST_AUTH_RETURNS_COOKIE",
+              "score": 4.718282187243348
+            },
+            {
+              "id": "requests.utils.dict_to_sequence",
+              "score": 4.715864828902046
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_override_content_length",
+              "score": 4.675085260940781
+            },
+            {
+              "id": "tests.test_utils.TestContentEncodingDetection",
+              "score": 4.674273498773847
+            },
+            {
+              "id": "tests.testserver.server.consume_socket_content",
+              "score": 4.669360978206628
+            },
+            {
+              "id": "requests.packages.urllib3.fields.guess_content_type",
+              "score": 4.638505196848747
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_prepared_request_hook",
+              "score": 4.60250648519685
+            }
+          ],
+          "scored_documents": 1044,
+          "seconds": 0.0014679000014439225
+        },
+        {
+          "query": "iter_content decode_unicode implementation requests models.py Response text encoding",
+          "candidates": [
+            {
+              "id": "tests.test_requests.TestRequests.test_response_decode_unicode",
+              "score": 29.97806481405869
+            },
+            {
+              "id": "requests.models.Response.text",
+              "score": 27.926776916861453
+            },
+            {
+              "id": "requests.models.Response.iter_content",
+              "score": 25.74409515383463
+            },
+            {
+              "id": "requests.models.Response.json",
+              "score": 24.844035803853863
+            },
+            {
+              "id": "requests.models.Response.iter_lines",
+              "score": 24.528398641097223
+            },
+            {
+              "id": "requests.utils.stream_decode_response_unicode",
+              "score": 19.429078322560407
+            },
+            {
+              "id": "requests.utils.get_unicode_from_response",
+              "score": 19.155296191900955
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse._decode",
+              "score": 18.263966989564263
+            },
+            {
+              "id": "requests.models.Response.__init__",
+              "score": 17.439682014596386
+            },
+            {
+              "id": "requests.models",
+              "score": 17.099624355608523
+            },
+            {
+              "id": "requests.models.Response.__iter__",
+              "score": 16.954228474256475
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.read_chunked",
+              "score": 16.242448518728693
+            },
+            {
+              "id": "requests.models.Response",
+              "score": 16.160591927410394
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.__init__",
+              "score": 15.305939729347156
+            },
+            {
+              "id": "requests.models.Response.iter_content.generate",
+              "score": 14.89621599989284
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse",
+              "score": 14.616472976139049
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.stream",
+              "score": 14.534927996703642
+            },
+            {
+              "id": "requests.models.Response.content",
+              "score": 14.464423523660372
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_response_is_iterable",
+              "score": 14.041355179521776
+            },
+            {
+              "id": "tests.test_utils.TestContentEncodingDetection",
+              "score": 13.862035604207913
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.read",
+              "score": 13.785869806595787
+            },
+            {
+              "id": "tests.testserver.server.Server.text_response_server",
+              "score": 13.653016652461854
+            },
+            {
+              "id": "tests.testserver.server.Server.text_response_server.text_response_handler",
+              "score": 13.428517589258597
+            },
+            {
+              "id": "requests.exceptions.ContentDecodingError",
+              "score": 13.379078445954525
+            },
+            {
+              "id": "tests.test_testserver.TestTestServer.test_text_response",
+              "score": 13.341891420140836
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.appengine.AppEngineManager._urlfetch_response_to_http_response",
+              "score": 12.681849952835158
+            },
+            {
+              "id": "requests.models.Response.apparent_encoding",
+              "score": 12.639025165277864
+            },
+            {
+              "id": "requests.utils.get_encoding_from_headers",
+              "score": 12.536589400742074
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_body",
+              "score": 12.300351839177551
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_response_chunk_size_int",
+              "score": 11.97524286311604
+            },
+            {
+              "id": "tests.test_utils.TestContentEncodingDetection.test_precedence",
+              "score": 11.704632056028528
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse._init_decoder",
+              "score": 11.481564852499133
+            },
+            {
+              "id": "tests.testserver.server",
+              "score": 11.437533192417288
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_manual_redirect_with_partial_body_read",
+              "score": 11.116165209791982
+            },
+            {
+              "id": "tests.test_testserver",
+              "score": 11.084850057577711
+            },
+            {
+              "id": "requests.packages.urllib3.fields.format_header_param",
+              "score": 10.965228087865674
+            },
+            {
+              "id": "tests.testserver.server.Server.basic_response_server",
+              "score": 10.952934911405212
+            },
+            {
+              "id": "tests.test_testserver.TestTestServer",
+              "score": 10.87800911934417
+            },
+            {
+              "id": "requests.packages.urllib3.fields",
+              "score": 10.627702978542002
+            },
+            {
+              "id": "tests.testserver.server.Server",
+              "score": 10.282501553006377
+            },
+            {
+              "id": "tests.test_testserver.TestTestServer.test_basic_response",
+              "score": 10.252121354177707
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin",
+              "score": 10.213647191559224
+            },
+            {
+              "id": "requests.packages.urllib3.exceptions.DecodeError",
+              "score": 10.10278642376084
+            },
+            {
+              "id": "tests.test_requests.TestRequests._patch_adapter_gzipped_redirect.build_response",
+              "score": 10.098860411358956
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_response_is_iterable.read_mock",
+              "score": 9.948134371780826
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.build_response",
+              "score": 9.875361411459458
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unicode_header_name",
+              "score": 9.798559207905779
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_response_iter_lines_reentrant",
+              "score": 9.58117270186808
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_response_iter_lines",
+              "score": 9.178868240232084
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_custom_content_type",
+              "score": 9.172238473498382
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_url",
+              "score": 9.042590997462298
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin._encode_files",
+              "score": 9.000777630810846
+            },
+            {
+              "id": "tests.test_requests.TestRequests._patch_adapter_gzipped_redirect",
+              "score": 8.985850839553581
+            },
+            {
+              "id": "requests.structures",
+              "score": 8.828012157463242
+            },
+            {
+              "id": "tests.compat",
+              "score": 8.70529977070932
+            },
+            {
+              "id": "requests.models.Response.__getstate__",
+              "score": 8.515787683045591
+            },
+            {
+              "id": "requests.utils.to_native_string",
+              "score": 8.434548865825219
+            },
+            {
+              "id": "requests.packages.urllib3.packages.backports.makefile.backport_makefile",
+              "score": 8.43297340134763
+            },
+            {
+              "id": "tests.test_lowlevel.test_chunked_upload",
+              "score": 8.292723690106929
+            },
+            {
+              "id": "requests.structures.CaseInsensitiveDict",
+              "score": 8.244510567746808
+            },
+            {
+              "id": "requests.packages.urllib3.filepost.encode_multipart_formdata",
+              "score": 8.129998166225617
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_decompress_gzip",
+              "score": 8.063240552877202
+            },
+            {
+              "id": "requests.packages.urllib3.util.request",
+              "score": 8.040788363074045
+            },
+            {
+              "id": "requests.packages.urllib3.util.request.make_headers",
+              "score": 7.96828101202636
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin.resolve_redirects",
+              "score": 7.949756292581535
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_response_json_when_content_is_None",
+              "score": 7.9223735727762685
+            },
+            {
+              "id": "requests.models.PreparedRequest",
+              "score": 7.7820778607940975
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin",
+              "score": 7.749061318116738
+            },
+            {
+              "id": "requests.packages.urllib3.packages.backports.makefile",
+              "score": 7.712068826695692
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_content_length",
+              "score": 7.699404724865811
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.pyopenssl.SubjectAltName",
+              "score": 7.587684286823426
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.send",
+              "score": 7.574211433848076
+            },
+            {
+              "id": "requests.models.Response.__repr__",
+              "score": 7.549404158993981
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_links",
+              "score": 7.444082899911534
+            },
+            {
+              "id": "requests.utils.get_encodings_from_content",
+              "score": 7.376565117073097
+            },
+            {
+              "id": "requests.packages.urllib3.packages.ssl_match_hostname._implementation.CertificateError",
+              "score": 7.33675745936737
+            },
+            {
+              "id": "requests.models.Response.__setstate__",
+              "score": 7.332864124104901
+            },
+            {
+              "id": "tests.test_lowlevel",
+              "score": 7.26039955214108
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin._encode_params",
+              "score": 7.240883104035977
+            },
+            {
+              "id": "requests.models.RequestHooksMixin.register_hook",
+              "score": 7.225301780733829
+            },
+            {
+              "id": "requests.exceptions.StreamConsumedError",
+              "score": 7.148925927451627
+            },
+            {
+              "id": "requests.models.Response.is_permanent_redirect",
+              "score": 7.105539232771937
+            },
+            {
+              "id": "requests.packages.chardet.hebrewprober",
+              "score": 7.0340592441458725
+            },
+            {
+              "id": "requests.api.request",
+              "score": 7.013542931008745
+            },
+            {
+              "id": "requests.api",
+              "score": 6.954840320400172
+            },
+            {
+              "id": "requests.packages.urllib3.fields.RequestField.from_tuples",
+              "score": 6.943164685216804
+            },
+            {
+              "id": "requests.models.Response.is_redirect",
+              "score": 6.9274633236534156
+            },
+            {
+              "id": "requests",
+              "score": 6.834820238526538
+            },
+            {
+              "id": "requests.models.Response.links",
+              "score": 6.791577810190627
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six.print_",
+              "score": 6.753161480627892
+            },
+            {
+              "id": "requests.packages.urllib3.fields.RequestField",
+              "score": 6.688456011454679
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unicode_get",
+              "score": 6.6383415469427005
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unconsumed_session_response_closes_connection",
+              "score": 6.570228608841215
+            },
+            {
+              "id": "requests.utils.super_len",
+              "score": 6.452662505927991
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unicode_method_name",
+              "score": 6.4331973776252696
+            },
+            {
+              "id": "requests.sessions",
+              "score": 6.417553329739067
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unicode_multipart_post",
+              "score": 6.4117065797996835
+            },
+            {
+              "id": "requests.models.Response.close",
+              "score": 6.369449427927189
+            },
+            {
+              "id": "requests.packages.urllib3.packages.ordered_dict.OrderedDict.__iter__",
+              "score": 6.2747138826520255
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_auth",
+              "score": 6.2674190263391365
+            },
+            {
+              "id": "requests.packages.urllib3.response",
+              "score": 6.213093242816374
+            },
+            {
+              "id": "requests.models.RequestHooksMixin",
+              "score": 6.1770384666337765
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unicode_multipart_post_fieldnames",
+              "score": 6.043489530883338
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_unicode_method_name_with_request_object",
+              "score": 6.027507324958611
+            },
+            {
+              "id": "tests.test_requests.TestCaseInsensitiveDict.test_iter",
+              "score": 5.946385012235284
+            },
+            {
+              "id": "requests.structures.CaseInsensitiveDict.__iter__",
+              "score": 5.94114487955479
+            },
+            {
+              "id": "requests.packages.urllib3.packages.ssl_match_hostname",
+              "score": 5.931031729479578
+            },
+            {
+              "id": "requests.adapters",
+              "score": 5.902197314066299
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.tell",
+              "score": 5.892083981878616
+            },
+            {
+              "id": "tests.test_utils.test_iter_slices",
+              "score": 5.8896731701987175
+            },
+            {
+              "id": "requests.packages.urllib3._collections.RecentlyUsedContainer.__iter__",
+              "score": 5.86915274935881
+            },
+            {
+              "id": "requests.packages.urllib3._collections.HTTPHeaderDict.__iter__",
+              "score": 5.833830277449486
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.data",
+              "score": 5.8176768084597335
+            },
+            {
+              "id": "requests.packages.chardet.detect",
+              "score": 5.784651506917373
+            },
+            {
+              "id": "requests.packages.chardet.chardetect",
+              "score": 5.736467607436879
+            },
+            {
+              "id": "tests.test_requests.TestTimeout.test_invalid_timeout",
+              "score": 5.701519254707136
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_header_keys_are_native",
+              "score": 5.645350422167764
+            },
+            {
+              "id": "requests.packages.urllib3.filepost.iter_fields",
+              "score": 5.633092434650022
+            },
+            {
+              "id": "requests.packages.urllib3.filepost.iter_field_objects",
+              "score": 5.62078817537386
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.HTTPConnectionPool.urlopen",
+              "score": 5.616794179532103
+            },
+            {
+              "id": "requests.utils.iter_slices",
+              "score": 5.582273650616082
+            },
+            {
+              "id": "tests.test_testserver.TestTestServer.test_basic",
+              "score": 5.53892409145678
+            },
+            {
+              "id": "requests.utils",
+              "score": 5.503085100619961
+            },
+            {
+              "id": "tests.test_testserver.TestTestServer.test_basic.handler",
+              "score": 5.44801593126682
+            },
+            {
+              "id": "tests.test_testserver.TestTestServer.test_request_recovery",
+              "score": 5.320229306603587
+            },
+            {
+              "id": "requests.models.Response.raise_for_status",
+              "score": 5.292165471363553
+            },
+            {
+              "id": "requests.exceptions.FileModeWarning",
+              "score": 5.247018939604699
+            },
+            {
+              "id": "requests.sessions.Session",
+              "score": 5.233785478104194
+            },
+            {
+              "id": "requests.exceptions.ChunkedEncodingError",
+              "score": 5.11994281867261
+            },
+            {
+              "id": "requests.utils.get_netrc_auth",
+              "score": 4.995096821222438
+            },
+            {
+              "id": "requests.sessions.Session.request",
+              "score": 4.967044420941816
+            },
+            {
+              "id": "tests.test_utils.TestGuessJSONUTF.test_encoded",
+              "score": 4.939125245969699
+            },
+            {
+              "id": "requests.packages.urllib3.request.RequestMethods.request_encode_body",
+              "score": 4.938825395156956
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth.handle_401",
+              "score": 4.937552053127246
+            },
+            {
+              "id": "tests.test_utils.test_get_encoding_from_headers",
+              "score": 4.905720929556768
+            },
+            {
+              "id": "requests.packages.urllib3.fields.RequestField.make_multipart",
+              "score": 4.87273427182637
+            },
+            {
+              "id": "requests.models.Request.__repr__",
+              "score": 4.79398860583363
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six",
+              "score": 4.781845985283349
+            },
+            {
+              "id": "requests.sessions.Session.__init__",
+              "score": 4.781161684775795
+            },
+            {
+              "id": "requests.packages.urllib3.exceptions",
+              "score": 4.771242051877266
+            },
+            {
+              "id": "requests.models.PreparedRequest.__repr__",
+              "score": 4.759909372396639
+            },
+            {
+              "id": "requests.packages.chardet.chardetect.description_of",
+              "score": 4.736216674484852
+            },
+            {
+              "id": "tests.test_utils.TestGuessJSONUTF",
+              "score": 4.704173692751541
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_override_content_length",
+              "score": 4.675643177800611
+            },
+            {
+              "id": "tests.testserver.server.consume_socket_content",
+              "score": 4.669893914438387
+            },
+            {
+              "id": "requests.packages.urllib3.filepost",
+              "score": 4.656742687760683
+            },
+            {
+              "id": "requests.packages.urllib3.connection.HTTPConnection.request_chunked",
+              "score": 4.65559375187426
+            },
+            {
+              "id": "tests.test_utils.TestGuessJSONUTF.test_bad_utf_like_encoding",
+              "score": 4.650673266867963
+            },
+            {
+              "id": "requests.packages.urllib3.fields.guess_content_type",
+              "score": 4.639026463274796
+            },
+            {
+              "id": "requests.models.Response.ok",
+              "score": 4.596531562197013
+            },
+            {
+              "id": "requests.adapters.BaseAdapter.send",
+              "score": 4.588825589083196
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_no_content_length",
+              "score": 4.5030761630927385
+            },
+            {
+              "id": "tests.test_utils.TestContentEncodingDetection.test_pragmas",
+              "score": 4.463708660887187
+            },
+            {
+              "id": "requests.packages.chardet",
+              "score": 4.460310414390679
+            },
+            {
+              "id": "requests.models.Response.__bool__",
+              "score": 4.443997039368466
+            },
+            {
+              "id": "requests.models.Response.__nonzero__",
+              "score": 4.443997039368466
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six.iterkeys",
+              "score": 4.443997039368466
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six.itervalues",
+              "score": 4.443997039368466
+            },
+            {
+              "id": "docs.conf",
+              "score": 4.437796432548796
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_json_param_post_content_type_works",
+              "score": 4.346126400250621
+            },
+            {
+              "id": "requests.packages.urllib3.packages.ordered_dict.OrderedDict.iterkeys",
+              "score": 4.329069928455686
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six.iteritems",
+              "score": 4.329069928455686
+            },
+            {
+              "id": "requests.packages.urllib3.fields.RequestField._render_part",
+              "score": 4.294377024332254
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_POSTBIN_SEEKED_OBJECT_WITH_NO_ITER",
+              "score": 4.2918287710777605
+            },
+            {
+              "id": "requests.packages.urllib3.packages.ssl_match_hostname._implementation",
+              "score": 4.267205377163127
+            },
+            {
+              "id": "requests.packages.chardet.chardistribution.CharDistributionAnalysis.get_order",
+              "score": 4.2644120053380075
+            },
+            {
+              "id": "requests.packages.chardet.hebrewprober.HebrewProber.feed",
+              "score": 4.251693398587898
+            },
+            {
+              "id": "tests.test_utils",
+              "score": 4.216902406091974
+            },
+            {
+              "id": "tests.test_lowlevel.test_use_proxy_from_environment",
+              "score": 4.193629043794752
+            },
+            {
+              "id": "requests.packages.chardet.universaldetector.UniversalDetector.feed",
+              "score": 4.175346580386046
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_method",
+              "score": 4.116171625958268
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_user_agent_transfers",
+              "score": 4.113139423684378
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.iterkeys",
+              "score": 4.0910226966848695
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.itervalues",
+              "score": 4.0910226966848695
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.list_domains",
+              "score": 4.066179210390426
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.list_paths",
+              "score": 4.066179210390426
+            },
+            {
+              "id": "requests.packages.chardet.universaldetector.UniversalDetector",
+              "score": 4.062152891564433
+            },
+            {
+              "id": "requests.models.PreparedRequest.copy",
+              "score": 4.017386575527039
+            },
+            {
+              "id": "requests.compat",
+              "score": 4.002644040674327
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.iteritems",
+              "score": 3.993426759243054
+            },
+            {
+              "id": "requests.packages.chardet.hebrewprober.HebrewProber",
+              "score": 3.9818742262067355
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_headers",
+              "score": 3.9697510427321174
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_HTTP_200_OK_GET_WITH_PARAMS",
+              "score": 3.959032232844604
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin.path_url",
+              "score": 3.946354402772348
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_http_error",
+              "score": 3.939048604953844
+            },
+            {
+              "id": "tests.test_requests.TestRequests.test_headers_on_session_with_None_are_not_sent",
+              "score": 3.9106286874599117
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar",
+              "score": 3.8869768377931804
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_hooks",
+              "score": 3.877790455449982
+            },
+            {
+              "id": "tests.test_requests.TestTimeout",
+              "score": 3.8753414613658355
+            },
+            {
+              "id": "requests.packages.urllib3.fields.RequestField.render_headers",
+              "score": 3.857025164206567
+            },
+            {
+              "id": "requests.cookies.extract_cookies_to_jar",
+              "score": 3.8524855798533695
+            },
+            {
+              "id": "requests.models.RequestHooksMixin.deregister_hook",
+              "score": 3.811568281714275
+            },
+            {
+              "id": "requests.exceptions.RequestException.__init__",
+              "score": 3.7820900144360508
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.multiple_domains",
+              "score": 3.7686625719706353
+            },
+            {
+              "id": "requests.packages.urllib3.util.response.is_response_to_head",
+              "score": 3.764656308650199
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.from_httplib",
+              "score": 3.705595401352907
+            },
+            {
+              "id": "requests.exceptions.RequestException",
+              "score": 3.701847745388123
+            },
+            {
+              "id": "requests.packages.urllib3.exceptions.ResponseNotChunked",
+              "score": 3.690208401775859
+            },
+            {
+              "id": "requests.utils.default_headers",
+              "score": 3.642484164083746
+            },
+            {
+              "id": "requests.packages.urllib3.packages.ssl_match_hostname._implementation.match_hostname",
+              "score": 3.6275013006783765
+            }
+          ],
+          "scored_documents": 1116,
+          "seconds": 0.0019489999995130347
+        }
+      ],
+      "order": [
+        "tests.test_requests.TestRequests.test_response_decode_unicode",
+        "requests.models.Response.iter_content",
+        "requests.models.Response.json",
+        "requests.models.Response.iter_lines",
+        "requests.models.Response.text",
+        "requests.utils.get_unicode_from_response",
+        "requests.packages.urllib3.response.HTTPResponse.stream",
+        "requests.packages.urllib3.response.HTTPResponse",
+        "requests.models",
+        "requests.packages.urllib3.response.HTTPResponse.read",
+        "requests.models.Response.content",
+        "requests.packages.urllib3.response.HTTPResponse.__init__",
+        "requests.utils.stream_decode_response_unicode",
+        "tests.test_requests.TestRequests.test_manual_redirect_with_partial_body_read",
+        "requests.models.PreparedRequest.prepare_body",
+        "requests.packages.urllib3.response.HTTPResponse.read_chunked",
+        "tests.test_requests.TestRequests.test_response_chunk_size_int",
+        "requests.models.RequestEncodingMixin",
+        "requests.models.Response.__init__",
+        "tests.test_requests.TestRequests.test_response_is_iterable",
+        "requests.models.Response",
+        "requests.packages.urllib3.response.HTTPResponse._decode",
+        "requests.models.Response.iter_content.generate",
+        "requests.models.RequestEncodingMixin._encode_params",
+        "tests.test_requests.TestRequests.test_unicode_header_name",
+        "requests.packages.urllib3.fields",
+        "requests.models.Response.__iter__",
+        "requests.exceptions.ContentDecodingError",
+        "requests.adapters.HTTPAdapter.send",
+        "requests.packages.urllib3.filepost.encode_multipart_formdata",
+        "requests.models.PreparedRequest.prepare_url",
+        "requests.structures.CaseInsensitiveDict",
+        "requests.structures",
+        "tests.test_requests.TestRequests.test_response_iter_lines",
+        "tests.test_requests.TestRequests.test_response_iter_lines_reentrant",
+        "requests.models.RequestEncodingMixin._encode_files",
+        "requests.utils.get_encoding_from_headers",
+        "tests.test_requests.TestRequests.test_links",
+        "requests.api",
+        "requests.api.request",
+        "requests.cookies.RequestsCookieJar.multiple_domains",
+        "requests.packages.urllib3.fields.format_header_param",
+        "tests.test_testserver.TestTestServer.test_basic_response",
+        "requests.packages.urllib3.contrib.appengine.AppEngineManager._urlfetch_response_to_http_response",
+        "requests.compat",
+        "requests.sessions.Session.request",
+        "requests.packages.urllib3.packages.six.print_",
+        "requests.packages.chardet.detect",
+        "tests.testserver.server.Server.text_response_server",
+        "tests.testserver.server.Server.text_response_server.text_response_handler",
+        "tests.test_requests.TestRequests.test_response_is_iterable.read_mock",
+        "requests.utils.to_native_string",
+        "requests.packages.urllib3.filepost",
+        "requests.packages.urllib3.exceptions.DecodeError",
+        "tests.test_testserver",
+        "tests.test_requests.TestRequests.test_response_json_when_content_is_None",
+        "requests.models.RequestHooksMixin",
+        "tests.testserver.server",
+        "tests.test_testserver.TestTestServer",
+        "requests.sessions.SessionRedirectMixin",
+        "requests.sessions.SessionRedirectMixin.resolve_redirects",
+        "requests.models.PreparedRequest",
+        "tests.test_testserver.TestTestServer.test_text_response",
+        "requests.packages.urllib3.packages.six",
+        "requests.packages.urllib3.filepost.iter_fields",
+        "requests.utils.get_netrc_auth",
+        "requests.adapters.BaseAdapter.send",
+        "requests.utils",
+        "tests.testserver.server.Server",
+        "requests.packages.urllib3.response.HTTPResponse.tell",
+        "tests.compat",
+        "tests.test_utils.TestContentEncodingDetection",
+        "requests.adapters.HTTPAdapter.build_response",
+        "requests.packages.urllib3.response",
+        "requests.sessions.Session.post",
+        "requests.utils.super_len",
+        "requests.packages.urllib3._collections.HTTPHeaderDict.__iter__",
+        "requests.packages.urllib3.request.RequestMethods.request_encode_body",
+        "tests.testserver.server.Server.basic_response_server",
+        "requests.packages.urllib3.util.request",
+        "requests.packages.urllib3.util.request.make_headers",
+        "requests.utils.get_encodings_from_content",
+        "requests.packages.urllib3.connectionpool.HTTPConnectionPool.urlopen",
+        "tests.test_requests.TestRequests.test_decompress_gzip",
+        "requests.packages.urllib3.fields.RequestField",
+        "requests.packages.urllib3.util.ssl_._const_compare_digest_backport",
+        "tests.test_requests.TestRequests.test_unicode_method_name_with_request_object",
+        "requests.models.RequestHooksMixin.deregister_hook",
+        "tests.test_requests.TestRequests.test_unconsumed_session_response_closes_connection",
+        "requests.packages.urllib3.fields.RequestField.from_tuples",
+        "requests.utils.should_bypass_proxies",
+        "requests.packages.chardet",
+        "tests.test_requests.TestRequests._patch_adapter_gzipped_redirect.build_response",
+        "requests.packages.urllib3.fields.guess_content_type",
+        "tests.test_requests.TestRequests.test_custom_content_type",
+        "requests.adapters",
+        "requests.packages.chardet.chardetect",
+        "requests.sessions.Session.patch",
+        "requests.cookies.RequestsCookieJar",
+        "requests.packages.urllib3.response.HTTPResponse._init_decoder",
+        "requests.sessions.Session.put",
+        "requests.models.Response.__bool__",
+        "tests.test_requests.TestRequests._patch_adapter_gzipped_redirect",
+        "requests.models.Response.__nonzero__",
+        "requests.cookies.RequestsCookieJar.iterkeys",
+        "requests.cookies.RequestsCookieJar.itervalues",
+        "requests.utils.address_in_network",
+        "requests.cookies.RequestsCookieJar.iteritems",
+        "requests.packages.urllib3.packages.ssl_match_hostname",
+        "tests.test_utils.TestContentEncodingDetection.test_precedence",
+        "tests.test_requests.test_json_encodes_as_bytes",
+        "requests.packages.urllib3.contrib.appengine.AppEngineManager",
+        "tests.test_lowlevel.test_chunked_upload",
+        "requests.packages.chardet.hebrewprober",
+        "requests.sessions.Session.get",
+        "tests.test_requests.TestRequests.test_json_param_post_content_type_works",
+        "requests.sessions.Session.options",
+        "requests.models.PreparedRequest.prepare_content_length",
+        "requests.packages.urllib3.util.connection.is_connection_dropped",
+        "tests.test_utils",
+        "requests.api.post",
+        "requests.sessions.Session.__init__",
+        "requests.sessions.Session",
+        "requests.packages.chardet.compat",
+        "requests.packages.urllib3.packages.backports.makefile",
+        "requests.packages.urllib3.response.HTTPResponse.data",
+        "requests.exceptions.StreamConsumedError",
+        "tests.test_utils.TestGuessFilename",
+        "requests.packages.urllib3.contrib.appengine",
+        "requests.packages.urllib3.packages.backports.makefile.backport_makefile",
+        "tests.test_lowlevel",
+        "requests.models.Response.links",
+        "requests",
+        "requests.cookies.RequestsCookieJar.get_dict",
+        "requests.adapters.BaseAdapter",
+        "requests.api.get",
+        "tests.test_requests.TestCaseInsensitiveDict.test_docstring_example",
+        "requests.sessions.Session.head",
+        "requests.models.Response.is_permanent_redirect",
+        "tests.test_requests.TestRequests",
+        "requests.models.Response.__setstate__",
+        "tests.test_requests.TestRequests.test_POSTBIN_SEEKED_OBJECT_WITH_NO_ITER",
+        "tests.test_requests.TestRequests.test_unicode_get",
+        "requests.models.Response.is_redirect",
+        "tests.test_requests.TestRequests.test_unicode_method_name",
+        "tests.test_requests.TestRequests.test_unicode_multipart_post",
+        "requests.models.Response.apparent_encoding",
+        "requests.cookies.RequestsCookieJar._find_no_duplicates",
+        "requests.packages.urllib3.packages.ordered_dict.OrderedDict.__iter__",
+        "requests.packages.chardet.jpcntx.JapaneseContextAnalysis.reset",
+        "tests.test_requests.TestRequests.test_unicode_multipart_post_fieldnames",
+        "tests.test_requests.TestCaseInsensitiveDict.test_iter",
+        "requests.structures.CaseInsensitiveDict.__iter__",
+        "tests.test_utils.test_iter_slices",
+        "requests.packages.chardet.jpcntx.JapaneseContextAnalysis",
+        "tests.test_utils.TestGuessJSONUTF",
+        "requests.packages.urllib3._collections.RecentlyUsedContainer.__iter__",
+        "requests.auth",
+        "tests.test_requests.TestRequests.test_can_send_file_object_with_non_string_filename",
+        "requests.sessions.Session.delete",
+        "tests.test_requests.TestRequests.test_params_bytes_are_encoded",
+        "docs.conf",
+        "tests.test_requests.TestRequests.test_header_keys_are_native",
+        "requests.packages.urllib3.filepost.iter_field_objects",
+        "requests.packages.chardet.hebrewprober.HebrewProber.feed",
+        "requests.utils.iter_slices",
+        "tests.test_structures.TestCaseInsensitiveDict",
+        "requests.packages.chardet.chardetect.description_of",
+        "tests.test_testserver.TestTestServer.test_request_recovery",
+        "tests.test_requests.TestRequests.test_http_error",
+        "tests.test_requests",
+        "requests.auth.HTTPDigestAuth.handle_401",
+        "requests.packages.urllib3._collections.HTTPHeaderDict",
+        "requests.api.patch",
+        "requests.api.put",
+        "requests.packages.urllib3.fields.RequestField.make_multipart",
+        "requests.packages.urllib3.util.retry.Retry.__init__",
+        "requests.packages.urllib3.exceptions",
+        "requests.packages.urllib3.util.ssl_",
+        "requests.packages.urllib3.packages.ssl_match_hostname._implementation",
+        "tests.test_requests.TestRequests.test_override_content_length",
+        "tests.testserver.server.consume_socket_content",
+        "requests.packages.chardet.hebrewprober.HebrewProber",
+        "tests.test_structures",
+        "requests.cookies.cookiejar_from_dict",
+        "requests.packages.chardet.jpcntx.JapaneseContextAnalysis.feed",
+        "requests.models.Response.__getstate__",
+        "requests.packages.chardet.universaldetector.UniversalDetector",
+        "requests.packages.urllib3.response.HTTPResponse._error_catcher",
+        "requests.packages.urllib3.util.timeout",
+        "requests.auth._basic_auth_str",
+        "tests.test_requests.TestRequests.test_fixes_1329",
+        "requests.packages.urllib3.packages.ordered_dict.OrderedDict.popitem",
+        "requests.packages.urllib3.contrib.pyopenssl.SubjectAltName",
+        "requests.models.Response.__repr__",
+        "requests.packages.urllib3.packages.ssl_match_hostname._implementation.CertificateError",
+        "requests.utils.guess_json_utf",
+        "requests.packages.urllib3.util.timeout.Timeout",
+        "requests.models.RequestHooksMixin.register_hook",
+        "requests.packages.urllib3.util.connection"
+      ],
+      "retrieval_calls": 3,
+      "index_nodes": 1116,
+      "scored_documents": 3228,
+      "source_chars_read": 916732,
+      "shared_index_seconds": 0.7298109999992448
+    }
+  ]
+}

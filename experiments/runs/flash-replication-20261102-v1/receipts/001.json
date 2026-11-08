@@ -1,0 +1,34 @@
+{
+  "request_sha256": "54ab797add490b28ee077aa44c43f75d0d82bf90a298f991212c2e03b47fac3e",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "received_utc": "2026-11-02T15:53:18.543889+00:00",
+  "seconds": 0.6925736000002871,
+  "response": {
+    "id": "ebcca470-1d20-49fd-b628-72cf8cdb3fd1",
+    "object": "chat.completion",
+    "created": 1793634796,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"astropy wcs _array_converter empty list wcs_pix2world InconsistentAxisTypesError\",\"astropy wcs _return_list_of_arrays np.hstack empty axes broadcast_arrays\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2469,
+      "completion_tokens": 47,
+      "total_tokens": 2516,
+      "prompt_tokens_details": {
+        "cached_tokens": 768
+      },
+      "prompt_cache_hit_tokens": 768,
+      "prompt_cache_miss_tokens": 1701
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

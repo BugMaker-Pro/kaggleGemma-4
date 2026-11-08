@@ -1,0 +1,68 @@
+diff --git a/reproduce_issue.py b/reproduce_issue.py
+new file mode 100644
+index 00000000..3317bcfb
+--- /dev/null
++++ b/reproduce_issue.py
+@@ -0,0 +1,45 @@
++from requests.models import PreparedRequest
++from collections.abc import Iterable, Mapping
++
++class FileWrapper:
++    def __init__(self, file):
++        self.file = file
++    def __getattr__(self, name):
++        return getattr(self.file, name)
++    def __iter__(self):
++        return iter(self.file)
++
++def test_prepare_body_stream_detection():
++    # Create a mock file-like object
++    class MockFile:
++        def __iter__(self):
++            yield "data"
++        def tell(self):
++            return 0
++        def seek(self, offset, whence=0):
++            return 0
++        def read(self, size=-1):
++            return "data"
++
++    mock_file = MockFile()
++    wrapper = FileWrapper(mock_file)
++
++    # Before the fix, this would not be detected as a stream
++    # because it's not an instance of Iterable.
++    # After the fix, it should be detected as a stream.
++    
++    req = PreparedRequest("http://example.org/path", data=wrapper)
++    req.prepare_body(files={}, json=None)
++    
++    # If it's detected as a stream, it should have Transfer-Encoding: chunked
++    # or at least not have a Content-Length header (unless it's seekable and we can get length)
++    
++    print(f"Headers: {req.headers}")
++    
++    if "Transfer-Encoding" in req.headers and req.headers["Transfer-Encoding"] == "chunked":
++        print("Success: Detected as stream")
++    else:
++        print("Failure: Not detected as stream")
++
++if __name__ == "__main__":
++    test_prepare_body_stream_detection()
+diff --git a/src/requests/models.py b/src/requests/models.py
+index 4142f2a4..f271e7e6 100644
+--- a/src/requests/models.py
++++ b/src/requests/models.py
+@@ -596,9 +596,9 @@ class PreparedRequest(RequestEncodingMixin, RequestHooksMixin):
+             if not isinstance(body, bytes):
+                 body = body.encode("utf-8")
+ 
+-        if isinstance(data, Iterable) and not isinstance(
+-            data, (str, bytes, list, tuple, Mapping)
+-        ):
++        if (
++            isinstance(data, Iterable) or hasattr(data, "__iter__")
++        ) and not isinstance(data, (str, bytes, list, tuple, Mapping)):
+             try:
+                 length = super_len(data)
+             except (TypeError, AttributeError, UnsupportedOperation):

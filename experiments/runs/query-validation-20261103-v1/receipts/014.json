@@ -1,0 +1,34 @@
+{
+  "request_sha256": "bc753a33feb500d093fd3eaeb306708fa79c9224097c32ab516f909a851724ca",
+  "manifest_sha256": "d537eb7c5ecd9599d7f0c43dee9a074cdaf677151fd186d3946113fa5f47e1fe",
+  "received_utc": "2026-11-02T17:03:42.847091+00:00",
+  "seconds": 2.464570800000729,
+  "response": {
+    "id": "630e6158-fd1b-4e6d-a739-ac988cdd65b4",
+    "object": "chat.completion",
+    "created": 1793639020,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"xarray Dataset repr units coordinates data variables formatting\",\"xarray dataset overview display units attribute repr implementation\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 452,
+      "completion_tokens": 26,
+      "total_tokens": 478,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 324
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

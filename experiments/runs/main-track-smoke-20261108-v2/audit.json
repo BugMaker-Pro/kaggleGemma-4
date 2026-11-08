@@ -1,0 +1,111 @@
+{
+  "purpose": "engineering_smoke_not_confirmation",
+  "task_id": "requests_7433",
+  "checks": 27,
+  "arms": [
+    {
+      "arm": "baseline",
+      "task_id": "requests_7433",
+      "resolved": false,
+      "test_exit_code": 1,
+      "tool_calls": 17,
+      "duration_seconds": 157.48328589100004,
+      "patch_sha256": "4ca9795049fc679c1b60c4f32e561b8018529633e79d2dd7b2a3fca87b1ff31e",
+      "patch_chars": 584,
+      "purpose": "engineering_smoke",
+      "tool_invocations_including_rejected_and_free": {
+        "run_command": 11,
+        "read_file": 5,
+        "edit_file": 1,
+        "submit_patch": 1
+      },
+      "graph_calls": 0,
+      "first_edit_elapsed_seconds": 20.163907051086426,
+      "explicit_submit": true,
+      "workspace_scratch_files_observed": [],
+      "tool_errors": {
+        "CommandError": 2
+      },
+      "model_usage_from_trace": {
+        "total_prompt_tokens": 165162,
+        "total_completion_tokens": 3966,
+        "total_cached_tokens": 0,
+        "total_tokens": 169128,
+        "total_steps": 23
+      },
+      "full_patch_saved": false,
+      "verification_log_saved": false
+    },
+    {
+      "arm": "evidence",
+      "task_id": "requests_7433",
+      "resolved": false,
+      "test_exit_code": 1,
+      "tool_calls": 30,
+      "duration_seconds": 255.31484996300014,
+      "patch_sha256": "8f464c3634b96416d39f054f2c369a3d2ed703a4d197b3bb9aa05ac62ace10cf",
+      "patch_chars": 1474,
+      "purpose": "engineering_smoke",
+      "tool_invocations_including_rejected_and_free": {
+        "run_command": 16,
+        "read_file": 14,
+        "edit_file": 1
+      },
+      "graph_calls": 0,
+      "first_edit_elapsed_seconds": 20.778062105178833,
+      "explicit_submit": false,
+      "workspace_scratch_files_observed": [
+        "reproduce_issue.py"
+      ],
+      "tool_errors": {
+        "CommandError": 2,
+        "BudgetExceeded": 1
+      },
+      "model_usage_from_trace": {
+        "total_prompt_tokens": 304123,
+        "total_completion_tokens": 9098,
+        "total_cached_tokens": 0,
+        "total_tokens": 313221,
+        "total_steps": 33
+      },
+      "full_patch_saved": false,
+      "verification_log_saved": false
+    },
+    {
+      "arm": "evidence_graph",
+      "task_id": "requests_7433",
+      "resolved": false,
+      "test_exit_code": 1,
+      "tool_calls": 30,
+      "duration_seconds": 255.34200406699983,
+      "patch_sha256": "77ad69a8aac6d2174df81eb2c34ab3454b0b40c72c7b156c56bfa03351f9e514",
+      "patch_chars": 2251,
+      "purpose": "engineering_smoke",
+      "tool_invocations_including_rejected_and_free": {
+        "run_command": 14,
+        "read_file": 12,
+        "edit_file": 1,
+        "write_file": 3
+      },
+      "graph_calls": 0,
+      "first_edit_elapsed_seconds": 20.685113668441772,
+      "explicit_submit": false,
+      "workspace_scratch_files_observed": [
+        "reproduce_bug.py"
+      ],
+      "tool_errors": {
+        "CommandError": 2
+      },
+      "model_usage_from_trace": {
+        "total_prompt_tokens": 292415,
+        "total_completion_tokens": 6276,
+        "total_cached_tokens": 0,
+        "total_tokens": 298691,
+        "total_steps": 32
+      },
+      "full_patch_saved": false,
+      "verification_log_saved": false
+    }
+  ],
+  "interpretation_limit": "One development task cannot establish method effectiveness; missing verification logs prevent attributing unresolved outcomes."
+}

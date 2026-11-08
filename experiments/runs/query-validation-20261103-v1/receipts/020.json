@@ -1,0 +1,34 @@
+{
+  "request_sha256": "fa6bbcc83c839b5f084b328d2cac9389a9edf4916220e852f4d62b2bec0919e5",
+  "manifest_sha256": "d537eb7c5ecd9599d7f0c43dee9a074cdaf677151fd186d3946113fa5f47e1fe",
+  "received_utc": "2026-11-02T17:03:58.511031+00:00",
+  "seconds": 2.9367320999990625,
+  "response": {
+    "id": "d63203ba-2116-451b-9b9a-ee87b7757f02",
+    "object": "chat.completion",
+    "created": 1793639036,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"pytest_runtest_makereport skipping.py runxfail skip location report\",\"skipping.py pytest_runtest_makereport skip mark location --runxfail\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 405,
+      "completion_tokens": 43,
+      "total_tokens": 448,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 277
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

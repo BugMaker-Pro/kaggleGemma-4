@@ -1,0 +1,34 @@
+{
+  "request_sha256": "230215f4e054d52e086b75c5d188b10e2ace3e3069b42cac916ddc11ac8b4a99",
+  "manifest_sha256": "d537eb7c5ecd9599d7f0c43dee9a074cdaf677151fd186d3946113fa5f47e1fe",
+  "received_utc": "2026-11-02T17:03:14.929485+00:00",
+  "seconds": 5.394328399999722,
+  "response": {
+    "id": "fb450cf6-1bae-4d67-804c-cd30b8d54a9c",
+    "object": "chat.completion",
+    "created": 1793638992,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\": [\"django db models deletion Collector delete set pk None after delete\", \"django model delete without dependencies clear primary key None\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 210,
+      "completion_tokens": 31,
+      "total_tokens": 241,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 210
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

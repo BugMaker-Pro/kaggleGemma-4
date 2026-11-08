@@ -1,0 +1,34 @@
+{
+  "request_sha256": "6c6949b9d7f8951bc07329654561bbc8b9cf8d67140e7d2376e61ea4295cd081",
+  "manifest_sha256": "001bb1a61aa999d022ac9922671f7f4ad59838c785e7cb011f1a2a59241bef31",
+  "received_utc": "2026-11-02T15:21:15.378462+00:00",
+  "seconds": 2.0434369000004153,
+  "response": {
+    "id": "bb021290-62eb-4ed6-bff3-16ea9f5429a9",
+    "object": "chat.completion",
+    "created": 1793632873,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"simplify (-a)**x * a**(-x) positive integer symbol power simplification (-1)**x\",\"powsimp power simplification negative base positive symbol (-a)**x a**(-x)\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2476,
+      "completion_tokens": 46,
+      "total_tokens": 2522,
+      "prompt_tokens_details": {
+        "cached_tokens": 384
+      },
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 2092
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

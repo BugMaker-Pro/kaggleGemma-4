@@ -1,0 +1,34 @@
+{
+  "request_sha256": "4c18046274515f49727178a6decbe35713c01c6d3ab07accab93c1153dfe3478",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "received_utc": "2026-11-02T15:53:47.540771+00:00",
+  "seconds": 0.6717829999997775,
+  "response": {
+    "id": "77f067b4-b1d1-4dc9-94c9-1f2169dc815a",
+    "object": "chat.completion",
+    "created": 1793634825,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"requests urllib3 exceptions DecodeError TimeoutError wrap requests.exceptions\",\"requests adapters urllib3 exception handling proxy timeout DecodeError\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 269,
+      "completion_tokens": 36,
+      "total_tokens": 305,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 141
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

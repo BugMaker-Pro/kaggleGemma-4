@@ -1,0 +1,63 @@
+{
+  "manifest_sha256": "001bb1a61aa999d022ac9922671f7f4ad59838c785e7cb011f1a2a59241bef31",
+  "gold_sha256": "2fa161dc437993153e2d0b1834a88a89553270c3ca1978bcd3db08e65eba25ad",
+  "responses_sha256": "ce350c8d4e410351e1f2dd4b04e8e1e02dd30c799b6fea0f4543201c48a86054",
+  "retrieval_sha256": "6577b01d10e0a36883b72620141caf1aeff677c33a44d47a011d0d84cca4514d",
+  "tasks": 12,
+  "scorable_tasks": 12,
+  "means": {
+    "preplanned": {
+      "coverage": 0.9166666666666666,
+      "recall_at_10": 0.375
+    },
+    "feedback": {
+      "coverage": 1.0,
+      "recall_at_10": 0.5416666666666666
+    }
+  },
+  "primary_delta": 0.16666666666666663,
+  "descriptive_repo_bootstrap_95": [
+    0.0,
+    0.4166666666666667
+  ],
+  "fallbacks": {
+    "preplanned": 0,
+    "feedback": 1
+  },
+  "unknown_output_token_counts": 1,
+  "usage": {
+    "preplanned": {
+      "input_tokens": 8078,
+      "known_output_tokens": 445,
+      "model_calls": 12,
+      "retrieval_calls": 36,
+      "code_chars_exposed": 0
+    },
+    "feedback": {
+      "input_tokens": 29392,
+      "known_output_tokens": 442,
+      "model_calls": 12,
+      "retrieval_calls": 34,
+      "code_chars_exposed": 62309
+    }
+  },
+  "automatic_expansion": false,
+  "claim": "exploratory paired feedback probe; no evidence-state mechanism claim",
+  "provider_models": [
+    "deepseek-flash"
+  ],
+  "system_fingerprints": [
+    "bc19ba97cbe016479903222bb1578db6"
+  ],
+  "unknown_usage_requests": [
+    {
+      "instance_id": "psf__requests-2148",
+      "arm": "feedback",
+      "reservation_cny": 0.023862
+    }
+  ],
+  "known_usage_cny_peak": 0.06798672,
+  "continuation_sha256": "f5446764220830331e921f86aefe986b832225d983c69a33b6f70b648f3668dd",
+  "estimated_cny_idle": 0.03399336,
+  "known_plus_unknown_reservation_cny_peak": 0.09184872
+}

@@ -1,0 +1,34 @@
+{
+  "request_sha256": "0b1fd89c6aa55b7721cbc3bf67ec9e0c1544a17c9b820ddc55d5a84f238a71a4",
+  "manifest_sha256": "d537eb7c5ecd9599d7f0c43dee9a074cdaf677151fd186d3946113fa5f47e1fe",
+  "received_utc": "2026-11-02T17:04:33.884760+00:00",
+  "seconds": 2.1144287000006443,
+  "response": {
+    "id": "6430dc34-e3f1-420b-86e9-824410bf0e14",
+    "object": "chat.completion",
+    "created": 1793639071,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\": [\"sqf_list square-free factorization multiplicity combine factors same multiplicity\", \"sqf sqf_list inconsistent output factors multiplicity polynomial factorization\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 373,
+      "completion_tokens": 31,
+      "total_tokens": 404,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 245
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

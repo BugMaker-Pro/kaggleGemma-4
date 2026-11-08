@@ -1,0 +1,752 @@
+{
+  "passed": true,
+  "checks": 108,
+  "scope": "Development batch only; not a confirmatory performance estimate",
+  "arms": {
+    "baseline": {
+      "tasks": 7,
+      "resolved": 0,
+      "recorded_errors": 7
+    },
+    "evidence": {
+      "tasks": 7,
+      "resolved": 1,
+      "recorded_errors": 6
+    },
+    "evidence_graph": {
+      "tasks": 7,
+      "resolved": 0,
+      "recorded_errors": 7
+    }
+  },
+  "results": [
+    {
+      "arm": "baseline",
+      "task_id": "fastapi_15661",
+      "resolved": false,
+      "test_exit_code": -1,
+      "tool_calls": 30,
+      "duration_seconds": 188.145627799,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "patch_chars": 0,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "run_command": 25,
+          "read_file": 5
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": null,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {
+          "CommandError": 1
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 290068,
+          "total_completion_tokens": 5211,
+          "total_cached_tokens": 0,
+          "total_tokens": 295279,
+          "total_steps": 32
+        }
+      }
+    },
+    {
+      "arm": "baseline",
+      "task_id": "rich_4079",
+      "resolved": false,
+      "test_exit_code": -1,
+      "tool_calls": 22,
+      "duration_seconds": 184.56036096499997,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "patch_chars": 0,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "read_file": 14,
+          "run_command": 8
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": null,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {
+          "CommandError": 3
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 232497,
+          "total_completion_tokens": 3264,
+          "total_cached_tokens": 0,
+          "total_tokens": 235761,
+          "total_steps": 26
+        }
+      }
+    },
+    {
+      "arm": "baseline",
+      "task_id": "fastapi_14463",
+      "resolved": false,
+      "test_exit_code": 1,
+      "tool_calls": 12,
+      "duration_seconds": 191.45818549,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "19bb6cdeb29576be23c03a4e68bff21e5a4389aab4aa146ce66b93750c6f4659",
+      "patch_chars": 328,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "read_file": 7,
+          "run_command": 4,
+          "edit_file": 1
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": 164.11284852027893,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {
+          "CommandError": 3
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 132391,
+          "total_completion_tokens": 7503,
+          "total_cached_tokens": 0,
+          "total_tokens": 139894,
+          "total_steps": 16
+        }
+      }
+    },
+    {
+      "arm": "baseline",
+      "task_id": "fastapi_13713",
+      "resolved": false,
+      "test_exit_code": -1,
+      "tool_calls": 30,
+      "duration_seconds": 184.89792251200004,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "patch_chars": 0,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "run_command": 5,
+          "read_file": 24,
+          "edit_file": 1
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": 146.51798558235168,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {
+          "FileEditError": 1
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 312238,
+          "total_completion_tokens": 3968,
+          "total_cached_tokens": 0,
+          "total_tokens": 316206,
+          "total_steps": 32
+        }
+      }
+    },
+    {
+      "arm": "baseline",
+      "task_id": "rich_3942",
+      "resolved": false,
+      "test_exit_code": -1,
+      "tool_calls": 19,
+      "duration_seconds": 184.54476463000015,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "patch_chars": 0,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "read_file": 11,
+          "run_command": 8
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": null,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {},
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 185832,
+          "total_completion_tokens": 6075,
+          "total_cached_tokens": 0,
+          "total_tokens": 191907,
+          "total_steps": 23
+        }
+      }
+    },
+    {
+      "arm": "baseline",
+      "task_id": "rich_3882",
+      "resolved": false,
+      "test_exit_code": -1,
+      "tool_calls": 30,
+      "duration_seconds": 183.03585279399988,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "patch_chars": 0,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "read_file": 19,
+          "run_command": 12
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": null,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {
+          "CommandError": 6,
+          "ValueError": 1,
+          "BudgetExceeded": 1
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 307109,
+          "total_completion_tokens": 6545,
+          "total_cached_tokens": 0,
+          "total_tokens": 313654,
+          "total_steps": 35
+        }
+      }
+    },
+    {
+      "arm": "baseline",
+      "task_id": "httpx_3672",
+      "resolved": false,
+      "test_exit_code": 1,
+      "tool_calls": 20,
+      "duration_seconds": 182.61400473999993,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "851a17012d2bfe261fe10d2058aaac7a4ebd1b6b8bc465ae330a91ebd389bb21",
+      "patch_chars": 1287,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "run_command": 3,
+          "read_file": 14,
+          "edit_file": 3
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": 123.8756935596466,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {},
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 203233,
+          "total_completion_tokens": 9327,
+          "total_cached_tokens": 0,
+          "total_tokens": 212560,
+          "total_steps": 22
+        }
+      }
+    },
+    {
+      "arm": "evidence",
+      "task_id": "fastapi_15661",
+      "resolved": false,
+      "test_exit_code": 2,
+      "tool_calls": 22,
+      "duration_seconds": 185.71108759799995,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "b372c62d25fc5610892b6efe5e812a060f4e1f30f0ab99ed7ae999f9d19479b4",
+      "patch_chars": 3361,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "run_command": 12,
+          "read_file": 9,
+          "write_file": 1
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": null,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {
+          "CommandError": 1,
+          "TimeoutExceeded": 1
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 219244,
+          "total_completion_tokens": 6502,
+          "total_cached_tokens": 0,
+          "total_tokens": 225746,
+          "total_steps": 24
+        }
+      }
+    },
+    {
+      "arm": "evidence",
+      "task_id": "rich_4079",
+      "resolved": false,
+      "test_exit_code": -1,
+      "tool_calls": 21,
+      "duration_seconds": 182.33833990900007,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "patch_chars": 0,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "read_file": 12,
+          "run_command": 9
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": null,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {
+          "CommandError": 3
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 225817,
+          "total_completion_tokens": 7549,
+          "total_cached_tokens": 0,
+          "total_tokens": 233366,
+          "total_steps": 28
+        }
+      }
+    },
+    {
+      "arm": "evidence",
+      "task_id": "fastapi_14463",
+      "resolved": false,
+      "test_exit_code": 1,
+      "tool_calls": 5,
+      "duration_seconds": 184.77202432800004,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "27524521af072b269020aaf3f96c692b3a4874107fcb3a1ed12f1d54f20d55f5",
+      "patch_chars": 811,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "read_file": 4,
+          "write_file": 1
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": null,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [
+          "reproduce_issue.py"
+        ],
+        "tool_errors": {},
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 54287,
+          "total_completion_tokens": 2298,
+          "total_cached_tokens": 0,
+          "total_tokens": 56585,
+          "total_steps": 9
+        }
+      }
+    },
+    {
+      "arm": "evidence",
+      "task_id": "fastapi_13713",
+      "resolved": false,
+      "test_exit_code": -1,
+      "tool_calls": 26,
+      "duration_seconds": 181.39194861300007,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "patch_chars": 0,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "run_command": 6,
+          "read_file": 13,
+          "edit_file": 7
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": 59.02525973320007,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {
+          "CommandError": 3,
+          "FileEditError": 7
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 246603,
+          "total_completion_tokens": 5110,
+          "total_cached_tokens": 0,
+          "total_tokens": 251713,
+          "total_steps": 28
+        }
+      }
+    },
+    {
+      "arm": "evidence",
+      "task_id": "rich_3942",
+      "resolved": false,
+      "test_exit_code": -1,
+      "tool_calls": 15,
+      "duration_seconds": 180.92384865400004,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "patch_chars": 0,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "read_file": 10,
+          "run_command": 5
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": null,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {
+          "CommandError": 1
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 161773,
+          "total_completion_tokens": 7707,
+          "total_cached_tokens": 0,
+          "total_tokens": 169480,
+          "total_steps": 19
+        }
+      }
+    },
+    {
+      "arm": "evidence",
+      "task_id": "rich_3882",
+      "resolved": true,
+      "test_exit_code": 0,
+      "tool_calls": 22,
+      "duration_seconds": 183.38736788200004,
+      "error": null,
+      "patch_sha256": "6e0ec5ecedca97a064e12e1a6893cb3dd7bc13ef9ab9fa8ec4aff2264ed22a2f",
+      "patch_chars": 503,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "run_command": 10,
+          "read_file": 9,
+          "edit_file": 1,
+          "write_file": 2
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": 102.18365287780762,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [
+          "verify_fix.py"
+        ],
+        "tool_errors": {
+          "CommandError": 1
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 225795,
+          "total_completion_tokens": 7664,
+          "total_cached_tokens": 0,
+          "total_tokens": 233459,
+          "total_steps": 26
+        }
+      }
+    },
+    {
+      "arm": "evidence",
+      "task_id": "httpx_3672",
+      "resolved": false,
+      "test_exit_code": 1,
+      "tool_calls": 12,
+      "duration_seconds": 182.5493045379999,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "659e8f6fb3ec60e304df33106766156bba71ea9a4763926324cff721150b8aef",
+      "patch_chars": 1493,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "read_file": 9,
+          "run_command": 1,
+          "edit_file": 2
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": 151.06224393844604,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {
+          "CommandError": 1
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 125749,
+          "total_completion_tokens": 9264,
+          "total_cached_tokens": 0,
+          "total_tokens": 135013,
+          "total_steps": 16
+        }
+      }
+    },
+    {
+      "arm": "evidence_graph",
+      "task_id": "fastapi_15661",
+      "resolved": false,
+      "test_exit_code": -1,
+      "tool_calls": 30,
+      "duration_seconds": 181.64915010999994,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "patch_chars": 0,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "run_command": 17,
+          "read_file": 13,
+          "submit_patch": 1
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": null,
+        "explicit_submit": true,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {
+          "CommandError": 1
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 325195,
+          "total_completion_tokens": 5306,
+          "total_cached_tokens": 0,
+          "total_tokens": 330501,
+          "total_steps": 35
+        }
+      }
+    },
+    {
+      "arm": "evidence_graph",
+      "task_id": "rich_4079",
+      "resolved": false,
+      "test_exit_code": -1,
+      "tool_calls": 26,
+      "duration_seconds": 180.92717552399972,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "patch_chars": 0,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "read_file": 17,
+          "run_command": 9
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": null,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {
+          "CommandError": 5
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 261376,
+          "total_completion_tokens": 4562,
+          "total_cached_tokens": 0,
+          "total_tokens": 265938,
+          "total_steps": 30
+        }
+      }
+    },
+    {
+      "arm": "evidence_graph",
+      "task_id": "fastapi_14463",
+      "resolved": false,
+      "test_exit_code": 1,
+      "tool_calls": 5,
+      "duration_seconds": 184.69299874599983,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "6d5c7b0e18c34cb9739775a101ce952f5defe85fdfd5e8d2dbf2bafbecde4e8d",
+      "patch_chars": 3444,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "read_file": 3,
+          "write_file": 1,
+          "run_command": 1
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": null,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [
+          "reproduce_issue.py"
+        ],
+        "tool_errors": {},
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 54780,
+          "total_completion_tokens": 2615,
+          "total_cached_tokens": 0,
+          "total_tokens": 57395,
+          "total_steps": 9
+        }
+      }
+    },
+    {
+      "arm": "evidence_graph",
+      "task_id": "fastapi_13713",
+      "resolved": false,
+      "test_exit_code": 1,
+      "tool_calls": 27,
+      "duration_seconds": 184.66918517800013,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "a7a269cacaac8b0ebe4ade575079894402f3ff09bba2e780e0cdd8762389042f",
+      "patch_chars": 872,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "run_command": 1,
+          "read_file": 22,
+          "edit_file": 4
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": 60.232364892959595,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {
+          "FileEditError": 2
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 266424,
+          "total_completion_tokens": 6239,
+          "total_cached_tokens": 0,
+          "total_tokens": 272663,
+          "total_steps": 29
+        }
+      }
+    },
+    {
+      "arm": "evidence_graph",
+      "task_id": "rich_3942",
+      "resolved": false,
+      "test_exit_code": -1,
+      "tool_calls": 30,
+      "duration_seconds": 180.93016440100018,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "patch_chars": 0,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "read_file": 16,
+          "run_command": 14
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": null,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {
+          "CommandError": 7
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 303829,
+          "total_completion_tokens": 6551,
+          "total_cached_tokens": 0,
+          "total_tokens": 310380,
+          "total_steps": 34
+        }
+      }
+    },
+    {
+      "arm": "evidence_graph",
+      "task_id": "rich_3882",
+      "resolved": false,
+      "test_exit_code": -1,
+      "tool_calls": 24,
+      "duration_seconds": 180.94380912399993,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "patch_chars": 0,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "run_command": 13,
+          "read_file": 11
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": null,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {
+          "CommandError": 4
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 207107,
+          "total_completion_tokens": 6965,
+          "total_cached_tokens": 0,
+          "total_tokens": 214072,
+          "total_steps": 28
+        }
+      }
+    },
+    {
+      "arm": "evidence_graph",
+      "task_id": "httpx_3672",
+      "resolved": false,
+      "test_exit_code": 1,
+      "tool_calls": 10,
+      "duration_seconds": 182.55514484499963,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "709c8a9b1b33bd58076284f8eb7b1c036d5959312ff34f8cd44cba68f115e4de",
+      "patch_chars": 1565,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "run_command": 3,
+          "read_file": 5,
+          "edit_file": 2
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": 141.1494219303131,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {
+          "CommandError": 1
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 99379,
+          "total_completion_tokens": 9938,
+          "total_cached_tokens": 0,
+          "total_tokens": 109317,
+          "total_steps": 12
+        }
+      }
+    }
+  ]
+}

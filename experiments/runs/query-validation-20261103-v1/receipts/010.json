@@ -1,0 +1,34 @@
+{
+  "request_sha256": "9a454d2440d058680bca8efcc6189ca5b102623ebc6b881811460a96eb0a502c",
+  "manifest_sha256": "d537eb7c5ecd9599d7f0c43dee9a074cdaf677151fd186d3946113fa5f47e1fe",
+  "received_utc": "2026-11-02T17:03:36.630288+00:00",
+  "seconds": 3.675545300000522,
+  "response": {
+    "id": "3cefe167-56b7-4d77-b383-364c3d4bd949",
+    "object": "chat.completion",
+    "created": 1793639014,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"matplotlib _safe_first_finite StopIteration all-nan bar _convert_dx\",\"matplotlib Axes.bar nan x position _convert_dx _safe_first_finite fix\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1218,
+      "completion_tokens": 45,
+      "total_tokens": 1263,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 1090
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

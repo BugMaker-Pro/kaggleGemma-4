@@ -1,0 +1,34 @@
+{
+  "request_sha256": "e6de25679b5b9d99ceffccaeebcd532be6291ed8b725416710d17d10b3c2022a",
+  "manifest_sha256": "d537eb7c5ecd9599d7f0c43dee9a074cdaf677151fd186d3946113fa5f47e1fe",
+  "received_utc": "2026-11-02T17:03:18.557122+00:00",
+  "seconds": 3.6260989000002155,
+  "response": {
+    "id": "9e901af6-f6ea-4eb8-b370-c0281939e757",
+    "object": "chat.completion",
+    "created": 1793638996,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"django formset empty_form KeyError empty_permitted form_kwargs\",\"BaseFormSet empty_form form_kwargs empty_permitted rendering crash\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 501,
+      "completion_tokens": 37,
+      "total_tokens": 538,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 373
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

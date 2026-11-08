@@ -1,0 +1,3674 @@
+{
+  "instance_id": "scikit-learn__scikit-learn-25638",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "results": [
+    {
+      "instance_id": "scikit-learn__scikit-learn-25638",
+      "repo": "scikit-learn/scikit-learn",
+      "base_commit": "6adb209acd63825affc884abcd85381f148fb1b0",
+      "arm": "preplanned",
+      "status": "ok",
+      "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+      "request_sha256": "41ea9dd645515ee4b1d99c17ce715f92be733ec0214d9e63bb54e54616e68db3",
+      "response_sha256": "4204d4691cb80f418cb4d4e9ac748700fd425857a0bce3c33abf64fa5ed8db25",
+      "raw_response_sha256": "4204d4691cb80f418cb4d4e9ac748700fd425857a0bce3c33abf64fa5ed8db25",
+      "actions": [
+        {
+          "query": "sklearn unique_labels Mix type of y not allowed got types binary unknown nullable pandas dtype",
+          "candidates": [
+            {
+              "id": "sklearn.utils.multiclass.unique_labels",
+              "score": 47.110143007603604
+            },
+            {
+              "id": "sklearn.utils.tests.test_multiclass.test_unique_labels_mixed_types",
+              "score": 34.090590265734974
+            },
+            {
+              "id": "sklearn.metrics._classification._check_targets",
+              "score": 31.256946841660962
+            },
+            {
+              "id": "sklearn.utils.multiclass.check_classification_targets",
+              "score": 27.317792011742917
+            },
+            {
+              "id": "sklearn.utils.multiclass",
+              "score": 26.194594469913177
+            },
+            {
+              "id": "sklearn.model_selection._split.StratifiedKFold._make_test_folds",
+              "score": 25.499173603523943
+            },
+            {
+              "id": "sklearn.utils.tests.test_multiclass.test_unique_labels_non_specific",
+              "score": 24.276435036524916
+            },
+            {
+              "id": "sklearn.impute._base._check_inputs_dtype",
+              "score": 23.382510001234973
+            },
+            {
+              "id": "sklearn.utils.tests.test_extmath.test_cartesian_mix_types",
+              "score": 23.140488158170694
+            },
+            {
+              "id": "sklearn.model_selection._split.StratifiedGroupKFold._iter_test_indices",
+              "score": 22.672367358801992
+            },
+            {
+              "id": "sklearn.utils._encode._unique_python",
+              "score": 22.19242649472881
+            },
+            {
+              "id": "sklearn.metrics._classification._check_set_wise_labels",
+              "score": 22.11367833429523
+            },
+            {
+              "id": "sklearn.preprocessing._encoders.OrdinalEncoder.inverse_transform",
+              "score": 21.756920746256682
+            },
+            {
+              "id": "sklearn.preprocessing._encoders.OneHotEncoder.inverse_transform",
+              "score": 21.16921965327717
+            },
+            {
+              "id": "sklearn.preprocessing._encoders.OrdinalEncoder.fit",
+              "score": 20.54691900495536
+            },
+            {
+              "id": "sklearn.metrics._plot.tests.test_confusion_matrix_display",
+              "score": 20.5133233370458
+            },
+            {
+              "id": "sklearn.utils._encode._encode",
+              "score": 20.37239121313341
+            },
+            {
+              "id": "sklearn.metrics._plot.tests.test_confusion_matrix_display.test_confusion_matrix_display_validation",
+              "score": 20.177548676044076
+            },
+            {
+              "id": "sklearn.metrics._plot.tests.test_confusion_matrix_display.test_confusion_matrix_with_unknown_labels",
+              "score": 20.09218926127643
+            },
+            {
+              "id": "sklearn.preprocessing._encoders.OrdinalEncoder",
+              "score": 20.074139880600857
+            },
+            {
+              "id": "sklearn.utils._safe_indexing",
+              "score": 20.062385818396333
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_parameters_default_constructible",
+              "score": 19.85775226585018
+            },
+            {
+              "id": "sklearn.metrics._scorer._check_multimetric_scoring",
+              "score": 19.847486762329172
+            },
+            {
+              "id": "sklearn.metrics._classification",
+              "score": 19.807301699270987
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_encoders.test_ohe_missing_value_support_pandas_categorical",
+              "score": 19.37901206361635
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_split.test_2d_y",
+              "score": 19.177441005584143
+            },
+            {
+              "id": "sklearn.semi_supervised.tests.test_label_propagation.test_sparse_input_types",
+              "score": 19.109008596439985
+            },
+            {
+              "id": "sklearn.preprocessing._encoders._BaseEncoder._fit",
+              "score": 18.583593542103372
+            },
+            {
+              "id": "sklearn.datasets.tests.test_openml.test_fetch_openml_iris_pandas",
+              "score": 18.52010235397334
+            },
+            {
+              "id": "sklearn.metrics.tests.test_classification.test_log_loss_pandas_input",
+              "score": 18.42132383822881
+            },
+            {
+              "id": "sklearn.utils.tests.test_encode",
+              "score": 18.29734873607822
+            },
+            {
+              "id": "sklearn.ensemble._hist_gradient_boosting.gradient_boosting.BaseHistGradientBoosting._check_categories",
+              "score": 18.224896771854915
+            },
+            {
+              "id": "sklearn.metrics.tests.test_classification.test__check_targets",
+              "score": 18.09554224079561
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_split.test_train_test_split_pandas",
+              "score": 17.977538403150934
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_validation.test_cross_val_predict_pandas",
+              "score": 17.61914402748956
+            },
+            {
+              "id": "sklearn.utils.multiclass.type_of_target",
+              "score": 17.552882851420822
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_validation.test_permutation_test_score_pandas",
+              "score": 17.485046454549533
+            },
+            {
+              "id": "sklearn.datasets.tests.test_openml.test_fetch_openml_consistency_parser.convert_numerical_and_categorical_dtypes",
+              "score": 17.39579506128887
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_validation.test_cross_val_score_pandas",
+              "score": 17.379323275595596
+            },
+            {
+              "id": "sklearn.preprocessing._encoders._BaseEncoder",
+              "score": 17.348645985931768
+            },
+            {
+              "id": "sklearn.metrics.tests.test_common.test_classification_binary_continuous_input",
+              "score": 17.258462788824474
+            },
+            {
+              "id": "sklearn.metrics._ranking.label_ranking_loss",
+              "score": 17.08539975275788
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_search.test_pandas_input",
+              "score": 17.04491481386282
+            },
+            {
+              "id": "sklearn.preprocessing._encoders",
+              "score": 16.846273891906424
+            },
+            {
+              "id": "sklearn.utils._determine_key_type",
+              "score": 16.84156493453497
+            },
+            {
+              "id": "sklearn.utils.validation._get_feature_names",
+              "score": 16.771599673408055
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_dtype_object",
+              "score": 16.713090608948043
+            },
+            {
+              "id": "sklearn.utils.validation._pandas_dtype_needs_early_conversion",
+              "score": 16.687669230105787
+            },
+            {
+              "id": "sklearn.datasets._openml._verify_target_data_type",
+              "score": 16.645916874247735
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_encoders.test_ohe_drop_if_binary_handle_unknown_ignore_warns",
+              "score": 16.509159160902065
+            },
+            {
+              "id": "sklearn.utils.validation.check_X_y",
+              "score": 16.238770109037457
+            },
+            {
+              "id": "sklearn.metrics._classification.jaccard_score",
+              "score": 16.193972204870413
+            },
+            {
+              "id": "sklearn.preprocessing._label.LabelBinarizer",
+              "score": 16.146618891358862
+            },
+            {
+              "id": "sklearn.utils.tests.test_encode.test_check_unknown_with_both_missing_values",
+              "score": 16.125785913385002
+            },
+            {
+              "id": "sklearn.utils.tests.test_multiclass",
+              "score": 16.042190808871165
+            },
+            {
+              "id": "sklearn.impute.tests.test_impute.test_simple_impute_pd_na",
+              "score": 15.962880005673785
+            },
+            {
+              "id": "sklearn.datasets.tests.test_openml.test_fetch_openml_consistency_parser",
+              "score": 15.881427235213206
+            },
+            {
+              "id": "sklearn.utils.tests.test_encode.test_encode_with_check_unknown",
+              "score": 15.714394032610498
+            },
+            {
+              "id": "sklearn.datasets.tests.test_openml.test_fetch_openml_consistency_parser.convert_numerical_dtypes",
+              "score": 15.70914280584697
+            },
+            {
+              "id": "sklearn.preprocessing._encoders.OneHotEncoder.transform",
+              "score": 15.649652792805007
+            },
+            {
+              "id": "sklearn.utils._get_column_indices",
+              "score": 15.55563914904681
+            },
+            {
+              "id": "sklearn.cluster.tests.test_mean_shift.test_mean_shift",
+              "score": 15.501158599673003
+            },
+            {
+              "id": "sklearn.utils._testing._Raises.__exit__",
+              "score": 15.305053198636141
+            },
+            {
+              "id": "sklearn.utils.tests.test_multiclass.test_unique_labels",
+              "score": 15.252637000033229
+            },
+            {
+              "id": "sklearn.preprocessing._encoders._BaseEncoder._check_X",
+              "score": 15.200995753199614
+            },
+            {
+              "id": "sklearn.metrics.cluster._supervised.contingency_matrix",
+              "score": 15.197936823501667
+            },
+            {
+              "id": "sklearn.utils.tests.test_multiclass._generate_sparse",
+              "score": 15.081315614301026
+            },
+            {
+              "id": "sklearn.utils._testing._Raises",
+              "score": 15.06616065722897
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_array",
+              "score": 15.052561076361439
+            },
+            {
+              "id": "sklearn.impute._base",
+              "score": 15.044838655348551
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_classifiers_multilabel_output_format_predict_proba",
+              "score": 15.000743145764899
+            },
+            {
+              "id": "sklearn.preprocessing._label.MultiLabelBinarizer._transform",
+              "score": 14.924511864869569
+            },
+            {
+              "id": "sklearn.preprocessing._encoders._BaseEncoder._transform",
+              "score": 14.758200454185044
+            },
+            {
+              "id": "sklearn.metrics._regression._check_reg_targets",
+              "score": 14.73009978978829
+            },
+            {
+              "id": "sklearn.utils._encode._check_unknown",
+              "score": 14.699715620594628
+            },
+            {
+              "id": "sklearn.preprocessing._label.LabelBinarizer.transform",
+              "score": 14.68392347092047
+            },
+            {
+              "id": "sklearn.preprocessing._label._inverse_binarize_thresholding",
+              "score": 14.637569549217963
+            },
+            {
+              "id": "sklearn.utils.tests.test_encode.test_unique_util_with_all_missing_values",
+              "score": 14.419706816822904
+            },
+            {
+              "id": "sklearn.cluster.tests.test_mean_shift",
+              "score": 14.3347879307939
+            },
+            {
+              "id": "sklearn.utils.validation.check_array",
+              "score": 14.222353995385943
+            },
+            {
+              "id": "sklearn.isotonic.IsotonicRegression._transform",
+              "score": 14.199220846034143
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_label.test_label_binarizer_errors",
+              "score": 14.18898143585331
+            },
+            {
+              "id": "sklearn.decomposition._nmf._BaseNMF._check_w_h",
+              "score": 14.174551002699456
+            },
+            {
+              "id": "sklearn.multiclass._fit_binary",
+              "score": 14.090853097668912
+            },
+            {
+              "id": "sklearn.metrics._base._average_multiclass_ovo_score",
+              "score": 14.082609904150253
+            },
+            {
+              "id": "sklearn.utils.tests.test_estimator_checks.test_check_estimator",
+              "score": 13.979816693428571
+            },
+            {
+              "id": "sklearn.preprocessing._label.LabelBinarizer.fit",
+              "score": 13.971336282756372
+            },
+            {
+              "id": "doc.tutorial.machine_learning_map.pyparsing.ParserElement._UnboundedCache.__init__",
+              "score": 13.910566007050397
+            },
+            {
+              "id": "sklearn.impute.tests.test_impute.test_iterative_imputer_estimators",
+              "score": 13.79212912281312
+            },
+            {
+              "id": "doc.tutorial.machine_learning_map.pyparsing.ParserElement._UnboundedCache",
+              "score": 13.770969229863812
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_dataframe_column_names_consistency",
+              "score": 13.757246571824762
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_encoders.test_X_is_not_1D_pandas",
+              "score": 13.732222610762507
+            },
+            {
+              "id": "sklearn.utils.tests.test_utils.test_get_column_indices_pandas_nonunique_columns_error",
+              "score": 13.679443032798709
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_encoders.test_encoder_dtypes_pandas",
+              "score": 13.648503121452897
+            },
+            {
+              "id": "sklearn.datasets._arff_parser.load_arff_from_gzip_file",
+              "score": 13.63844379875049
+            },
+            {
+              "id": "sklearn.datasets._arff_parser._pandas_arff_parser",
+              "score": 13.569469868349751
+            },
+            {
+              "id": "doc.tutorial.machine_learning_map.pyparsing.ParserElement._FifoCache.__init__",
+              "score": 13.566786426449761
+            },
+            {
+              "id": "doc.tutorial.machine_learning_map.pyparsing.ParserElement._FifoCache",
+              "score": 13.45596456502711
+            },
+            {
+              "id": "sklearn.model_selection._search.ParameterGrid",
+              "score": 13.452468402830707
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_transformer_get_feature_names_out_pandas",
+              "score": 13.419219319946752
+            },
+            {
+              "id": "sklearn.utils.tests.test_estimator_checks.test_check_classifiers_multilabel_output_format_predict_proba",
+              "score": 13.41088632165364
+            },
+            {
+              "id": "sklearn.inspection.tests.test_partial_dependence.test_partial_dependence_unknown_feature_string",
+              "score": 13.38966595583938
+            },
+            {
+              "id": "sklearn.metrics._base._check_pos_label_consistency",
+              "score": 13.377684119708654
+            },
+            {
+              "id": "sklearn.utils.multiclass.is_multilabel",
+              "score": 13.341055529547901
+            },
+            {
+              "id": "sklearn.metrics._base._average_binary_score",
+              "score": 13.318917533262368
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_classifiers_multilabel_output_format_predict",
+              "score": 13.3105159902099
+            },
+            {
+              "id": "sklearn.preprocessing._encoders.OneHotEncoder",
+              "score": 13.305350894402778
+            },
+            {
+              "id": "sklearn.metrics.tests.test_ranking.test_binary_clf_curve_implicit_pos_label",
+              "score": 13.30381386687211
+            },
+            {
+              "id": "sklearn.naive_bayes.CategoricalNB._validate_n_categories",
+              "score": 13.263041620028504
+            },
+            {
+              "id": "sklearn.preprocessing._label.label_binarize",
+              "score": 13.245724330900044
+            },
+            {
+              "id": "sklearn.metrics._ranking.label_ranking_average_precision_score",
+              "score": 13.217937925212164
+            },
+            {
+              "id": "sklearn.metrics._base",
+              "score": 13.156271208510121
+            },
+            {
+              "id": "sklearn.externals._packaging.version",
+              "score": 13.141673377266013
+            },
+            {
+              "id": "sklearn.utils.tests.test_testing.test_convert_container",
+              "score": 13.120066415433847
+            },
+            {
+              "id": "sklearn.utils.validation._ensure_sparse_format",
+              "score": 13.11072495180443
+            },
+            {
+              "id": "sklearn.metrics._ranking._multiclass_roc_auc_score",
+              "score": 13.077505024143107
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_classifiers_multilabel_output_format_decision_function",
+              "score": 12.999043229114744
+            },
+            {
+              "id": "sklearn.metrics._classification.precision_score",
+              "score": 12.990232221690626
+            },
+            {
+              "id": "sklearn.datasets.tests.test_openml.test_fetch_openml_types_inference",
+              "score": 12.988343062319128
+            },
+            {
+              "id": "sklearn.metrics.tests.test_classification.test_precision_recall_f_unused_pos_label",
+              "score": 12.967779410284223
+            },
+            {
+              "id": "sklearn.gaussian_process._gpc.GaussianProcessClassifier.fit",
+              "score": 12.903695537490968
+            },
+            {
+              "id": "sklearn.metrics._classification.fbeta_score",
+              "score": 12.77460629105687
+            },
+            {
+              "id": "sklearn.metrics._classification.recall_score",
+              "score": 12.763105012806573
+            },
+            {
+              "id": "sklearn.preprocessing._encoders.OrdinalEncoder.__init__",
+              "score": 12.70759840194035
+            },
+            {
+              "id": "sklearn.metrics.pairwise.check_pairwise_arrays",
+              "score": 12.700380608766263
+            },
+            {
+              "id": "sklearn.metrics.tests.test_score_objects.test_scorer_no_op_multiclass_select_proba",
+              "score": 12.654623756310496
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_param_validation",
+              "score": 12.653219806091151
+            },
+            {
+              "id": "sklearn.compose.tests.test_column_transformer.test_column_transform_set_output_mixed",
+              "score": 12.645537792112703
+            },
+            {
+              "id": "sklearn.utils.estimator_checks._NotAnArray",
+              "score": 12.6429155540924
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_classifiers_classes",
+              "score": 12.639359679962151
+            },
+            {
+              "id": "sklearn.metrics.cluster._supervised.check_clusterings",
+              "score": 12.599966242872025
+            },
+            {
+              "id": "sklearn.metrics._classification.f1_score",
+              "score": 12.593726775318606
+            },
+            {
+              "id": "sklearn.inspection.tests.test_permutation_importance.test_permutation_importance_mixed_types_pandas",
+              "score": 12.572517326137794
+            },
+            {
+              "id": "sklearn.metrics._scorer._ThresholdScorer._score",
+              "score": 12.543134076156202
+            },
+            {
+              "id": "sklearn.utils.extmath.cartesian",
+              "score": 12.535343571201395
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_clustering",
+              "score": 12.533343945270394
+            },
+            {
+              "id": "sklearn.metrics._ranking.coverage_error",
+              "score": 12.4761566261688
+            },
+            {
+              "id": "sklearn.metrics._scorer._ThresholdScorer",
+              "score": 12.465699379504025
+            },
+            {
+              "id": "sklearn.preprocessing._label.LabelBinarizer.inverse_transform",
+              "score": 12.462657605647522
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_array_pandas_dtype_casting",
+              "score": 12.456449176544995
+            },
+            {
+              "id": "sklearn.impute.tests.test_impute.test_imputation_mean_median_error_invalid_type_list_pandas",
+              "score": 12.436795995766673
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_estimators_data_not_an_array",
+              "score": 12.39917313696673
+            },
+            {
+              "id": "sklearn.metrics._ranking._binary_roc_auc_score",
+              "score": 12.393986380067368
+            },
+            {
+              "id": "sklearn.model_selection._search.ParameterGrid.__init__",
+              "score": 12.320929987592073
+            },
+            {
+              "id": "sklearn.ensemble._hist_gradient_boosting.tests.test_gradient_boosting.test_unknown_categories_nan",
+              "score": 12.308504060021972
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_pandas_sparse_valid",
+              "score": 12.308499176066865
+            },
+            {
+              "id": "sklearn.utils._array_api",
+              "score": 12.267450964370349
+            },
+            {
+              "id": "sklearn.tree.tests.test_tree.test_check_n_classes",
+              "score": 12.266791552964877
+            },
+            {
+              "id": "sklearn.neural_network._multilayer_perceptron.MLPClassifier._validate_input",
+              "score": 12.266156682766397
+            },
+            {
+              "id": "sklearn.metrics.tests.test_classification.test_jaccard_score_validation",
+              "score": 12.262349202833132
+            },
+            {
+              "id": "sklearn.utils.tests.test_multiclass.test_type_of_target",
+              "score": 12.224178366867177
+            },
+            {
+              "id": "sklearn.metrics._classification.precision_recall_fscore_support",
+              "score": 12.221372691801214
+            },
+            {
+              "id": "sklearn.utils.tests.test_estimator_checks.NoSampleWeightPandasSeriesType",
+              "score": 12.216426524109806
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_classifiers_train",
+              "score": 12.21528705503287
+            },
+            {
+              "id": "sklearn.metrics._scorer._ProbaScorer._score",
+              "score": 12.191398006114914
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_sample_weights_pandas_series",
+              "score": 12.178363608765409
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_set_output_transform_pandas",
+              "score": 12.16583866272849
+            },
+            {
+              "id": "sklearn.impute._base.MissingIndicator",
+              "score": 12.147491604587243
+            },
+            {
+              "id": "sklearn.ensemble._hist_gradient_boosting.tests.test_splitting.test_split_interaction_constraints",
+              "score": 12.128690047431922
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_classifier_multioutput",
+              "score": 12.115516972363611
+            },
+            {
+              "id": "sklearn.feature_extraction._dict_vectorizer.DictVectorizer",
+              "score": 12.090341561179509
+            },
+            {
+              "id": "sklearn.impute.tests.test_impute.test_imputation_const_mostf_error_invalid_types",
+              "score": 12.08582175059352
+            },
+            {
+              "id": "sklearn.metrics._scorer._ProbaScorer",
+              "score": 12.050124176307662
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_global_ouptut_transform_pandas",
+              "score": 12.048755349788875
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_encoders.test_one_hot_encoder_handle_unknown_strings",
+              "score": 12.009472140642952
+            },
+            {
+              "id": "sklearn.utils._pandas_indexing",
+              "score": 12.005378357331095
+            },
+            {
+              "id": "sklearn.metrics.tests.test_classification.test_multilabel_confusion_matrix_multiclass",
+              "score": 11.952427373476283
+            },
+            {
+              "id": "sklearn.utils.tests.test_multiclass.test_check_classification_targets",
+              "score": 11.944535391554673
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_search.check_cv_results_array_types",
+              "score": 11.93265688752633
+            },
+            {
+              "id": "sklearn.cluster.tests.test_optics.test_correct_number_of_clusters",
+              "score": 11.904063845081485
+            },
+            {
+              "id": "sklearn.datasets._arff_parser._liac_arff_parser",
+              "score": 11.883187665853537
+            },
+            {
+              "id": "sklearn.metrics._classification.matthews_corrcoef",
+              "score": 11.827453585810213
+            },
+            {
+              "id": "sklearn.base.ClusterMixin",
+              "score": 11.821381560594656
+            },
+            {
+              "id": "sklearn.utils.sparsefuncs._raise_typeerror",
+              "score": 11.815477028746354
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_dataframe_mixed_float_dtypes",
+              "score": 11.78965073683581
+            },
+            {
+              "id": "sklearn.utils.class_weight.compute_class_weight",
+              "score": 11.77738647480398
+            },
+            {
+              "id": "sklearn.utils.validation.check_scalar",
+              "score": 11.765516028029655
+            },
+            {
+              "id": "sklearn.neural_network.tests.test_mlp.test_lbfgs_classification",
+              "score": 11.762691942455465
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_label.test_label_binarizer_unseen_labels",
+              "score": 11.75847476241176
+            },
+            {
+              "id": "sklearn.ensemble._hist_gradient_boosting.tests.test_grower.test_ohe_equivalence",
+              "score": 11.712020108642987
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_array_accept_large_sparse_raise_exception",
+              "score": 11.70349296101454
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_encoders.test_ordinal_encoder_missing_value_support_pandas_categorical",
+              "score": 11.700091955674367
+            },
+            {
+              "id": "sklearn.feature_extraction._dict_vectorizer",
+              "score": 11.698639731192763
+            },
+            {
+              "id": "sklearn.utils._testing._convert_container",
+              "score": 11.664070742738474
+            },
+            {
+              "id": "sklearn.impute._base.SimpleImputer",
+              "score": 11.658412142614154
+            },
+            {
+              "id": "sklearn.utils._mask._get_dense_mask",
+              "score": 11.6155143108981
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_encoders.test_one_hot_encoder_inverse",
+              "score": 11.604839304981379
+            },
+            {
+              "id": "examples.semi_supervised.plot_label_propagation_structure",
+              "score": 11.58608640371205
+            },
+            {
+              "id": "sklearn.utils.tests.test_encode.test_check_unknown_missing_values",
+              "score": 11.580418212911859
+            },
+            {
+              "id": "sklearn.preprocessing._label.MultiLabelBinarizer",
+              "score": 11.558235642830684
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_encoders.test_ordinal_encoder_handle_unknowns_nan_non_float_dtype",
+              "score": 11.553417870896864
+            },
+            {
+              "id": "sklearn.metrics.tests.test_pairwise.test_pairwise_distances_chunked_reduce_none",
+              "score": 11.548309159462725
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_encoders.test_one_hot_encoder_specified_categories",
+              "score": 11.54740397024836
+            },
+            {
+              "id": "sklearn.utils._param_validation.validate_parameter_constraints",
+              "score": 11.536644383604399
+            },
+            {
+              "id": "sklearn.metrics.cluster._supervised",
+              "score": 11.498207821828224
+            },
+            {
+              "id": "sklearn.metrics._scorer._BaseScorer._select_proba_binary",
+              "score": 11.483541044739678
+            },
+            {
+              "id": "sklearn.utils.class_weight",
+              "score": 11.465566706810312
+            },
+            {
+              "id": "benchmarks.plot_tsne_mnist",
+              "score": 11.458992749233063
+            },
+            {
+              "id": "sklearn.utils._is_pandas_na",
+              "score": 11.407214383036067
+            },
+            {
+              "id": "sklearn.metrics.tests.test_score_objects.string_labeled_classification_problem",
+              "score": 11.405407714145445
+            }
+          ],
+          "scored_documents": 10730,
+          "seconds": 0.02085350000015751
+        },
+        {
+          "query": "unique_labels implementation multiclass type_of_target check_array pandas nullable Int64 Float64 boolean",
+          "candidates": [
+            {
+              "id": "sklearn.utils.multiclass.unique_labels",
+              "score": 26.697736929278353
+            },
+            {
+              "id": "sklearn.metrics._classification._check_targets",
+              "score": 24.95016753261014
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_encoders.test_encoder_dtypes_pandas",
+              "score": 23.064280007615515
+            },
+            {
+              "id": "sklearn.utils.multiclass",
+              "score": 23.036153194206438
+            },
+            {
+              "id": "sklearn.utils.tests.test_multiclass.test_unique_labels_non_specific",
+              "score": 22.398369058213365
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_dataframe_mixed_float_dtypes",
+              "score": 21.97125207823463
+            },
+            {
+              "id": "sklearn.utils.tests.test_multiclass.test_type_of_target_pandas_sparse",
+              "score": 21.37723356795458
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_dataframe_with_only_boolean",
+              "score": 20.696915784265617
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_array_pandas_dtype_casting",
+              "score": 20.506598916291924
+            },
+            {
+              "id": "sklearn.utils.multiclass.type_of_target",
+              "score": 20.25861744407904
+            },
+            {
+              "id": "sklearn.datasets.tests.test_openml.test_fetch_openml_iris_pandas",
+              "score": 20.12925994850266
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_dataframe_with_only_bool",
+              "score": 19.479498394255295
+            },
+            {
+              "id": "sklearn.utils.tests.test_testing.test_convert_container",
+              "score": 19.466153460158235
+            },
+            {
+              "id": "sklearn.metrics._ranking._multiclass_roc_auc_score",
+              "score": 19.191813947722633
+            },
+            {
+              "id": "sklearn.datasets._arff_parser._pandas_arff_parser",
+              "score": 19.14699394835747
+            },
+            {
+              "id": "sklearn.utils.multiclass.check_classification_targets",
+              "score": 19.129171208462516
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_array_panadas_na_support_series",
+              "score": 19.077324710885893
+            },
+            {
+              "id": "sklearn.metrics._base._average_multiclass_ovo_score",
+              "score": 19.001468683028165
+            },
+            {
+              "id": "sklearn.preprocessing._label",
+              "score": 18.936271497935877
+            },
+            {
+              "id": "sklearn.utils.tests.test_multiclass.test_unique_labels",
+              "score": 18.745456492196247
+            },
+            {
+              "id": "sklearn.utils.tests.test_multiclass.test_unique_labels_mixed_types",
+              "score": 18.483956910431914
+            },
+            {
+              "id": "sklearn.metrics._classification._check_set_wise_labels",
+              "score": 18.47108651978064
+            },
+            {
+              "id": "sklearn.base.ClusterMixin",
+              "score": 18.373650009673902
+            },
+            {
+              "id": "sklearn.metrics.cluster._supervised",
+              "score": 18.33032612970382
+            },
+            {
+              "id": "sklearn.utils.multiclass.is_multilabel",
+              "score": 18.21694150589247
+            },
+            {
+              "id": "sklearn.impute.tests.test_impute.test_simple_impute_pd_na",
+              "score": 17.6968515159902
+            },
+            {
+              "id": "sklearn.metrics.cluster._supervised.check_clusterings",
+              "score": 17.359027919441438
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_search.test_pandas_input",
+              "score": 17.34524379115417
+            },
+            {
+              "id": "sklearn.metrics._ranking.label_ranking_loss",
+              "score": 17.22915333264554
+            },
+            {
+              "id": "sklearn.metrics.tests.test_ranking._my_lrap",
+              "score": 17.135851064907403
+            },
+            {
+              "id": "sklearn.utils.tests.test_multiclass",
+              "score": 17.111765992650955
+            },
+            {
+              "id": "sklearn.base.ClusterMixin.fit_predict",
+              "score": 16.970559405344734
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_validation.test_permutation_test_score_pandas",
+              "score": 16.96819398498317
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_clustering",
+              "score": 16.93048610757434
+            },
+            {
+              "id": "sklearn.datasets._openml._verify_target_data_type",
+              "score": 16.908104348800045
+            },
+            {
+              "id": "sklearn.datasets._arff_parser",
+              "score": 16.882019206366714
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_validation.test_cross_val_predict_pandas",
+              "score": 16.808769081972954
+            },
+            {
+              "id": "sklearn.utils.tests.test_encode",
+              "score": 16.743697971491006
+            },
+            {
+              "id": "sklearn.metrics.tests.test_common.test_no_averaging_labels",
+              "score": 16.617660758112425
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_validation.test_cross_val_score_pandas",
+              "score": 16.604402849626936
+            },
+            {
+              "id": "sklearn.neural_network._multilayer_perceptron",
+              "score": 16.591906348328052
+            },
+            {
+              "id": "sklearn.metrics._classification",
+              "score": 16.498665205426224
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_array_dtype_warning",
+              "score": 16.473130825112047
+            },
+            {
+              "id": "sklearn.model_selection._split.StratifiedGroupKFold._iter_test_indices",
+              "score": 16.455326140461434
+            },
+            {
+              "id": "sklearn.tests.test_multiclass.test_check_classification_targets",
+              "score": 16.410817835324615
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_boolean_series_remains_boolean",
+              "score": 16.359864027202622
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_validation.check_cross_val_predict_multiclass",
+              "score": 16.165019021430147
+            },
+            {
+              "id": "sklearn.metrics._ranking.coverage_error",
+              "score": 16.146189943644274
+            },
+            {
+              "id": "sklearn.metrics.cluster._supervised.contingency_matrix",
+              "score": 16.090076773861757
+            },
+            {
+              "id": "sklearn.datasets._arff_parser._liac_arff_parser",
+              "score": 15.867911267704093
+            },
+            {
+              "id": "sklearn.metrics._ranking._check_dcg_target_type",
+              "score": 15.789558610011188
+            },
+            {
+              "id": "sklearn.datasets._arff_parser.load_arff_from_gzip_file",
+              "score": 15.763668066370546
+            },
+            {
+              "id": "sklearn.feature_selection._base.SelectorMixin",
+              "score": 15.748067530915874
+            },
+            {
+              "id": "sklearn.preprocessing._label.LabelBinarizer",
+              "score": 15.703370180817819
+            },
+            {
+              "id": "sklearn.utils._testing.MinimalClassifier",
+              "score": 15.657535701371444
+            },
+            {
+              "id": "sklearn.metrics.tests.test_classification.test_multilabel_confusion_matrix_multiclass",
+              "score": 15.65480810241258
+            },
+            {
+              "id": "sklearn.cluster.tests.test_spectral.test_cluster_qr",
+              "score": 15.397893022075209
+            },
+            {
+              "id": "sklearn.preprocessing._label.LabelBinarizer.inverse_transform",
+              "score": 15.385025485627331
+            },
+            {
+              "id": "sklearn.utils._is_pandas_na",
+              "score": 15.355411830025437
+            },
+            {
+              "id": "sklearn.metrics._classification.matthews_corrcoef",
+              "score": 15.301561836682989
+            },
+            {
+              "id": "sklearn.preprocessing._encoders.OrdinalEncoder.inverse_transform",
+              "score": 15.284417919661928
+            },
+            {
+              "id": "sklearn.metrics._classification.hinge_loss",
+              "score": 15.26869103490738
+            },
+            {
+              "id": "sklearn.metrics.tests.test_classification.test_hinge_loss_multiclass_no_consistent_pred_decision_shape",
+              "score": 15.247342564263798
+            },
+            {
+              "id": "sklearn.utils.multiclass._unique_multiclass",
+              "score": 15.16973181831897
+            },
+            {
+              "id": "sklearn.tests.test_multiclass",
+              "score": 15.049691887860643
+            },
+            {
+              "id": "sklearn.metrics._ranking.roc_auc_score",
+              "score": 15.00657716197145
+            },
+            {
+              "id": "sklearn.datasets._openml._load_arff_response",
+              "score": 14.9571917891644
+            },
+            {
+              "id": "sklearn.linear_model._ridge._BaseRidgeCV",
+              "score": 14.792610268647485
+            },
+            {
+              "id": "sklearn.utils.tests.test_multiclass.test_type_of_target",
+              "score": 14.780244279090175
+            },
+            {
+              "id": "sklearn.utils.multiclass._unique_indicator",
+              "score": 14.754787296559165
+            },
+            {
+              "id": "sklearn.metrics._classification.jaccard_score",
+              "score": 14.745347283828623
+            },
+            {
+              "id": "sklearn.metrics.tests.test_score_objects.test_scorer_no_op_multiclass_select_proba",
+              "score": 14.561716335234
+            },
+            {
+              "id": "sklearn.multiclass",
+              "score": 14.409267684649047
+            },
+            {
+              "id": "sklearn.datasets.tests.test_arff_parser.test_pandas_arff_parser_strip_no_quotes",
+              "score": 14.337963076899857
+            },
+            {
+              "id": "sklearn.datasets.tests.test_arff_parser.test_pandas_arff_parser_strip_double_quotes",
+              "score": 14.300354672737786
+            },
+            {
+              "id": "sklearn.feature_selection._base",
+              "score": 14.210272536580204
+            },
+            {
+              "id": "sklearn.neural_network._multilayer_perceptron.MLPClassifier.partial_fit",
+              "score": 14.204115569866069
+            },
+            {
+              "id": "sklearn.datasets.tests.test_openml.test_fetch_openml_consistency_parser",
+              "score": 14.200205388598885
+            },
+            {
+              "id": "sklearn.tests.test_isotonic.test_isotonic_make_unique_tolerance",
+              "score": 14.173731866267598
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_classifiers_classes",
+              "score": 14.149032128649567
+            },
+            {
+              "id": "sklearn.datasets.tests.test_arff_parser.test_pandas_arff_parser_strip_single_quotes",
+              "score": 14.13780618443846
+            },
+            {
+              "id": "sklearn.naive_bayes.GaussianNB._partial_fit",
+              "score": 13.973675867447806
+            },
+            {
+              "id": "sklearn.model_selection._split.StratifiedKFold._make_test_folds",
+              "score": 13.949765837403369
+            },
+            {
+              "id": "sklearn.metrics._base",
+              "score": 13.834761581994842
+            },
+            {
+              "id": "sklearn.tests.test_isotonic.test_make_unique_tolerance",
+              "score": 13.801517297299384
+            },
+            {
+              "id": "sklearn.preprocessing._label.LabelEncoder.fit_transform",
+              "score": 13.796008178160882
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_encoders.test_ordinal_encoder",
+              "score": 13.789759338501948
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_estimators_data_not_an_array",
+              "score": 13.776730502810324
+            },
+            {
+              "id": "sklearn.tests.test_multiclass.test_ovr_ovo_regressor",
+              "score": 13.742564797085068
+            },
+            {
+              "id": "sklearn.utils.tests.test_sparsefuncs.test_mean_variance_axis0",
+              "score": 13.731631270903968
+            },
+            {
+              "id": "sklearn.utils.tests.test_sparsefuncs.test_mean_variance_axis1",
+              "score": 13.731631270903968
+            },
+            {
+              "id": "sklearn.datasets.tests.test_20news",
+              "score": 13.694173705612332
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_label.check_binarized_results",
+              "score": 13.606804800416896
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_sample_weights_pandas_series",
+              "score": 13.535382845444504
+            },
+            {
+              "id": "sklearn.metrics.cluster._supervised.pair_confusion_matrix",
+              "score": 13.466103093511581
+            },
+            {
+              "id": "sklearn.tree.tests.test_tree.test_check_n_classes",
+              "score": 13.443274842827925
+            },
+            {
+              "id": "sklearn.preprocessing._label.LabelBinarizer.transform",
+              "score": 13.355909258817784
+            },
+            {
+              "id": "sklearn.metrics._classification.precision_score",
+              "score": 13.330071301557854
+            },
+            {
+              "id": "sklearn.datasets._svmlight_format_io._open_and_load",
+              "score": 13.319800479426512
+            },
+            {
+              "id": "sklearn.utils.multiclass._check_partial_fit_first_call",
+              "score": 13.314707575255143
+            },
+            {
+              "id": "sklearn.cluster.tests.test_hierarchical.test_agglomerative_clustering",
+              "score": 13.31014249601351
+            },
+            {
+              "id": "sklearn.metrics._classification.fbeta_score",
+              "score": 13.299388936935607
+            },
+            {
+              "id": "sklearn.isotonic.IsotonicRegression._transform",
+              "score": 13.29404763856954
+            },
+            {
+              "id": "sklearn.metrics._classification.recall_score",
+              "score": 13.284112201694622
+            },
+            {
+              "id": "sklearn.utils.tests.test_estimator_checks.NoSampleWeightPandasSeriesType",
+              "score": 13.282252895708037
+            },
+            {
+              "id": "sklearn.linear_model.tests.test_passive_aggressive.test_classifier_refit",
+              "score": 13.2712853798627
+            },
+            {
+              "id": "sklearn.multiclass.OneVsRestClassifier",
+              "score": 13.26543459424135
+            },
+            {
+              "id": "sklearn.tree.tests.test_tree.test_check_node_ndarray",
+              "score": 13.263398267452068
+            },
+            {
+              "id": "sklearn.utils.tests.test_sparsefuncs.test_count_nonzero",
+              "score": 13.253743254617588
+            },
+            {
+              "id": "sklearn.metrics.cluster._supervised.entropy",
+              "score": 13.225664794283002
+            },
+            {
+              "id": "sklearn.compose.tests.test_column_transformer.test_column_transformer_mask_indexing",
+              "score": 13.220426276498856
+            },
+            {
+              "id": "sklearn.utils._safe_indexing",
+              "score": 13.202860806208633
+            },
+            {
+              "id": "sklearn.tests.test_isotonic.test_isotonic_dtype",
+              "score": 13.19484581564442
+            },
+            {
+              "id": "sklearn.metrics.tests.test_ranking.test_top_k_accuracy_score_multiclass_with_labels",
+              "score": 13.187387214386753
+            },
+            {
+              "id": "examples.model_selection.plot_roc",
+              "score": 13.12033910045292
+            },
+            {
+              "id": "sklearn.svm._base.BaseLibSVM.fit",
+              "score": 13.11094246616264
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_array_accept_sparse_type_exception",
+              "score": 13.086653119323847
+            },
+            {
+              "id": "sklearn.metrics._classification.f1_score",
+              "score": 13.059968660145184
+            },
+            {
+              "id": "sklearn.metrics._regression._check_reg_targets",
+              "score": 13.029889638575755
+            },
+            {
+              "id": "sklearn.metrics._ranking.label_ranking_average_precision_score",
+              "score": 13.017483536133453
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_array_pandas_na_support",
+              "score": 13.013621597170635
+            },
+            {
+              "id": "sklearn.metrics.tests.test_classification.test_hinge_loss_multiclass_missing_labels_only_two_unq_in_y_true",
+              "score": 13.00514518068523
+            },
+            {
+              "id": "sklearn.compose.tests.test_column_transformer.test_column_transform_set_output_after_fitting",
+              "score": 12.956667399184028
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_encoders.test_ordinal_encoder_missing_value_support_pandas_categorical",
+              "score": 12.954395351297698
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_pandas_sparse_valid",
+              "score": 12.89232570486596
+            },
+            {
+              "id": "sklearn.cluster.tests.test_bisect_k_means.test_float32_float64_equivalence",
+              "score": 12.888356481497032
+            },
+            {
+              "id": "benchmarks.plot_tsne_mnist",
+              "score": 12.846337673852801
+            },
+            {
+              "id": "sklearn.compose.tests.test_column_transformer.test_column_transform_set_output_mixed",
+              "score": 12.832925825131614
+            },
+            {
+              "id": "sklearn.preprocessing._label.LabelBinarizer.fit",
+              "score": 12.830807147360954
+            },
+            {
+              "id": "sklearn.metrics._classification.multilabel_confusion_matrix",
+              "score": 12.760115796503403
+            },
+            {
+              "id": "sklearn.preprocessing._label.LabelEncoder",
+              "score": 12.738216809894913
+            },
+            {
+              "id": "sklearn.utils._determine_key_type",
+              "score": 12.716122024167571
+            },
+            {
+              "id": "sklearn.metrics._ranking.top_k_accuracy_score",
+              "score": 12.668277418219489
+            },
+            {
+              "id": "sklearn.utils._encode._get_counts",
+              "score": 12.662674142660766
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_encoders.test_encoder_dtypes",
+              "score": 12.59331934615603
+            },
+            {
+              "id": "sklearn.metrics.tests.test_classification.test_hinge_loss_multiclass_missing_labels_with_labels_none",
+              "score": 12.575208377919225
+            },
+            {
+              "id": "sklearn.tests.test_isotonic.test_make_unique_dtype",
+              "score": 12.561898245143912
+            },
+            {
+              "id": "sklearn.neighbors.tests.test_ball_tree",
+              "score": 12.560697450953977
+            },
+            {
+              "id": "sklearn.utils.multiclass.class_distribution",
+              "score": 12.53374456338579
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_classifier_data_not_an_array",
+              "score": 12.523296806000578
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_regressor_data_not_an_array",
+              "score": 12.518681020118475
+            },
+            {
+              "id": "sklearn.metrics.tests.test_ranking.test_roc_auc_score_multiclass_labels_error",
+              "score": 12.505252872475964
+            },
+            {
+              "id": "sklearn.linear_model._ridge._RidgeClassifierMixin.predict",
+              "score": 12.447461717121966
+            },
+            {
+              "id": "sklearn.inspection._partial_dependence.partial_dependence",
+              "score": 12.356940176956272
+            },
+            {
+              "id": "sklearn.metrics.tests.test_classification.test_confusion_matrix_multiclass_subset_labels",
+              "score": 12.316586393186771
+            },
+            {
+              "id": "sklearn.metrics.tests.test_classification.test__check_targets",
+              "score": 12.262958395075254
+            },
+            {
+              "id": "sklearn.tests.test_naive_bayes.test_discretenb_sample_weight_multiclass",
+              "score": 12.248773126473315
+            },
+            {
+              "id": "sklearn.neighbors.tests.test_ball_tree.test_ball_tree_query_metrics",
+              "score": 12.205033276941359
+            },
+            {
+              "id": "sklearn.metrics.tests.test_ranking._auc",
+              "score": 12.204362087359065
+            },
+            {
+              "id": "sklearn.datasets._openml._download_data_to_bunch",
+              "score": 12.186794968973432
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_split.test_train_test_split_pandas",
+              "score": 12.169056617518475
+            },
+            {
+              "id": "sklearn.metrics.tests.test_classification.test_hinge_loss_multiclass_with_missing_labels",
+              "score": 12.14610862693517
+            },
+            {
+              "id": "sklearn.cross_decomposition._pls._PLS",
+              "score": 12.117880305964649
+            },
+            {
+              "id": "sklearn.multiclass.OneVsOneClassifier.partial_fit",
+              "score": 12.105199080504512
+            },
+            {
+              "id": "sklearn.metrics.tests.test_ranking._average_precision",
+              "score": 12.10161799528307
+            },
+            {
+              "id": "sklearn.naive_bayes._BaseDiscreteNB.fit",
+              "score": 12.098415418590745
+            },
+            {
+              "id": "sklearn.tests.test_isotonic.test_isotonic_regression_output_predict",
+              "score": 12.086906514792442
+            },
+            {
+              "id": "sklearn.metrics.tests.test_classification.test_confusion_matrix_dtype",
+              "score": 12.074422473293247
+            },
+            {
+              "id": "sklearn.metrics.tests.test_classification.test_classification_report_multiclass",
+              "score": 12.066585594405113
+            },
+            {
+              "id": "sklearn.mixture._bayesian_mixture.BayesianGaussianMixture._checkcovariance_prior_parameter",
+              "score": 12.063510684488882
+            },
+            {
+              "id": "sklearn.cluster.tests.test_k_means.test_float_precision",
+              "score": 12.052284818083432
+            },
+            {
+              "id": "sklearn.decomposition.tests.test_pca.check_pca_int_dtype_upcast_to_double",
+              "score": 11.971587050643915
+            },
+            {
+              "id": "sklearn.datasets.tests.test_openml.test_fetch_openml_strip_quotes",
+              "score": 11.965636848948503
+            },
+            {
+              "id": "sklearn.tests.test_multiclass.test_ecoc_delegate_sparse_base_estimator",
+              "score": 11.906243937752066
+            },
+            {
+              "id": "sklearn.metrics.tests.test_classification.test_multilabel_confusion_matrix_errors",
+              "score": 11.896324969798236
+            },
+            {
+              "id": "sklearn.metrics.tests.test_ranking.test_multiclass_ovo_roc_auc_toydata_binary",
+              "score": 11.88384133911922
+            },
+            {
+              "id": "sklearn.utils.tests.test_utils.test_column_or_1d",
+              "score": 11.85109311702805
+            },
+            {
+              "id": "sklearn.metrics.tests.test_classification.test_log_loss_pandas_input",
+              "score": 11.817739790251942
+            },
+            {
+              "id": "sklearn.metrics.tests.test_classification.test_classification_report_multiclass_with_digits",
+              "score": 11.81141528229276
+            },
+            {
+              "id": "sklearn.metrics.tests.test_ranking.test_multiclass_ovo_roc_auc_toydata",
+              "score": 11.789401497650449
+            },
+            {
+              "id": "sklearn.cluster.tests.test_k_means.test_k_means_1_iteration",
+              "score": 11.766370752701295
+            },
+            {
+              "id": "sklearn.datasets.tests.test_20news.test_20news",
+              "score": 11.764805637234078
+            },
+            {
+              "id": "sklearn.cluster.tests.test_k_means.test_integer_input",
+              "score": 11.757045077429272
+            },
+            {
+              "id": "sklearn.metrics._plot.tests.test_confusion_matrix_display.test_confusion_matrix_with_unknown_labels",
+              "score": 11.747335707695328
+            },
+            {
+              "id": "sklearn.cluster._feature_agglomeration.AgglomerationTransform",
+              "score": 11.747237087017279
+            },
+            {
+              "id": "sklearn.cluster.tests.test_k_means._check_fitted_model",
+              "score": 11.747182449941217
+            },
+            {
+              "id": "sklearn.utils.extmath.log_logistic",
+              "score": 11.740167233996857
+            },
+            {
+              "id": "sklearn.utils.validation._get_feature_names",
+              "score": 11.71714498263741
+            },
+            {
+              "id": "sklearn.linear_model.tests.test_logistic.test_dtype_match",
+              "score": 11.714043145901293
+            },
+            {
+              "id": "sklearn.linear_model.tests.test_logistic.test_predict_iris",
+              "score": 11.711970508165372
+            },
+            {
+              "id": "sklearn.cluster.tests.test_mean_shift",
+              "score": 11.700775981447496
+            },
+            {
+              "id": "benchmarks.bench_isolation_forest",
+              "score": 11.70070860476979
+            },
+            {
+              "id": "sklearn.svm.tests.test_svm.test_libsvm_iris",
+              "score": 11.680301539210298
+            },
+            {
+              "id": "sklearn.metrics._ranking",
+              "score": 11.648316749554013
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_as_float_array",
+              "score": 11.597060960159839
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_validation.check_cross_val_predict_with_method_multiclass",
+              "score": 11.584833226105209
+            },
+            {
+              "id": "sklearn.utils.tests.test_sparsefuncs.test_incr_mean_variance_axis",
+              "score": 11.573256307319548
+            },
+            {
+              "id": "sklearn.ensemble._forest.BaseForest._compute_oob_predictions",
+              "score": 11.552864696184194
+            },
+            {
+              "id": "sklearn.cluster.tests.test_mean_shift.test_mean_shift",
+              "score": 11.535436341696423
+            },
+            {
+              "id": "sklearn.linear_model._ridge._RidgeClassifierMixin",
+              "score": 11.517750019247115
+            },
+            {
+              "id": "sklearn.mixture._gaussian_mixture._check_precisions",
+              "score": 11.516592646152766
+            },
+            {
+              "id": "sklearn.metrics.tests.test_ranking.test_multiclass_ovr_roc_auc_toydata",
+              "score": 11.513417832167818
+            },
+            {
+              "id": "sklearn.cluster._feature_agglomeration",
+              "score": 11.447856606946162
+            },
+            {
+              "id": "sklearn.metrics._classification.precision_recall_fscore_support",
+              "score": 11.43055000407335
+            },
+            {
+              "id": "sklearn.metrics._scorer._ProbaScorer._score",
+              "score": 11.417139129557912
+            },
+            {
+              "id": "sklearn.metrics.cluster.tests.test_supervised.test_pair_confusion_matrix",
+              "score": 11.399544248890278
+            },
+            {
+              "id": "sklearn.utils.tests.test_multiclass.test_check_classification_targets",
+              "score": 11.394919363494997
+            },
+            {
+              "id": "sklearn.utils._encode._check_unknown",
+              "score": 11.392863782404813
+            },
+            {
+              "id": "sklearn.model_selection._split.PredefinedSplit._iter_test_masks",
+              "score": 11.380582711249925
+            },
+            {
+              "id": "sklearn.cluster.tests.test_affinity_propagation.test_affinity_propagation_precomputed",
+              "score": 11.358259810841151
+            }
+          ],
+          "scored_documents": 6819,
+          "seconds": 0.01357819999975618
+        }
+      ],
+      "order": [
+        "sklearn.utils.multiclass.unique_labels",
+        "sklearn.metrics._classification._check_targets",
+        "sklearn.utils.multiclass",
+        "sklearn.utils.tests.test_multiclass.test_unique_labels_mixed_types",
+        "sklearn.utils.tests.test_multiclass.test_unique_labels_non_specific",
+        "sklearn.utils.multiclass.check_classification_targets",
+        "sklearn.metrics._classification._check_set_wise_labels",
+        "sklearn.datasets.tests.test_openml.test_fetch_openml_iris_pandas",
+        "sklearn.impute.tests.test_impute.test_simple_impute_pd_na",
+        "sklearn.utils.tests.test_testing.test_convert_container",
+        "sklearn.utils.tests.test_encode",
+        "sklearn.utils.tests.test_validation.test_check_dataframe_mixed_float_dtypes",
+        "sklearn.metrics._classification",
+        "sklearn.preprocessing._encoders.OrdinalEncoder.inverse_transform",
+        "sklearn.datasets.tests.test_openml.test_fetch_openml_consistency_parser",
+        "sklearn.preprocessing.tests.test_encoders.test_encoder_dtypes_pandas",
+        "sklearn.utils.multiclass.type_of_target",
+        "sklearn.utils.tests.test_multiclass",
+        "sklearn.datasets._arff_parser._pandas_arff_parser",
+        "sklearn.utils.multiclass.is_multilabel",
+        "sklearn.model_selection._split.StratifiedGroupKFold._iter_test_indices",
+        "sklearn.preprocessing._label.LabelBinarizer",
+        "sklearn.model_selection._split.StratifiedKFold._make_test_folds",
+        "sklearn.utils.tests.test_validation.test_check_array_panadas_na_support_series",
+        "sklearn.utils.tests.test_multiclass.test_type_of_target_pandas_sparse",
+        "sklearn.model_selection.tests.test_validation.test_cross_val_score_pandas",
+        "sklearn.model_selection.tests.test_validation.test_permutation_test_score_pandas",
+        "sklearn.model_selection.tests.test_validation.test_cross_val_predict_pandas",
+        "sklearn.utils._safe_indexing",
+        "sklearn.utils.tests.test_multiclass.test_unique_labels",
+        "sklearn.model_selection.tests.test_search.test_pandas_input",
+        "sklearn.metrics.tests.test_classification.test_log_loss_pandas_input",
+        "sklearn.utils._encode._encode",
+        "sklearn.datasets._openml._verify_target_data_type",
+        "sklearn.metrics._classification.jaccard_score",
+        "sklearn.utils.tests.test_validation.test_check_array_pandas_dtype_casting",
+        "sklearn.utils.validation._pandas_dtype_needs_early_conversion",
+        "sklearn.utils._determine_key_type",
+        "sklearn.datasets.tests.test_openml.test_fetch_openml_consistency_parser.convert_numerical_and_categorical_dtypes",
+        "sklearn.metrics._plot.tests.test_confusion_matrix_display",
+        "sklearn.utils.tests.test_validation.test_check_dataframe_with_only_boolean",
+        "sklearn.utils.validation._get_feature_names",
+        "sklearn.utils.tests.test_validation.test_check_dataframe_with_only_bool",
+        "sklearn.compose.tests.test_column_transformer.test_column_transform_set_output_mixed",
+        "sklearn.utils.estimator_checks.check_sample_weights_pandas_series",
+        "sklearn.metrics.cluster._supervised.contingency_matrix",
+        "sklearn.preprocessing.tests.test_encoders.test_ohe_missing_value_support_pandas_categorical",
+        "sklearn.metrics.tests.test_classification.test__check_targets",
+        "sklearn.utils.tests.test_estimator_checks.NoSampleWeightPandasSeriesType",
+        "sklearn.metrics._ranking.label_ranking_loss",
+        "sklearn.tree.tests.test_tree.test_check_n_classes",
+        "sklearn.utils.tests.test_extmath.test_cartesian_mix_types",
+        "sklearn.metrics.cluster._supervised",
+        "sklearn.preprocessing._encoders.OrdinalEncoder",
+        "sklearn.datasets.tests.test_openml.test_fetch_openml_consistency_parser.convert_numerical_dtypes",
+        "sklearn.datasets._arff_parser._liac_arff_parser",
+        "sklearn.impute._base._check_inputs_dtype",
+        "sklearn.utils._encode._unique_python",
+        "sklearn.utils._is_pandas_na",
+        "sklearn.metrics._base._average_multiclass_ovo_score",
+        "sklearn.utils.tests.test_estimator_checks.test_check_estimator",
+        "sklearn.impute._base",
+        "sklearn.utils._testing._Raises",
+        "sklearn.utils.tests.test_multiclass.test_type_of_target",
+        "sklearn.metrics._ranking._multiclass_roc_auc_score",
+        "sklearn.metrics._plot.tests.test_confusion_matrix_display.test_confusion_matrix_display_validation",
+        "sklearn.utils.tests.test_validation.test_check_array",
+        "sklearn.utils.tests.test_validation.test_check_array_pandas_na_support",
+        "sklearn.utils.tests.test_validation.test_check_pandas_sparse_valid",
+        "sklearn.utils.estimator_checks.check_parameters_default_constructible",
+        "sklearn.utils._encode._check_unknown",
+        "sklearn.preprocessing._encoders",
+        "sklearn.metrics._regression._check_reg_targets",
+        "sklearn.ensemble._hist_gradient_boosting.gradient_boosting.BaseHistGradientBoosting._check_categories",
+        "sklearn.preprocessing._encoders.OneHotEncoder.inverse_transform",
+        "sklearn.metrics._ranking.label_ranking_average_precision_score",
+        "sklearn.utils.estimator_checks.check_dtype_object",
+        "sklearn.metrics._plot.tests.test_confusion_matrix_display.test_confusion_matrix_with_unknown_labels",
+        "sklearn.metrics.cluster._supervised.check_clusterings",
+        "sklearn.base.ClusterMixin",
+        "sklearn.utils.tests.test_estimator_checks.test_check_classifiers_multilabel_output_format_predict_proba",
+        "sklearn.utils.estimator_checks.check_estimators_data_not_an_array",
+        "sklearn.utils.estimator_checks.check_clustering",
+        "sklearn.datasets._arff_parser.load_arff_from_gzip_file",
+        "sklearn.model_selection.tests.test_split.test_train_test_split_pandas",
+        "sklearn.metrics.tests.test_ranking.test_binary_clf_curve_implicit_pos_label",
+        "sklearn.utils.tests.test_encode.test_encode_with_check_unknown",
+        "sklearn.utils.validation.check_X_y",
+        "sklearn.utils.validation._ensure_sparse_format",
+        "sklearn.preprocessing._encoders._BaseEncoder",
+        "sklearn.utils.tests.test_validation.test_boolean_series_remains_boolean",
+        "sklearn.metrics._ranking.coverage_error",
+        "sklearn.preprocessing.tests.test_encoders.test_X_is_not_1D_pandas",
+        "sklearn.utils.tests.test_validation.test_get_feature_names_invalid_dtypes",
+        "sklearn.utils._get_column_indices",
+        "sklearn.preprocessing._label.LabelBinarizer.transform",
+        "sklearn.utils.tests.test_set_output",
+        "sklearn.preprocessing.tests.test_encoders.test_ordinal_encoder_missing_value_support_pandas_categorical",
+        "sklearn.feature_extraction._dict_vectorizer.DictVectorizer",
+        "sklearn.metrics.pairwise.check_pairwise_arrays",
+        "sklearn.preprocessing._label.LabelBinarizer.inverse_transform",
+        "sklearn.preprocessing._encoders.OrdinalEncoder.fit",
+        "sklearn.utils.tests.test_array_api",
+        "sklearn.utils._testing._Raises.__exit__",
+        "sklearn.isotonic.IsotonicRegression._transform",
+        "sklearn.metrics.tests.test_classification.test_hinge_loss_multiclass_no_consistent_pred_decision_shape",
+        "sklearn.feature_selection._base.SelectorMixin",
+        "sklearn.metrics.tests.test_classification.test_multilabel_confusion_matrix_multiclass",
+        "sklearn.utils.validation.check_array",
+        "sklearn.metrics.tests.test_score_objects.test_scorer_no_op_multiclass_select_proba",
+        "sklearn.metrics._base",
+        "sklearn.utils.tests.test_utils.test_get_column_indices_pandas_nonunique_columns_error",
+        "sklearn.preprocessing._label",
+        "sklearn.utils._testing._convert_container",
+        "sklearn.metrics._classification.matthews_corrcoef",
+        "sklearn.feature_extraction._dict_vectorizer",
+        "sklearn.utils.estimator_checks.check_classifiers_classes",
+        "sklearn.preprocessing._encoders._BaseEncoder._check_X",
+        "sklearn.cluster.tests.test_mean_shift.test_mean_shift",
+        "sklearn.impute._base.SimpleImputer._validate_input",
+        "sklearn.preprocessing._label.LabelBinarizer.fit",
+        "sklearn.metrics._scorer._check_multimetric_scoring",
+        "sklearn.utils._testing.raises",
+        "sklearn.datasets._openml._load_arff_response",
+        "sklearn.metrics._classification.precision_score",
+        "sklearn.tests.test_multiclass",
+        "sklearn.feature_selection._base",
+        "sklearn.metrics._classification.fbeta_score",
+        "sklearn.model_selection.tests.test_split.test_2d_y",
+        "sklearn.metrics._classification.recall_score",
+        "sklearn.semi_supervised.tests.test_label_propagation.test_sparse_input_types",
+        "sklearn.preprocessing._encoders._BaseEncoder._fit",
+        "sklearn.cluster.tests.test_mean_shift",
+        "sklearn.datasets.tests.test_openml.test_fetch_openml_types_inference",
+        "sklearn.impute.tests.test_impute.test_imputation_mean_median_error_invalid_type_list_pandas",
+        "sklearn.utils.extmath.cartesian",
+        "sklearn.metrics.tests.test_ranking._my_lrap",
+        "sklearn.preprocessing.tests.test_label.test_label_binarizer_errors",
+        "sklearn.utils.estimator_checks.check_transformer_get_feature_names_out_pandas",
+        "sklearn.compose.tests.test_column_transformer.test_column_transform_set_output_after_fitting",
+        "sklearn.base.ClusterMixin.fit_predict",
+        "sklearn.metrics._classification.f1_score",
+        "sklearn.utils._array_api",
+        "sklearn.preprocessing._label.label_binarize",
+        "sklearn.metrics._plot.tests.test_base",
+        "sklearn.inspection._partial_dependence.partial_dependence",
+        "sklearn.utils.estimator_checks._NotAnArray",
+        "sklearn.datasets._arff_parser",
+        "sklearn.feature_selection.tests.test_base.test_output_dataframe",
+        "sklearn.utils._mask._get_dense_mask",
+        "sklearn.metrics._ranking.top_k_accuracy_score",
+        "sklearn.metrics.tests.test_common.test_no_averaging_labels",
+        "sklearn.utils.tests.test_validation.test_check_array_accept_sparse_type_exception",
+        "sklearn.inspection.tests.test_partial_dependence.test_partial_dependence_unknown_feature_string",
+        "sklearn.metrics.tests.test_common.test_classification_binary_continuous_input",
+        "sklearn.neural_network._multilayer_perceptron",
+        "sklearn.utils.tests.test_validation.test_check_array_dtype_warning",
+        "sklearn.tests.test_multiclass.test_check_classification_targets",
+        "sklearn.utils.estimator_checks.check_global_ouptut_transform_pandas",
+        "sklearn.utils.tests.test_utils",
+        "sklearn.model_selection.tests.test_validation.check_cross_val_predict_multiclass",
+        "sklearn.impute._base.MissingIndicator",
+        "benchmarks.plot_tsne_mnist",
+        "sklearn.preprocessing.tests.test_encoders.test_ohe_drop_if_binary_handle_unknown_ignore_warns",
+        "sklearn.metrics._ranking._check_dcg_target_type",
+        "sklearn.utils.tests.test_encode.test_check_unknown_with_both_missing_values",
+        "sklearn.utils._testing.MinimalClassifier",
+        "sklearn.utils.tests.test_validation.test_check_pandas_sparse_invalid",
+        "sklearn.metrics._classification.precision_recall_fscore_support",
+        "sklearn.metrics._scorer._ProbaScorer._score",
+        "sklearn.cluster.tests.test_spectral.test_cluster_qr",
+        "sklearn.utils._mask",
+        "sklearn.preprocessing._encoders.OneHotEncoder.transform",
+        "sklearn.utils.tests.test_multiclass.test_check_classification_targets",
+        "sklearn.metrics._classification.hinge_loss",
+        "sklearn.utils.tests.test_testing.test_raises",
+        "sklearn.datasets.tests.test_common",
+        "sklearn.utils.multiclass._unique_multiclass",
+        "sklearn.inspection._plot.tests.test_boundary_decision_display",
+        "sklearn.metrics._ranking.roc_auc_score",
+        "sklearn.impute._knn",
+        "sklearn.utils.tests.test_multiclass._generate_sparse",
+        "sklearn.linear_model._ridge._BaseRidgeCV",
+        "sklearn.metrics._plot.base._get_response",
+        "sklearn.utils.multiclass._unique_indicator",
+        "sklearn.tests.test_config",
+        "sklearn.utils.estimator_checks.check_classifiers_multilabel_output_format_predict_proba",
+        "sklearn.preprocessing._label.MultiLabelBinarizer._transform",
+        "sklearn.multiclass",
+        "sklearn.preprocessing._encoders._BaseEncoder._transform",
+        "sklearn.tests.test_base.test_feature_names_in",
+        "sklearn.datasets.tests.test_arff_parser.test_pandas_arff_parser_strip_no_quotes",
+        "sklearn.datasets.tests.test_arff_parser.test_pandas_arff_parser_strip_double_quotes",
+        "sklearn.utils.tests.test_utils.test_shuffle_dont_convert_to_array",
+        "sklearn.utils._encode._unique",
+        "sklearn.datasets._svmlight_format_io.load_svmlight_files",
+        "sklearn.neural_network._multilayer_perceptron.MLPClassifier.partial_fit",
+        "sklearn.preprocessing._label._inverse_binarize_thresholding",
+        "sklearn.impute._iterative.IterativeImputer",
+        "sklearn.utils.tests.test_encode.test_unique_util_with_all_missing_values"
+      ],
+      "retrieval_calls": 3,
+      "index_nodes": 11399,
+      "scored_documents": 28948,
+      "source_chars_read": 12455996,
+      "shared_index_seconds": 9.209779799999524
+    },
+    {
+      "instance_id": "scikit-learn__scikit-learn-25638",
+      "repo": "scikit-learn/scikit-learn",
+      "base_commit": "6adb209acd63825affc884abcd85381f148fb1b0",
+      "arm": "feedback",
+      "status": "ok",
+      "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+      "request_sha256": "061ee624aef222b72e8255bb71759bc7af75e91643b2d89bc54508a737ebedfc",
+      "response_sha256": "14f6ce08a092203606dcdeed16f14d5368cb9252dd994d2347293298155c6154",
+      "raw_response_sha256": "14f6ce08a092203606dcdeed16f14d5368cb9252dd994d2347293298155c6154",
+      "actions": [
+        {
+          "query": "unique_labels type_of_target pandas nullable Int64 Float64 boolean object dtype Mix type of y not allowed",
+          "candidates": [
+            {
+              "id": "sklearn.utils.multiclass.unique_labels",
+              "score": 32.89393517787649
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_dataframe_mixed_float_dtypes",
+              "score": 24.254842126820545
+            },
+            {
+              "id": "sklearn.metrics._classification._check_targets",
+              "score": 24.239968783072342
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_encoders.test_encoder_dtypes_pandas",
+              "score": 23.895940975226747
+            },
+            {
+              "id": "sklearn.utils.multiclass",
+              "score": 23.773445701912323
+            },
+            {
+              "id": "sklearn.utils.tests.test_multiclass.test_unique_labels_mixed_types",
+              "score": 22.2249327344646
+            },
+            {
+              "id": "sklearn.datasets.tests.test_openml.test_fetch_openml_iris_pandas",
+              "score": 22.222792427855456
+            },
+            {
+              "id": "sklearn.impute.tests.test_impute.test_simple_impute_pd_na",
+              "score": 21.91391679407019
+            },
+            {
+              "id": "sklearn.tree.tests.test_tree.test_check_n_classes",
+              "score": 21.884480806568266
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_array_pandas_dtype_casting",
+              "score": 21.412489826289548
+            },
+            {
+              "id": "sklearn.datasets._arff_parser._pandas_arff_parser",
+              "score": 21.321302775767485
+            },
+            {
+              "id": "sklearn.utils.tests.test_encode",
+              "score": 20.418409087843948
+            },
+            {
+              "id": "sklearn.datasets._openml._verify_target_data_type",
+              "score": 20.38758026831979
+            },
+            {
+              "id": "sklearn.utils.tests.test_testing.test_convert_container",
+              "score": 20.31785837207763
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_dataframe_with_only_boolean",
+              "score": 20.028534676157076
+            },
+            {
+              "id": "sklearn.metrics.cluster._supervised.contingency_matrix",
+              "score": 19.833122563542357
+            },
+            {
+              "id": "sklearn.utils._determine_key_type",
+              "score": 19.7145362540151
+            },
+            {
+              "id": "sklearn.model_selection._split.StratifiedKFold._make_test_folds",
+              "score": 18.92163310667577
+            },
+            {
+              "id": "sklearn.utils.multiclass.is_multilabel",
+              "score": 18.82196283294038
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_dataframe_with_only_bool",
+              "score": 18.670806522125684
+            },
+            {
+              "id": "sklearn.utils._get_column_indices",
+              "score": 18.596121960736884
+            },
+            {
+              "id": "sklearn.metrics.tests.test_classification.test_confusion_matrix_dtype",
+              "score": 18.416564995163643
+            },
+            {
+              "id": "sklearn.utils._encode._get_counts",
+              "score": 18.166162227708934
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_array_panadas_na_support_series",
+              "score": 18.02546048977863
+            },
+            {
+              "id": "sklearn.preprocessing._encoders.OrdinalEncoder.inverse_transform",
+              "score": 17.973515166271834
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_as_float_array",
+              "score": 17.85608120712896
+            },
+            {
+              "id": "sklearn.metrics._regression._check_reg_targets",
+              "score": 17.845001396472345
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_array_dtype_warning",
+              "score": 17.831784107962328
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_clustering",
+              "score": 17.482036059413005
+            },
+            {
+              "id": "sklearn.utils._mask",
+              "score": 17.46847992286431
+            },
+            {
+              "id": "sklearn.datasets._svmlight_format_io._open_and_load",
+              "score": 17.020047344231376
+            },
+            {
+              "id": "sklearn.base.ClusterMixin",
+              "score": 16.914852860543657
+            },
+            {
+              "id": "sklearn.utils._is_pandas_na",
+              "score": 16.897112563377
+            },
+            {
+              "id": "sklearn.datasets.tests.test_openml.test_fetch_openml_consistency_parser",
+              "score": 16.890013646254246
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_encoders.test_encoder_dtypes",
+              "score": 16.87132494885038
+            },
+            {
+              "id": "sklearn.utils.tests.test_estimator_checks.test_check_estimator",
+              "score": 16.670689907391534
+            },
+            {
+              "id": "sklearn.utils._encode._encode",
+              "score": 16.658281515873234
+            },
+            {
+              "id": "sklearn.utils.multiclass.check_classification_targets",
+              "score": 16.440431698209334
+            },
+            {
+              "id": "sklearn.compose.tests.test_column_transformer.test_column_transform_set_output_after_fitting",
+              "score": 16.4305594520112
+            },
+            {
+              "id": "sklearn.utils._safe_indexing",
+              "score": 16.426618380039947
+            },
+            {
+              "id": "sklearn.preprocessing._label.LabelBinarizer.fit",
+              "score": 16.39637918749304
+            },
+            {
+              "id": "sklearn.model_selection._split.StratifiedGroupKFold._iter_test_indices",
+              "score": 16.391175802310627
+            },
+            {
+              "id": "sklearn.metrics.tests.test_score_objects.string_labeled_classification_problem",
+              "score": 16.30903486307403
+            },
+            {
+              "id": "sklearn.metrics._ranking.label_ranking_loss",
+              "score": 16.286878276547434
+            },
+            {
+              "id": "sklearn.linear_model._ridge._BaseRidgeCV",
+              "score": 16.258870766050784
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_boolean_series_remains_boolean",
+              "score": 16.17114953401681
+            },
+            {
+              "id": "sklearn.utils.validation.check_X_y",
+              "score": 16.150291829152636
+            },
+            {
+              "id": "sklearn.compose.tests.test_column_transformer.test_column_transform_set_output_mixed",
+              "score": 16.075427024528892
+            },
+            {
+              "id": "sklearn.svm._base.BaseLibSVM.fit",
+              "score": 16.038333910273234
+            },
+            {
+              "id": "sklearn.preprocessing._encoders.OrdinalEncoder",
+              "score": 15.984747481055992
+            },
+            {
+              "id": "sklearn.utils.tests.test_sparsefuncs.test_mean_variance_axis0",
+              "score": 15.910131380468687
+            },
+            {
+              "id": "sklearn.utils.tests.test_sparsefuncs.test_mean_variance_axis1",
+              "score": 15.910131380468687
+            },
+            {
+              "id": "sklearn.metrics.cluster._supervised.check_clusterings",
+              "score": 15.908133018783765
+            },
+            {
+              "id": "sklearn.metrics._classification._check_set_wise_labels",
+              "score": 15.757399388356417
+            },
+            {
+              "id": "sklearn.utils.tests.test_multiclass",
+              "score": 15.750198320166088
+            },
+            {
+              "id": "sklearn.preprocessing._encoders._BaseEncoder",
+              "score": 15.502024511088932
+            },
+            {
+              "id": "sklearn.utils.tests.test_multiclass.test_unique_labels_non_specific",
+              "score": 15.42630878013029
+            },
+            {
+              "id": "sklearn.cluster.tests.test_mean_shift.test_mean_shift",
+              "score": 15.419866015983832
+            },
+            {
+              "id": "sklearn.metrics.cluster._supervised.pair_confusion_matrix",
+              "score": 15.400803417474595
+            },
+            {
+              "id": "sklearn.utils._mask._get_dense_mask",
+              "score": 15.386060422057056
+            },
+            {
+              "id": "sklearn.preprocessing._label.LabelBinarizer.transform",
+              "score": 15.361461387413247
+            },
+            {
+              "id": "sklearn.datasets._arff_parser._liac_arff_parser",
+              "score": 15.341743141123704
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_array",
+              "score": 15.28686774477832
+            },
+            {
+              "id": "sklearn.discriminant_analysis.LinearDiscriminantAnalysis.fit",
+              "score": 15.283592951487186
+            },
+            {
+              "id": "sklearn.utils.tests.test_multiclass.test_type_of_target_pandas_sparse",
+              "score": 15.283312258842843
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_encoders.test_ordinal_encoder",
+              "score": 15.196032381463947
+            },
+            {
+              "id": "sklearn.cluster.tests.test_spectral.test_cluster_qr",
+              "score": 15.16668587220419
+            },
+            {
+              "id": "sklearn.neighbors.tests.test_kd_tree.test_array_object_type",
+              "score": 15.138330813493486
+            },
+            {
+              "id": "sklearn.utils.validation.check_array",
+              "score": 15.124372271734925
+            },
+            {
+              "id": "sklearn.neighbors.tests.test_ball_tree.test_array_object_type",
+              "score": 15.10865253662425
+            },
+            {
+              "id": "sklearn.neural_network._multilayer_perceptron.MLPClassifier.partial_fit",
+              "score": 15.025014107071815
+            },
+            {
+              "id": "sklearn.utils.tests.test_extmath.test_cartesian_mix_types",
+              "score": 14.836734863161375
+            },
+            {
+              "id": "sklearn.tests.test_isotonic.test_make_unique_dtype",
+              "score": 14.790434870895188
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_validation.test_permutation_test_score_pandas",
+              "score": 14.642873485499107
+            },
+            {
+              "id": "sklearn.metrics.cluster._supervised",
+              "score": 14.59408942024804
+            },
+            {
+              "id": "sklearn.base.ClusterMixin.fit_predict",
+              "score": 14.582227690965848
+            },
+            {
+              "id": "sklearn.metrics.tests.test_common.test_classification_binary_continuous_input",
+              "score": 14.566235877932076
+            },
+            {
+              "id": "sklearn.preprocessing._encoders._BaseEncoder._fit",
+              "score": 14.529667211782415
+            },
+            {
+              "id": "sklearn.datasets.tests.test_common",
+              "score": 14.508721594275205
+            },
+            {
+              "id": "sklearn.preprocessing._encoders._BaseEncoder._check_X",
+              "score": 14.497814818739581
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_validation.test_cross_val_predict_pandas",
+              "score": 14.471888093310234
+            },
+            {
+              "id": "sklearn.datasets._arff_parser.load_arff_from_gzip_file",
+              "score": 14.412147599672796
+            },
+            {
+              "id": "sklearn.utils.tests.test_sparsefuncs.test_count_nonzero",
+              "score": 14.370085104976292
+            },
+            {
+              "id": "sklearn.preprocessing._label.MultiLabelBinarizer",
+              "score": 14.342945733349344
+            },
+            {
+              "id": "sklearn.tests.test_isotonic.test_isotonic_dtype",
+              "score": 14.288541978607068
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_validation.test_cross_val_score_pandas",
+              "score": 14.28824871332823
+            },
+            {
+              "id": "sklearn.metrics._classification",
+              "score": 14.268735254525087
+            },
+            {
+              "id": "sklearn.metrics.cluster._supervised.entropy",
+              "score": 14.254318715609696
+            },
+            {
+              "id": "sklearn.isotonic.IsotonicRegression._transform",
+              "score": 14.199122282771867
+            },
+            {
+              "id": "sklearn.cluster.tests.test_mean_shift",
+              "score": 14.182606985781234
+            },
+            {
+              "id": "sklearn.tests.test_isotonic.test_make_unique_tolerance",
+              "score": 14.13462987110539
+            },
+            {
+              "id": "sklearn.datasets._california_housing.fetch_california_housing",
+              "score": 14.096107705506776
+            },
+            {
+              "id": "sklearn.utils.tests.test_sparsefuncs.test_inplace_normalize",
+              "score": 14.054698446675262
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_search.test_pandas_input",
+              "score": 14.031464992648349
+            },
+            {
+              "id": "sklearn.cluster.tests.test_k_means.test_float_precision",
+              "score": 14.014475341359692
+            },
+            {
+              "id": "sklearn.ensemble._forest.BaseForest._compute_oob_predictions",
+              "score": 14.004260438763163
+            },
+            {
+              "id": "sklearn.metrics._plot.tests.test_confusion_matrix_display",
+              "score": 13.953347078564324
+            },
+            {
+              "id": "sklearn.utils.multiclass.type_of_target",
+              "score": 13.911131092125997
+            },
+            {
+              "id": "sklearn.model_selection._split.PredefinedSplit._iter_test_masks",
+              "score": 13.897078548087553
+            },
+            {
+              "id": "sklearn.decomposition.tests.test_pca.check_pca_int_dtype_upcast_to_double",
+              "score": 13.81895563636164
+            },
+            {
+              "id": "sklearn.utils._encode._check_unknown",
+              "score": 13.754753759556706
+            },
+            {
+              "id": "sklearn.tree.tests.test_tree.test_check_node_ndarray",
+              "score": 13.707527500605261
+            },
+            {
+              "id": "sklearn.tests.test_isotonic.test_isotonic_make_unique_tolerance",
+              "score": 13.706292027449859
+            },
+            {
+              "id": "sklearn.externals._arff.load",
+              "score": 13.658754800572467
+            },
+            {
+              "id": "sklearn.utils.validation._pandas_dtype_needs_early_conversion",
+              "score": 13.654391675049254
+            },
+            {
+              "id": "sklearn.utils.tests.test_utils.test_get_column_indices_pandas_nonunique_columns_error",
+              "score": 13.579710711927417
+            },
+            {
+              "id": "sklearn.inspection._partial_dependence.partial_dependence",
+              "score": 13.578744982339732
+            },
+            {
+              "id": "sklearn.datasets._base.load_iris",
+              "score": 13.56696559722074
+            },
+            {
+              "id": "sklearn.datasets.tests.test_20news",
+              "score": 13.537101725409173
+            },
+            {
+              "id": "sklearn.tree._classes.BaseDecisionTree.fit",
+              "score": 13.530034681543858
+            },
+            {
+              "id": "sklearn.impute._base._check_inputs_dtype",
+              "score": 13.525379590492447
+            },
+            {
+              "id": "sklearn.naive_bayes._BaseDiscreteNB.fit",
+              "score": 13.47973435251447
+            },
+            {
+              "id": "sklearn.utils.tests.test_estimator_checks.LargeSparseNotSupportedClassifier",
+              "score": 13.460221189688758
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_parameters_default_constructible",
+              "score": 13.450586950046647
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_array_series",
+              "score": 13.43845834976077
+            },
+            {
+              "id": "sklearn.externals._arff.loads",
+              "score": 13.438388263198622
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_label.test_multilabel_binarizer_non_integer_labels",
+              "score": 13.430537686106282
+            },
+            {
+              "id": "sklearn.utils.tests.test_utils.test_shuffle_dont_convert_to_array",
+              "score": 13.405976383875354
+            },
+            {
+              "id": "sklearn.utils.validation.as_float_array",
+              "score": 13.392241302248287
+            },
+            {
+              "id": "sklearn.cross_decomposition._pls._PLS",
+              "score": 13.356697624873984
+            },
+            {
+              "id": "sklearn.utils.tests.test_encode.test_unique_util_with_all_missing_values",
+              "score": 13.354630986768443
+            },
+            {
+              "id": "sklearn.impute.tests.test_impute.test_imputation_most_frequent_pandas",
+              "score": 13.310608273800536
+            },
+            {
+              "id": "sklearn.feature_extraction.tests.test_text.test_hashed_binary_occurrences",
+              "score": 13.305651949650404
+            },
+            {
+              "id": "sklearn.preprocessing._label.MultiLabelBinarizer.fit_transform",
+              "score": 13.303835634888754
+            },
+            {
+              "id": "sklearn.datasets._openml._load_arff_response",
+              "score": 13.295553468218754
+            },
+            {
+              "id": "sklearn.metrics._ranking._multiclass_roc_auc_score",
+              "score": 13.286646094973133
+            },
+            {
+              "id": "sklearn.datasets._base.load_diabetes",
+              "score": 13.25543612009981
+            },
+            {
+              "id": "sklearn.ensemble._forest.BaseForest.fit",
+              "score": 13.237992096539985
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_dtype_object",
+              "score": 13.20656733105488
+            },
+            {
+              "id": "sklearn.model_selection._split.LeaveOneGroupOut.get_n_splits",
+              "score": 13.2044557208784
+            },
+            {
+              "id": "sklearn.impute._base.MissingIndicator._validate_input",
+              "score": 13.204194038045426
+            },
+            {
+              "id": "sklearn.utils.class_weight.compute_class_weight",
+              "score": 13.204000997174525
+            },
+            {
+              "id": "sklearn.metrics._plot.tests.test_confusion_matrix_display.test_confusion_matrix_display_validation",
+              "score": 13.191085727324491
+            },
+            {
+              "id": "sklearn.linear_model._ridge._RidgeGCV.fit",
+              "score": 13.175622569833568
+            },
+            {
+              "id": "sklearn.preprocessing._label",
+              "score": 13.170719811543709
+            },
+            {
+              "id": "sklearn.model_selection._split.PredefinedSplit",
+              "score": 13.156619542909612
+            },
+            {
+              "id": "sklearn.utils.tests.test_sparsefuncs.test_incr_mean_variance_axis",
+              "score": 13.15167941906644
+            },
+            {
+              "id": "sklearn.preprocessing._encoders",
+              "score": 13.149070610294935
+            },
+            {
+              "id": "sklearn.tree.tests.test_tree.test_check_value_ndarray",
+              "score": 13.128197745594617
+            },
+            {
+              "id": "sklearn.utils.tests.test_estimator_checks.LargeSparseNotSupportedClassifier.fit",
+              "score": 13.123742755284093
+            },
+            {
+              "id": "sklearn.ensemble._hist_gradient_boosting.gradient_boosting.BaseHistGradientBoosting._check_categories",
+              "score": 13.10204668979568
+            },
+            {
+              "id": "sklearn.utils.tests.test_encode.test_unique_util_missing_values_objects",
+              "score": 13.085755498399921
+            },
+            {
+              "id": "sklearn.utils.validation._ensure_sparse_format",
+              "score": 13.055699312441826
+            },
+            {
+              "id": "sklearn.metrics.tests.test_common.test_metrics_consistent_type_error",
+              "score": 13.052785024287047
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_array_pandas_na_support",
+              "score": 12.983180400577451
+            },
+            {
+              "id": "sklearn.linear_model.tests.test_logistic.test_dtype_match",
+              "score": 12.964863173424092
+            },
+            {
+              "id": "sklearn.linear_model._coordinate_descent.ElasticNet.fit",
+              "score": 12.950606209402062
+            },
+            {
+              "id": "sklearn.impute.tests.test_impute.test_imputation_constant_pandas",
+              "score": 12.941060971718144
+            },
+            {
+              "id": "sklearn.model_selection._split.LeavePGroupsOut.get_n_splits",
+              "score": 12.937880024021503
+            },
+            {
+              "id": "sklearn.datasets.tests.test_arff_parser.test_pandas_arff_parser_strip_no_quotes",
+              "score": 12.932208790100834
+            },
+            {
+              "id": "benchmarks.bench_saga.plot",
+              "score": 12.931780646729838
+            },
+            {
+              "id": "sklearn.naive_bayes.CategoricalNB._validate_n_categories",
+              "score": 12.912943830790658
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_encoders.test_ordinal_encoder_handle_unknowns_string",
+              "score": 12.904973148703409
+            },
+            {
+              "id": "sklearn.datasets.tests.test_arff_parser.test_pandas_arff_parser_strip_double_quotes",
+              "score": 12.900461620558271
+            },
+            {
+              "id": "sklearn.utils.class_weight",
+              "score": 12.89111436262572
+            },
+            {
+              "id": "sklearn.utils.validation._assert_all_finite",
+              "score": 12.852943951282912
+            },
+            {
+              "id": "sklearn.feature_extraction._dict_vectorizer.DictVectorizer",
+              "score": 12.824426215685522
+            },
+            {
+              "id": "sklearn.datasets.tests.test_arff_parser.test_pandas_arff_parser_strip_single_quotes",
+              "score": 12.80461724876762
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_array_accept_large_sparse_raise_exception",
+              "score": 12.801490356427514
+            },
+            {
+              "id": "sklearn.feature_selection._base.SelectorMixin",
+              "score": 12.800420035480885
+            },
+            {
+              "id": "sklearn.utils._param_validation",
+              "score": 12.777094825558025
+            },
+            {
+              "id": "sklearn.datasets._openml._download_data_to_bunch",
+              "score": 12.77647005793556
+            },
+            {
+              "id": "benchmarks.bench_saga.fit_single",
+              "score": 12.755828672414824
+            },
+            {
+              "id": "sklearn.datasets._base.load_digits",
+              "score": 12.7535080615048
+            },
+            {
+              "id": "sklearn.datasets._base.load_breast_cancer",
+              "score": 12.718003107710878
+            },
+            {
+              "id": "sklearn.compose.tests.test_column_transformer.test_column_transformer_mask_indexing",
+              "score": 12.706273264233236
+            },
+            {
+              "id": "sklearn.metrics.tests.test_pairwise_distances_reduction.test_pairwise_distances_reduction_is_usable_for",
+              "score": 12.698634788793576
+            },
+            {
+              "id": "sklearn.datasets._svmlight_format_io.load_svmlight_file",
+              "score": 12.697452293371931
+            },
+            {
+              "id": "sklearn.impute._base.SimpleImputer._validate_input",
+              "score": 12.670116998438033
+            },
+            {
+              "id": "sklearn.metrics.pairwise.check_pairwise_arrays",
+              "score": 12.647864442763359
+            },
+            {
+              "id": "sklearn.utils._encode._unique",
+              "score": 12.640503562577972
+            },
+            {
+              "id": "sklearn.datasets._base.load_linnerud",
+              "score": 12.638183749108073
+            },
+            {
+              "id": "sklearn.metrics._classification.jaccard_score",
+              "score": 12.59939546645088
+            },
+            {
+              "id": "sklearn.datasets._arff_parser",
+              "score": 12.58936055865438
+            },
+            {
+              "id": "sklearn.feature_extraction._hash.FeatureHasher.__init__",
+              "score": 12.58097011934547
+            },
+            {
+              "id": "sklearn.cluster._optics.OPTICS.fit",
+              "score": 12.577763734135637
+            },
+            {
+              "id": "sklearn.impute._base",
+              "score": 12.574335634622658
+            },
+            {
+              "id": "sklearn.metrics._scorer._ProbaScorer._score",
+              "score": 12.547364270149075
+            },
+            {
+              "id": "sklearn.datasets.tests.test_openml.test_fetch_openml_strip_quotes",
+              "score": 12.537938426125375
+            },
+            {
+              "id": "sklearn.metrics._classification.matthews_corrcoef",
+              "score": 12.525487214971346
+            },
+            {
+              "id": "sklearn.linear_model._logistic.LogisticRegression.fit",
+              "score": 12.496937814869376
+            },
+            {
+              "id": "sklearn.datasets.tests.test_common.check_as_frame",
+              "score": 12.481252715459592
+            },
+            {
+              "id": "sklearn.cluster.tests.test_k_means.test_integer_input",
+              "score": 12.470251855928133
+            },
+            {
+              "id": "sklearn.utils.tests.test_sparsefuncs",
+              "score": 12.464818813256015
+            },
+            {
+              "id": "sklearn.cluster.tests.test_optics.test_nowarn_if_metric_no_bool",
+              "score": 12.417904183738694
+            },
+            {
+              "id": "sklearn.datasets._kddcup99.fetch_kddcup99",
+              "score": 12.416484392133002
+            },
+            {
+              "id": "sklearn.datasets._base.load_wine",
+              "score": 12.39466368041754
+            },
+            {
+              "id": "sklearn.metrics._scorer._ProbaScorer",
+              "score": 12.378110920182955
+            },
+            {
+              "id": "sklearn.utils.validation.check_scalar",
+              "score": 12.365833834223075
+            },
+            {
+              "id": "sklearn.externals._arff.ArffDecoder.decode",
+              "score": 12.363733881076914
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_split.test_group_kfold",
+              "score": 12.357953847738674
+            },
+            {
+              "id": "sklearn.utils.tests.test_set_output",
+              "score": 12.34273555704217
+            },
+            {
+              "id": "sklearn.impute.tests.test_impute.test_imputation_mean_median_error_invalid_type_list_pandas",
+              "score": 12.332773568179606
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_estimators_data_not_an_array",
+              "score": 12.325101680460518
+            },
+            {
+              "id": "sklearn.datasets._rcv1.fetch_rcv1",
+              "score": 12.319659888787426
+            },
+            {
+              "id": "benchmarks.bench_saga.exp",
+              "score": 12.26158954634216
+            },
+            {
+              "id": "sklearn.utils._encode._unique_python",
+              "score": 12.24284057703527
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_pandas_sparse_valid",
+              "score": 12.208766855195574
+            },
+            {
+              "id": "sklearn.utils.tests.test_multiclass.test_unique_labels",
+              "score": 12.14590544453144
+            },
+            {
+              "id": "sklearn.linear_model.tests.test_bayes.test_dtype_match",
+              "score": 12.140984266667264
+            }
+          ],
+          "scored_documents": 5831,
+          "seconds": 0.010920700000497163
+        },
+        {
+          "query": "_pandas_dtype_needs_early_conversion type_of_target pandas extension dtype unique_labels",
+          "candidates": [
+            {
+              "id": "sklearn.utils.validation._pandas_dtype_needs_early_conversion",
+              "score": 43.21009937900169
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_dataframe_mixed_float_dtypes",
+              "score": 22.014820571731924
+            },
+            {
+              "id": "sklearn.datasets.tests.test_openml.test_fetch_openml_iris_pandas",
+              "score": 19.858314361809736
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_array_pandas_na_support",
+              "score": 18.873743396692994
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_pandas_sparse_invalid",
+              "score": 18.63231539893863
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_pandas_sparse_valid",
+              "score": 18.385300223057406
+            },
+            {
+              "id": "sklearn.utils.multiclass.unique_labels",
+              "score": 17.703811995778402
+            },
+            {
+              "id": "sklearn.exceptions.DataConversionWarning",
+              "score": 17.134382857617144
+            },
+            {
+              "id": "sklearn.utils._encode._encode",
+              "score": 16.577920728976743
+            },
+            {
+              "id": "sklearn.datasets._arff_parser._pandas_arff_parser",
+              "score": 16.12042782171365
+            },
+            {
+              "id": "sklearn.preprocessing._encoders._BaseEncoder",
+              "score": 15.918970029355183
+            },
+            {
+              "id": "sklearn.metrics.cluster._supervised.check_clusterings",
+              "score": 15.908133018783765
+            },
+            {
+              "id": "sklearn.ensemble._weight_boosting.BaseWeightBoosting._boost",
+              "score": 15.878550884860212
+            },
+            {
+              "id": "sklearn.metrics._classification._check_targets",
+              "score": 15.488364352351724
+            },
+            {
+              "id": "sklearn.utils.tests.test_multiclass.test_unique_labels_non_specific",
+              "score": 15.42630878013029
+            },
+            {
+              "id": "sklearn.cluster.tests.test_mean_shift.test_mean_shift",
+              "score": 15.419866015983832
+            },
+            {
+              "id": "sklearn.datasets._openml._load_arff_response",
+              "score": 15.38488059982271
+            },
+            {
+              "id": "sklearn.utils.tests.test_multiclass.test_type_of_target_pandas_sparse",
+              "score": 15.283312258842843
+            },
+            {
+              "id": "sklearn.ensemble._hist_gradient_boosting.tests.test_grower.test_ohe_equivalence",
+              "score": 15.06750312155188
+            },
+            {
+              "id": "sklearn.metrics._ranking.label_ranking_loss",
+              "score": 14.768140241410615
+            },
+            {
+              "id": "sklearn.preprocessing._encoders._BaseEncoder._check_X",
+              "score": 14.722168486343435
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_validation.test_permutation_test_score_pandas",
+              "score": 14.642873485499107
+            },
+            {
+              "id": "sklearn.metrics.cluster._supervised",
+              "score": 14.59408942024804
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_validation.test_cross_val_predict_pandas",
+              "score": 14.471888093310234
+            },
+            {
+              "id": "sklearn.datasets._arff_parser.load_arff_from_gzip_file",
+              "score": 14.412147599672796
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_validation.test_cross_val_score_pandas",
+              "score": 14.28824871332823
+            },
+            {
+              "id": "sklearn.cluster.tests.test_mean_shift",
+              "score": 14.182606985781234
+            },
+            {
+              "id": "sklearn.utils.multiclass.is_multilabel",
+              "score": 14.134907631091593
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_search.test_pandas_input",
+              "score": 14.031464992648349
+            },
+            {
+              "id": "sklearn.preprocessing._encoders",
+              "score": 13.955130649065806
+            },
+            {
+              "id": "sklearn.datasets._arff_parser._liac_arff_parser",
+              "score": 13.924339162414919
+            },
+            {
+              "id": "sklearn.cluster.tests.test_optics.test_nowarn_if_metric_no_bool",
+              "score": 13.912751239131703
+            },
+            {
+              "id": "sklearn.metrics._classification._check_set_wise_labels",
+              "score": 13.875993950000101
+            },
+            {
+              "id": "sklearn.ensemble._hist_gradient_boosting.tests.test_gradient_boosting.test_string_target_early_stopping",
+              "score": 13.762572015305457
+            },
+            {
+              "id": "sklearn.feature_extraction._dict_vectorizer.DictVectorizer._transform",
+              "score": 13.695373277706363
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_encoders.test_encoder_dtypes_pandas",
+              "score": 13.55117911042217
+            },
+            {
+              "id": "sklearn.metrics.cluster._supervised.contingency_matrix",
+              "score": 13.403457218730598
+            },
+            {
+              "id": "sklearn.datasets._openml._download_data_to_bunch",
+              "score": 13.3142139140619
+            },
+            {
+              "id": "sklearn.utils.multiclass",
+              "score": 13.2684842324115
+            },
+            {
+              "id": "sklearn.cluster.tests.test_hierarchical.test_agglomerative_clustering",
+              "score": 13.172106307249834
+            },
+            {
+              "id": "sklearn.ensemble.tests.test_gradient_boosting.test_shape_y",
+              "score": 13.17086174759531
+            },
+            {
+              "id": "sklearn.utils.tests.test_testing.test_convert_container",
+              "score": 13.037945640942308
+            },
+            {
+              "id": "sklearn.preprocessing._label.LabelBinarizer",
+              "score": 12.97988952389005
+            },
+            {
+              "id": "sklearn.datasets.tests.test_arff_parser.test_pandas_arff_parser_strip_no_quotes",
+              "score": 12.932208790100834
+            },
+            {
+              "id": "sklearn.datasets.tests.test_arff_parser.test_pandas_arff_parser_strip_double_quotes",
+              "score": 12.900461620558271
+            },
+            {
+              "id": "sklearn.preprocessing._label.LabelBinarizer.fit",
+              "score": 12.830807147360954
+            },
+            {
+              "id": "sklearn.utils.validation.check_X_y",
+              "score": 12.806407285280565
+            },
+            {
+              "id": "sklearn.datasets.tests.test_arff_parser.test_pandas_arff_parser_strip_single_quotes",
+              "score": 12.80461724876762
+            },
+            {
+              "id": "sklearn.utils.tests.test_validation.test_check_array_pandas_dtype_casting",
+              "score": 12.71670962142517
+            },
+            {
+              "id": "sklearn.metrics._scorer._ProbaScorer",
+              "score": 12.627261905007847
+            },
+            {
+              "id": "sklearn.datasets.tests.test_common",
+              "score": 12.622696162088765
+            },
+            {
+              "id": "sklearn.linear_model.tests.test_sgd.test_early_stopping",
+              "score": 12.53791828362262
+            },
+            {
+              "id": "examples.linear_model.plot_sgd_early_stopping",
+              "score": 12.483441919981397
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_clustering",
+              "score": 12.470772169877765
+            },
+            {
+              "id": "sklearn.preprocessing._label",
+              "score": 12.314706151195082
+            },
+            {
+              "id": "examples.linear_model.plot_sgd_early_stopping.load_mnist",
+              "score": 12.279364045385481
+            },
+            {
+              "id": "sklearn.utils._encode._unique_python",
+              "score": 12.24284057703527
+            },
+            {
+              "id": "sklearn.model_selection._split.StratifiedKFold._make_test_folds",
+              "score": 12.191183925841287
+            },
+            {
+              "id": "sklearn.utils.tests.test_utils.test_get_column_indices_pandas_nonunique_columns_error",
+              "score": 12.190609239868747
+            },
+            {
+              "id": "sklearn.utils.tests.test_multiclass.test_unique_labels",
+              "score": 12.14590544453144
+            },
+            {
+              "id": "sklearn.preprocessing._label.LabelEncoder.fit_transform",
+              "score": 12.072849330885663
+            },
+            {
+              "id": "sklearn.utils.tests.test_multiclass.test_unique_labels_mixed_types",
+              "score": 12.008349006455381
+            },
+            {
+              "id": "sklearn.impute._base._check_inputs_dtype",
+              "score": 12.004562462031602
+            },
+            {
+              "id": "sklearn.semi_supervised.tests.test_label_propagation.test_sparse_input_types",
+              "score": 11.946496603737458
+            },
+            {
+              "id": "benchmarks.bench_hist_gradient_boosting_adult",
+              "score": 11.939057716819878
+            },
+            {
+              "id": "sklearn.ensemble._gb.BaseGradientBoosting.fit",
+              "score": 11.908152784514838
+            },
+            {
+              "id": "sklearn.utils.multiclass.type_of_target",
+              "score": 11.895295836074814
+            },
+            {
+              "id": "sklearn.exceptions",
+              "score": 11.894747056203132
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_encoders.test_ohe_missing_value_support_pandas_categorical",
+              "score": 11.839488185297654
+            },
+            {
+              "id": "sklearn.utils.sparsefuncs.count_nonzero",
+              "score": 11.803627776218812
+            },
+            {
+              "id": "sklearn.utils._safe_indexing",
+              "score": 11.744139656856623
+            },
+            {
+              "id": "sklearn.utils._determine_key_type",
+              "score": 11.734295856094768
+            },
+            {
+              "id": "sklearn.utils.tests.test_multiclass",
+              "score": 11.710095927492993
+            },
+            {
+              "id": "sklearn.utils.validation.column_or_1d",
+              "score": 11.652634526409186
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_encoders.test_ordinal_encoder_missing_value_support_pandas_categorical",
+              "score": 11.621443286976557
+            },
+            {
+              "id": "sklearn.linear_model.tests.test_passive_aggressive.test_classifier_refit",
+              "score": 11.54812653258748
+            },
+            {
+              "id": "sklearn.neural_network._multilayer_perceptron.MLPClassifier.partial_fit",
+              "score": 11.447250847084227
+            },
+            {
+              "id": "benchmarks.plot_tsne_mnist",
+              "score": 11.36891899585044
+            },
+            {
+              "id": "sklearn.linear_model._stochastic_gradient.BaseSGD._make_validation_split",
+              "score": 11.346528681181532
+            },
+            {
+              "id": "sklearn.datasets.tests.test_openml.test_fetch_openml_consistency_parser",
+              "score": 11.269396307711137
+            },
+            {
+              "id": "sklearn.linear_model.tests.test_sgd.test_multi_thread_multi_class_and_early_stopping",
+              "score": 11.238508899795224
+            },
+            {
+              "id": "sklearn.metrics._ranking._multiclass_roc_auc_score",
+              "score": 11.232774980477455
+            },
+            {
+              "id": "sklearn.cluster.tests.test_birch.test_n_clusters",
+              "score": 11.209466649062856
+            },
+            {
+              "id": "sklearn.utils.validation.check_array",
+              "score": 11.189043902119714
+            },
+            {
+              "id": "sklearn.metrics.tests.test_score_objects.test_scorer_no_op_multiclass_select_proba",
+              "score": 11.1790483094325
+            },
+            {
+              "id": "sklearn.metrics._base._average_multiclass_ovo_score",
+              "score": 11.152987421968987
+            },
+            {
+              "id": "sklearn.metrics._scorer._ThresholdScorer",
+              "score": 11.1197134057197
+            },
+            {
+              "id": "sklearn.preprocessing._label.LabelBinarizer.transform",
+              "score": 11.059056267483811
+            },
+            {
+              "id": "sklearn.datasets.tests.test_common.check_as_frame",
+              "score": 10.97988338261824
+            },
+            {
+              "id": "examples.model_selection.plot_roc",
+              "score": 10.965030946637054
+            },
+            {
+              "id": "sklearn.impute.tests.test_impute.test_imputation_mean_median_error_invalid_type_list_pandas",
+              "score": 10.883918211902575
+            },
+            {
+              "id": "sklearn.datasets.tests.test_20news",
+              "score": 10.876872462461584
+            },
+            {
+              "id": "sklearn.impute._base.SimpleImputer._validate_input",
+              "score": 10.861358552332174
+            },
+            {
+              "id": "sklearn.preprocessing._label.LabelEncoder",
+              "score": 10.852968862696756
+            },
+            {
+              "id": "sklearn.metrics.cluster._supervised.entropy",
+              "score": 10.831554503442263
+            },
+            {
+              "id": "sklearn.utils.tests.test_estimator_checks.NoSampleWeightPandasSeriesType",
+              "score": 10.763544697835737
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_split.test_train_test_split_pandas",
+              "score": 10.755199505247223
+            },
+            {
+              "id": "sklearn.utils.tests.test_encode",
+              "score": 10.737631008113734
+            },
+            {
+              "id": "sklearn.utils._testing._convert_container",
+              "score": 10.73717571897574
+            },
+            {
+              "id": "sklearn.preprocessing._label.LabelEncoder.transform",
+              "score": 10.682626568528216
+            },
+            {
+              "id": "sklearn.neural_network.tests.test_mlp.test_preserve_feature_names",
+              "score": 10.668368031220954
+            },
+            {
+              "id": "build_tools.circle.list_versions.get_file_extension",
+              "score": 10.570667558846443
+            },
+            {
+              "id": "sklearn.model_selection._split.StratifiedGroupKFold._iter_test_indices",
+              "score": 10.552899749489363
+            },
+            {
+              "id": "sklearn.datasets.tests.test_openml.test_fetch_openml_strip_quotes",
+              "score": 10.548011606528366
+            },
+            {
+              "id": "sklearn.ensemble._weight_boosting.AdaBoostClassifier._boost",
+              "score": 10.514413923987075
+            },
+            {
+              "id": "sklearn.tests.test_isotonic.test_make_unique_dtype",
+              "score": 10.47984053781908
+            },
+            {
+              "id": "benchmarks.bench_tsne_mnist.load_data",
+              "score": 10.474509543226771
+            },
+            {
+              "id": "sklearn.linear_model.tests.test_sgd.test_multi_core_gridsearch_and_early_stopping",
+              "score": 10.468803491692213
+            },
+            {
+              "id": "sklearn.preprocessing._encoders._BaseEncoder._fit",
+              "score": 10.413546836529061
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_sample_weights_pandas_series",
+              "score": 10.396025359222733
+            },
+            {
+              "id": "setup.configure_extension_modules",
+              "score": 10.377237246877742
+            },
+            {
+              "id": "sklearn.base.ClusterMixin",
+              "score": 10.3567102350702
+            },
+            {
+              "id": "sklearn.metrics.tests.test_classification.test_log_loss_pandas_input",
+              "score": 10.328946978526332
+            },
+            {
+              "id": "build_tools.circle.list_versions.get_file_size",
+              "score": 10.322151494659936
+            },
+            {
+              "id": "sklearn.cluster.tests.test_optics.test_warn_if_metric_bool_data_no_bool",
+              "score": 10.280320436939773
+            },
+            {
+              "id": "sklearn.preprocessing._encoders.OneHotEncoder.inverse_transform",
+              "score": 10.265919419835974
+            },
+            {
+              "id": "sklearn.metrics.tests.test_pairwise.test_no_data_conversion_warning",
+              "score": 10.238527739166624
+            },
+            {
+              "id": "sklearn.impute.tests.test_impute.test_imputation_most_frequent_pandas",
+              "score": 10.231801700749523
+            },
+            {
+              "id": "sklearn.ensemble._hist_gradient_boosting.gradient_boosting.BaseHistGradientBoosting.fit",
+              "score": 10.230069570852429
+            },
+            {
+              "id": "sklearn.utils._get_column_indices",
+              "score": 10.219973158070257
+            },
+            {
+              "id": "sklearn.utils.extmath.weighted_mode",
+              "score": 10.218556508228673
+            },
+            {
+              "id": "sklearn.tests.test_calibration.test_calibration_accepts_ndarray.MockTensorClassifier",
+              "score": 10.201675068310022
+            },
+            {
+              "id": "sklearn.preprocessing._label.LabelBinarizer.inverse_transform",
+              "score": 10.19884012999482
+            },
+            {
+              "id": "sklearn.metrics._ranking.coverage_error",
+              "score": 10.195155163590274
+            },
+            {
+              "id": "sklearn.metrics._regression._check_reg_targets",
+              "score": 10.15714018392456
+            },
+            {
+              "id": "sklearn.tests.test_isotonic.test_make_unique_tolerance",
+              "score": 10.142644829541348
+            },
+            {
+              "id": "sklearn.linear_model._stochastic_gradient.BaseSGDClassifier.partial_fit",
+              "score": 10.140700839155134
+            },
+            {
+              "id": "sklearn.compose._target.TransformedTargetRegressor",
+              "score": 10.097557154797446
+            },
+            {
+              "id": "sklearn.linear_model.tests.test_sgd.test_n_iter_no_change",
+              "score": 10.08578865668634
+            },
+            {
+              "id": "sklearn.metrics.cluster.tests.test_unsupervised.test_correct_labelsize",
+              "score": 10.063763167634747
+            },
+            {
+              "id": "sklearn.metrics.tests.test_common.test_metrics_consistent_type_error",
+              "score": 10.052097456564995
+            },
+            {
+              "id": "sklearn.utils.validation._ensure_sparse_format",
+              "score": 10.04685431381416
+            },
+            {
+              "id": "sklearn.impute.tests.test_impute.test_imputation_constant_pandas",
+              "score": 10.038567261993716
+            },
+            {
+              "id": "sklearn.metrics._ranking.label_ranking_average_precision_score",
+              "score": 9.994285915562603
+            },
+            {
+              "id": "sklearn.datasets._arff_parser",
+              "score": 9.992517954631403
+            },
+            {
+              "id": "sklearn.preprocessing.tests.test_encoders.test_one_hot_encoder_dtype_pandas",
+              "score": 9.978909233375756
+            },
+            {
+              "id": "sklearn.compose._target",
+              "score": 9.96863515611747
+            },
+            {
+              "id": "sklearn.ensemble._forest.BaseForest.fit",
+              "score": 9.946545753432883
+            },
+            {
+              "id": "examples.ensemble.plot_stack_predictors.load_ames_housing",
+              "score": 9.941120048882697
+            },
+            {
+              "id": "benchmarks.bench_mnist.load_data",
+              "score": 9.937014092453559
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_estimators_data_not_an_array",
+              "score": 9.915256747003484
+            },
+            {
+              "id": "sklearn.datasets.tests.test_openml.test_fetch_openml_consistency_parser.convert_numerical_dtypes",
+              "score": 9.893800824419836
+            },
+            {
+              "id": "sklearn.cluster.tests.test_optics.test_extract_dbscan",
+              "score": 9.868769201800017
+            },
+            {
+              "id": "sklearn.utils._pandas_indexing",
+              "score": 9.865487183174208
+            },
+            {
+              "id": "sklearn.datasets.tests.test_openml.test_fetch_openml_consistency_parser.convert_numerical_and_categorical_dtypes",
+              "score": 9.864512039559779
+            },
+            {
+              "id": "sklearn.metrics.pairwise.check_pairwise_arrays",
+              "score": 9.851325118995375
+            },
+            {
+              "id": "sklearn.linear_model.tests.test_ridge.test_dtype_match_cholesky",
+              "score": 9.840049966849218
+            },
+            {
+              "id": "sklearn.linear_model._stochastic_gradient.SGDOneClassSVM._fit_one_class",
+              "score": 9.838791945418135
+            },
+            {
+              "id": "sklearn.inspection.tests.test_partial_dependence.test_partial_dependence_feature_type",
+              "score": 9.821279682148646
+            },
+            {
+              "id": "sklearn.datasets.tests.test_20news.test_20news",
+              "score": 9.807353743497705
+            },
+            {
+              "id": "sklearn.metrics.tests.test_pairwise.test_pairwise_boolean_distance",
+              "score": 9.793630857726873
+            },
+            {
+              "id": "benchmarks.bench_hist_gradient_boosting_higgsboson",
+              "score": 9.778809154998667
+            },
+            {
+              "id": "sklearn.isotonic.IsotonicRegression._transform",
+              "score": 9.76394391576384
+            },
+            {
+              "id": "sklearn.utils._is_pandas_na",
+              "score": 9.754825269232171
+            },
+            {
+              "id": "sklearn.utils._param_validation._PandasNAConstraint",
+              "score": 9.701221848484499
+            },
+            {
+              "id": "sklearn.cluster._kmeans.MiniBatchKMeans",
+              "score": 9.695821055494672
+            },
+            {
+              "id": "sklearn.utils._mask._get_dense_mask",
+              "score": 9.678662768289598
+            },
+            {
+              "id": "sklearn.utils._safe_assign",
+              "score": 9.678156554923728
+            },
+            {
+              "id": "sklearn.preprocessing._encoders.OrdinalEncoder.inverse_transform",
+              "score": 9.675263681453819
+            },
+            {
+              "id": "sklearn.utils.estimator_checks.check_classifiers_multilabel_representation_invariance",
+              "score": 9.638734655475329
+            },
+            {
+              "id": "sklearn.datasets._base.load_digits",
+              "score": 9.631695594210317
+            },
+            {
+              "id": "sklearn.metrics.tests.test_classification.test_classification_report_labels_target_names_unequal_length",
+              "score": 9.627735856178536
+            },
+            {
+              "id": "sklearn.datasets._base.load_breast_cancer",
+              "score": 9.609865075025109
+            },
+            {
+              "id": "sklearn.datasets.tests.test_covtype",
+              "score": 9.59143803137
+            },
+            {
+              "id": "sklearn.compose._column_transformer.ColumnTransformer._hstack",
+              "score": 9.552668120003935
+            },
+            {
+              "id": "sklearn.utils._encode._get_counts",
+              "score": 9.551923739784502
+            },
+            {
+              "id": "sklearn.cluster.tests.test_hierarchical.test_ward_agglomeration",
+              "score": 9.528404833268992
+            },
+            {
+              "id": "sklearn.datasets._base.load_iris",
+              "score": 9.515617769612152
+            },
+            {
+              "id": "sklearn.datasets._base.load_linnerud",
+              "score": 9.511786359241619
+            },
+            {
+              "id": "sklearn.inspection._plot.tests.test_boundary_decision_display.test_dataframe_labels_used",
+              "score": 9.49940242106154
+            },
+            {
+              "id": "benchmarks.bench_saga.plot",
+              "score": 9.493611495550596
+            },
+            {
+              "id": "sklearn.utils._array_api._NumPyApiWrapper",
+              "score": 9.465440504398973
+            },
+            {
+              "id": "sklearn.metrics.cluster._supervised.rand_score",
+              "score": 9.443207397080737
+            },
+            {
+              "id": "sklearn.datasets._base.load_diabetes",
+              "score": 9.425392490834389
+            },
+            {
+              "id": "sklearn.cluster.tests.test_k_means._check_fitted_model",
+              "score": 9.413329746537809
+            },
+            {
+              "id": "sklearn.impute.tests.test_impute.test_simple_impute_pd_na",
+              "score": 9.412884891196132
+            },
+            {
+              "id": "sklearn.linear_model._ridge._RidgeClassifierMixin",
+              "score": 9.408483613556312
+            },
+            {
+              "id": "sklearn.linear_model._glm.glm._GeneralizedLinearRegressor.fit",
+              "score": 9.406406108337906
+            },
+            {
+              "id": "sklearn.cluster.tests.test_feature_agglomeration.test_feature_agglomeration",
+              "score": 9.398422757919363
+            },
+            {
+              "id": "sklearn.utils.tests.test_encode.test_unique_util_with_all_missing_values",
+              "score": 9.39802950386618
+            },
+            {
+              "id": "sklearn.metrics._classification.jaccard_score",
+              "score": 9.397532266081116
+            },
+            {
+              "id": "sklearn.preprocessing._encoders.OrdinalEncoder",
+              "score": 9.379760465086502
+            },
+            {
+              "id": "benchmarks.bench_saga.fit_single",
+              "score": 9.36778056764675
+            },
+            {
+              "id": "sklearn.datasets._base.load_wine",
+              "score": 9.361806105410839
+            },
+            {
+              "id": "sklearn.metrics.tests.test_classification.test_classification_report_no_labels_target_names_unequal_length",
+              "score": 9.357851626294055
+            },
+            {
+              "id": "sklearn.model_selection.tests.test_search.test_grid_search_bad_param_grid",
+              "score": 9.356497070707903
+            },
+            {
+              "id": "sklearn.datasets.tests.test_openml.test_fetch_openml_error",
+              "score": 9.345920392088814
+            },
+            {
+              "id": "sklearn.utils._encode._unique",
+              "score": 9.345358985562514
+            },
+            {
+              "id": "build_tools.circle.list_versions",
+              "score": 9.326884147053331
+            },
+            {
+              "id": "sklearn.utils.multiclass.check_classification_targets",
+              "score": 9.32671188131209
+            },
+            {
+              "id": "examples.cluster.plot_mean_shift",
+              "score": 9.32451251848708
+            },
+            {
+              "id": "sklearn.datasets.tests.test_openml.test_missing_values_pandas",
+              "score": 9.3206624556008
+            },
+            {
+              "id": "sklearn.metrics._plot.tests.test_confusion_matrix_display.test_confusion_matrix_with_unknown_labels",
+              "score": 9.313294293986832
+            },
+            {
+              "id": "sklearn.metrics.tests.test_score_objects.test_multiclass_roc_proba_scorer_label",
+              "score": 9.312482573464157
+            },
+            {
+              "id": "sklearn.datasets.tests.test_covtype.test_fetch_asframe",
+              "score": 9.31244024261573
+            },
+            {
+              "id": "sklearn.linear_model.tests.test_ridge.test_ridgecv_alphas_conversion",
+              "score": 9.304215428160388
+            },
+            {
+              "id": "sklearn.metrics.tests.test_classification.test_multilabel_confusion_matrix_multiclass.test",
+              "score": 9.300194530377748
+            },
+            {
+              "id": "sklearn.cluster.tests.test_k_means.test_kmeans_warns_less_centers_than_unique_points",
+              "score": 9.295701390134083
+            },
+            {
+              "id": "doc.sphinxext.sphinx_issues",
+              "score": 9.292321912426527
+            },
+            {
+              "id": "sklearn.model_selection._split.LeavePGroupsOut._iter_test_masks",
+              "score": 9.273197232732896
+            }
+          ],
+          "scored_documents": 4019,
+          "seconds": 0.006440999999540509
+        }
+      ],
+      "order": [
+        "sklearn.utils.multiclass.unique_labels",
+        "sklearn.utils.tests.test_validation.test_check_dataframe_mixed_float_dtypes",
+        "sklearn.metrics._classification._check_targets",
+        "sklearn.datasets.tests.test_openml.test_fetch_openml_iris_pandas",
+        "sklearn.utils.multiclass",
+        "sklearn.datasets._arff_parser._pandas_arff_parser",
+        "sklearn.utils.tests.test_testing.test_convert_container",
+        "sklearn.utils.tests.test_multiclass.test_unique_labels_mixed_types",
+        "sklearn.utils.validation._pandas_dtype_needs_early_conversion",
+        "sklearn.utils._encode._encode",
+        "sklearn.utils.multiclass.is_multilabel",
+        "sklearn.preprocessing.tests.test_encoders.test_encoder_dtypes_pandas",
+        "sklearn.utils.tests.test_multiclass.test_unique_labels_non_specific",
+        "sklearn.datasets.tests.test_openml.test_fetch_openml_consistency_parser",
+        "sklearn.utils.tests.test_encode",
+        "sklearn.utils.tests.test_validation.test_check_array_pandas_na_support",
+        "sklearn.impute.tests.test_impute.test_simple_impute_pd_na",
+        "sklearn.utils.tests.test_multiclass.test_type_of_target_pandas_sparse",
+        "sklearn.utils._determine_key_type",
+        "sklearn.utils.tests.test_validation.test_check_array_pandas_dtype_casting",
+        "sklearn.metrics._classification._check_set_wise_labels",
+        "sklearn.metrics.cluster._supervised.contingency_matrix",
+        "sklearn.utils.tests.test_validation.test_check_pandas_sparse_valid",
+        "sklearn.preprocessing._encoders._BaseEncoder",
+        "sklearn.utils.tests.test_multiclass",
+        "sklearn.model_selection._split.StratifiedKFold._make_test_folds",
+        "sklearn.preprocessing._encoders.OrdinalEncoder.inverse_transform",
+        "sklearn.utils.tests.test_validation.test_check_array_panadas_na_support_series",
+        "sklearn.datasets._arff_parser._liac_arff_parser",
+        "sklearn.utils._safe_indexing",
+        "sklearn.model_selection.tests.test_validation.test_permutation_test_score_pandas",
+        "sklearn.model_selection.tests.test_validation.test_cross_val_score_pandas",
+        "sklearn.utils.validation.check_X_y",
+        "sklearn.metrics.cluster._supervised",
+        "sklearn.model_selection.tests.test_validation.test_cross_val_predict_pandas",
+        "sklearn.tree.tests.test_tree.test_check_n_classes",
+        "sklearn.datasets.tests.test_common",
+        "sklearn.preprocessing._encoders",
+        "sklearn.utils.tests.test_validation.test_check_pandas_sparse_invalid",
+        "sklearn.preprocessing._encoders._BaseEncoder._check_X",
+        "sklearn.utils._get_column_indices",
+        "sklearn.utils.multiclass.check_classification_targets",
+        "sklearn.utils.tests.test_estimator_checks.test_check_estimator",
+        "sklearn.impute._base.SimpleImputer._validate_input",
+        "sklearn.utils._is_pandas_na",
+        "sklearn.metrics.cluster._supervised.check_clusterings",
+        "sklearn.datasets._openml._load_arff_response",
+        "sklearn.model_selection.tests.test_search.test_pandas_input",
+        "sklearn.metrics._ranking.label_ranking_loss",
+        "sklearn.utils.tests.test_validation.test_check_dataframe_with_only_boolean",
+        "sklearn.cluster.tests.test_mean_shift.test_mean_shift",
+        "sklearn.preprocessing._encoders.OrdinalEncoder",
+        "sklearn.utils.tests.test_validation.test_check_dataframe_with_only_bool",
+        "sklearn.metrics._regression._check_reg_targets",
+        "sklearn.model_selection._split.StratifiedGroupKFold._iter_test_indices",
+        "sklearn.compose.tests.test_column_transformer.test_column_transform_set_output_mixed",
+        "sklearn.preprocessing._label.LabelBinarizer",
+        "sklearn.utils.multiclass.type_of_target",
+        "sklearn.utils.tests.test_utils.test_get_column_indices_pandas_nonunique_columns_error",
+        "sklearn.utils.validation.check_array",
+        "sklearn.utils.estimator_checks.check_clustering",
+        "sklearn.utils._mask",
+        "sklearn.datasets._openml._verify_target_data_type",
+        "sklearn.impute._base._check_inputs_dtype",
+        "sklearn.preprocessing._label.LabelBinarizer.fit",
+        "sklearn.utils._mask._get_dense_mask",
+        "sklearn.datasets.tests.test_openml.test_fetch_openml_consistency_parser.convert_numerical_and_categorical_dtypes",
+        "sklearn.utils.tests.test_validation.test_check_array",
+        "sklearn.utils.validation._ensure_sparse_format",
+        "sklearn.datasets._arff_parser.load_arff_from_gzip_file",
+        "sklearn.metrics._classification",
+        "sklearn.utils._encode._unique_python",
+        "sklearn.cluster.tests.test_mean_shift",
+        "sklearn.utils.tests.test_set_output",
+        "sklearn.utils.tests.test_multiclass.test_unique_labels",
+        "sklearn.metrics._plot.tests.test_confusion_matrix_display",
+        "sklearn.metrics.pairwise.check_pairwise_arrays",
+        "sklearn.datasets.tests.test_openml.test_fetch_openml_consistency_parser.convert_numerical_dtypes",
+        "sklearn.metrics._classification.jaccard_score",
+        "sklearn.preprocessing.tests.test_encoders.test_ohe_missing_value_support_pandas_categorical",
+        "sklearn.impute.tests.test_impute.test_imputation_mean_median_error_invalid_type_list_pandas",
+        "sklearn.utils.estimator_checks.check_sample_weights_pandas_series",
+        "sklearn.utils.tests.test_estimator_checks.NoSampleWeightPandasSeriesType",
+        "sklearn.base.ClusterMixin",
+        "sklearn.utils._encode._get_counts",
+        "sklearn.metrics.tests.test_classification.test_log_loss_pandas_input",
+        "sklearn.impute._base",
+        "sklearn.utils._encode._unique",
+        "sklearn.compose.tests.test_column_transformer.test_column_transform_set_output_after_fitting",
+        "sklearn.preprocessing._label.LabelBinarizer.transform",
+        "sklearn.cluster.tests.test_optics.test_nowarn_if_metric_no_bool",
+        "sklearn.neural_network._multilayer_perceptron.MLPClassifier.partial_fit",
+        "sklearn.utils._testing._convert_container",
+        "sklearn.datasets._openml._download_data_to_bunch",
+        "sklearn.exceptions.DataConversionWarning",
+        "sklearn.utils.tests.test_validation.test_boolean_series_remains_boolean",
+        "sklearn.datasets.tests.test_arff_parser.test_pandas_arff_parser_strip_no_quotes",
+        "sklearn.datasets._base.load_breast_cancer",
+        "sklearn.datasets._base.load_iris",
+        "sklearn.datasets.tests.test_arff_parser.test_pandas_arff_parser_strip_double_quotes",
+        "sklearn.utils.tests.test_validation.test_get_feature_names_invalid_dtypes",
+        "sklearn.utils.tests.test_extmath.test_cartesian_mix_types",
+        "sklearn.datasets.tests.test_arff_parser.test_pandas_arff_parser_strip_single_quotes",
+        "sklearn.preprocessing._label",
+        "sklearn.feature_extraction._dict_vectorizer.DictVectorizer",
+        "sklearn.ensemble._weight_boosting.BaseWeightBoosting._boost",
+        "sklearn.tests.test_isotonic.test_make_unique_dtype",
+        "sklearn.utils.tests.test_array_api",
+        "sklearn.metrics.cluster._supervised.entropy",
+        "sklearn.preprocessing._encoders._BaseEncoder._fit",
+        "sklearn.metrics._scorer._ProbaScorer",
+        "sklearn.utils.tests.test_utils.test_shuffle_dont_convert_to_array",
+        "sklearn.utils.estimator_checks.check_estimators_data_not_an_array",
+        "sklearn.utils.estimator_checks.check_dtype_object",
+        "sklearn.ensemble._hist_gradient_boosting.tests.test_grower.test_ohe_equivalence",
+        "sklearn.utils._encode._check_unknown",
+        "sklearn.datasets.tests.test_20news",
+        "sklearn.utils.tests.test_validation.test_check_array_series",
+        "sklearn.metrics._ranking._multiclass_roc_auc_score",
+        "sklearn.metrics.tests.test_classification.test_confusion_matrix_dtype",
+        "sklearn.utils._testing.raises",
+        "sklearn.tests.test_isotonic.test_make_unique_tolerance",
+        "sklearn.utils.estimator_checks.check_parameters_default_constructible",
+        "sklearn.metrics.tests.test_pairwise.test_pairwise_boolean_distance",
+        "sklearn.utils.validation.as_float_array",
+        "sklearn.utils.tests.test_validation.test_as_float_array",
+        "sklearn.inspection._partial_dependence.partial_dependence",
+        "sklearn.ensemble._hist_gradient_boosting.gradient_boosting.BaseHistGradientBoosting._check_categories",
+        "sklearn.preprocessing.tests.test_encoders.test_ordinal_encoder_missing_value_support_pandas_categorical",
+        "sklearn.utils._testing._Raises",
+        "sklearn.isotonic.IsotonicRegression._transform",
+        "sklearn.datasets._svmlight_format_io.load_svmlight_file",
+        "sklearn.utils.tests.test_validation.test_check_array_dtype_warning",
+        "sklearn.metrics._plot.tests.test_confusion_matrix_display.test_confusion_matrix_display_validation",
+        "sklearn.impute.tests.test_impute.test_imputation_most_frequent_pandas",
+        "sklearn.datasets._svmlight_format_io._open_and_load",
+        "sklearn.metrics._ranking.label_ranking_average_precision_score",
+        "sklearn.datasets._california_housing.fetch_california_housing",
+        "sklearn.datasets.tests.test_common.check_as_frame",
+        "sklearn.ensemble._hist_gradient_boosting.tests.test_gradient_boosting.test_string_target_early_stopping",
+        "sklearn.metrics._plot.tests.test_base",
+        "sklearn.feature_extraction._dict_vectorizer.DictVectorizer._transform",
+        "sklearn.preprocessing.tests.test_encoders.test_encoder_dtypes",
+        "sklearn.feature_selection.tests.test_base.test_output_dataframe",
+        "sklearn.externals._arff.load",
+        "sklearn.ensemble._forest.BaseForest.fit",
+        "sklearn.datasets.tests.test_openml.test_fetch_openml_strip_quotes",
+        "sklearn.metrics.tests.test_common.test_metrics_consistent_type_error",
+        "sklearn.cluster.tests.test_hierarchical.test_agglomerative_clustering",
+        "sklearn.impute.tests.test_impute.test_imputation_constant_pandas",
+        "sklearn.ensemble.tests.test_gradient_boosting.test_shape_y",
+        "sklearn.utils.tests.test_estimator_checks.test_check_classifiers_multilabel_output_format_predict_proba",
+        "sklearn.metrics.tests.test_score_objects.string_labeled_classification_problem",
+        "sklearn.utils.tests.test_encode.test_unique_util_with_all_missing_values",
+        "sklearn.datasets._base.load_diabetes",
+        "sklearn.utils.validation._get_feature_names",
+        "sklearn.preprocessing._encoders.OneHotEncoder.inverse_transform",
+        "sklearn.linear_model._ridge._BaseRidgeCV",
+        "sklearn.tree.tests.test_tree.test_check_value_ndarray",
+        "sklearn.utils.tests.test_utils",
+        "sklearn.datasets._arff_parser",
+        "sklearn.utils.validation._assert_all_finite",
+        "sklearn.compose._target",
+        "sklearn.metrics.tests.test_ranking.test_binary_clf_curve_implicit_pos_label",
+        "sklearn.svm._base.BaseLibSVM.fit",
+        "sklearn.utils._param_validation",
+        "benchmarks.bench_saga.plot",
+        "sklearn.utils.tests.test_sparsefuncs.test_mean_variance_axis0",
+        "sklearn.datasets._base.load_digits",
+        "sklearn.linear_model.tests.test_sgd.test_early_stopping",
+        "sklearn.utils.tests.test_sparsefuncs.test_mean_variance_axis1",
+        "examples.linear_model.plot_sgd_early_stopping",
+        "sklearn.feature_selection._base.SelectorMixin",
+        "sklearn.datasets._base.load_linnerud",
+        "examples.linear_model.plot_sgd_early_stopping.load_mnist",
+        "benchmarks.bench_saga.fit_single",
+        "sklearn.feature_extraction._dict_vectorizer",
+        "sklearn.metrics.cluster._supervised.pair_confusion_matrix",
+        "sklearn.datasets.tests.test_openml.test_fetch_openml_error",
+        "sklearn.preprocessing._label.LabelEncoder.fit_transform",
+        "sklearn.utils.tests.test_testing.test_raises",
+        "sklearn.datasets._base.load_wine",
+        "sklearn.discriminant_analysis.LinearDiscriminantAnalysis.fit",
+        "sklearn.semi_supervised.tests.test_label_propagation.test_sparse_input_types",
+        "benchmarks.bench_hist_gradient_boosting_adult",
+        "sklearn.utils.tests.test_sparsefuncs",
+        "sklearn.ensemble._gb.BaseGradientBoosting.fit",
+        "sklearn.inspection._plot.tests.test_boundary_decision_display",
+        "sklearn.preprocessing.tests.test_encoders.test_ordinal_encoder",
+        "sklearn.cluster.tests.test_spectral.test_cluster_qr",
+        "sklearn.impute._knn",
+        "sklearn.exceptions",
+        "sklearn.metrics._plot.base._get_response",
+        "sklearn.neighbors.tests.test_kd_tree.test_array_object_type",
+        "sklearn.neighbors.tests.test_ball_tree.test_array_object_type",
+        "sklearn.utils.sparsefuncs.count_nonzero",
+        "sklearn.tests.test_config",
+        "sklearn.preprocessing.tests.test_encoders.test_X_is_not_1D_pandas",
+        "sklearn.tests.test_base.test_feature_names_in",
+        "sklearn.utils.validation.column_or_1d"
+      ],
+      "retrieval_calls": 3,
+      "index_nodes": 11399,
+      "scored_documents": 21249,
+      "source_chars_read": 12455996,
+      "shared_index_seconds": 9.209779799999524
+    }
+  ]
+}

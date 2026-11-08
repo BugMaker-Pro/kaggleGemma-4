@@ -1,0 +1,3674 @@
+{
+  "instance_id": "pallets__flask-5063",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "results": [
+    {
+      "instance_id": "pallets__flask-5063",
+      "repo": "pallets/flask",
+      "base_commit": "182ce3dd15dfa3537391c3efaf9c3ff407d134d4",
+      "arm": "preplanned",
+      "status": "ok",
+      "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+      "request_sha256": "8c408e5d3fc21cf12364c2d06fed29d837c58f51e790c5d2311055140ec36b6f",
+      "response_sha256": "3564095453b489eb4c60508cf2aff8f0de638c7bb8e0dac3d01c036a6d7efe17",
+      "raw_response_sha256": "3564095453b489eb4c60508cf2aff8f0de638c7bb8e0dac3d01c036a6d7efe17",
+      "actions": [
+        {
+          "query": "flask routes command subdomain column implementation",
+          "candidates": [
+            {
+              "id": "src.flask.cli.routes_command",
+              "score": 11.741397955514703
+            },
+            {
+              "id": "src.flask.app.Flask.register_blueprint",
+              "score": 10.843901019474622
+            },
+            {
+              "id": "src.flask.blueprints.Blueprint",
+              "score": 9.912587059567839
+            },
+            {
+              "id": "tests.test_cli.TestRoutes.test_no_routes",
+              "score": 9.350315054577102
+            },
+            {
+              "id": "src.flask.cli.FlaskGroup.__init__",
+              "score": 8.779335614536992
+            },
+            {
+              "id": "tests.test_cli.TestRoutes",
+              "score": 8.769712709964594
+            },
+            {
+              "id": "tests.test_cli.TestRoutes.invoke_no_routes",
+              "score": 8.548365744961455
+            },
+            {
+              "id": "tests.test_blueprints.test_child_and_parent_subdomain",
+              "score": 8.115427093951979
+            },
+            {
+              "id": "tests.test_cli.TestRoutes.test_sort",
+              "score": 8.028524890754916
+            },
+            {
+              "id": "tests.test_basic.test_subdomain_matching",
+              "score": 7.780394556757091
+            },
+            {
+              "id": "tests.test_basic.test_server_name_subdomain.subdomain",
+              "score": 7.75901162571136
+            },
+            {
+              "id": "tests.test_testing.test_blueprint_with_subdomain",
+              "score": 7.701129589290954
+            },
+            {
+              "id": "tests.test_basic.test_subdomain_matching_with_ports",
+              "score": 7.6779520969078145
+            },
+            {
+              "id": "tests.test_testing.test_subdomain",
+              "score": 7.637996274403569
+            },
+            {
+              "id": "tests.test_basic.test_subdomain_basic_support",
+              "score": 7.350014042842835
+            },
+            {
+              "id": "tests.test_cli.TestRoutes.test_all_methods",
+              "score": 7.074464617751051
+            },
+            {
+              "id": "src.flask.blueprints.BlueprintSetupState.__init__",
+              "score": 7.054815105414338
+            },
+            {
+              "id": "src.flask.app.Flask.create_url_adapter",
+              "score": 7.000200642998715
+            },
+            {
+              "id": "tests.test_basic.test_server_name_subdomain",
+              "score": 6.988561079760837
+            },
+            {
+              "id": "src.flask.testing.EnvironBuilder.__init__",
+              "score": 6.949756730709741
+            },
+            {
+              "id": "tests.test_blueprints.test_nesting_subdomains",
+              "score": 6.933285437054979
+            },
+            {
+              "id": "src.flask.sessions.SessionInterface.get_cookie_path",
+              "score": 6.800199952367719
+            },
+            {
+              "id": "tests.test_cli.test_cli_blueprints.custom_command",
+              "score": 6.653885554894432
+            },
+            {
+              "id": "tests.test_cli.test_cli_blueprints.late_command",
+              "score": 6.653885554894432
+            },
+            {
+              "id": "tests.test_cli.test_cli_blueprints.merged_command",
+              "score": 6.653885554894432
+            },
+            {
+              "id": "tests.test_cli.test_cli_blueprints.nested_command",
+              "score": 6.653885554894432
+            },
+            {
+              "id": "tests.test_testing.test_cli_custom_obj.hello_command",
+              "score": 6.653885554894432
+            },
+            {
+              "id": "tests.test_testing.test_cli_invoke.hello_command",
+              "score": 6.653885554894432
+            },
+            {
+              "id": "src.flask.cli.FlaskGroup",
+              "score": 6.577040236270203
+            },
+            {
+              "id": "src.flask.sessions.SessionInterface.get_expiration_time",
+              "score": 6.565743136394574
+            },
+            {
+              "id": "tests.test_basic.test_subdomain_matching_other_name",
+              "score": 6.54128206235053
+            },
+            {
+              "id": "tests.test_cli.test_no_command_echo_loading_error",
+              "score": 6.472763508829359
+            },
+            {
+              "id": "src.flask.blueprints.BlueprintSetupState",
+              "score": 6.4147838222348765
+            },
+            {
+              "id": "tests.test_testing.test_cli_invoke",
+              "score": 6.3773254188895825
+            },
+            {
+              "id": "src.flask.app.Flask.log_exception",
+              "score": 6.324560353344494
+            },
+            {
+              "id": "tests.test_apps.subdomaintestmodule",
+              "score": 6.323783004426961
+            },
+            {
+              "id": "src.flask.testing",
+              "score": 6.278622141804179
+            },
+            {
+              "id": "src.flask.cli.AppGroup.command",
+              "score": 6.27036040186842
+            },
+            {
+              "id": "src.flask.testing.EnvironBuilder",
+              "score": 6.217010857042288
+            },
+            {
+              "id": "examples.tutorial.flaskr.db.init_db_command",
+              "score": 6.181547681579891
+            },
+            {
+              "id": "src.flask.cli.FlaskGroup.get_command",
+              "score": 6.1622085804937985
+            },
+            {
+              "id": "examples.tutorial.flaskr.db.init_app",
+              "score": 6.06368122319726
+            },
+            {
+              "id": "src.flask.app.Flask",
+              "score": 5.88965673825277
+            },
+            {
+              "id": "src.flask.blueprints",
+              "score": 5.882744305221777
+            },
+            {
+              "id": "tests.test_cli.test_flaskgroup_nested",
+              "score": 5.85174708986154
+            },
+            {
+              "id": "tests.test_cli.test_cli_blueprints",
+              "score": 5.79530877763937
+            },
+            {
+              "id": "tests.test_cli.test_run_cert_import",
+              "score": 5.734566400006672
+            },
+            {
+              "id": "tests.test_cli.TestRoutes.test_simple",
+              "score": 5.7252659748375665
+            },
+            {
+              "id": "examples.tutorial.tests.test_db.test_init_db_command",
+              "score": 5.667477320881694
+            },
+            {
+              "id": "src.flask.testing.FlaskCliRunner.invoke",
+              "score": 5.647063702997952
+            },
+            {
+              "id": "tests.test_cli.test_run_cert_path",
+              "score": 5.64685943422898
+            },
+            {
+              "id": "src.flask.cli.AppGroup.command.decorator",
+              "score": 5.633727762116389
+            },
+            {
+              "id": "examples.tutorial.flaskr.db",
+              "score": 5.557486697595859
+            },
+            {
+              "id": "src.flask.cli.AppGroup",
+              "score": 5.502784536805769
+            },
+            {
+              "id": "tests.test_testing.test_cli_custom_obj",
+              "score": 5.488860558662403
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold.route",
+              "score": 5.4014141272266105
+            },
+            {
+              "id": "src.flask.blueprints.Blueprint.__init__",
+              "score": 5.383490517459609
+            },
+            {
+              "id": "src.flask.sessions.SessionInterface.get_cookie_domain",
+              "score": 5.333989845972512
+            },
+            {
+              "id": "tests.test_cli.test_run_cert_adhoc",
+              "score": 5.197643771577472
+            },
+            {
+              "id": "src.flask.cli.run_command",
+              "score": 5.158249862176958
+            },
+            {
+              "id": "src.flask.testing.FlaskCliRunner",
+              "score": 4.780690680768467
+            },
+            {
+              "id": "tests.test_cli.test_appgroup_app_context",
+              "score": 4.706818648147474
+            },
+            {
+              "id": "src.flask.cli.shell_command",
+              "score": 4.64204835235549
+            },
+            {
+              "id": "src.flask.sessions.SessionInterface",
+              "score": 4.597263934939016
+            },
+            {
+              "id": "tests.test_helpers.TestSendfile.test_send_from_directory",
+              "score": 4.580790659960275
+            },
+            {
+              "id": "src.flask.json.loads",
+              "score": 4.509874437847892
+            },
+            {
+              "id": "tests.test_cli.test_with_appcontext",
+              "score": 4.485693632329627
+            },
+            {
+              "id": "src.flask.blueprints.BlueprintSetupState.add_url_rule",
+              "score": 4.4689236652303
+            },
+            {
+              "id": "src.flask.json.dumps",
+              "score": 4.316876570235446
+            },
+            {
+              "id": "tests.test_blueprints.test_request_processing",
+              "score": 4.315849485369405
+            },
+            {
+              "id": "src.flask.json.load",
+              "score": 4.307120849813423
+            },
+            {
+              "id": "src.flask.json",
+              "score": 4.275910068110969
+            },
+            {
+              "id": "src.flask.app.Flask.test_request_context",
+              "score": 4.2269547611147535
+            },
+            {
+              "id": "tests.test_cli.test_flaskgroup_app_context",
+              "score": 4.213794154452886
+            },
+            {
+              "id": "src.flask.json.dump",
+              "score": 4.159221336125831
+            },
+            {
+              "id": "tests.test_basic",
+              "score": 4.087129288471075
+            },
+            {
+              "id": "src.flask.cli.FlaskGroup._load_plugin_commands",
+              "score": 4.082321666594991
+            },
+            {
+              "id": "tests.test_cli.test_run_cert_no_ssl",
+              "score": 4.066111691778056
+            },
+            {
+              "id": "src.flask.app.Flask.run",
+              "score": 4.040365017151222
+            },
+            {
+              "id": "src.flask.app.Flask.app_context",
+              "score": 3.8211279145161416
+            },
+            {
+              "id": "tests.test_blueprints.test_app_request_processing",
+              "score": 3.7992303814276505
+            },
+            {
+              "id": "tests.test_cli.test_flaskgroup_debug",
+              "score": 3.7764287396134013
+            },
+            {
+              "id": "src.flask.cli.with_appcontext",
+              "score": 3.3674256888000524
+            },
+            {
+              "id": "src.flask.helpers.flash",
+              "score": 3.3191462833417202
+            },
+            {
+              "id": "tests.test_cli.test_app_cli_has_app_context",
+              "score": 3.221409981159944
+            },
+            {
+              "id": "src.flask.cli.FlaskGroup.make_context",
+              "score": 3.193569787699545
+            },
+            {
+              "id": "src.flask.helpers.send_from_directory",
+              "score": 3.1826878825627793
+            },
+            {
+              "id": "tests.test_reqctx.test_proper_test_request_context",
+              "score": 3.1700014580202236
+            },
+            {
+              "id": "examples.tutorial.tests.test_db",
+              "score": 3.046600077632427
+            },
+            {
+              "id": "src.flask.app.Flask.__init__",
+              "score": 2.9240005665527837
+            },
+            {
+              "id": "tests.test_reqctx",
+              "score": 2.8277306508493245
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold",
+              "score": 2.76877594948704
+            },
+            {
+              "id": "tests.test_cli",
+              "score": 2.5024177620505434
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold.__init__",
+              "score": 2.460866641114251
+            },
+            {
+              "id": "tests.test_helpers.TestSendfile",
+              "score": 2.2242544092335144
+            },
+            {
+              "id": "src.flask.helpers.send_file",
+              "score": 1.8421673704212114
+            },
+            {
+              "id": "tests.test_config.test_custom_config_class.Flask",
+              "score": 1.002574471190502
+            },
+            {
+              "id": "tests.test_helpers.test_app_aborter_class.MyFlask",
+              "score": 0.9946444650682265
+            },
+            {
+              "id": "tests.test_templating.test_custom_jinja_env.CustomFlask",
+              "score": 0.9946444650682265
+            },
+            {
+              "id": "tests.test_reqctx.test_session_error_pops_context.CustomFlask",
+              "score": 0.9926815259538541
+            },
+            {
+              "id": "tests.test_reqctx.test_session_dynamic_cookie_name.CustomFlask",
+              "score": 0.9907263193326392
+            },
+            {
+              "id": "tests.test_subclassing.test_suppressed_exception_logging.SuppressedFlask",
+              "score": 0.9887787996041489
+            },
+            {
+              "id": "tests.test_apps.cliapp.inner1.inner2.flask",
+              "score": 0.9772823989613877
+            },
+            {
+              "id": "tests.test_templating.test_custom_template_loader.MyFlask",
+              "score": 0.9678507271048332
+            },
+            {
+              "id": "tests.test_appctx.test_app_ctx_globals_methods",
+              "score": 0.9658295472868709
+            },
+            {
+              "id": "tests.test_reqctx.TestGreenletContextCopying.test_greenlet_context_copying.index.g",
+              "score": 0.9609081893849803
+            },
+            {
+              "id": "tests.test_basic.test_session_special_types.dump_session_contents",
+              "score": 0.9545260433059333
+            },
+            {
+              "id": "tests.test_apps.cliapp.multiapp",
+              "score": 0.9514284426539548
+            },
+            {
+              "id": "tests.test_helpers.TestStreaming.test_stream_keeps_session.index",
+              "score": 0.9488910411269591
+            },
+            {
+              "id": "tests.test_reqctx.TestGreenletContextCopying.test_greenlet_context_copying.index",
+              "score": 0.9471797274809527
+            },
+            {
+              "id": "tests.test_basic.test_session.set",
+              "score": 0.9451305387837864
+            },
+            {
+              "id": "tests.test_reqctx.TestGreenletContextCopying.test_greenlet_context_copying_api.index",
+              "score": 0.9371946812885075
+            },
+            {
+              "id": "tests.test_reqctx.TestGreenletContextCopying.test_greenlet_context_copying_api.index.g",
+              "score": 0.9340892918004599
+            },
+            {
+              "id": "tests.test_basic.test_session",
+              "score": 0.9311764083510188
+            },
+            {
+              "id": "tests.test_basic.test_session.get",
+              "score": 0.9292574634039672
+            },
+            {
+              "id": "tests.test_basic.test_flashes",
+              "score": 0.9288413619280558
+            },
+            {
+              "id": "tests.test_apps.cliapp.app",
+              "score": 0.9269227999157188
+            },
+            {
+              "id": "tests.test_apps.cliapp.inner1",
+              "score": 0.9229542709625913
+            },
+            {
+              "id": "tests.test_basic.test_g_iteration_protocol",
+              "score": 0.9221027264150851
+            },
+            {
+              "id": "tests.test_basic.test_get_method_on_g",
+              "score": 0.9221027264150851
+            },
+            {
+              "id": "tests.test_config.test_config_from_mapping",
+              "score": 0.918520440998879
+            },
+            {
+              "id": "tests.test_apps.cliapp.importerrorapp",
+              "score": 0.9151182927331678
+            },
+            {
+              "id": "tests.test_helpers.TestStreaming.test_stream_keeps_session",
+              "score": 0.9150420808087293
+            },
+            {
+              "id": "tests.test_config.test_from_prefixed_env",
+              "score": 0.9150166796547279
+            },
+            {
+              "id": "tests.test_reqctx.TestGreenletContextCopying",
+              "score": 0.913540391584522
+            },
+            {
+              "id": "tests.test_helpers.TestSendfile.test_static_file.StaticFileApp",
+              "score": 0.9121761296144032
+            },
+            {
+              "id": "tests.test_views.test_implicit_head.Index",
+              "score": 0.9121761296144032
+            },
+            {
+              "id": "tests.test_regression.test_aborting.index",
+              "score": 0.9112499889074569
+            },
+            {
+              "id": "tests.test_config.test_from_prefixed_env_custom_prefix",
+              "score": 0.9081187635972738
+            },
+            {
+              "id": "tests.test_config",
+              "score": 0.9069520169552947
+            },
+            {
+              "id": "tests.test_apps.cliapp.factory",
+              "score": 0.9064229667598945
+            },
+            {
+              "id": "tests.test_templating.test_custom_jinja_env",
+              "score": 0.9035512223550509
+            },
+            {
+              "id": "src.flask.logging.create_logger",
+              "score": 0.903511595476768
+            },
+            {
+              "id": "tests.test_config.test_custom_config_class",
+              "score": 0.9012846384443907
+            },
+            {
+              "id": "tests.test_apps.helloworld.hello",
+              "score": 0.899838841105433
+            },
+            {
+              "id": "tests.test_reqctx.TestGreenletContextCopying.test_greenlet_context_copying",
+              "score": 0.8997405927224773
+            },
+            {
+              "id": "examples.javascript.js_example",
+              "score": 0.8960983706610836
+            },
+            {
+              "id": "tests.test_testing.test_environ_base_default.index",
+              "score": 0.8923888684316238
+            },
+            {
+              "id": "tests.test_testing.test_environ_base_modified.index",
+              "score": 0.8923888684316238
+            },
+            {
+              "id": "tests.test_testing.test_redirect_keep_session.index",
+              "score": 0.8887099514130853
+            },
+            {
+              "id": "tests.test_basic.test_session_special_types",
+              "score": 0.8886141180755321
+            },
+            {
+              "id": "tests.test_cli.test_find_best_app",
+              "score": 0.8853997360427278
+            },
+            {
+              "id": "tests.test_basic.test_session_cookie_setting.bump",
+              "score": 0.8850612428913793
+            },
+            {
+              "id": "tests.test_helpers.TestStreaming",
+              "score": 0.8842212253048353
+            },
+            {
+              "id": "tests.test_testing",
+              "score": 0.8797037650752485
+            },
+            {
+              "id": "tests.test_basic.test_extended_flashing.index",
+              "score": 0.8778529751631071
+            },
+            {
+              "id": "tests.test_helpers.TestStreaming.test_streaming_with_context.index",
+              "score": 0.8778529751631071
+            },
+            {
+              "id": "tests.test_views.test_basic_view.Index",
+              "score": 0.8778529751631071
+            },
+            {
+              "id": "tests.test_views.test_endpoint_override.Index",
+              "score": 0.8778529751631071
+            },
+            {
+              "id": "tests.test_helpers.TestStreaming.test_streaming_with_context_and_custom_close.index",
+              "score": 0.8742926928360638
+            },
+            {
+              "id": "tests.test_reqctx.TestGreenletContextCopying.test_greenlet_context_copying_api",
+              "score": 0.8737070285224476
+            },
+            {
+              "id": "tests.test_helpers.TestStreaming.test_streaming_with_context_as_decorator.index",
+              "score": 0.8707611725230714
+            },
+            {
+              "id": "tests.test_helpers.test_app_aborter_class",
+              "score": 0.8707266696284922
+            },
+            {
+              "id": "tests.test_reqctx.test_context_test",
+              "score": 0.8707266696284922
+            },
+            {
+              "id": "tests.test_blueprints.test_nested_callback_order",
+              "score": 0.8686755847133425
+            },
+            {
+              "id": "tests.test_templating.test_standard_context.index",
+              "score": 0.8672580670920889
+            },
+            {
+              "id": "tests.test_basic.test_static_route_with_host_matching",
+              "score": 0.8625405794875333
+            },
+            {
+              "id": "tests.test_config.test_custom_config_class.Config",
+              "score": 0.8604031112987776
+            },
+            {
+              "id": "tests.test_views.test_explicit_head.Index",
+              "score": 0.8603357400555625
+            },
+            {
+              "id": "tests.test_reqctx.test_session_error_pops_context",
+              "score": 0.8585552977985037
+            },
+            {
+              "id": "tests.test_subclassing",
+              "score": 0.8582269068907932
+            },
+            {
+              "id": "src.flask.app.Flask.test_cli_runner",
+              "score": 0.8568490253104332
+            },
+            {
+              "id": "tests.test_templating.test_custom_template_loader",
+              "score": 0.854146331026071
+            },
+            {
+              "id": "examples.celery.src.task_app.celery_init_app.FlaskTask",
+              "score": 0.8535230439645993
+            },
+            {
+              "id": "tests.test_views.test_view_provide_automatic_options_attr",
+              "score": 0.8478404363357737
+            },
+            {
+              "id": "tests.test_json.test_json_customization.index",
+              "score": 0.8452224285870729
+            },
+            {
+              "id": "examples.celery.src.task_app",
+              "score": 0.8450761590101128
+            },
+            {
+              "id": "tests.test_instance_config",
+              "score": 0.8435914272395668
+            },
+            {
+              "id": "tests.test_helpers.TestHelpers",
+              "score": 0.8434175953673553
+            },
+            {
+              "id": "src.flask.templating.DispatchingJinjaLoader.__init__",
+              "score": 0.8402805464248699
+            },
+            {
+              "id": "tests.test_basic.test_session_expiration.index",
+              "score": 0.8402805464248699
+            },
+            {
+              "id": "tests.test_instance_config.test_explicit_instance_paths",
+              "score": 0.8401841647020922
+            },
+            {
+              "id": "src.flask.__getattr__",
+              "score": 0.8389099495746927
+            },
+            {
+              "id": "tests.test_testing.test_environ_base_default",
+              "score": 0.8377353922917818
+            },
+            {
+              "id": "tests.test_templating.test_templates_auto_reload",
+              "score": 0.8362156871257184
+            },
+            {
+              "id": "tests.test_reqctx.test_session_dynamic_cookie_name.set",
+              "score": 0.8353961171549993
+            },
+            {
+              "id": "tests.test_signals.test_flash_signal.index",
+              "score": 0.8353961171549993
+            },
+            {
+              "id": "tests.test_templating.test_custom_jinja_env.CustomEnvironment",
+              "score": 0.8353961171549993
+            },
+            {
+              "id": "tests.test_testing.test_cli_runner_class.SubRunner",
+              "score": 0.8353961171549993
+            },
+            {
+              "id": "src.flask.helpers.get_debug_flag",
+              "score": 0.8353008526180603
+            },
+            {
+              "id": "tests.test_apps.blueprintapp",
+              "score": 0.8337173018382694
+            },
+            {
+              "id": "tests.test_signals",
+              "score": 0.8311476440406078
+            },
+            {
+              "id": "tests.test_views.test_implicit_head.Index.get",
+              "score": 0.8305681446716223
+            },
+            {
+              "id": "tests.test_helpers.TestHelpers.test_make_response",
+              "score": 0.8304739780081124
+            },
+            {
+              "id": "tests.test_basic.test_route_decorator_custom_endpoint",
+              "score": 0.8304425938651003
+            },
+            {
+              "id": "tests.test_helpers.TestNoImports",
+              "score": 0.8304425938651003
+            },
+            {
+              "id": "tests.test_config.test_from_prefixed_env_nested",
+              "score": 0.82884612909708
+            },
+            {
+              "id": "src.flask.wrappers.Response",
+              "score": 0.8282945229407314
+            },
+            {
+              "id": "tests.test_basic.test_make_response_with_response_instance",
+              "score": 0.8272557907235577
+            },
+            {
+              "id": "src.flask.cli.ScriptInfo",
+              "score": 0.8259506524445855
+            },
+            {
+              "id": "src.flask.json.provider.JSONProvider.__init__",
+              "score": 0.8257956557636098
+            },
+            {
+              "id": "tests.test_json.test_json_bad_requests.return_json",
+              "score": 0.8257956557636098
+            },
+            {
+              "id": "examples.celery.make_celery",
+              "score": 0.8210776994605287
+            },
+            {
+              "id": "tests.test_views.test_view_provide_automatic_options_attr.Index3",
+              "score": 0.8210776994605287
+            },
+            {
+              "id": "tests.test_testing.test_redirect_keep_session",
+              "score": 0.8209550012496677
+            },
+            {
+              "id": "tests.test_instance_config.test_uninstalled_namespace_paths.create_namespace",
+              "score": 0.8179013423417771
+            },
+            {
+              "id": "tests.test_views.test_methods_var_inheritance.BaseView",
+              "score": 0.8164133464009211
+            },
+            {
+              "id": "tests.test_views.test_view_patching.Index",
+              "score": 0.8164133464009211
+            },
+            {
+              "id": "tests.test_reqctx.test_session_dynamic_cookie_name",
+              "score": 0.8150020201586049
+            },
+            {
+              "id": "tests.test_signals.test_request_exception_signal",
+              "score": 0.8140105165054389
+            }
+          ],
+          "scored_documents": 1008,
+          "seconds": 0.0010270000002492452
+        },
+        {
+          "query": "flask cli routes command list routes subdomain",
+          "candidates": [
+            {
+              "id": "src.flask.cli.routes_command",
+              "score": 15.152852124976611
+            },
+            {
+              "id": "tests.test_cli.TestRoutes.invoke_no_routes",
+              "score": 12.661604651837951
+            },
+            {
+              "id": "src.flask.testing.FlaskCliRunner.invoke",
+              "score": 12.441762346393315
+            },
+            {
+              "id": "tests.test_cli.TestRoutes.test_no_routes",
+              "score": 12.26400276146286
+            },
+            {
+              "id": "src.flask.blueprints.Blueprint",
+              "score": 12.252479452737928
+            },
+            {
+              "id": "src.flask.cli.FlaskGroup.__init__",
+              "score": 12.093911463584437
+            },
+            {
+              "id": "tests.test_cli.TestRoutes",
+              "score": 11.682665911901836
+            },
+            {
+              "id": "src.flask.blueprints.Blueprint.__init__",
+              "score": 11.440784177797667
+            },
+            {
+              "id": "src.flask.testing.FlaskCliRunner",
+              "score": 11.316533119166168
+            },
+            {
+              "id": "tests.test_cli.test_no_command_echo_loading_error",
+              "score": 10.9550713249697
+            },
+            {
+              "id": "src.flask.app.Flask.register_blueprint",
+              "score": 10.843901019474622
+            },
+            {
+              "id": "tests.test_testing.test_cli_invoke",
+              "score": 10.804922918756034
+            },
+            {
+              "id": "tests.test_cli.test_flaskgroup_nested",
+              "score": 10.257832605990579
+            },
+            {
+              "id": "tests.test_cli.TestRoutes.test_sort",
+              "score": 10.247190181365028
+            },
+            {
+              "id": "tests.test_cli.test_cli_blueprints",
+              "score": 10.203826560526837
+            },
+            {
+              "id": "tests.test_cli.test_cli_blueprints.custom_command",
+              "score": 10.192970717202568
+            },
+            {
+              "id": "tests.test_cli.test_cli_blueprints.late_command",
+              "score": 10.192970717202568
+            },
+            {
+              "id": "tests.test_cli.test_cli_blueprints.merged_command",
+              "score": 10.192970717202568
+            },
+            {
+              "id": "tests.test_cli.test_cli_blueprints.nested_command",
+              "score": 10.192970717202568
+            },
+            {
+              "id": "tests.test_cli.TestRoutes.test_all_methods",
+              "score": 9.89745149362369
+            },
+            {
+              "id": "tests.test_testing.test_cli_custom_obj",
+              "score": 9.821272771439581
+            },
+            {
+              "id": "src.flask.cli.AppGroup.command.decorator",
+              "score": 9.072172213766867
+            },
+            {
+              "id": "src.flask.cli.FlaskGroup",
+              "score": 9.034047588587715
+            },
+            {
+              "id": "tests.test_cli.test_appgroup_app_context",
+              "score": 8.981305102246811
+            },
+            {
+              "id": "examples.tutorial.flaskr.db.init_app",
+              "score": 8.864868404769148
+            },
+            {
+              "id": "src.flask.cli.FlaskGroup.get_command",
+              "score": 8.819359649065492
+            },
+            {
+              "id": "tests.test_cli.TestRoutes.test_simple",
+              "score": 8.735676313244445
+            },
+            {
+              "id": "src.flask.cli.AppGroup.command",
+              "score": 8.544667378098655
+            },
+            {
+              "id": "tests.test_cli.test_flaskgroup_app_context",
+              "score": 8.394028939976089
+            },
+            {
+              "id": "src.flask.cli.FlaskGroup.list_commands",
+              "score": 8.270675655436042
+            },
+            {
+              "id": "tests.test_blueprints.test_child_and_parent_subdomain",
+              "score": 8.115427093951979
+            },
+            {
+              "id": "src.flask.cli.FlaskGroup.make_context",
+              "score": 8.09181976552375
+            },
+            {
+              "id": "src.flask.testing",
+              "score": 7.953989678210659
+            },
+            {
+              "id": "src.flask.cli.FlaskGroup.parse_args",
+              "score": 7.857973803762384
+            },
+            {
+              "id": "tests.test_basic.test_subdomain_matching",
+              "score": 7.780394556757091
+            },
+            {
+              "id": "tests.test_cli.test_run_cert_path",
+              "score": 7.77443402509104
+            },
+            {
+              "id": "tests.test_basic.test_server_name_subdomain.subdomain",
+              "score": 7.75901162571136
+            },
+            {
+              "id": "tests.test_cli.test_flaskgroup_debug",
+              "score": 7.750573809940541
+            },
+            {
+              "id": "tests.test_testing.test_blueprint_with_subdomain",
+              "score": 7.701129589290954
+            },
+            {
+              "id": "tests.test_basic.test_subdomain_matching_with_ports",
+              "score": 7.6779520969078145
+            },
+            {
+              "id": "tests.test_cli.test_run_cert_import",
+              "score": 7.638769624426082
+            },
+            {
+              "id": "tests.test_testing.test_subdomain",
+              "score": 7.637996274403569
+            },
+            {
+              "id": "tests.test_cli.test_app_cli_has_app_context",
+              "score": 7.571518919132976
+            },
+            {
+              "id": "tests.test_cli.test_run_cert_adhoc",
+              "score": 7.350471978871473
+            },
+            {
+              "id": "tests.test_basic.test_subdomain_basic_support",
+              "score": 7.350014042842835
+            },
+            {
+              "id": "src.flask.cli.with_appcontext",
+              "score": 7.225338096353058
+            },
+            {
+              "id": "tests.test_cli.test_with_appcontext",
+              "score": 7.2234560932003875
+            },
+            {
+              "id": "examples.tutorial.flaskr.db",
+              "score": 7.187822834344306
+            },
+            {
+              "id": "src.flask.cli.AppGroup",
+              "score": 7.162967104798235
+            },
+            {
+              "id": "src.flask.blueprints.BlueprintSetupState.__init__",
+              "score": 7.054815105414338
+            },
+            {
+              "id": "tests.test_cli",
+              "score": 7.009612319667048
+            },
+            {
+              "id": "src.flask.app.Flask.create_url_adapter",
+              "score": 7.000200642998715
+            },
+            {
+              "id": "tests.test_basic.test_server_name_subdomain",
+              "score": 6.988561079760837
+            },
+            {
+              "id": "src.flask.testing.EnvironBuilder.__init__",
+              "score": 6.949756730709741
+            },
+            {
+              "id": "tests.test_blueprints.test_nesting_subdomains",
+              "score": 6.933285437054979
+            },
+            {
+              "id": "tests.test_cli.test_run_cert_no_ssl",
+              "score": 6.889098567650695
+            },
+            {
+              "id": "src.flask.cli.run_command",
+              "score": 6.725202676941514
+            },
+            {
+              "id": "tests.test_testing.test_cli_custom_obj.hello_command",
+              "score": 6.653885554894432
+            },
+            {
+              "id": "tests.test_testing.test_cli_invoke.hello_command",
+              "score": 6.653885554894432
+            },
+            {
+              "id": "src.flask.cli.SeparatedPathType",
+              "score": 6.541769963562289
+            },
+            {
+              "id": "tests.test_basic.test_subdomain_matching_other_name",
+              "score": 6.54128206235053
+            },
+            {
+              "id": "src.flask.cli.FlaskGroup._load_plugin_commands",
+              "score": 6.461025370635712
+            },
+            {
+              "id": "src.flask.templating.DispatchingJinjaLoader.list_templates",
+              "score": 6.4181143114956045
+            },
+            {
+              "id": "src.flask.blueprints.BlueprintSetupState",
+              "score": 6.4147838222348765
+            },
+            {
+              "id": "tests.test_apps.subdomaintestmodule",
+              "score": 6.323783004426961
+            },
+            {
+              "id": "src.flask.testing.EnvironBuilder",
+              "score": 6.217010857042288
+            },
+            {
+              "id": "examples.tutorial.flaskr.db.init_db_command",
+              "score": 6.181547681579891
+            },
+            {
+              "id": "src.flask.json.tag.PassList",
+              "score": 6.1188669000421525
+            },
+            {
+              "id": "src.flask.cli.shell_command",
+              "score": 6.05078249955944
+            },
+            {
+              "id": "src.flask.app.Flask.run",
+              "score": 6.038705266417403
+            },
+            {
+              "id": "tests.conftest._standard_os_environ",
+              "score": 6.001675969177446
+            },
+            {
+              "id": "tests.test_json.test_jsonify_arrays",
+              "score": 5.940858271479959
+            },
+            {
+              "id": "src.flask.app.Flask.app_context",
+              "score": 5.936296578618433
+            },
+            {
+              "id": "src.flask.app.Flask",
+              "score": 5.88965673825277
+            },
+            {
+              "id": "src.flask.blueprints",
+              "score": 5.882744305221777
+            },
+            {
+              "id": "tests.typing.typing_route.hello_json_list",
+              "score": 5.878761083705749
+            },
+            {
+              "id": "tests.test_basic.test_response_types.from_list",
+              "score": 5.860050885175604
+            },
+            {
+              "id": "src.flask.templating.render_template",
+              "score": 5.851775529293176
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold.__init__",
+              "score": 5.843793367247475
+            },
+            {
+              "id": "src.flask.app.Flask.test_cli_runner",
+              "score": 5.761341596795464
+            },
+            {
+              "id": "examples.tutorial.tests.test_db.test_init_db_command",
+              "score": 5.667477320881694
+            },
+            {
+              "id": "tests.test_blueprints.test_templates_list",
+              "score": 5.624036297339937
+            },
+            {
+              "id": "src.flask.templating.stream_template",
+              "score": 5.623253050507728
+            },
+            {
+              "id": "tests.test_testing.test_cli_runner_class",
+              "score": 5.469695214537081
+            },
+            {
+              "id": "src.flask.helpers._split_blueprint_path",
+              "score": 5.454191108427675
+            },
+            {
+              "id": "src.flask.app.Flask.__init__",
+              "score": 5.412936239341685
+            },
+            {
+              "id": "src.flask.sessions.SessionInterface.get_cookie_domain",
+              "score": 5.333989845972512
+            },
+            {
+              "id": "tests.test_converters.test_custom_converters.ListConverter",
+              "score": 5.332672729823386
+            },
+            {
+              "id": "tests.test_cli.test_help_echo_loading_error",
+              "score": 5.227135190001976
+            },
+            {
+              "id": "tests.test_json.test_jsonify_arrays.return_array",
+              "score": 5.133291994636588
+            },
+            {
+              "id": "src.flask.cli.main",
+              "score": 5.1255789411656165
+            },
+            {
+              "id": "tests.test_converters.test_custom_converters",
+              "score": 5.06022977116765
+            },
+            {
+              "id": "tests.test_testing.test_cli_runner_class.SubRunner",
+              "score": 5.052556301028721
+            },
+            {
+              "id": "tests.test_cli.TestRoutes.invoke",
+              "score": 5.046639614111993
+            },
+            {
+              "id": "src.flask.wrappers.Request.blueprints",
+              "score": 5.027500260514926
+            },
+            {
+              "id": "tests.test_converters",
+              "score": 5.020789934790805
+            },
+            {
+              "id": "tests.test_json.test_jsonify_arrays.return_args_unpack",
+              "score": 4.987316938750518
+            },
+            {
+              "id": "src.flask.json.tag.PassList.check",
+              "score": 4.94048618841128
+            },
+            {
+              "id": "tests.test_cli.test_appgroup_app_context.cli",
+              "score": 4.900224419886558
+            },
+            {
+              "id": "tests.test_cli.test_flaskgroup_app_context.cli",
+              "score": 4.867348506178209
+            },
+            {
+              "id": "tests.test_cli.test_flaskgroup_debug.cli",
+              "score": 4.867348506178209
+            },
+            {
+              "id": "tests.test_cli.test_cli_empty",
+              "score": 4.763176548036814
+            },
+            {
+              "id": "tests.test_cli.test_cli_name",
+              "score": 4.748744852067542
+            },
+            {
+              "id": "tests.test_cli.test_help_echo_exception",
+              "score": 4.729730936140304
+            },
+            {
+              "id": "tests.test_config.test_from_prefixed_env",
+              "score": 4.6845289844981615
+            },
+            {
+              "id": "tests.test_basic.test_extended_flashing.test",
+              "score": 4.6769856907524865
+            },
+            {
+              "id": "src.flask.helpers.get_flashed_messages",
+              "score": 4.645025592547431
+            },
+            {
+              "id": "src.flask.ctx.RequestContext.__init__",
+              "score": 4.638208841824977
+            },
+            {
+              "id": "tests.test_helpers.TestSendfile.test_send_from_directory",
+              "score": 4.580790659960275
+            },
+            {
+              "id": "src.flask.json.tag.TaggedJSONSerializer.__init__",
+              "score": 4.555501994920795
+            },
+            {
+              "id": "tests.test_basic.test_extended_flashing.test_filter",
+              "score": 4.555501994920795
+            },
+            {
+              "id": "src.flask.__main__",
+              "score": 4.55096629326676
+            },
+            {
+              "id": "src.flask.blueprints.BlueprintSetupState.add_url_rule",
+              "score": 4.4689236652303
+            },
+            {
+              "id": "tests.test_cli.test_find_best_app.Module",
+              "score": 4.412353435832764
+            },
+            {
+              "id": "tests.test_cli.runner",
+              "score": 4.396034784070382
+            },
+            {
+              "id": "tests.test_basic.test_flashes",
+              "score": 4.383587588129921
+            },
+            {
+              "id": "tests.test_basic.test_extended_flashing.test_filters",
+              "score": 4.330532687514363
+            },
+            {
+              "id": "tests.test_blueprints.test_request_processing",
+              "score": 4.315849485369405
+            },
+            {
+              "id": "src.flask.ctx.AppContext.__init__",
+              "score": 4.303809628939522
+            },
+            {
+              "id": "tests.test_cli.test_find_best_app.Module.create_app",
+              "score": 4.28193471421718
+            },
+            {
+              "id": "tests.test_cli.test_find_best_app.Module.make_app",
+              "score": 4.28193471421718
+            },
+            {
+              "id": "tests.test_cli.test_flaskgroup_app_context.create_app",
+              "score": 4.28193471421718
+            },
+            {
+              "id": "tests.test_cli.test_scriptinfo.create_app",
+              "score": 4.28193471421718
+            },
+            {
+              "id": "src.flask.json.jsonify",
+              "score": 4.267838214022724
+            },
+            {
+              "id": "tests.test_basic.test_extended_flashing.test_with_categories",
+              "score": 4.2604006879303995
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold",
+              "score": 4.243248858075575
+            },
+            {
+              "id": "src.flask.app.Flask.test_request_context",
+              "score": 4.2269547611147535
+            },
+            {
+              "id": "tests.test_helpers.TestUrlFor.test_url_with_method.MyView.get",
+              "score": 4.226062610210149
+            },
+            {
+              "id": "src.flask.cli.run_command.app",
+              "score": 4.159004390592218
+            },
+            {
+              "id": "tests.test_cli.test_flaskgroup_debug.create_app",
+              "score": 4.080898547844469
+            },
+            {
+              "id": "tests.test_basic.test_extended_flashing",
+              "score": 4.049197328060404
+            },
+            {
+              "id": "tests.test_cli.TestRoutes.invoke_no_routes.create_app",
+              "score": 3.9690896637881767
+            },
+            {
+              "id": "src.flask.app.Flask.make_response",
+              "score": 3.9417931427441526
+            },
+            {
+              "id": "src.flask.cli.CertParamType.__init__",
+              "score": 3.933169203761919
+            },
+            {
+              "id": "src.flask.templating.DispatchingJinjaLoader",
+              "score": 3.884023741919156
+            },
+            {
+              "id": "src.flask.ctx.AppContext",
+              "score": 3.8571521282239196
+            },
+            {
+              "id": "src.flask.testing.FlaskClient.__init__",
+              "score": 3.8546382140393884
+            },
+            {
+              "id": "tests.test_helpers.TestUrlFor.test_url_with_method.MyView",
+              "score": 3.801676142518474
+            },
+            {
+              "id": "tests.test_blueprints.test_app_request_processing",
+              "score": 3.7992303814276505
+            },
+            {
+              "id": "tests.test_cli.test_appgroup_app_context.subgroup",
+              "score": 3.7591396003917117
+            },
+            {
+              "id": "tests.test_json.test_jsonify_dicts",
+              "score": 3.7338909139101513
+            },
+            {
+              "id": "src.flask.cli.NoAppException",
+              "score": 3.6988460134658716
+            },
+            {
+              "id": "tests.test_cli.test_get_version.MockCtx.exit",
+              "score": 3.68280927873753
+            },
+            {
+              "id": "tests.test_cli.TestRoutes.app.aaa_post",
+              "score": 3.6457948652898704
+            },
+            {
+              "id": "tests.test_cli.test_appgroup_app_context.test",
+              "score": 3.6095170818097824
+            },
+            {
+              "id": "tests.test_cli.test_appgroup_app_context.test2",
+              "score": 3.6095170818097824
+            },
+            {
+              "id": "tests.test_cli.test_flaskgroup_app_context.test",
+              "score": 3.6095170818097824
+            },
+            {
+              "id": "tests.test_cli.test_flaskgroup_nested.show",
+              "score": 3.6095170818097824
+            },
+            {
+              "id": "tests.test_cli.test_with_appcontext.testcmd",
+              "score": 3.6095170818097824
+            },
+            {
+              "id": "src.flask.cli.SeparatedPathType.convert",
+              "score": 3.577069924276689
+            },
+            {
+              "id": "tests.test_cli.test_flaskgroup_debug.test",
+              "score": 3.5739541552593472
+            },
+            {
+              "id": "tests.test_cli.test_disable_dotenv_from_env",
+              "score": 3.5598655083065323
+            },
+            {
+              "id": "src.flask.views",
+              "score": 3.5482505552670633
+            },
+            {
+              "id": "src.flask.cli.with_appcontext.decorator",
+              "score": 3.5478685493529554
+            },
+            {
+              "id": "tests.test_cli.TestRoutes.app.yyy_get_post",
+              "score": 3.5390851623081363
+            },
+            {
+              "id": "tests.test_cli.test_help_echo_exception.create_app",
+              "score": 3.5390851623081363
+            },
+            {
+              "id": "tests.test_cli.test_prepare_import.reset_path",
+              "score": 3.5390851623081363
+            },
+            {
+              "id": "src.flask.cli.get_version",
+              "score": 3.5091204556519964
+            },
+            {
+              "id": "src.flask.debughelpers._dump_loader_info",
+              "score": 3.496059180301942
+            },
+            {
+              "id": "tests.test_appctx.test_app_ctx_globals_methods",
+              "score": 3.428137303334714
+            },
+            {
+              "id": "tests.test_cli.test_scriptinfo",
+              "score": 3.3826267193474004
+            },
+            {
+              "id": "tests.test_cli.test_get_version.MockCtx",
+              "score": 3.374471384662571
+            },
+            {
+              "id": "src.flask.cli._set_app",
+              "score": 3.3560868754127746
+            },
+            {
+              "id": "tests.test_cli.TestRoutes.app",
+              "score": 3.3560868754127746
+            },
+            {
+              "id": "tests.conftest",
+              "score": 3.272665244151998
+            },
+            {
+              "id": "tests.typing.typing_route",
+              "score": 3.249039882443085
+            },
+            {
+              "id": "src.flask.views.View",
+              "score": 3.2361764982220773
+            },
+            {
+              "id": "src.flask.json.provider.JSONProvider.response",
+              "score": 3.225993821878702
+            },
+            {
+              "id": "examples.tutorial.tests.conftest.runner",
+              "score": 3.196079930309772
+            },
+            {
+              "id": "tests.test_cli.dotenv_not_available",
+              "score": 3.196079930309772
+            },
+            {
+              "id": "tests.test_cli.test_app_cli_has_app_context._param_cb",
+              "score": 3.196079930309772
+            },
+            {
+              "id": "tests.test_reqctx.test_proper_test_request_context",
+              "score": 3.1700014580202236
+            },
+            {
+              "id": "src.flask.ctx.RequestContext",
+              "score": 3.169561674176256
+            },
+            {
+              "id": "src.flask.cli.load_dotenv",
+              "score": 3.157726665105983
+            },
+            {
+              "id": "src.flask.cli._path_is_ancestor",
+              "score": 3.1379964959568376
+            },
+            {
+              "id": "tests.test_cli.test_locate_app",
+              "score": 3.0612203980899504
+            },
+            {
+              "id": "tests.test_cli.test_get_version",
+              "score": 3.058323656901825
+            },
+            {
+              "id": "examples.tutorial.tests.test_db",
+              "score": 3.046600077632427
+            },
+            {
+              "id": "tests.test_config",
+              "score": 3.044611993415601
+            },
+            {
+              "id": "tests.test_cli.test_dotenv_optional",
+              "score": 3.0104103384068788
+            },
+            {
+              "id": "tests.test_helpers.TestUrlFor.test_url_with_method",
+              "score": 2.99735790468259
+            },
+            {
+              "id": "src.flask.cli.AppGroup.group",
+              "score": 2.987024092237726
+            },
+            {
+              "id": "tests.test_cli.test_locate_app_raises",
+              "score": 2.985632610668872
+            },
+            {
+              "id": "src.flask.cli.show_server_banner",
+              "score": 2.9800826924675095
+            },
+            {
+              "id": "tests.test_user_error_handler.test_error_handler_no_match",
+              "score": 2.97953056440836
+            },
+            {
+              "id": "tests.test_cli.test_app_cli_has_app_context.check",
+              "score": 2.9612594284011826
+            },
+            {
+              "id": "src.flask.cli.ScriptInfo.__init__",
+              "score": 2.8753529329823957
+            },
+            {
+              "id": "tests.test_cli.TestRoutes.expect_order",
+              "score": 2.8676202696423196
+            },
+            {
+              "id": "src.flask.cli._env_file_callback",
+              "score": 2.8598074918539966
+            },
+            {
+              "id": "tests.test_cli.test_dotenv_path",
+              "score": 2.8451285352097746
+            },
+            {
+              "id": "tests.test_reqctx",
+              "score": 2.8277306508493245
+            },
+            {
+              "id": "src.flask.app.Flask.teardown_appcontext",
+              "score": 2.783237973279987
+            },
+            {
+              "id": "src.flask.cli._set_debug",
+              "score": 2.7797637504571795
+            },
+            {
+              "id": "src.flask.json.provider.DefaultJSONProvider.response",
+              "score": 2.703634489503973
+            },
+            {
+              "id": "src.flask.cli",
+              "score": 2.62144115690154
+            },
+            {
+              "id": "tests.test_user_error_handler",
+              "score": 2.5980390314770347
+            },
+            {
+              "id": "tests.test_testing",
+              "score": 2.5435444022606717
+            },
+            {
+              "id": "tests.test_cli.test_locate_app_suppress_raise",
+              "score": 2.5278942029603586
+            },
+            {
+              "id": "src.flask.typing",
+              "score": 2.4991843909620552
+            },
+            {
+              "id": "src.flask.cli._called_with_wrong_args",
+              "score": 2.421226166217794
+            }
+          ],
+          "scored_documents": 1047,
+          "seconds": 0.0011188000007678056
+        }
+      ],
+      "order": [
+        "src.flask.blueprints.Blueprint",
+        "src.flask.app.Flask.register_blueprint",
+        "src.flask.cli.routes_command",
+        "tests.test_cli.TestRoutes",
+        "tests.test_blueprints.test_child_and_parent_subdomain",
+        "tests.test_cli.TestRoutes.test_sort",
+        "src.flask.cli.FlaskGroup.__init__",
+        "src.flask.app.Flask.create_url_adapter",
+        "tests.test_cli.TestRoutes.invoke_no_routes",
+        "src.flask.cli.FlaskGroup",
+        "src.flask.blueprints.BlueprintSetupState.__init__",
+        "src.flask.blueprints.BlueprintSetupState",
+        "src.flask.blueprints.Blueprint.__init__",
+        "tests.test_blueprints.test_nesting_subdomains",
+        "src.flask.app.Flask",
+        "tests.test_testing.test_blueprint_with_subdomain",
+        "tests.test_basic.test_server_name_subdomain",
+        "tests.test_cli.TestRoutes.test_no_routes",
+        "tests.test_cli.TestRoutes.test_all_methods",
+        "src.flask.blueprints",
+        "src.flask.app.Flask.run",
+        "src.flask.testing",
+        "tests.test_testing.test_subdomain",
+        "src.flask.cli.FlaskGroup.make_context",
+        "src.flask.blueprints.BlueprintSetupState.add_url_rule",
+        "src.flask.testing.EnvironBuilder.__init__",
+        "src.flask.app.Flask.__init__",
+        "tests.test_cli.test_cli_blueprints.custom_command",
+        "src.flask.scaffold.Scaffold.__init__",
+        "tests.test_cli.test_no_command_echo_loading_error",
+        "src.flask.testing.FlaskCliRunner.invoke",
+        "src.flask.scaffold.Scaffold",
+        "tests.test_cli.test_cli_blueprints.late_command",
+        "tests.test_basic.test_subdomain_matching",
+        "tests.test_cli.test_cli_blueprints.merged_command",
+        "tests.test_testing.test_cli_invoke",
+        "tests.test_basic.test_server_name_subdomain.subdomain",
+        "tests.test_cli.test_cli_blueprints.nested_command",
+        "tests.test_basic.test_subdomain_matching_with_ports",
+        "src.flask.cli.run_command",
+        "src.flask.testing.EnvironBuilder",
+        "tests.test_basic.test_subdomain_matching_other_name",
+        "tests.test_cli.test_flaskgroup_nested",
+        "tests.test_basic.test_subdomain_basic_support",
+        "tests.test_cli.test_cli_blueprints",
+        "src.flask.testing.FlaskCliRunner",
+        "src.flask.sessions.SessionInterface.get_cookie_domain",
+        "examples.tutorial.flaskr.db.init_app",
+        "src.flask.cli.AppGroup.command",
+        "src.flask.cli.shell_command",
+        "src.flask.cli.FlaskGroup.get_command",
+        "src.flask.cli.AppGroup.command.decorator",
+        "tests.test_testing.test_cli_custom_obj",
+        "tests.test_cli.TestRoutes.test_simple",
+        "src.flask.cli.load_dotenv",
+        "tests.test_cli.test_appgroup_app_context",
+        "tests.test_testing.test_cli_custom_obj.hello_command",
+        "src.flask.scaffold.Scaffold.route",
+        "tests.test_testing.test_cli_invoke.hello_command",
+        "tests.test_cli.test_run_cert_path",
+        "tests.test_cli.test_run_cert_import",
+        "src.flask.app.Flask.test_request_context",
+        "tests.test_cli.test_flaskgroup_app_context",
+        "tests.test_apps.subdomaintestmodule",
+        "tests.test_blueprints.test_request_processing",
+        "examples.tutorial.flaskr.db",
+        "tests.test_cli.test_run_cert_adhoc",
+        "src.flask.cli.AppGroup",
+        "examples.tutorial.flaskr.db.init_db_command",
+        "tests.test_reqctx.test_proper_test_request_context",
+        "src.flask.sessions.SessionInterface",
+        "tests.test_cli.test_flaskgroup_debug",
+        "tests.test_cli.test_with_appcontext",
+        "tests.test_blueprints.test_app_request_processing",
+        "tests.test_cli.test_app_cli_has_app_context",
+        "src.flask.cli.with_appcontext",
+        "examples.tutorial.tests.test_db.test_init_db_command",
+        "tests.test_cli.test_run_cert_no_ssl",
+        "src.flask.helpers.send_file",
+        "src.flask.helpers.send_from_directory",
+        "tests.test_cli",
+        "src.flask.cli.FlaskGroup._load_plugin_commands",
+        "src.flask.scaffold.Scaffold.add_url_rule",
+        "src.flask.views",
+        "src.flask.app.Flask.url_for",
+        "src.flask.app.Flask.app_context",
+        "src.flask.config.Config",
+        "src.flask.blueprints.Blueprint.add_url_rule",
+        "tests.test_helpers.TestSendfile.test_send_from_directory",
+        "tests.test_async._async_app",
+        "src.flask.views.View",
+        "src.flask.blueprints.Blueprint.register",
+        "src.flask.wrappers",
+        "src.flask.wrappers.Request",
+        "src.flask.cli._env_file_callback",
+        "src.flask.sessions.SessionInterface.get_cookie_path",
+        "tests.test_basic",
+        "tests.test_converters",
+        "tests.test_async",
+        "src.flask.app.Flask.test_cli_runner",
+        "tests.test_blueprints.test_blueprint_renaming",
+        "tests.test_config.test_from_prefixed_env",
+        "tests.test_basic.test_flashes",
+        "tests.test_blueprints.test_endpoint_decorator",
+        "src.flask.cli.FlaskGroup.list_commands",
+        "src.flask.sessions.SessionInterface.get_expiration_time",
+        "src.flask.app.Flask.add_url_rule",
+        "examples.tutorial.tests.test_db",
+        "src.flask.config",
+        "tests.test_helpers.TestSendfile",
+        "src.flask.scaffold",
+        "tests.test_testing.test_cli_runner_class.SubRunner",
+        "src.flask.cli.FlaskGroup.parse_args",
+        "src.flask.scaffold.Scaffold.send_static_file",
+        "tests.test_reqctx",
+        "tests.test_appctx.test_app_ctx_globals_methods",
+        "src.flask.app.Flask.log_exception",
+        "tests.test_helpers.TestUrlFor.test_url_with_method",
+        "src.flask.wrappers.Request.blueprints",
+        "src.flask.helpers.url_for",
+        "tests.test_blueprints.test_blueprint_prefix_slash",
+        "src.flask.helpers",
+        "tests.test_blueprints.test_templates_and_static",
+        "src.flask.scaffold.Scaffold.endpoint",
+        "tests.test_reqctx.test_session_dynamic_cookie_name",
+        "tests.test_config",
+        "src.flask.scaffold.Scaffold.url_defaults",
+        "tests.test_apps.blueprintapp.apps.admin",
+        "src.flask.helpers.get_load_dotenv",
+        "examples.tutorial.flaskr",
+        "tests.test_basic.test_static_route_with_host_matching",
+        "tests.test_views.test_view_provide_automatic_options_attr",
+        "tests.test_cli.test_load_dotenv",
+        "examples.tutorial.flaskr.create_app",
+        "tests.test_testing",
+        "src.flask.wrappers.Response",
+        "tests.test_cli.test_disable_dotenv_from_env",
+        "src.flask.app.Flask.logger",
+        "tests.test_apps.blueprintapp",
+        "src.flask.views.MethodView",
+        "src.flask.cli",
+        "tests.test_blueprints.test_nested_blueprint",
+        "src.flask.cli.SeparatedPathType",
+        "tests.test_basic.test_no_setup_after_first_request",
+        "tests.test_blueprints.test_default_static_max_age",
+        "src.flask.scaffold.Scaffold.url_value_preprocessor",
+        "src.flask.templating.DispatchingJinjaLoader.list_templates",
+        "tests.test_blueprints.test_route_decorator_custom_endpoint_with_dots",
+        "src.flask.logging",
+        "tests.test_cli.test_dotenv_path",
+        "src.flask.ctx",
+        "src.flask.json.loads",
+        "tests.test_blueprints.test_blueprint_url_processors",
+        "tests.test_blueprints.test_add_template_test_with_name",
+        "src.flask.blueprints.Blueprint._check_setup_finished",
+        "src.flask.json.tag.PassList",
+        "src.flask.json.dumps",
+        "src.flask.sessions.SecureCookieSessionInterface",
+        "tests.test_blueprints.test_add_template_filter_with_name",
+        "src.flask.json.load",
+        "tests.conftest._standard_os_environ",
+        "src.flask.json",
+        "tests.test_basic.test_static_url_empty_path_default",
+        "tests.test_json.test_jsonify_arrays",
+        "src.flask.globals",
+        "src.flask.json.dump",
+        "tests.test_views.test_endpoint_override",
+        "tests.test_blueprints.test_add_template_test",
+        "tests.typing.typing_route.hello_json_list",
+        "tests.test_basic.test_response_types.from_list",
+        "tests.test_blueprints.test_route_decorator_custom_endpoint",
+        "src.flask.templating.render_template",
+        "tests.test_blueprints.test_add_template_filter",
+        "src.flask.scaffold.Scaffold.static_url_path",
+        "src.flask.app.Flask.inject_url_defaults",
+        "src.flask.ctx._AppCtxGlobals",
+        "tests.test_blueprints.test_templates_list",
+        "src.flask.app.Flask.dispatch_request",
+        "src.flask.templating.stream_template",
+        "src.flask.helpers.flash",
+        "tests.test_basic.test_static_url_path",
+        "tests.test_testing.test_cli_runner_class",
+        "src.flask.helpers._split_blueprint_path",
+        "tests.test_basic.test_session_using_session_settings",
+        "tests.test_user_error_handler.test_default_error_handler",
+        "src.flask.blueprints.Blueprint.add_app_template_test",
+        "tests.test_converters.test_custom_converters.ListConverter",
+        "tests.test_cli.test_help_echo_loading_error",
+        "tests.test_helpers.TestUrlFor",
+        "tests.test_json.test_jsonify_arrays.return_array",
+        "src.flask.cli.main",
+        "tests.test_blueprints.test_app_url_processors",
+        "tests.test_converters.test_custom_converters",
+        "tests.test_helpers",
+        "src.flask.app.Flask.select_jinja_autoescape",
+        "tests.test_blueprints.test_empty_url_defaults",
+        "tests.test_cli.TestRoutes.invoke",
+        "tests.test_basic.test_static_url_path_with_ending_slash",
+        "src.flask.blueprints.Blueprint.add_app_template_filter",
+        "tests.test_blueprints.test_blueprint_url_defaults"
+      ],
+      "retrieval_calls": 3,
+      "index_nodes": 1614,
+      "scored_documents": 3667,
+      "source_chars_read": 551499,
+      "shared_index_seconds": 0.44602820000000065
+    },
+    {
+      "instance_id": "pallets__flask-5063",
+      "repo": "pallets/flask",
+      "base_commit": "182ce3dd15dfa3537391c3efaf9c3ff407d134d4",
+      "arm": "feedback",
+      "status": "ok",
+      "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+      "request_sha256": "c5f39a02a4295070da19b9f502160d7ebb9a07cba305a30fe3b095b20eacbb25",
+      "response_sha256": "d9f1f98929d126649ecde545217227a28c04e5a2ec9350fd5ab58b2649510065",
+      "raw_response_sha256": "d9f1f98929d126649ecde545217227a28c04e5a2ec9350fd5ab58b2649510065",
+      "actions": [
+        {
+          "query": "flask routes command subdomain display url_map Rule subdomain",
+          "candidates": [
+            {
+              "id": "src.flask.cli.routes_command",
+              "score": 21.807514058044983
+            },
+            {
+              "id": "tests.test_cli.TestRoutes.test_sort",
+              "score": 16.675722940765223
+            },
+            {
+              "id": "src.flask.app.Flask.create_url_adapter",
+              "score": 16.338864903689668
+            },
+            {
+              "id": "src.flask.blueprints.BlueprintSetupState",
+              "score": 14.467586601869481
+            },
+            {
+              "id": "src.flask.blueprints.BlueprintSetupState.add_url_rule",
+              "score": 13.92284050930817
+            },
+            {
+              "id": "src.flask.app.Flask.register_blueprint",
+              "score": 13.388661268061888
+            },
+            {
+              "id": "src.flask.blueprints.Blueprint",
+              "score": 12.804968397631558
+            },
+            {
+              "id": "tests.test_cli.TestRoutes",
+              "score": 12.735494167280766
+            },
+            {
+              "id": "tests.test_blueprints.test_endpoint_decorator",
+              "score": 11.757646500476982
+            },
+            {
+              "id": "tests.test_basic.test_endpoint_decorator",
+              "score": 11.222833990947244
+            },
+            {
+              "id": "tests.test_basic.test_werkzeug_routing",
+              "score": 10.991175756534025
+            },
+            {
+              "id": "src.flask.testing.EnvironBuilder.__init__",
+              "score": 10.979679434167195
+            },
+            {
+              "id": "tests.test_testing.test_subdomain",
+              "score": 10.73525167795828
+            },
+            {
+              "id": "src.flask.blueprints.BlueprintSetupState.__init__",
+              "score": 10.701822495641707
+            },
+            {
+              "id": "tests.test_blueprints.test_child_and_parent_subdomain",
+              "score": 10.39179053351594
+            },
+            {
+              "id": "src.flask.blueprints.Blueprint.add_url_rule",
+              "score": 10.16259094448303
+            },
+            {
+              "id": "tests.test_testing.test_blueprint_with_subdomain",
+              "score": 10.078447534798473
+            },
+            {
+              "id": "src.flask.testing",
+              "score": 10.075699317646126
+            },
+            {
+              "id": "src.flask.testing.EnvironBuilder",
+              "score": 10.037123288745967
+            },
+            {
+              "id": "src.flask.app.Flask.add_url_rule",
+              "score": 9.980756707525545
+            },
+            {
+              "id": "src.flask.app.Flask",
+              "score": 9.631370526168768
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold.route",
+              "score": 9.618800512387674
+            },
+            {
+              "id": "tests.test_cli.TestRoutes.test_no_routes",
+              "score": 9.350315054577102
+            },
+            {
+              "id": "src.flask.blueprints.Blueprint.__init__",
+              "score": 9.07718335157135
+            },
+            {
+              "id": "tests.test_blueprints.test_blueprint_prefix_slash",
+              "score": 9.075438944973374
+            },
+            {
+              "id": "src.flask.blueprints",
+              "score": 8.99603197328115
+            },
+            {
+              "id": "src.flask.wrappers.Request.endpoint",
+              "score": 8.909449324876604
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold.endpoint",
+              "score": 8.805195253097711
+            },
+            {
+              "id": "src.flask.cli.FlaskGroup.__init__",
+              "score": 8.779335614536992
+            },
+            {
+              "id": "tests.test_converters",
+              "score": 8.766820355993445
+            },
+            {
+              "id": "tests.test_blueprints.test_nesting_subdomains",
+              "score": 8.71474802451905
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold.route.decorator",
+              "score": 8.56892670839737
+            },
+            {
+              "id": "tests.test_cli.TestRoutes.invoke_no_routes",
+              "score": 8.548365744961455
+            },
+            {
+              "id": "tests.test_helpers.TestUrlFor.test_url_with_method",
+              "score": 8.538520920489763
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold.add_url_rule",
+              "score": 8.533983680386644
+            },
+            {
+              "id": "tests.test_basic.test_multi_route_class_views.View.__init__",
+              "score": 8.391572080552766
+            },
+            {
+              "id": "src.flask.wrappers",
+              "score": 8.35121275960852
+            },
+            {
+              "id": "tests.test_basic.test_url_processors.add_language_code",
+              "score": 8.31066659963073
+            },
+            {
+              "id": "src.flask.wrappers.Request",
+              "score": 8.182977628364567
+            },
+            {
+              "id": "tests.test_helpers.TestUrlFor",
+              "score": 8.150732349108413
+            },
+            {
+              "id": "tests.test_basic.test_multi_route_class_views.View",
+              "score": 8.122370555449407
+            },
+            {
+              "id": "src.flask.app.Flask.name",
+              "score": 8.085798747496
+            },
+            {
+              "id": "src.flask.ctx.RequestContext.match_request",
+              "score": 7.8884589980964925
+            },
+            {
+              "id": "tests.test_basic.test_subdomain_matching",
+              "score": 7.780394556757091
+            },
+            {
+              "id": "src.flask.views.View.dispatch_request",
+              "score": 7.771793153468934
+            },
+            {
+              "id": "tests.test_basic.test_server_name_subdomain.subdomain",
+              "score": 7.75901162571136
+            },
+            {
+              "id": "tests.test_converters.test_custom_converters",
+              "score": 7.695896762488596
+            },
+            {
+              "id": "tests.test_basic.test_subdomain_matching_with_ports",
+              "score": 7.6779520969078145
+            },
+            {
+              "id": "src.flask.app.Flask.dispatch_request",
+              "score": 7.614441540888344
+            },
+            {
+              "id": "tests.test_helpers.TestUrlFor.test_url_for_with_scheme_not_external",
+              "score": 7.607589506037881
+            },
+            {
+              "id": "tests.test_views.test_endpoint_override",
+              "score": 7.557349683695978
+            },
+            {
+              "id": "tests.test_basic.test_url_processors",
+              "score": 7.516380985282785
+            },
+            {
+              "id": "tests.test_json.test_jsonify_basic_types",
+              "score": 7.487166512051665
+            },
+            {
+              "id": "tests.test_blueprints.test_route_decorator_custom_endpoint_with_dots",
+              "score": 7.406924273598769
+            },
+            {
+              "id": "tests.test_basic.test_subdomain_basic_support",
+              "score": 7.350014042842835
+            },
+            {
+              "id": "tests.test_basic.test_url_mapping",
+              "score": 7.303484379855635
+            },
+            {
+              "id": "tests.test_views.test_view_provide_automatic_options_attr",
+              "score": 7.115494820640867
+            },
+            {
+              "id": "tests.test_cli.TestRoutes.test_all_methods",
+              "score": 7.074464617751051
+            },
+            {
+              "id": "tests.test_basic.test_server_name_subdomain",
+              "score": 6.988561079760837
+            },
+            {
+              "id": "tests.test_basic.test_no_setup_after_first_request",
+              "score": 6.967526691476801
+            },
+            {
+              "id": "tests.test_basic.test_multi_route_class_views",
+              "score": 6.935716220886741
+            },
+            {
+              "id": "src.flask.app.Flask.test_request_context",
+              "score": 6.874395552602906
+            },
+            {
+              "id": "tests.test_json.test_jsonify_uuid_types",
+              "score": 6.842759021664703
+            },
+            {
+              "id": "tests.test_cli.test_cli_blueprints.custom_command",
+              "score": 6.653885554894432
+            },
+            {
+              "id": "tests.test_cli.test_cli_blueprints.late_command",
+              "score": 6.653885554894432
+            },
+            {
+              "id": "tests.test_cli.test_cli_blueprints.merged_command",
+              "score": 6.653885554894432
+            },
+            {
+              "id": "tests.test_cli.test_cli_blueprints.nested_command",
+              "score": 6.653885554894432
+            },
+            {
+              "id": "tests.test_testing.test_cli_custom_obj.hello_command",
+              "score": 6.653885554894432
+            },
+            {
+              "id": "tests.test_testing.test_cli_invoke.hello_command",
+              "score": 6.653885554894432
+            },
+            {
+              "id": "src.flask.cli.FlaskGroup",
+              "score": 6.577040236270203
+            },
+            {
+              "id": "tests.test_basic.test_subdomain_matching_other_name",
+              "score": 6.54128206235053
+            },
+            {
+              "id": "tests.test_views",
+              "score": 6.514044654022032
+            },
+            {
+              "id": "tests.test_views.test_basic_view",
+              "score": 6.502088975889064
+            },
+            {
+              "id": "tests.test_converters.test_context_available",
+              "score": 6.478238939929858
+            },
+            {
+              "id": "tests.test_cli.test_no_command_echo_loading_error",
+              "score": 6.472763508829359
+            },
+            {
+              "id": "src.flask.helpers.flash",
+              "score": 6.379579773843302
+            },
+            {
+              "id": "tests.test_testing.test_cli_invoke",
+              "score": 6.3773254188895825
+            },
+            {
+              "id": "tests.test_apps.subdomaintestmodule",
+              "score": 6.323783004426961
+            },
+            {
+              "id": "tests.test_async._async_app",
+              "score": 6.270944054844808
+            },
+            {
+              "id": "src.flask.cli.AppGroup.command",
+              "score": 6.27036040186842
+            },
+            {
+              "id": "tests.test_basic.test_disallow_string_for_allowed_methods",
+              "score": 6.200771638543811
+            },
+            {
+              "id": "tests.test_views.test_method_based_view",
+              "score": 6.181800001901937
+            },
+            {
+              "id": "examples.tutorial.flaskr.db.init_db_command",
+              "score": 6.181547681579891
+            },
+            {
+              "id": "src.flask.app.Flask.url_for",
+              "score": 6.166147872995809
+            },
+            {
+              "id": "src.flask.cli.FlaskGroup.get_command",
+              "score": 6.1622085804937985
+            },
+            {
+              "id": "examples.tutorial.flaskr.db.init_app",
+              "score": 6.06368122319726
+            },
+            {
+              "id": "src.flask.helpers.url_for",
+              "score": 6.057694697870005
+            },
+            {
+              "id": "src.flask.app.Flask._find_error_handler",
+              "score": 6.017620784560162
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold.delete",
+              "score": 5.990283055802614
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold.get",
+              "score": 5.990283055802614
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold.patch",
+              "score": 5.990283055802614
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold.post",
+              "score": 5.990283055802614
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold.put",
+              "score": 5.990283055802614
+            },
+            {
+              "id": "src.flask.views",
+              "score": 5.956104201968236
+            },
+            {
+              "id": "tests.test_cli.test_flaskgroup_nested",
+              "score": 5.85174708986154
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold._method_route",
+              "score": 5.840518687620263
+            },
+            {
+              "id": "tests.test_cli.test_cli_blueprints",
+              "score": 5.79530877763937
+            },
+            {
+              "id": "tests.test_views.test_init_once",
+              "score": 5.794082176878789
+            },
+            {
+              "id": "tests.test_cli.test_run_cert_import",
+              "score": 5.734566400006672
+            },
+            {
+              "id": "tests.test_cli.TestRoutes.test_simple",
+              "score": 5.7252659748375665
+            },
+            {
+              "id": "tests.test_basic.test_provide_automatic_options_kwarg",
+              "score": 5.713666110211574
+            },
+            {
+              "id": "tests.test_views.test_view_patching",
+              "score": 5.675429297849075
+            },
+            {
+              "id": "examples.tutorial.tests.test_db.test_init_db_command",
+              "score": 5.667477320881694
+            },
+            {
+              "id": "src.flask.views.View",
+              "score": 5.658783904942709
+            },
+            {
+              "id": "src.flask.testing.FlaskCliRunner.invoke",
+              "score": 5.647063702997952
+            },
+            {
+              "id": "tests.test_cli.test_run_cert_path",
+              "score": 5.64685943422898
+            },
+            {
+              "id": "tests.test_views.test_explicit_head",
+              "score": 5.63705751638102
+            },
+            {
+              "id": "src.flask.cli.AppGroup.command.decorator",
+              "score": 5.633727762116389
+            },
+            {
+              "id": "tests.test_views.test_implicit_head",
+              "score": 5.631866507925225
+            },
+            {
+              "id": "src.flask.app.Flask.__init__",
+              "score": 5.603483180053687
+            },
+            {
+              "id": "examples.tutorial.flaskr.db",
+              "score": 5.557486697595859
+            },
+            {
+              "id": "src.flask.cli.AppGroup",
+              "score": 5.502784536805769
+            },
+            {
+              "id": "tests.test_testing.test_cli_custom_obj",
+              "score": 5.488860558662403
+            },
+            {
+              "id": "tests.test_async",
+              "score": 5.434157844340846
+            },
+            {
+              "id": "src.flask.sessions.SessionInterface.get_cookie_domain",
+              "score": 5.333989845972512
+            },
+            {
+              "id": "tests.test_views.test_view_decorators",
+              "score": 5.270566763477259
+            },
+            {
+              "id": "tests.test_views.test_view_inheritance",
+              "score": 5.245734654021379
+            },
+            {
+              "id": "tests.test_views.test_remove_method_from_parent",
+              "score": 5.209037834035508
+            },
+            {
+              "id": "tests.test_cli.test_run_cert_adhoc",
+              "score": 5.197643771577472
+            },
+            {
+              "id": "tests.test_reqctx.test_proper_test_request_context",
+              "score": 5.196071092930176
+            },
+            {
+              "id": "examples.tutorial.flaskr",
+              "score": 5.188352765923682
+            },
+            {
+              "id": "src.flask.cli.run_command",
+              "score": 5.158249862176958
+            },
+            {
+              "id": "tests.test_views.test_multiple_inheritance",
+              "score": 5.148941719873769
+            },
+            {
+              "id": "tests.test_views.test_methods_var_inheritance",
+              "score": 5.1482886312783185
+            },
+            {
+              "id": "src.flask.ctx.RequestContext",
+              "score": 5.123671704104108
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold",
+              "score": 5.10194975851258
+            },
+            {
+              "id": "examples.tutorial.flaskr.create_app",
+              "score": 5.022746743122367
+            },
+            {
+              "id": "src.flask.app",
+              "score": 4.978852117945567
+            },
+            {
+              "id": "src.flask.testing.FlaskCliRunner",
+              "score": 4.780690680768467
+            },
+            {
+              "id": "src.flask.config.Config.get_namespace",
+              "score": 4.758439626477226
+            },
+            {
+              "id": "tests.test_cli.test_appgroup_app_context",
+              "score": 4.706818648147474
+            },
+            {
+              "id": "src.flask.blueprints.Blueprint.app_url_defaults",
+              "score": 4.686883981496354
+            },
+            {
+              "id": "src.flask.cli.shell_command",
+              "score": 4.64204835235549
+            },
+            {
+              "id": "src.flask.blueprints.Blueprint.app_url_value_preprocessor",
+              "score": 4.617086407572437
+            },
+            {
+              "id": "tests.test_helpers.TestSendfile.test_send_from_directory",
+              "score": 4.580790659960275
+            },
+            {
+              "id": "src.flask.cli._set_debug",
+              "score": 4.519917076636722
+            },
+            {
+              "id": "tests.test_cli.test_with_appcontext",
+              "score": 4.485693632329627
+            },
+            {
+              "id": "tests.test_helpers.TestUrlFor.test_url_for_with_alternating_schemes",
+              "score": 4.483784249170649
+            },
+            {
+              "id": "tests.test_blueprints.test_blueprint_url_processors",
+              "score": 4.4171951977185735
+            },
+            {
+              "id": "src.flask.debughelpers.FormDataRoutingRedirect.__init__",
+              "score": 4.381753693161102
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold.__init__",
+              "score": 4.374997633965932
+            },
+            {
+              "id": "tests.test_basic.test_static_url_path",
+              "score": 4.366483169347791
+            },
+            {
+              "id": "tests.test_basic.test_url_generation",
+              "score": 4.344004231907158
+            },
+            {
+              "id": "tests.test_appctx.test_url_generation_without_context_fails",
+              "score": 4.330551668547782
+            },
+            {
+              "id": "tests.test_testing.test_specify_url_scheme",
+              "score": 4.324627809725113
+            },
+            {
+              "id": "tests.test_blueprints.test_app_url_processors",
+              "score": 4.317059588325331
+            },
+            {
+              "id": "tests.test_blueprints.test_request_processing",
+              "score": 4.315849485369405
+            },
+            {
+              "id": "tests.test_basic.test_inject_blueprint_url_defaults",
+              "score": 4.313370471105138
+            },
+            {
+              "id": "tests.test_basic.test_static_url_path_with_ending_slash",
+              "score": 4.298353213608083
+            },
+            {
+              "id": "tests.test_helpers.TestUrlFor.test_url_for_with_anchor",
+              "score": 4.264089669870177
+            },
+            {
+              "id": "tests.test_json",
+              "score": 4.26146271833219
+            },
+            {
+              "id": "tests.test_appctx.test_url_generation_requires_server_name",
+              "score": 4.2478594152431715
+            },
+            {
+              "id": "tests.test_basic.test_static_url_empty_path",
+              "score": 4.2305634562691585
+            },
+            {
+              "id": "tests.test_appctx.test_basic_url_generation",
+              "score": 4.226917593437191
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold.static_url_path",
+              "score": 4.22179983065654
+            },
+            {
+              "id": "tests.test_cli.test_flaskgroup_app_context",
+              "score": 4.213794154452886
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold.url_defaults",
+              "score": 4.212845623240062
+            },
+            {
+              "id": "tests.test_helpers.TestUrlFor.test_url_for_with_scheme",
+              "score": 4.200051187867651
+            },
+            {
+              "id": "tests.test_blueprints.test_nesting_url_prefixes",
+              "score": 4.184771431292397
+            },
+            {
+              "id": "src.flask.app.Flask.inject_url_defaults",
+              "score": 4.153283027598643
+            },
+            {
+              "id": "src.flask.cli.FlaskGroup._load_plugin_commands",
+              "score": 4.082321666594991
+            },
+            {
+              "id": "tests.test_cli.test_run_cert_no_ssl",
+              "score": 4.066111691778056
+            },
+            {
+              "id": "tests.test_basic.test_url_for_passes_special_values_to_build_error_handler",
+              "score": 4.050980795748615
+            },
+            {
+              "id": "src.flask.app.Flask.run",
+              "score": 4.040365017151222
+            },
+            {
+              "id": "tests.test_converters.test_custom_converters.ListConverter.to_url",
+              "score": 4.009638902181166
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold.url_value_preprocessor",
+              "score": 4.008967260795273
+            },
+            {
+              "id": "tests.test_basic.test_static_url_empty_path_default",
+              "score": 4.004654661770263
+            },
+            {
+              "id": "tests.test_basic.test_build_error_handler",
+              "score": 3.972212719058223
+            },
+            {
+              "id": "src.flask.debughelpers.FormDataRoutingRedirect",
+              "score": 3.94442320431098
+            },
+            {
+              "id": "tests.test_blueprints.test_blueprint_url_defaults",
+              "score": 3.9332879973231
+            },
+            {
+              "id": "tests.test_reqctx",
+              "score": 3.9298980033154143
+            },
+            {
+              "id": "docs.conf.github_link",
+              "score": 3.892769346715131
+            },
+            {
+              "id": "src.flask.app.Flask.handle_url_build_error",
+              "score": 3.8893536101895982
+            },
+            {
+              "id": "tests.test_testing.test_full_url_request",
+              "score": 3.8675338421490575
+            },
+            {
+              "id": "src.flask.app.Flask.app_context",
+              "score": 3.8211279145161416
+            },
+            {
+              "id": "tests.test_blueprints.test_app_request_processing",
+              "score": 3.7992303814276505
+            },
+            {
+              "id": "src.flask.ctx.AppContext.__init__",
+              "score": 3.7796111453033205
+            },
+            {
+              "id": "tests.test_cli.test_flaskgroup_debug",
+              "score": 3.7764287396134013
+            },
+            {
+              "id": "tests.test_regression.test_aborting.index",
+              "score": 3.7599036907456838
+            },
+            {
+              "id": "tests.test_appctx",
+              "score": 3.733248749463497
+            },
+            {
+              "id": "tests.test_blueprints.test_empty_url_defaults",
+              "score": 3.729180324088516
+            },
+            {
+              "id": "tests.test_basic.test_url_processors.index",
+              "score": 3.685388132612923
+            },
+            {
+              "id": "tests.test_blueprints.test_app_url_processors.about",
+              "score": 3.685388132612923
+            },
+            {
+              "id": "tests.test_blueprints.test_app_url_processors.index",
+              "score": 3.685388132612923
+            },
+            {
+              "id": "tests.test_blueprints.test_blueprint_url_processors.about",
+              "score": 3.685388132612923
+            },
+            {
+              "id": "tests.test_blueprints.test_blueprint_url_processors.index",
+              "score": 3.685388132612923
+            },
+            {
+              "id": "tests.test_reqctx.test_context_binding.meh",
+              "score": 3.685388132612923
+            },
+            {
+              "id": "tests.test_testing.test_blueprint_with_subdomain.index",
+              "score": 3.685388132612923
+            },
+            {
+              "id": "tests.test_testing.test_environ_defaults.index",
+              "score": 3.685388132612923
+            },
+            {
+              "id": "tests.test_testing.test_environ_defaults_from_config.index",
+              "score": 3.685388132612923
+            },
+            {
+              "id": "tests.test_testing.test_specify_url_scheme.index",
+              "score": 3.685388132612923
+            },
+            {
+              "id": "tests.test_testing.test_nosubdomain",
+              "score": 3.683819963595999
+            },
+            {
+              "id": "tests.test_converters.test_custom_converters.ListConverter",
+              "score": 3.6612502942913983
+            },
+            {
+              "id": "tests.test_basic.test_url_processors.about",
+              "score": 3.648716373050174
+            },
+            {
+              "id": "tests.test_blueprints.test_dotted_names_from_app.index",
+              "score": 3.648716373050174
+            },
+            {
+              "id": "src.flask.views.MethodView",
+              "score": 3.612180493306357
+            },
+            {
+              "id": "tests.test_testing.test_path_is_url",
+              "score": 3.6052857118561534
+            },
+            {
+              "id": "tests.test_basic.test_route_decorator_custom_endpoint",
+              "score": 3.5981701190623574
+            },
+            {
+              "id": "tests.test_blueprints.test_dotted_names_from_app",
+              "score": 3.570777429963865
+            },
+            {
+              "id": "tests.test_blueprints.test_dotted_names_from_app.app_index",
+              "score": 3.542953031150802
+            }
+          ],
+          "scored_documents": 1028,
+          "seconds": 0.0011806999991677003
+        },
+        {
+          "query": "Flask create_url_adapter subdomain_matching SERVER_NAME url_map default_subdomain",
+          "candidates": [
+            {
+              "id": "src.flask.app.Flask.create_url_adapter",
+              "score": 43.40916650105028
+            },
+            {
+              "id": "tests.test_basic.test_server_name_subdomain",
+              "score": 22.136360636541184
+            },
+            {
+              "id": "tests.test_basic.test_subdomain_matching_other_name",
+              "score": 20.353036862806974
+            },
+            {
+              "id": "tests.test_basic.test_subdomain_matching",
+              "score": 20.265483281722315
+            },
+            {
+              "id": "tests.test_basic.test_subdomain_matching_with_ports",
+              "score": 19.897208318176652
+            },
+            {
+              "id": "tests.test_testing.test_subdomain",
+              "score": 19.687187819174245
+            },
+            {
+              "id": "src.flask.app.Flask",
+              "score": 19.102881686170885
+            },
+            {
+              "id": "tests.test_testing.test_blueprint_with_subdomain",
+              "score": 18.176365393946945
+            },
+            {
+              "id": "src.flask.app.Flask.make_default_options_response",
+              "score": 18.17340143564798
+            },
+            {
+              "id": "tests.test_basic.test_subdomain_basic_support",
+              "score": 15.784369554543119
+            },
+            {
+              "id": "tests.test_blueprints.test_child_and_parent_subdomain",
+              "score": 15.267164708463767
+            },
+            {
+              "id": "src.flask.ctx.RequestContext.match_request",
+              "score": 14.555822089770315
+            },
+            {
+              "id": "src.flask.ctx.AppContext.__init__",
+              "score": 14.543112564959584
+            },
+            {
+              "id": "src.flask.testing",
+              "score": 14.362480919728128
+            },
+            {
+              "id": "src.flask.testing.EnvironBuilder",
+              "score": 14.340452068401003
+            },
+            {
+              "id": "src.flask.app.Flask.url_for",
+              "score": 14.31903518437208
+            },
+            {
+              "id": "tests.test_blueprints.test_nesting_subdomains",
+              "score": 14.035234176188318
+            },
+            {
+              "id": "src.flask.testing.EnvironBuilder.__init__",
+              "score": 13.9854752307124
+            },
+            {
+              "id": "src.flask.ctx.RequestContext",
+              "score": 13.089065192568384
+            },
+            {
+              "id": "src.flask.blueprints.BlueprintSetupState.__init__",
+              "score": 12.6695386991647
+            },
+            {
+              "id": "tests.test_reqctx.test_proper_test_request_context",
+              "score": 12.587762807362946
+            },
+            {
+              "id": "src.flask.app.Flask.test_request_context",
+              "score": 12.545460028655013
+            },
+            {
+              "id": "src.flask.app.Flask.__init__",
+              "score": 12.462799186271264
+            },
+            {
+              "id": "tests.test_appctx.test_url_generation_requires_server_name",
+              "score": 12.204205955593334
+            },
+            {
+              "id": "src.flask.ctx.RequestContext.__init__",
+              "score": 11.872208242766703
+            },
+            {
+              "id": "src.flask.blueprints.BlueprintSetupState",
+              "score": 11.844532573535215
+            },
+            {
+              "id": "src.flask.blueprints.Blueprint",
+              "score": 11.82027069384165
+            },
+            {
+              "id": "src.flask.blueprints.Blueprint.__init__",
+              "score": 11.565307723563693
+            },
+            {
+              "id": "tests.test_basic.test_static_route_with_host_matching",
+              "score": 11.464441530952453
+            },
+            {
+              "id": "src.flask.sessions.SessionInterface.get_cookie_domain",
+              "score": 11.31996715832702
+            },
+            {
+              "id": "src.flask.wrappers.Request",
+              "score": 11.251680585090694
+            },
+            {
+              "id": "src.flask.app.Flask.register_blueprint",
+              "score": 10.652194447258207
+            },
+            {
+              "id": "tests.test_converters",
+              "score": 10.533634583618596
+            },
+            {
+              "id": "src.flask.blueprints",
+              "score": 10.517766992889664
+            },
+            {
+              "id": "src.flask.views.View",
+              "score": 10.220742268986198
+            },
+            {
+              "id": "src.flask.blueprints.BlueprintSetupState.add_url_rule",
+              "score": 9.92754978952794
+            },
+            {
+              "id": "src.flask.wrappers",
+              "score": 9.79793608215061
+            },
+            {
+              "id": "tests.test_basic.test_static_url_empty_path_default",
+              "score": 9.741316284963267
+            },
+            {
+              "id": "src.flask.cli._set_debug",
+              "score": 9.518411402756337
+            },
+            {
+              "id": "src.flask.wrappers.Request.blueprints",
+              "score": 9.46775554675889
+            },
+            {
+              "id": "examples.tutorial.flaskr.create_app",
+              "score": 9.390668197444676
+            },
+            {
+              "id": "src.flask.wrappers.Request.blueprint",
+              "score": 9.332534002201331
+            },
+            {
+              "id": "src.flask.views",
+              "score": 9.320991170746236
+            },
+            {
+              "id": "tests.test_appctx.test_basic_url_generation",
+              "score": 9.304175568755934
+            },
+            {
+              "id": "src.flask.app.Flask.inject_url_defaults",
+              "score": 9.098643779466023
+            },
+            {
+              "id": "tests.test_cli.TestRoutes.test_sort",
+              "score": 9.097294471656507
+            },
+            {
+              "id": "src.flask.logging.create_logger",
+              "score": 8.923208047928568
+            },
+            {
+              "id": "tests.test_blueprints.test_endpoint_decorator",
+              "score": 8.873516235395892
+            },
+            {
+              "id": "tests.test_cli.TestRoutes",
+              "score": 8.837462619246663
+            },
+            {
+              "id": "src.flask.wrappers.Request.endpoint",
+              "score": 8.790315849732746
+            },
+            {
+              "id": "src.flask.app",
+              "score": 8.69303160883009
+            },
+            {
+              "id": "tests.test_converters.test_context_available",
+              "score": 8.668479313396155
+            },
+            {
+              "id": "tests.test_session_interface.test_open_session_with_endpoint",
+              "score": 8.614698412559292
+            },
+            {
+              "id": "src.flask.scaffold._matching_loader_thinks_module_is_package",
+              "score": 8.54812854429887
+            },
+            {
+              "id": "src.flask.app.Flask.run",
+              "score": 8.512298248696412
+            },
+            {
+              "id": "tests.test_testing.test_nosubdomain",
+              "score": 8.374564848684122
+            },
+            {
+              "id": "src.flask.sessions.SessionInterface.open_session",
+              "score": 8.358694143713768
+            },
+            {
+              "id": "tests.test_apps.subdomaintestmodule",
+              "score": 8.315139302676851
+            },
+            {
+              "id": "tests.test_basic.test_url_processors.add_language_code",
+              "score": 8.31066659963073
+            },
+            {
+              "id": "examples.celery.src.task_app.create_app",
+              "score": 8.287650719514097
+            },
+            {
+              "id": "examples.tutorial.flaskr",
+              "score": 8.256196680854464
+            },
+            {
+              "id": "src.flask.app.Flask.debug",
+              "score": 8.109750621893959
+            },
+            {
+              "id": "tests.test_helpers.TestUrlFor.test_url_with_method",
+              "score": 7.986926457578369
+            },
+            {
+              "id": "src.flask.app.Flask.process_response",
+              "score": 7.984968189896879
+            },
+            {
+              "id": "src.flask.cli.FlaskGroup.make_context",
+              "score": 7.95355694155487
+            },
+            {
+              "id": "src.flask.ctx._AppCtxGlobals.get",
+              "score": 7.886934973788016
+            },
+            {
+              "id": "tests.test_basic.test_server_name_subdomain.subdomain",
+              "score": 7.75901162571136
+            },
+            {
+              "id": "tests.test_converters.test_custom_converters",
+              "score": 7.695896762488596
+            },
+            {
+              "id": "src.flask.ctx._AppCtxGlobals.pop",
+              "score": 7.6172755195352595
+            },
+            {
+              "id": "tests.test_basic.test_run_from_config",
+              "score": 7.6134655146196675
+            },
+            {
+              "id": "src.flask.ctx._AppCtxGlobals.setdefault",
+              "score": 7.592298162288781
+            },
+            {
+              "id": "tests.test_testing.test_environ_defaults_from_config",
+              "score": 7.5636906817146485
+            },
+            {
+              "id": "tests.test_basic.test_url_processors",
+              "score": 7.516380985282785
+            },
+            {
+              "id": "tests.test_cli.TestRoutes.invoke_no_routes.create_app",
+              "score": 7.511887227597867
+            },
+            {
+              "id": "src.flask.app.Flask._find_error_handler",
+              "score": 7.480585191849626
+            },
+            {
+              "id": "src.flask.helpers.redirect",
+              "score": 7.478876671069764
+            },
+            {
+              "id": "tests.test_appctx",
+              "score": 7.396693580738868
+            },
+            {
+              "id": "examples.celery.src.task_app",
+              "score": 7.31931180851162
+            },
+            {
+              "id": "src.flask.ctx.AppContext",
+              "score": 7.316391881634322
+            },
+            {
+              "id": "src.flask.wrappers.Response",
+              "score": 7.300311300154585
+            },
+            {
+              "id": "tests.test_helpers.TestUrlFor",
+              "score": 7.250892485092112
+            },
+            {
+              "id": "src.flask.app.Flask.handle_exception",
+              "score": 7.1895485199770235
+            },
+            {
+              "id": "src.flask.blueprints.Blueprint.app_url_defaults",
+              "score": 7.186662351028202
+            },
+            {
+              "id": "src.flask.cli.FlaskGroup.__init__",
+              "score": 7.180026831922488
+            },
+            {
+              "id": "tests.test_user_error_handler.test_error_handler_blueprint",
+              "score": 7.132162935378444
+            },
+            {
+              "id": "src.flask.app.Flask.make_aborter",
+              "score": 7.032600706961904
+            },
+            {
+              "id": "tests.test_user_error_handler.test_default_error_handler",
+              "score": 7.025382541039698
+            },
+            {
+              "id": "tests.test_instance_config.test_uninstalled_namespace_paths.create_namespace",
+              "score": 6.975856322022501
+            },
+            {
+              "id": "src.flask.helpers.url_for",
+              "score": 6.970572045069176
+            },
+            {
+              "id": "src.flask.ctx._AppCtxGlobals",
+              "score": 6.955964490350597
+            },
+            {
+              "id": "src.flask.app.Flask.logger",
+              "score": 6.94963289635627
+            },
+            {
+              "id": "src.flask.sessions.SessionInterface",
+              "score": 6.88837355722777
+            },
+            {
+              "id": "tests.test_session_interface",
+              "score": 6.862174133396776
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold.add_url_rule",
+              "score": 6.861178054651052
+            },
+            {
+              "id": "tests.test_cli.TestRoutes.invoke_no_routes",
+              "score": 6.854412502881603
+            },
+            {
+              "id": "src.flask.scaffold",
+              "score": 6.773864021170716
+            },
+            {
+              "id": "examples.tutorial.flaskr.blog.create",
+              "score": 6.768669063160005
+            },
+            {
+              "id": "src.flask.cli.run_command",
+              "score": 6.705674551273503
+            },
+            {
+              "id": "src.flask.cli.FlaskGroup",
+              "score": 6.617256367690972
+            },
+            {
+              "id": "tests.test_basic.test_url_generation",
+              "score": 6.598765829333434
+            },
+            {
+              "id": "src.flask.app.Flask.redirect",
+              "score": 6.572695547522045
+            },
+            {
+              "id": "src.flask.app.Flask.test_cli_runner",
+              "score": 6.483493958980576
+            },
+            {
+              "id": "tests.test_reqctx",
+              "score": 6.463749816886867
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold.url_defaults",
+              "score": 6.460415784781766
+            },
+            {
+              "id": "src.flask.cli.ScriptInfo",
+              "score": 6.407395948419976
+            },
+            {
+              "id": "src.flask.blueprints.Blueprint.add_url_rule",
+              "score": 6.398446353201087
+            },
+            {
+              "id": "src.flask.json.provider._default",
+              "score": 6.392901427402349
+            },
+            {
+              "id": "tests.test_cli.test_flaskgroup_app_context",
+              "score": 6.370799882627112
+            },
+            {
+              "id": "src.flask.scaffold._endpoint_from_view_func",
+              "score": 6.349745345427929
+            },
+            {
+              "id": "src.flask.ctx",
+              "score": 6.339114824289745
+            },
+            {
+              "id": "tests.test_basic.test_endpoint_decorator",
+              "score": 6.30605597263461
+            },
+            {
+              "id": "src.flask.app.Flask.create_jinja_environment",
+              "score": 6.268953053370902
+            },
+            {
+              "id": "src.flask.cli.show_server_banner",
+              "score": 6.264497021202061
+            },
+            {
+              "id": "tests.test_blueprints.test_templates_and_static",
+              "score": 6.264199588444938
+            },
+            {
+              "id": "tests.test_basic.test_error_handler_after_processor_error.internal_server_error",
+              "score": 6.18991138243566
+            },
+            {
+              "id": "tests.test_basic.test_error_handling.internal_server_error",
+              "score": 6.18991138243566
+            },
+            {
+              "id": "tests.test_basic.test_error_handling_processing.internal_server_error",
+              "score": 6.18991138243566
+            },
+            {
+              "id": "src.flask.ctx.RequestContext.push",
+              "score": 6.170476145801154
+            },
+            {
+              "id": "tests.test_basic.test_werkzeug_routing",
+              "score": 6.142788822904075
+            },
+            {
+              "id": "src.flask.app.Flask.add_url_rule",
+              "score": 6.107041720617628
+            },
+            {
+              "id": "src.flask.app.Flask.make_config",
+              "score": 6.039869591553618
+            },
+            {
+              "id": "src.flask.logging",
+              "score": 6.005868626671639
+            },
+            {
+              "id": "src.flask.helpers",
+              "score": 5.964814620374881
+            },
+            {
+              "id": "tests.test_blueprints.test_nesting_url_prefixes",
+              "score": 5.871382185797034
+            },
+            {
+              "id": "tests.test_cli.test_find_best_app.Module.create_app",
+              "score": 5.869801245586913
+            },
+            {
+              "id": "tests.test_cli.test_flaskgroup_app_context.create_app",
+              "score": 5.869801245586913
+            },
+            {
+              "id": "tests.test_cli.test_scriptinfo.create_app",
+              "score": 5.869801245586913
+            },
+            {
+              "id": "tests.test_cli.test_find_best_app",
+              "score": 5.859027244168888
+            },
+            {
+              "id": "tests.test_instance_config.test_uninstalled_namespace_paths",
+              "score": 5.851187200523881
+            },
+            {
+              "id": "tests.test_apps.cliapp.factory.create_app",
+              "score": 5.812480869247114
+            },
+            {
+              "id": "tests.test_testing",
+              "score": 5.811223425718406
+            },
+            {
+              "id": "src.flask.helpers.send_file",
+              "score": 5.81017302134464
+            },
+            {
+              "id": "tests.test_basic.test_static_url_path",
+              "score": 5.779023432826204
+            },
+            {
+              "id": "tests.test_user_error_handler.test_error_handler_no_match.handle_500",
+              "score": 5.7686491229647325
+            },
+            {
+              "id": "tests.test_blueprints.test_default_static_max_age",
+              "score": 5.7560051005335495
+            },
+            {
+              "id": "src.flask.app.Flask.preprocess_request",
+              "score": 5.737549777674389
+            },
+            {
+              "id": "tests.test_basic.test_static_url_empty_path",
+              "score": 5.736927918012396
+            },
+            {
+              "id": "tests.test_cli.test_flaskgroup_debug.create_app",
+              "score": 5.72882998254012
+            },
+            {
+              "id": "tests.test_basic.test_static_url_path_with_ending_slash",
+              "score": 5.654578317308129
+            },
+            {
+              "id": "tests.test_user_error_handler.TestGenericHandlers",
+              "score": 5.65151398558209
+            },
+            {
+              "id": "tests.test_cli.test_flaskgroup_nested",
+              "score": 5.622622975494981
+            },
+            {
+              "id": "tests.test_apps.cliapp.factory.create_app2",
+              "score": 5.621403476297845
+            },
+            {
+              "id": "tests.test_reqctx.test_session_dynamic_cookie_name.PathAwareSessionInterface.get_cookie_name",
+              "score": 5.619335363059134
+            },
+            {
+              "id": "src.flask.helpers.get_load_dotenv",
+              "score": 5.606332235926813
+            },
+            {
+              "id": "tests.test_user_error_handler.TestGenericHandlers.test_handle_class_or_code",
+              "score": 5.584909068484814
+            },
+            {
+              "id": "src.flask.ctx.RequestContext.__repr__",
+              "score": 5.581664350550541
+            },
+            {
+              "id": "tests.test_blueprints.test_blueprint_url_defaults",
+              "score": 5.5659342216608
+            },
+            {
+              "id": "src.flask.json.tag.TagMarkup",
+              "score": 5.545146321922585
+            },
+            {
+              "id": "tests.test_logging.test_logger",
+              "score": 5.524823366984944
+            },
+            {
+              "id": "tests.test_blueprints.test_blueprint_url_processors",
+              "score": 5.517524119023458
+            },
+            {
+              "id": "tests.test_basic.test_inject_blueprint_url_defaults",
+              "score": 5.510504438558594
+            },
+            {
+              "id": "docs.conf.github_link",
+              "score": 5.493406978692938
+            },
+            {
+              "id": "src.flask.cli.ScriptInfo.load_app",
+              "score": 5.433118524998573
+            },
+            {
+              "id": "examples.celery.make_celery",
+              "score": 5.4327921306116265
+            },
+            {
+              "id": "tests.test_blueprints.test_blueprint_prefix_slash",
+              "score": 5.431689242016576
+            },
+            {
+              "id": "src.flask.cli.ScriptInfo.__init__",
+              "score": 5.373028289457874
+            },
+            {
+              "id": "tests.test_cli.test_scriptinfo",
+              "score": 5.343787672400664
+            },
+            {
+              "id": "tests.test_blueprints.test_app_url_processors",
+              "score": 5.340171139341148
+            },
+            {
+              "id": "tests.test_blueprints.test_blueprint_renaming",
+              "score": 5.332931779097577
+            },
+            {
+              "id": "tests.test_subclassing",
+              "score": 5.302894485986353
+            },
+            {
+              "id": "tests.test_apps.cliapp.factory",
+              "score": 5.292604237434739
+            },
+            {
+              "id": "src.flask.app.Flask.__call__",
+              "score": 5.290086902309474
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold.route",
+              "score": 5.250299867441936
+            },
+            {
+              "id": "src.flask.app.Flask.select_jinja_autoescape",
+              "score": 5.2474934231035775
+            },
+            {
+              "id": "src.flask.sessions.SecureCookieSession.get",
+              "score": 5.24087012717817
+            },
+            {
+              "id": "src.flask.sessions.SecureCookieSession.setdefault",
+              "score": 5.24087012717817
+            },
+            {
+              "id": "tests.test_subclassing.test_suppressed_exception_logging",
+              "score": 5.229721970156794
+            },
+            {
+              "id": "src.flask.templating.Environment",
+              "score": 5.189609104384847
+            },
+            {
+              "id": "tests.test_blueprints.test_empty_url_defaults",
+              "score": 5.171669151628982
+            },
+            {
+              "id": "tests.test_cli.test_help_echo_exception.create_app",
+              "score": 5.1399084880526384
+            },
+            {
+              "id": "tests.test_json.test_json_customization.default",
+              "score": 5.1365545572256766
+            },
+            {
+              "id": "tests.test_cli.test_with_appcontext",
+              "score": 5.1289221202774895
+            },
+            {
+              "id": "tests.test_testing.test_cli_custom_obj.create_app",
+              "score": 5.118181539934539
+            },
+            {
+              "id": "src.flask.json.tag.JSONTag.__init__",
+              "score": 5.086463477586466
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold",
+              "score": 5.036364400079121
+            },
+            {
+              "id": "tests.test_blueprints.test_route_decorator_custom_endpoint_with_dots",
+              "score": 5.027001069618326
+            },
+            {
+              "id": "src.flask.scaffold.Scaffold.url_value_preprocessor",
+              "score": 4.99739649776928
+            },
+            {
+              "id": "examples.tutorial.tests.test_blog.test_create",
+              "score": 4.987147150805332
+            },
+            {
+              "id": "tests.test_reqctx.test_session_dynamic_cookie_name.PathAwareSessionInterface",
+              "score": 4.986168097749101
+            },
+            {
+              "id": "tests.test_blueprints.test_dotted_names_from_app",
+              "score": 4.983317693442277
+            },
+            {
+              "id": "src.flask.templating._default_template_ctx_processor",
+              "score": 4.980433360879727
+            },
+            {
+              "id": "examples.tutorial.tests.test_factory.test_config",
+              "score": 4.965791332202491
+            },
+            {
+              "id": "tests.test_views.test_view_provide_automatic_options_attr",
+              "score": 4.96481050359562
+            },
+            {
+              "id": "examples.tutorial.flaskr.blog",
+              "score": 4.960553574004891
+            },
+            {
+              "id": "tests.test_testing.test_environ_base_default",
+              "score": 4.945667228693667
+            },
+            {
+              "id": "tests.test_basic.test_run_server_port",
+              "score": 4.941672052666156
+            },
+            {
+              "id": "tests.test_basic.test_error_handling_processing",
+              "score": 4.924547264454608
+            },
+            {
+              "id": "tests.test_helpers.TestNoImports",
+              "score": 4.9106470042969175
+            },
+            {
+              "id": "tests.test_cli",
+              "score": 4.909549722093047
+            },
+            {
+              "id": "tests.test_json.test_json_customization",
+              "score": 4.90798549821558
+            },
+            {
+              "id": "tests.test_instance_config",
+              "score": 4.897497080078608
+            },
+            {
+              "id": "src.flask.sessions.SecureCookieSessionInterface",
+              "score": 4.8873146330589705
+            },
+            {
+              "id": "tests.test_blueprints.test_template_filter_with_name_and_template",
+              "score": 4.886035817182133
+            },
+            {
+              "id": "tests.test_cli.test_help_echo_exception",
+              "score": 4.878702325793259
+            },
+            {
+              "id": "tests.test_basic.test_max_cookie_size",
+              "score": 4.869504776134179
+            },
+            {
+              "id": "examples.tutorial.tests.test_factory",
+              "score": 4.86112377151071
+            },
+            {
+              "id": "examples.tutorial.tests.conftest.app",
+              "score": 4.860932322673691
+            },
+            {
+              "id": "src.flask.cli.find_best_app",
+              "score": 4.843096589128802
+            },
+            {
+              "id": "tests.test_blueprints.test_template_test_with_name_and_template",
+              "score": 4.842425540269941
+            },
+            {
+              "id": "tests.test_basic.test_error_handling",
+              "score": 4.813228809937651
+            }
+          ],
+          "scored_documents": 1086,
+          "seconds": 0.0015375000002677552
+        }
+      ],
+      "order": [
+        "src.flask.app.Flask.create_url_adapter",
+        "src.flask.blueprints.BlueprintSetupState",
+        "src.flask.app.Flask",
+        "src.flask.blueprints.Blueprint",
+        "src.flask.blueprints.BlueprintSetupState.add_url_rule",
+        "tests.test_blueprints.test_child_and_parent_subdomain",
+        "src.flask.app.Flask.register_blueprint",
+        "src.flask.blueprints.BlueprintSetupState.__init__",
+        "tests.test_testing.test_blueprint_with_subdomain",
+        "tests.test_blueprints.test_nesting_subdomains",
+        "tests.test_cli.TestRoutes",
+        "src.flask.blueprints",
+        "tests.test_cli.TestRoutes.test_sort",
+        "tests.test_blueprints.test_endpoint_decorator",
+        "tests.test_basic.test_server_name_subdomain",
+        "src.flask.app.Flask.url_for",
+        "src.flask.blueprints.Blueprint.__init__",
+        "tests.test_testing.test_subdomain",
+        "src.flask.testing",
+        "src.flask.wrappers.Request",
+        "src.flask.wrappers",
+        "src.flask.blueprints.Blueprint.add_url_rule",
+        "src.flask.scaffold.Scaffold.add_url_rule",
+        "src.flask.testing.EnvironBuilder.__init__",
+        "src.flask.testing.EnvironBuilder",
+        "src.flask.app.Flask.__init__",
+        "src.flask.app.Flask.add_url_rule",
+        "src.flask.app.Flask.run",
+        "src.flask.scaffold.Scaffold.route",
+        "tests.test_basic.test_subdomain_matching_other_name",
+        "tests.test_converters",
+        "src.flask.cli.routes_command",
+        "src.flask.app.Flask.test_request_context",
+        "tests.test_blueprints.test_blueprint_prefix_slash",
+        "src.flask.views",
+        "src.flask.cli.FlaskGroup",
+        "src.flask.views.View",
+        "src.flask.wrappers.Request.endpoint",
+        "tests.test_basic.test_subdomain_matching",
+        "src.flask.cli.FlaskGroup.__init__",
+        "tests.test_helpers.TestUrlFor.test_url_with_method",
+        "tests.test_reqctx.test_proper_test_request_context",
+        "tests.test_basic.test_subdomain_matching_with_ports",
+        "src.flask.sessions.SessionInterface.get_cookie_domain",
+        "examples.tutorial.flaskr.create_app",
+        "tests.test_helpers.TestUrlFor",
+        "src.flask.helpers.url_for",
+        "src.flask.ctx.RequestContext.match_request",
+        "tests.test_basic.test_subdomain_basic_support",
+        "examples.tutorial.flaskr",
+        "src.flask.scaffold.Scaffold",
+        "tests.test_basic.test_static_url_empty_path_default",
+        "tests.test_cli.TestRoutes.invoke_no_routes",
+        "tests.test_basic.test_url_processors",
+        "tests.test_converters.test_context_available",
+        "src.flask.app.Flask.inject_url_defaults",
+        "tests.test_blueprints.test_route_decorator_custom_endpoint_with_dots",
+        "tests.test_async._async_app",
+        "src.flask.scaffold.Scaffold.endpoint",
+        "tests.test_basic.test_endpoint_decorator",
+        "src.flask.scaffold.Scaffold.url_defaults",
+        "tests.test_basic.test_werkzeug_routing",
+        "src.flask.app.Flask.make_default_options_response",
+        "tests.test_basic.test_url_processors.add_language_code",
+        "src.flask.cli.FlaskGroup.make_context",
+        "src.flask.cli.run_command",
+        "src.flask.ctx.RequestContext",
+        "src.flask.ctx.AppContext.__init__",
+        "tests.test_blueprints.test_blueprint_url_processors",
+        "src.flask.blueprints.Blueprint.app_url_defaults",
+        "tests.test_async",
+        "tests.test_basic.test_server_name_subdomain.subdomain",
+        "src.flask.scaffold",
+        "tests.test_converters.test_custom_converters",
+        "tests.test_views.test_view_provide_automatic_options_attr",
+        "tests.test_basic.test_static_url_path",
+        "src.flask.scaffold.Scaffold.url_value_preprocessor",
+        "tests.test_basic.test_no_setup_after_first_request",
+        "tests.test_appctx.test_url_generation_requires_server_name",
+        "src.flask.scaffold.Scaffold.__init__",
+        "tests.test_views.test_endpoint_override",
+        "src.flask.cli.load_dotenv",
+        "tests.test_basic.test_static_url_path_with_ending_slash",
+        "tests.test_blueprints.test_blueprint_renaming",
+        "src.flask.app.Flask.dispatch_request",
+        "src.flask.sessions.SessionInterface",
+        "tests.test_blueprints.test_app_url_processors",
+        "tests.test_blueprints.test_nesting_url_prefixes",
+        "tests.test_apps.subdomaintestmodule",
+        "tests.test_blueprints.test_blueprint_url_defaults",
+        "tests.test_basic.test_static_route_with_host_matching",
+        "tests.test_blueprints.test_templates_and_static",
+        "src.flask.helpers",
+        "src.flask.app.Flask.logger",
+        "src.flask.scaffold.Scaffold.route.decorator",
+        "src.flask.cli._set_debug",
+        "tests.test_basic.test_static_url_empty_path",
+        "tests.test_blueprints.test_empty_url_defaults",
+        "src.flask.helpers.send_file",
+        "src.flask.config.Config",
+        "tests.test_basic.test_url_mapping",
+        "src.flask.app",
+        "tests.test_appctx.test_basic_url_generation",
+        "src.flask.app.Flask._find_error_handler",
+        "src.flask.helpers.get_load_dotenv",
+        "src.flask.ctx._AppCtxGlobals.setdefault",
+        "src.flask.ctx",
+        "src.flask.wrappers.Request.blueprints",
+        "tests.test_cli.TestRoutes.test_all_methods",
+        "src.flask.ctx._AppCtxGlobals",
+        "src.flask.blueprints.Blueprint.register",
+        "tests.test_user_error_handler.test_default_error_handler",
+        "src.flask.logging",
+        "tests.test_basic.test_inject_blueprint_url_defaults",
+        "tests.test_blueprints.test_default_static_max_age",
+        "src.flask.ctx._AppCtxGlobals.get",
+        "src.flask.sessions.SessionInterface.open_session",
+        "tests.test_testing.test_nosubdomain",
+        "src.flask.views.MethodView",
+        "src.flask.ctx._AppCtxGlobals.pop",
+        "tests.test_views.test_basic_view",
+        "src.flask.scaffold.Scaffold._method_route",
+        "tests.test_user_error_handler.test_error_handler_blueprint",
+        "tests.test_cli.TestRoutes.test_no_routes",
+        "tests.test_blueprints.test_dotted_names_from_app",
+        "tests.test_basic.test_disallow_string_for_allowed_methods",
+        "src.flask.scaffold.Scaffold.static_url_path",
+        "src.flask.wrappers.Response",
+        "src.flask.ctx.RequestContext.__init__",
+        "src.flask.sessions.SecureCookieSessionInterface",
+        "tests.test_views",
+        "tests.test_appctx",
+        "tests.test_cli.test_flaskgroup_nested",
+        "tests.test_basic.test_url_generation",
+        "src.flask.app.Flask.select_jinja_autoescape",
+        "src.flask.config",
+        "src.flask.cli.shell_command",
+        "src.flask.scaffold.Scaffold.get",
+        "src.flask.scaffold.Scaffold.send_static_file",
+        "tests.test_cli.test_flaskgroup_app_context",
+        "tests.test_reqctx",
+        "tests.test_basic.test_multi_route_class_views.View.__init__",
+        "tests.test_basic.test_provide_automatic_options_kwarg",
+        "tests.test_blueprints.test_request_processing",
+        "tests.test_basic.test_multi_route_class_views.View",
+        "src.flask.app.Flask.name",
+        "src.flask.wrappers.Request.blueprint",
+        "tests.test_views.test_remove_method_from_parent",
+        "tests.test_views.test_methods_var_inheritance",
+        "src.flask.views.View.dispatch_request",
+        "tests.test_cli.test_with_appcontext",
+        "src.flask.logging.create_logger",
+        "tests.test_apps.blueprintapp.apps.admin",
+        "src.flask.config.Config.get_namespace",
+        "src.flask.blueprints.Blueprint.app_url_value_preprocessor",
+        "tests.test_helpers.TestUrlFor.test_url_for_with_scheme_not_external",
+        "docs.conf.github_link",
+        "src.flask.helpers.send_from_directory",
+        "tests.test_cli.test_load_dotenv",
+        "tests.test_json.test_jsonify_basic_types",
+        "tests.test_session_interface.test_open_session_with_endpoint",
+        "tests.test_blueprints.test_app_request_processing",
+        "src.flask.scaffold._matching_loader_thinks_module_is_package",
+        "src.flask.cli._env_file_callback",
+        "tests.test_blueprints.test_template_filter_with_name_and_template",
+        "tests.test_blueprints.test_nested_blueprint",
+        "tests.test_blueprints.test_template_test_with_name_and_template",
+        "examples.celery.src.task_app.create_app",
+        "examples.tutorial.flaskr.blog",
+        "tests.test_basic.test_multi_route_class_views",
+        "src.flask.app.Flask.debug",
+        "tests.test_json.test_jsonify_uuid_types",
+        "src.flask.app.Flask.process_response",
+        "tests.test_cli.test_cli_blueprints.custom_command",
+        "tests.test_cli.test_cli_blueprints.late_command",
+        "tests.test_cli.test_cli_blueprints.merged_command",
+        "tests.test_blueprints.test_add_template_test_with_name",
+        "tests.test_cli.test_cli_blueprints.nested_command",
+        "src.flask.cli.find_best_app",
+        "src.flask.blueprints.Blueprint._check_setup_finished",
+        "tests.test_testing.test_cli_custom_obj.hello_command",
+        "tests.test_testing.test_cli_invoke.hello_command",
+        "tests.test_basic.test_run_from_config",
+        "tests.test_blueprints.test_add_template_filter_with_name",
+        "tests.test_testing.test_environ_defaults_from_config",
+        "src.flask.globals",
+        "tests.test_cli.TestRoutes.invoke_no_routes.create_app",
+        "tests.test_cli.test_no_command_echo_loading_error",
+        "src.flask.helpers.flash",
+        "src.flask.helpers.redirect",
+        "tests.test_blueprints.test_add_template_test",
+        "tests.test_blueprints.test_route_decorator_custom_endpoint",
+        "tests.test_testing.test_cli_invoke",
+        "examples.celery.src.task_app",
+        "tests.test_blueprints.test_add_template_filter",
+        "src.flask.ctx.AppContext",
+        "src.flask.cli.AppGroup.command",
+        "src.flask.app.Flask.handle_exception",
+        "tests.test_views.test_method_based_view",
+        "examples.tutorial.flaskr.db.init_db_command"
+      ],
+      "retrieval_calls": 3,
+      "index_nodes": 1614,
+      "scored_documents": 3726,
+      "source_chars_read": 551499,
+      "shared_index_seconds": 0.44602820000000065
+    }
+  ]
+}

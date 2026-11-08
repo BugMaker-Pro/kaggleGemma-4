@@ -1,0 +1,34 @@
+{
+  "request_sha256": "43dfc7f4436879c99e98be464df87bc871f4424279aa6cf1d3f6806c8ce02f4b",
+  "manifest_sha256": "001bb1a61aa999d022ac9922671f7f4ad59838c785e7cb011f1a2a59241bef31",
+  "received_utc": "2026-11-02T15:14:47.188753+00:00",
+  "seconds": 0.5161164999999528,
+  "response": {
+    "id": "f0ae19cf-5b90-474b-b7c7-49b9e46b2f0a",
+    "object": "chat.completion",
+    "created": 1793632485,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\": [\"requests iter_content socket.error ConnectionError wrap exception\", \"urllib3 response stream read socket error requests exceptions ConnectionError\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 943,
+      "completion_tokens": 30,
+      "total_tokens": 973,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 815
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

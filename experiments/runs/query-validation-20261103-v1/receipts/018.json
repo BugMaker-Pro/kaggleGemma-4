@@ -1,0 +1,34 @@
+{
+  "request_sha256": "5d854a840028267887f042bdfe8943875e5cf44d22ffff48cb121df77b38ccee",
+  "manifest_sha256": "d537eb7c5ecd9599d7f0c43dee9a074cdaf677151fd186d3946113fa5f47e1fe",
+  "received_utc": "2026-11-02T17:03:53.925274+00:00",
+  "seconds": 2.5880032000004576,
+  "response": {
+    "id": "39b7551c-c560-4fab-8292-56d8be3fa8ff",
+    "object": "chat.completion",
+    "created": 1793639031,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"pytest assertion rewrite source line number Python 3.9 extra decorator line\",\"pytest _pytest assertion rewrite get_statement_startend2 lineno Python 3.9\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1229,
+      "completion_tokens": 43,
+      "total_tokens": 1272,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 1101
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

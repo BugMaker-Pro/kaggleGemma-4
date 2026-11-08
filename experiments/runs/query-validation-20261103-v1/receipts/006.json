@@ -1,0 +1,34 @@
+{
+  "request_sha256": "d6977631c1330265a03bbd1529d740b737aa782b2b3fb85464179c59463b8f6b",
+  "manifest_sha256": "d537eb7c5ecd9599d7f0c43dee9a074cdaf677151fd186d3946113fa5f47e1fe",
+  "received_utc": "2026-11-02T17:03:24.284563+00:00",
+  "seconds": 2.426098899999488,
+  "response": {
+    "id": "5124c8fb-8bb0-4e1a-a804-b7d5f401a0d6",
+    "object": "chat.completion",
+    "created": 1793639002,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"FILE_UPLOAD_PERMISSIONS default 0o644 FileSystemStorage file upload permissions\",\"Django FileSystemStorage _save tempfile NamedTemporaryFile os.rename FILE_UPLOAD_PERMISSIONS\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 384,
+      "completion_tokens": 53,
+      "total_tokens": 437,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 256
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

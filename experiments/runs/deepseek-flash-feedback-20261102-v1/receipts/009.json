@@ -1,0 +1,34 @@
+{
+  "request_sha256": "b1c146c9915bae487dae30e7a7a01e7ee2713d667eb5d8b43c05edfca7acbc84",
+  "manifest_sha256": "001bb1a61aa999d022ac9922671f7f4ad59838c785e7cb011f1a2a59241bef31",
+  "received_utc": "2026-11-02T15:14:46.670950+00:00",
+  "seconds": 0.8285177999996449,
+  "response": {
+    "id": "44cd2f3a-5791-4a25-addd-b8f7c30718f2",
+    "object": "chat.completion",
+    "created": 1793632484,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\": [\"Blueprint name contains a dot raise ValueError nested blueprints\", \"flask blueprints.py Blueprint __init__ name validation dot endpoint\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2319,
+      "completion_tokens": 33,
+      "total_tokens": 2352,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 2191
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

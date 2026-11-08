@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "date": "2026-11-02",
+  "stage": "exploratory_candidate_retention_replay",
+  "parent_manifest_sha256": "c676df0fe8a2f1b730701dcf068ed7a0b34a9e90249de86fe37600fa3e982c4d",
+  "parent_trace_sha256": "27b4595afd25f64d47711b6a76f4f98642ce80a466340e71986fdffd7c173aab",
+  "parent_tasks_sha256": "4245ecf8f8697c434691e48a5bd50d8a6d892c0acd86a1b25397ae02bb042372",
+  "task_ids": [
+    "astropy__astropy-14995",
+    "django__django-15996",
+    "matplotlib__matplotlib-23562",
+    "mwaskom__seaborn-2848",
+    "pallets__flask-4045",
+    "psf__requests-2148",
+    "pydata__xarray-5131",
+    "pylint-dev__pylint-7993",
+    "pytest-dev__pytest-5413",
+    "scikit-learn__scikit-learn-10508",
+    "sphinx-doc__sphinx-7686",
+    "sympy__sympy-14024"
+  ],
+  "source_hashes": {
+    "experiments/candidate_retention.py": "9c46731152cbebe905ee13f664d8a1a6d042ef61ad7d0e10a48ffa6a13237b52",
+    "tools/analyse_candidate_retention.py": "8510f1ce00256bc36f5b53fc068e4a67726f6b421af8e6bafde7159fcd712208"
+  },
+  "config": {
+    "actions": [
+      "identifiers",
+      "code",
+      "prose",
+      "traceback"
+    ],
+    "fixed_actions": [
+      "identifiers",
+      "prose"
+    ],
+    "max_supplemental_actions": 2,
+    "max_retrieval_calls": 3,
+    "per_action_candidates": 200,
+    "candidate_cap": 200,
+    "final_k": 10,
+    "rrf_k": 60,
+    "issue_char_limit": 20000,
+    "query_char_limit": 4000,
+    "max_total_query_chars": 28000,
+    "max_scored_documents": 300000,
+    "max_index_nodes": 100000,
+    "max_source_chars": 50000000,
+    "body_lines": 80,
+    "model_calls": 0,
+    "retries": 0,
+    "feedback_rounds": 0,
+    "cache": "fresh snapshot and index per task",
+    "failure_policy": "empty candidates; retain task in coverage denominator if gold exists"
+  },
+  "comparison": {
+    "primary": "fixed actions: round-robin retention minus RRF retention, macro coverage",
+    "fixed_actions": [
+      "identifiers",
+      "prose"
+    ],
+    "retention": "one next-unseen candidate per list per round; original then ACTIONS order",
+    "ranking": "full-union RRF scores and ID ties, restricted to retained set",
+    "variants": [
+      "rrf",
+      "round_robin"
+    ],
+    "parameter_sweep": false,
+    "candidate_cap": 200,
+    "oracle": "coverage objective; ties fewer actions then action names; secondary only",
+    "interval": "repository bootstrap descriptive 95%; 2000 replicates; seed 20261102",
+    "automatic_expansion": false
+  },
+  "limits": [
+    "Same 12 historically used tasks; protocol motivated by observed v1 failures",
+    "Exploratory replay, not confirmation and not an online action selector",
+    "Same cached retrieval work; no new retrieval, LLM or repair calls",
+    "Final ranking is RRF, not the strongest learned ranker",
+    "Source recall is limited to each saved action top 200; deeper ranks are unknown",
+    "Round-robin preserves neither all baseline hits nor all action hits"
+  ],
+  "manifest_sha256": "6a131f0ca07473e414bd10efbec87cef7db9c52ef9c978565e6ef795bb6080f8"
+}

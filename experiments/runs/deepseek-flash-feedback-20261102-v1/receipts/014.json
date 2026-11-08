@@ -1,0 +1,34 @@
+{
+  "request_sha256": "9753b6a6c5783ff02d402ae7957686d947a5d379565a6619e3d24919d40dff5d",
+  "manifest_sha256": "001bb1a61aa999d022ac9922671f7f4ad59838c785e7cb011f1a2a59241bef31",
+  "received_utc": "2026-11-02T15:21:06.133252+00:00",
+  "seconds": 1.5694151000006968,
+  "response": {
+    "id": "90f639b1-80e4-4433-a35c-0697575450ab",
+    "object": "chat.completion",
+    "created": 1793632863,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\": [\"pylint reporters text.py msg-template unrecognized argument warning format string\", \"pylint msg-template custom braces category template parsing implementation\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 881,
+      "completion_tokens": 34,
+      "total_tokens": 915,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 753
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

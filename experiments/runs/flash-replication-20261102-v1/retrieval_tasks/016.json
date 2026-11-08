@@ -1,0 +1,3674 @@
+{
+  "instance_id": "psf__requests-2317",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "results": [
+    {
+      "instance_id": "psf__requests-2317",
+      "repo": "psf/requests",
+      "base_commit": "091991be0da19de9108dbe5e3752917fea3d7fdc",
+      "arm": "preplanned",
+      "status": "ok",
+      "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+      "request_sha256": "d9ecd16797920b4b1e061cf072ada551ee09b57dfe4db8d6e70e57067a07d6f6",
+      "response_sha256": "e910fbb6d58fd820091d701a021ddc03a29c30f025f3ce66ac5193204316b052",
+      "raw_response_sha256": "e910fbb6d58fd820091d701a021ddc03a29c30f025f3ce66ac5193204316b052",
+      "actions": [
+        {
+          "query": "requests sessions.py method builtin_str binary string GET",
+          "candidates": [
+            {
+              "id": "requests.models.PreparedRequest.prepare_content_length",
+              "score": 14.290236284540141
+            },
+            {
+              "id": "requests.utils.to_native_string",
+              "score": 12.504295621057768
+            },
+            {
+              "id": "test_requests",
+              "score": 11.147126687089651
+            },
+            {
+              "id": "requests.sessions.Session.request",
+              "score": 10.783483160045911
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_basic_auth_str_is_always_native",
+              "score": 10.414198041267
+            },
+            {
+              "id": "requests.sessions",
+              "score": 10.219044573116404
+            },
+            {
+              "id": "requests.packages.urllib3.util.ssl_.resolve_cert_reqs",
+              "score": 9.218112471559053
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.pyopenssl.WrappedSocket.getpeercert",
+              "score": 9.203818404856161
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six",
+              "score": 9.157158091890585
+            },
+            {
+              "id": "requests.auth._basic_auth_str",
+              "score": 9.052816617049944
+            },
+            {
+              "id": "requests.api.request",
+              "score": 9.022205061915901
+            },
+            {
+              "id": "requests.auth",
+              "score": 8.99163660984114
+            },
+            {
+              "id": "requests.utils",
+              "score": 8.969076115990019
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin.rebuild_proxies",
+              "score": 8.929113991386874
+            },
+            {
+              "id": "requests.api",
+              "score": 8.893372597851906
+            },
+            {
+              "id": "test_requests.TestMorselToCookieExpires.test_expires_invalid_str",
+              "score": 8.587332301321027
+            },
+            {
+              "id": "test_requests.TestMorselToCookieExpires.test_expires_valid_str",
+              "score": 8.350590369430874
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin",
+              "score": 8.14716281384137
+            },
+            {
+              "id": "requests.models",
+              "score": 8.105547278296054
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin.resolve_redirects",
+              "score": 8.056151258313289
+            },
+            {
+              "id": "requests.models.PreparedRequest",
+              "score": 7.784350325335348
+            },
+            {
+              "id": "docs._themes.flask_theme_support",
+              "score": 7.500596940548805
+            },
+            {
+              "id": "docs._themes.flask_theme_support.FlaskyStyle",
+              "score": 7.3880373204722485
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin.rebuild_auth",
+              "score": 7.102214922423442
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_header_keys_are_native",
+              "score": 6.879539356044582
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth.build_digest_header",
+              "score": 6.682463382965153
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six.print_",
+              "score": 6.461781306002422
+            },
+            {
+              "id": "requests.packages.urllib3.response.DeflateDecoder.__init__",
+              "score": 6.353773403671143
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin._encode_files",
+              "score": 6.197592018307795
+            },
+            {
+              "id": "test_requests.TestMorselToCookieExpires",
+              "score": 6.0976522652148475
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth",
+              "score": 6.087426477359978
+            },
+            {
+              "id": "requests.packages.urllib3.util.request",
+              "score": 6.038051070510013
+            },
+            {
+              "id": "requests.packages.urllib3.util.ssl_",
+              "score": 6.033801425347137
+            },
+            {
+              "id": "requests.packages.urllib3.response",
+              "score": 5.998618044746743
+            },
+            {
+              "id": "requests.cookies.get_cookie_header",
+              "score": 5.952259191308162
+            },
+            {
+              "id": "requests.packages.chardet.chardistribution.CharDistributionAnalysis.get_order",
+              "score": 5.93332853891407
+            },
+            {
+              "id": "requests.packages.urllib3.util.request.make_headers",
+              "score": 5.912754479071358
+            },
+            {
+              "id": "test_requests.TestTimeout.test_invalid_timeout",
+              "score": 5.9026296176213595
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.HTTPConnectionPool._make_request",
+              "score": 5.873452702204636
+            },
+            {
+              "id": "requests.sessions.Session.get",
+              "score": 5.818172486085547
+            },
+            {
+              "id": "requests.sessions.Session.get_adapter",
+              "score": 5.714929654096821
+            },
+            {
+              "id": "requests.sessions.Session.prepare_request",
+              "score": 5.683033577807082
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_url",
+              "score": 5.632300523627596
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.stream",
+              "score": 5.629716122404019
+            },
+            {
+              "id": "test_requests.UtilsTestCase",
+              "score": 5.496596618454103
+            },
+            {
+              "id": "requests.utils.get_encodings_from_content",
+              "score": 5.437954862725361
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin",
+              "score": 5.423113985731982
+            },
+            {
+              "id": "requests.utils.get_unicode_from_response",
+              "score": 5.411220080595814
+            },
+            {
+              "id": "requests.packages.urllib3.request.RequestMethods.request_encode_url",
+              "score": 5.3990122427804765
+            },
+            {
+              "id": "requests.packages.urllib3.poolmanager.PoolManager.urlopen",
+              "score": 5.335664017204277
+            },
+            {
+              "id": "requests.packages.urllib3.request",
+              "score": 5.2427442585841915
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.pyopenssl.WrappedSocket",
+              "score": 5.2350775637655875
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.__getitem__",
+              "score": 5.197952638269238
+            },
+            {
+              "id": "requests.packages.urllib3.request.RequestMethods",
+              "score": 5.1979246791607325
+            },
+            {
+              "id": "requests.utils.to_key_val_list",
+              "score": 5.130554315708286
+            },
+            {
+              "id": "requests.packages.urllib3.request.RequestMethods.request_encode_body",
+              "score": 5.101848184177561
+            },
+            {
+              "id": "requests.utils.from_key_val_list",
+              "score": 5.083922991043332
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_basicauth_with_netrc",
+              "score": 5.03134482679196
+            },
+            {
+              "id": "requests.utils.iter_slices",
+              "score": 5.014973769819071
+            },
+            {
+              "id": "test_requests.RedirectSession._build_raw",
+              "score": 5.0119468793221955
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_method",
+              "score": 4.9923862766390625
+            },
+            {
+              "id": "requests.models.Request",
+              "score": 4.964656090624796
+            },
+            {
+              "id": "requests.sessions.Session.__enter__",
+              "score": 4.955150172893978
+            },
+            {
+              "id": "requests.sessions.merge_hooks",
+              "score": 4.893963027754492
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.get_redirect_location",
+              "score": 4.890242597837677
+            },
+            {
+              "id": "requests.sessions.Session.__exit__",
+              "score": 4.8868256785240245
+            },
+            {
+              "id": "requests.packages.urllib3.poolmanager.ProxyManager.urlopen",
+              "score": 4.856217829754535
+            },
+            {
+              "id": "test_requests.UtilsTestCase.test_super_len_io_streams",
+              "score": 4.852087402997658
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_body",
+              "score": 4.829956010675852
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry.is_forced_retry",
+              "score": 4.8045612105955335
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse",
+              "score": 4.745937889937878
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.ConnectionPool.__str__",
+              "score": 4.70695255886928
+            },
+            {
+              "id": "requests.sessions.Session.__getstate__",
+              "score": 4.692708299280152
+            },
+            {
+              "id": "requests.sessions.Session.__setstate__",
+              "score": 4.692708299280152
+            },
+            {
+              "id": "requests.sessions.session",
+              "score": 4.692708299280152
+            },
+            {
+              "id": "requests.utils.is_ipv4_address",
+              "score": 4.680147650144077
+            },
+            {
+              "id": "requests.utils.is_valid_cidr",
+              "score": 4.677881113365912
+            },
+            {
+              "id": "requests.packages.urllib3.util.timeout.Timeout.__str__",
+              "score": 4.65438746928155
+            },
+            {
+              "id": "requests.sessions.Session.close",
+              "score": 4.631384764542396
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.send",
+              "score": 4.622431333777911
+            },
+            {
+              "id": "test_requests.test_prepare_unicode_url",
+              "score": 4.621332175092674
+            },
+            {
+              "id": "requests.packages.urllib3.request.RequestMethods.request",
+              "score": 4.605909279327132
+            },
+            {
+              "id": "requests.packages.urllib3.response.DeflateDecoder",
+              "score": 4.559815628988969
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_unicode_method_name",
+              "score": 4.492430667762259
+            },
+            {
+              "id": "test_requests.TestTimeout",
+              "score": 4.447133674439783
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar._find",
+              "score": 4.434611323829732
+            },
+            {
+              "id": "test_requests.TestRedirects.test_requests_are_updated_each_time",
+              "score": 4.412807306535926
+            },
+            {
+              "id": "test_requests.TestMorselToCookieMaxAge.test_max_age_invalid_str",
+              "score": 4.39664156767368
+            },
+            {
+              "id": "requests.sessions.Session.merge_environment_settings",
+              "score": 4.390832373419219
+            },
+            {
+              "id": "test_requests.RedirectSession",
+              "score": 4.386755759326126
+            },
+            {
+              "id": "test_requests.test_prepared_request_complete_copy",
+              "score": 4.354276545551151
+            },
+            {
+              "id": "test_requests.test_prepared_request_no_cookies_copy",
+              "score": 4.354276545551151
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry.sleep",
+              "score": 4.3292588040954065
+            },
+            {
+              "id": "requests.packages.chardet.compat",
+              "score": 4.290431575424951
+            },
+            {
+              "id": "test_requests.TestRedirects",
+              "score": 4.247595388863021
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.HTTPConnectionPool.urlopen",
+              "score": 4.235311191940627
+            },
+            {
+              "id": "requests.packages.urllib3.request.RequestMethods.urlopen",
+              "score": 4.191580814019041
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry.__init__",
+              "score": 4.180676289176731
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_unicode_header_name",
+              "score": 4.1715841847476245
+            },
+            {
+              "id": "requests.packages.urllib3.util.url.Url.request_uri",
+              "score": 4.170248146088038
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.pyopenssl.get_subj_alt_name",
+              "score": 4.0895627017477265
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.ntlmpool.NTLMConnectionPool.urlopen",
+              "score": 4.083894578003731
+            },
+            {
+              "id": "requests.compat",
+              "score": 4.070432115848534
+            },
+            {
+              "id": "requests.utils.super_len",
+              "score": 4.035572270977876
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_response_is_iterable",
+              "score": 4.007796249644168
+            },
+            {
+              "id": "requests.packages.chardet.chardetect.description_of",
+              "score": 3.9925933730796186
+            },
+            {
+              "id": "requests.sessions.Session.delete",
+              "score": 3.981083085533649
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare",
+              "score": 3.9544362850620702
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin._encode_params",
+              "score": 3.93962239493323
+            },
+            {
+              "id": "requests.sessions.Session.mount",
+              "score": 3.936860510555422
+            },
+            {
+              "id": "requests.packages.urllib3.fields.RequestField._render_part",
+              "score": 3.936692710533109
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.list_domains",
+              "score": 3.917407702120333
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.list_paths",
+              "score": 3.917407702120333
+            },
+            {
+              "id": "requests.models.Request.__init__",
+              "score": 3.91065314848473
+            },
+            {
+              "id": "test_requests.test_data_argument_accepts_tuples",
+              "score": 3.903167313564799
+            },
+            {
+              "id": "requests.sessions.Session.head",
+              "score": 3.872338577921507
+            },
+            {
+              "id": "requests.sessions.Session.options",
+              "score": 3.872338577921507
+            },
+            {
+              "id": "requests.packages.chardet.mbcharsetprober.MultiByteCharSetProber.feed",
+              "score": 3.863831949862372
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.__init__",
+              "score": 3.8474767415185127
+            },
+            {
+              "id": "requests.cookies.MockRequest.add_header",
+              "score": 3.8324544775417717
+            },
+            {
+              "id": "requests.models.PreparedRequest.copy",
+              "score": 3.8324544775417717
+            },
+            {
+              "id": "requests.packages.urllib3.add_stderr_logger",
+              "score": 3.816134908950027
+            },
+            {
+              "id": "requests.structures.CaseInsensitiveDict.__repr__",
+              "score": 3.8112596523077142
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar",
+              "score": 3.790917637369565
+            },
+            {
+              "id": "requests.models.Response.close",
+              "score": 3.777837540379323
+            },
+            {
+              "id": "requests.adapters",
+              "score": 3.775014160473094
+            },
+            {
+              "id": "requests.packages.urllib3.util.url.split_first",
+              "score": 3.769837455413634
+            },
+            {
+              "id": "requests.packages.chardet.chardistribution.CharDistributionAnalysis",
+              "score": 3.7685346780737765
+            },
+            {
+              "id": "requests.utils.parse_list_header",
+              "score": 3.753058912692742
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.__setitem__",
+              "score": 3.7117178918596574
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth.build_digest_header.md5_utf8",
+              "score": 3.709658267557324
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth.build_digest_header.sha_utf8",
+              "score": 3.709658267557324
+            },
+            {
+              "id": "requests.packages.urllib3.poolmanager.ProxyManager",
+              "score": 3.7071209541645134
+            },
+            {
+              "id": "requests.models.Response.text",
+              "score": 3.703427123146857
+            },
+            {
+              "id": "requests.auth.HTTPBasicAuth.__call__",
+              "score": 3.6850987276787337
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry",
+              "score": 3.6767084115931
+            },
+            {
+              "id": "requests.auth.HTTPProxyAuth.__call__",
+              "score": 3.660862238586225
+            },
+            {
+              "id": "requests.models.Request.__repr__",
+              "score": 3.6586213956919695
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.connection_from_url",
+              "score": 3.6520971261335333
+            },
+            {
+              "id": "requests.packages.chardet.sjisprober.SJISProber.feed",
+              "score": 3.6372532167845923
+            },
+            {
+              "id": "requests.models.Request.prepare",
+              "score": 3.63536746946147
+            },
+            {
+              "id": "requests.sessions.Session.patch",
+              "score": 3.6340989101106085
+            },
+            {
+              "id": "requests.sessions.Session.put",
+              "score": 3.6340989101106085
+            },
+            {
+              "id": "requests.models.PreparedRequest.__repr__",
+              "score": 3.6335705033139187
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry.new",
+              "score": 3.622946829140819
+            },
+            {
+              "id": "requests",
+              "score": 3.6224062948940285
+            },
+            {
+              "id": "requests.packages.chardet.eucjpprober.EUCJPProber.feed",
+              "score": 3.618169494568188
+            },
+            {
+              "id": "requests.packages.chardet.compat.wrap_ord",
+              "score": 3.613333247740639
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six.print_.write",
+              "score": 3.613333247740639
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.readable",
+              "score": 3.536705994357849
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_response_decode_unicode",
+              "score": 3.5361045992919933
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry",
+              "score": 3.5185761688012827
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.read",
+              "score": 3.4625698530855544
+            },
+            {
+              "id": "requests.sessions.Session.send",
+              "score": 3.458381984763771
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter",
+              "score": 3.419829113357705
+            },
+            {
+              "id": "requests.sessions.Session.post",
+              "score": 3.4070196371831507
+            },
+            {
+              "id": "requests.packages.chardet.mbcharsetprober.MultiByteCharSetProber",
+              "score": 3.3808407969432728
+            },
+            {
+              "id": "test_requests.assert_copy",
+              "score": 3.379066207254459
+            },
+            {
+              "id": "requests.packages.urllib3.fields.format_header_param",
+              "score": 3.32068701852878
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.proxy_headers",
+              "score": 3.3171908387120093
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.readinto",
+              "score": 3.2748046414858387
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_autoset_header_values_are_native",
+              "score": 3.272304882662263
+            },
+            {
+              "id": "requests.packages.chardet.sjisprober.SJISProber",
+              "score": 3.247964996813965
+            },
+            {
+              "id": "requests.packages.chardet.eucjpprober.EUCJPProber",
+              "score": 3.236637504612024
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_headers",
+              "score": 3.2337655540092145
+            },
+            {
+              "id": "requests.auth.HTTPProxyAuth",
+              "score": 3.198121048700199
+            },
+            {
+              "id": "requests.cookies.MockRequest",
+              "score": 3.1606055150120005
+            },
+            {
+              "id": "requests.utils.default_user_agent",
+              "score": 3.1545177853657136
+            },
+            {
+              "id": "requests.packages.urllib3.filepost.encode_multipart_formdata",
+              "score": 3.1096391570177198
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth.__call__",
+              "score": 3.084461641067259
+            },
+            {
+              "id": "requests.packages.urllib3.util.ssl_.resolve_ssl_version",
+              "score": 3.057581015427192
+            },
+            {
+              "id": "requests.cookies",
+              "score": 3.0482830918171246
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_http_error",
+              "score": 3.042791729857011
+            },
+            {
+              "id": "requests.auth.HTTPBasicAuth",
+              "score": 3.024355025120124
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry.increment",
+              "score": 2.9965094474431186
+            },
+            {
+              "id": "requests.packages.urllib3.util.url",
+              "score": 2.9725601349385653
+            },
+            {
+              "id": "requests.packages.urllib3.connection.VerifiedHTTPSConnection.connect",
+              "score": 2.9490921012429308
+            },
+            {
+              "id": "requests.packages.urllib3",
+              "score": 2.895151758779943
+            },
+            {
+              "id": "requests.sessions.Session",
+              "score": 2.8649099743798274
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_unicode_multipart_post_fieldnames",
+              "score": 2.765051740698322
+            },
+            {
+              "id": "requests.models.PreparedRequest.__init__",
+              "score": 2.7632431011321317
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.cert_verify",
+              "score": 2.7439456078050775
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth.handle_401",
+              "score": 2.73951498302735
+            },
+            {
+              "id": "requests.sessions.merge_setting",
+              "score": 2.715298751593075
+            },
+            {
+              "id": "requests.packages.chardet.mbcharsetprober",
+              "score": 2.659382400654468
+            },
+            {
+              "id": "requests.packages.urllib3.poolmanager",
+              "score": 2.63858069847981
+            },
+            {
+              "id": "requests.packages.urllib3.exceptions.MaxRetryError",
+              "score": 2.6294576624103385
+            },
+            {
+              "id": "requests.packages.urllib3.poolmanager.PoolManager",
+              "score": 2.6186154624612303
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.ConnectionPool",
+              "score": 2.5764010358134657
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool",
+              "score": 2.5324990069328184
+            },
+            {
+              "id": "test_requests.TestMorselToCookieMaxAge",
+              "score": 2.462424969106901
+            },
+            {
+              "id": "requests.packages.chardet.eucjpprober",
+              "score": 2.4431281287951387
+            },
+            {
+              "id": "requests.packages.urllib3.poolmanager.PoolManager._new_pool",
+              "score": 2.433753861571806
+            },
+            {
+              "id": "requests.packages.urllib3.fields",
+              "score": 2.384453107601894
+            },
+            {
+              "id": "requests.sessions.Session.__init__",
+              "score": 2.3565838249134816
+            },
+            {
+              "id": "requests.packages.urllib3.connection.VerifiedHTTPSConnection",
+              "score": 2.356518988548779
+            },
+            {
+              "id": "requests.packages.chardet.chardetect",
+              "score": 2.354464497934626
+            },
+            {
+              "id": "requests.packages.chardet.sjisprober",
+              "score": 2.3157341806569884
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.pyopenssl",
+              "score": 2.2912095140568893
+            },
+            {
+              "id": "requests.packages.urllib3.fields.RequestField.make_multipart",
+              "score": 2.2869194975713696
+            }
+          ],
+          "scored_documents": 888,
+          "seconds": 0.0016383000001951586
+        },
+        {
+          "query": "requests method builtin_str bytes decode python3 404",
+          "candidates": [
+            {
+              "id": "requests.models.PreparedRequest.prepare_content_length",
+              "score": 13.117121523202226
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.stream",
+              "score": 12.993332999660568
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_response_decode_unicode",
+              "score": 12.730218820721799
+            },
+            {
+              "id": "requests.utils.to_native_string",
+              "score": 10.78776018160012
+            },
+            {
+              "id": "requests.models",
+              "score": 10.549898070639783
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_basic_auth_str_is_always_native",
+              "score": 10.413464324817873
+            },
+            {
+              "id": "requests.models.PreparedRequest",
+              "score": 10.101211543186785
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin._encode_files",
+              "score": 9.922931896074717
+            },
+            {
+              "id": "requests.sessions.Session.request",
+              "score": 9.501006010527268
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin",
+              "score": 9.332969336884256
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_url",
+              "score": 8.908041826327
+            },
+            {
+              "id": "requests.utils",
+              "score": 8.688643307190517
+            },
+            {
+              "id": "requests.models.Response.iter_content",
+              "score": 8.374749034565918
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.__init__",
+              "score": 8.227818622455132
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.read",
+              "score": 8.049048428135846
+            },
+            {
+              "id": "test_requests",
+              "score": 7.566597542131291
+            },
+            {
+              "id": "requests.packages.urllib3.util.ssl_",
+              "score": 6.954429724556823
+            },
+            {
+              "id": "requests.packages.chardet.compat",
+              "score": 6.9410567222208375
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin._encode_params",
+              "score": 6.864803054949775
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_request_ok_set",
+              "score": 6.7053916490966365
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse",
+              "score": 6.635944961325035
+            },
+            {
+              "id": "requests.models.Response.text",
+              "score": 6.5962303816450545
+            },
+            {
+              "id": "requests.api.request",
+              "score": 6.481703216840009
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_status_raising",
+              "score": 6.3448819268235885
+            },
+            {
+              "id": "requests.models.Response.__init__",
+              "score": 6.268317752645587
+            },
+            {
+              "id": "requests.utils.stream_decode_response_unicode",
+              "score": 6.117441930011364
+            },
+            {
+              "id": "requests.packages.urllib3.exceptions.DecodeError",
+              "score": 5.964601460148244
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_response_is_iterable.read_mock",
+              "score": 5.7036192146657
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin",
+              "score": 5.647435146605672
+            },
+            {
+              "id": "requests.packages.urllib3.filepost.encode_multipart_formdata",
+              "score": 5.636522598961639
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin.resolve_redirects",
+              "score": 5.593058499925302
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth.build_digest_header",
+              "score": 5.544629716613982
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.tell",
+              "score": 5.534521323048954
+            },
+            {
+              "id": "requests.utils.to_key_val_list",
+              "score": 5.531611478976327
+            },
+            {
+              "id": "requests.exceptions.ContentDecodingError",
+              "score": 5.5074952709065075
+            },
+            {
+              "id": "requests.utils.from_key_val_list",
+              "score": 5.481334967916543
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.HTTPConnectionPool._make_request",
+              "score": 5.413643318914351
+            },
+            {
+              "id": "requests.api",
+              "score": 5.389834043971461
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_header_keys_are_native",
+              "score": 5.286416958886738
+            },
+            {
+              "id": "requests.models.Response.iter_lines",
+              "score": 5.276970942196352
+            },
+            {
+              "id": "requests.packages.urllib3.util.ssl_.resolve_cert_reqs",
+              "score": 5.177261612328868
+            },
+            {
+              "id": "requests.models.Response.content",
+              "score": 5.144116269208799
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin.rebuild_proxies",
+              "score": 5.138985182888246
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_method",
+              "score": 4.991634885338126
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.pyopenssl.get_subj_alt_name",
+              "score": 4.987630987232327
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth",
+              "score": 4.961094358826361
+            },
+            {
+              "id": "requests.packages.urllib3.util.request",
+              "score": 4.869109815259142
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_body",
+              "score": 4.829554892956864
+            },
+            {
+              "id": "requests.auth",
+              "score": 4.8137542155595785
+            },
+            {
+              "id": "requests.models.Response.iter_content.generate",
+              "score": 4.809289136477686
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry.is_forced_retry",
+              "score": 4.803894178686241
+            },
+            {
+              "id": "requests.models.Response",
+              "score": 4.798739732095806
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.build_response",
+              "score": 4.77803365464203
+            },
+            {
+              "id": "requests.packages.urllib3.util.request.make_headers",
+              "score": 4.740187038540719
+            },
+            {
+              "id": "requests.packages.urllib3.filepost",
+              "score": 4.7383952077982805
+            },
+            {
+              "id": "requests.packages.chardet.detect",
+              "score": 4.730865240925899
+            },
+            {
+              "id": "requests.packages.urllib3.util.ssl_.assert_fingerprint",
+              "score": 4.714712461059498
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.ConnectionPool.__str__",
+              "score": 4.70613734369747
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_decompress_gzip",
+              "score": 4.682485015074831
+            },
+            {
+              "id": "requests.packages.urllib3.util.timeout.Timeout.__str__",
+              "score": 4.653593017634789
+            },
+            {
+              "id": "requests.sessions",
+              "score": 4.650818073805735
+            },
+            {
+              "id": "requests.packages.urllib3.request.RequestMethods.request",
+              "score": 4.60539804008698
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six.int2byte",
+              "score": 4.5143322879646215
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six",
+              "score": 4.503891170764311
+            },
+            {
+              "id": "requests.auth._basic_auth_str",
+              "score": 4.502780530640565
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_unicode_method_name",
+              "score": 4.491509381898714
+            },
+            {
+              "id": "test_requests.TestMorselToCookieExpires.test_expires_invalid_str",
+              "score": 4.4665942654016675
+            },
+            {
+              "id": "test_requests.UtilsTestCase.test_super_len_io_streams",
+              "score": 4.446695333297244
+            },
+            {
+              "id": "test_requests.TestMorselToCookieMaxAge.test_max_age_invalid_str",
+              "score": 4.395940818438502
+            },
+            {
+              "id": "test_requests.TestMorselToCookieExpires.test_expires_valid_str",
+              "score": 4.361446568198616
+            },
+            {
+              "id": "requests.packages.urllib3.request.RequestMethods",
+              "score": 4.212679085517771
+            },
+            {
+              "id": "requests.models.Response.json",
+              "score": 4.193718633824505
+            },
+            {
+              "id": "requests.packages.urllib3.request.RequestMethods.urlopen",
+              "score": 4.1908800647838635
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry.__init__",
+              "score": 4.180136284817916
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_unicode_header_name",
+              "score": 4.170832793446688
+            },
+            {
+              "id": "requests.packages.urllib3.request",
+              "score": 4.165416655335864
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.send",
+              "score": 4.154795119308651
+            },
+            {
+              "id": "requests.packages.urllib3.response",
+              "score": 4.151955435647801
+            },
+            {
+              "id": "requests.utils.unquote_unreserved",
+              "score": 4.129625951977184
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.ntlmpool.NTLMConnectionPool.urlopen",
+              "score": 4.083231093239392
+            },
+            {
+              "id": "requests.compat",
+              "score": 4.0699865962078094
+            },
+            {
+              "id": "requests.packages.urllib3.poolmanager.PoolManager.urlopen",
+              "score": 4.038928950303422
+            },
+            {
+              "id": "test_requests.TestTimeout.test_invalid_timeout",
+              "score": 4.035201325298498
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_response_is_iterable",
+              "score": 4.006558716203389
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare",
+              "score": 3.953903202429603
+            },
+            {
+              "id": "requests.packages.urllib3.request.RequestMethods.request_encode_url",
+              "score": 3.931750692639306
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.list_domains",
+              "score": 3.916673985671207
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.list_paths",
+              "score": 3.916673985671207
+            },
+            {
+              "id": "requests.models.Request.__init__",
+              "score": 3.9101333902783084
+            },
+            {
+              "id": "requests.packages.urllib3.packages.ssl_match_hostname._implementation._dnsname_match",
+              "score": 3.889820716807472
+            },
+            {
+              "id": "requests.models.Request",
+              "score": 3.8477324451610073
+            },
+            {
+              "id": "requests.cookies.MockRequest.add_header",
+              "score": 3.8317457673977953
+            },
+            {
+              "id": "requests.models.PreparedRequest.copy",
+              "score": 3.8317457673977953
+            },
+            {
+              "id": "requests.packages.urllib3.poolmanager.ProxyManager.urlopen",
+              "score": 3.819481601294162
+            },
+            {
+              "id": "requests.structures.CaseInsensitiveDict.__repr__",
+              "score": 3.8104053642017908
+            },
+            {
+              "id": "requests.models.Response.close",
+              "score": 3.777144575190579
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.__setitem__",
+              "score": 3.7110436506474787
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth.build_digest_header.md5_utf8",
+              "score": 3.708826753248637
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth.build_digest_header.sha_utf8",
+              "score": 3.708826753248637
+            },
+            {
+              "id": "requests.packages.chardet",
+              "score": 3.684766554664941
+            },
+            {
+              "id": "requests.auth.HTTPBasicAuth.__call__",
+              "score": 3.6842727183538893
+            },
+            {
+              "id": "requests.status_codes",
+              "score": 3.671527625188609
+            },
+            {
+              "id": "requests.auth.HTTPProxyAuth.__call__",
+              "score": 3.6600416618338762
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.__getitem__",
+              "score": 3.659806109157645
+            },
+            {
+              "id": "requests.models.Request.__repr__",
+              "score": 3.657761217875256
+            },
+            {
+              "id": "requests.utils.super_len",
+              "score": 3.6522743719475064
+            },
+            {
+              "id": "requests.models.Request.prepare",
+              "score": 3.634714403330181
+            },
+            {
+              "id": "requests.models.PreparedRequest.__repr__",
+              "score": 3.6327162152079953
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry.new",
+              "score": 3.6222971635535077
+            },
+            {
+              "id": "requests.packages.chardet.jpcntx.JapaneseContextAnalysis.feed",
+              "score": 3.613070361578375
+            },
+            {
+              "id": "requests.packages.chardet.compat.wrap_ord",
+              "score": 3.6125233245399424
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six.print_.write",
+              "score": 3.6125233245399424
+            },
+            {
+              "id": "requests.utils.get_unicode_from_response",
+              "score": 3.590980473022728
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.readable",
+              "score": 3.535874480049162
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six.print_",
+              "score": 3.486210292501207
+            },
+            {
+              "id": "requests.api.patch",
+              "score": 3.386028633013476
+            },
+            {
+              "id": "requests.api.put",
+              "score": 3.386028633013476
+            },
+            {
+              "id": "requests.packages.chardet.chardistribution.CharDistributionAnalysis.feed",
+              "score": 3.386028633013476
+            },
+            {
+              "id": "test_requests.assert_copy",
+              "score": 3.378271755607696
+            },
+            {
+              "id": "test_requests.TestRedirects.test_requests_are_updated_each_time",
+              "score": 3.371227592409219
+            },
+            {
+              "id": "requests.packages.chardet.jpcntx.JapaneseContextAnalysis",
+              "score": 3.369721756857164
+            },
+            {
+              "id": "requests.sessions.Session.patch",
+              "score": 3.333948583677997
+            },
+            {
+              "id": "requests.sessions.Session.put",
+              "score": 3.333948583677997
+            },
+            {
+              "id": "requests.packages.chardet.jpcntx.JapaneseContextAnalysis.reset",
+              "score": 3.2834463387631354
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.readinto",
+              "score": 3.2740347027570063
+            },
+            {
+              "id": "test_requests.TestRedirects",
+              "score": 3.2569265910304495
+            },
+            {
+              "id": "test_requests.test_prepare_unicode_url",
+              "score": 3.253954457748707
+            },
+            {
+              "id": "docs._themes.flask_theme_support",
+              "score": 3.2012032807444246
+            },
+            {
+              "id": "requests.auth.HTTPProxyAuth",
+              "score": 3.1974041946880214
+            },
+            {
+              "id": "docs._themes.flask_theme_support.FlaskyStyle",
+              "score": 3.179677281015595
+            },
+            {
+              "id": "requests.api.post",
+              "score": 3.1559632843771395
+            },
+            {
+              "id": "requests.packages.urllib3.packages.ssl_match_hostname._implementation",
+              "score": 3.1552660203507483
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.HTTPConnectionPool.urlopen",
+              "score": 3.138045403754528
+            },
+            {
+              "id": "requests.sessions.Session.post",
+              "score": 3.125624418847798
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar._find",
+              "score": 3.1228013637038834
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth.__call__",
+              "score": 3.0837364538469374
+            },
+            {
+              "id": "test_requests.test_prepared_request_complete_copy",
+              "score": 3.065916285358276
+            },
+            {
+              "id": "test_requests.test_prepared_request_no_cookies_copy",
+              "score": 3.065916285358276
+            },
+            {
+              "id": "requests.packages.urllib3.util.ssl_.resolve_ssl_version",
+              "score": 3.05689566325162
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry.sleep",
+              "score": 3.0483008904356867
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_http_error",
+              "score": 3.0421101218024877
+            },
+            {
+              "id": "test_requests.TestMorselToCookieExpires",
+              "score": 3.032854431664003
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_manual_redirect_with_partial_body_read",
+              "score": 3.0249328225195886
+            },
+            {
+              "id": "requests.auth.HTTPBasicAuth",
+              "score": 3.023677120500195
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin.rebuild_auth",
+              "score": 3.0146787533203288
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_unicode_multipart_post_fieldnames",
+              "score": 2.764100918039688
+            },
+            {
+              "id": "requests.models.PreparedRequest.__init__",
+              "score": 2.7625934355448205
+            },
+            {
+              "id": "requests.packages.urllib3.request.RequestMethods.request_encode_body",
+              "score": 2.7489978013114524
+            },
+            {
+              "id": "test_requests.test_data_argument_accepts_tuples",
+              "score": 2.7482830054428042
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.cert_verify",
+              "score": 2.7435094331766323
+            },
+            {
+              "id": "test_requests.UtilsTestCase",
+              "score": 2.653727785631707
+            },
+            {
+              "id": "test_requests.TestTimeout",
+              "score": 2.634146786317674
+            },
+            {
+              "id": "requests.sessions.Session.prepare_request",
+              "score": 2.6209455338475447
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry",
+              "score": 2.5888630482264836
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.ConnectionPool",
+              "score": 2.575823539404988
+            },
+            {
+              "id": "test_requests.TestMorselToCookieMaxAge",
+              "score": 2.461873020261966
+            },
+            {
+              "id": "requests.packages.urllib3.poolmanager.PoolManager._new_pool",
+              "score": 2.433181662140203
+            },
+            {
+              "id": "requests.packages.urllib3.add_stderr_logger",
+              "score": 2.4220736552741955
+            },
+            {
+              "id": "requests.packages.urllib3.poolmanager.ProxyManager",
+              "score": 2.4132785050778094
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.proxy_headers",
+              "score": 2.3686696322144285
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry.increment",
+              "score": 2.357778177303691
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.pyopenssl",
+              "score": 2.290670688586337
+            },
+            {
+              "id": "requests.packages.urllib3.fields.RequestField.make_multipart",
+              "score": 2.286381820340613
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.init_poolmanager",
+              "score": 2.239218032018575
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.proxy_manager_for",
+              "score": 2.229816052433715
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry",
+              "score": 2.2103422572223304
+            },
+            {
+              "id": "requests.packages.chardet.mbcharsetprober.MultiByteCharSetProber.feed",
+              "score": 2.173425849745154
+            },
+            {
+              "id": "requests.packages.urllib3.packages.ordered_dict.OrderedDict.update",
+              "score": 2.156287674701616
+            },
+            {
+              "id": "requests.packages.urllib3.exceptions",
+              "score": 2.133412490356596
+            },
+            {
+              "id": "requests.packages.chardet.sjisprober.SJISProber.feed",
+              "score": 2.001457533116802
+            },
+            {
+              "id": "requests.packages.chardet.eucjpprober.EUCJPProber.feed",
+              "score": 1.9871638351312702
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth.handle_401",
+              "score": 1.9289366471286948
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter",
+              "score": 1.8870917420672362
+            },
+            {
+              "id": "requests.packages.chardet.mbcharsetprober.MultiByteCharSetProber",
+              "score": 1.665931579768537
+            },
+            {
+              "id": "requests.packages.chardet.chardistribution.CharDistributionAnalysis",
+              "score": 1.654452492970581
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool",
+              "score": 1.5586169473117104
+            },
+            {
+              "id": "requests.packages.chardet.sjisprober.SJISProber",
+              "score": 1.5328580577474022
+            },
+            {
+              "id": "requests.packages.chardet.eucjpprober.EUCJPProber",
+              "score": 1.5244599295142698
+            },
+            {
+              "id": "requests.packages.urllib3",
+              "score": 1.5243586627912016
+            },
+            {
+              "id": "requests.structures.CaseInsensitiveDict",
+              "score": 1.4642914082587728
+            },
+            {
+              "id": "requests.packages.chardet.chardistribution",
+              "score": 1.422780842792649
+            },
+            {
+              "id": "requests.packages.urllib3.poolmanager",
+              "score": 1.3548409550546552
+            },
+            {
+              "id": "requests.cookies.MockRequest",
+              "score": 1.3344346512623924
+            },
+            {
+              "id": "requests.packages.chardet.mbcharsetprober",
+              "score": 1.3123536778414977
+            },
+            {
+              "id": "requests.adapters",
+              "score": 1.2941349251169563
+            },
+            {
+              "id": "requests.cookies",
+              "score": 1.289906957958619
+            },
+            {
+              "id": "requests.packages.chardet.sjisprober",
+              "score": 1.2704108531580955
+            },
+            {
+              "id": "requests.packages.chardet.euckrfreq",
+              "score": 1.2689488176066799
+            },
+            {
+              "id": "requests.packages.urllib3.poolmanager.PoolManager",
+              "score": 1.2650406009348794
+            },
+            {
+              "id": "requests.packages.chardet.gb2312freq",
+              "score": 1.2569072778733819
+            },
+            {
+              "id": "requests.packages.chardet.eucjpprober",
+              "score": 1.250428997239304
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar",
+              "score": 1.0898058016901726
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_entry_points",
+              "score": 0.005785757546864031
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_cannot_send_unprepared_requests",
+              "score": 0.005608966501302024
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_unicode_get",
+              "score": 0.005518109838530113
+            },
+            {
+              "id": "test_requests.RequestsTestCase",
+              "score": 0.005507019722811848
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_requests_history_is_saved",
+              "score": 0.005495061115026843
+            },
+            {
+              "id": "setup",
+              "score": 0.005451836510356064
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_requests_in_history_are_not_overridden",
+              "score": 0.005428196205909958
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_unicode_multipart_post",
+              "score": 0.0054229245321766924
+            }
+          ],
+          "scored_documents": 888,
+          "seconds": 0.0009543999985908158
+        }
+      ],
+      "order": [
+        "requests.utils.to_native_string",
+        "requests.models.PreparedRequest.prepare_content_length",
+        "requests.models",
+        "requests.models.RequestEncodingMixin._encode_files",
+        "requests.packages.urllib3.packages.six",
+        "requests.sessions.Session.request",
+        "requests.utils",
+        "requests.sessions",
+        "test_requests",
+        "requests.models.RequestEncodingMixin",
+        "requests.models.PreparedRequest.prepare_url",
+        "test_requests.RequestsTestCase.test_basic_auth_str_is_always_native",
+        "requests.models.PreparedRequest",
+        "requests.sessions.SessionRedirectMixin",
+        "requests.packages.urllib3.connectionpool.HTTPConnectionPool._make_request",
+        "requests.api.request",
+        "requests.sessions.SessionRedirectMixin.resolve_redirects",
+        "requests.utils.to_key_val_list",
+        "requests.sessions.SessionRedirectMixin.rebuild_proxies",
+        "requests.utils.from_key_val_list",
+        "requests.packages.urllib3.response.HTTPResponse.stream",
+        "requests.packages.urllib3.response.HTTPResponse.read",
+        "requests.auth",
+        "requests.api",
+        "requests.packages.urllib3.util.ssl_",
+        "requests.packages.urllib3.util.ssl_.resolve_cert_reqs",
+        "requests.utils.get_unicode_from_response",
+        "requests.auth._basic_auth_str",
+        "requests.packages.urllib3.request",
+        "requests.auth.HTTPDigestAuth.build_digest_header",
+        "requests.packages.urllib3.request.RequestMethods",
+        "test_requests.RequestsTestCase.test_response_decode_unicode",
+        "requests.sessions.SessionRedirectMixin.rebuild_auth",
+        "requests.models.RequestEncodingMixin._encode_params",
+        "requests.models.Response.__init__",
+        "test_requests.RequestsTestCase.test_header_keys_are_native",
+        "requests.packages.urllib3.response.HTTPResponse",
+        "requests.cookies.RequestsCookieJar._find",
+        "requests.packages.urllib3.util.request",
+        "requests.cookies.RequestsCookieJar",
+        "test_requests.TestMorselToCookieExpires.test_expires_invalid_str",
+        "docs._themes.flask_theme_support",
+        "requests.auth.HTTPDigestAuth",
+        "requests.models.Response",
+        "requests.packages.urllib3.util.request.make_headers",
+        "requests.packages.urllib3.request.RequestMethods.request_encode_url",
+        "requests.packages.urllib3.filepost.encode_multipart_formdata",
+        "requests.packages.urllib3.request.RequestMethods.request_encode_body",
+        "requests.packages.urllib3.response",
+        "requests.models.Response.text",
+        "docs._themes.flask_theme_support.FlaskyStyle",
+        "requests.packages.chardet.compat",
+        "requests.models.PreparedRequest.prepare_body",
+        "requests.packages.urllib3.packages.six.print_",
+        "requests.packages.urllib3.contrib.pyopenssl",
+        "requests.packages.urllib3.connectionpool.HTTPConnectionPool.urlopen",
+        "requests.packages.urllib3.request.RequestMethods.request",
+        "test_requests.UtilsTestCase",
+        "requests.adapters.HTTPAdapter.send",
+        "requests.cookies.RequestsCookieJar.__getitem__",
+        "requests.packages.urllib3.contrib.pyopenssl.WrappedSocket.getpeercert",
+        "test_requests.TestMorselToCookieExpires.test_expires_valid_str",
+        "test_requests.UtilsTestCase.test_super_len_io_streams",
+        "requests.packages.urllib3.util.retry.Retry.sleep",
+        "requests.packages.urllib3.poolmanager.PoolManager.urlopen",
+        "requests.packages.urllib3",
+        "requests.cookies.RequestsCookieJar.list_domains",
+        "requests.cookies.RequestsCookieJar.list_paths",
+        "requests.packages.chardet.chardistribution.CharDistributionAnalysis",
+        "requests.packages.urllib3.response.HTTPResponse.__init__",
+        "requests.compat",
+        "requests.packages.urllib3.request.RequestMethods.urlopen",
+        "requests.adapters.HTTPAdapter.proxy_headers",
+        "requests.packages.urllib3.fields.format_header_param",
+        "requests.packages.urllib3.filepost",
+        "requests.cookies.MockRequest.add_header",
+        "requests.models.PreparedRequest.prepare_method",
+        "requests.packages.urllib3.fields",
+        "requests.status_codes",
+        "test_requests.TestTimeout.test_invalid_timeout",
+        "test_requests.TestRedirects.test_requests_are_updated_each_time",
+        "test_requests.TestRedirects",
+        "requests.packages.urllib3.util.retry.Retry.is_forced_retry",
+        "test_requests.RequestsTestCase.test_request_ok_set",
+        "requests.packages.urllib3.connectionpool.ConnectionPool",
+        "test_requests.test_data_argument_accepts_tuples",
+        "requests.cookies.RequestsCookieJar.__setitem__",
+        "test_requests.TestTimeout",
+        "requests.packages.chardet.hebrewprober",
+        "test_requests.TestMorselToCookieExpires",
+        "requests.packages.urllib3.connectionpool.ConnectionPool.__str__",
+        "test_requests.RequestsTestCase.test_basicauth_with_netrc",
+        "requests.packages.urllib3.contrib.pyopenssl.WrappedSocket",
+        "test_requests.RequestsTestCase.test_status_raising",
+        "requests.packages.urllib3.contrib.pyopenssl.get_subj_alt_name",
+        "requests.utils.unquote_header_value",
+        "requests.packages.chardet.chardistribution.CharDistributionAnalysis.get_order",
+        "requests.packages.urllib3.util.timeout.Timeout.__str__",
+        "requests.sessions.Session.get_adapter",
+        "requests.packages.urllib3._collections.HTTPHeaderDict.getlist",
+        "requests.models.Response.json",
+        "requests.cookies",
+        "requests.packages.urllib3.packages.ssl_match_hostname._implementation",
+        "test_requests.RequestsTestCase.test_unicode_method_name",
+        "requests.packages.urllib3.util.retry.Retry",
+        "requests.models.Request",
+        "requests.packages.urllib3.poolmanager.ProxyManager",
+        "requests.packages.urllib3.packages.ordered_dict",
+        "requests.packages.urllib3.connectionpool",
+        "test_requests.TestMorselToCookieMaxAge.test_max_age_invalid_str",
+        "requests.sessions.Session.prepare_request",
+        "requests.adapters.HTTPAdapter",
+        "requests.utils.parse_list_header",
+        "requests.packages.urllib3.poolmanager.ProxyManager.urlopen",
+        "docs.conf",
+        "requests.auth.HTTPDigestAuth.handle_401",
+        "requests.models.Response.content",
+        "requests.packages.urllib3.util.retry.Retry.__init__",
+        "requests.adapters",
+        "requests.models.Response.iter_content",
+        "test_requests.RequestsTestCase.test_unicode_header_name",
+        "requests.adapters.HTTPAdapter.build_response",
+        "requests.packages.urllib3.contrib.ntlmpool.NTLMConnectionPool.urlopen",
+        "requests.packages.urllib3.util.ssl_.assert_fingerprint",
+        "requests.packages.urllib3.poolmanager.PoolManager",
+        "requests.utils.is_valid_cidr",
+        "requests.packages.urllib3.util.retry.Retry.increment",
+        "requests.packages.urllib3.util.retry",
+        "test_requests.RequestsTestCase.test_response_is_iterable",
+        "requests.sessions.Session.close",
+        "requests.packages.urllib3.response.HTTPResponse.get_redirect_location",
+        "requests.structures.CaseInsensitiveDict",
+        "requests.models.PreparedRequest.prepare",
+        "test_requests.RedirectSession._build_raw",
+        "requests.cookies.MockRequest",
+        "test_requests.RequestsTestCase.test_cookie_as_dict_values",
+        "requests.packages.urllib3.util.url.Url.request_uri",
+        "requests.models.Request.__init__",
+        "test_requests.test_prepare_unicode_url",
+        "requests.sessions.Session.__exit__",
+        "test_requests.RedirectSession",
+        "requests.packages.chardet.mbcharsetprober",
+        "requests.utils.unquote_unreserved",
+        "requests.utils.super_len",
+        "requests.models.PreparedRequest.copy",
+        "requests.structures.CaseInsensitiveDict.__repr__",
+        "requests.packages.chardet.eucjpprober",
+        "requests.models.Response.close",
+        "test_requests.test_prepared_request_complete_copy",
+        "test_requests.test_prepared_request_no_cookies_copy",
+        "requests.packages.urllib3._collections.HTTPHeaderDict",
+        "requests.utils.stream_decode_response_unicode",
+        "requests",
+        "requests.auth.HTTPDigestAuth.build_digest_header.md5_utf8",
+        "requests.auth.HTTPDigestAuth.build_digest_header.sha_utf8",
+        "requests.packages.urllib3.connection.HTTPConnection.__init__",
+        "requests.packages.urllib3.exceptions.DecodeError",
+        "requests.cookies.RequestsCookieJar.get",
+        "requests.packages.urllib3.response.DeflateDecoder.__init__",
+        "test_requests.RequestsTestCase.test_response_is_iterable.read_mock",
+        "requests.auth.HTTPBasicAuth.__call__",
+        "requests.auth.HTTPProxyAuth.__call__",
+        "requests.models.Request.__repr__",
+        "requests.models.Request.prepare",
+        "requests.models.PreparedRequest.__repr__",
+        "requests.packages.urllib3.util.retry.Retry.new",
+        "requests.packages.urllib3.response.HTTPResponse.tell",
+        "requests.utils.parse_dict_header",
+        "requests.packages.urllib3.packages.ssl_match_hostname._implementation._dnsname_match",
+        "requests.packages.chardet.compat.wrap_ord",
+        "requests.packages.urllib3.packages.six.print_.write",
+        "requests.cookies.get_cookie_header",
+        "requests.exceptions.ContentDecodingError",
+        "requests.packages.urllib3._collections.RecentlyUsedContainer.clear",
+        "requests.packages.urllib3.response.HTTPResponse.readable",
+        "requests.sessions.Session.patch",
+        "requests.sessions.Session.put",
+        "requests.cookies.RequestsCookieJar.set",
+        "test_requests.assert_copy",
+        "requests.packages.urllib3.packages.ordered_dict.OrderedDict",
+        "requests.packages.urllib3.add_stderr_logger",
+        "requests.packages.chardet.jpcntx.JapaneseContextAnalysis.feed",
+        "requests.packages.chardet.mbcharsetprober.MultiByteCharSetProber.feed",
+        "requests.models.Response.iter_lines",
+        "requests.packages.chardet.hebrewprober.HebrewProber.feed",
+        "requests.sessions.Session.get",
+        "requests.packages.urllib3.util.url",
+        "requests.packages.urllib3.response.HTTPResponse.readinto",
+        "requests.packages.urllib3._collections.RecentlyUsedContainer",
+        "requests.sessions.Session.post",
+        "requests.auth.HTTPProxyAuth",
+        "requests.packages.urllib3.packages.ordered_dict.OrderedDict.update",
+        "requests.packages.urllib3.util.url.split_first",
+        "requests.auth.HTTPDigestAuth.__call__",
+        "requests.utils.get_encodings_from_content",
+        "requests.packages.urllib3.util.ssl_.resolve_ssl_version",
+        "requests.packages.chardet.sjisprober.SJISProber.feed",
+        "requests.packages.urllib3.connection.HTTPConnection",
+        "requests.packages.chardet.chardistribution",
+        "test_requests.RequestsTestCase.test_http_error"
+      ],
+      "retrieval_calls": 3,
+      "index_nodes": 888,
+      "scored_documents": 2664,
+      "source_chars_read": 808145,
+      "shared_index_seconds": 0.6517377000000124
+    },
+    {
+      "instance_id": "psf__requests-2317",
+      "repo": "psf/requests",
+      "base_commit": "091991be0da19de9108dbe5e3752917fea3d7fdc",
+      "arm": "feedback",
+      "status": "ok",
+      "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+      "request_sha256": "d4c4b6ebebc0d823ef5d309b9966794c42da24d6f8ac141fc2aa2d178eb5d28d",
+      "response_sha256": "2ff16feecf56d9588cf4a611ca6c0e11c62ec1b550f137adda6242799ff742ca",
+      "raw_response_sha256": "2ff16feecf56d9588cf4a611ca6c0e11c62ec1b550f137adda6242799ff742ca",
+      "actions": [
+        {
+          "query": "requests sessions.py method builtin_str method binary string GET 404",
+          "candidates": [
+            {
+              "id": "requests.models.PreparedRequest.prepare_content_length",
+              "score": 14.290236284540141
+            },
+            {
+              "id": "requests.utils.to_native_string",
+              "score": 12.504295621057768
+            },
+            {
+              "id": "test_requests",
+              "score": 11.147126687089651
+            },
+            {
+              "id": "requests.sessions.Session.request",
+              "score": 10.783483160045911
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_basic_auth_str_is_always_native",
+              "score": 10.414198041267
+            },
+            {
+              "id": "requests.sessions",
+              "score": 10.219044573116404
+            },
+            {
+              "id": "requests.packages.urllib3.util.ssl_.resolve_cert_reqs",
+              "score": 9.218112471559053
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.pyopenssl.WrappedSocket.getpeercert",
+              "score": 9.203818404856161
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six",
+              "score": 9.157158091890585
+            },
+            {
+              "id": "requests.auth._basic_auth_str",
+              "score": 9.052816617049944
+            },
+            {
+              "id": "requests.api.request",
+              "score": 9.022205061915901
+            },
+            {
+              "id": "requests.auth",
+              "score": 8.99163660984114
+            },
+            {
+              "id": "requests.utils",
+              "score": 8.969076115990019
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin.rebuild_proxies",
+              "score": 8.929113991386874
+            },
+            {
+              "id": "requests.api",
+              "score": 8.893372597851906
+            },
+            {
+              "id": "test_requests.TestMorselToCookieExpires.test_expires_invalid_str",
+              "score": 8.587332301321027
+            },
+            {
+              "id": "test_requests.TestMorselToCookieExpires.test_expires_valid_str",
+              "score": 8.350590369430874
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin",
+              "score": 8.14716281384137
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_request_ok_set",
+              "score": 8.116027795266668
+            },
+            {
+              "id": "requests.models",
+              "score": 8.105547278296054
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin.resolve_redirects",
+              "score": 8.056151258313289
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_status_raising",
+              "score": 8.009396056207725
+            },
+            {
+              "id": "requests.models.PreparedRequest",
+              "score": 7.784350325335348
+            },
+            {
+              "id": "docs._themes.flask_theme_support",
+              "score": 7.500596940548805
+            },
+            {
+              "id": "docs._themes.flask_theme_support.FlaskyStyle",
+              "score": 7.3880373204722485
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin.rebuild_auth",
+              "score": 7.102214922423442
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_header_keys_are_native",
+              "score": 6.879539356044582
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth.build_digest_header",
+              "score": 6.682463382965153
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six.print_",
+              "score": 6.461781306002422
+            },
+            {
+              "id": "requests.packages.urllib3.response.DeflateDecoder.__init__",
+              "score": 6.353773403671143
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin._encode_files",
+              "score": 6.197592018307795
+            },
+            {
+              "id": "test_requests.TestMorselToCookieExpires",
+              "score": 6.0976522652148475
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth",
+              "score": 6.087426477359978
+            },
+            {
+              "id": "requests.packages.urllib3.util.request",
+              "score": 6.038051070510013
+            },
+            {
+              "id": "requests.packages.urllib3.util.ssl_",
+              "score": 6.033801425347137
+            },
+            {
+              "id": "requests.packages.urllib3.response",
+              "score": 5.998618044746743
+            },
+            {
+              "id": "requests.cookies.get_cookie_header",
+              "score": 5.952259191308162
+            },
+            {
+              "id": "requests.packages.chardet.chardistribution.CharDistributionAnalysis.get_order",
+              "score": 5.93332853891407
+            },
+            {
+              "id": "requests.packages.urllib3.util.request.make_headers",
+              "score": 5.912754479071358
+            },
+            {
+              "id": "test_requests.TestTimeout.test_invalid_timeout",
+              "score": 5.9026296176213595
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.HTTPConnectionPool._make_request",
+              "score": 5.873452702204636
+            },
+            {
+              "id": "requests.sessions.Session.get",
+              "score": 5.818172486085547
+            },
+            {
+              "id": "requests.sessions.Session.get_adapter",
+              "score": 5.714929654096821
+            },
+            {
+              "id": "requests.sessions.Session.prepare_request",
+              "score": 5.683033577807082
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_url",
+              "score": 5.632300523627596
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.stream",
+              "score": 5.629716122404019
+            },
+            {
+              "id": "test_requests.UtilsTestCase",
+              "score": 5.496596618454103
+            },
+            {
+              "id": "requests.utils.get_encodings_from_content",
+              "score": 5.437954862725361
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin",
+              "score": 5.423113985731982
+            },
+            {
+              "id": "requests.utils.get_unicode_from_response",
+              "score": 5.411220080595814
+            },
+            {
+              "id": "requests.packages.urllib3.request.RequestMethods.request_encode_url",
+              "score": 5.3990122427804765
+            },
+            {
+              "id": "requests.packages.urllib3.poolmanager.PoolManager.urlopen",
+              "score": 5.335664017204277
+            },
+            {
+              "id": "requests.packages.urllib3.request",
+              "score": 5.2427442585841915
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.pyopenssl.WrappedSocket",
+              "score": 5.2350775637655875
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.__getitem__",
+              "score": 5.197952638269238
+            },
+            {
+              "id": "requests.packages.urllib3.request.RequestMethods",
+              "score": 5.1979246791607325
+            },
+            {
+              "id": "requests.utils.to_key_val_list",
+              "score": 5.130554315708286
+            },
+            {
+              "id": "requests.packages.urllib3.request.RequestMethods.request_encode_body",
+              "score": 5.101848184177561
+            },
+            {
+              "id": "requests.utils.from_key_val_list",
+              "score": 5.083922991043332
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_basicauth_with_netrc",
+              "score": 5.03134482679196
+            },
+            {
+              "id": "requests.utils.iter_slices",
+              "score": 5.014973769819071
+            },
+            {
+              "id": "test_requests.RedirectSession._build_raw",
+              "score": 5.0119468793221955
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_method",
+              "score": 4.9923862766390625
+            },
+            {
+              "id": "requests.models.Request",
+              "score": 4.964656090624796
+            },
+            {
+              "id": "requests.sessions.Session.__enter__",
+              "score": 4.955150172893978
+            },
+            {
+              "id": "requests.sessions.merge_hooks",
+              "score": 4.893963027754492
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.get_redirect_location",
+              "score": 4.890242597837677
+            },
+            {
+              "id": "requests.sessions.Session.__exit__",
+              "score": 4.8868256785240245
+            },
+            {
+              "id": "requests.packages.urllib3.poolmanager.ProxyManager.urlopen",
+              "score": 4.856217829754535
+            },
+            {
+              "id": "test_requests.UtilsTestCase.test_super_len_io_streams",
+              "score": 4.852087402997658
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_body",
+              "score": 4.829956010675852
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry.is_forced_retry",
+              "score": 4.8045612105955335
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse",
+              "score": 4.745937889937878
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.ConnectionPool.__str__",
+              "score": 4.70695255886928
+            },
+            {
+              "id": "requests.sessions.Session.__getstate__",
+              "score": 4.692708299280152
+            },
+            {
+              "id": "requests.sessions.Session.__setstate__",
+              "score": 4.692708299280152
+            },
+            {
+              "id": "requests.sessions.session",
+              "score": 4.692708299280152
+            },
+            {
+              "id": "requests.utils.is_ipv4_address",
+              "score": 4.680147650144077
+            },
+            {
+              "id": "requests.utils.is_valid_cidr",
+              "score": 4.677881113365912
+            },
+            {
+              "id": "requests.packages.urllib3.util.timeout.Timeout.__str__",
+              "score": 4.65438746928155
+            },
+            {
+              "id": "requests.sessions.Session.close",
+              "score": 4.631384764542396
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.send",
+              "score": 4.622431333777911
+            },
+            {
+              "id": "test_requests.test_prepare_unicode_url",
+              "score": 4.621332175092674
+            },
+            {
+              "id": "requests.packages.urllib3.request.RequestMethods.request",
+              "score": 4.605909279327132
+            },
+            {
+              "id": "requests.packages.urllib3.response.DeflateDecoder",
+              "score": 4.559815628988969
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_unicode_method_name",
+              "score": 4.492430667762259
+            },
+            {
+              "id": "test_requests.TestTimeout",
+              "score": 4.447133674439783
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar._find",
+              "score": 4.434611323829732
+            },
+            {
+              "id": "test_requests.TestRedirects.test_requests_are_updated_each_time",
+              "score": 4.412807306535926
+            },
+            {
+              "id": "test_requests.TestMorselToCookieMaxAge.test_max_age_invalid_str",
+              "score": 4.39664156767368
+            },
+            {
+              "id": "requests.sessions.Session.merge_environment_settings",
+              "score": 4.390832373419219
+            },
+            {
+              "id": "test_requests.RedirectSession",
+              "score": 4.386755759326126
+            },
+            {
+              "id": "test_requests.test_prepared_request_complete_copy",
+              "score": 4.354276545551151
+            },
+            {
+              "id": "test_requests.test_prepared_request_no_cookies_copy",
+              "score": 4.354276545551151
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry.sleep",
+              "score": 4.3292588040954065
+            },
+            {
+              "id": "requests.packages.chardet.compat",
+              "score": 4.290431575424951
+            },
+            {
+              "id": "test_requests.TestRedirects",
+              "score": 4.247595388863021
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.HTTPConnectionPool.urlopen",
+              "score": 4.235311191940627
+            },
+            {
+              "id": "requests.packages.urllib3.request.RequestMethods.urlopen",
+              "score": 4.191580814019041
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry.__init__",
+              "score": 4.180676289176731
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_unicode_header_name",
+              "score": 4.1715841847476245
+            },
+            {
+              "id": "requests.packages.urllib3.util.url.Url.request_uri",
+              "score": 4.170248146088038
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.pyopenssl.get_subj_alt_name",
+              "score": 4.0895627017477265
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.ntlmpool.NTLMConnectionPool.urlopen",
+              "score": 4.083894578003731
+            },
+            {
+              "id": "requests.compat",
+              "score": 4.070432115848534
+            },
+            {
+              "id": "requests.utils.super_len",
+              "score": 4.035572270977876
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_response_is_iterable",
+              "score": 4.007796249644168
+            },
+            {
+              "id": "requests.packages.chardet.chardetect.description_of",
+              "score": 3.9925933730796186
+            },
+            {
+              "id": "requests.sessions.Session.delete",
+              "score": 3.981083085533649
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare",
+              "score": 3.9544362850620702
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin._encode_params",
+              "score": 3.93962239493323
+            },
+            {
+              "id": "requests.sessions.Session.mount",
+              "score": 3.936860510555422
+            },
+            {
+              "id": "requests.packages.urllib3.fields.RequestField._render_part",
+              "score": 3.936692710533109
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.list_domains",
+              "score": 3.917407702120333
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.list_paths",
+              "score": 3.917407702120333
+            },
+            {
+              "id": "requests.models.Request.__init__",
+              "score": 3.91065314848473
+            },
+            {
+              "id": "test_requests.test_data_argument_accepts_tuples",
+              "score": 3.903167313564799
+            },
+            {
+              "id": "requests.sessions.Session.head",
+              "score": 3.872338577921507
+            },
+            {
+              "id": "requests.sessions.Session.options",
+              "score": 3.872338577921507
+            },
+            {
+              "id": "requests.packages.chardet.mbcharsetprober.MultiByteCharSetProber.feed",
+              "score": 3.863831949862372
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.__init__",
+              "score": 3.8474767415185127
+            },
+            {
+              "id": "requests.cookies.MockRequest.add_header",
+              "score": 3.8324544775417717
+            },
+            {
+              "id": "requests.models.PreparedRequest.copy",
+              "score": 3.8324544775417717
+            },
+            {
+              "id": "requests.packages.urllib3.add_stderr_logger",
+              "score": 3.816134908950027
+            },
+            {
+              "id": "requests.structures.CaseInsensitiveDict.__repr__",
+              "score": 3.8112596523077142
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar",
+              "score": 3.790917637369565
+            },
+            {
+              "id": "requests.models.Response.close",
+              "score": 3.777837540379323
+            },
+            {
+              "id": "requests.adapters",
+              "score": 3.775014160473094
+            },
+            {
+              "id": "requests.packages.urllib3.util.url.split_first",
+              "score": 3.769837455413634
+            },
+            {
+              "id": "requests.packages.chardet.chardistribution.CharDistributionAnalysis",
+              "score": 3.7685346780737765
+            },
+            {
+              "id": "requests.utils.parse_list_header",
+              "score": 3.753058912692742
+            },
+            {
+              "id": "requests.models.Response.__init__",
+              "score": 3.731962261155443
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.__setitem__",
+              "score": 3.7117178918596574
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth.build_digest_header.md5_utf8",
+              "score": 3.709658267557324
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth.build_digest_header.sha_utf8",
+              "score": 3.709658267557324
+            },
+            {
+              "id": "requests.packages.urllib3.poolmanager.ProxyManager",
+              "score": 3.7071209541645134
+            },
+            {
+              "id": "requests.models.Response.text",
+              "score": 3.703427123146857
+            },
+            {
+              "id": "requests.auth.HTTPBasicAuth.__call__",
+              "score": 3.6850987276787337
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry",
+              "score": 3.6767084115931
+            },
+            {
+              "id": "requests.status_codes",
+              "score": 3.6718157383149292
+            },
+            {
+              "id": "requests.auth.HTTPProxyAuth.__call__",
+              "score": 3.660862238586225
+            },
+            {
+              "id": "requests.models.Request.__repr__",
+              "score": 3.6586213956919695
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.connection_from_url",
+              "score": 3.6520971261335333
+            },
+            {
+              "id": "requests.packages.chardet.sjisprober.SJISProber.feed",
+              "score": 3.6372532167845923
+            },
+            {
+              "id": "requests.models.Request.prepare",
+              "score": 3.63536746946147
+            },
+            {
+              "id": "requests.sessions.Session.patch",
+              "score": 3.6340989101106085
+            },
+            {
+              "id": "requests.sessions.Session.put",
+              "score": 3.6340989101106085
+            },
+            {
+              "id": "requests.models.PreparedRequest.__repr__",
+              "score": 3.6335705033139187
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry.new",
+              "score": 3.622946829140819
+            },
+            {
+              "id": "requests",
+              "score": 3.6224062948940285
+            },
+            {
+              "id": "requests.packages.chardet.eucjpprober.EUCJPProber.feed",
+              "score": 3.618169494568188
+            },
+            {
+              "id": "requests.packages.chardet.compat.wrap_ord",
+              "score": 3.613333247740639
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six.print_.write",
+              "score": 3.613333247740639
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.readable",
+              "score": 3.536705994357849
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_response_decode_unicode",
+              "score": 3.5361045992919933
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry",
+              "score": 3.5185761688012827
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.read",
+              "score": 3.4625698530855544
+            },
+            {
+              "id": "requests.sessions.Session.send",
+              "score": 3.458381984763771
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter",
+              "score": 3.419829113357705
+            },
+            {
+              "id": "requests.sessions.Session.post",
+              "score": 3.4070196371831507
+            },
+            {
+              "id": "requests.packages.chardet.mbcharsetprober.MultiByteCharSetProber",
+              "score": 3.3808407969432728
+            },
+            {
+              "id": "test_requests.assert_copy",
+              "score": 3.379066207254459
+            },
+            {
+              "id": "requests.packages.urllib3.fields.format_header_param",
+              "score": 3.32068701852878
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.proxy_headers",
+              "score": 3.3171908387120093
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.readinto",
+              "score": 3.2748046414858387
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_autoset_header_values_are_native",
+              "score": 3.272304882662263
+            },
+            {
+              "id": "requests.packages.chardet.sjisprober.SJISProber",
+              "score": 3.247964996813965
+            },
+            {
+              "id": "requests.packages.chardet.eucjpprober.EUCJPProber",
+              "score": 3.236637504612024
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_headers",
+              "score": 3.2337655540092145
+            },
+            {
+              "id": "requests.auth.HTTPProxyAuth",
+              "score": 3.198121048700199
+            },
+            {
+              "id": "requests.cookies.MockRequest",
+              "score": 3.1606055150120005
+            },
+            {
+              "id": "requests.utils.default_user_agent",
+              "score": 3.1545177853657136
+            },
+            {
+              "id": "requests.packages.urllib3.filepost.encode_multipart_formdata",
+              "score": 3.1096391570177198
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth.__call__",
+              "score": 3.084461641067259
+            },
+            {
+              "id": "requests.packages.urllib3.util.ssl_.resolve_ssl_version",
+              "score": 3.057581015427192
+            },
+            {
+              "id": "requests.cookies",
+              "score": 3.0482830918171246
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_http_error",
+              "score": 3.042791729857011
+            },
+            {
+              "id": "requests.auth.HTTPBasicAuth",
+              "score": 3.024355025120124
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry.increment",
+              "score": 2.9965094474431186
+            },
+            {
+              "id": "requests.packages.urllib3.util.url",
+              "score": 2.9725601349385653
+            },
+            {
+              "id": "requests.packages.urllib3.connection.VerifiedHTTPSConnection.connect",
+              "score": 2.9490921012429308
+            },
+            {
+              "id": "requests.packages.urllib3",
+              "score": 2.895151758779943
+            },
+            {
+              "id": "requests.sessions.Session",
+              "score": 2.8649099743798274
+            },
+            {
+              "id": "requests.models.Response",
+              "score": 2.857086804247767
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_unicode_multipart_post_fieldnames",
+              "score": 2.765051740698322
+            },
+            {
+              "id": "requests.models.PreparedRequest.__init__",
+              "score": 2.7632431011321317
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.cert_verify",
+              "score": 2.7439456078050775
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth.handle_401",
+              "score": 2.73951498302735
+            },
+            {
+              "id": "requests.sessions.merge_setting",
+              "score": 2.715298751593075
+            },
+            {
+              "id": "requests.packages.chardet.mbcharsetprober",
+              "score": 2.659382400654468
+            },
+            {
+              "id": "requests.packages.urllib3.poolmanager",
+              "score": 2.63858069847981
+            },
+            {
+              "id": "requests.packages.urllib3.exceptions.MaxRetryError",
+              "score": 2.6294576624103385
+            },
+            {
+              "id": "requests.packages.urllib3.poolmanager.PoolManager",
+              "score": 2.6186154624612303
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.ConnectionPool",
+              "score": 2.5764010358134657
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool",
+              "score": 2.5324990069328184
+            },
+            {
+              "id": "test_requests.TestMorselToCookieMaxAge",
+              "score": 2.462424969106901
+            },
+            {
+              "id": "requests.packages.chardet.eucjpprober",
+              "score": 2.4431281287951387
+            },
+            {
+              "id": "requests.packages.urllib3.poolmanager.PoolManager._new_pool",
+              "score": 2.433753861571806
+            },
+            {
+              "id": "requests.packages.urllib3.fields",
+              "score": 2.384453107601894
+            },
+            {
+              "id": "requests.sessions.Session.__init__",
+              "score": 2.3565838249134816
+            }
+          ],
+          "scored_documents": 888,
+          "seconds": 0.0016272000011667842
+        },
+        {
+          "query": "requests sessions.py builtin_str method bytes decode python3",
+          "candidates": [
+            {
+              "id": "requests.models.PreparedRequest.prepare_content_length",
+              "score": 13.117778025663737
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.stream",
+              "score": 12.993873004019383
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_response_decode_unicode",
+              "score": 12.730801713094072
+            },
+            {
+              "id": "requests.sessions.Session.request",
+              "score": 11.10672300720298
+            },
+            {
+              "id": "requests.utils.to_native_string",
+              "score": 10.788365705345752
+            },
+            {
+              "id": "requests.models",
+              "score": 10.550228099715698
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_basic_auth_str_is_always_native",
+              "score": 10.414198041267
+            },
+            {
+              "id": "requests.models.PreparedRequest",
+              "score": 10.101488773189368
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin._encode_files",
+              "score": 9.923316921925748
+            },
+            {
+              "id": "test_requests",
+              "score": 9.52268742103381
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin",
+              "score": 9.3333158652348
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_url",
+              "score": 8.908376278821299
+            },
+            {
+              "id": "requests.utils",
+              "score": 8.689033145149674
+            },
+            {
+              "id": "requests.api.request",
+              "score": 8.437793095742526
+            },
+            {
+              "id": "requests.models.Response.iter_content",
+              "score": 8.375123655798495
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.__init__",
+              "score": 8.228305901806035
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.read",
+              "score": 8.049321412168775
+            },
+            {
+              "id": "requests.api",
+              "score": 7.915088908997987
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin.rebuild_proxies",
+              "score": 7.572256136059703
+            },
+            {
+              "id": "requests.sessions",
+              "score": 7.512882619976801
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin",
+              "score": 7.298062326477275
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin.resolve_redirects",
+              "score": 7.213471536019937
+            },
+            {
+              "id": "requests.sessions.Session.patch",
+              "score": 6.9648455231362885
+            },
+            {
+              "id": "requests.sessions.Session.put",
+              "score": 6.9648455231362885
+            },
+            {
+              "id": "requests.packages.urllib3.util.ssl_",
+              "score": 6.95477721803957
+            },
+            {
+              "id": "requests.packages.chardet.compat",
+              "score": 6.941565875175102
+            },
+            {
+              "id": "requests.models.RequestEncodingMixin._encode_params",
+              "score": 6.865364946689391
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse",
+              "score": 6.636256063296689
+            },
+            {
+              "id": "requests.models.Response.text",
+              "score": 6.596731356996941
+            },
+            {
+              "id": "requests.sessions.Session.post",
+              "score": 6.529642162807905
+            },
+            {
+              "id": "requests.utils.stream_decode_response_unicode",
+              "score": 6.118112547197207
+            },
+            {
+              "id": "requests.packages.urllib3.exceptions.DecodeError",
+              "score": 5.965376179693305
+            },
+            {
+              "id": "requests.sessions.SessionRedirectMixin.rebuild_auth",
+              "score": 5.835648527203922
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_response_is_iterable.read_mock",
+              "score": 5.704439791418049
+            },
+            {
+              "id": "requests.packages.urllib3.filepost.encode_multipart_formdata",
+              "score": 5.637007982634658
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth.build_digest_header",
+              "score": 5.5449529065514955
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.tell",
+              "score": 5.535199227668883
+            },
+            {
+              "id": "requests.utils.to_key_val_list",
+              "score": 5.532183678407931
+            },
+            {
+              "id": "requests.exceptions.ContentDecodingError",
+              "score": 5.508269990451568
+            },
+            {
+              "id": "requests.utils.from_key_val_list",
+              "score": 5.481901966659132
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.HTTPConnectionPool._make_request",
+              "score": 5.4140692503596695
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_header_keys_are_native",
+              "score": 5.287113794361326
+            },
+            {
+              "id": "requests.models.Response.iter_lines",
+              "score": 5.277482181436504
+            },
+            {
+              "id": "requests.packages.urllib3.util.ssl_.resolve_cert_reqs",
+              "score": 5.177752727806949
+            },
+            {
+              "id": "requests.models.Response.content",
+              "score": 5.144730739485717
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_method",
+              "score": 4.9923862766390625
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.pyopenssl.get_subj_alt_name",
+              "score": 4.9883302474836135
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth",
+              "score": 4.961412602579063
+            },
+            {
+              "id": "requests.sessions.Session.__enter__",
+              "score": 4.955150172893978
+            },
+            {
+              "id": "requests.sessions.Session.prepare_request",
+              "score": 4.950178409269724
+            },
+            {
+              "id": "requests.sessions.Session.__exit__",
+              "score": 4.8868256785240245
+            },
+            {
+              "id": "requests.packages.urllib3.util.request",
+              "score": 4.8694735161037075
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare_body",
+              "score": 4.829956010675852
+            },
+            {
+              "id": "requests.auth",
+              "score": 4.814098829640282
+            },
+            {
+              "id": "requests.models.Response.iter_content.generate",
+              "score": 4.809915954965562
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry.is_forced_retry",
+              "score": 4.8045612105955335
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.build_response",
+              "score": 4.778468309749991
+            },
+            {
+              "id": "requests.packages.urllib3.util.request.make_headers",
+              "score": 4.740539439464362
+            },
+            {
+              "id": "requests.packages.urllib3.filepost",
+              "score": 4.738776701815603
+            },
+            {
+              "id": "requests.packages.chardet.detect",
+              "score": 4.731582094938077
+            },
+            {
+              "id": "requests.packages.urllib3.util.ssl_.assert_fingerprint",
+              "score": 4.715213436411385
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.ConnectionPool.__str__",
+              "score": 4.70695255886928
+            },
+            {
+              "id": "requests.sessions.Session.__getstate__",
+              "score": 4.692708299280152
+            },
+            {
+              "id": "requests.sessions.Session.__setstate__",
+              "score": 4.692708299280152
+            },
+            {
+              "id": "requests.sessions.session",
+              "score": 4.692708299280152
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_decompress_gzip",
+              "score": 4.683294938275528
+            },
+            {
+              "id": "requests.packages.urllib3.util.timeout.Timeout.__str__",
+              "score": 4.65438746928155
+            },
+            {
+              "id": "requests.sessions.Session.close",
+              "score": 4.631384764542396
+            },
+            {
+              "id": "requests.packages.urllib3.request.RequestMethods.request",
+              "score": 4.605909279327132
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six.int2byte",
+              "score": 4.515198437266664
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six",
+              "score": 4.5044016170235555
+            },
+            {
+              "id": "requests.auth._basic_auth_str",
+              "score": 4.503518587386014
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_unicode_method_name",
+              "score": 4.492430667762259
+            },
+            {
+              "id": "test_requests.TestMorselToCookieExpires.test_expires_invalid_str",
+              "score": 4.4673194526219895
+            },
+            {
+              "id": "test_requests.UtilsTestCase.test_super_len_io_streams",
+              "score": 4.447221669401793
+            },
+            {
+              "id": "test_requests.TestMorselToCookieMaxAge.test_max_age_invalid_str",
+              "score": 4.39664156767368
+            },
+            {
+              "id": "test_requests.TestMorselToCookieExpires.test_expires_valid_str",
+              "score": 4.362135705855874
+            },
+            {
+              "id": "requests.packages.urllib3.request.RequestMethods",
+              "score": 4.212940624820113
+            },
+            {
+              "id": "requests.models.Response.json",
+              "score": 4.194231976518263
+            },
+            {
+              "id": "requests.packages.urllib3.request.RequestMethods.urlopen",
+              "score": 4.191580814019041
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry.__init__",
+              "score": 4.180676289176731
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_unicode_header_name",
+              "score": 4.1715841847476245
+            },
+            {
+              "id": "requests.packages.urllib3.request",
+              "score": 4.165714394061456
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.send",
+              "score": 4.155081907921694
+            },
+            {
+              "id": "requests.packages.urllib3.response",
+              "score": 4.152273679400502
+            },
+            {
+              "id": "requests.utils.unquote_unreserved",
+              "score": 4.130208844349457
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.ntlmpool.NTLMConnectionPool.urlopen",
+              "score": 4.083894578003731
+            },
+            {
+              "id": "requests.compat",
+              "score": 4.070432115848534
+            },
+            {
+              "id": "requests.packages.urllib3.poolmanager.PoolManager.urlopen",
+              "score": 4.0393262362677405
+            },
+            {
+              "id": "test_requests.TestTimeout.test_invalid_timeout",
+              "score": 4.035914084114701
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_response_is_iterable",
+              "score": 4.007251681392133
+            },
+            {
+              "id": "requests.sessions.Session.delete",
+              "score": 3.981083085533649
+            },
+            {
+              "id": "requests.sessions.Session.get_adapter",
+              "score": 3.9588483041023292
+            },
+            {
+              "id": "requests.models.PreparedRequest.prepare",
+              "score": 3.9544362850620702
+            },
+            {
+              "id": "requests.sessions.Session.mount",
+              "score": 3.936860510555422
+            },
+            {
+              "id": "requests.packages.urllib3.request.RequestMethods.request_encode_url",
+              "score": 3.9323651629162244
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.list_domains",
+              "score": 3.917407702120333
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.list_paths",
+              "score": 3.917407702120333
+            },
+            {
+              "id": "requests.models.Request.__init__",
+              "score": 3.91065314848473
+            },
+            {
+              "id": "requests.packages.urllib3.packages.ssl_match_hostname._implementation._dnsname_match",
+              "score": 3.8901931018127716
+            },
+            {
+              "id": "requests.sessions.Session.get",
+              "score": 3.872338577921507
+            },
+            {
+              "id": "requests.sessions.Session.head",
+              "score": 3.872338577921507
+            },
+            {
+              "id": "requests.sessions.Session.options",
+              "score": 3.872338577921507
+            },
+            {
+              "id": "requests.models.Request",
+              "score": 3.848046681285975
+            },
+            {
+              "id": "requests.cookies.MockRequest.add_header",
+              "score": 3.8324544775417717
+            },
+            {
+              "id": "requests.models.PreparedRequest.copy",
+              "score": 3.8324544775417717
+            },
+            {
+              "id": "requests.packages.urllib3.poolmanager.ProxyManager.urlopen",
+              "score": 3.820061783138559
+            },
+            {
+              "id": "requests.structures.CaseInsensitiveDict.__repr__",
+              "score": 3.8112596523077142
+            },
+            {
+              "id": "requests.models.Response.close",
+              "score": 3.777837540379323
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.__setitem__",
+              "score": 3.7117178918596574
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth.build_digest_header.md5_utf8",
+              "score": 3.709658267557324
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth.build_digest_header.sha_utf8",
+              "score": 3.709658267557324
+            },
+            {
+              "id": "requests.packages.chardet",
+              "score": 3.6852615671496216
+            },
+            {
+              "id": "requests.auth.HTTPBasicAuth.__call__",
+              "score": 3.6850987276787337
+            },
+            {
+              "id": "requests.auth.HTTPProxyAuth.__call__",
+              "score": 3.660862238586225
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar.__getitem__",
+              "score": 3.6604660843035153
+            },
+            {
+              "id": "requests.models.Request.__repr__",
+              "score": 3.6586213956919695
+            },
+            {
+              "id": "requests.utils.super_len",
+              "score": 3.6529751211826835
+            },
+            {
+              "id": "requests.models.Request.prepare",
+              "score": 3.63536746946147
+            },
+            {
+              "id": "requests.models.PreparedRequest.__repr__",
+              "score": 3.6335705033139187
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry.new",
+              "score": 3.622946829140819
+            },
+            {
+              "id": "requests.packages.chardet.jpcntx.JapaneseContextAnalysis.feed",
+              "score": 3.613551997802884
+            },
+            {
+              "id": "requests.packages.chardet.compat.wrap_ord",
+              "score": 3.613333247740639
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six.print_.write",
+              "score": 3.613333247740639
+            },
+            {
+              "id": "requests.utils.get_unicode_from_response",
+              "score": 3.5915773070168737
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.readable",
+              "score": 3.536705994357849
+            },
+            {
+              "id": "requests.packages.urllib3.packages.six.print_",
+              "score": 3.4866606364362958
+            },
+            {
+              "id": "requests.sessions.merge_hooks",
+              "score": 3.4416548534016496
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter",
+              "score": 3.419829113357705
+            },
+            {
+              "id": "requests.api.patch",
+              "score": 3.386678298600787
+            },
+            {
+              "id": "requests.api.put",
+              "score": 3.386678298600787
+            },
+            {
+              "id": "requests.packages.chardet.chardistribution.CharDistributionAnalysis.feed",
+              "score": 3.386678298600787
+            },
+            {
+              "id": "test_requests.assert_copy",
+              "score": 3.379066207254459
+            },
+            {
+              "id": "test_requests.TestRedirects.test_requests_are_updated_each_time",
+              "score": 3.371810484781492
+            },
+            {
+              "id": "requests.packages.chardet.jpcntx.JapaneseContextAnalysis",
+              "score": 3.3700526612313753
+            },
+            {
+              "id": "requests.packages.chardet.jpcntx.JapaneseContextAnalysis.reset",
+              "score": 3.284076322240912
+            },
+            {
+              "id": "requests.packages.urllib3.response.HTTPResponse.readinto",
+              "score": 3.2748046414858387
+            },
+            {
+              "id": "test_requests.TestRedirects",
+              "score": 3.2574809924630745
+            },
+            {
+              "id": "test_requests.test_prepare_unicode_url",
+              "score": 3.2547196743045266
+            },
+            {
+              "id": "docs._themes.flask_theme_support",
+              "score": 3.2016256078144534
+            },
+            {
+              "id": "requests.auth.HTTPProxyAuth",
+              "score": 3.198121048700199
+            },
+            {
+              "id": "docs._themes.flask_theme_support.FlaskyStyle",
+              "score": 3.180096768212114
+            },
+            {
+              "id": "requests.api.post",
+              "score": 3.156568808122771
+            },
+            {
+              "id": "requests.packages.urllib3.packages.ssl_match_hostname._implementation",
+              "score": 3.155568084080481
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_basicauth_with_netrc",
+              "score": 3.151849912787855
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.HTTPConnectionPool.urlopen",
+              "score": 3.138290021503146
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar._find",
+              "score": 3.1233232961982726
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth.__call__",
+              "score": 3.084461641067259
+            },
+            {
+              "id": "test_requests.test_prepared_request_complete_copy",
+              "score": 3.066637281896727
+            },
+            {
+              "id": "test_requests.test_prepared_request_no_cookies_copy",
+              "score": 3.066637281896727
+            },
+            {
+              "id": "requests.packages.urllib3.util.ssl_.resolve_ssl_version",
+              "score": 3.057581015427192
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry.sleep",
+              "score": 3.0490177444478643
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_http_error",
+              "score": 3.042791729857011
+            },
+            {
+              "id": "test_requests.TestMorselToCookieExpires",
+              "score": 3.0333233955162138
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_manual_redirect_with_partial_body_read",
+              "score": 3.0255130043639853
+            },
+            {
+              "id": "requests.auth.HTTPBasicAuth",
+              "score": 3.024355025120124
+            },
+            {
+              "id": "requests.adapters",
+              "score": 2.937103427010861
+            },
+            {
+              "id": "requests.sessions.Session.merge_environment_settings",
+              "score": 2.8942360618997505
+            },
+            {
+              "id": "test_requests.RequestsTestCase.test_unicode_multipart_post_fieldnames",
+              "score": 2.765051740698322
+            },
+            {
+              "id": "requests.models.PreparedRequest.__init__",
+              "score": 2.7632431011321317
+            },
+            {
+              "id": "requests.packages.urllib3.request.RequestMethods.request_encode_body",
+              "score": 2.749328705685664
+            },
+            {
+              "id": "test_requests.test_data_argument_accepts_tuples",
+              "score": 2.748929305716256
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.cert_verify",
+              "score": 2.7439456078050775
+            },
+            {
+              "id": "requests.sessions.merge_setting",
+              "score": 2.715298751593075
+            },
+            {
+              "id": "test_requests.UtilsTestCase",
+              "score": 2.653961410303035
+            },
+            {
+              "id": "test_requests.TestTimeout",
+              "score": 2.6345342032805394
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry",
+              "score": 2.5891651119562162
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool.ConnectionPool",
+              "score": 2.5764010358134657
+            },
+            {
+              "id": "requests.cookies.RequestsCookieJar",
+              "score": 2.5408888918479824
+            },
+            {
+              "id": "requests.models.Response.__init__",
+              "score": 2.540479564840971
+            },
+            {
+              "id": "test_requests.TestMorselToCookieMaxAge",
+              "score": 2.462424969106901
+            },
+            {
+              "id": "requests.packages.urllib3.poolmanager.PoolManager._new_pool",
+              "score": 2.433753861571806
+            },
+            {
+              "id": "requests.packages.urllib3.add_stderr_logger",
+              "score": 2.4228538045611177
+            },
+            {
+              "id": "requests.packages.urllib3.poolmanager.ProxyManager",
+              "score": 2.413550893137602
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.proxy_headers",
+              "score": 2.3692004468690415
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry.Retry.increment",
+              "score": 2.3581356262634268
+            },
+            {
+              "id": "requests.sessions.Session.__init__",
+              "score": 2.3565838249134816
+            },
+            {
+              "id": "requests.packages.urllib3.contrib.pyopenssl",
+              "score": 2.2912095140568893
+            },
+            {
+              "id": "requests.packages.urllib3.fields.RequestField.make_multipart",
+              "score": 2.2869194975713696
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.init_poolmanager",
+              "score": 2.2397443681231244
+            },
+            {
+              "id": "requests.adapters.HTTPAdapter.proxy_manager_for",
+              "score": 2.2303401774837504
+            },
+            {
+              "id": "requests.packages.urllib3.util.retry",
+              "score": 2.2106714156183584
+            },
+            {
+              "id": "requests",
+              "score": 2.1974003925166863
+            },
+            {
+              "id": "requests.packages.chardet.mbcharsetprober.MultiByteCharSetProber.feed",
+              "score": 2.1739131290960567
+            },
+            {
+              "id": "requests.packages.urllib3.packages.ordered_dict.OrderedDict.update",
+              "score": 2.15679475832839
+            },
+            {
+              "id": "requests.packages.urllib3.exceptions",
+              "score": 2.1337815706344276
+            },
+            {
+              "id": "requests.packages.chardet.sjisprober.SJISProber.feed",
+              "score": 2.0019062573866964
+            },
+            {
+              "id": "requests.packages.chardet.eucjpprober.EUCJPProber.feed",
+              "score": 1.9876093547719946
+            },
+            {
+              "id": "requests.models.Response",
+              "score": 1.9449726019834428
+            },
+            {
+              "id": "requests.auth.HTTPDigestAuth.handle_401",
+              "score": 1.9293902657262123
+            },
+            {
+              "id": "requests.sessions.Session",
+              "score": 1.9184462182467787
+            },
+            {
+              "id": "requests.sessions.Session.send",
+              "score": 1.7906768982284536
+            },
+            {
+              "id": "requests.packages.chardet.mbcharsetprober.MultiByteCharSetProber",
+              "score": 1.6663050795403063
+            },
+            {
+              "id": "requests.packages.chardet.chardistribution.CharDistributionAnalysis",
+              "score": 1.6547699270407021
+            },
+            {
+              "id": "requests.packages.urllib3.connectionpool",
+              "score": 1.5591619544929634
+            },
+            {
+              "id": "requests.packages.chardet.sjisprober.SJISProber",
+              "score": 1.5332017226023558
+            },
+            {
+              "id": "requests.packages.urllib3",
+              "score": 1.524914597961729
+            },
+            {
+              "id": "requests.packages.chardet.eucjpprober.EUCJPProber",
+              "score": 1.5248017115194012
+            },
+            {
+              "id": "requests.structures.CaseInsensitiveDict",
+              "score": 1.4646197005568662
+            },
+            {
+              "id": "requests.packages.chardet.chardistribution",
+              "score": 1.4230538268255764
+            }
+          ],
+          "scored_documents": 888,
+          "seconds": 0.0014319000001705717
+        }
+      ],
+      "order": [
+        "requests.utils.to_native_string",
+        "requests.sessions",
+        "requests.models.PreparedRequest.prepare_content_length",
+        "requests.models",
+        "requests.sessions.Session.request",
+        "test_requests",
+        "requests.models.RequestEncodingMixin._encode_files",
+        "requests.packages.urllib3.packages.six",
+        "requests.utils",
+        "requests.models.RequestEncodingMixin",
+        "requests.models.PreparedRequest.prepare_url",
+        "test_requests.RequestsTestCase.test_basic_auth_str_is_always_native",
+        "requests.api.request",
+        "requests.sessions.SessionRedirectMixin",
+        "requests.models.PreparedRequest",
+        "requests.sessions.SessionRedirectMixin.rebuild_proxies",
+        "requests.sessions.SessionRedirectMixin.resolve_redirects",
+        "requests.sessions.SessionRedirectMixin.rebuild_auth",
+        "requests.packages.urllib3.connectionpool.HTTPConnectionPool._make_request",
+        "requests.api",
+        "requests.utils.to_key_val_list",
+        "requests.packages.urllib3.response.HTTPResponse.stream",
+        "requests.utils.from_key_val_list",
+        "requests.packages.urllib3.response.HTTPResponse.read",
+        "requests.auth",
+        "requests.packages.urllib3.util.ssl_.resolve_cert_reqs",
+        "requests.auth._basic_auth_str",
+        "requests.utils.get_unicode_from_response",
+        "requests.packages.urllib3.util.ssl_",
+        "requests.packages.urllib3.request",
+        "requests.auth.HTTPDigestAuth.build_digest_header",
+        "test_requests.RequestsTestCase.test_response_decode_unicode",
+        "requests.packages.urllib3.request.RequestMethods",
+        "requests.cookies.RequestsCookieJar",
+        "test_requests.RequestsTestCase.test_header_keys_are_native",
+        "requests.models.RequestEncodingMixin._encode_params",
+        "requests.cookies.RequestsCookieJar._find",
+        "test_requests.TestMorselToCookieExpires.test_expires_invalid_str",
+        "requests.packages.urllib3.util.request",
+        "requests.packages.urllib3.response.HTTPResponse",
+        "docs._themes.flask_theme_support",
+        "requests.auth.HTTPDigestAuth",
+        "requests.models.Response.__init__",
+        "requests.packages.urllib3.util.request.make_headers",
+        "requests.models.Response",
+        "requests.packages.urllib3.request.RequestMethods.request_encode_url",
+        "requests.packages.urllib3.request.RequestMethods.request_encode_body",
+        "requests.packages.urllib3.filepost.encode_multipart_formdata",
+        "requests.packages.urllib3.response",
+        "docs._themes.flask_theme_support.FlaskyStyle",
+        "requests.models.Response.text",
+        "requests.models.PreparedRequest.prepare_body",
+        "requests.packages.urllib3.packages.six.print_",
+        "requests.packages.chardet.compat",
+        "requests.packages.urllib3.connectionpool.HTTPConnectionPool.urlopen",
+        "requests.packages.urllib3.request.RequestMethods.request",
+        "requests.sessions.Session.get_adapter",
+        "test_requests.UtilsTestCase",
+        "requests.sessions.Session.__exit__",
+        "requests.adapters.HTTPAdapter.send",
+        "test_requests.RequestsTestCase.test_basicauth_with_netrc",
+        "requests.packages.urllib3.contrib.pyopenssl.WrappedSocket.getpeercert",
+        "requests.cookies.RequestsCookieJar.__getitem__",
+        "requests.sessions.Session.close",
+        "test_requests.TestMorselToCookieExpires.test_expires_valid_str",
+        "requests.packages.urllib3.util.retry.Retry.sleep",
+        "test_requests.UtilsTestCase.test_super_len_io_streams",
+        "requests.packages.urllib3.poolmanager.PoolManager.urlopen",
+        "requests.packages.urllib3",
+        "requests.cookies.RequestsCookieJar.list_domains",
+        "requests.cookies.RequestsCookieJar.list_paths",
+        "requests.packages.chardet.chardistribution.CharDistributionAnalysis",
+        "requests.sessions.Session.prepare_request",
+        "requests.packages.urllib3.contrib.pyopenssl",
+        "requests.packages.urllib3.response.HTTPResponse.__init__",
+        "requests.packages.urllib3.fields.format_header_param",
+        "requests.compat",
+        "requests.packages.urllib3.filepost",
+        "requests.adapters.HTTPAdapter.proxy_headers",
+        "requests.packages.urllib3.request.RequestMethods.urlopen",
+        "requests.models.PreparedRequest.prepare_method",
+        "requests.cookies.MockRequest.add_header",
+        "requests.packages.urllib3.fields",
+        "requests.sessions.Session.__enter__",
+        "requests.sessions.Session.patch",
+        "requests.sessions.Session.put",
+        "test_requests.RequestsTestCase.test_request_ok_set",
+        "test_requests.TestTimeout.test_invalid_timeout",
+        "test_requests.TestRedirects",
+        "test_requests.TestRedirects.test_requests_are_updated_each_time",
+        "requests.packages.urllib3.util.retry.Retry.is_forced_retry",
+        "requests.packages.urllib3.connectionpool.ConnectionPool",
+        "requests.packages.chardet.hebrewprober",
+        "requests.status_codes",
+        "test_requests.test_data_argument_accepts_tuples",
+        "test_requests.RequestsTestCase.test_status_raising",
+        "requests.sessions.Session.get",
+        "test_requests.TestTimeout",
+        "requests.cookies.RequestsCookieJar.__setitem__",
+        "requests.packages.urllib3.contrib.pyopenssl.WrappedSocket",
+        "requests.packages.urllib3.connectionpool.ConnectionPool.__str__",
+        "requests.sessions.Session.post",
+        "requests.utils.unquote_header_value",
+        "requests",
+        "test_requests.TestMorselToCookieExpires",
+        "requests.sessions.Session.__getstate__",
+        "requests.packages.urllib3.contrib.pyopenssl.get_subj_alt_name",
+        "requests.sessions.Session.__setstate__",
+        "requests.packages.chardet.chardistribution.CharDistributionAnalysis.get_order",
+        "requests.adapters.HTTPAdapter",
+        "requests.sessions.session",
+        "requests.packages.urllib3._collections.HTTPHeaderDict.getlist",
+        "requests.packages.urllib3.util.timeout.Timeout.__str__",
+        "requests.packages.urllib3.packages.ordered_dict",
+        "requests.models.Response.json",
+        "requests.packages.urllib3.packages.ssl_match_hostname._implementation",
+        "requests.packages.urllib3.util.retry.Retry",
+        "requests.packages.urllib3.poolmanager.ProxyManager",
+        "test_requests.RequestsTestCase.test_unicode_method_name",
+        "requests.utils.parse_list_header",
+        "requests.packages.urllib3.connectionpool",
+        "requests.adapters",
+        "requests.models.Request",
+        "docs.conf",
+        "test_requests.TestMorselToCookieMaxAge.test_max_age_invalid_str",
+        "requests.packages.urllib3.poolmanager.ProxyManager.urlopen",
+        "requests.auth.HTTPDigestAuth.handle_401",
+        "requests.sessions.merge_setting",
+        "requests.models.Response.content",
+        "requests.packages.urllib3.util.retry.Retry.__init__",
+        "requests.models.Response.iter_content",
+        "requests.sessions.merge_hooks",
+        "test_requests.RequestsTestCase.test_unicode_header_name",
+        "requests.adapters.HTTPAdapter.build_response",
+        "requests.utils.is_valid_cidr",
+        "requests.packages.urllib3.util.ssl_.assert_fingerprint",
+        "requests.packages.urllib3.contrib.ntlmpool.NTLMConnectionPool.urlopen",
+        "requests.packages.urllib3.util.retry.Retry.increment",
+        "requests.packages.urllib3.response.HTTPResponse.get_redirect_location",
+        "requests.packages.urllib3.util.retry",
+        "test_requests.RequestsTestCase.test_response_is_iterable",
+        "requests.sessions.Session",
+        "requests.structures.CaseInsensitiveDict",
+        "test_requests.RedirectSession._build_raw",
+        "test_requests.RequestsTestCase.test_cookie_as_dict_values",
+        "requests.sessions.Session.delete",
+        "requests.packages.urllib3.util.url.Url.request_uri",
+        "requests.models.PreparedRequest.prepare",
+        "requests.sessions.Session.mount",
+        "test_requests.RedirectSession",
+        "requests.sessions.Session.__init__",
+        "test_requests.test_prepare_unicode_url",
+        "requests.models.Request.__init__",
+        "requests.utils.unquote_unreserved",
+        "requests.sessions.Session.head",
+        "requests.sessions.Session.options",
+        "requests.utils.super_len",
+        "requests.packages.urllib3._collections.HTTPHeaderDict",
+        "requests.packages.urllib3.connection.HTTPConnection.__init__",
+        "requests.models.PreparedRequest.copy",
+        "requests.cookies.RequestsCookieJar.get",
+        "requests.structures.CaseInsensitiveDict.__repr__",
+        "test_requests.test_prepared_request_complete_copy",
+        "requests.models.Response.close",
+        "test_requests.test_prepared_request_no_cookies_copy",
+        "requests.sessions.Session.merge_environment_settings",
+        "requests.packages.urllib3.response.DeflateDecoder.__init__",
+        "requests.auth.HTTPDigestAuth.build_digest_header.md5_utf8",
+        "requests.utils.stream_decode_response_unicode",
+        "requests.auth.HTTPDigestAuth.build_digest_header.sha_utf8",
+        "requests.packages.urllib3.exceptions.DecodeError",
+        "requests.cookies",
+        "requests.auth.HTTPBasicAuth.__call__",
+        "requests.utils.parse_dict_header",
+        "requests.auth.HTTPProxyAuth.__call__",
+        "test_requests.RequestsTestCase.test_response_is_iterable.read_mock",
+        "requests.models.Request.__repr__",
+        "requests.packages.urllib3._collections.RecentlyUsedContainer.clear",
+        "requests.models.Request.prepare",
+        "requests.models.PreparedRequest.__repr__",
+        "requests.packages.urllib3.util.retry.Retry.new",
+        "requests.cookies.get_cookie_header",
+        "requests.packages.urllib3.response.HTTPResponse.tell",
+        "requests.packages.urllib3.packages.ssl_match_hostname._implementation._dnsname_match",
+        "requests.cookies.RequestsCookieJar.set",
+        "requests.packages.chardet.compat.wrap_ord",
+        "requests.packages.urllib3.packages.six.print_.write",
+        "requests.exceptions.ContentDecodingError",
+        "requests.packages.urllib3.packages.ordered_dict.OrderedDict",
+        "requests.packages.urllib3.response.HTTPResponse.readable",
+        "requests.packages.chardet.hebrewprober.HebrewProber.feed",
+        "requests.packages.urllib3.util.url",
+        "requests.packages.urllib3._collections.RecentlyUsedContainer",
+        "requests.packages.urllib3.add_stderr_logger",
+        "requests.models.Response.iter_lines",
+        "test_requests.assert_copy",
+        "requests.packages.chardet.jpcntx.JapaneseContextAnalysis.feed",
+        "requests.packages.chardet.mbcharsetprober.MultiByteCharSetProber.feed",
+        "requests.packages.urllib3.response.HTTPResponse.readinto",
+        "requests.packages.urllib3.util.url.split_first"
+      ],
+      "retrieval_calls": 3,
+      "index_nodes": 888,
+      "scored_documents": 2664,
+      "source_chars_read": 808145,
+      "shared_index_seconds": 0.6517377000000124
+    }
+  ]
+}

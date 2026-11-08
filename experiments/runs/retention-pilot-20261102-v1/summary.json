@@ -1,0 +1,48 @@
+{
+  "manifest_sha256": "6a131f0ca07473e414bd10efbec87cef7db9c52ef9c978565e6ef795bb6080f8",
+  "replay_sha256": "4d9f640385c785e676b1be0a96f7040649757a849dee950360fac31ac42dc7e2",
+  "gold_sha256": "2fa161dc437993153e2d0b1834a88a89553270c3ca1978bcd3db08e65eba25ad",
+  "tasks": 12,
+  "scorable_tasks": 12,
+  "failed_tasks": 0,
+  "missing_gold_records": 0,
+  "means": {
+    "rrf_fixed": {
+      "coverage": 0.5833333333333334,
+      "recall_at_10": 0.3333333333333333
+    },
+    "rrf_oracle": {
+      "coverage": 0.6666666666666666,
+      "recall_at_10": 0.25
+    },
+    "round_robin_fixed": {
+      "coverage": 0.5416666666666666,
+      "recall_at_10": 0.3333333333333333
+    },
+    "round_robin_oracle": {
+      "coverage": 0.625,
+      "recall_at_10": 0.25
+    }
+  },
+  "primary_delta": -0.04166666666666674,
+  "descriptive_repo_bootstrap_95": [
+    -0.125,
+    0.0
+  ],
+  "primary_improved_tasks": [],
+  "primary_harmed_tasks": [
+    "pytest-dev__pytest-5413"
+  ],
+  "new_retrieval_calls": 0,
+  "replay_seconds": 0.027415700000346988,
+  "selection_cost_note": "All feasible options replayed for diagnosis; not a deployed selector cost",
+  "automatic_expansion": false,
+  "limits": [
+    "Same 12 historically used tasks; protocol motivated by observed v1 failures",
+    "Exploratory replay, not confirmation and not an online action selector",
+    "Same cached retrieval work; no new retrieval, LLM or repair calls",
+    "Final ranking is RRF, not the strongest learned ranker",
+    "Source recall is limited to each saved action top 200; deeper ranks are unknown",
+    "Round-robin preserves neither all baseline hits nor all action hits"
+  ]
+}

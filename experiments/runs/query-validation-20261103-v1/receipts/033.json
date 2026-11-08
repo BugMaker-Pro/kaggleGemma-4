@@ -1,0 +1,34 @@
+{
+  "request_sha256": "d2a5793ed28a77053391996ba32584b80b48812beb083d32445ad4e381438342",
+  "manifest_sha256": "d537eb7c5ecd9599d7f0c43dee9a074cdaf677151fd186d3946113fa5f47e1fe",
+  "received_utc": "2026-11-02T17:04:31.768697+00:00",
+  "seconds": 2.770939600000929,
+  "response": {
+    "id": "39481aa7-a171-447c-a97b-9e65f2ea04a6",
+    "object": "chat.completion",
+    "created": 1793639069,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"sympy.physics.vector point.py vel _vel_dict set_pos velocity calculation\",\"Point.vel ReferenceFrame angular velocity orientnew set_pos velocity not defined\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 715,
+      "completion_tokens": 38,
+      "total_tokens": 753,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 587
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

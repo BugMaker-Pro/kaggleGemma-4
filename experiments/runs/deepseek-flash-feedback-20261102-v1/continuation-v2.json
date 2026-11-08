@@ -1,0 +1,12 @@
+{
+  "parent_manifest_sha256": "001bb1a61aa999d022ac9922671f7f4ad59838c785e7cb011f1a2a59241bef31",
+  "source_sha256": "1089df2c359ab25c3b71a90e31b8f3c02a3f4b1458c6cf62ad57609e09ca1001",
+  "reason": "request 12 transport/JSON error; provider completion and billing unknown",
+  "changed_policy": "Skip uncertain request without resending; original-only fallback with null token usage; continue unsent requests. Future transport failures handled likewise. HTTP auth/billing failures still stop.",
+  "original_request_index": 11,
+  "max_remaining_calls": 12,
+  "budget_cny": 5,
+  "result_status": "exploratory with disclosed operational deviation; sensitivity excludes affected pair",
+  "revision_note": "Fixed null-usage budget summation; no new API request was sent by the failed continuation attempt",
+  "sha256": "84a8cb6fd380235b724d2424992b89277427c7a0f0d99ea9b773736ff27a3e04"
+}

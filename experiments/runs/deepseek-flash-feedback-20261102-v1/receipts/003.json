@@ -1,0 +1,34 @@
+{
+  "request_sha256": "c853a1e9ef076962b38caf31777e8729e94a1b846cdd1969a15df9712f05dd09",
+  "manifest_sha256": "001bb1a61aa999d022ac9922671f7f4ad59838c785e7cb011f1a2a59241bef31",
+  "received_utc": "2026-11-02T15:14:40.913720+00:00",
+  "seconds": 1.0092331000005288,
+  "response": {
+    "id": "390b18db-9fdb-4b90-90a6-4d42a7625f7f",
+    "object": "chat.completion",
+    "created": 1793632478,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"EnumSerializer serialize enum flag combination _decompose names OR\", \"django db migrations serializer EnumSerializer IntFlag default serialize\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1808,
+      "completion_tokens": 32,
+      "total_tokens": 1840,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 1552
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

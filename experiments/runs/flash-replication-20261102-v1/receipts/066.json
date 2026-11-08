@@ -1,0 +1,34 @@
+{
+  "request_sha256": "03bb965a64853fb5eec60fc9dc53d283aa3b9535d79c3fb2654f1a5d68d780cd",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "received_utc": "2026-11-02T15:54:24.695803+00:00",
+  "seconds": 0.6274100999999064,
+  "response": {
+    "id": "4706851f-67ee-47ae-b21a-b500aaff7745",
+    "object": "chat.completion",
+    "created": 1793634862,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"sympy Matrix hstack vstack implementation zero rows columns shape\",\"sympy matrices commonmatrix hstack vstack class method source\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3601,
+      "completion_tokens": 32,
+      "total_tokens": 3633,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 3473
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

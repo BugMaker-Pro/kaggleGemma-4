@@ -1,0 +1,38 @@
+{
+  "task_id": "rich_4079",
+  "passed": true,
+  "controls": {
+    "empty_control": {
+      "resolved": false,
+      "test_exit_code": 1,
+      "test_output_sha256": "93ba9215f86bfd96a047d364e8ceeaceefeb6a882fa904e708b8c4ff8e387f78"
+    },
+    "reference_control": {
+      "resolved": true,
+      "test_exit_code": 0,
+      "test_output_sha256": "c6b400e462050a05e000eee42bda881ce353b2a728b6dc20175100bdbe37c421"
+    }
+  },
+  "environment": {
+    "dockerImage": "gcr.io/kaggle-private-byod/python@sha256:37c64f7dd9c54116ecd1bcc88817c5469b88387388fade02bfa8bf3fc647d461",
+    "datasetDataSources": [
+      "metric/gemma-4-developer-agent-wheelhouse"
+    ],
+    "competitionDataSources": [
+      "gemma-4-developer-agent"
+    ],
+    "kernelDataSources": [
+      "yyyyhhhhwww/gemma4-requests-test-wheels-20261108-v2",
+      "yyyyhhhhwww/gemma4-fastapi-test-wheels-20261108"
+    ],
+    "enableInternet": false
+  },
+  "environment_setup_sha256": [
+    "c3032e216b0a393aec76180338e56f3ae5d7d995b5de9913f78b79a1fa1105af",
+    "e70eca466657c20c49ae1f2462d008dbb82acab0bb3446c3a7f395c0b276c8d6",
+    "7c634d6cee0e540e9b87ad42775fc428415eaa12eed1f7fb5b100e4c7c4d46c6",
+    "f91ba18c9886ae8613838aaa5c265f2593d4dfecbcc4c1f15c4e82ce49fb2d25"
+  ],
+  "source_results_sha256": "4c17ed906a8b9cf7e08a24449bccac63a189b2c6c944be3d1e92efca6dbb954b",
+  "scope": "Expected reference-pass/empty-fail controls only; not a method-effectiveness result"
+}

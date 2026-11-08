@@ -1,0 +1,42 @@
+diff --git a/reproduce_issue.py b/reproduce_issue.py
+new file mode 100644
+index 00000000..2fd33200
+--- /dev/null
++++ b/reproduce_issue.py
+@@ -0,0 +1,36 @@
++from fastapi import FastAPI
++from pydantic import BaseModel
++import json
++
++class ModelA(BaseModel):
++    a: str
++
++class ModelB(BaseModel):
++    b: str
++
++app = FastAPI(
++    responses={
++        500: {
++            'model': ModelA | ModelB,
++            'content': {"application/json": {
++                'examples': {"Case A": {"value": "a"}}
++            }}
++        }
++    }
++)
++
++@app.get('/route1')
++def route1():
++    return "test"
++
++@app.get('/route2')
++def route2():
++    return "test"
++
++@app.get('/route3')
++def route3():
++    return "test"
++
++if __name__ == "__main__":
++    import uvicorn
++    uvicorn.run(app, host="127.0.0.1", port=8000)

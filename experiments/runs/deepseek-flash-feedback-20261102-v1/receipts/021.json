@@ -1,0 +1,34 @@
+{
+  "request_sha256": "cba255cae70d876a5acc394df47489bbb572c2736651fad0bb9007286eecafd9",
+  "manifest_sha256": "001bb1a61aa999d022ac9922671f7f4ad59838c785e7cb011f1a2a59241bef31",
+  "received_utc": "2026-11-02T15:21:12.683604+00:00",
+  "seconds": 1.004395900000418,
+  "response": {
+    "id": "854bfab3-dd0e-4d18-96a0-1db016fac64d",
+    "object": "chat.completion",
+    "created": 1793632870,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"autosummary_imported_members members template imported members generate_autosummary_docs\",\"sphinx.ext.autosummary.generate get_members imported_members module template members\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2454,
+      "completion_tokens": 43,
+      "total_tokens": 2497,
+      "prompt_tokens_details": {
+        "cached_tokens": 512
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1942
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

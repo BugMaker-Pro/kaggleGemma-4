@@ -1,0 +1,42 @@
+{
+  "manifest_sha256": "c676df0fe8a2f1b730701dcf068ed7a0b34a9e90249de86fe37600fa3e982c4d",
+  "trace_sha256": "27b4595afd25f64d47711b6a76f4f98642ce80a466340e71986fdffd7c173aab",
+  "gold_sha256": "2fa161dc437993153e2d0b1834a88a89553270c3ca1978bcd3db08e65eba25ad",
+  "tasks": 12,
+  "scorable_tasks": 12,
+  "failed_tasks": 0,
+  "missing_gold_records": 0,
+  "means": {
+    "original": {
+      "coverage": 0.625,
+      "recall_at_10": 0.25
+    },
+    "fixed": {
+      "coverage": 0.5833333333333334,
+      "recall_at_10": 0.3333333333333333
+    },
+    "oracle": {
+      "coverage": 0.6666666666666666,
+      "recall_at_10": 0.25
+    }
+  },
+  "primary_delta": 0.08333333333333326,
+  "descriptive_repo_bootstrap_95": [
+    0.0,
+    0.25
+  ],
+  "minimum_worthwhile_delta": 0.02,
+  "gate": "uncertain",
+  "automatic_expansion": false,
+  "all_menu_union_coverage": 0.8333333333333334,
+  "total_execution_seconds": 90.49131199999988,
+  "cost_scope": "trace includes preprocessing and all-menu execution; per-arm search costs are replay estimates",
+  "limits": [
+    "historically used Lite tasks; not an unseen test set",
+    "lexical menu only; no adaptive evidence state",
+    "RRF pilot ranking, not the strongest learned fusion ranker",
+    "all-menu execution is diagnostic and may exceed deployment budget",
+    "source size cap is checked after snapshot read, not a hard IO limit",
+    "no wall-time cutoff; elapsed time reported, not claimed equal"
+  ]
+}

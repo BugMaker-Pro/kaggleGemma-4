@@ -1,0 +1,122 @@
+{
+  "purpose": "engineering_smoke_not_confirmation",
+  "task_id": "requests_7433",
+  "checks": 33,
+  "arms": [
+    {
+      "arm": "baseline",
+      "task_id": "requests_7433",
+      "resolved": true,
+      "test_exit_code": 0,
+      "tool_calls": 30,
+      "duration_seconds": 288.042920422,
+      "patch_sha256": "6531ae0aa2ff4ed8625b5674cfbc916d3aa57cf11ad9add835d6e01754328004",
+      "patch_chars": 1779,
+      "purpose": "engineering_smoke",
+      "tool_invocations_including_rejected_and_free": {
+        "run_command": 12,
+        "read_file": 15,
+        "edit_file": 1,
+        "write_file": 3
+      },
+      "graph_calls": 0,
+      "first_edit_elapsed_seconds": 38.721759557724,
+      "explicit_submit": false,
+      "workspace_scratch_files_observed": [
+        "reproduce_issue.py",
+        "reproduce_stream.py"
+      ],
+      "tool_errors": {
+        "CommandError": 1,
+        "ValueError": 1,
+        "FileWriteError": 1,
+        "BudgetExceeded": 1
+      },
+      "model_usage_from_trace": {
+        "total_prompt_tokens": 285624,
+        "total_completion_tokens": 8469,
+        "total_cached_tokens": 0,
+        "total_tokens": 294093,
+        "total_steps": 33
+      },
+      "full_patch_saved": true,
+      "verification_log_saved": true,
+      "empty_patch_recorded": false,
+      "harness_error": null
+    },
+    {
+      "arm": "evidence",
+      "task_id": "requests_7433",
+      "resolved": true,
+      "test_exit_code": 0,
+      "tool_calls": 30,
+      "duration_seconds": 286.521518572,
+      "patch_sha256": "4ca9795049fc679c1b60c4f32e561b8018529633e79d2dd7b2a3fca87b1ff31e",
+      "patch_chars": 584,
+      "purpose": "engineering_smoke",
+      "tool_invocations_including_rejected_and_free": {
+        "run_command": 16,
+        "read_file": 13,
+        "edit_file": 1,
+        "write_file": 1
+      },
+      "graph_calls": 0,
+      "first_edit_elapsed_seconds": 28.661546230316162,
+      "explicit_submit": false,
+      "workspace_scratch_files_observed": [],
+      "tool_errors": {
+        "FileWriteError": 1,
+        "CommandError": 2,
+        "BudgetExceeded": 1
+      },
+      "model_usage_from_trace": {
+        "total_prompt_tokens": 303179,
+        "total_completion_tokens": 6664,
+        "total_cached_tokens": 0,
+        "total_tokens": 309843,
+        "total_steps": 33
+      },
+      "full_patch_saved": true,
+      "verification_log_saved": true,
+      "empty_patch_recorded": false,
+      "harness_error": null
+    },
+    {
+      "arm": "evidence_graph",
+      "task_id": "requests_7433",
+      "resolved": true,
+      "test_exit_code": 0,
+      "tool_calls": 30,
+      "duration_seconds": 286.49038717400003,
+      "patch_sha256": "4ca9795049fc679c1b60c4f32e561b8018529633e79d2dd7b2a3fca87b1ff31e",
+      "patch_chars": 584,
+      "purpose": "engineering_smoke",
+      "tool_invocations_including_rejected_and_free": {
+        "run_command": 14,
+        "read_file": 14,
+        "edit_file": 1,
+        "write_file": 1
+      },
+      "graph_calls": 0,
+      "first_edit_elapsed_seconds": 42.56487488746643,
+      "explicit_submit": false,
+      "workspace_scratch_files_observed": [],
+      "tool_errors": {
+        "CommandError": 1,
+        "FileWriteError": 1
+      },
+      "model_usage_from_trace": {
+        "total_prompt_tokens": 313435,
+        "total_completion_tokens": 9315,
+        "total_cached_tokens": 0,
+        "total_tokens": 322750,
+        "total_steps": 32
+      },
+      "full_patch_saved": true,
+      "verification_log_saved": true,
+      "empty_patch_recorded": false,
+      "harness_error": null
+    }
+  ],
+  "interpretation_limit": "One development task cannot establish method effectiveness; missing verification logs prevent attributing unresolved outcomes."
+}

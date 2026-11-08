@@ -1,0 +1,34 @@
+{
+  "request_sha256": "8dc57b6856e36ff02c445a7087afd64559b2aa93d5158b2e6cc30dfd87f2e485",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "received_utc": "2026-11-02T15:53:21.760293+00:00",
+  "seconds": 0.7787570999998934,
+  "response": {
+    "id": "7e3910ca-c80e-444f-becc-04dad9b260d8",
+    "object": "chat.completion",
+    "created": 1793634799,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\": [\"astropy ascii.qdp _line_type _command_re READ [TS]ERR case insensitive\", \"astropy qdp.py QDP read serr lowercase command regex\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3084,
+      "completion_tokens": 41,
+      "total_tokens": 3125,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 2956
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

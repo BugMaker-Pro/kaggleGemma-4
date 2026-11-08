@@ -1,0 +1,34 @@
+{
+  "request_sha256": "d99ada9291b462a185b35cf8ab5dfa66ee062e843db93b998a0a3af2317b0d3d",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "received_utc": "2026-11-02T15:53:55.500086+00:00",
+  "seconds": 1.0737771000003704,
+  "response": {
+    "id": "ff204797-17ec-4801-ad6e-38be1dd717bb",
+    "object": "chat.completion",
+    "created": 1793634833,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"xarray concat data_vars option ignore missing variables outer join fill_value\",\"xarray.core.concat concat data_vars compat fill_value join implementation\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2122,
+      "completion_tokens": 37,
+      "total_tokens": 2159,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 1866
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

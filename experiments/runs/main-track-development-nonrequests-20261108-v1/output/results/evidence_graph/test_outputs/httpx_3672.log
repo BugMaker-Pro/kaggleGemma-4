@@ -1,0 +1,260 @@
+STDOUT:
+FF...F..........FF......                                                 [100%]
+=================================== FAILURES ===================================
+_________________________________ test_parser __________________________________
+
+    def test_parser():
+        stream = httpx.DuplexStream(
+            b"HTTP/1.1 200 OK\r\n"
+            b"Content-Length: 12\r\n"
+            b"Content-Type: text/plain\r\n"
+            b"\r\n"
+            b"hello, world"
+        )
+    
+        p = httpx.HTTPParser(stream, mode='CLIENT')
+        p.send_method_line(b"POST", b"/", b"HTTP/1.1")
+        p.send_headers([
+            (b"Host", b"example.com"),
+            (b"Content-Type", b"application/json"),
+            (b"Content-Length", b"23"),
+        ])
+        p.send_body(b'{"msg": "hello, world"}')
+        p.send_body(b'')
+    
+        assert stream.input_bytes() == (
+            b"HTTP/1.1 200 OK\r\n"
+            b"Content-Length: 12\r\n"
+            b"Content-Type: text/plain\r\n"
+            b"\r\n"
+            b"hello, world"
+        )
+        assert stream.output_bytes() == (
+            b"POST / HTTP/1.1\r\n"
+            b"Host: example.com\r\n"
+            b"Content-Type: application/json\r\n"
+            b"Content-Length: 23\r\n"
+            b"\r\n"
+            b'{"msg": "hello, world"}'
+        )
+    
+        protocol, code, reason_phase = p.recv_status_line()
+        headers = p.recv_headers()
+        body = p.recv_body()
+        terminator = p.recv_body()
+    
+        assert protocol == b'HTTP/1.1'
+        assert code == 200
+        assert reason_phase == b'OK'
+        assert headers == [
+            (b'Content-Length', b'12'),
+            (b'Content-Type', b'text/plain'),
+        ]
+        assert body == b'hello, world'
+        assert terminator == b''
+    
+        assert not p.is_idle()
+        p.reset()
+>       assert p.is_idle()
+E       assert False
+E        +  where False = is_idle()
+E        +    where is_idle = <HTTPParser [client DONE, server DONE]>.is_idle
+
+tests/test_parsers.py:71: AssertionError
+______________________________ test_parser_server ______________________________
+
+    def test_parser_server():
+        stream = httpx.DuplexStream(
+            b"GET / HTTP/1.1\r\n"
+            b"Host: www.example.com\r\n"
+            b"\r\n"
+        )
+    
+        p = httpx.HTTPParser(stream, mode='SERVER')
+        method, target, protocol = p.recv_method_line()
+        headers = p.recv_headers()
+        body = p.recv_body()
+    
+        assert method == b'GET'
+        assert target == b'/'
+        assert protocol == b'HTTP/1.1'
+        assert headers == [
+            (b'Host', b'www.example.com'),
+        ]
+        assert body == b''
+    
+        p.send_status_line(b"HTTP/1.1", 200, b"OK")
+        p.send_headers([
+            (b"Content-Type", b"application/json"),
+            (b"Content-Length", b"23"),
+        ])
+        p.send_body(b'{"msg": "hello, world"}')
+        p.send_body(b'')
+    
+        assert stream.input_bytes() == (
+            b"GET / HTTP/1.1\r\n"
+            b"Host: www.example.com\r\n"
+            b"\r\n"
+        )
+        assert stream.output_bytes() == (
+            b"HTTP/1.1 200 OK\r\n"
+            b"Content-Type: application/json\r\n"
+            b"Content-Length: 23\r\n"
+            b"\r\n"
+            b'{"msg": "hello, world"}'
+        )
+    
+        assert not p.is_idle()
+        p.reset()
+>       assert p.is_idle()
+E       assert False
+E        +  where False = is_idle()
+E        +    where is_idle = <HTTPParser [client DONE, server DONE]>.is_idle
+
+tests/test_parsers.py:117: AssertionError
+_______________________________ test_parser_repr _______________________________
+
+    def test_parser_repr():
+        stream = httpx.DuplexStream(
+            b"HTTP/1.1 200 OK\r\n"
+            b"Content-Type: application/json\r\n"
+            b"Content-Length: 23\r\n"
+            b"\r\n"
+            b'{"msg": "hello, world"}'
+        )
+    
+        p = httpx.HTTPParser(stream, mode='CLIENT')
+        assert repr(p) == "<HTTPParser [client SEND_METHOD_LINE, server WAIT]>"
+    
+        p.send_method_line(b"GET", b"/", b"HTTP/1.1")
+        assert repr(p) == "<HTTPParser [client SEND_HEADERS, server RECV_STATUS_LINE]>"
+    
+        p.send_headers([(b"Host", b"example.com")])
+        assert repr(p) == "<HTTPParser [client SEND_BODY, server RECV_STATUS_LINE]>"
+    
+        p.send_body(b'')
+        assert repr(p) == "<HTTPParser [client DONE, server RECV_STATUS_LINE]>"
+    
+        p.recv_status_line()
+        assert repr(p) == "<HTTPParser [client DONE, server RECV_HEADERS]>"
+    
+        p.recv_headers()
+        assert repr(p) == "<HTTPParser [client DONE, server RECV_BODY]>"
+    
+        p.recv_body()
+        assert repr(p) == "<HTTPParser [client DONE, server RECV_BODY]>"
+    
+        p.recv_body()
+        assert repr(p) == "<HTTPParser [client DONE, server DONE]>"
+    
+        p.reset()
+>       assert repr(p) == "<HTTPParser [client SEND_METHOD_LINE, server WAIT]>"
+E       AssertionError: assert '<HTTPParser ...server DONE]>' == '<HTTPParser ...server WAIT]>'
+E         
+E         - <HTTPParser [client SEND_METHOD_LINE, server WAIT]>
+E         ?                     --- ----- ----           ^^^^
+E         + <HTTPParser [client DONE, server DONE]>
+E         ?                                  ^^^^
+
+tests/test_parsers.py:319: AssertionError
+_________________________ test_client_connection_close _________________________
+
+    def test_client_connection_close():
+        stream = httpx.DuplexStream(
+            b"HTTP/1.1 200 OK\r\n"
+            b"Content-Length: 12\r\n"
+            b"Content-Type: text/plain\r\n"
+            b"\r\n"
+            b"hello, world"
+        )
+    
+        p = httpx.HTTPParser(stream, mode='CLIENT')
+        p.send_method_line(b"GET", b"/", b"HTTP/1.1")
+        p.send_headers([
+            (b"Host", b"example.com"),
+            (b"Connection", b"close"),
+        ])
+        p.send_body(b'')
+    
+        protocol, code, reason_phase = p.recv_status_line()
+        headers = p.recv_headers()
+        body = p.recv_body()
+        terminator = p.recv_body()
+    
+        assert protocol == b'HTTP/1.1'
+        assert code == 200
+        assert reason_phase == b"OK"
+        assert headers == [
+            (b'Content-Length', b'12'),
+            (b'Content-Type', b'text/plain'),
+        ]
+        assert body == b"hello, world"
+        assert terminator == b""
+    
+        assert repr(p) == "<HTTPParser [client DONE, server DONE]>"
+    
+        p.reset()
+>       assert repr(p) == "<HTTPParser [client CLOSED, server CLOSED]>"
+E       AssertionError: assert '<HTTPParser ...server DONE]>' == '<HTTPParser ...rver CLOSED]>'
+E         
+E         - <HTTPParser [client CLOSED, server CLOSED]>
+E         ?                     ^^ ^ -         ^^ ^ -
+E         + <HTTPParser [client DONE, server DONE]>
+E         ?                     ^ ^          ^ ^
+
+tests/test_parsers.py:558: AssertionError
+_________________________ test_server_connection_close _________________________
+
+    def test_server_connection_close():
+        stream = httpx.DuplexStream(
+            b"HTTP/1.1 200 OK\r\n"
+            b"Content-Length: 12\r\n"
+            b"Content-Type: text/plain\r\n"
+            b"Connection: close\r\n"
+            b"\r\n"
+            b"hello, world"
+        )
+    
+        p = httpx.HTTPParser(stream, mode='CLIENT')
+        p.send_method_line(b"GET", b"/", b"HTTP/1.1")
+        p.send_headers([(b"Host", b"example.com")])
+        p.send_body(b'')
+    
+        protocol, code, reason_phase = p.recv_status_line()
+        headers = p.recv_headers()
+        body = p.recv_body()
+        terminator = p.recv_body()
+    
+        assert protocol == b'HTTP/1.1'
+        assert code == 200
+        assert reason_phase == b"OK"
+        assert headers == [
+            (b'Content-Length', b'12'),
+            (b'Content-Type', b'text/plain'),
+            (b'Connection', b'close'),
+        ]
+        assert body == b"hello, world"
+        assert terminator == b""
+    
+        assert repr(p) == "<HTTPParser [client DONE, server DONE]>"
+        p.reset()
+>       assert repr(p) == "<HTTPParser [client CLOSED, server CLOSED]>"
+E       AssertionError: assert '<HTTPParser ...server DONE]>' == '<HTTPParser ...rver CLOSED]>'
+E         
+E         - <HTTPParser [client CLOSED, server CLOSED]>
+E         ?                     ^^ ^ -         ^^ ^ -
+E         + <HTTPParser [client DONE, server DONE]>
+E         ?                     ^ ^          ^ ^
+
+tests/test_parsers.py:595: AssertionError
+- generated xml file: /tmp/swegemma_sandbox_e3224720-8cd_do56z168/tmp/_swegemma_junit_4f4d0c1acfcb.xml -
+=========================== short test summary info ============================
+FAILED tests/test_parsers.py::test_parser - assert False
+FAILED tests/test_parsers.py::test_parser_server - assert False
+FAILED tests/test_parsers.py::test_parser_repr - AssertionError: assert '<HTT...
+FAILED tests/test_parsers.py::test_client_connection_close - AssertionError: ...
+FAILED tests/test_parsers.py::test_server_connection_close - AssertionError: ...
+5 failed, 19 passed in 0.16s
+
+STDERR:
+[2026-11-08 06:49:39,047] WARNING in core: flasgger is not installed; serving the static landing page at / and skipping the Swagger UI and /spec.json.

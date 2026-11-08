@@ -1,0 +1,36 @@
+diff --git a/reproduce_issue.py b/reproduce_issue.py
+new file mode 100644
+index 00000000..4cf6bdc2
+--- /dev/null
++++ b/reproduce_issue.py
+@@ -0,0 +1,15 @@
++import sys
++from requests.models import RequestEncodingMixin
++
++class Wrapper:
++    def __getattr__(self, name):
++        if name == 'read':
++            return lambda length=None: b'data'
++        raise AttributeError(name)
++
++data = Wrapper()
++try:
++    result = RequestEncodingMixin._encode_params(data)
++    print(f"Result: {result}")
++except Exception as e:
++    print(f"Error: {e}")
+diff --git a/src/requests/models.py b/src/requests/models.py
+index c4cc028e..26789055 100644
+--- a/src/requests/models.py
++++ b/src/requests/models.py
+@@ -161,8 +161,8 @@ class RequestEncodingMixin:
+ 
+         if isinstance(data, (str, bytes)):
+             return data
+-        elif isinstance(data, _SupportsRead):
+-            return data
++        elif hasattr(data, "read") and callable(data.read):
++            return data\
+         elif hasattr(data, "__iter__"):
+             result: list[tuple[bytes, bytes]] = []
+             for k, vs in to_key_val_list(data):

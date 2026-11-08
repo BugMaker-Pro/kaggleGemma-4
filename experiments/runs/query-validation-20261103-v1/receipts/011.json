@@ -1,0 +1,34 @@
+{
+  "request_sha256": "3e5cfe202d7f3856a4be6e98d1747afb46a7b28eee0f769202dd45166c8b4c42",
+  "manifest_sha256": "d537eb7c5ecd9599d7f0c43dee9a074cdaf677151fd186d3946113fa5f47e1fe",
+  "received_utc": "2026-11-02T17:03:37.663851+00:00",
+  "seconds": 1.0319743999989441,
+  "response": {
+    "id": "ffc0a941-0c94-4832-96b5-05a2f1bf0ccf",
+    "object": "chat.completion",
+    "created": 1793639015,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"matplotlib get_backend Gcf.figs rc_context clears figures\",\"Gcf.figs OrderedDict get_backend rc_context figure manager\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 762,
+      "completion_tokens": 34,
+      "total_tokens": 796,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 634
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

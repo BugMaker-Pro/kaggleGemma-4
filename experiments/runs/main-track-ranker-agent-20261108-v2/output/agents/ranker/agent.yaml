@@ -1,0 +1,5 @@
+agent_class: SequentialAgent
+name: full_ranker_pipeline
+sub_agents:
+  - config_path: ranker_stage.yaml
+  - config_path: repair_stage.yaml

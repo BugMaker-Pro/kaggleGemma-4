@@ -1,0 +1,34 @@
+{
+  "request_sha256": "7ac6b4b7e9b848c0dba9ecf98aef3c1441d3d14f8635517f255c657c18ae1507",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "received_utc": "2026-11-02T15:54:08.660038+00:00",
+  "seconds": 0.6266833999998198,
+  "response": {
+    "id": "ca5a76bf-dbe9-4203-824f-30e2fe26ca03",
+    "object": "chat.completion",
+    "created": 1793634846,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"pytest --collect-only option add_argument parser shortcut\", \"pytest collect-only command line option definition\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 378,
+      "completion_tokens": 27,
+      "total_tokens": 405,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 250
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

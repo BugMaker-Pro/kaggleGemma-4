@@ -1,0 +1,56 @@
+diff --git a/openapi.json b/openapi.json
+new file mode 100644
+index 00000000..3698854c
+--- /dev/null
++++ b/openapi.json
+@@ -0,0 +1 @@
++{"openapi": "3.1.0", "info": {"title": "FastAPI", "version": "0.1.0"}, "paths": {"/route1": {"get": {"summary": "Route1", "operationId": "route1_route1_get", "responses": {"200": {"description": "Successful Response", "content": {"application/json": {"schema": {}}}}, "500": {"description": "Internal Server Error", "content": {"application/json": {"schema": {"anyOf": [{"$ref": "#/components/schemas/ModelA"}, {"$ref": "#/components/schemas/ModelB"}, {"$ref": "#/components/schemas/ModelA"}, {"$ref": "#/components/schemas/ModelB"}, {"$ref": "#/components/schemas/ModelA"}, {"$ref": "#/components/schemas/ModelB"}], "title": "Response 500 Route3 Route3 Get"}, "examples": {"Case A": {"value": "a"}}}}}}}}, "/route2": {"get": {"summary": "Route2", "operationId": "route2_route2_get", "responses": {"200": {"description": "Successful Response", "content": {"application/json": {"schema": {}}}}, "500": {"description": "Internal Server Error", "content": {"application/json": {"schema": {"anyOf": [{"$ref": "#/components/schemas/ModelA"}, {"$ref": "#/components/schemas/ModelB"}, {"$ref": "#/components/schemas/ModelA"}, {"$ref": "#/components/schemas/ModelB"}, {"$ref": "#/components/schemas/ModelA"}, {"$ref": "#/components/schemas/ModelB"}], "title": "Response 500 Route3 Route3 Get"}, "examples": {"Case A": {"value": "a"}}}}}}}}, "/route3": {"get": {"summary": "Route3", "operationId": "route3_route3_get", "responses": {"200": {"description": "Successful Response", "content": {"application/json": {"schema": {}}}}, "500": {"description": "Internal Server Error", "content": {"application/json": {"schema": {"anyOf": [{"$ref": "#/components/schemas/ModelA"}, {"$ref": "#/components/schemas/ModelB"}, {"$ref": "#/components/schemas/ModelA"}, {"$ref": "#/components/schemas/ModelB"}, {"$ref": "#/components/schemas/ModelA"}, {"$ref": "#/components/schemas/ModelB"}], "title": "Response 500 Route3 Route3 Get"}, "examples": {"Case A": {"value": "a"}}}}}}}}}, "components": {"schemas": {"ModelA": {"properties": {"a": {"type": "string", "title": "A"}}, "type": "object", "required": ["a"], "title": "ModelA"}, "ModelB": {"properties": {"b": {"type": "string", "title": "B"}}, "type": "object", "required": ["b"], "title": "ModelB"}}}}
+\ No newline at end of file
+diff --git a/reproduce_issue.py b/reproduce_issue.py
+new file mode 100644
+index 00000000..1c1f4add
+--- /dev/null
++++ b/reproduce_issue.py
+@@ -0,0 +1,42 @@
++from fastapi import FastAPI
++from pydantic import BaseModel
++from fastapi.testclient import TestClient
++import json
++
++class ModelA(BaseModel):
++    a: str
++
++class ModelB(BaseModel):
++    b: str
++
++app = FastAPI(
++    responses={
++        500: {
++            'model': ModelA | ModelB,
++            'content': {"application/json": {
++                'examples': {"Case A": {"value": "a"}}
++            }}
++        }
++    }
++)
++
++@app.get('/route1')
++def route1():
++    return "test"
++
++@app.get('/route2')
++def route2():
++    return "test"
++
++@app.get('/route3')
++def route3():
++    return "test"
++
++client = TestClient(app)
++
++with open("openapi.json", "w") as f:
++    json.dump(app.openapi(), f)
++
++with open("openapi.json", "r") as f:
++    data = json.load(f)
++    print(json.dumps(data["paths"]["/route1"]["get"]["responses"]["500"]["content"]["application/json"]["schema"], indent=2))

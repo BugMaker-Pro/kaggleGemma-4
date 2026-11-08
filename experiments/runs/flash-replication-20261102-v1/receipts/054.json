@@ -1,0 +1,34 @@
+{
+  "request_sha256": "061ee624aef222b72e8255bb71759bc7af75e91643b2d89bc54508a737ebedfc",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "received_utc": "2026-11-02T15:54:11.326253+00:00",
+  "seconds": 0.6878137999992759,
+  "response": {
+    "id": "319da713-e8de-4fc0-99b7-df5ea811c28d",
+    "object": "chat.completion",
+    "created": 1793634849,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"unique_labels type_of_target pandas nullable Int64 Float64 boolean object dtype Mix type of y not allowed\",\"_pandas_dtype_needs_early_conversion type_of_target pandas extension dtype unique_labels\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2932,
+      "completion_tokens": 47,
+      "total_tokens": 2979,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 2804
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "request_sha256": "4b7abeb7de559837dc0f671e73b43e36291db800c90235dc5196dde90ec3a86c",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "received_utc": "2026-11-02T15:53:32.221275+00:00",
+  "seconds": 0.667196000000331,
+  "response": {
+    "id": "2e3f4c15-f120-47e0-b1f6-4b5492067082",
+    "object": "chat.completion",
+    "created": 1793634810,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"Axis.set_ticks kwargs validation labels Text properties\",\"Axes.set_xticks xticklabels kwargs silently ignored validation\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 340,
+      "completion_tokens": 31,
+      "total_tokens": 371,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 212
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

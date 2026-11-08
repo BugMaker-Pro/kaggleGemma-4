@@ -1,0 +1,34 @@
+{
+  "request_sha256": "22a620a778446a69972a0875acb6d60b28ba4f4379af09d9c9811da63210787a",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "received_utc": "2026-11-02T15:53:53.614460+00:00",
+  "seconds": 0.5010400000001027,
+  "response": {
+    "id": "d3d4b3c7-ad6a-4e72-9629-c47009571cda",
+    "object": "chat.completion",
+    "created": 1793634831,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\": [\"to_unstacked_dataset single-dim variables MergeError conflicting values for variable y\", \"xarray to_unstacked_dataset implementation to_stacked_array roundtrip\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 850,
+      "completion_tokens": 39,
+      "total_tokens": 889,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 210
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "request_sha256": "9ddc080f64093d22022afb0236ceec3ef2c1131ee00ca2c3fc6abe4b1cb6be3f",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "received_utc": "2026-11-02T15:53:53.111101+00:00",
+  "seconds": 0.8896444000001793,
+  "response": {
+    "id": "7b2a7677-61ad-48e4-8c7d-a4b1145aa575",
+    "object": "chat.completion",
+    "created": 1793634831,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\": [\"to_unstacked_dataset implementation xarray core dataset MergeError conflicting values for variable y\", \"to_stacked_array to_unstacked_dataset single-dim variables roundtrip test xarray\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3145,
+      "completion_tokens": 44,
+      "total_tokens": 3189,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 3017
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

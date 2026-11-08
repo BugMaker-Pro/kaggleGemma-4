@@ -1,0 +1,57 @@
+diff --git a/reproduce_issue.py b/reproduce_issue.py
+new file mode 100644
+index 00000000..35dbb63b
+--- /dev/null
++++ b/reproduce_issue.py
+@@ -0,0 +1,21 @@
++import requests
++from collections.abc import Iterable
++from typing import Mapping
++
++class ProxyStream:
++    def __init__(self, data):
++        self.data = data
++    def __getattr__(self, name):
++        if name == "__iter__":
++            return lambda: iter(self.data)
++        raise AttributeError(name)
++
++data = b"some data"
++stream = ProxyStream(data)
++
++print(f"Is instance of Iterable: {isinstance(stream, Iterable)}")
++print(f"Has __iter__: {hasattr(stream, '__iter__')}")
++
++prep = requests.Request("GET", "http://example.com", data=stream).prepare()
++print(f"Body: {prep.body}")
++print(f"Body position: {prep._body_position}")
+diff --git a/reproduce_stream.py b/reproduce_stream.py
+new file mode 100644
+index 00000000..0f3c2b29
+--- /dev/null
++++ b/reproduce_stream.py
+@@ -0,0 +1,9 @@
++import requests
++from io import BytesIO
++
++data = b"some data"
++stream = BytesIO(data)
++
++prep = requests.Request("GET", "http://example.com", data=stream).prepare()
++print(f"Body: {prep.body}")
++print(f"Body position: {prep._body_position}")
+diff --git a/src/requests/models.py b/src/requests/models.py
+index 4142f2a4..93744eee 100644
+--- a/src/requests/models.py
++++ b/src/requests/models.py
+@@ -596,7 +596,9 @@ class PreparedRequest(RequestEncodingMixin, RequestHooksMixin):
+             if not isinstance(body, bytes):
+                 body = body.encode("utf-8")
+ 
+-        if isinstance(data, Iterable) and not isinstance(
++        if (
++            isinstance(data, Iterable) or hasattr(data, "__iter__")
++        ) and not isinstance(
+             data, (str, bytes, list, tuple, Mapping)
+         ):
+             try:

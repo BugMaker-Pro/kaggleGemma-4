@@ -1,0 +1,76 @@
+{
+  "manifest_sha256": "3730bfc6a83542f757cfdb5b9612ea08b9e921f16222105a346bbd98c5b19e0e",
+  "replay_sha256": "9cb3f2fa8c86d287a5221a28fcf42957f1896d35df54445dd27d9101d392271b",
+  "gold_sha256": "2fa161dc437993153e2d0b1834a88a89553270c3ca1978bcd3db08e65eba25ad",
+  "tasks": 35,
+  "scorable_tasks": 35,
+  "missing_gold_tasks": [],
+  "means": {
+    "historical": {
+      "coverage": 0.5857142857142857,
+      "recall_at_10": 0.5428571428571428
+    },
+    "body_original": {
+      "coverage": 0.8333333333333334,
+      "recall_at_10": 0.6047619047619047
+    },
+    "simple_fusion": {
+      "coverage": 0.819047619047619,
+      "recall_at_10": 0.6333333333333333
+    },
+    "generated": {
+      "coverage": 0.9571428571428572,
+      "recall_at_10": 0.7
+    }
+  },
+  "primary_delta": 0.06666666666666665,
+  "descriptive_repo_bootstrap_95": [
+    0.0,
+    0.1619047619047619
+  ],
+  "decision": "uncertain",
+  "improved_tasks": [
+    "matplotlib__matplotlib-22711",
+    "matplotlib__matplotlib-18869",
+    "sympy__sympy-11400"
+  ],
+  "harmed_tasks": [],
+  "novel_top_target_tasks": [
+    "matplotlib__matplotlib-18869"
+  ],
+  "fusion_truncation_loss_tasks": [
+    "matplotlib__matplotlib-24334",
+    "matplotlib__matplotlib-22711",
+    "sympy__sympy-13031",
+    "sympy__sympy-11400"
+  ],
+  "parent_metric_reproduction": "all three parent arms identical",
+  "cost": {
+    "new_api_calls": 0,
+    "new_dense_encoding": 0,
+    "new_ranker_inference": 0,
+    "logical_retrieval_calls_per_task": {
+      "simple_fusion": 2,
+      "generated": 3
+    },
+    "logical_generation_calls_per_task": {
+      "simple_fusion": 0,
+      "generated": 1
+    },
+    "retained_scored_candidates_total": {
+      "historical": 7000,
+      "body_original": 7000,
+      "simple_fusion": 7000,
+      "generated": 7000
+    },
+    "mean_simple_union_size": 337.57142857142856
+  },
+  "automatic_expansion": false,
+  "limits": [
+    "35 previously inspected historical tasks; post-hoc motivated exploratory control, not independent confirmation",
+    "exactly one equal-weight RRF rule k60; no quota or weight search",
+    "strong scores inherited with historical seed/file-stat anchors and new-candidate distribution limitation",
+    "generated arm uses prior Flash query calls; simple fusion has no generation calls",
+    "no method superiority or equivalence claim from absence of significance alone"
+  ]
+}

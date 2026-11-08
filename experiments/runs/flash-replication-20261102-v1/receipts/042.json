@@ -1,0 +1,34 @@
+{
+  "request_sha256": "bf09ac7a4dbfbac65eeea053a4180ad5b688b89dbc44633a086841333c43ee70",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "received_utc": "2026-11-02T15:53:58.054388+00:00",
+  "seconds": 0.6425765999993018,
+  "response": {
+    "id": "64086624-a3b6-4ae8-88b7-3f0cf31b2680",
+    "object": "chat.completion",
+    "created": 1793634836,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"pylint _UnrecognizedOptionError config_initialization run.py traceback unrecognized option\",\"pylint config exceptions _UnrecognizedOptionError handling run_pylint\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 745,
+      "completion_tokens": 44,
+      "total_tokens": 789,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 617
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

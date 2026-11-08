@@ -1,0 +1,34 @@
+{
+  "request_sha256": "33d3393cf4ee4a068b71a1a9049528f61ad840379b993ea856bccffc2ceaf994",
+  "manifest_sha256": "d537eb7c5ecd9599d7f0c43dee9a074cdaf677151fd186d3946113fa5f47e1fe",
+  "received_utc": "2026-11-02T17:04:35.684717+00:00",
+  "seconds": 1.0271582000004855,
+  "response": {
+    "id": "95a7e0dd-a776-4216-b113-fe4c4db81cc4",
+    "object": "chat.completion",
+    "created": 1793639073,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"sympy printing mathml _print_Indexed IndexedBase MathMLPrinter\",\"mathml.py _print_Basic Indexed object is not iterable printer\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 836,
+      "completion_tokens": 40,
+      "total_tokens": 876,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 708
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "request_sha256": "6e446c0fb44e01cf7a21f8a2190db960dfce8ab8fcbaec8fb06bedefb5dbceb6",
+  "manifest_sha256": "d537eb7c5ecd9599d7f0c43dee9a074cdaf677151fd186d3946113fa5f47e1fe",
+  "received_utc": "2026-11-02T17:03:02.657953+00:00",
+  "seconds": 5.0762549999999464,
+  "response": {
+    "id": "32682bfd-c332-4322-b654-b4526dd62936",
+    "object": "chat.completion",
+    "created": 1793638978,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"astropy ascii RST writer header_rows unexpected keyword argument\",\"astropy io ascii RST __init__ header_rows support\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 780,
+      "completion_tokens": 33,
+      "total_tokens": 813,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 780
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

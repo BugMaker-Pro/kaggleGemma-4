@@ -1,0 +1,95 @@
+diff --git a/docs/en/docs/release-notes.md b/docs/en/docs/release-notes.md
+index 88302fa06..8a6adef06 100644
+--- a/docs/en/docs/release-notes.md
++++ b/docs/en/docs/release-notes.md
+@@ -27,6 +27,10 @@ hide:
+ * ⬆ Bump the python-packages group with 15 updates. PR [#15594](https://github.com/fastapi/fastapi/pull/15594) by [@dependabot[bot]](https://github.com/apps/dependabot).
+ * 👷 Configure Dependabot to group updates and update weekly. PR [#15560](https://github.com/fastapi/fastapi/pull/15560) by [@YuriiMotov](https://github.com/YuriiMotov).
+ 
++## 0.136.4 (2026-11-08)
++
++### Refactors
++
+ ## 0.136.3 (2026-05-23)
+ 
+ ### Refactors
+diff --git a/fastapi/__init__.py b/fastapi/__init__.py
+index 38e747232..09c4dad35 100644
+--- a/fastapi/__init__.py
++++ b/fastapi/__init__.py
+@@ -1,6 +1,6 @@
+ """FastAPI framework, high performance, easy to learn, fast to code, ready for production"""
+ 
+-__version__ = "0.136.3"
++__version__ = "0.136.4"
+ 
+ from starlette import status as status
+ 
+diff --git a/scripts/release.py b/scripts/release.py
+new file mode 100644
+index 000000000..d7f2eabc5
+--- /dev/null
++++ b/scripts/release.py
+@@ -0,0 +1,62 @@
++import sys
++import re
++from datetime import date
++from pathlib import Path
++import subprocess
++
++def update_version(version: str):
++    file_path = Path("fastapi/__init__.py")
++    if not file_path.exists():
++        print(f"Error: {file_path} not found.")
++        sys.exit(1)
++    content = file_path.read_text()
++    # Use a more specific regex to avoid matching other things
++    new_content = re.sub(r'^__version__\s*=\s*".*"', f'__version__ = "{version}"', content, flags=re.MULTILINE)
++    file_path.write_text(new_content)
++    print(f"Updated version in {file_path} to {version}")
++
++def update_release_notes(version: str):
++    file_path = Path("docs/en/docs/release-notes.md")
++    if not file_path.exists():
++        print(f"Error: {file_path} not found.")
++        sys.exit(1)
++    content = file_path.read_text()
++    today = date.today().isoformat()
++    new_header = f"## {version} ({today})\n\n### Refactors\n\n"
++    
++    # Find the first occurrence of a version header like ## 0.136.3 (2026-05-23)
++    # We want to insert the new one before it.
++    pattern = r"(## \d+\.\d+\.\d+ \(.*\))"
++    match = re.search(pattern, content)
++    if match:
++        start = match.start()
++        new_content = content[:start] + new_header + content[start:]
++        file_path.write_text(new_content)
++        print(f"Updated release notes with version {version}")
++    else:
++        print("Warning: Could not find existing version header in release notes.")
++
++def main():
++    if len(sys.argv) < 2:
++        print("Usage: python scripts/release.py <version>")
++        sys.exit(1)
++    
++    version = sys.argv[1]
++    update_version(version)
++    update_release_notes(version)
++    
++    print("Running tests...")
++    try:
++        result = subprocess.run([sys.executable, "-m", "pytest"], capture_output=True, text=True)
++        print(result.stdout)
++        print(result.stderr)
++        if result.returncode != 0:
++            print(f"Tests failed with exit code {result.returncode}")
++            sys.exit(result.returncode)
++    except FileNotFoundError:
++        print("pytest not found. Skipping tests.")
++    
++    print("Release preparation successful!")
++
++if __name__ == "__main__":
++    main()

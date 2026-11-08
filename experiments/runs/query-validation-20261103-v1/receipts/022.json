@@ -1,0 +1,34 @@
+{
+  "request_sha256": "8cf173a1129d1ccee8f7df337841f6d28f097f46f027768e626787c059eecdfc",
+  "manifest_sha256": "d537eb7c5ecd9599d7f0c43dee9a074cdaf677151fd186d3946113fa5f47e1fe",
+  "received_utc": "2026-11-02T17:04:02.111644+00:00",
+  "seconds": 2.546719199999643,
+  "response": {
+    "id": "52b69167-f1a7-4add-aee2-64084a319c12",
+    "object": "chat.completion",
+    "created": 1793639039,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\": [\"ColumnTransformer _hstack _add_prefix_for_feature_names_out fitted transformers no features pandas output\", \"ColumnTransformer get_feature_names_out empty transformer zero features set_output pandas Length mismatch\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2003,
+      "completion_tokens": 44,
+      "total_tokens": 2047,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 1875
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

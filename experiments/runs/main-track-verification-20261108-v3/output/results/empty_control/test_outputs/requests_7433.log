@@ -1,0 +1,109 @@
+STDOUT:
+........................................................................ [ 21%]
+.................................................spytest-httpbin server hit an exception serving request: [SSL: TLSV1_ALERT_UNKNOWN_CA] tlsv1 alert unknown ca (_ssl.c:1010)
+attempting to ignore so the rest of the tests can run
+...................... [ 42%]
+........................................................................ [ 63%]
+..............F.........X............................................... [ 84%]
+...................................................                      [100%]
+=================================== FAILURES ===================================
+___________ TestRequests.test_getattr_proxy_stream_follows_redirect ____________
+
+self = <tests.test_requests.TestRequests object at 0x7be4a9832f60>
+httpbin = <function prepare_url.<locals>.inner at 0x7be4a885d8a0>
+
+    def test_getattr_proxy_stream_follows_redirect(self, httpbin):
+        """Ensure stream wrappers that don't implement __iter__ directly are still detected."""
+    
+        class AttrProxy:
+            def __init__(self):
+                self._file = io.BytesIO(b"data")
+    
+            def __getattr__(self, name):
+                return getattr(self._file, name)
+    
+>       r = requests.post(
+            httpbin("redirect-to?url=/post&status_code=307"), data=AttrProxy()
+        )
+
+tests/test_requests.py:2086: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/requests/api.py:134: in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/requests/api.py:71: in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/requests/sessions.py:635: in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+src/requests/sessions.py:541: in prepare_request
+    p.prepare(
+src/requests/models.py:442: in prepare
+    self.prepare_body(data, files, json)
+src/requests/models.py:638: in prepare_body
+    body = self._encode_params(raw_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/requests/models.py:168: in _encode_params
+    for k, vs in to_key_val_list(data):
+                 ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+value = <tests.test_requests.TestRequests.test_getattr_proxy_stream_follows_redirect.<locals>.AttrProxy object at 0x7be4a97872f0>
+
+    def to_key_val_list(
+        value: _t.SupportsItems[_KT, _VT] | Iterable[tuple[_KT, _VT]] | None,
+    ) -> list[tuple[_KT, _VT]] | None:
+        """Take an object and test to see if it can be represented as a
+        dictionary. If it can be, return a list of tuples, e.g.,
+    
+        ::
+    
+            >>> to_key_val_list([('key', 'val')])
+            [('key', 'val')]
+            >>> to_key_val_list({'key': 'val'})
+            [('key', 'val')]
+            >>> to_key_val_list('string')
+            Traceback (most recent call last):
+            ...
+            ValueError: cannot encode objects that are not 2-tuples
+    
+        :rtype: list
+        """
+        if value is None:
+            return None
+    
+        if isinstance(value, (str, bytes, bool, int)):
+            raise ValueError("cannot encode objects that are not 2-tuples")
+    
+        if isinstance(value, _SupportsItems):
+            return list(value.items())
+    
+>       return list(value)
+               ^^^^^^^^^^^
+E       TypeError: 'AttrProxy' object is not iterable
+
+src/requests/utils.py:404: TypeError
+=============================== warnings summary ===============================
+tests/test_requests.py::TestPreparingURLs::test_different_connection_pool_for_tls_settings_verify_True
+tests/test_requests.py::TestPreparingURLs::test_different_connection_pool_for_tls_settings_verify_bundle_expired_cert
+tests/test_requests.py::TestPreparingURLs::test_different_connection_pool_for_tls_settings_verify_bundle_unexpired_cert
+tests/test_requests.py::TestPreparingURLs::test_different_connection_pool_for_mtls_settings
+  /usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'localhost'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /tmp/swegemma_sandbox_80f19ae1-9e3_9ajyt5ve/tmp/_swegemma_junit_cafd003bc815.xml -
+=========================== short test summary info ============================
+FAILED tests/test_requests.py::TestRequests::test_getattr_proxy_stream_follows_redirect
+1 failed, 336 passed, 1 skipped, 1 xpassed, 4 warnings in 104.52s (0:01:44)
+
+STDERR:
+[2026-11-08 04:58:41,230] WARNING in core: flasgger is not installed; serving the static landing page at / and skipping the Swagger UI and /spec.json.
+127.0.0.1 - - [08/Nov/2026 04:58:42] "GET /get HTTP/1.1" 200 208
+127.0.0.1 - - [08/Nov/2026 04:58:42] "GET /get HTTP/1.1" 200 278
+127.0.0.1 - - [08/Nov/2026 04:58:43] "GET /get HTTP/1.1" 200 278
+127.0.0.1 - - [08/Nov/2026 04:59:47] "GET /get HTTP/1.1" 200 319
+127.0.0.1 - - [08/Nov/2026 04:59:48] "GET /status/204 HTTP/1.1" 204 0
+127.0.0.1 - - [08/Nov/2026 04:59:48] "GET /html HTTP/1.1" 200 3741
+127.0.0.1 - - [08/Nov/2026 04:59:58] "GET /get HTTP/1.1" 200 278

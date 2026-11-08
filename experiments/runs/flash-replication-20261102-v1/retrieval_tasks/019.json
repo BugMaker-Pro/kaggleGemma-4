@@ -1,0 +1,3674 @@
+{
+  "instance_id": "pydata__xarray-3364",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "results": [
+    {
+      "instance_id": "pydata__xarray-3364",
+      "repo": "pydata/xarray",
+      "base_commit": "863e49066ca4d61c9adfe62aca3bf21b90e1af8c",
+      "arm": "preplanned",
+      "status": "ok",
+      "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+      "request_sha256": "fd46c47d781c9f9c7f92775e21240189199763da7b35c0ee5b24c00c065176e2",
+      "response_sha256": "f242e11abaa92f6d224158e44010e6c8e4af9514fddcce3a0bbc9df6d51f9cf1",
+      "raw_response_sha256": "f242e11abaa92f6d224158e44010e6c8e4af9514fddcce3a0bbc9df6d51f9cf1",
+      "actions": [
+        {
+          "query": "xray concat datasets different variables missing NaN option",
+          "candidates": [
+            {
+              "id": "xarray.core.concat",
+              "score": 21.048444499371076
+            },
+            {
+              "id": "xarray.core.combine.combine_by_coords",
+              "score": 20.551829777138604
+            },
+            {
+              "id": "xarray.core.combine.auto_combine",
+              "score": 20.15515281168582
+            },
+            {
+              "id": "xarray.core.combine.combine_nested",
+              "score": 19.99361673703978
+            },
+            {
+              "id": "xarray.core.concat.concat",
+              "score": 19.743271793416206
+            },
+            {
+              "id": "xarray.core.combine._auto_concat",
+              "score": 19.495551035896103
+            },
+            {
+              "id": "xarray.core.concat._calc_concat_over.process_subset_opt",
+              "score": 18.697258927444487
+            },
+            {
+              "id": "xarray.core.concat._calc_concat_over",
+              "score": 18.678594742211658
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine.test_combine_nested_missing_data_new_dim",
+              "score": 18.638402381642685
+            },
+            {
+              "id": "xarray.core.combine._old_auto_combine",
+              "score": 18.628695296741473
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_fill_value",
+              "score": 18.173955463687335
+            },
+            {
+              "id": "xarray.core.combine._combine_1d",
+              "score": 17.74538078248288
+            },
+            {
+              "id": "xarray.core.concat._dataset_concat",
+              "score": 16.93363625126019
+            },
+            {
+              "id": "xarray.tests.test_combine.TestAutoCombineOldAPI.test_auto_combine_previously_failed",
+              "score": 16.406095815141292
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset",
+              "score": 16.023909681869984
+            },
+            {
+              "id": "xarray.tests.test_combine.TestAutoCombineOldAPI.test_auto_combine_fill_value",
+              "score": 15.505894241357154
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine.test_combine_nested_fill_value",
+              "score": 15.505894241357154
+            },
+            {
+              "id": "xarray.core.combine._combine_nd",
+              "score": 15.33793307223198
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_errors",
+              "score": 14.539261868638242
+            },
+            {
+              "id": "xarray.tests.test_concat",
+              "score": 14.521628207207883
+            },
+            {
+              "id": "xarray.tests.test_combine.TestAutoCombineOldAPI",
+              "score": 14.392840623697714
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineND.test_concat_only_first_dim",
+              "score": 14.190766665295609
+            },
+            {
+              "id": "xarray.core.combine._nested_combine",
+              "score": 13.803927023734218
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_dim_precedence",
+              "score": 13.802954471864043
+            },
+            {
+              "id": "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw",
+              "score": 13.676993344805503
+            },
+            {
+              "id": "xarray.core.concat._dataarray_concat",
+              "score": 13.548206108706706
+            },
+            {
+              "id": "asv_bench.benchmarks.combine.Combine",
+              "score": 13.525379300261706
+            },
+            {
+              "id": "asv_bench.benchmarks.combine.Combine.setup",
+              "score": 13.41668767624731
+            },
+            {
+              "id": "xarray.tests.test_dask.TestDataArrayAndDataset.test_concat_loads_variables",
+              "score": 13.374747189443099
+            },
+            {
+              "id": "asv_bench.benchmarks.combine",
+              "score": 13.352475796320784
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.dropna",
+              "score": 13.171065766302668
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineND",
+              "score": 13.158168197263258
+            },
+            {
+              "id": "xarray.core.combine._requires_concat_and_merge",
+              "score": 12.52541828994714
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataArray.test_concat_fill_value",
+              "score": 12.419227322120943
+            },
+            {
+              "id": "xarray.core.combine._infer_concat_order_from_coords",
+              "score": 12.413924338803266
+            },
+            {
+              "id": "xarray.core.variable.concat",
+              "score": 12.36311846311298
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.fillna",
+              "score": 12.334076976310218
+            },
+            {
+              "id": "xarray.coding.variables.CFMaskCoder.decode",
+              "score": 12.310085871655625
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.equals",
+              "score": 12.223828420182183
+            },
+            {
+              "id": "xarray.core.combine._infer_concat_order_from_positions",
+              "score": 12.203409730771808
+            },
+            {
+              "id": "xarray.tests.test_combine.TestAutoCombineOldAPI.test_auto_combine_still_fails",
+              "score": 12.193431092831972
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineAuto.test_combine_by_coords_still_fails",
+              "score": 12.193431092831972
+            },
+            {
+              "id": "xarray.core.alignment.reindex_variables",
+              "score": 12.007681420818283
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_simple",
+              "score": 11.896799625875614
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine.test_invalid_hypercube_input",
+              "score": 11.851810895216024
+            },
+            {
+              "id": "xarray.core.missing.interp_na",
+              "score": 11.790641294389424
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_2",
+              "score": 11.749429190095363
+            },
+            {
+              "id": "xarray.core.concat._parse_datasets",
+              "score": 11.719555160488657
+            },
+            {
+              "id": "xarray.core.combine._dimension_coords_exist",
+              "score": 11.647763285352113
+            },
+            {
+              "id": "xarray.core.combine",
+              "score": 11.60106880556078
+            },
+            {
+              "id": "xarray.core.variable.Variable.concat",
+              "score": 11.371726211157025
+            },
+            {
+              "id": "xarray.tests.test_concat.test_concat_compat",
+              "score": 11.134388446671212
+            },
+            {
+              "id": "xarray.core.dataarray.DataArray.interpolate_na",
+              "score": 11.077384435268891
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.from_dataframe",
+              "score": 11.033736171416308
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine.test_auto_combine_2d",
+              "score": 10.913790700587793
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.interpolate_na",
+              "score": 10.73950355581206
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.merge",
+              "score": 10.635773694849515
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_data_vars",
+              "score": 10.564444232004302
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_coords_kwarg",
+              "score": 10.526435553449328
+            },
+            {
+              "id": "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_common_coord_when_datavars_all",
+              "score": 10.519272434523023
+            },
+            {
+              "id": "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_common_coord_when_datavars_minimal",
+              "score": 10.469733896671965
+            },
+            {
+              "id": "xarray.tests.test_options.TestAttrRetention.test_concat_attr_retention",
+              "score": 10.3786542896765
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataArray",
+              "score": 10.34008578397793
+            },
+            {
+              "id": "xarray.tests.test_combine.TestTileIDsFromNestedList.test_infer_from_datasets",
+              "score": 10.299050158196891
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineND.test_concat_once",
+              "score": 10.285874155468166
+            },
+            {
+              "id": "xarray.tests.test_variable.VariableSubclassobjects.test_concat_attrs",
+              "score": 10.269168301760246
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_coords",
+              "score": 10.236827667252744
+            },
+            {
+              "id": "xarray.coding.variables.CFMaskCoder",
+              "score": 10.179226884407017
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_constant_index",
+              "score": 10.110168816292415
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine.test_nested_concat_too_many_dims_at_once",
+              "score": 10.05375837177349
+            },
+            {
+              "id": "asv_bench.benchmarks.combine.Combine.time_combine_manual",
+              "score": 9.871268976607645
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_to_stacked_array_to_unstacked_dataset_different_dimension",
+              "score": 9.815195329780325
+            },
+            {
+              "id": "xarray.backends.api.open_dataset",
+              "score": 9.615176655277518
+            },
+            {
+              "id": "xarray.core.variable.IndexVariable.concat",
+              "score": 9.584474141207822
+            },
+            {
+              "id": "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_open_mfdataset_does_same_as_concat",
+              "score": 9.52658593952183
+            },
+            {
+              "id": "xarray.backends.zarr.open_zarr",
+              "score": 9.48718380662636
+            },
+            {
+              "id": "xarray.core.dataarray.DataArray.dropna",
+              "score": 9.431229376392652
+            },
+            {
+              "id": "asv_bench.benchmarks.dataarray_missing.time_interpolate_na",
+              "score": 9.33680555594621
+            },
+            {
+              "id": "xarray.tests.test_missing.test_interpolate",
+              "score": 9.273349151132829
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineAuto.test_combine_by_coords_previously_failed",
+              "score": 9.199224256288096
+            },
+            {
+              "id": "xarray.backends.pynio_.NioDataStore",
+              "score": 9.015473581079238
+            },
+            {
+              "id": "xarray.backends.api.open_mfdataset",
+              "score": 8.987785273929719
+            },
+            {
+              "id": "xarray.conventions.cf_decoder",
+              "score": 8.958227532778341
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_promote_shape",
+              "score": 8.865228327136753
+            },
+            {
+              "id": "xarray.tests.test_backends.TestDask.test_save_mfdataset_roundtrip",
+              "score": 8.823667655973289
+            },
+            {
+              "id": "xarray.tests.test_missing.test_interpolate_dataset",
+              "score": 8.797671711898833
+            },
+            {
+              "id": "xarray.core.missing._apply_over_vars_with_dim",
+              "score": 8.794045543984915
+            },
+            {
+              "id": "xarray.core.merge.merge_core",
+              "score": 8.723884630864813
+            },
+            {
+              "id": "xarray.conventions.decode_cf_variables",
+              "score": 8.721168683722508
+            },
+            {
+              "id": "xarray.tests.test_missing.test_interpolate_dask",
+              "score": 8.599992436090073
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine",
+              "score": 8.573198248090172
+            },
+            {
+              "id": "xarray.backends.api.open_dataarray",
+              "score": 8.534964607501557
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.reindex_like",
+              "score": 8.51325047154895
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.broadcast_equals",
+              "score": 8.50172488751583
+            },
+            {
+              "id": "xarray.core.dataarray.DataArray.bfill",
+              "score": 8.490464832643298
+            },
+            {
+              "id": "xarray.core.dataarray.DataArray.ffill",
+              "score": 8.490464832643298
+            },
+            {
+              "id": "xarray.tests.test_backends.TestDask.test_save_mfdataset_pathlib_roundtrip",
+              "score": 8.488110942405921
+            },
+            {
+              "id": "xarray.core.dataarray.DataArray.reindex_like",
+              "score": 8.482671271024934
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.combine_first",
+              "score": 8.389184100567896
+            },
+            {
+              "id": "xarray.core.missing.func_interpolate_na",
+              "score": 8.319797339355851
+            },
+            {
+              "id": "xarray.core.merge.broadcast_dimension_size",
+              "score": 8.31112865904251
+            },
+            {
+              "id": "xarray.backends.zarr.open_zarr.maybe_decode_store",
+              "score": 8.301824828430401
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.bfill",
+              "score": 8.255740700138606
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.ffill",
+              "score": 8.255740700138606
+            },
+            {
+              "id": "xarray.tests.test_missing.test_interpolate_use_coordinate",
+              "score": 8.207992112663845
+            },
+            {
+              "id": "xarray.core.combine._combine_all_along_first_dim",
+              "score": 8.196178950198371
+            },
+            {
+              "id": "xarray.coding.cftime_offsets._get_day_of_month",
+              "score": 8.145836850093401
+            },
+            {
+              "id": "xarray.tests.test_missing.test_interpolate_nonans",
+              "score": 8.10246395907066
+            },
+            {
+              "id": "xarray.tests.test_missing.test_interpolate_methods",
+              "score": 8.096284135983932
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.shift",
+              "score": 8.058803638739045
+            },
+            {
+              "id": "xarray.core.alignment.align",
+              "score": 8.042658973852717
+            },
+            {
+              "id": "xarray.tests.test_missing.test_interpolate_limits",
+              "score": 8.025139870348797
+            },
+            {
+              "id": "xarray.tests.test_missing.test_interpolate_allnans",
+              "score": 8.000124738228596
+            },
+            {
+              "id": "xarray.tests.test_duck_array_ops.test_docs",
+              "score": 7.961992586546584
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine.test_nested_concat",
+              "score": 7.9449648038361005
+            },
+            {
+              "id": "xarray.core.merge.merge",
+              "score": 7.872786627296002
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.reindex",
+              "score": 7.817135173083386
+            },
+            {
+              "id": "xarray.backends.api.save_mfdataset",
+              "score": 7.8040843268609805
+            },
+            {
+              "id": "xarray.tests.test_options.test_invalid_option_raises",
+              "score": 7.754907930232906
+            },
+            {
+              "id": "xarray.tests.test_missing.test_interpolate_kwargs",
+              "score": 7.753105634631642
+            },
+            {
+              "id": "xarray.backends.api.open_dataset.maybe_decode_store",
+              "score": 7.705646973089498
+            },
+            {
+              "id": "xarray.tests.test_backends.TestDask.test_save_mfdataset_compute_false_roundtrip",
+              "score": 7.680983589083457
+            },
+            {
+              "id": "xarray.tests.test_missing.test_interpolate_invalid_interpolator_raises",
+              "score": 7.6614341593781745
+            },
+            {
+              "id": "xarray.tests.test_missing.test_interpolate_multiindex_raises",
+              "score": 7.615376728370331
+            },
+            {
+              "id": "xarray.tests.test_missing.test_interpolate_no_dim_raises",
+              "score": 7.615376728370331
+            },
+            {
+              "id": "xarray.tests.test_plot.TestDetermineCmapParams.test_cmap_sequential_option",
+              "score": 7.550803527873861
+            },
+            {
+              "id": "xarray.tests.test_plot.TestDetermineCmapParams.test_cmap_divergent_option",
+              "score": 7.528786524964346
+            },
+            {
+              "id": "xarray.tests.test_missing.test_interpolate_unsorted_index_raises",
+              "score": 7.524903401304784
+            },
+            {
+              "id": "setup",
+              "score": 7.497960044675414
+            },
+            {
+              "id": "xarray.tests.test_missing.test_interpolate_dask_raises_for_invalid_chunk_dim",
+              "score": 7.436554544051502
+            },
+            {
+              "id": "xarray.tests.test_backends.CFEncodedBase.test_roundtrip_endian",
+              "score": 7.432455877892231
+            },
+            {
+              "id": "xarray.tests.test_plot.TestDetermineCmapParams.test_cmap_sequential_explicit_option",
+              "score": 7.399334472862001
+            },
+            {
+              "id": "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_open_mfdataset_exact_join_raises_error",
+              "score": 7.391154282990783
+            },
+            {
+              "id": "xarray.coding.cftime_offsets._shift_month",
+              "score": 7.189522372960932
+            },
+            {
+              "id": "xarray.tests.test_missing.test_scipy_methods_function",
+              "score": 7.183531957973133
+            },
+            {
+              "id": "xarray.tests.test_backends.test_open_mfdataset_manyfiles",
+              "score": 7.168096312481791
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.drop_dims",
+              "score": 7.143950220028493
+            },
+            {
+              "id": "xarray.core.dtypes.maybe_promote",
+              "score": 7.133798470667424
+            },
+            {
+              "id": "versioneer.get_config_from_root",
+              "score": 7.113944090702038
+            },
+            {
+              "id": "xarray.conventions.ensure_dtype_not_object",
+              "score": 7.0855173427244305
+            },
+            {
+              "id": "xarray.core.dataarray.DataArray.reindex",
+              "score": 7.082757082832325
+            },
+            {
+              "id": "xarray.tests.test_missing.test_interpolate_2d_coord_raises",
+              "score": 7.063369323379291
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_reindex_fill_value",
+              "score": 7.024203501533548
+            },
+            {
+              "id": "xarray.conventions.decode_cf",
+              "score": 7.022643979940389
+            },
+            {
+              "id": "xarray.core.ops.fillna",
+              "score": 7.020076261271681
+            },
+            {
+              "id": "xarray.core.variable.Variable.broadcast_equals",
+              "score": 7.015573193881151
+            },
+            {
+              "id": "xarray.core.duck_array_ops.isnull",
+              "score": 7.014529435819444
+            },
+            {
+              "id": "xarray.core.ops.where_method",
+              "score": 7.013844248862082
+            },
+            {
+              "id": "asv_bench.benchmarks.dataarray_missing",
+              "score": 7.0077334653164804
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_constructor_auto_align",
+              "score": 6.972222239696384
+            },
+            {
+              "id": "xarray.tests.test_computation.test_apply_exclude",
+              "score": 6.964458161200554
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.rank",
+              "score": 6.948276380739282
+            },
+            {
+              "id": "xarray.tests.test_dataarray.TestDataArray.test_reindex_fill_value",
+              "score": 6.909269450657989
+            },
+            {
+              "id": "xarray.core.variable.IndexVariable",
+              "score": 6.876775400752836
+            },
+            {
+              "id": "xarray.coding.cftime_offsets.BaseCFTimeOffset._get_offset_day",
+              "score": 6.853884630155195
+            },
+            {
+              "id": "xarray.core.variable.Variable.equals",
+              "score": 6.849007032741697
+            },
+            {
+              "id": "xarray.coding.cftime_offsets.roll_qtrday",
+              "score": 6.846380570717852
+            },
+            {
+              "id": "xarray.core.dtypes",
+              "score": 6.843507578298354
+            },
+            {
+              "id": "xarray.core.dataset.as_dataset",
+              "score": 6.8349616748778335
+            },
+            {
+              "id": "xarray.core.groupby.GroupBy.where",
+              "score": 6.798036080979198
+            },
+            {
+              "id": "xarray.core.merge.unique_variable",
+              "score": 6.797265669959053
+            },
+            {
+              "id": "xarray.coding.cftime_offsets.QuarterOffset.__apply__",
+              "score": 6.7956303433595036
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_reindex_like_fill_value",
+              "score": 6.7617499373750185
+            },
+            {
+              "id": "xarray.coding.cftime_offsets.YearOffset.__apply__",
+              "score": 6.668034040333619
+            },
+            {
+              "id": "xarray.tests.test_dataarray.TestDataArray.test_to_and_from_dict",
+              "score": 6.647273873812916
+            },
+            {
+              "id": "xarray.core.computation.apply_dataset_vfunc",
+              "score": 6.626218074868017
+            },
+            {
+              "id": "xarray.backends.pydap_.PydapDataStore",
+              "score": 6.612300624539182
+            },
+            {
+              "id": "xarray.core.dataset.Dataset._get_indexers_coords_and_indexes",
+              "score": 6.610343574322053
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_shift",
+              "score": 6.5859787529069775
+            },
+            {
+              "id": "xarray.conventions.decode_cf_variable",
+              "score": 6.541265487644709
+            },
+            {
+              "id": "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.setup_files_and_datasets",
+              "score": 6.417846156644279
+            },
+            {
+              "id": "xarray.tests.test_merge.TestMergeFunction.test_merge_no_conflicts_broadcast",
+              "score": 6.417846156644279
+            },
+            {
+              "id": "xarray.core.merge.merge_coords",
+              "score": 6.345541891580817
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineND.test_concat_twice",
+              "score": 6.333743044544132
+            },
+            {
+              "id": "xarray.tests.test_dataarray.TestDataArray.test_shift",
+              "score": 6.322993560538025
+            },
+            {
+              "id": "xarray.tests.test_dask.TestVariable.test_concat",
+              "score": 6.2674954070338895
+            },
+            {
+              "id": "xarray.tests.test_merge.TestMergeFunction.test_merge_datasets",
+              "score": 6.231440665577659
+            },
+            {
+              "id": "xarray.tests.test_merge.TestMergeMethod.test_merge_fill_value",
+              "score": 6.229708951569991
+            },
+            {
+              "id": "xarray.tests.test_missing.test_interpolate_pd_compat_polynomial",
+              "score": 6.199222755167144
+            },
+            {
+              "id": "xarray.tests.test_variable.VariableSubclassobjects.test_concat",
+              "score": 6.186640842562438
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_do_not_promote",
+              "score": 6.137942859995864
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_size0",
+              "score": 6.11831291825569
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_dim_is_variable",
+              "score": 6.101645725686599
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataArray.test_concat",
+              "score": 6.100145821454598
+            },
+            {
+              "id": "xarray.core.variable.Variable.no_conflicts",
+              "score": 6.094144570562129
+            },
+            {
+              "id": "versioneer.get_config_from_root.get",
+              "score": 6.089161994735362
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat",
+              "score": 6.078381923134042
+            },
+            {
+              "id": "xarray.tests.test_backends.TestPydapOnline.create_datasets",
+              "score": 6.074763892505172
+            },
+            {
+              "id": "xarray.tests.test_backends.TestPydap.test_cmp_local_file",
+              "score": 6.070873345165084
+            },
+            {
+              "id": "xarray.tests.test_combine.TestAutoCombineDeprecation.test_auto_combine_with_concat_dim",
+              "score": 6.066816418872046
+            },
+            {
+              "id": "xarray.tests.test_backends.TestPydap.create_datasets",
+              "score": 6.057840342548405
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_align_fill_value",
+              "score": 6.0223928087819125
+            },
+            {
+              "id": "xarray.tests.test_dataarray.TestDataArray.test_binary_op_join_setting",
+              "score": 6.022333469247257
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataArray.test_concat_encoding",
+              "score": 6.022016940597834
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.reduce",
+              "score": 6.018753326437279
+            },
+            {
+              "id": "xarray.convert._name",
+              "score": 6.0102309961825915
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_multiindex",
+              "score": 6.00964285611764
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataArray.test_concat_lazy",
+              "score": 5.998337212914137
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_autoalign",
+              "score": 5.953536837982949
+            },
+            {
+              "id": "xarray.core.dataarray.DataArray.shift",
+              "score": 5.898308538552364
+            }
+          ],
+          "scored_documents": 943,
+          "seconds": 0.0012662999997701263
+        },
+        {
+          "query": "concat outer join datasets mismatched variables pandas concat",
+          "candidates": [
+            {
+              "id": "xarray.core.combine._old_auto_combine",
+              "score": 21.037858566873098
+            },
+            {
+              "id": "xarray.core.concat._dataset_concat",
+              "score": 20.69470688625821
+            },
+            {
+              "id": "xarray.core.combine._combine_1d",
+              "score": 20.246837234303747
+            },
+            {
+              "id": "xarray.core.combine.auto_combine",
+              "score": 19.29622121110314
+            },
+            {
+              "id": "xarray.core.combine.combine_nested",
+              "score": 19.169596671142724
+            },
+            {
+              "id": "xarray.core.combine._nested_combine",
+              "score": 19.080479691156935
+            },
+            {
+              "id": "xarray.core.concat._dataarray_concat",
+              "score": 19.00293010099877
+            },
+            {
+              "id": "xarray.core.combine._auto_concat",
+              "score": 18.807322888902565
+            },
+            {
+              "id": "xarray.core.ops.fillna",
+              "score": 18.747262561643034
+            },
+            {
+              "id": "xarray.core.combine.combine_by_coords",
+              "score": 17.607012523022057
+            },
+            {
+              "id": "xarray.core.combine._combine_nd",
+              "score": 17.348610806332385
+            },
+            {
+              "id": "xarray.core.concat",
+              "score": 17.34236913566747
+            },
+            {
+              "id": "xarray.core.concat.concat",
+              "score": 16.7549665165906
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.combine_first",
+              "score": 15.802548051383145
+            },
+            {
+              "id": "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_open_mfdataset_does_same_as_concat",
+              "score": 15.532849146252893
+            },
+            {
+              "id": "xarray.core.concat._calc_concat_over",
+              "score": 15.437782108921807
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.merge",
+              "score": 15.374344179856497
+            },
+            {
+              "id": "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw",
+              "score": 15.24325297097732
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_join_kwarg",
+              "score": 15.004674520902133
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine",
+              "score": 14.946407119156579
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataArray.test_concat_join_kwarg",
+              "score": 14.913268087750142
+            },
+            {
+              "id": "xarray.core.concat._calc_concat_over.process_subset_opt",
+              "score": 14.62410711820348
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_dim_precedence",
+              "score": 13.802954471864043
+            },
+            {
+              "id": "xarray.core.dataset.Dataset._calculate_binary_op.apply_over_both",
+              "score": 13.703595923750221
+            },
+            {
+              "id": "xarray.core.merge.merge_coords",
+              "score": 13.688046958053514
+            },
+            {
+              "id": "xarray.core.dataset.Dataset._calculate_binary_op",
+              "score": 13.256558639547624
+            },
+            {
+              "id": "xarray.core.combine",
+              "score": 13.163103651943558
+            },
+            {
+              "id": "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_open_mfdataset_exact_join_raises_error",
+              "score": 13.046687746552276
+            },
+            {
+              "id": "xarray.core.combine._combine_all_along_first_dim",
+              "score": 12.995915650030877
+            },
+            {
+              "id": "xarray.core.merge.merge_core",
+              "score": 12.870736619450245
+            },
+            {
+              "id": "xarray.tests.test_concat",
+              "score": 12.566517524252335
+            },
+            {
+              "id": "xarray.core.combine._requires_concat_and_merge",
+              "score": 12.52541828994714
+            },
+            {
+              "id": "xarray.core.combine._infer_concat_order_from_coords",
+              "score": 12.413924338803266
+            },
+            {
+              "id": "xarray.core.combine._infer_concat_order_from_positions",
+              "score": 12.203409730771808
+            },
+            {
+              "id": "xarray.tests.test_combine.TestAutoCombineOldAPI.test_auto_combine_still_fails",
+              "score": 12.193431092831972
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineAuto.test_combine_by_coords_still_fails",
+              "score": 12.193431092831972
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.equals",
+              "score": 11.90038604095987
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_simple",
+              "score": 11.896799625875614
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine.test_invalid_hypercube_input",
+              "score": 11.851810895216024
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset",
+              "score": 11.79341929944271
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_2",
+              "score": 11.749429190095363
+            },
+            {
+              "id": "xarray.core.concat._parse_datasets",
+              "score": 11.719555160488657
+            },
+            {
+              "id": "xarray.core.combine._dimension_coords_exist",
+              "score": 11.647763285352113
+            },
+            {
+              "id": "xarray.tests.test_computation.test_dataset_join",
+              "score": 11.620114459341899
+            },
+            {
+              "id": "xarray.core.merge.merge",
+              "score": 11.543436656435599
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_fill_value",
+              "score": 11.149751962153788
+            },
+            {
+              "id": "xarray.tests.test_concat.test_concat_compat",
+              "score": 11.134388446671212
+            },
+            {
+              "id": "xarray.core.variable.IndexVariable",
+              "score": 10.92634282630208
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine.test_auto_combine_2d",
+              "score": 10.913790700587793
+            },
+            {
+              "id": "xarray.core.computation.apply_ufunc",
+              "score": 10.819943153496144
+            },
+            {
+              "id": "xarray.backends.api.open_mfdataset",
+              "score": 10.814938700518525
+            },
+            {
+              "id": "xarray.tests.test_combine.TestAutoCombineOldAPI",
+              "score": 10.652948465701831
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_coords_kwarg",
+              "score": 10.526435553449328
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineAuto",
+              "score": 10.521854564436603
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_errors",
+              "score": 10.486519225629749
+            },
+            {
+              "id": "asv_bench.benchmarks.combine.Combine",
+              "score": 10.418640599629756
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineND.test_concat_only_first_dim",
+              "score": 10.417299914503467
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineAuto.test_combine_coords_join",
+              "score": 10.409330585773489
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine.test_combine_nested_join",
+              "score": 10.409330585773489
+            },
+            {
+              "id": "xarray.tests.test_combine.TestTileIDsFromNestedList.test_infer_from_datasets",
+              "score": 10.299050158196891
+            },
+            {
+              "id": "asv_bench.benchmarks.combine",
+              "score": 10.2337579332139
+            },
+            {
+              "id": "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.setup_files_and_datasets",
+              "score": 10.10404284107607
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine.test_nested_concat_too_many_dims_at_once",
+              "score": 10.05375837177349
+            },
+            {
+              "id": "xarray.tests.test_computation.test_join_dict_keys",
+              "score": 9.982315146406627
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineAuto.test_combine_coords_join_exact",
+              "score": 9.944044538282805
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine.test_combine_nested_join_exact",
+              "score": 9.944044538282805
+            },
+            {
+              "id": "xarray.core.variable._unified_dims",
+              "score": 9.924083990787071
+            },
+            {
+              "id": "asv_bench.benchmarks.combine.Combine.time_combine_manual",
+              "score": 9.871268976607645
+            },
+            {
+              "id": "xarray.core.alignment._get_joiner",
+              "score": 9.84240931357737
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_binary_op_join_setting",
+              "score": 9.737713311006237
+            },
+            {
+              "id": "xarray.core.computation.apply_dataset_vfunc",
+              "score": 9.687186862917864
+            },
+            {
+              "id": "xarray.core.variable.IndexVariable.concat",
+              "score": 9.584474141207822
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_constructor_auto_align",
+              "score": 9.576526804176549
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineND",
+              "score": 9.440709899738966
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.info",
+              "score": 9.424250267861703
+            },
+            {
+              "id": "xarray.core.variable.assert_unique_multiindex_level_names",
+              "score": 9.400828037505661
+            },
+            {
+              "id": "xarray.tests.test_dataarray.TestDataArray.test_align_indexes",
+              "score": 9.372743705399046
+            },
+            {
+              "id": "xarray.core.merge.merge_data_and_coords",
+              "score": 9.335945268436541
+            },
+            {
+              "id": "xarray.core.variable.concat",
+              "score": 9.282077787912545
+            },
+            {
+              "id": "xarray.core.dataarray.DataArray.combine_first",
+              "score": 9.275499012388188
+            },
+            {
+              "id": "xarray.backends.pydap_.PydapDataStore",
+              "score": 9.266309733293058
+            },
+            {
+              "id": "xarray.tests.test_dataarray.TestDataArray.test_binary_op_join_setting",
+              "score": 9.258332924787261
+            },
+            {
+              "id": "xarray.tests.test_sparse.TestSparseDataArrayAndDataset.test_align_outer",
+              "score": 9.258173805993405
+            },
+            {
+              "id": "xarray.tests.test_combine.TestAutoCombineOldAPI.test_auto_combine_previously_failed",
+              "score": 9.248490995928805
+            },
+            {
+              "id": "xarray.core.alignment",
+              "score": 9.125663956015797
+            },
+            {
+              "id": "xarray.core.merge.coerce_pandas_values",
+              "score": 9.096287771551923
+            },
+            {
+              "id": "xarray.conventions.cf_decoder",
+              "score": 8.958227532778341
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine.test_combine_nested_missing_data_new_dim",
+              "score": 8.902028177338845
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_promote_shape",
+              "score": 8.865228327136753
+            },
+            {
+              "id": "xarray.core.computation.unified_dim_sizes",
+              "score": 8.857383319795005
+            },
+            {
+              "id": "xarray.tests.test_backends.TestDask.test_save_mfdataset_roundtrip",
+              "score": 8.823667655973289
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_coords_merge_mismatched_shape",
+              "score": 8.819489337415176
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_align_nocopy",
+              "score": 8.789153465516497
+            },
+            {
+              "id": "xarray.core.variable._maybe_wrap_data",
+              "score": 8.758134682660739
+            },
+            {
+              "id": "xarray.conventions.decode_cf_variables",
+              "score": 8.721168683722508
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.fillna",
+              "score": 8.702905108230198
+            },
+            {
+              "id": "xarray.core.computation.apply_dict_of_variables_vfunc",
+              "score": 8.688168064985145
+            },
+            {
+              "id": "xarray.tests.test_combine.TestAutoCombineOldAPI.test_auto_combine_fill_value",
+              "score": 8.671180464827911
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine.test_combine_nested_fill_value",
+              "score": 8.671180464827911
+            },
+            {
+              "id": "setup",
+              "score": 8.649558525475483
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.broadcast_equals",
+              "score": 8.50172488751583
+            },
+            {
+              "id": "xarray.tests.test_backends.TestDask.test_save_mfdataset_pathlib_roundtrip",
+              "score": 8.488110942405921
+            },
+            {
+              "id": "xarray.backends.pynio_.NioDataStore",
+              "score": 8.436921805965559
+            },
+            {
+              "id": "xarray.tests.test_dataset.InaccessibleVariableDataStore.get_variables",
+              "score": 8.406068972383778
+            },
+            {
+              "id": "xarray.backends.zarr.open_zarr.maybe_decode_store",
+              "score": 8.301824828430401
+            },
+            {
+              "id": "xarray.tests.test_dataarray.TestDataArray.test_align_copy",
+              "score": 8.074694120087438
+            },
+            {
+              "id": "xarray.tests.test_computation",
+              "score": 8.04410090276204
+            },
+            {
+              "id": "xarray.backends.pseudonetcdf_.PseudoNetCDFDataStore",
+              "score": 7.986370758752161
+            },
+            {
+              "id": "xarray.tests.test_dask.TestDataArrayAndDataset.test_concat_loads_variables",
+              "score": 7.962839382596231
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine.test_nested_concat",
+              "score": 7.9449648038361005
+            },
+            {
+              "id": "asv_bench.benchmarks.combine.Combine.setup",
+              "score": 7.935904070152798
+            },
+            {
+              "id": "xarray.core.variable.Variable.concat",
+              "score": 7.733660590869956
+            },
+            {
+              "id": "xarray.backends.api.open_dataset.maybe_decode_store",
+              "score": 7.705646973089498
+            },
+            {
+              "id": "xarray.tests.test_backends.TestDask.test_save_mfdataset_compute_false_roundtrip",
+              "score": 7.680983589083457
+            },
+            {
+              "id": "xarray.tests.test_dataarray.TestDataArray.test_align_dtype",
+              "score": 7.647780371084019
+            },
+            {
+              "id": "xarray.tests.test_ufuncs.test_alignment",
+              "score": 7.647780371084019
+            },
+            {
+              "id": "xarray.core.alignment.deep_align",
+              "score": 7.6002115198917695
+            },
+            {
+              "id": "xarray.tests.test_variable.TestVariable.test_broadcasting_failures",
+              "score": 7.342199036180533
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.to_dataframe",
+              "score": 7.32236789541437
+            },
+            {
+              "id": "xarray.tests.test_dataset.InaccessibleVariableDataStore",
+              "score": 7.309114224424211
+            },
+            {
+              "id": "xarray.tests.test_sparse.TestSparseDataArrayAndDataset",
+              "score": 7.263946102303897
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.indexes",
+              "score": 7.252358926947242
+            },
+            {
+              "id": "xarray.core.coordinates",
+              "score": 7.248206872345339
+            },
+            {
+              "id": "xarray.tests.test_variable.TestAsCompatibleData.test_unchanged_types",
+              "score": 7.245409658824665
+            },
+            {
+              "id": "xarray.tests.test_backends.test_open_mfdataset_manyfiles",
+              "score": 7.168096312481791
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_repr_multiindex",
+              "score": 7.11573404739749
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_align_exclude",
+              "score": 7.082311028781522
+            },
+            {
+              "id": "xarray.conventions.decode_cf",
+              "score": 7.022643979940389
+            },
+            {
+              "id": "xarray.tests.test_dask.TestToDaskDataFrame.test_to_dask_dataframe",
+              "score": 7.021216519402785
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_align",
+              "score": 6.982697024414646
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.sortby",
+              "score": 6.965189675105188
+            },
+            {
+              "id": "xarray.tests.test_computation.test_apply_exclude",
+              "score": 6.964458161200554
+            },
+            {
+              "id": "xarray.core.dataset.as_dataset",
+              "score": 6.8349616748778335
+            },
+            {
+              "id": "xarray.tests.test_indexing.test_outer_indexer",
+              "score": 6.810643221286695
+            },
+            {
+              "id": "xarray.core.groupby._ensure_1d",
+              "score": 6.797491965545664
+            },
+            {
+              "id": "xarray.core.options",
+              "score": 6.756592116978322
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset",
+              "score": 6.738942892610995
+            },
+            {
+              "id": "xarray.core.variable.Variable.broadcast_equals",
+              "score": 6.698720073219063
+            },
+            {
+              "id": "xarray.conventions._encode_coordinates",
+              "score": 6.694034247072915
+            },
+            {
+              "id": "xarray.tests.test_backends.TestH5NetCDFData.test_compression_check_encoding_h5py",
+              "score": 6.678633946107944
+            },
+            {
+              "id": "xarray.backends.pseudonetcdf_",
+              "score": 6.639579565388621
+            },
+            {
+              "id": "xarray.tests.test_dataarray.TestDataArray.test_align_exclude",
+              "score": 6.627296391929278
+            },
+            {
+              "id": "asv_bench.benchmarks.indexing.Indexing.time_indexing_outer",
+              "score": 6.553139455170687
+            },
+            {
+              "id": "xarray.tests.test_computation.test_dataset_join.add",
+              "score": 6.549773100250389
+            },
+            {
+              "id": "asv_bench.benchmarks.indexing.Assignment.time_assignment_outer",
+              "score": 6.548609333742421
+            },
+            {
+              "id": "xarray.core.variable.Variable.equals",
+              "score": 6.543061331919484
+            },
+            {
+              "id": "xarray.conventions.decode_cf_variable",
+              "score": 6.541265487644709
+            },
+            {
+              "id": "xarray.core.coordinates.Coordinates",
+              "score": 6.531224835453994
+            },
+            {
+              "id": "xarray.core.groupby.DatasetGroupBy",
+              "score": 6.522573812746423
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_repr",
+              "score": 6.513597125694543
+            },
+            {
+              "id": "xarray.testing.assert_chunks_equal",
+              "score": 6.505799981895613
+            },
+            {
+              "id": "xarray.tests.test_variable.TestBackendIndexing.test_LazilyOuterIndexedArray",
+              "score": 6.490752851617752
+            },
+            {
+              "id": "xarray.backends.api.open_dataarray",
+              "score": 6.45953465092116
+            },
+            {
+              "id": "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_common_coord_when_datavars_all",
+              "score": 6.446911721024788
+            },
+            {
+              "id": "xarray.core.coordinates.Coordinates.to_index",
+              "score": 6.446240185372856
+            },
+            {
+              "id": "xarray.tests.test_merge.TestMergeFunction.test_merge_no_conflicts_broadcast",
+              "score": 6.417846156644279
+            },
+            {
+              "id": "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_common_coord_when_datavars_minimal",
+              "score": 6.416551201102681
+            },
+            {
+              "id": "xarray.core.alignment.align",
+              "score": 6.393180664215004
+            },
+            {
+              "id": "xarray.core.indexing._outer_to_numpy_indexer",
+              "score": 6.379458742679685
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_align_fill_value",
+              "score": 6.375242328175967
+            },
+            {
+              "id": "xarray.tests.test_options.test_arithmetic_join",
+              "score": 6.338119628930381
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineND.test_concat_twice",
+              "score": 6.333743044544132
+            },
+            {
+              "id": "xarray.core.indexing.IndexingSupport",
+              "score": 6.328078331556943
+            },
+            {
+              "id": "xarray.tests.test_dask.TestVariable.test_concat",
+              "score": 6.2674954070338895
+            },
+            {
+              "id": "xarray.core.alignment.broadcast",
+              "score": 6.243847455586572
+            },
+            {
+              "id": "xarray.tests.test_merge.TestMergeFunction.test_merge_datasets",
+              "score": 6.231440665577659
+            },
+            {
+              "id": "xarray.tests.test_indexing.test_create_mask_outer_indexer",
+              "score": 6.196256568668984
+            },
+            {
+              "id": "xarray.tests.test_variable.VariableSubclassobjects.test_concat",
+              "score": 6.186640842562438
+            },
+            {
+              "id": "xarray.tests.test_computation.test_unified_dim_sizes",
+              "score": 6.171045183294462
+            },
+            {
+              "id": "xarray.core.formatting.diff_dataset_repr",
+              "score": 6.144145524582159
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_do_not_promote",
+              "score": 6.137942859995864
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_size0",
+              "score": 6.11831291825569
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineND.test_concat_once",
+              "score": 6.102556073247286
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_dim_is_variable",
+              "score": 6.101645725686599
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataArray.test_concat",
+              "score": 6.100145821454598
+            },
+            {
+              "id": "xarray.core.dataset.Dataset._binary_op",
+              "score": 6.098216530614535
+            },
+            {
+              "id": "xarray.backends.api.save_mfdataset",
+              "score": 6.091725322457816
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat",
+              "score": 6.078381923134042
+            },
+            {
+              "id": "xarray.tests.test_backends.TestPydapOnline.create_datasets",
+              "score": 6.074763892505172
+            },
+            {
+              "id": "xarray.tests.test_backends.TestPydap.test_cmp_local_file",
+              "score": 6.070873345165084
+            },
+            {
+              "id": "xarray.tests.test_combine.TestAutoCombineDeprecation.test_auto_combine_with_concat_dim",
+              "score": 6.066816418872046
+            },
+            {
+              "id": "xarray.tests.test_backends.TestPydap.create_datasets",
+              "score": 6.057840342548405
+            },
+            {
+              "id": "xarray.core.computation._UFuncSignature.__str__",
+              "score": 6.0503283824457075
+            },
+            {
+              "id": "xarray.core.variable.Variable._broadcast_indexes_outer",
+              "score": 6.0377724404035416
+            },
+            {
+              "id": "xarray.backends.api",
+              "score": 6.0374863046804546
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataArray.test_concat_encoding",
+              "score": 6.022016940597834
+            },
+            {
+              "id": "xarray.backends.api.open_dataset",
+              "score": 6.014372307140077
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_multiindex",
+              "score": 6.00964285611764
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataArray",
+              "score": 6.000097030335395
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataArray.test_concat_lazy",
+              "score": 5.998337212914137
+            },
+            {
+              "id": "asv_bench.benchmarks.indexing.Indexing",
+              "score": 5.96104825680949
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_autoalign",
+              "score": 5.953536837982949
+            },
+            {
+              "id": "xarray.core.indexing._outer_to_vectorized_indexer",
+              "score": 5.9448775897459445
+            },
+            {
+              "id": "xarray.backends.zarr.open_zarr",
+              "score": 5.933022453659863
+            },
+            {
+              "id": "xarray.tests.test_variable.VariableSubclassobjects.test_concat_attrs",
+              "score": 5.928705194278875
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_coords",
+              "score": 5.919532819802734
+            },
+            {
+              "id": "xarray.tests.test_indexing.test_outer_indexer_consistency_with_broadcast_indexes_vectorized",
+              "score": 5.918858934582326
+            },
+            {
+              "id": "xarray.core.dataset.Dataset._binary_op.func",
+              "score": 5.914200751524746
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.broadcast_like",
+              "score": 5.89852628950916
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_data_vars",
+              "score": 5.898468741244672
+            }
+          ],
+          "scored_documents": 1039,
+          "seconds": 0.0013400999996520113
+        }
+      ],
+      "order": [
+        "xarray.core.combine.auto_combine",
+        "xarray.core.concat",
+        "xarray.core.combine.combine_nested",
+        "xarray.core.combine.combine_by_coords",
+        "xarray.core.combine._old_auto_combine",
+        "xarray.core.concat._dataset_concat",
+        "xarray.core.concat.concat",
+        "xarray.core.combine._auto_concat",
+        "xarray.core.combine._combine_1d",
+        "xarray.core.combine._nested_combine",
+        "xarray.core.concat._dataarray_concat",
+        "xarray.core.concat._calc_concat_over",
+        "xarray.tests.test_concat.TestConcatDataset.test_concat_dim_precedence",
+        "xarray.core.combine._combine_nd",
+        "xarray.core.concat._calc_concat_over.process_subset_opt",
+        "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw",
+        "xarray.tests.test_concat.TestConcatDataset",
+        "xarray.core.dataset.Dataset.combine_first",
+        "xarray.tests.test_concat.TestConcatDataset.test_concat_fill_value",
+        "xarray.core.ops.fillna",
+        "asv_bench.benchmarks.combine.Combine",
+        "xarray.tests.test_concat",
+        "xarray.core.combine",
+        "xarray.core.dataset.Dataset.equals",
+        "xarray.core.combine._infer_concat_order_from_coords",
+        "asv_bench.benchmarks.combine",
+        "xarray.core.combine._requires_concat_and_merge",
+        "xarray.core.dataset.Dataset.merge",
+        "xarray.tests.test_combine.TestNestedCombine.test_combine_nested_missing_data_new_dim",
+        "xarray.tests.test_combine.TestNestedCombine.test_invalid_hypercube_input",
+        "xarray.core.combine._dimension_coords_exist",
+        "xarray.core.merge.merge_coords",
+        "xarray.core.variable.Variable.concat",
+        "xarray.tests.test_combine.TestCombineND.test_concat_only_first_dim",
+        "xarray.core.variable.concat",
+        "xarray.tests.test_concat.TestConcatDataset.test_concat_errors",
+        "xarray.tests.test_combine.TestAutoCombineOldAPI.test_auto_combine_fill_value",
+        "xarray.tests.test_combine.TestNestedCombine.test_combine_nested_fill_value",
+        "xarray.tests.test_combine.TestAutoCombineOldAPI.test_auto_combine_previously_failed",
+        "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_open_mfdataset_does_same_as_concat",
+        "xarray.core.merge.merge_core",
+        "xarray.core.combine._combine_all_along_first_dim",
+        "xarray.tests.test_combine.TestAutoCombineOldAPI",
+        "xarray.backends.api.open_mfdataset",
+        "xarray.tests.test_combine.TestCombineND",
+        "xarray.tests.test_combine.TestNestedCombine",
+        "xarray.core.combine._infer_concat_order_from_positions",
+        "xarray.core.dataset.Dataset.fillna",
+        "xarray.tests.test_combine.TestAutoCombineOldAPI.test_auto_combine_still_fails",
+        "xarray.tests.test_combine.TestCombineAuto.test_combine_by_coords_still_fails",
+        "asv_bench.benchmarks.combine.Combine.setup",
+        "xarray.tests.test_concat.TestConcatDataset.test_concat_simple",
+        "xarray.tests.test_dask.TestDataArrayAndDataset.test_concat_loads_variables",
+        "xarray.conventions.decode_cf_variables",
+        "xarray.tests.test_combine.TestNestedCombine.test_auto_combine_2d",
+        "xarray.core.dataset.Dataset.dropna",
+        "xarray.core.variable.IndexVariable.concat",
+        "xarray.tests.test_options.TestAttrRetention.test_concat_attr_retention",
+        "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_open_mfdataset_exact_join_raises_error",
+        "xarray.tests.test_combine.TestTileIDsFromNestedList.test_infer_from_datasets",
+        "xarray.core.variable.IndexVariable",
+        "xarray.core.merge.merge",
+        "xarray.core.alignment.reindex_variables",
+        "xarray.tests.test_dataset.TestDataset.test_binary_op_join_setting",
+        "xarray.backends.zarr.open_zarr",
+        "xarray.core.computation.apply_ufunc",
+        "xarray.tests.test_dataarray.TestDataArray.test_binary_op_join_setting",
+        "xarray.tests.test_concat.TestConcatDataset.test_concat_2",
+        "xarray.backends.api.open_dataset",
+        "xarray.core.concat._parse_datasets",
+        "xarray.tests.test_concat.TestConcatDataArray",
+        "xarray.tests.test_concat.TestConcatDataset.test_concat_join_kwarg",
+        "xarray.backends.api.open_dataarray",
+        "xarray.core.dataset.Dataset.reindex_like",
+        "xarray.tests.test_concat.test_concat_compat",
+        "xarray.core.alignment.align",
+        "xarray.tests.test_concat.TestConcatDataArray.test_concat_join_kwarg",
+        "xarray.tests.test_variable.VariableSubclassobjects.test_concat_attrs",
+        "xarray.core.dataarray.DataArray.reindex_like",
+        "xarray.tests.test_combine.TestCombineND.test_concat_once",
+        "xarray.core.options",
+        "xarray.tests.test_backends.TestDask.test_save_mfdataset_roundtrip",
+        "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.setup_files_and_datasets",
+        "xarray.backends.zarr.open_zarr.maybe_decode_store",
+        "xarray.core.dataset.Dataset.from_dataframe",
+        "xarray.core.dataset.Dataset.drop_dims",
+        "xarray.tests.test_concat.TestConcatDataset.test_concat_coords_kwarg",
+        "xarray.tests.test_dataset.TestDataset.test_constructor_auto_align",
+        "xarray.tests.test_computation.test_apply_exclude",
+        "xarray.core.dataset.Dataset._calculate_binary_op.apply_over_both",
+        "xarray.tests.test_concat.TestConcatDataArray.test_concat_fill_value",
+        "xarray.core.dataset.Dataset._calculate_binary_op",
+        "xarray.tests.test_computation.test_dataset_join",
+        "xarray.core.dataarray.DataArray.interpolate_na",
+        "xarray.core.dataarray.DataArray.combine_first",
+        "xarray.tests.test_backends.test_open_mfdataset_manyfiles",
+        "xarray.core.missing.interp_na",
+        "setup",
+        "xarray.core.computation.apply_dataset_vfunc",
+        "xarray.tests.test_combine.TestNestedCombine.test_nested_concat_too_many_dims_at_once",
+        "xarray.core.alignment",
+        "xarray.core.dataset.Dataset.interpolate_na",
+        "xarray.coding.variables.CFMaskCoder.decode",
+        "xarray.backends.api.open_dataset.maybe_decode_store",
+        "asv_bench.benchmarks.combine.Combine.time_combine_manual",
+        "xarray.core.dataset.Dataset.reindex",
+        "xarray.core.dataset.Dataset._get_indexers_coords_and_indexes",
+        "xarray.conventions.decode_cf",
+        "xarray.core.dataarray.DataArray.dropna",
+        "xarray.tests.test_dataset.TestDataset.test_align_fill_value",
+        "xarray.conventions.cf_decoder",
+        "xarray.tests.test_concat.TestConcatDataset.test_concat_promote_shape",
+        "xarray.core.alignment.deep_align",
+        "xarray.tests.test_concat.TestConcatDataset.test_concat_constant_index",
+        "xarray.tests.test_dask.TestToDaskDataFrame.test_to_dask_dataframe",
+        "xarray.core.ops.where_method",
+        "xarray.backends.pynio_.NioDataStore",
+        "xarray.core.dataarray.DataArray.reindex",
+        "xarray.core.dataarray.DataArray.bfill",
+        "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_common_coord_when_datavars_all",
+        "xarray.core.dataarray.DataArray.ffill",
+        "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_common_coord_when_datavars_minimal",
+        "xarray.tests.test_backends.TestPydap.test_cmp_local_file",
+        "xarray.core.dataset.Dataset.broadcast_equals",
+        "xarray.tests.test_backends.TestDask.test_save_mfdataset_pathlib_roundtrip",
+        "xarray.core.dataset.Dataset.bfill",
+        "xarray.core.dataset.Dataset.ffill",
+        "xarray.tests.test_concat.TestConcatDataset.test_concat_data_vars",
+        "xarray.tests.test_concat.TestConcatDataArray.test_concat",
+        "xarray.coding.variables.CFMaskCoder",
+        "xarray.tests.test_duck_array_ops.test_docs",
+        "xarray.tests.test_dataset.TestDataset",
+        "xarray.tests.test_concat.TestConcatDataset.test_concat_coords",
+        "xarray.tests.test_dataset.TestDataset.test_to_stacked_array_to_unstacked_dataset_different_dimension",
+        "xarray.tests.test_combine.TestNestedCombine.test_nested_concat",
+        "xarray.tests.test_options.test_invalid_option_raises",
+        "xarray.backends.pydap_.PydapDataStore",
+        "xarray.tests.test_dataset.TestDataset.test_repr",
+        "xarray.tests.test_backends.TestDask.test_save_mfdataset_compute_false_roundtrip",
+        "xarray.core.dataset.Dataset.shift",
+        "xarray.core.options.set_options",
+        "xarray.core.groupby.DatasetGroupBy",
+        "xarray.core.variable.Variable.broadcast_equals",
+        "xarray.backends.api.save_mfdataset",
+        "xarray.tests.test_ufuncs.test_alignment",
+        "xarray.core.dataset.as_dataset",
+        "xarray.tests.test_options.test_arithmetic_join",
+        "xarray.tests.test_plot.TestDetermineCmapParams.test_cmap_sequential_option",
+        "xarray.tests.test_plot.TestDetermineCmapParams.test_cmap_divergent_option",
+        "xarray.core.variable.Variable.equals",
+        "xarray.tests.test_options.TestAttrRetention",
+        "xarray.tests.test_plot.TestDetermineCmapParams.test_cmap_sequential_explicit_option",
+        "xarray.tests.test_options",
+        "xarray.core.groupby.DataArrayGroupBy._concat_shortcut",
+        "xarray.conventions.decode_cf_variable",
+        "xarray.core.groupby.GroupBy.where",
+        "xarray.tests.test_merge.TestMergeFunction.test_merge_no_conflicts_broadcast",
+        "xarray.tests.test_combine.TestCombineND.test_concat_twice",
+        "xarray.tests.test_combine.TestCombineAuto",
+        "xarray.tests.test_dask.TestVariable.test_concat",
+        "xarray.tests.test_merge.TestMergeFunction.test_merge_datasets",
+        "xarray.tests.test_variable.VariableSubclassobjects.test_concat",
+        "xarray.tests.test_concat.TestConcatDataset.test_concat_do_not_promote",
+        "xarray.tests.test_combine.TestCombineAuto.test_combine_coords_join",
+        "xarray.tests.test_concat.TestConcatDataset.test_concat_size0",
+        "xarray.tests.test_combine.TestNestedCombine.test_combine_nested_join",
+        "xarray.tests.test_dataset.TestDataset.test_drop_variables",
+        "xarray.tests.test_concat.TestConcatDataset.test_concat_dim_is_variable",
+        "xarray.tests.test_concat.TestConcatDataset.test_concat",
+        "xarray.tests.test_backends.TestPydapOnline.create_datasets",
+        "xarray.tests.test_combine.TestAutoCombineDeprecation.test_auto_combine_with_concat_dim",
+        "xarray.tests.test_backends.TestPydap.create_datasets",
+        "xarray.tests.test_computation.test_join_dict_keys",
+        "xarray.tests.test_concat.TestConcatDataArray.test_concat_encoding",
+        "xarray.tests.test_combine.TestCombineAuto.test_combine_coords_join_exact",
+        "xarray.tests.test_combine.TestNestedCombine.test_combine_nested_join_exact",
+        "xarray.tests.test_concat.TestConcatDataset.test_concat_multiindex",
+        "xarray.tests.test_concat.TestConcatDataArray.test_concat_lazy",
+        "xarray.core.variable._unified_dims",
+        "xarray.tests.test_dask.TestToDaskDataFrame.test_to_dask_dataframe_2D",
+        "xarray.tests.test_concat.TestConcatDataset.test_concat_autoalign",
+        "xarray.core.alignment._get_joiner",
+        "xarray.core.dataarray.DataArray.shift",
+        "xarray.tests.test_dask.TestToDaskDataFrame",
+        "xarray.tests.test_backends.TestDataArrayToNetCDF.test_open_dataarray_options",
+        "xarray.core.dataset.Dataset.info",
+        "xarray.core.groupby.GroupBy.fillna",
+        "xarray.core.variable.assert_unique_multiindex_level_names",
+        "xarray.tests.test_dataarray.TestDataArray.test_align_indexes",
+        "asv_bench.benchmarks.dataarray_missing.time_interpolate_na",
+        "xarray.core.merge.merge_data_and_coords",
+        "xarray.core.resample.Resample.nearest",
+        "xarray.tests.test_missing.test_interpolate",
+        "xarray.core.options._warn_on_setting_enable_cftimeindex",
+        "xarray.tests.test_combine.TestCombineAuto.test_combine_by_coords_previously_failed",
+        "xarray.tests.test_sparse.TestSparseDataArrayAndDataset.test_align_outer",
+        "xarray.core.merge.coerce_pandas_values",
+        "xarray.core.options._get_keep_attrs",
+        "xarray.tests.test_missing.test_interpolate_dataset",
+        "xarray.core.missing._apply_over_vars_with_dim"
+      ],
+      "retrieval_calls": 3,
+      "index_nodes": 4360,
+      "scored_documents": 4013,
+      "source_chars_read": 2669605,
+      "shared_index_seconds": 2.2439448999994056
+    },
+    {
+      "instance_id": "pydata__xarray-3364",
+      "repo": "pydata/xarray",
+      "base_commit": "863e49066ca4d61c9adfe62aca3bf21b90e1af8c",
+      "arm": "feedback",
+      "status": "ok",
+      "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+      "request_sha256": "d99ada9291b462a185b35cf8ab5dfa66ee062e843db93b998a0a3af2317b0d3d",
+      "response_sha256": "03cb7e6933c62000245e14b87b4e41102221e31fcb9502d4d694bdc4e7cd172b",
+      "raw_response_sha256": "03cb7e6933c62000245e14b87b4e41102221e31fcb9502d4d694bdc4e7cd172b",
+      "actions": [
+        {
+          "query": "xarray concat data_vars option ignore missing variables outer join fill_value",
+          "candidates": [
+            {
+              "id": "xarray.core.combine._old_auto_combine",
+              "score": 29.14725369298796
+            },
+            {
+              "id": "xarray.core.combine._combine_1d",
+              "score": 28.052119787825482
+            },
+            {
+              "id": "xarray.core.concat._dataarray_concat",
+              "score": 27.90542604456017
+            },
+            {
+              "id": "xarray.core.combine._nested_combine",
+              "score": 26.02316672552457
+            },
+            {
+              "id": "xarray.core.concat._dataset_concat",
+              "score": 25.856472847108268
+            },
+            {
+              "id": "xarray.core.combine._auto_concat",
+              "score": 25.517176760496987
+            },
+            {
+              "id": "xarray.core.concat.concat",
+              "score": 25.47505927454528
+            },
+            {
+              "id": "xarray.core.ops.fillna",
+              "score": 24.74285728829699
+            },
+            {
+              "id": "xarray.core.concat",
+              "score": 24.603259329108173
+            },
+            {
+              "id": "xarray.core.combine.combine_by_coords",
+              "score": 24.383066845855144
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.merge",
+              "score": 24.133003232854225
+            },
+            {
+              "id": "xarray.core.combine.auto_combine",
+              "score": 23.851949588403652
+            },
+            {
+              "id": "xarray.core.combine._combine_nd",
+              "score": 23.080315896160087
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.combine_first",
+              "score": 22.87838025004416
+            },
+            {
+              "id": "xarray.core.combine.combine_nested",
+              "score": 22.691430562209238
+            },
+            {
+              "id": "xarray.core.computation.apply_dict_of_variables_vfunc",
+              "score": 21.545940892690354
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.fillna",
+              "score": 21.353846095994395
+            },
+            {
+              "id": "xarray.core.computation.apply_dataset_vfunc",
+              "score": 21.017106965816495
+            },
+            {
+              "id": "xarray.core.merge.merge_coords",
+              "score": 20.668997290955268
+            },
+            {
+              "id": "xarray.core.dataset.Dataset._calculate_binary_op.apply_over_both",
+              "score": 19.97021864312484
+            },
+            {
+              "id": "xarray.core.dataset.Dataset._calculate_binary_op",
+              "score": 19.93490732783408
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.drop_dims",
+              "score": 19.639554389295252
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_align_fill_value",
+              "score": 19.585048177895068
+            },
+            {
+              "id": "xarray.core.merge.merge_core",
+              "score": 19.561457054177815
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataArray.test_concat_fill_value",
+              "score": 19.405759964461872
+            },
+            {
+              "id": "xarray.coding.variables.CFMaskCoder.decode",
+              "score": 19.39013776640554
+            },
+            {
+              "id": "xarray.core.combine._combine_all_along_first_dim",
+              "score": 19.33374843450581
+            },
+            {
+              "id": "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw",
+              "score": 19.25089736947721
+            },
+            {
+              "id": "xarray.coding.variables.CFMaskCoder",
+              "score": 18.50601555353307
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_fill_value",
+              "score": 18.36733522355993
+            },
+            {
+              "id": "xarray.core.dataarray.DataArray.fillna",
+              "score": 18.205445017736782
+            },
+            {
+              "id": "xarray.core.dataarray.DataArray.combine_first",
+              "score": 18.177423948040342
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_binary_op_join_setting",
+              "score": 17.782067385041184
+            },
+            {
+              "id": "xarray.core.concat._calc_concat_over",
+              "score": 17.63820134181816
+            },
+            {
+              "id": "xarray.core.merge.merge",
+              "score": 17.58869797940748
+            },
+            {
+              "id": "xarray.tests.test_computation.test_dataset_join",
+              "score": 17.539313095600136
+            },
+            {
+              "id": "xarray.core.groupby.GroupBy.fillna",
+              "score": 17.529619012216894
+            },
+            {
+              "id": "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_open_mfdataset_does_same_as_concat",
+              "score": 17.416372531364214
+            },
+            {
+              "id": "xarray.core.merge.dataset_merge_method",
+              "score": 17.084491867069406
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataArray",
+              "score": 16.98264819526589
+            },
+            {
+              "id": "xarray.tests.test_dataarray.TestDataArray.test_binary_op_join_setting",
+              "score": 16.666996338817626
+            },
+            {
+              "id": "xarray.core.concat._calc_concat_over.process_subset_opt",
+              "score": 16.62210848081774
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineAuto",
+              "score": 16.506251047378704
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_join_kwarg",
+              "score": 16.46750640240418
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataArray.test_concat_join_kwarg",
+              "score": 16.355815280959565
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.shift",
+              "score": 16.226555440050156
+            },
+            {
+              "id": "xarray.core.alignment.align",
+              "score": 16.192849684370778
+            },
+            {
+              "id": "xarray.core.computation.apply_ufunc",
+              "score": 15.986273837510383
+            },
+            {
+              "id": "xarray.tests.test_combine.TestAutoCombineOldAPI.test_auto_combine_fill_value",
+              "score": 15.849341291544361
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine.test_combine_nested_fill_value",
+              "score": 15.849341291544361
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.dropna",
+              "score": 15.787736633771022
+            },
+            {
+              "id": "xarray.coding.variables.CFMaskCoder.encode",
+              "score": 15.738562634298239
+            },
+            {
+              "id": "xarray.core.alignment",
+              "score": 15.431609231115292
+            },
+            {
+              "id": "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_open_mfdataset_exact_join_raises_error",
+              "score": 15.129545836886242
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine",
+              "score": 15.092097684977839
+            },
+            {
+              "id": "xarray.core.alignment.deep_align",
+              "score": 14.606591229033368
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.sortby",
+              "score": 14.578639757192436
+            },
+            {
+              "id": "xarray.tests.test_dask.TestDataArrayAndDataset.test_concat_loads_variables",
+              "score": 14.338218902032814
+            },
+            {
+              "id": "xarray.conventions.decode_cf",
+              "score": 14.259935806390837
+            },
+            {
+              "id": "xarray.tests.test_sparse.TestSparseDataArrayAndDataset.test_dataset_repr",
+              "score": 13.844942005192491
+            },
+            {
+              "id": "xarray.tests.test_dataarray.TestDataArray.test_reindex_fill_value",
+              "score": 13.632752196379199
+            },
+            {
+              "id": "xarray.core.dataarray.DataArray.reindex_like",
+              "score": 13.59757016649329
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_data_vars",
+              "score": 13.594210270494088
+            },
+            {
+              "id": "xarray.core.combine._dimension_coords_exist",
+              "score": 13.534608840365498
+            },
+            {
+              "id": "xarray.core.variable.Variable.concat",
+              "score": 13.471527467905915
+            },
+            {
+              "id": "xarray.tests.test_conventions.test_decode_cf_with_conflicting_fill_missing_value",
+              "score": 13.398742382797812
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.reindex_like",
+              "score": 13.339039332304646
+            },
+            {
+              "id": "xarray.conventions.ensure_dtype_not_object",
+              "score": 13.286754781823795
+            },
+            {
+              "id": "xarray.core.options",
+              "score": 13.251489752634523
+            },
+            {
+              "id": "xarray.core.alignment.reindex_variables",
+              "score": 13.137348224384354
+            },
+            {
+              "id": "xarray.conventions.cf_decoder",
+              "score": 13.112709882251275
+            },
+            {
+              "id": "xarray.conventions.decode_cf_variables",
+              "score": 13.083097559678833
+            },
+            {
+              "id": "xarray.tests.test_dataarray.TestDataArray.test_shift",
+              "score": 13.032428852420047
+            },
+            {
+              "id": "xarray.core.variable.concat",
+              "score": 13.004026233388142
+            },
+            {
+              "id": "xarray.core.dtypes.get_fill_value",
+              "score": 12.775158879047655
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_shift",
+              "score": 12.744376228175211
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_drop_variables",
+              "score": 12.741933337327481
+            },
+            {
+              "id": "xarray.core.dataset.Dataset._replace_vars_and_dims",
+              "score": 12.723218279265012
+            },
+            {
+              "id": "xarray.core.rolling.DatasetRolling.construct",
+              "score": 12.718330718792425
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_to_and_from_dict",
+              "score": 12.672500535230103
+            },
+            {
+              "id": "xarray.tests.test_computation.test_dataset_join.add",
+              "score": 12.524016963916916
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_reindex_fill_value",
+              "score": 12.476287137776536
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_errors",
+              "score": 12.468841469320724
+            },
+            {
+              "id": "xarray.backends.api.open_dataset",
+              "score": 12.462122100958144
+            },
+            {
+              "id": "xarray.tests.test_concat.test_concat_compat",
+              "score": 12.367322562469592
+            },
+            {
+              "id": "xarray.tests.test_coding",
+              "score": 12.364305031289149
+            },
+            {
+              "id": "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_common_coord_when_datavars_minimal",
+              "score": 12.3347201715322
+            },
+            {
+              "id": "xarray.core.formatting.diff_dataset_repr",
+              "score": 12.314043740091627
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_reindex_like_fill_value",
+              "score": 12.283658964196295
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_constructor_auto_align",
+              "score": 12.256192299770772
+            },
+            {
+              "id": "xarray.core.combine._requires_concat_and_merge",
+              "score": 12.254562674882381
+            },
+            {
+              "id": "xarray.core.variable.IndexVariable.concat",
+              "score": 12.233157078261028
+            },
+            {
+              "id": "xarray.tests.test_merge.TestMergeMethod.test_merge_fill_value",
+              "score": 12.191683730421124
+            },
+            {
+              "id": "xarray.core.concat._parse_datasets",
+              "score": 12.1643253008682
+            },
+            {
+              "id": "xarray.backends.pynio_.NioDataStore",
+              "score": 12.119290501251394
+            },
+            {
+              "id": "xarray.core.computation._unpack_dict_tuples",
+              "score": 12.096361345062299
+            },
+            {
+              "id": "xarray.core.dataarray.DataArray.reindex",
+              "score": 12.057974628823834
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset",
+              "score": 12.04445829907848
+            },
+            {
+              "id": "xarray.core.missing",
+              "score": 12.044288885580961
+            },
+            {
+              "id": "xarray.tests.test_combine.TestTileIDsFromNestedList.test_ignore_empty_list",
+              "score": 11.989084855944064
+            },
+            {
+              "id": "xarray.core.alignment._get_joiner",
+              "score": 11.963344469885994
+            },
+            {
+              "id": "xarray.backends.zarr.open_zarr",
+              "score": 11.933947858736694
+            },
+            {
+              "id": "xarray.backends.zarr.ZarrStore",
+              "score": 11.929750016289683
+            },
+            {
+              "id": "xarray.backends.api.open_dataarray",
+              "score": 11.89082407193093
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineAuto.test_combine_coords_join_exact",
+              "score": 11.890396182522432
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine.test_combine_nested_join_exact",
+              "score": 11.890396182522432
+            },
+            {
+              "id": "xarray.coding.variables._apply_mask",
+              "score": 11.872641099390428
+            },
+            {
+              "id": "xarray.tests.test_backends.CFEncodedBase.test_default_fill_value",
+              "score": 11.856903483585858
+            },
+            {
+              "id": "xarray.backends.zarr.ZarrStore.open_store_variable",
+              "score": 11.830664772334362
+            },
+            {
+              "id": "xarray.tests.test_coding.test_CFMaskCoder_missing_value",
+              "score": 11.826233561784923
+            },
+            {
+              "id": "xarray.core.groupby",
+              "score": 11.785285653362441
+            },
+            {
+              "id": "xarray.tests.test_sparse.TestSparseDataArrayAndDataset.test_concat",
+              "score": 11.756688636533204
+            },
+            {
+              "id": "xarray.core.alignment._broadcast_helper",
+              "score": 11.746711533777951
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.reindex",
+              "score": 11.7441283316305
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.bfill",
+              "score": 11.738667200428898
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.ffill",
+              "score": 11.738667200428898
+            },
+            {
+              "id": "xarray.tests.test_computation.test_join_dict_keys",
+              "score": 11.630564766343808
+            },
+            {
+              "id": "xarray.tests.test_conventions.TestEncodeCFVariable.test_incompatible_attributes",
+              "score": 11.623269401695392
+            },
+            {
+              "id": "xarray.core.missing.NumpyInterpolator.__init__",
+              "score": 11.592162742063666
+            },
+            {
+              "id": "xarray.core.variable.Variable.shift",
+              "score": 11.5885625523455
+            },
+            {
+              "id": "xarray.backends.zarr.ZarrStore.set_variables",
+              "score": 11.56592578950203
+            },
+            {
+              "id": "xarray.core.dtypes.maybe_promote",
+              "score": 11.560394174613526
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_constant_index",
+              "score": 11.554434446451015
+            },
+            {
+              "id": "xarray.tests.test_variable.TestVariable.test_shift",
+              "score": 11.548897045496792
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.data_vars",
+              "score": 11.522429448435787
+            },
+            {
+              "id": "xarray.conventions.encode_cf_variable",
+              "score": 11.506304167892914
+            },
+            {
+              "id": "xarray.core.groupby._dummy_copy",
+              "score": 11.498561718193757
+            },
+            {
+              "id": "xarray.core.variable.IndexVariable",
+              "score": 11.476739646822672
+            },
+            {
+              "id": "xarray.tests.test_concat",
+              "score": 11.449518258644506
+            },
+            {
+              "id": "xarray.core.coordinates.Coordinates",
+              "score": 11.319777106021201
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataArray.test_concat",
+              "score": 11.282634396654803
+            },
+            {
+              "id": "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_common_coord_when_datavars_all",
+              "score": 11.217460378930854
+            },
+            {
+              "id": "xarray.coding.variables.UnsignedIntegerCoder.encode",
+              "score": 11.102474224930248
+            },
+            {
+              "id": "xarray.coding.variables.UnsignedIntegerCoder.decode",
+              "score": 11.048512244933878
+            },
+            {
+              "id": "xarray.core.dataarray.DataArray.shift",
+              "score": 11.045825648163945
+            },
+            {
+              "id": "xarray.core.ops.where_method",
+              "score": 11.009262050451769
+            },
+            {
+              "id": "xarray.tests.test_missing.test_interpolate_kwargs",
+              "score": 10.997758058907934
+            },
+            {
+              "id": "xarray.core.merge.merge_data_and_coords",
+              "score": 10.994975234723148
+            },
+            {
+              "id": "xarray.core.missing.NumpyInterpolator",
+              "score": 10.93595026672118
+            },
+            {
+              "id": "xarray.tests.test_dataarray.TestDataArray.test_align_indexes",
+              "score": 10.935280811536208
+            },
+            {
+              "id": "xarray.tests.test_conventions",
+              "score": 10.884001673320926
+            },
+            {
+              "id": "xarray.tests.test_sparse.TestSparseDataArrayAndDataset.test_align_outer",
+              "score": 10.871026788813902
+            },
+            {
+              "id": "xarray.core.missing.SplineInterpolator.__init__",
+              "score": 10.848746048448477
+            },
+            {
+              "id": "xarray.core.missing.ScipyInterpolator.__init__",
+              "score": 10.799191594218945
+            },
+            {
+              "id": "xarray.core.missing.SplineInterpolator",
+              "score": 10.794500703751332
+            },
+            {
+              "id": "xarray.backends.api.open_mfdataset",
+              "score": 10.778129106034106
+            },
+            {
+              "id": "xarray.tests.test_backends.TestPseudoNetCDFFormat.test_ict_format",
+              "score": 10.736856344345249
+            },
+            {
+              "id": "xarray.core.alignment.broadcast",
+              "score": 10.733321913924168
+            },
+            {
+              "id": "xarray.core.dataset.Dataset._rename_vars",
+              "score": 10.69376968283786
+            },
+            {
+              "id": "xarray.coding.variables.UnsignedIntegerCoder",
+              "score": 10.676213038850994
+            },
+            {
+              "id": "xarray.tests.test_conventions.TestDecodeCF.test_decode_cf_with_multiple_missing_values",
+              "score": 10.643917606322843
+            },
+            {
+              "id": "xarray.conventions.cf_encoder",
+              "score": 10.592980275505996
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineND.test_concat_once",
+              "score": 10.5808759937781
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.to_array",
+              "score": 10.50806636137096
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineAuto.test_combine_coords_join",
+              "score": 10.461998911614964
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine.test_combine_nested_join",
+              "score": 10.461998911614964
+            },
+            {
+              "id": "xarray.core.missing.interp_na",
+              "score": 10.461093355033608
+            },
+            {
+              "id": "xarray.tests.test_backends.CFEncodedBase",
+              "score": 10.434689064521313
+            },
+            {
+              "id": "xarray.tests.test_options.TestAttrRetention.test_concat_attr_retention",
+              "score": 10.42369137771422
+            },
+            {
+              "id": "xarray.core.dataset.merge_indexes",
+              "score": 10.42280969751928
+            },
+            {
+              "id": "xarray.core.missing.ScipyInterpolator",
+              "score": 10.411809737486967
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_align_nocopy",
+              "score": 10.391618886875731
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine.test_combine_nested_missing_data_new_dim",
+              "score": 10.390039858136138
+            },
+            {
+              "id": "xarray.tests.test_sparse.TestSparseVariable",
+              "score": 10.348209788458794
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.from_dict",
+              "score": 10.321330576641135
+            },
+            {
+              "id": "xarray.core.concat._dataset_concat.ensure_common_dims",
+              "score": 10.312518940174716
+            },
+            {
+              "id": "xarray.conventions.maybe_encode_nonstring_dtype",
+              "score": 10.280669285541395
+            },
+            {
+              "id": "xarray.tests.test_options",
+              "score": 10.275694097006186
+            },
+            {
+              "id": "xarray.core.formatting.dataset_repr",
+              "score": 10.252762061066381
+            },
+            {
+              "id": "xarray.core.dataset.split_indexes",
+              "score": 10.221758943786737
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineND",
+              "score": 10.211970828546233
+            },
+            {
+              "id": "xarray.core.dataset.Dataset._set_sparse_data_from_dataframe",
+              "score": 10.20486536355838
+            },
+            {
+              "id": "xarray.tests.test_missing.test_interpolate_pd_compat",
+              "score": 10.176571164786427
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.rename_vars",
+              "score": 10.171231057697163
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_data_vars_properties",
+              "score": 10.127718399886644
+            },
+            {
+              "id": "xarray.backends.netCDF4_._ensure_fill_value_valid",
+              "score": 10.125183792862346
+            },
+            {
+              "id": "xarray.core.dataset.calculate_dimensions",
+              "score": 10.102352669688113
+            },
+            {
+              "id": "xarray.tests.test_conventions.TestDecodeCF",
+              "score": 10.076890820785264
+            },
+            {
+              "id": "xarray.backends.netCDF4_.NetCDF4DataStore.prepare_variable",
+              "score": 10.062051227572162
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_groupby_order",
+              "score": 10.055626150680775
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_dim_precedence",
+              "score": 10.014065153175274
+            },
+            {
+              "id": "xarray.core.missing._apply_over_vars_with_dim",
+              "score": 9.956781164292188
+            },
+            {
+              "id": "xarray.core.variable.assert_unique_multiindex_level_names",
+              "score": 9.936925993764412
+            },
+            {
+              "id": "xarray.backends.h5netcdf_._read_attributes",
+              "score": 9.927755118681132
+            },
+            {
+              "id": "xarray.core.alignment._broadcast_helper._broadcast_dataset",
+              "score": 9.89993117263925
+            },
+            {
+              "id": "xarray.tests.test_dataarray.TestDataArray.test_to_and_from_dict",
+              "score": 9.896566220023715
+            },
+            {
+              "id": "xarray.core.computation.apply_dataarray_vfunc",
+              "score": 9.892676255271573
+            },
+            {
+              "id": "xarray.tests.test_options.test_invalid_option_raises",
+              "score": 9.858026612728462
+            },
+            {
+              "id": "xarray.core.missing._get_valid_fill_mask",
+              "score": 9.830214316615542
+            },
+            {
+              "id": "xarray.core.indexing.create_mask",
+              "score": 9.82912094793389
+            },
+            {
+              "id": "xarray.core.dtypes",
+              "score": 9.819001849068252
+            },
+            {
+              "id": "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_invalid_data_vars_value_should_fail",
+              "score": 9.812054892441111
+            },
+            {
+              "id": "xarray.tests.test_dataset.InaccessibleVariableDataStore.get_variables",
+              "score": 9.811909403148286
+            },
+            {
+              "id": "xarray.core.dataarray.DataArray._to_dataset_whole",
+              "score": 9.80343554694494
+            },
+            {
+              "id": "xarray.tests.test_missing.test_interpolate_pd_compat_non_uniform_index",
+              "score": 9.795467623963031
+            },
+            {
+              "id": "xarray.core.coordinates.Coordinates.to_index",
+              "score": 9.782175317701254
+            },
+            {
+              "id": "xarray.tests.test_combine.TestAutoCombineOldAPI",
+              "score": 9.780801392537978
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineND.test_concat_only_first_dim",
+              "score": 9.756905491814551
+            },
+            {
+              "id": "xarray.tests.test_dataarray.TestDataArray.test_align_copy",
+              "score": 9.747528089253843
+            },
+            {
+              "id": "xarray.tests.test_backends.DatasetIOBase.test_load.assert_loads",
+              "score": 9.721128270833129
+            }
+          ],
+          "scored_documents": 4224,
+          "seconds": 0.00834489999942889
+        },
+        {
+          "query": "xarray.core.concat concat data_vars compat fill_value join implementation",
+          "candidates": [
+            {
+              "id": "xarray.core.combine._old_auto_combine",
+              "score": 34.123317666597295
+            },
+            {
+              "id": "xarray.core.combine._combine_1d",
+              "score": 32.98787025351043
+            },
+            {
+              "id": "xarray.core.concat._dataarray_concat",
+              "score": 32.27927353323672
+            },
+            {
+              "id": "xarray.core.combine._nested_combine",
+              "score": 30.331794196180912
+            },
+            {
+              "id": "xarray.core.combine._auto_concat",
+              "score": 29.747024155492607
+            },
+            {
+              "id": "xarray.core.combine._combine_nd",
+              "score": 26.914262171810236
+            },
+            {
+              "id": "xarray.core.concat._dataset_concat",
+              "score": 26.76186025860345
+            },
+            {
+              "id": "xarray.core.merge.dataset_merge_method",
+              "score": 23.723268433559426
+            },
+            {
+              "id": "xarray.core.combine._combine_all_along_first_dim",
+              "score": 23.08622214108899
+            },
+            {
+              "id": "xarray.core.merge.merge_coords",
+              "score": 22.849152911971856
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.merge",
+              "score": 21.845069068628046
+            },
+            {
+              "id": "xarray.core.combine.auto_combine",
+              "score": 20.663643120395374
+            },
+            {
+              "id": "xarray.core.combine.combine_nested",
+              "score": 20.063328889868952
+            },
+            {
+              "id": "xarray.core.computation.apply_dataset_vfunc",
+              "score": 19.66707682271037
+            },
+            {
+              "id": "xarray.core.concat._calc_concat_over",
+              "score": 19.66488611745669
+            },
+            {
+              "id": "xarray.core.merge.merge_core",
+              "score": 19.52463311448153
+            },
+            {
+              "id": "xarray.tests.test_concat.test_concat_compat",
+              "score": 19.17282484752775
+            },
+            {
+              "id": "xarray.core.computation.apply_dict_of_variables_vfunc",
+              "score": 19.082792594257356
+            },
+            {
+              "id": "xarray.core.combine.combine_by_coords",
+              "score": 18.830985658064172
+            },
+            {
+              "id": "xarray.core.concat.concat",
+              "score": 18.714883375975216
+            },
+            {
+              "id": "xarray.core.concat._calc_concat_over.process_subset_opt",
+              "score": 18.534539732512062
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_errors",
+              "score": 18.35510743245508
+            },
+            {
+              "id": "xarray.core.concat",
+              "score": 18.270345443563244
+            },
+            {
+              "id": "xarray.core.formatting.diff_dataset_repr",
+              "score": 17.996730129368306
+            },
+            {
+              "id": "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_open_mfdataset_does_same_as_concat",
+              "score": 17.416372531364214
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataArray",
+              "score": 17.406947418169302
+            },
+            {
+              "id": "xarray.core.rolling.DatasetRolling._dataset_implementation",
+              "score": 16.533320216257252
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataArray.test_concat_fill_value",
+              "score": 16.06622513606274
+            },
+            {
+              "id": "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw",
+              "score": 15.766785419022604
+            },
+            {
+              "id": "xarray.tests.test_concat",
+              "score": 15.551104594830623
+            },
+            {
+              "id": "xarray.core.merge.merge_data_and_coords",
+              "score": 15.531990738000005
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.combine_first",
+              "score": 15.357503360818734
+            },
+            {
+              "id": "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_open_mfdataset_exact_join_raises_error",
+              "score": 15.129545836886242
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.fillna",
+              "score": 14.997391045387205
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_fill_value",
+              "score": 14.86114329692097
+            },
+            {
+              "id": "xarray.core.formatting._diff_mapping_repr",
+              "score": 14.809790605176815
+            },
+            {
+              "id": "xarray.tests.test_dask.TestDataArrayAndDataset.test_concat_loads_variables",
+              "score": 14.709548745701657
+            },
+            {
+              "id": "xarray.core.dataset.Dataset._calculate_binary_op.apply_over_both",
+              "score": 14.707350677499836
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineND.test_concat_once",
+              "score": 14.688189494054727
+            },
+            {
+              "id": "xarray.core.dataarray.DataArray.fillna",
+              "score": 14.567540186679139
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataArray.test_concat",
+              "score": 14.368487116533574
+            },
+            {
+              "id": "xarray.core.merge.merge",
+              "score": 14.108389186772525
+            },
+            {
+              "id": "xarray.core.dataset.Dataset._calculate_binary_op",
+              "score": 13.974912693966546
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineND",
+              "score": 13.861888513990525
+            },
+            {
+              "id": "xarray.core.groupby.GroupBy.fillna",
+              "score": 13.811346556874861
+            },
+            {
+              "id": "xarray.core.ops.fillna",
+              "score": 13.628048430494246
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_data_vars",
+              "score": 13.594210270494088
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineAuto",
+              "score": 13.539553155178474
+            },
+            {
+              "id": "xarray.core.combine._requires_concat_and_merge",
+              "score": 13.534786772285715
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineND.test_concat_only_first_dim",
+              "score": 13.4618140413804
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_align_fill_value",
+              "score": 13.294039816584618
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_join_kwarg",
+              "score": 13.228818529063444
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataArray.test_concat_join_kwarg",
+              "score": 13.162037403646774
+            },
+            {
+              "id": "xarray.tests.test_missing.test_interpolate_pd_compat",
+              "score": 13.150786834735705
+            },
+            {
+              "id": "xarray.tests.test_merge.TestMergeMethod",
+              "score": 13.08147762708862
+            },
+            {
+              "id": "xarray.core.merge.merge_collected",
+              "score": 12.916190777190506
+            },
+            {
+              "id": "xarray.tests.test_missing.test_interpolate_pd_compat_non_uniform_index",
+              "score": 12.730210831448243
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.__init__",
+              "score": 12.707818478023803
+            },
+            {
+              "id": "xarray.core.combine._dimension_coords_exist",
+              "score": 12.654599757752848
+            },
+            {
+              "id": "xarray.core.groupby._dummy_copy",
+              "score": 12.611054628990924
+            },
+            {
+              "id": "xarray.core.formatting.diff_array_repr",
+              "score": 12.600950346494248
+            },
+            {
+              "id": "xarray.core.alignment",
+              "score": 12.539028569719378
+            },
+            {
+              "id": "xarray.tests.test_computation.test_dataset_join.add",
+              "score": 12.524016963916916
+            },
+            {
+              "id": "xarray.core.groupby",
+              "score": 12.480215287589102
+            },
+            {
+              "id": "xarray.tests.test_combine.TestAutoCombineOldAPI.test_auto_combine_fill_value",
+              "score": 12.437734799943845
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine.test_combine_nested_fill_value",
+              "score": 12.437734799943845
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine",
+              "score": 12.35396707771362
+            },
+            {
+              "id": "xarray.core.merge._get_priority_vars_and_indexes",
+              "score": 12.295761439487075
+            },
+            {
+              "id": "xarray.core.rolling.DatasetRolling._counts",
+              "score": 12.021953434806619
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineAuto.test_combine_coords_join_exact",
+              "score": 11.890396182522432
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine.test_combine_nested_join_exact",
+              "score": 11.890396182522432
+            },
+            {
+              "id": "xarray.core.rolling.DatasetRolling.construct",
+              "score": 11.882442460291495
+            },
+            {
+              "id": "xarray.core.merge._assert_compat_valid",
+              "score": 11.845402186384863
+            },
+            {
+              "id": "xarray.tests.test_merge.TestMergeMethod.test_merge_no_conflicts",
+              "score": 11.822420518819802
+            },
+            {
+              "id": "xarray.tests.test_computation.test_dataset_join",
+              "score": 11.761855864919248
+            },
+            {
+              "id": "xarray.tests.test_sparse.TestSparseDataArrayAndDataset.test_concat",
+              "score": 11.756688636533204
+            },
+            {
+              "id": "xarray.core.alignment.deep_align",
+              "score": 11.73835435840428
+            },
+            {
+              "id": "xarray.tests.test_merge.TestMergeFunction",
+              "score": 11.663478583266906
+            },
+            {
+              "id": "xarray.core.alignment.align",
+              "score": 11.64562061183995
+            },
+            {
+              "id": "xarray.tests.test_conventions.TestEncodeCFVariable.test_incompatible_attributes",
+              "score": 11.623269401695392
+            },
+            {
+              "id": "xarray.tests.test_computation.test_broadcast_compat_data_1d",
+              "score": 11.608139905155545
+            },
+            {
+              "id": "xarray.tests.test_merge.TestMergeFunction.test_merge_no_conflicts_single_var",
+              "score": 11.562523466196042
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.test_concat_constant_index",
+              "score": 11.554434446451015
+            },
+            {
+              "id": "xarray.core.concat._dataset_concat.ensure_common_dims",
+              "score": 11.547788019183255
+            },
+            {
+              "id": "xarray.core.dataarray.DataArray.combine_first",
+              "score": 11.441803225213892
+            },
+            {
+              "id": "xarray.conventions.decode_cf",
+              "score": 11.391753618055636
+            },
+            {
+              "id": "xarray.backends.api.open_mfdataset",
+              "score": 11.378347751138016
+            },
+            {
+              "id": "xarray.tests.test_sparse.TestSparseDataArrayAndDataset.test_dataset_repr",
+              "score": 11.370183652259326
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.sortby",
+              "score": 11.33632028396362
+            },
+            {
+              "id": "xarray.core.concat._parse_datasets",
+              "score": 11.204063974361386
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset",
+              "score": 11.132401035711633
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.shift",
+              "score": 11.129634234279354
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine.test_merge_one_dim_concat_another",
+              "score": 10.84425502567977
+            },
+            {
+              "id": "xarray.core.computation.apply_dataarray_vfunc",
+              "score": 10.8348973930833
+            },
+            {
+              "id": "xarray.core.rolling.DatasetRolling",
+              "score": 10.676251924035093
+            },
+            {
+              "id": "xarray.core.computation.apply_ufunc",
+              "score": 10.533666803378013
+            },
+            {
+              "id": "xarray.tests.test_combine.TestCombineAuto.test_combine_coords_join",
+              "score": 10.461998911614964
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine.test_combine_nested_join",
+              "score": 10.461998911614964
+            },
+            {
+              "id": "xarray.core.dtypes.get_fill_value",
+              "score": 10.440165662239458
+            },
+            {
+              "id": "xarray.core.nanops._nan_minmax_object",
+              "score": 10.414023007939777
+            },
+            {
+              "id": "xarray.core.dataarray.DataArray._all_compat",
+              "score": 10.33247790405212
+            },
+            {
+              "id": "xarray.tests.test_dataarray.TestDataArray.test_reindex_fill_value",
+              "score": 10.18393059524231
+            },
+            {
+              "id": "xarray.backends.netCDF4_._ensure_fill_value_valid",
+              "score": 10.125183792862346
+            },
+            {
+              "id": "xarray.core.common._full_like_variable",
+              "score": 10.116521715034015
+            },
+            {
+              "id": "xarray.core.variable.Variable._getitem_with_mask",
+              "score": 10.097806362001812
+            },
+            {
+              "id": "xarray.coding.variables.CFMaskCoder",
+              "score": 10.063383436088232
+            },
+            {
+              "id": "xarray.core.nanops._nan_argminmax_object",
+              "score": 9.973495849293085
+            },
+            {
+              "id": "xarray.coding.variables.CFMaskCoder.encode",
+              "score": 9.956541863020178
+            },
+            {
+              "id": "xarray.core.variable.Variable.shift",
+              "score": 9.919714686111007
+            },
+            {
+              "id": "xarray.tests.test_merge.TestMergeMethod.test_merge_compat",
+              "score": 9.906022005960207
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.bfill",
+              "score": 9.894440834880564
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.ffill",
+              "score": 9.894440834880564
+            },
+            {
+              "id": "xarray.core.missing.NumpyInterpolator.__init__",
+              "score": 9.87888044515821
+            },
+            {
+              "id": "xarray.tests.test_dataarray.TestDataArray.test_shift",
+              "score": 9.876251932245623
+            },
+            {
+              "id": "xarray.core.formatting._compat_to_str",
+              "score": 9.857120284775128
+            },
+            {
+              "id": "xarray.core.computation.broadcast_compat_data",
+              "score": 9.854406385653432
+            },
+            {
+              "id": "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_invalid_data_vars_value_should_fail",
+              "score": 9.812054892441111
+            },
+            {
+              "id": "xarray.core.alignment._get_joiner",
+              "score": 9.743608019930944
+            },
+            {
+              "id": "xarray.tests.test_computation",
+              "score": 9.72220215227914
+            },
+            {
+              "id": "xarray.coding.variables.CFMaskCoder.decode",
+              "score": 9.719823903244803
+            },
+            {
+              "id": "xarray.core.variable._broadcast_compat_data",
+              "score": 9.695186183869174
+            },
+            {
+              "id": "xarray.core.arithmetic.SupportsArithmetic.__array_ufunc__",
+              "score": 9.681047818343435
+            },
+            {
+              "id": "xarray.core.dataarray.DataArray.reindex_like",
+              "score": 9.67075305283171
+            },
+            {
+              "id": "xarray.core.utils.update_safety_check",
+              "score": 9.657477454305383
+            },
+            {
+              "id": "xarray.core.dtypes.maybe_promote",
+              "score": 9.652320729915408
+            },
+            {
+              "id": "xarray.core.dataarray.DataArray._all_compat.compat",
+              "score": 9.647589683252223
+            },
+            {
+              "id": "xarray.core.dataset.Dataset._all_compat.compat",
+              "score": 9.6147125953191
+            },
+            {
+              "id": "xarray.core.dataarray.DataArray.shift",
+              "score": 9.601700408113519
+            },
+            {
+              "id": "xarray.tests.test_computation.test_broadcast_compat_data_2d",
+              "score": 9.593858271019771
+            },
+            {
+              "id": "xarray.coding.variables._apply_mask",
+              "score": 9.527896947234268
+            },
+            {
+              "id": "xarray.core.rolling.DatasetRolling._numpy_or_bottleneck_reduce",
+              "score": 9.485173473427526
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_shift",
+              "score": 9.456927974801468
+            },
+            {
+              "id": "xarray.core.missing.NumpyInterpolator",
+              "score": 9.435708765450268
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.reindex_like",
+              "score": 9.397179840315733
+            },
+            {
+              "id": "xarray.core.dataarray.DataArray.reindex",
+              "score": 9.396084453145951
+            },
+            {
+              "id": "xarray.core.formatting.dataset_repr",
+              "score": 9.332263980163948
+            },
+            {
+              "id": "xarray.core.variable.Variable.pad_with_fill_value",
+              "score": 9.309341665134127
+            },
+            {
+              "id": "xarray.tests.test_concat.TestConcatDataset.rectify_dim_order",
+              "score": 9.295997521416174
+            },
+            {
+              "id": "xarray.core.variable.Variable._shift_one_dim",
+              "score": 9.255300900268493
+            },
+            {
+              "id": "xarray.core.ops.where_method",
+              "score": 9.23291760079364
+            },
+            {
+              "id": "xarray.core.missing.ScipyInterpolator.__init__",
+              "score": 9.219132127354998
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_binary_op_join_setting",
+              "score": 9.215909310109154
+            },
+            {
+              "id": "xarray.core.computation.collect_dict_values",
+              "score": 9.209923771404634
+            },
+            {
+              "id": "xarray.coding.variables.UnsignedIntegerCoder",
+              "score": 9.20975053228979
+            },
+            {
+              "id": "xarray.core.arithmetic.SupportsArithmetic",
+              "score": 9.204226690061265
+            },
+            {
+              "id": "xarray.core.nanops",
+              "score": 9.196331491217586
+            },
+            {
+              "id": "xarray.core.variable.Variable._inplace_binary_op.func",
+              "score": 9.192942380174188
+            },
+            {
+              "id": "xarray.core.rolling.DatasetRolling.reduce",
+              "score": 9.165542203724398
+            },
+            {
+              "id": "xarray.core.duck_array_ops.where_method",
+              "score": 9.147081041162163
+            },
+            {
+              "id": "xarray.core.arithmetic",
+              "score": 9.147072397340896
+            },
+            {
+              "id": "xarray.core.variable.Variable.rolling_window",
+              "score": 9.144777139609337
+            },
+            {
+              "id": "xarray.core.variable.IndexVariable.concat",
+              "score": 9.139568345898011
+            },
+            {
+              "id": "xarray.core.dataset.Dataset._all_compat",
+              "score": 9.128580931917682
+            },
+            {
+              "id": "xarray.core.missing.SplineInterpolator",
+              "score": 9.088787739158231
+            },
+            {
+              "id": "xarray.tests.test_merge.TestMergeMethod.test_merge_fill_value",
+              "score": 9.082070629585358
+            },
+            {
+              "id": "xarray.core.nputils.NumpyVIndexAdapter",
+              "score": 9.065539335252835
+            },
+            {
+              "id": "xarray.tests.test_variable.TestVariable.test_shift",
+              "score": 9.033134188784334
+            },
+            {
+              "id": "xarray.core.rolling.DataArrayRolling.construct",
+              "score": 9.00091099051264
+            },
+            {
+              "id": "xarray.coding.variables.UnsignedIntegerCoder.encode",
+              "score": 8.990712033887803
+            },
+            {
+              "id": "xarray.conventions.cf_decoder",
+              "score": 8.978599705799736
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_reindex_fill_value",
+              "score": 8.970095211137574
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.data_vars",
+              "score": 8.96448827953541
+            },
+            {
+              "id": "xarray.core.computation._unpack_dict_tuples",
+              "score": 8.958205803774877
+            },
+            {
+              "id": "xarray.coding.variables.UnsignedIntegerCoder.decode",
+              "score": 8.956546720045619
+            },
+            {
+              "id": "xarray.core.missing.SplineInterpolator.__init__",
+              "score": 8.950103073516763
+            },
+            {
+              "id": "xarray.tests.test_dataset.TestDataset.test_reindex_like_fill_value",
+              "score": 8.908473003937628
+            },
+            {
+              "id": "xarray.core.missing.ScipyInterpolator",
+              "score": 8.899817545004018
+            },
+            {
+              "id": "xarray.tests.test_options",
+              "score": 8.86108429616402
+            },
+            {
+              "id": "xarray.core.duck_array_ops.rolling_window",
+              "score": 8.824643212673752
+            },
+            {
+              "id": "xarray.core.nputils.rolling_window",
+              "score": 8.823917870725303
+            },
+            {
+              "id": "xarray.core.dataset.Dataset._set_sparse_data_from_dataframe",
+              "score": 8.807772333728998
+            },
+            {
+              "id": "xarray.conventions.decode_cf_variables",
+              "score": 8.780796670909327
+            },
+            {
+              "id": "xarray.core.variable.Variable._inplace_binary_op",
+              "score": 8.75762529077696
+            },
+            {
+              "id": "xarray.conventions.maybe_default_fill_value",
+              "score": 8.73179890173271
+            },
+            {
+              "id": "xarray.core.alignment._broadcast_helper._broadcast_dataset",
+              "score": 8.62842223941851
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.__setitem__",
+              "score": 8.62744031547877
+            },
+            {
+              "id": "xarray.core.missing",
+              "score": 8.596726840554263
+            },
+            {
+              "id": "xarray.core.dataset.Dataset._binary_op",
+              "score": 8.59026713472922
+            },
+            {
+              "id": "xarray.backends.scipy_._decode_attrs",
+              "score": 8.589407347279652
+            },
+            {
+              "id": "xarray.core.nanops.nanargmax",
+              "score": 8.580513680694343
+            },
+            {
+              "id": "xarray.core.nanops.nanargmin",
+              "score": 8.580513680694343
+            },
+            {
+              "id": "xarray.core.dataset.Dataset._binary_op.func",
+              "score": 8.555543206944341
+            },
+            {
+              "id": "xarray.backends.zarr.ZarrStore.open_store_variable",
+              "score": 8.545785866212624
+            },
+            {
+              "id": "xarray.core.common.full_like",
+              "score": 8.535966731401539
+            },
+            {
+              "id": "xarray.tests.test_combine.TestNestedCombine.test_invalid_hypercube_input",
+              "score": 8.520048056663825
+            },
+            {
+              "id": "xarray.tests.test_backends.CFEncodedBase.test_default_fill_value",
+              "score": 8.486809624280392
+            },
+            {
+              "id": "xarray.tests.test_backends.CFEncodedBase.test_explicitly_omit_fill_value",
+              "score": 8.477006891218478
+            },
+            {
+              "id": "xarray.tests.test_backends.CFEncodedBase.test_explicitly_omit_fill_value_in_coord",
+              "score": 8.41286186935587
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.to_array",
+              "score": 8.358480763323909
+            },
+            {
+              "id": "xarray.tests.test_options.test_arithmetic_join",
+              "score": 8.35464975850157
+            },
+            {
+              "id": "xarray.core.dataset.Dataset.reindex",
+              "score": 8.33025666829217
+            },
+            {
+              "id": "xarray.core.computation._UFuncSignature.__str__",
+              "score": 8.290611538495492
+            },
+            {
+              "id": "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_common_coord_when_datavars_minimal",
+              "score": 8.281537475962917
+            },
+            {
+              "id": "xarray.core.formatting.inline_sparse_repr",
+              "score": 8.259868956733538
+            },
+            {
+              "id": "xarray.backends.netcdf3.is_valid_nc3_name",
+              "score": 8.25954551954834
+            },
+            {
+              "id": "xarray.tests.test_backends.CFEncodedBase.test_explicitly_omit_fill_value_via_encoding_kwarg",
+              "score": 8.22626642583083
+            },
+            {
+              "id": "xarray.core.dtypes",
+              "score": 8.20747895905667
+            },
+            {
+              "id": "xarray.tests.test_dask.test_make_meta",
+              "score": 8.20177789304623
+            },
+            {
+              "id": "xarray.conventions.ensure_dtype_not_object",
+              "score": 8.194220382209513
+            },
+            {
+              "id": "xarray.core.alignment._broadcast_helper",
+              "score": 8.166368236458517
+            }
+          ],
+          "scored_documents": 4213,
+          "seconds": 0.007716299998719478
+        }
+      ],
+      "order": [
+        "xarray.core.combine._old_auto_combine",
+        "xarray.core.combine._nested_combine",
+        "xarray.core.concat._dataset_concat",
+        "xarray.core.combine._combine_1d",
+        "xarray.core.concat._dataarray_concat",
+        "xarray.core.combine._auto_concat",
+        "xarray.core.combine.auto_combine",
+        "xarray.core.concat.concat",
+        "xarray.core.concat",
+        "xarray.core.combine.combine_by_coords",
+        "xarray.core.combine.combine_nested",
+        "xarray.core.dataset.Dataset.combine_first",
+        "xarray.core.merge.merge_coords",
+        "xarray.core.combine._combine_nd",
+        "xarray.core.ops.fillna",
+        "xarray.core.dataset.Dataset.merge",
+        "xarray.core.concat._calc_concat_over",
+        "xarray.core.combine._combine_all_along_first_dim",
+        "xarray.core.merge.merge_core",
+        "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw",
+        "xarray.core.concat._calc_concat_over.process_subset_opt",
+        "xarray.tests.test_concat.TestConcatDataset.test_concat_fill_value",
+        "xarray.core.dataset.Dataset.fillna",
+        "xarray.core.computation.apply_dataset_vfunc",
+        "xarray.tests.test_concat.TestConcatDataArray.test_concat_fill_value",
+        "xarray.tests.test_dataset.TestDataset.test_binary_op_join_setting",
+        "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_open_mfdataset_does_same_as_concat",
+        "xarray.tests.test_concat.TestConcatDataArray",
+        "xarray.core.dataset.Dataset._calculate_binary_op.apply_over_both",
+        "xarray.core.groupby.GroupBy.fillna",
+        "xarray.tests.test_dataset.TestDataset.test_align_fill_value",
+        "xarray.core.dataarray.DataArray.combine_first",
+        "xarray.core.dataset.Dataset._calculate_binary_op",
+        "xarray.core.computation.apply_ufunc",
+        "xarray.core.combine._dimension_coords_exist",
+        "xarray.core.computation.apply_dict_of_variables_vfunc",
+        "xarray.core.alignment",
+        "xarray.core.dataarray.DataArray.fillna",
+        "xarray.core.merge.merge",
+        "xarray.tests.test_concat.TestConcatDataset.test_concat_errors",
+        "xarray.tests.test_combine.TestAutoCombineOldAPI.test_auto_combine_fill_value",
+        "xarray.tests.test_concat",
+        "xarray.tests.test_concat.TestConcatDataset",
+        "xarray.tests.test_combine.TestNestedCombine.test_combine_nested_fill_value",
+        "xarray.core.dataarray.DataArray.reindex_like",
+        "xarray.tests.test_dask.TestDataArrayAndDataset.test_concat_loads_variables",
+        "xarray.core.merge.dataset_merge_method",
+        "xarray.core.dataset.Dataset.reindex_like",
+        "xarray.tests.test_computation.test_dataset_join",
+        "xarray.core.combine._requires_concat_and_merge",
+        "xarray.tests.test_concat.TestConcatDataset.test_concat_join_kwarg",
+        "xarray.core.dataset.Dataset.drop_dims",
+        "xarray.core.alignment.align",
+        "xarray.tests.test_concat.TestConcatDataArray.test_concat_join_kwarg",
+        "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_open_mfdataset_exact_join_raises_error",
+        "xarray.core.alignment.deep_align",
+        "xarray.coding.variables.CFMaskCoder.decode",
+        "xarray.tests.test_combine.TestNestedCombine",
+        "xarray.backends.api.open_mfdataset",
+        "xarray.core.variable.Variable.concat",
+        "xarray.coding.variables.CFMaskCoder",
+        "xarray.conventions.decode_cf_variables",
+        "xarray.tests.test_combine.TestCombineND",
+        "xarray.core.dataset.Dataset.shift",
+        "xarray.tests.test_combine.TestCombineND.test_concat_only_first_dim",
+        "xarray.core.dataset.Dataset.dropna",
+        "xarray.core.options",
+        "xarray.tests.test_combine.TestCombineND.test_concat_once",
+        "xarray.conventions.decode_cf",
+        "xarray.tests.test_concat.test_concat_compat",
+        "xarray.core.dataarray.DataArray.reindex",
+        "xarray.core.dataset.Dataset.reindex",
+        "xarray.tests.test_concat.TestConcatDataArray.test_concat",
+        "xarray.tests.test_combine.TestCombineAuto",
+        "xarray.core.formatting.diff_dataset_repr",
+        "xarray.core.ops.where_method",
+        "xarray.core.variable.IndexVariable.concat",
+        "xarray.tests.test_dataarray.TestDataArray.test_binary_op_join_setting",
+        "xarray.core.alignment.reindex_variables",
+        "xarray.tests.test_concat.TestConcatDataset.test_concat_constant_index",
+        "xarray.tests.test_options",
+        "xarray.core.dataset.Dataset.bfill",
+        "xarray.tests.test_options.TestAttrRetention.test_concat_attr_retention",
+        "xarray.core.variable.concat",
+        "xarray.tests.test_concat.TestConcatDataset.test_concat_dim_precedence",
+        "xarray.core.dataset.Dataset.ffill",
+        "xarray.core.groupby",
+        "xarray.tests.test_concat.TestConcatDataset.test_concat_data_vars",
+        "xarray.core.merge.merge_data_and_coords",
+        "xarray.tests.test_dataset.TestDataset.test_drop_variables",
+        "xarray.backends.zarr.open_zarr",
+        "xarray.core.dataset.Dataset.sortby",
+        "xarray.tests.test_computation.test_dataset_join.add",
+        "xarray.tests.test_sparse.TestSparseDataArrayAndDataset.test_dataset_repr",
+        "xarray.coding.variables.CFMaskCoder.encode",
+        "xarray.core.rolling.DatasetRolling.construct",
+        "xarray.backends.api.open_dataset",
+        "xarray.tests.test_dataarray.TestDataArray.test_reindex_fill_value",
+        "xarray.core.dataarray.DataArray.shift",
+        "xarray.tests.test_combine.TestCombineAuto.test_combine_coords_join_exact",
+        "xarray.tests.test_combine.TestNestedCombine.test_invalid_hypercube_input",
+        "xarray.core.dtypes.get_fill_value",
+        "xarray.core.groupby._dummy_copy",
+        "xarray.tests.test_combine.TestNestedCombine.test_combine_nested_join_exact",
+        "xarray.backends.api.open_dataarray",
+        "xarray.tests.test_dataarray.TestDataArray.test_shift",
+        "xarray.tests.test_sparse.TestSparseDataArrayAndDataset.test_concat",
+        "xarray.core.concat._parse_datasets",
+        "xarray.tests.test_missing.test_interpolate_pd_compat",
+        "asv_bench.benchmarks.combine.Combine",
+        "xarray.tests.test_combine.TestNestedCombine.test_combine_nested_missing_data_new_dim",
+        "xarray.tests.test_conventions.TestEncodeCFVariable.test_incompatible_attributes",
+        "xarray.tests.test_dataset.TestDataset.test_shift",
+        "xarray.tests.test_missing.test_interpolate_pd_compat_non_uniform_index",
+        "xarray.core.variable.IndexVariable",
+        "xarray.conventions.cf_decoder",
+        "xarray.core.combine",
+        "xarray.core.alignment._get_joiner",
+        "xarray.conventions.ensure_dtype_not_object",
+        "xarray.tests.test_dataset.TestDataset.test_constructor_auto_align",
+        "xarray.tests.test_dataset.TestDataset.test_reindex_fill_value",
+        "xarray.core.rolling.DatasetRolling._dataset_implementation",
+        "xarray.core.variable.Variable.shift",
+        "xarray.core.concat._dataset_concat.ensure_common_dims",
+        "xarray.core.missing.NumpyInterpolator.__init__",
+        "asv_bench.benchmarks.combine",
+        "xarray.tests.test_combine.TestTileIDsFromNestedList.test_ignore_empty_list",
+        "xarray.core.missing.interp_na",
+        "xarray.coding.variables._apply_mask",
+        "xarray.tests.test_merge.TestMergeMethod.test_merge_fill_value",
+        "xarray.tests.test_dataset.TestDataset.test_reindex_like_fill_value",
+        "xarray.tests.test_combine.TestCombineAuto.test_combine_coords_join",
+        "xarray.core.dataset.Dataset.equals",
+        "xarray.tests.test_combine.TestNestedCombine.test_combine_nested_join",
+        "xarray.core.dtypes.maybe_promote",
+        "xarray.core.computation._unpack_dict_tuples",
+        "xarray.core.dataset.merge_indexes",
+        "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_common_coord_when_datavars_minimal",
+        "xarray.core.dataset.Dataset._get_indexers_coords_and_indexes",
+        "xarray.core.options.set_options",
+        "xarray.core.computation.apply_dataarray_vfunc",
+        "xarray.core.missing",
+        "xarray.core.dataset.split_indexes",
+        "xarray.core.formatting._diff_mapping_repr",
+        "xarray.backends.netCDF4_._ensure_fill_value_valid",
+        "xarray.core.missing.NumpyInterpolator",
+        "xarray.tests.test_variable.TestVariable.test_shift",
+        "xarray.backends.zarr.ZarrStore.open_store_variable",
+        "xarray.tests.test_options.test_invalid_option_raises",
+        "xarray.tests.test_backends.CFEncodedBase.test_default_fill_value",
+        "xarray.core.dataset.Dataset.data_vars",
+        "xarray.core.dataset.Dataset.from_dict",
+        "xarray.core.combine._infer_concat_order_from_coords",
+        "xarray.core.missing.ScipyInterpolator.__init__",
+        "xarray.coding.variables.UnsignedIntegerCoder.encode",
+        "xarray.coding.variables.UnsignedIntegerCoder",
+        "xarray.core.alignment._broadcast_helper",
+        "xarray.coding.variables.UnsignedIntegerCoder.decode",
+        "xarray.tests.test_backends.TestOpenMFDatasetWithDataVarsAndCoordsKw.test_invalid_data_vars_value_should_fail",
+        "xarray.core.missing.SplineInterpolator",
+        "xarray.core.formatting.dataset_repr",
+        "xarray.tests.test_options.TestAttrRetention",
+        "xarray.core.missing.SplineInterpolator.__init__",
+        "xarray.tests.test_combine.TestAutoCombineOldAPI",
+        "xarray.core.groupby.DataArrayGroupBy._concat_shortcut",
+        "xarray.tests.test_options.test_arithmetic_join",
+        "xarray.core.missing.ScipyInterpolator",
+        "xarray.core.dataset.Dataset._all_compat",
+        "xarray.tests.test_merge.TestMergeMethod",
+        "xarray.core.dataset.Dataset.to_array",
+        "xarray.core.dataset.Dataset._set_sparse_data_from_dataframe",
+        "xarray.core.dataset.Dataset.from_dataframe",
+        "xarray.core.merge.merge_collected",
+        "xarray.conventions.cf_encoder",
+        "xarray.core.dataset.Dataset.__init__",
+        "xarray.core.alignment._broadcast_helper._broadcast_dataset",
+        "xarray.core.formatting.diff_array_repr",
+        "xarray.core.indexing.create_mask",
+        "xarray.tests.test_dask.TestToDaskDataFrame.test_to_dask_dataframe",
+        "xarray.tests.test_conventions.test_decode_cf_with_conflicting_fill_missing_value",
+        "xarray.core.dtypes",
+        "xarray.tests.test_dask.TestToDaskDataFrame.test_to_dask_dataframe_2D",
+        "xarray.core.merge._get_priority_vars_and_indexes",
+        "xarray.core.rolling.DatasetRolling._counts",
+        "xarray.tests.test_dask.TestToDaskDataFrame",
+        "xarray.tests.test_backends.TestDataArrayToNetCDF.test_open_dataarray_options",
+        "xarray.core.dataarray.DataArray.interpolate_na",
+        "xarray.core.merge._assert_compat_valid",
+        "xarray.core.dataarray.DataArray.dropna",
+        "xarray.tests.test_merge.TestMergeMethod.test_merge_no_conflicts",
+        "xarray.core.dataset.Dataset._replace_vars_and_dims",
+        "xarray.core.resample.Resample.nearest",
+        "xarray.tests.test_merge.TestMergeFunction",
+        "xarray.core.options._warn_on_setting_enable_cftimeindex",
+        "xarray.tests.test_dataset.TestDataset.test_to_and_from_dict",
+        "xarray.core.dataset.Dataset.interpolate_na",
+        "xarray.tests.test_computation.test_broadcast_compat_data_1d",
+        "xarray.tests.test_merge.TestMergeFunction.test_merge_no_conflicts_single_var",
+        "xarray.tests.test_computation.test_apply_exclude",
+        "asv_bench.benchmarks.combine.Combine.setup"
+      ],
+      "retrieval_calls": 3,
+      "index_nodes": 4360,
+      "scored_documents": 10468,
+      "source_chars_read": 2669605,
+      "shared_index_seconds": 2.2439448999994056
+    }
+  ]
+}

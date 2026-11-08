@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "skill_bytes": 41346203,
+  "files": {
+    "skills/ranker/SKILL.md": "f2edaa3f534687c9c5fe94ad05109ab9e4d208a203be232fb75b80ec6652ead3",
+    "skills/ranker/assets/encoder-model-card.md": "ddb964361a55c6e5dfca6361615854b260c9c960205d04c7520151aaa1d75837",
+    "skills/ranker/assets/model-notice.md": "87c9ee0ba75764d1752e11bd7d92c7dc2ed66f922de899f0ea742d9f0864a666",
+    "skills/ranker/assets/ranker-full.json": "bdec797342ef79b485b7ab9253b46262b6a895e4bf27f35e955820bbdfc2d00b",
+    "skills/ranker/assets/ranker-lexical.json": "99193109536da6542a7454d264b0ec51fb3da23e4f6cd7e7ec21536c37840850",
+    "skills/ranker/scripts/dense_encoder.py": "9c9666676063e90cdace9ee6d971594bc612f1b5d6d999d12aec9be8f55f64ac",
+    "skills/ranker/scripts/localization_features.py": "cc5f6ee125c4e09a4025d9f0cb2267942eee9610d444b84ee69fe76b331b637e",
+    "skills/ranker/scripts/localize.py": "31a4fb4fe6219cfb854a8d82b19d6ede2a412d16be6c1d0b190b78ca16d6c8d4",
+    "skills/ranker/scripts/tree_predict.py": "3651f2e20dd7ff7b0b8e4346238f59eeec3e5a81f665fd6e3c7f7238d393e1b2",
+    "skills/ranker/assets/encoder/config.json": "094f8e891b932f2000c92cfc663bac4c62069f5d8af5b5278c4306aef3084750",
+    "skills/ranker/assets/encoder/quantization.json": "c60b3861a490cf5a6f6f06e937657c4dba7116c4d6b4c252addc0c114f2ab77d",
+    "skills/ranker/assets/encoder/special_tokens_map.json": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+    "skills/ranker/assets/encoder/tokenizer.json": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+    "skills/ranker/assets/encoder/tokenizer_config.json": "9261e7d79b44c8195c1cada2b453e55b00aeb81e907a6664974b4d7776172ab3",
+    "skills/ranker/assets/encoder/vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+    "skills/ranker/assets/encoder/weights-int8.txt": "fddac1f83f9ba8b98a549219c379c4783b77d516381c6ddbc3eba294c4b345cb",
+    "skills/ranker/scripts/experiments/buildgraph.py": "935d20fa8de473a2bbc8ead95d6bf3d09600d0a7c28da0690d38d2c3d7da2ba0",
+    "skills/ranker/scripts/experiments/retrieve.py": "4d9167c03ac006a83c83786818d1211c8ba0cbc1cfd50a1422ffa20ead1f880c",
+    "skills/ranker/scripts/experiments/symbols.py": "c780e76779a74294cf6b21eb6b1717d4d96aa34e57746dbe484983b7ec3a41f7",
+    "skills/ranker/scripts/experiments/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "agent.yaml": "e0a3ff221f0d1ca41387af8333cd4997058f576396c5875dea36c9fa2fd59e38",
+    "prompts/system.md": "8bcfcc928beca5acec4623be68ed90293d061625795f29c8e98c7bf3fd6e25eb",
+    "configs/sampling.yaml": "b20e9403f60b2f347b62b570a220934b062b388090c6a96a35bca945c42b79f9",
+    "eval_config.yaml": "ea2a9fac0d045b1664f7aa0e73c07014ea4f9cfd0ae7b9601c5d72b09687fd9c"
+  },
+  "encoder_variant": "per-row INT8, dequantized to FP32 CPU; differs from paper saved FP16 encoder",
+  "requires": [
+    "numpy",
+    "torch",
+    "transformers",
+    "tokenizers"
+  ],
+  "training_repo_policy": "Excluded all four official public competition repositories",
+  "status": "experimental_not_officially_submitted",
+  "local_integration": {
+    "task_id": "psf__requests-4718",
+    "source_snapshot_sha256": "3b1fef15654c2dd7c2d094fd72b1b83e36cf930c64269148f16410b371828946",
+    "feature_values_matched": 3200,
+    "candidate_ids_exact_vs_current_source": true,
+    "saved_candidate_position_changes": 2,
+    "encoder_modes": [
+      "original-fp32-cpu",
+      "per-row-int8-dequantized-fp32-cpu"
+    ],
+    "max_dense_score_delta": 0.0037000000000000366,
+    "mean_dense_score_delta": 0.001191500000000001,
+    "original_top10": [
+      2,
+      12,
+      37,
+      3,
+      1,
+      151,
+      7,
+      5,
+      100,
+      28
+    ],
+    "compact_top10": [
+      2,
+      12,
+      37,
+      3,
+      1,
+      151,
+      7,
+      5,
+      100,
+      28
+    ],
+    "top10_overlap": 10,
+    "original_encoder_seconds": 21.60900000000038,
+    "compact_encoder_seconds": 18.57799999999952,
+    "scope": "One historical task, no repair evaluation; original FP32 CPU vs row-INT8 reconstructed FP32"
+  },
+  "training_manifest_sha256": "97df5def5159d2cd487ae41f5ae5b5e6c5bf282dd33301177646a7aea195d4ff",
+  "zip_sha256": "769066b93eded87898156aa7facfaae0bf2b4709346539c9b53b4680c3cfcd31"
+}

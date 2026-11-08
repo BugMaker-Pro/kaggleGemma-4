@@ -1,0 +1,34 @@
+{
+  "request_sha256": "0e14e1c4d58eef1cc50242c59e8e2e6da8d11e7da6e7bcff4f941e833162e464",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "received_utc": "2026-11-02T15:53:39.285174+00:00",
+  "seconds": 1.4359236000000237,
+  "response": {
+    "id": "5a8adf62-d056-4be4-81a2-203f7a695cc6",
+    "object": "chat.completion",
+    "created": 1793634816,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\": [\"PolyFit _fit_predict np.polyfit dropna missing data regression.py\", \"seaborn PolyFit missing values LinAlgError SVD did not converge dropna\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1527,
+      "completion_tokens": 43,
+      "total_tokens": 1570,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 1399
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

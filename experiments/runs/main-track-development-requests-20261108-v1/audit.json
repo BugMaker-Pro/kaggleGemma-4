@@ -1,0 +1,348 @@
+{
+  "passed": true,
+  "checks": 60,
+  "scope": "Development batch only; not a confirmatory performance estimate",
+  "arms": {
+    "baseline": {
+      "tasks": 3,
+      "resolved": 1,
+      "recorded_errors": 2
+    },
+    "evidence": {
+      "tasks": 3,
+      "resolved": 1,
+      "recorded_errors": 2
+    },
+    "evidence_graph": {
+      "tasks": 3,
+      "resolved": 1,
+      "recorded_errors": 2
+    }
+  },
+  "results": [
+    {
+      "arm": "baseline",
+      "task_id": "requests_7502",
+      "resolved": false,
+      "test_exit_code": 1,
+      "tool_calls": 24,
+      "duration_seconds": 183.4984667729999,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "f3ade418f56965ef922529e8b3a9e536548e3e4486912b76c0b560b3ed0187ec",
+      "patch_chars": 1576,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "run_command": 9,
+          "read_file": 9,
+          "write_file": 3,
+          "edit_file": 3
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": 112.76330924034119,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [
+          "repro.py",
+          "repro2.py"
+        ],
+        "tool_errors": {
+          "FileWriteError": 1,
+          "FileEditError": 2
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 205034,
+          "total_completion_tokens": 7515,
+          "total_cached_tokens": 0,
+          "total_tokens": 212549,
+          "total_steps": 26
+        }
+      }
+    },
+    {
+      "arm": "baseline",
+      "task_id": "requests_7433",
+      "resolved": true,
+      "test_exit_code": 0,
+      "tool_calls": 21,
+      "duration_seconds": 287.462824632,
+      "error": null,
+      "patch_sha256": "4ca9795049fc679c1b60c4f32e561b8018529633e79d2dd7b2a3fca87b1ff31e",
+      "patch_chars": 584,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "run_command": 11,
+          "read_file": 9,
+          "edit_file": 1,
+          "submit_patch": 1
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": 43.30810189247131,
+        "explicit_submit": true,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {},
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 198147,
+          "total_completion_tokens": 7220,
+          "total_cached_tokens": 0,
+          "total_tokens": 205367,
+          "total_steps": 24
+        }
+      }
+    },
+    {
+      "arm": "baseline",
+      "task_id": "requests_7205",
+      "resolved": false,
+      "test_exit_code": 1,
+      "tool_calls": 20,
+      "duration_seconds": 184.23383337000018,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "bab2d3536674615c9bd501cc0670f509f150b8d01c6518bcbe7c02177e46714d",
+      "patch_chars": 343,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "run_command": 17,
+          "read_file": 2,
+          "write_file": 1
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": null,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {
+          "FileWriteError": 1,
+          "CommandError": 14
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 188557,
+          "total_completion_tokens": 10327,
+          "total_cached_tokens": 0,
+          "total_tokens": 198884,
+          "total_steps": 22
+        }
+      }
+    },
+    {
+      "arm": "evidence",
+      "task_id": "requests_7502",
+      "resolved": false,
+      "test_exit_code": 1,
+      "tool_calls": 23,
+      "duration_seconds": 182.68655856100008,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "c23386efaf480d0cf3ff059c793a869cebd35725f7bf31797ad76f15a618fb67",
+      "patch_chars": 1116,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "run_command": 9,
+          "read_file": 10,
+          "edit_file": 4
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": 113.934246301651,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [
+          "reproduce_issue.py"
+        ],
+        "tool_errors": {
+          "CommandError": 3,
+          "FileEditError": 3
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 202360,
+          "total_completion_tokens": 6886,
+          "total_cached_tokens": 0,
+          "total_tokens": 209246,
+          "total_steps": 27
+        }
+      }
+    },
+    {
+      "arm": "evidence",
+      "task_id": "requests_7433",
+      "resolved": true,
+      "test_exit_code": 0,
+      "tool_calls": 27,
+      "duration_seconds": 286.56824189300005,
+      "error": null,
+      "patch_sha256": "4ca9795049fc679c1b60c4f32e561b8018529633e79d2dd7b2a3fca87b1ff31e",
+      "patch_chars": 584,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "run_command": 12,
+          "read_file": 13,
+          "edit_file": 1,
+          "write_file": 1
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": 24.262945413589478,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {
+          "FileWriteError": 1,
+          "CommandError": 1
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 265756,
+          "total_completion_tokens": 7768,
+          "total_cached_tokens": 0,
+          "total_tokens": 273524,
+          "total_steps": 29
+        }
+      }
+    },
+    {
+      "arm": "evidence",
+      "task_id": "requests_7205",
+      "resolved": false,
+      "test_exit_code": -1,
+      "tool_calls": 4,
+      "duration_seconds": 180.96182427999997,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "patch_chars": 0,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "run_command": 3,
+          "read_file": 1
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": null,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {
+          "CommandError": 1
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 24393,
+          "total_completion_tokens": 7863,
+          "total_cached_tokens": 0,
+          "total_tokens": 32256,
+          "total_steps": 6
+        }
+      }
+    },
+    {
+      "arm": "evidence_graph",
+      "task_id": "requests_7502",
+      "resolved": false,
+      "test_exit_code": -1,
+      "tool_calls": 15,
+      "duration_seconds": 180.94336720799993,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "patch_chars": 0,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "run_command": 8,
+          "read_file": 7
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": null,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {
+          "CommandError": 2
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 129392,
+          "total_completion_tokens": 7099,
+          "total_cached_tokens": 0,
+          "total_tokens": 136491,
+          "total_steps": 19
+        }
+      }
+    },
+    {
+      "arm": "evidence_graph",
+      "task_id": "requests_7433",
+      "resolved": true,
+      "test_exit_code": 0,
+      "tool_calls": 30,
+      "duration_seconds": 286.66342568899995,
+      "error": null,
+      "patch_sha256": "4ca9795049fc679c1b60c4f32e561b8018529633e79d2dd7b2a3fca87b1ff31e",
+      "patch_chars": 584,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "run_command": 18,
+          "read_file": 12,
+          "edit_file": 1
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": 28.49716019630432,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {
+          "CommandError": 1,
+          "BudgetExceeded": 1
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 281765,
+          "total_completion_tokens": 3807,
+          "total_cached_tokens": 0,
+          "total_tokens": 285572,
+          "total_steps": 33
+        }
+      }
+    },
+    {
+      "arm": "evidence_graph",
+      "task_id": "requests_7205",
+      "resolved": false,
+      "test_exit_code": -1,
+      "tool_calls": 15,
+      "duration_seconds": 180.92060620000007,
+      "error": "Agent exceeded session timeout (3 min)",
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "patch_chars": 0,
+      "scope": "development_only",
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "run_command": 11,
+          "read_file": 3,
+          "write_file": 1
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": null,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [],
+        "tool_errors": {
+          "FileWriteError": 1
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 142696,
+          "total_completion_tokens": 10380,
+          "total_cached_tokens": 0,
+          "total_tokens": 153076,
+          "total_steps": 17
+        }
+      }
+    }
+  ]
+}

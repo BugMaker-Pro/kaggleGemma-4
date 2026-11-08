@@ -1,0 +1,52 @@
+{
+  "rounds": [
+    {
+      "round": "serial",
+      "concurrency": 1,
+      "wall_seconds": 365.93130260600014,
+      "resolved": 0,
+      "tasks": 2,
+      "per_task": [
+        {
+          "id": "rich_4079",
+          "resolved": false,
+          "tool_calls": 30,
+          "duration_seconds": 182.90383162800003,
+          "error": "Agent exceeded session timeout (3 min)"
+        },
+        {
+          "id": "rich_3882",
+          "resolved": false,
+          "tool_calls": 17,
+          "duration_seconds": 183.00917968699991,
+          "error": "Agent exceeded session timeout (3 min)"
+        }
+      ]
+    },
+    {
+      "round": "parallel",
+      "concurrency": 2,
+      "wall_seconds": 181.02369957299993,
+      "resolved": 0,
+      "tasks": 2,
+      "per_task": [
+        {
+          "id": "rich_4079",
+          "resolved": false,
+          "tool_calls": 30,
+          "duration_seconds": 181.0072343500001,
+          "error": "Agent exceeded session timeout (3 min)"
+        },
+        {
+          "id": "rich_3882",
+          "resolved": false,
+          "tool_calls": 19,
+          "duration_seconds": 180.98033161800004,
+          "error": "Agent exceeded session timeout (3 min)"
+        }
+      ]
+    }
+  ],
+  "scope": "Exploratory two-task throughput probe, not an effectiveness comparison",
+  "order": "serial then parallel; shared server caches may favor the second round"
+}

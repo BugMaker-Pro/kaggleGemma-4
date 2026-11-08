@@ -1,0 +1,34 @@
+{
+  "request_sha256": "bc945f6dfcbc3291470079b3d32461aa181e62e9ca2879ca2c801b6b957b3cb1",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "received_utc": "2026-11-02T15:53:23.711561+00:00",
+  "seconds": 0.9330013999997391,
+  "response": {
+    "id": "2d866e7b-d423-46c2-9747-aadd1d5d10a6",
+    "object": "chat.completion",
+    "created": 1793634801,
+    "model": "deepseek-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"queries\":[\"Django admin Inline verbose_name_plural default based on verbose_name\",\"django.contrib.admin.options InlineModelAdmin verbose_name_plural get_verbose_name\"]}"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 338,
+      "completion_tokens": 39,
+      "total_tokens": 377,
+      "prompt_tokens_details": {
+        "cached_tokens": 128
+      },
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 210
+    },
+    "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+  }
+}

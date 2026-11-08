@@ -1,0 +1,13 @@
+diff --git a/rich/markdown.py b/rich/markdown.py
+index 12496487..a4295971 100644
+--- a/rich/markdown.py
++++ b/rich/markdown.py
+@@ -529,7 +529,7 @@ class Markdown(JupyterMixin):
+         "th_open": TableDataElement,
+     }
+ 
+-    inlines = {"em", "strong", "code", "s"}
++    inlines = {"em", "strong", "code", "s", "emph"}
+ 
+     def __init__(
+         self,

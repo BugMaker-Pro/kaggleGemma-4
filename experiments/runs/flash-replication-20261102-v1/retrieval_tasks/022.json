@@ -1,0 +1,3674 @@
+{
+  "instance_id": "pylint-dev__pylint-7114",
+  "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+  "results": [
+    {
+      "instance_id": "pylint-dev__pylint-7114",
+      "repo": "pylint-dev/pylint",
+      "base_commit": "397c1703e8ae6349d33f7b99f45b2ccaf581e666",
+      "arm": "preplanned",
+      "status": "ok",
+      "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+      "request_sha256": "c6531d5beff7114d898cb180c2855bc335c9ce4ed339580e4e09c2f4048328eb",
+      "response_sha256": "7995d868430f9f9130ff9c469e9a82db7a621c07dc34b4f4affe4286899572dc",
+      "raw_response_sha256": "7995d868430f9f9130ff9c469e9a82db7a621c07dc34b4f4affe4286899572dc",
+      "actions": [
+        {
+          "query": "pylint F0010 parse-error Unable to load file __init__.py module same name",
+          "candidates": [
+            {
+              "id": "pylint.config.config_initialization._config_initialization",
+              "score": 20.604723453809736
+            },
+            {
+              "id": "pylint.config.config_initialization",
+              "score": 20.33187514731989
+            },
+            {
+              "id": "pylint.config.config_file_parser._ConfigurationFileParser._parse_toml_file",
+              "score": 18.782059598075264
+            },
+            {
+              "id": "tests.testutils.test_functional_testutils.test_parsing_of_pylintrc_init_hook",
+              "score": 18.77111912710501
+            },
+            {
+              "id": "pylint.utils.utils.register_plugins",
+              "score": 18.5665289280149
+            },
+            {
+              "id": "pylint.config.arguments_manager._ArgumentsManager._parse_toml",
+              "score": 18.41628416491127
+            },
+            {
+              "id": "pylint.checkers.base_checker.BaseRawFileChecker",
+              "score": 18.16289873471316
+            },
+            {
+              "id": "pylint.testutils.functional",
+              "score": 18.149770587716226
+            },
+            {
+              "id": "pylint.config.option_manager_mixin.OptionsManagerMixIn._parse_toml",
+              "score": 17.65427405759464
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.load_plugin_modules",
+              "score": 17.64575763893909
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.load_plugin_configuration",
+              "score": 16.92069775980125
+            },
+            {
+              "id": "pylint.config.config_file_parser._ConfigurationFileParser",
+              "score": 16.81649994827799
+            },
+            {
+              "id": "pylint.lint.caching",
+              "score": 16.645859327523024
+            },
+            {
+              "id": "pylint.testutils.functional.test_file.FunctionalTestFile._parse_options",
+              "score": 16.441328271684814
+            },
+            {
+              "id": "pylint.interfaces.IRawChecker",
+              "score": 16.43760771350342
+            },
+            {
+              "id": "pylint.testutils.functional.test_file.FunctionalTestFile",
+              "score": 16.16894627507991
+            },
+            {
+              "id": "tests.functional.d.deprecated.deprecated_methods_py36",
+              "score": 16.163555303369282
+            },
+            {
+              "id": "pylint.config.config_file_parser._ConfigurationFileParser.parse_config_file",
+              "score": 16.021100017367758
+            },
+            {
+              "id": "pylint.lint.pylinter._load_reporter_by_class",
+              "score": 15.996834470229578
+            },
+            {
+              "id": "pylint.config.arguments_manager._ArgumentsManager.load_config_file",
+              "score": 15.888176695252273
+            },
+            {
+              "id": "pylint.config.config_file_parser",
+              "score": 15.851258496217582
+            },
+            {
+              "id": "pylint.config.option_manager_mixin.OptionsManagerMixIn.load_config_file",
+              "score": 15.49913308771142
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._load_reporter_by_name",
+              "score": 15.371819332709661
+            },
+            {
+              "id": "pylint.config.arguments_manager._ArgumentsManager._parse_configuration_file",
+              "score": 15.28849036363807
+            },
+            {
+              "id": "tests.regrtest_data.import_package_subpackage_module",
+              "score": 15.222531019220149
+            },
+            {
+              "id": "pylint.lint.caching.save_results",
+              "score": 15.203461430595908
+            },
+            {
+              "id": "tests.test_self.TestRunTC.test_parseable_file_path",
+              "score": 14.770314403571547
+            },
+            {
+              "id": "tests.lint.unittest_lint.test_init_hooks_called_before_load_plugins",
+              "score": 14.7647266182192
+            },
+            {
+              "id": "tests.test_check_parallel.TestCheckParallelFramework.test_worker_check_sequential_checker",
+              "score": 14.748920384524538
+            },
+            {
+              "id": "pylint.testutils.functional_test_file",
+              "score": 14.597234476989122
+            },
+            {
+              "id": "pylint.testutils.lint_module_test",
+              "score": 14.51984988223049
+            },
+            {
+              "id": "pylint.lint.caching.load_results",
+              "score": 14.450486811294377
+            },
+            {
+              "id": "pylint.checkers.base.basic_checker._BasicChecker",
+              "score": 14.379018832726322
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.check_single_file_item",
+              "score": 14.374473952640493
+            },
+            {
+              "id": "pylint.testutils._primer.primer_compare_command.CompareCommand._load_json",
+              "score": 14.266432435049165
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._load_reporters",
+              "score": 14.238676428337264
+            },
+            {
+              "id": "pylint.checkers.imports.ImportsChecker._add_imported_module",
+              "score": 14.151254693809772
+            },
+            {
+              "id": "pylint.config.option_manager_mixin.OptionsManagerMixIn.read_config_file",
+              "score": 14.132663286163568
+            },
+            {
+              "id": "tests.test_self.TestRunTC.test_relative_imports",
+              "score": 14.065291363561446
+            },
+            {
+              "id": "pylint.utils.linterstats.LinterStats.init_single_module",
+              "score": 14.011173570168696
+            },
+            {
+              "id": "pylint.testutils.functional.test_file.FunctionalTestFile.__init__",
+              "score": 13.984309794988661
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.get_ast",
+              "score": 13.978248415760966
+            },
+            {
+              "id": "pylint.config.config_file_parser._ConfigurationFileParser._parse_ini_file",
+              "score": 13.966254117949825
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._get_file_descr_from_stdin",
+              "score": 13.915401677844146
+            },
+            {
+              "id": "pylint.extensions.private_import.PrivateImportChecker.same_root_dir",
+              "score": 13.834464532518972
+            },
+            {
+              "id": "tests.config.test_deprecations.TestDeprecationArgumentsManager.test_load_config_file",
+              "score": 13.789790737601567
+            },
+            {
+              "id": "pylint.typing.FileItem",
+              "score": 13.772349258993703
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._check_file",
+              "score": 13.704560025205794
+            },
+            {
+              "id": "pylint.lint.expand_modules.expand_modules",
+              "score": 13.635907215412855
+            },
+            {
+              "id": "pylint.config.arguments_manager._ArgumentsManager._load_default_argument_values",
+              "score": 13.630740215427679
+            },
+            {
+              "id": "tests.functional.i.invalid.invalid_exceptions.invalid_exceptions_raised.reusing_same_name_picks_the_latest_raised_value",
+              "score": 13.571892575116756
+            },
+            {
+              "id": "pylint.config.arguments_manager._ArgumentsManager.read_config_file",
+              "score": 13.553714854471835
+            },
+            {
+              "id": "pylint.testutils.lint_module_test.LintModuleTest",
+              "score": 13.521935930512061
+            },
+            {
+              "id": "tests.functional.n.no.no_member",
+              "score": 13.393667900456949
+            },
+            {
+              "id": "pylint.testutils.lint_module_test.LintModuleTest.__init__",
+              "score": 13.391193021253383
+            },
+            {
+              "id": "pylint.config.exceptions._UnrecognizedOptionError",
+              "score": 13.375885862128314
+            },
+            {
+              "id": "pylint.testutils.functional.lint_module_output_update.LintModuleOutputUpdate.__init__",
+              "score": 13.368913530050747
+            },
+            {
+              "id": "pylint.config.find_default_config_files",
+              "score": 13.271259712964357
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.set_current_module",
+              "score": 13.248555881180133
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.generate_reports",
+              "score": 13.210592225252363
+            },
+            {
+              "id": "tests.functional.n.non_ascii_import.non_ascii_import",
+              "score": 13.17079430275581
+            },
+            {
+              "id": "pylint.pyreverse.inspector.Linker.visit_importfrom",
+              "score": 13.153806893246454
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._check_astroid_module",
+              "score": 13.062105928950919
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._iterate_file_descrs",
+              "score": 12.791064890732699
+            },
+            {
+              "id": "tests.testutils.test_functional_testutils",
+              "score": 12.756110994925569
+            },
+            {
+              "id": "tests.lint.unittest_lint.test_load_plugin_config_file",
+              "score": 12.747543284882564
+            },
+            {
+              "id": "pylint.lint",
+              "score": 12.67676506669208
+            },
+            {
+              "id": "tests.testutils.test_lint_module_output_update",
+              "score": 12.542387180752979
+            },
+            {
+              "id": "pylint.config.load_results",
+              "score": 12.503053645749546
+            },
+            {
+              "id": "tests.test_pragma_parser",
+              "score": 12.495304944311258
+            },
+            {
+              "id": "pylint.pyreverse.diagrams.PackageDiagram.module",
+              "score": 12.45816566749204
+            },
+            {
+              "id": "tests.functional.n.non_ascii_import.non_ascii_import_as_okay",
+              "score": 12.442165048804185
+            },
+            {
+              "id": "pylint.typing",
+              "score": 12.387139620932505
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._check_files",
+              "score": 12.349974858831066
+            },
+            {
+              "id": "doc.exts.pylint_extensions.builder_inited",
+              "score": 12.335838958460045
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._parse_error_mode",
+              "score": 12.30153798612584
+            },
+            {
+              "id": "pylint.checkers.non_ascii_names.NonAsciiNameChecker.visit_module",
+              "score": 12.290157163748955
+            },
+            {
+              "id": "pylint.pyreverse.inspector.project_from_files",
+              "score": 12.140470072775503
+            },
+            {
+              "id": "pylint.pyreverse.inspector.Linker.visit_import",
+              "score": 11.947020025535718
+            },
+            {
+              "id": "pylint.testutils.functional.test_file",
+              "score": 11.845406939923233
+            },
+            {
+              "id": "tests.lint.test_pylinter.test_crash_in_file",
+              "score": 11.80244751708721
+            },
+            {
+              "id": "pylint.lint.run.Run.__init__",
+              "score": 11.726096414450526
+            },
+            {
+              "id": "tests.utils.unittest_ast_walker.TestASTWalker",
+              "score": 11.59043089866148
+            },
+            {
+              "id": "pylint.testutils.lint_module_test.LintModuleTest._open_expected_file",
+              "score": 11.582287008402085
+            },
+            {
+              "id": "tests.reporters.unittest_reporting.test_multi_format_output",
+              "score": 11.549385778585108
+            },
+            {
+              "id": "pylint.utils.file_state.FileState.__init__",
+              "score": 11.547505055141478
+            },
+            {
+              "id": "pylint.pyreverse.diagrams.PackageDiagram.get_module",
+              "score": 11.52150363909871
+            },
+            {
+              "id": "pylint.testutils.functional.lint_module_output_update",
+              "score": 11.513001577446891
+            },
+            {
+              "id": "doc.exts.pylint_extensions",
+              "score": 11.499460166385747
+            },
+            {
+              "id": "pylint.testutils.functional.lint_module_output_update.LintModuleOutputUpdate",
+              "score": 11.469144916713967
+            },
+            {
+              "id": "doc.exts.pylint_extensions.get_plugins_info",
+              "score": 11.456060420455831
+            },
+            {
+              "id": "tests.testutils.test_lint_module_output_update.test_lint_module_output_update_fail_before",
+              "score": 11.409357577349281
+            },
+            {
+              "id": "pylint.testutils.lint_module_test.LintModuleTest.__str__",
+              "score": 11.397439896449367
+            },
+            {
+              "id": "tests.testutils.test_lint_module_output_update.test_lint_module_output_update_effective",
+              "score": 11.374983861949419
+            },
+            {
+              "id": "doc.test_messages_documentation.LintModuleTest",
+              "score": 11.351478702766087
+            },
+            {
+              "id": "pylint.config.arguments_manager._ArgumentsManager.load_command_line_configuration",
+              "score": 11.312501863684826
+            },
+            {
+              "id": "pylint.testutils.functional.test_file.parse_python_version",
+              "score": 11.29591847606862
+            },
+            {
+              "id": "pylint.config.find_default_config_files._toml_has_config",
+              "score": 11.285471636177409
+            },
+            {
+              "id": "pylint.testutils.functional.test_file.FunctionalTestFile._file_type",
+              "score": 11.259673053798187
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.should_analyze_file",
+              "score": 11.24404930293258
+            },
+            {
+              "id": "tests.test_check_parallel.TestCheckParallelFramework.test_worker_check_single_file_no_checkers",
+              "score": 11.188764237368623
+            },
+            {
+              "id": "tests.input.similar_lines_b",
+              "score": 11.188716806608939
+            },
+            {
+              "id": "tests.test_check_parallel.TestCheckParallel",
+              "score": 11.175668879490267
+            },
+            {
+              "id": "pylint.checkers.misc.ByIdManagedMessagesChecker.process_module",
+              "score": 11.155397183432953
+            },
+            {
+              "id": "tests.test_check_parallel.TestCheckParallel.test_compare_workers_to_single_proc",
+              "score": 11.149074832672047
+            },
+            {
+              "id": "pylint.checkers.similar.SimilarChecker.process_module",
+              "score": 11.115905302168956
+            },
+            {
+              "id": "pylint.checkers.base.basic_error_checker.BasicErrorChecker._check_nonlocal_and_global.same_scope",
+              "score": 11.059481565813972
+            },
+            {
+              "id": "pylint.checkers.variables.VariablesChecker._check_all",
+              "score": 10.999856295086897
+            },
+            {
+              "id": "pylint.config.option_manager_mixin.OptionsManagerMixIn.load_command_line_configuration",
+              "score": 10.98137613315864
+            },
+            {
+              "id": "tests.functional.n.no.no_name_in_module",
+              "score": 10.918568102639938
+            },
+            {
+              "id": "pylint.checkers.variables.VariablesChecker._check_module_attrs",
+              "score": 10.911713974590928
+            },
+            {
+              "id": "pylint.config.find_default_config_files.find_default_config_files",
+              "score": 10.882577890316812
+            },
+            {
+              "id": "pylint.checkers.format.FormatChecker",
+              "score": 10.878077202664661
+            },
+            {
+              "id": "pylint.checkers.imports.ImportsChecker._check_same_line_imports",
+              "score": 10.860826142963068
+            },
+            {
+              "id": "pylint.testutils._primer.primer_compare_command.CompareCommand.run",
+              "score": 10.852190280338304
+            },
+            {
+              "id": "tests.utils.unittest_ast_walker",
+              "score": 10.851469263503937
+            },
+            {
+              "id": "pylint.checkers.imports.ImportsChecker.visit_importfrom",
+              "score": 10.803937947487618
+            },
+            {
+              "id": "pylint.checkers.logging.LoggingChecker.visit_importfrom",
+              "score": 10.729722934376458
+            },
+            {
+              "id": "tests.test_check_parallel",
+              "score": 10.72033251201099
+            },
+            {
+              "id": "tests.config.test_deprecations.TestDeprecationArgumentsManager",
+              "score": 10.719715726537922
+            },
+            {
+              "id": "tests.test_check_parallel.TestCheckParallel.test_sequential_checkers_work",
+              "score": 10.703607143191622
+            },
+            {
+              "id": "pylint.lint.run.Run",
+              "score": 10.701898019283085
+            },
+            {
+              "id": "tests.test_check_parallel.TestCheckParallel.test_invoke_single_job",
+              "score": 10.664038612622154
+            },
+            {
+              "id": "pylint.utils.utils.get_module_and_frameid",
+              "score": 10.530938422552508
+            },
+            {
+              "id": "tests.functional.f.fallback_import_enabled",
+              "score": 10.530729028617953
+            },
+            {
+              "id": "tests.functional.d.deprecated.deprecated_module_uninstalled",
+              "score": 10.52534231340446
+            },
+            {
+              "id": "tests.functional.n.non_ascii_name.non_ascii_name_staticmethod.OkayClass.public",
+              "score": 10.509740020291948
+            },
+            {
+              "id": "tests.functional.i.import_error",
+              "score": 10.486302304652389
+            },
+            {
+              "id": "tests.testutils.test_lint_module_output_update.test_lint_module_output_update_remove_useless_txt",
+              "score": 10.444649753653215
+            },
+            {
+              "id": "tests.functional.n.new_style_class_py_30.File",
+              "score": 10.436847916298314
+            },
+            {
+              "id": "pylint.config.options_provider_mixin.OptionsProviderMixIn.__init__",
+              "score": 10.391936133909871
+            },
+            {
+              "id": "pylint.utils.file_state.FileState._set_message_state_in_block",
+              "score": 10.379299331222523
+            },
+            {
+              "id": "pylint.checkers.base.basic_error_checker.BasicErrorChecker._check_nonlocal_and_global",
+              "score": 10.352815158816558
+            },
+            {
+              "id": "tests.checkers.unittest_unicode.unittest_bidirectional_unicode.TestBidirectionalUnicodeChecker.test_finds_bidirectional_unicode_that_currently_not_parsed",
+              "score": 10.338265937200772
+            },
+            {
+              "id": "tests.test_check_parallel.TestCheckParallelFramework",
+              "score": 10.336315026448379
+            },
+            {
+              "id": "pylint.pyreverse.inspector.Project.__init__",
+              "score": 10.323193762607444
+            },
+            {
+              "id": "pylint.testutils.functional.test_file.NoFileError",
+              "score": 10.30019510709369
+            },
+            {
+              "id": "tests.input.similar_lines_a",
+              "score": 10.285601549254181
+            },
+            {
+              "id": "tests.utils.unittest_ast_walker.TestASTWalker.Checker",
+              "score": 10.279505464092308
+            },
+            {
+              "id": "pylint.utils.pragma_parser.PragmaParserError",
+              "score": 10.255300484324227
+            },
+            {
+              "id": "tests.lint.test_pylinter",
+              "score": 10.243724862975576
+            },
+            {
+              "id": "pylint.checkers.misc.EncodingChecker.process_module",
+              "score": 10.24317436621671
+            },
+            {
+              "id": "pylint.lint.expand_modules",
+              "score": 10.215724273005401
+            },
+            {
+              "id": "pylint.pyreverse.diagrams.PackageDiagram",
+              "score": 10.146090419799004
+            },
+            {
+              "id": "tests.test_self.TestRunTC.test_abbreviations_are_not_supported",
+              "score": 10.142871050628937
+            },
+            {
+              "id": "tests.functional.n.new_style_class_py_30",
+              "score": 10.116926932633644
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._report_evaluation",
+              "score": 10.110106486925867
+            },
+            {
+              "id": "pylint.lint.pylinter",
+              "score": 10.10698394372783
+            },
+            {
+              "id": "tests.functional.n.new_style_class_py_30.File.__init__",
+              "score": 10.103755751954886
+            },
+            {
+              "id": "tests.functional.r.regression_02.regression_distutil_import_error_73",
+              "score": 10.087316269445243
+            },
+            {
+              "id": "tests.test_functional",
+              "score": 10.080368455480942
+            },
+            {
+              "id": "pylint.testutils.lint_module_test.LintModuleTest.error_msg_for_unequal_messages",
+              "score": 10.077637686293812
+            },
+            {
+              "id": "tests.lint.unittest_lint.test_by_module_statement_value",
+              "score": 10.068964554253737
+            },
+            {
+              "id": "tests.functional.n.no.no_member_assign_same_line",
+              "score": 10.058473951291855
+            },
+            {
+              "id": "tests.test_self.TestRunTC.test_json_report_when_file_has_syntax_error",
+              "score": 10.02863647552552
+            },
+            {
+              "id": "pylint.lint.message_state_handler._MessageStateHandler.process_tokens",
+              "score": 10.017050310674145
+            },
+            {
+              "id": "pylint.checkers.non_ascii_names.NonAsciiNameChecker",
+              "score": 10.012744945069107
+            },
+            {
+              "id": "doc.exts.pylint_messages._get_all_messages",
+              "score": 10.008930090344663
+            },
+            {
+              "id": "tests.test_check_parallel.SequentialTestChecker",
+              "score": 9.99615221952058
+            },
+            {
+              "id": "tests.config.test_deprecations",
+              "score": 9.980492534636603
+            },
+            {
+              "id": "pylint.checkers.non_ascii_names.NonAsciiNameChecker._check_name",
+              "score": 9.96142542076935
+            },
+            {
+              "id": "pylint.checkers.utils.get_import_name",
+              "score": 9.94688285564331
+            },
+            {
+              "id": "tests.extensions.test_private_import",
+              "score": 9.935660470253739
+            },
+            {
+              "id": "tests.checkers.unittest_unicode.unittest_bidirectional_unicode",
+              "score": 9.932697255014224
+            },
+            {
+              "id": "pylint.utils.file_state.FileState",
+              "score": 9.903357529702545
+            },
+            {
+              "id": "tests.checkers.unittest_spelling.TestSpellingChecker.test_more_than_one_error_in_same_line_for_same_word_on_comment",
+              "score": 9.901974454651294
+            },
+            {
+              "id": "pylint.utils.file_state",
+              "score": 9.872158016338595
+            },
+            {
+              "id": "pylint.config._pylint_config.utils.get_and_validate_output_file",
+              "score": 9.871634782724106
+            },
+            {
+              "id": "pylint.pyreverse.utils.FilterMixIn.__init__",
+              "score": 9.866295632711179
+            },
+            {
+              "id": "tests.functional.n.non_ascii_name.non_ascii_name_staticmethod",
+              "score": 9.860477443976032
+            },
+            {
+              "id": "tests.checkers.unittest_format.test_disable_global_option_end_of_line",
+              "score": 9.840773542766982
+            },
+            {
+              "id": "tests.checkers.unittest_typecheck.TestTypeCheckerOnDecorators",
+              "score": 9.803537547215916
+            },
+            {
+              "id": "pylint.config.exceptions",
+              "score": 9.772885950959237
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.check_astroid_module",
+              "score": 9.759237732480436
+            },
+            {
+              "id": "doc.test_messages_documentation.LintModuleTest.__init__",
+              "score": 9.745082908328795
+            },
+            {
+              "id": "pylint.pyreverse.writer",
+              "score": 9.731981327946034
+            },
+            {
+              "id": "tests.functional.n.no.no_member_if_statements",
+              "score": 9.719955625050462
+            },
+            {
+              "id": "pylint.checkers.variables.VariablesChecker.visit_import",
+              "score": 9.718769885136798
+            },
+            {
+              "id": "pylint.testutils.functional.test_file.FunctionalTestFile.module",
+              "score": 9.712744341806678
+            },
+            {
+              "id": "pylint.utils",
+              "score": 9.708507779550803
+            },
+            {
+              "id": "pylint.checkers.format",
+              "score": 9.705736501769216
+            },
+            {
+              "id": "pylint.checkers.variables._assigned_locally",
+              "score": 9.698373632315555
+            },
+            {
+              "id": "tests.testutils.test_lint_module_output_update.test_not_py38",
+              "score": 9.69454385946983
+            },
+            {
+              "id": "tests.test_func.gen_tests",
+              "score": 9.68265718583445
+            },
+            {
+              "id": "tests.checkers.unittest_unicode.unittest_bidirectional_unicode.TestBidirectionalUnicodeChecker",
+              "score": 9.677827461213205
+            },
+            {
+              "id": "pylint.checkers.misc.EncodingChecker",
+              "score": 9.642338550024322
+            },
+            {
+              "id": "tests.lint.unittest_lint.test_load_plugin_command_line",
+              "score": 9.627620030925481
+            },
+            {
+              "id": "tests.functional.ext.private_import.private_import",
+              "score": 9.612549888369275
+            },
+            {
+              "id": "tests.functional.n.no.no_member_assign_same_line.AssignMemberInSameLine",
+              "score": 9.604128665707643
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.load_default_plugins",
+              "score": 9.603844628649389
+            },
+            {
+              "id": "pylint.config.option_manager_mixin.OptionsManagerMixIn.load_configuration",
+              "score": 9.60039908937049
+            },
+            {
+              "id": "tests.functional.n.non_ascii_name_class.non_ascii_name_class",
+              "score": 9.574597236867053
+            },
+            {
+              "id": "tests.checkers.unittest_spelling.TestSpellingChecker.test_more_than_one_error_in_same_line_for_same_word_on_docstring",
+              "score": 9.56863643674555
+            },
+            {
+              "id": "tests.test_pragma_parser.test_simple_pragma_no_messages",
+              "score": 9.565794438705607
+            },
+            {
+              "id": "tests.regrtest_data.beyond_top_four.module.double_name",
+              "score": 9.564819551882707
+            },
+            {
+              "id": "pylint.config.arguments_manager._ArgumentsManager.load_configuration",
+              "score": 9.55395153575682
+            },
+            {
+              "id": "tests.test_functional.test_functional",
+              "score": 9.553124754131566
+            },
+            {
+              "id": "tests.checkers.unittest_unicode.unittest_bad_chars.TestBadCharsChecker.test_find_bad_chars",
+              "score": 9.548659068547662
+            },
+            {
+              "id": "pylint.checkers.variables.VariablesChecker.visit_importfrom",
+              "score": 9.537474715715414
+            },
+            {
+              "id": "pylint.config.option_manager_mixin.OptionsManagerMixIn.load_provider_defaults",
+              "score": 9.524869877844289
+            }
+          ],
+          "scored_documents": 10071,
+          "seconds": 0.018962399999509216
+        },
+        {
+          "query": "pylint module resolution package directory same name as module file",
+          "candidates": [
+            {
+              "id": "pylint.testutils.functional.test_file.FunctionalTestFile.module",
+              "score": 22.029193675173445
+            },
+            {
+              "id": "pylint.utils.utils.register_plugins",
+              "score": 20.736235410657738
+            },
+            {
+              "id": "tests.lint.unittest_lint.test_recursive_ignore",
+              "score": 20.268774434398438
+            },
+            {
+              "id": "pylint.extensions.private_import.PrivateImportChecker.same_root_dir",
+              "score": 18.870784233883786
+            },
+            {
+              "id": "pylint.pyreverse.writer.DiagramWriter.write",
+              "score": 18.058585640318867
+            },
+            {
+              "id": "tests.regrtest_data.directory.package.module",
+              "score": 17.5020233584472
+            },
+            {
+              "id": "tests.regrtest_data.directory.package.subpackage.module",
+              "score": 17.331466078841657
+            },
+            {
+              "id": "tests.regrtest_data.import_package_subpackage_module",
+              "score": 17.248635934111388
+            },
+            {
+              "id": "pylint.epylint",
+              "score": 17.026496857484734
+            },
+            {
+              "id": "tests.test_func.LintTestUsingModule._test_functionality",
+              "score": 16.97156786784143
+            },
+            {
+              "id": "pylint.pyreverse.writer",
+              "score": 16.74903930217788
+            },
+            {
+              "id": "pylint.epylint.lint",
+              "score": 16.694254089346373
+            },
+            {
+              "id": "pylint.testutils._primer.package_to_lint.PackageToLint.clone_directory",
+              "score": 16.692584501499763
+            },
+            {
+              "id": "pylint.testutils.functional.test_file.FunctionalTestFile",
+              "score": 16.210970592441196
+            },
+            {
+              "id": "pylint.pyreverse.writer.DiagramWriter",
+              "score": 15.812298710785708
+            },
+            {
+              "id": "pylint.pyreverse.diagrams.PackageDiagram.get_module",
+              "score": 15.05546905033692
+            },
+            {
+              "id": "pylint.pyreverse.diagrams.PackageDiagram",
+              "score": 14.974357075689976
+            },
+            {
+              "id": "pylint.checkers.imports.ImportsChecker._add_imported_module",
+              "score": 14.958308380097858
+            },
+            {
+              "id": "pylint.lint.expand_modules.expand_modules",
+              "score": 14.90670579181636
+            },
+            {
+              "id": "tests.pyreverse.test_inspector.test_instance_attrs_resolution",
+              "score": 14.849109873770566
+            },
+            {
+              "id": "tests.test_self.TestRunTC.test_parseable_file_path",
+              "score": 14.770245237406154
+            },
+            {
+              "id": "pylint.testutils._primer.package_to_lint.PackageToLint",
+              "score": 14.694040230334746
+            },
+            {
+              "id": "pylint.pyreverse.inspector.project_from_files",
+              "score": 14.566080206266081
+            },
+            {
+              "id": "pylint.checkers.base.basic_checker._BasicChecker",
+              "score": 14.378961354061968
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.check_single_file_item",
+              "score": 14.374425359295834
+            },
+            {
+              "id": "pylint.testutils.functional",
+              "score": 14.331084870882908
+            },
+            {
+              "id": "pylint.testutils._primer",
+              "score": 14.06230121291238
+            },
+            {
+              "id": "pylint.pyreverse.inspector.Linker.compute_module",
+              "score": 14.055998154539827
+            },
+            {
+              "id": "pylint.extensions.private_import.PrivateImportChecker.visit_importfrom",
+              "score": 14.007034490914267
+            },
+            {
+              "id": "tests.test_func",
+              "score": 13.96322675255956
+            },
+            {
+              "id": "tests.regrtest_data.directory.package",
+              "score": 13.900807350071304
+            },
+            {
+              "id": "pylint.testutils._primer.package_to_lint",
+              "score": 13.82092682098965
+            },
+            {
+              "id": "pylint.typing.FileItem",
+              "score": 13.772295363875493
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.set_current_module",
+              "score": 13.756784104394136
+            },
+            {
+              "id": "tests.testutils.test_functional_testutils",
+              "score": 13.702645269071793
+            },
+            {
+              "id": "pylint.testutils.functional.test_file.FunctionalTestFile._file_type",
+              "score": 13.666125568477051
+            },
+            {
+              "id": "pylint.modify_sys_path",
+              "score": 13.660126276757437
+            },
+            {
+              "id": "pylint.pyreverse.diagrams.PackageDiagram.module",
+              "score": 13.657754142466542
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._get_namespace_for_file",
+              "score": 13.56930923492726
+            },
+            {
+              "id": "tests.test_func.LintTestUsingModule",
+              "score": 13.56731902686391
+            },
+            {
+              "id": "tests.pyreverse.test_inspector.test_locals_assignment_resolution",
+              "score": 13.542312718035815
+            },
+            {
+              "id": "pylint.utils.utils.IsortDriver.place_module",
+              "score": 13.535242938737419
+            },
+            {
+              "id": "tests.testutils._primer.test_package_to_lint",
+              "score": 13.473698434207266
+            },
+            {
+              "id": "pylint.testutils._primer.primer_command.PrimerCommand.__init__",
+              "score": 13.379038557329508
+            },
+            {
+              "id": "tests.extensions.test_private_import",
+              "score": 13.357885711176918
+            },
+            {
+              "id": "pylint.checkers.imports.ImportsChecker.leave_module",
+              "score": 13.222942403134974
+            },
+            {
+              "id": "pylint.testutils._primer.primer_compare_command.CompareCommand",
+              "score": 12.944632668258762
+            },
+            {
+              "id": "tests.test_functional",
+              "score": 12.941428898738117
+            },
+            {
+              "id": "tests.test_check_parallel.TestCheckParallelFramework.test_worker_check_sequential_checker",
+              "score": 12.9353135001884
+            },
+            {
+              "id": "tests.test_self.TestRunTC.test_allow_import_of_files_found_in_modules_during_parallel_check",
+              "score": 12.92547941827235
+            },
+            {
+              "id": "tests.regrtest_data.package",
+              "score": 12.892481611269186
+            },
+            {
+              "id": "pylint.testutils.functional.find_functional_tests",
+              "score": 12.86130334552458
+            },
+            {
+              "id": "script.create_contributor_list",
+              "score": 12.799369754804603
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._iterate_file_descrs",
+              "score": 12.791024286108685
+            },
+            {
+              "id": "tests.testutils._primer.test_package_to_lint.test_package_to_lint",
+              "score": 12.784732489320703
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.generate_reports",
+              "score": 12.732053623209167
+            },
+            {
+              "id": "tests.primer.test_primer_stdlib",
+              "score": 12.71303555086876
+            },
+            {
+              "id": "tests.regrtest_data.package.subpackage.module",
+              "score": 12.69717824903815
+            },
+            {
+              "id": "tests.regrtest_data.directory.package.subpackage",
+              "score": 12.655247639507326
+            },
+            {
+              "id": "pylint.pyreverse.writer.DiagramWriter.get_shape_color",
+              "score": 12.566013701752615
+            },
+            {
+              "id": "doc.exts.pylint_extensions.builder_inited",
+              "score": 12.521825851290174
+            },
+            {
+              "id": "pylint.testutils._primer.primer_command",
+              "score": 12.45394380551866
+            },
+            {
+              "id": "pylint.pyreverse.diadefslib.DefaultDiadefGenerator.visit_module",
+              "score": 12.380092004246032
+            },
+            {
+              "id": "tests.config.test_per_directory_config",
+              "score": 12.34974256517523
+            },
+            {
+              "id": "pylint.testutils.functional.test_file.FunctionalTestFile.__init__",
+              "score": 12.346045384332601
+            },
+            {
+              "id": "pylint.testutils._primer.primer_compare_command",
+              "score": 12.329261689240846
+            },
+            {
+              "id": "pylint.checkers.non_ascii_names.NonAsciiNameChecker.visit_module",
+              "score": 12.290095037917268
+            },
+            {
+              "id": "pylint.pyreverse.writer.DiagramWriter.write_packages",
+              "score": 12.257179513102086
+            },
+            {
+              "id": "pylint.testutils._primer.primer_compare_command.CompareCommand._load_json",
+              "score": 12.255706171451804
+            },
+            {
+              "id": "tests.extensions.test_private_import.TestPrivateImport",
+              "score": 12.198198019839339
+            },
+            {
+              "id": "pylint.lint.expand_modules._modpath_from_file",
+              "score": 12.163706497420009
+            },
+            {
+              "id": "pylint.testutils._primer.primer_prepare_command.PrepareCommand.run",
+              "score": 12.159520669931979
+            },
+            {
+              "id": "tests.testutils._primer.test_package_to_lint.test_package_to_lint_default_value",
+              "score": 12.139278888587402
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._check_file",
+              "score": 12.133375874599169
+            },
+            {
+              "id": "tests.config.test_per_directory_config.test_fall_back_on_base_config",
+              "score": 12.052805700249548
+            },
+            {
+              "id": "tests.testutils._primer.test_primer.TestPrimer",
+              "score": 12.031797227174714
+            },
+            {
+              "id": "pylint.testutils.functional.find_functional_tests._check_functional_tests_structure",
+              "score": 12.018775781734165
+            },
+            {
+              "id": "tests.testutils._primer.test_primer.TestPrimer.__assert_expected",
+              "score": 11.990942262627096
+            },
+            {
+              "id": "pylint.pyreverse.diagrams.PackageDiagram.extract_relationships",
+              "score": 11.988950451566906
+            },
+            {
+              "id": "pylint.pyreverse.inspector.Linker.visit_import",
+              "score": 11.946968151734486
+            },
+            {
+              "id": "pylint.testutils._primer.primer_prepare_command.PrepareCommand",
+              "score": 11.925868319395015
+            },
+            {
+              "id": "pylint.pyreverse.diagrams.PackageDiagram.modules",
+              "score": 11.904051700398323
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._discover_files",
+              "score": 11.86291200534077
+            },
+            {
+              "id": "pylint.testutils._primer.package_to_lint.PackageToLint.pylintrc",
+              "score": 11.816335743468443
+            },
+            {
+              "id": "tests.primer.__main__",
+              "score": 11.794868857100026
+            },
+            {
+              "id": "pylint.testutils._primer.primer_command.PrimerCommand",
+              "score": 11.766398876748884
+            },
+            {
+              "id": "doc.exts.pylint_extensions",
+              "score": 11.717222958471288
+            },
+            {
+              "id": "pylint.testutils._primer.package_to_lint.PackageToLint.lazy_clone",
+              "score": 11.707819619623294
+            },
+            {
+              "id": "tests.test_self.TestRunTC.test_can_list_directories_without_dunder_init",
+              "score": 11.686849924768238
+            },
+            {
+              "id": "tests.primer.test_primer_external",
+              "score": 11.665570245735452
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._get_file_descr_from_stdin",
+              "score": 11.64773686054922
+            },
+            {
+              "id": "pylint.testutils._primer.primer_prepare_command",
+              "score": 11.581448337782001
+            },
+            {
+              "id": "tests.testutils.test_functional_testutils.test_parsing_of_pylintrc_init_hook",
+              "score": 11.562407715519326
+            },
+            {
+              "id": "tests.test_regr",
+              "score": 11.547192856073885
+            },
+            {
+              "id": "tests.testutils.test_lint_module_output_update",
+              "score": 11.542627742430788
+            },
+            {
+              "id": "pylint.testutils.pyreverse.get_functional_test_files",
+              "score": 11.530602045367665
+            },
+            {
+              "id": "tests.lint.unittest_expand_modules",
+              "score": 11.5262531063693
+            },
+            {
+              "id": "pylint.utils.utils.IsortDriver",
+              "score": 11.525905649989248
+            },
+            {
+              "id": "pylint.pyreverse.inspector.Linker.visit_importfrom",
+              "score": 11.512578831440754
+            },
+            {
+              "id": "pylint.testutils.lint_module_test.LintModuleTest.__str__",
+              "score": 11.397375455013453
+            },
+            {
+              "id": "tests.testutils.test_lint_module_output_update.test_lint_module_output_update_effective",
+              "score": 11.374945509174104
+            },
+            {
+              "id": "pylint.checkers.imports.ImportsChecker._check_wildcard_imports",
+              "score": 11.351834941785901
+            },
+            {
+              "id": "pylint.testutils._primer.package_to_lint.PackageToLint.paths_to_lint",
+              "score": 11.303993581987152
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.should_analyze_file",
+              "score": 11.24399158532446
+            },
+            {
+              "id": "tests.regrtest_data.directory.subdirectory.module",
+              "score": 11.210881347570108
+            },
+            {
+              "id": "tests.input.similar_lines_b",
+              "score": 11.188685558868166
+            },
+            {
+              "id": "tests.pyreverse.test_inspector",
+              "score": 11.188138556292618
+            },
+            {
+              "id": "tests.regrtest_data.precedence_test",
+              "score": 11.16114631238479
+            },
+            {
+              "id": "pylint.checkers.misc.ByIdManagedMessagesChecker.process_module",
+              "score": 11.155355350724003
+            },
+            {
+              "id": "pylint.extensions.private_import.PrivateImportChecker",
+              "score": 11.151479238521112
+            },
+            {
+              "id": "pylint.checkers.similar.SimilarChecker.process_module",
+              "score": 11.115860487544355
+            },
+            {
+              "id": "tests.regrtest_data.directory.subdirectory.subsubdirectory.module",
+              "score": 11.109217626447975
+            },
+            {
+              "id": "tests.lint.unittest_lint.test_custom_should_analyze_file",
+              "score": 11.10006886986989
+            },
+            {
+              "id": "tests.functional.ext.private_import.private_import",
+              "score": 11.08418336145351
+            },
+            {
+              "id": "tests.functional.w.wrong_import_order2",
+              "score": 11.039233636555945
+            },
+            {
+              "id": "pylint.checkers.format.FormatChecker",
+              "score": 10.878048061659566
+            },
+            {
+              "id": "pylint.checkers.imports.ImportsChecker._check_same_line_imports",
+              "score": 10.860775410777244
+            },
+            {
+              "id": "tests.testutils.test_configuration_test",
+              "score": 10.84505071724532
+            },
+            {
+              "id": "pylint.testutils._primer.primer.Primer._get_packages_to_lint_from_json",
+              "score": 10.821115190577563
+            },
+            {
+              "id": "tests.test_regr.test_package",
+              "score": 10.80535664515509
+            },
+            {
+              "id": "pylint.checkers.imports.ImportsChecker.visit_importfrom",
+              "score": 10.803906979598027
+            },
+            {
+              "id": "pylint.extensions.private_import",
+              "score": 10.798809788545007
+            },
+            {
+              "id": "doc.test_messages_documentation.get_functional_test_files_from_directory",
+              "score": 10.744114800955257
+            },
+            {
+              "id": "doc.test_messages_documentation",
+              "score": 10.714440528568465
+            },
+            {
+              "id": "tests.functional.n.non_ascii_import.non_ascii_import_as_okay",
+              "score": 10.697269678533067
+            },
+            {
+              "id": "pylint.testutils._primer.primer_compare_command.CompareCommand._create_comment_for_package",
+              "score": 10.590882354484782
+            },
+            {
+              "id": "tests.test_functional_directories",
+              "score": 10.571485802472548
+            },
+            {
+              "id": "tests.test_regr.test_check_package___init__",
+              "score": 10.55894733553881
+            },
+            {
+              "id": "tests.testutils.test_lint_module_output_update.test_lint_module_output_update_remove_useless_txt",
+              "score": 10.444610751992402
+            },
+            {
+              "id": "pylint.typing",
+              "score": 10.418442737103014
+            },
+            {
+              "id": "pylint.lint.expand_modules",
+              "score": 10.367834990557814
+            },
+            {
+              "id": "pylint.testutils.functional.find_functional_tests.get_functional_test_files_from_directory",
+              "score": 10.359129551961857
+            },
+            {
+              "id": "tests.test_self.TestRunTC.test_recursive_current_dir",
+              "score": 10.339714007227869
+            },
+            {
+              "id": "tests.test_self.TestRunTC.test_do_not_import_files_from_local_directory",
+              "score": 10.276811982006906
+            },
+            {
+              "id": "tests.test_functional_directories.test_directories",
+              "score": 10.260446132361317
+            },
+            {
+              "id": "pylint.checkers.base_checker.BaseRawFileChecker",
+              "score": 10.259228004242916
+            },
+            {
+              "id": "tests.functional.d.deprecated.deprecated_relative_import.dot_relative_import",
+              "score": 10.244395047333091
+            },
+            {
+              "id": "pylint.checkers.misc.EncodingChecker.process_module",
+              "score": 10.243123259116823
+            },
+            {
+              "id": "doc.exts.pylint_extensions.get_plugins_info",
+              "score": 10.235442808436755
+            },
+            {
+              "id": "tests.testutils.test_configuration_test.test_get_expected_output",
+              "score": 10.200820377599948
+            },
+            {
+              "id": "tests.testutils.test_pyreverse_testutils",
+              "score": 10.132607284100526
+            },
+            {
+              "id": "tests.functional.n.non_ascii_import.non_ascii_import",
+              "score": 10.120733881776312
+            },
+            {
+              "id": "tests.testutils.test_functional_testutils.test_minimal_messages_config_excluded_file",
+              "score": 10.119307619750929
+            },
+            {
+              "id": "tests.functional.d.deprecated.deprecated_relative_import.subpackage.dot_dot_relative_import",
+              "score": 10.09233078073119
+            },
+            {
+              "id": "tests.primer.test_primer_stdlib.test_primer_stdlib_no_crash",
+              "score": 10.07372903136183
+            },
+            {
+              "id": "tests.functional.i.invalid.invalid_exceptions.invalid_exceptions_raised.reusing_same_name_picks_the_latest_raised_value",
+              "score": 10.022105854463579
+            },
+            {
+              "id": "pylint.checkers.non_ascii_names.NonAsciiNameChecker",
+              "score": 10.01271628732312
+            },
+            {
+              "id": "pylint.testutils._primer.primer_run_command.RunCommand._lint_package",
+              "score": 9.998102158424532
+            },
+            {
+              "id": "pylint.checkers.non_ascii_names.NonAsciiNameChecker._check_name",
+              "score": 9.961388697281166
+            },
+            {
+              "id": "pylint.lint.caching.save_results",
+              "score": 9.961126861653732
+            },
+            {
+              "id": "pylint.interfaces.IRawChecker",
+              "score": 9.91495136538718
+            },
+            {
+              "id": "tests.test_check_parallel.TestCheckParallel.test_compare_workers_to_single_proc",
+              "score": 9.898065444271165
+            },
+            {
+              "id": "tests.functional.c.consider.consider_using_with",
+              "score": 9.890341060854494
+            },
+            {
+              "id": "pylint.config._pylint_config.utils.get_and_validate_output_file",
+              "score": 9.871593938285647
+            },
+            {
+              "id": "tests.testutils.test_lint_module_output_update.test_lint_module_output_update_fail_before",
+              "score": 9.833659994398714
+            },
+            {
+              "id": "tests.testutils._primer.test_primer.TestPrimer.test_truncated_compare",
+              "score": 9.799919298200866
+            },
+            {
+              "id": "pylint.config.find_default_config_files.find_default_config_files",
+              "score": 9.799290832435881
+            },
+            {
+              "id": "pylint.checkers.imports.ImportsChecker._record_import",
+              "score": 9.780903663677226
+            },
+            {
+              "id": "tests.functional.d.deprecated.deprecated_methods_py36",
+              "score": 9.774601513707148
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._check_files",
+              "score": 9.759855778258364
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.check_astroid_module",
+              "score": 9.75919850961749
+            },
+            {
+              "id": "pylint.checkers.variables.VariablesChecker._check_all",
+              "score": 9.73580352650915
+            },
+            {
+              "id": "pylint.pyreverse.diadefslib.DefaultDiadefGenerator",
+              "score": 9.733783445109676
+            },
+            {
+              "id": "pylint.checkers.imports.ImportsChecker._check_imports_order",
+              "score": 9.710139231082229
+            },
+            {
+              "id": "pylint.testutils._primer.primer_run_command.RunCommand.run",
+              "score": 9.698671669275175
+            },
+            {
+              "id": "pylint.checkers.variables._assigned_locally",
+              "score": 9.698327317035542
+            },
+            {
+              "id": "tests.test_func.gen_tests",
+              "score": 9.682584442871592
+            },
+            {
+              "id": "tests.lint.unittest_lint.test_lint_namespace_package_under_dir",
+              "score": 9.641936881394182
+            },
+            {
+              "id": "pylint.utils.file_state.FileState._set_message_state_in_block",
+              "score": 9.623116505133346
+            },
+            {
+              "id": "tests.primer.test_primer_external.get_packages_to_lint_from_json",
+              "score": 9.588631474228777
+            },
+            {
+              "id": "doc.exts.pylint_features.builder_inited",
+              "score": 9.587530777746844
+            },
+            {
+              "id": "pylint.lint.caching",
+              "score": 9.586250278574704
+            },
+            {
+              "id": "tests.test_check_parallel",
+              "score": 9.55797010098005
+            },
+            {
+              "id": "tests.test_functional.test_functional",
+              "score": 9.553085971191884
+            },
+            {
+              "id": "tests.test_func.__test_functionality",
+              "score": 9.508525927122575
+            },
+            {
+              "id": "tests.test_func.test_functionality",
+              "score": 9.502731630737799
+            },
+            {
+              "id": "tests.functional.n.nonlocal_and_global",
+              "score": 9.498057598748652
+            },
+            {
+              "id": "tests.config.test_functional_config_loading",
+              "score": 9.493209644476911
+            },
+            {
+              "id": "tests.extensions.test_private_import.TestPrivateImport.test_external_module",
+              "score": 9.453977789369775
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.check_single_file",
+              "score": 9.382942032153885
+            },
+            {
+              "id": "pylint.pyreverse.inspector.Project.get_module",
+              "score": 9.379352059592781
+            },
+            {
+              "id": "tests.benchmark.test_baseline_benchmarks",
+              "score": 9.36634322884092
+            },
+            {
+              "id": "pylint.pyreverse.diagrams.PackageEntity",
+              "score": 9.357244224633227
+            },
+            {
+              "id": "pylint.utils.file_state.FileState.__init__",
+              "score": 9.333110581069484
+            },
+            {
+              "id": "pylint.testutils.functional.lint_module_output_update",
+              "score": 9.316269431784916
+            },
+            {
+              "id": "pylint.testutils.lint_module_test.LintModuleTest._open_expected_file",
+              "score": 9.305222080658384
+            },
+            {
+              "id": "tests.checkers.unittest_unicode.unittest_invalid_encoding.TestInvalidEncoding.test_invalid_unicode_files",
+              "score": 9.3042477138975
+            },
+            {
+              "id": "tests.pyreverse.test_inspector.test_from_directory",
+              "score": 9.299061422979257
+            },
+            {
+              "id": "pylint.extensions.empty_comment.CommentChecker",
+              "score": 9.290663033713647
+            },
+            {
+              "id": "pylint.checkers.non_ascii_names.NonAsciiNameChecker._check_module_import",
+              "score": 9.289429410295758
+            },
+            {
+              "id": "pylint.utils.file_state.FileState",
+              "score": 9.286462294316948
+            },
+            {
+              "id": "tests.input.similar_lines_a",
+              "score": 9.266687837912526
+            },
+            {
+              "id": "doc.exts.pylint_messages._get_category_directory",
+              "score": 9.266186325874104
+            },
+            {
+              "id": "doc.exts.pylint_features",
+              "score": 9.25842811387279
+            },
+            {
+              "id": "tests.conftest",
+              "score": 9.24100814001875
+            },
+            {
+              "id": "pylint.pyreverse.writer.DiagramWriter.set_printer",
+              "score": 9.227833196045571
+            },
+            {
+              "id": "pylint.checkers.utils.is_reassigned_after_current",
+              "score": 9.178541592268338
+            },
+            {
+              "id": "tests.test_check_parallel.TestCheckParallel",
+              "score": 9.163974425948446
+            },
+            {
+              "id": "tests.test_check_parallel.TestCheckParallelFramework",
+              "score": 9.152300192741933
+            },
+            {
+              "id": "tests.lint.unittest_lint.test_import_sibling_module_from_namespace",
+              "score": 9.14797194828542
+            }
+          ],
+          "scored_documents": 4438,
+          "seconds": 0.007223599999633734
+        }
+      ],
+      "order": [
+        "pylint.utils.utils.register_plugins",
+        "pylint.testutils.functional",
+        "pylint.testutils.functional.test_file.FunctionalTestFile",
+        "pylint.lint.expand_modules.expand_modules",
+        "tests.regrtest_data.import_package_subpackage_module",
+        "tests.testutils.test_functional_testutils",
+        "tests.testutils.test_functional_testutils.test_parsing_of_pylintrc_init_hook",
+        "pylint.epylint",
+        "tests.test_self.TestRunTC.test_parseable_file_path",
+        "pylint.config.config_initialization._config_initialization",
+        "tests.testutils.test_lint_module_output_update",
+        "pylint.lint.caching",
+        "pylint.config.config_initialization",
+        "pylint.pyreverse.inspector.project_from_files",
+        "tests.test_self.TestRunTC.test_relative_imports",
+        "pylint.lint.pylinter.PyLinter.set_current_module",
+        "pylint.checkers.base_checker.BaseRawFileChecker",
+        "tests.test_self.TestRunTC.test_allow_import_of_files_found_in_modules_during_parallel_check",
+        "pylint.extensions.private_import.PrivateImportChecker.same_root_dir",
+        "pylint.epylint.lint",
+        "pylint.testutils.functional.test_file.FunctionalTestFile.__init__",
+        "tests.test_functional",
+        "tests.testutils.test_lint_module_output_update.test_lint_module_output_update_fail_before",
+        "pylint.checkers.imports.ImportsChecker._add_imported_module",
+        "pylint.checkers.base.basic_checker._BasicChecker",
+        "pylint.testutils.functional.lint_module_output_update",
+        "pylint.lint.pylinter.PyLinter.check_single_file_item",
+        "pylint.interfaces.IRawChecker",
+        "pylint.lint.pylinter.PyLinter._get_file_descr_from_stdin",
+        "tests.test_func",
+        "pylint.lint.pylinter.PyLinter._check_file",
+        "pylint.testutils.lint_module_test",
+        "pylint.lint.caching.save_results",
+        "tests.test_func.LintTestUsingModule",
+        "tests.lint.unittest_lint.test_recursive_ignore",
+        "pylint.config.config_file_parser._ConfigurationFileParser._parse_toml_file",
+        "pylint.testutils.functional.test_file.FunctionalTestFile.module",
+        "tests.test_check_parallel.TestCheckParallelFramework.test_worker_check_sequential_checker",
+        "pylint.typing.FileItem",
+        "doc.exts.pylint_extensions.builder_inited",
+        "pylint.pyreverse.diagrams.PackageDiagram.get_module",
+        "pylint.config.arguments_manager._ArgumentsManager._parse_toml",
+        "pylint.testutils.functional_test_file",
+        "pylint.testutils.lint_module_test.LintModuleTest",
+        "pylint.testutils.functional.lint_module_output_update.LintModuleOutputUpdate",
+        "pylint.config.config_file_parser",
+        "tests.extensions.test_private_import",
+        "pylint.lint.pylinter.PyLinter._load_reporters",
+        "pylint.config.config_file_parser._ConfigurationFileParser",
+        "tests.test_func.LintTestUsingModule._test_functionality",
+        "tests.test_check_parallel.TestCheckParallel.test_compare_workers_to_single_proc",
+        "tests.testutils.test_lint_module_output_update.test_lint_module_output_update_remove_useless_txt",
+        "pylint.config.option_manager_mixin.OptionsManagerMixIn._parse_toml",
+        "pylint.testutils._primer.package_to_lint.PackageToLint",
+        "pylint.pyreverse.writer",
+        "pylint.testutils._primer.primer_compare_command.CompareCommand._load_json",
+        "tests.config.test_functional_config_loading",
+        "doc.exts.pylint_extensions",
+        "pylint.testutils.lint_module_test.LintModuleTest.__init__",
+        "tests.test_check_parallel.TestCheckParallel",
+        "pylint.pyreverse.diagrams.PackageDiagram",
+        "pylint.pyreverse.diagrams.PackageDiagram.module",
+        "pylint.testutils.functional.test_file",
+        "tests.functional.n.non_ascii_import.non_ascii_import",
+        "pylint.config.find_default_config_files",
+        "tests.functional.d.deprecated.deprecated_methods_py36",
+        "tests.testutils.test_lint_module_output_update.test_lint_module_output_update_effective",
+        "pylint.lint.pylinter.PyLinter.generate_reports",
+        "pylint.lint.pylinter.PyLinter.should_analyze_file",
+        "pylint.modify_sys_path",
+        "pylint.lint.pylinter.PyLinter._iterate_file_descrs",
+        "pylint.testutils.functional.test_file.FunctionalTestFile._file_type",
+        "pylint.lint.pylinter.PyLinter._check_files",
+        "pylint.testutils._primer.package_to_lint",
+        "pylint.testutils._primer.primer_compare_command.CompareCommand",
+        "tests.test_self.TestRunTC.test_json_report_when_file_has_syntax_error",
+        "tests.testutils.test_configuration_test.test_get_expected_output",
+        "pylint.checkers.similar.SimilarChecker.process_module",
+        "tests.testutils.test_configuration_test",
+        "pylint.config.find_default_config_files.find_default_config_files",
+        "pylint.pyreverse.writer.DiagramWriter.write",
+        "tests.test_similar.TestSimilarCodeChecker",
+        "pylint.checkers.non_ascii_names.NonAsciiNameChecker.visit_module",
+        "tests.regrtest_data.directory.package.module",
+        "tests.test_check_parallel.TestCheckParallel.test_sequential_checkers_work",
+        "script.create_contributor_list",
+        "pylint.testutils.configuration_test.get_expected_output",
+        "tests.regrtest_data.directory.package.subpackage.module",
+        "tests.functional.u.unnecessary.unnecessary_ellipsis.docstring_only",
+        "pylint.lint.pylinter.PyLinter.get_ast",
+        "pylint.testutils.functional.lint_module_output_update.LintModuleOutputUpdate.__init__",
+        "tests.testutils._primer.test_primer.TestPrimer.__assert_expected",
+        "pylint.pyreverse.inspector.Linker.visit_importfrom",
+        "pylint.pyreverse.inspector.Linker.visit_import",
+        "pylint.checkers.non_ascii_names.NonAsciiNameChecker",
+        "pylint.lint.pylinter.PyLinter.load_plugin_modules",
+        "tests.functional.u.unnecessary.unnecessary_pass.docstring_only",
+        "pylint.testutils._primer.primer_compare_command",
+        "pylint.lint.run.Run",
+        "pylint.lint.pylinter.PyLinter.load_plugin_configuration",
+        "pylint.lint.run.Run.__init__",
+        "pylint.testutils.configuration_test.get_expected_or_default",
+        "pylint.utils.linterstats.LinterStats.init_single_module",
+        "pylint.testutils.functional.find_functional_tests",
+        "tests.functional.i.invalid.invalid_exceptions.invalid_exceptions_raised.reusing_same_name_picks_the_latest_raised_value",
+        "pylint.testutils._primer.package_to_lint.PackageToLint.clone_directory",
+        "tests.test_similar",
+        "pylint.testutils.pyreverse.get_functional_test_files",
+        "pylint.config.help_formatter._HelpFormatter.get_long_description",
+        "pylint.testutils.functional.test_file.FunctionalTestFile._parse_options",
+        "tests.testutils._primer.test_primer.TestPrimer",
+        "pylint.pyreverse.writer.DiagramWriter",
+        "pylint.lint.pylinter.PyLinter._check_astroid_module",
+        "tests.benchmark.test_baseline_benchmarks.TestEstablishBaselineBenchmarks",
+        "tests.functional.n.non_ascii_import.non_ascii_import_as_okay",
+        "tests.test_self.TestRunTC.test_do_not_import_files_from_local_directory",
+        "pylint.config.config_file_parser._ConfigurationFileParser.parse_config_file",
+        "pylint.testutils.lint_module_test.LintModuleTest.__str__",
+        "pylint.typing",
+        "tests.primer.test_primer_stdlib",
+        "tests.extensions.test_private_import.TestPrivateImport",
+        "pylint.lint.pylinter._load_reporter_by_class",
+        "pylint.config.arguments_manager._ArgumentsManager.load_config_file",
+        "script.bump_changelog",
+        "tests.pyreverse.test_inspector.test_instance_attrs_resolution",
+        "tests.test_functional.test_functional",
+        "tests.lint.test_pylinter.test_crash_in_file",
+        "tests.input.similar_lines_b",
+        "pylint.config.option_manager_mixin.OptionsManagerMixIn.load_config_file",
+        "tests.checkers.unittest_unicode.unittest_bad_chars.TestBadCharsChecker.test_bad_chars_that_would_currently_crash_python",
+        "tests.functional.i.import_error",
+        "pylint.checkers.utils.collect_string_fields",
+        "pylint.lint.pylinter.PyLinter._load_reporter_by_name",
+        "pylint.checkers.misc.ByIdManagedMessagesChecker.process_module",
+        "tests.config.test_per_directory_config",
+        "pylint.config.arguments_manager._ArgumentsManager._parse_configuration_file",
+        "script.bump_changelog.create_new_newsfile_if_necessary",
+        "doc.exts.pylint_extensions.get_plugins_info",
+        "pylint.testutils.configuration_test",
+        "pylint.testutils._primer",
+        "pylint.checkers.format.FormatChecker",
+        "pylint.checkers.imports.ImportsChecker._check_same_line_imports",
+        "pylint.pyreverse.inspector.Linker.compute_module",
+        "tests.lint.unittest_lint.test_init_hooks_called_before_load_plugins",
+        "pylint.extensions.private_import.PrivateImportChecker.visit_importfrom",
+        "tests.checkers.unittest_similar.test_ignore_signatures_class_methods_fail",
+        "pylint.checkers.imports.ImportsChecker.visit_importfrom",
+        "tests.lint.test_pylinter",
+        "pylint.testutils.lint_module_test.LintModuleTest._open_expected_file",
+        "tests.regrtest_data.directory.package",
+        "pylint.utils.file_state.FileState.__init__",
+        "pylint.lint.caching.load_results",
+        "doc.test_messages_documentation",
+        "pylint.testutils._primer.primer_run_command.RunCommand._lint_package",
+        "tests.checkers.unittest_unicode.unittest_bidirectional_unicode.TestBidirectionalUnicodeChecker.test_finds_bidirectional_unicode_that_currently_not_parsed",
+        "tests.test_check_parallel.TestCheckParallel.test_invoke_single_job",
+        "pylint.config.find_default_config_files._toml_has_config",
+        "tests.lint.test_utils",
+        "pylint.checkers.variables.VariablesChecker._check_all",
+        "pylint.testutils.functional.test_file.parse_python_version",
+        "pylint.config.option_manager_mixin.OptionsManagerMixIn.read_config_file",
+        "pylint.lint.expand_modules",
+        "pylint.lint.pylinter.PyLinter._get_namespace_for_file",
+        "tests.test_self.TestRunTC.test_abbreviations_are_not_supported",
+        "pylint.checkers.misc.EncodingChecker.process_module",
+        "tests.test_similar.TestSimilarCodeChecker.test_useless_suppression",
+        "pylint.constants",
+        "tests.pyreverse.test_inspector.test_locals_assignment_resolution",
+        "tests.test_check_parallel",
+        "pylint.checkers.variables.VariablesChecker.visit_import",
+        "pylint.utils.utils.IsortDriver.place_module",
+        "tests.functional.ext.private_import.private_import",
+        "pylint.config.config_file_parser._ConfigurationFileParser._parse_ini_file",
+        "tests.testutils._primer.test_package_to_lint",
+        "pylint.testutils._primer.primer_command.PrimerCommand.__init__",
+        "pylint.utils.file_state.FileState._set_message_state_in_block",
+        "tests.test_self.TestCallbackOptions",
+        "pylint.testutils._primer.primer_run_command.RunCommand.run",
+        "pylint.checkers.imports.ImportsChecker.leave_module",
+        "tests.config.test_deprecations.TestDeprecationArgumentsManager.test_load_config_file",
+        "pylint.checkers.non_ascii_names.NonAsciiNameChecker._check_name",
+        "tests.benchmark.test_baseline_benchmarks.TestEstablishBaselineBenchmarks.test_baseline_lots_of_files_j1_empty_checker",
+        "tests.functional.r.regression_02.regression_distutil_import_error_73",
+        "tests.test_self.TestRunTC",
+        "pylint.checkers.variables.VariablesChecker.visit_importfrom",
+        "pylint.config.arguments_manager._ArgumentsManager._load_default_argument_values",
+        "pylint.config._pylint_config.utils.get_and_validate_output_file",
+        "tests.input.similar_lines_a",
+        "tests.regrtest_data.package",
+        "tests.test_check_parallel.TestCheckParallelFramework",
+        "pylint.checkers.unicode.UnicodeChecker._determine_codec",
+        "pylint.config.arguments_manager._ArgumentsManager.read_config_file",
+        "tests.benchmark.test_baseline_benchmarks.TestEstablishBaselineBenchmarks.test_baseline_lots_of_files_j2_empty_checker",
+        "pylint.lint.pylinter.PyLinter.check_astroid_module",
+        "tests.functional.n.no.no_member",
+        "tests.testutils._primer.test_primer",
+        "tests.testutils._primer.test_package_to_lint.test_package_to_lint",
+        "pylint.config.exceptions._UnrecognizedOptionError",
+        "pylint.checkers.variables._assigned_locally",
+        "tests.test_self.TestRunTC.test_wrong_import_position_when_others_disabled"
+      ],
+      "retrieval_calls": 3,
+      "index_nodes": 10071,
+      "scored_documents": 24580,
+      "source_chars_read": 3215784,
+      "shared_index_seconds": 2.916483499999231
+    },
+    {
+      "instance_id": "pylint-dev__pylint-7114",
+      "repo": "pylint-dev/pylint",
+      "base_commit": "397c1703e8ae6349d33f7b99f45b2ccaf581e666",
+      "arm": "feedback",
+      "status": "ok",
+      "manifest_sha256": "b59ad7f652fc90c43497862dae9c8a78c425032effd2e6cf85bf8f6572647643",
+      "request_sha256": "d57b15142b56f11e12a0a6ae0d33d9bde4689dcf33fbd6e38ab36b2e400277d9",
+      "response_sha256": "ece536eade6069aa0d8ff6c3ef691ac90c2d818f1f0080f09c272e6e135c4de3",
+      "raw_response_sha256": "ece536eade6069aa0d8ff6c3ef691ac90c2d818f1f0080f09c272e6e135c4de3",
+      "actions": [
+        {
+          "query": "pylint F0010 parse-error Unable to load file __init__.py module same name a/a.py",
+          "candidates": [
+            {
+              "id": "pylint.config.config_initialization._config_initialization",
+              "score": 20.604723453809736
+            },
+            {
+              "id": "pylint.config.config_initialization",
+              "score": 20.33187514731989
+            },
+            {
+              "id": "pylint.config.config_file_parser._ConfigurationFileParser._parse_toml_file",
+              "score": 18.782059598075264
+            },
+            {
+              "id": "tests.testutils.test_functional_testutils.test_parsing_of_pylintrc_init_hook",
+              "score": 18.77111912710501
+            },
+            {
+              "id": "pylint.utils.utils.register_plugins",
+              "score": 18.5665289280149
+            },
+            {
+              "id": "pylint.config.arguments_manager._ArgumentsManager._parse_toml",
+              "score": 18.41628416491127
+            },
+            {
+              "id": "pylint.checkers.base_checker.BaseRawFileChecker",
+              "score": 18.16289873471316
+            },
+            {
+              "id": "pylint.testutils.functional",
+              "score": 18.149770587716226
+            },
+            {
+              "id": "pylint.config.option_manager_mixin.OptionsManagerMixIn._parse_toml",
+              "score": 17.65427405759464
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.load_plugin_modules",
+              "score": 17.64575763893909
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.load_plugin_configuration",
+              "score": 16.92069775980125
+            },
+            {
+              "id": "pylint.config.config_file_parser._ConfigurationFileParser",
+              "score": 16.81649994827799
+            },
+            {
+              "id": "pylint.lint.caching",
+              "score": 16.645859327523024
+            },
+            {
+              "id": "pylint.testutils.functional.test_file.FunctionalTestFile._parse_options",
+              "score": 16.441328271684814
+            },
+            {
+              "id": "pylint.interfaces.IRawChecker",
+              "score": 16.43760771350342
+            },
+            {
+              "id": "pylint.testutils.functional.test_file.FunctionalTestFile",
+              "score": 16.16894627507991
+            },
+            {
+              "id": "tests.functional.d.deprecated.deprecated_methods_py36",
+              "score": 16.163555303369282
+            },
+            {
+              "id": "pylint.config.config_file_parser._ConfigurationFileParser.parse_config_file",
+              "score": 16.021100017367758
+            },
+            {
+              "id": "pylint.lint.pylinter._load_reporter_by_class",
+              "score": 15.996834470229578
+            },
+            {
+              "id": "pylint.config.arguments_manager._ArgumentsManager.load_config_file",
+              "score": 15.888176695252273
+            },
+            {
+              "id": "pylint.config.config_file_parser",
+              "score": 15.851258496217582
+            },
+            {
+              "id": "pylint.config.option_manager_mixin.OptionsManagerMixIn.load_config_file",
+              "score": 15.49913308771142
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._load_reporter_by_name",
+              "score": 15.371819332709661
+            },
+            {
+              "id": "pylint.config.arguments_manager._ArgumentsManager._parse_configuration_file",
+              "score": 15.28849036363807
+            },
+            {
+              "id": "tests.regrtest_data.import_package_subpackage_module",
+              "score": 15.222531019220149
+            },
+            {
+              "id": "pylint.lint.caching.save_results",
+              "score": 15.203461430595908
+            },
+            {
+              "id": "tests.test_self.TestRunTC.test_parseable_file_path",
+              "score": 14.770314403571547
+            },
+            {
+              "id": "tests.lint.unittest_lint.test_init_hooks_called_before_load_plugins",
+              "score": 14.7647266182192
+            },
+            {
+              "id": "tests.test_check_parallel.TestCheckParallelFramework.test_worker_check_sequential_checker",
+              "score": 14.748920384524538
+            },
+            {
+              "id": "pylint.testutils.functional_test_file",
+              "score": 14.597234476989122
+            },
+            {
+              "id": "pylint.testutils.lint_module_test",
+              "score": 14.51984988223049
+            },
+            {
+              "id": "pylint.lint.caching.load_results",
+              "score": 14.450486811294377
+            },
+            {
+              "id": "pylint.checkers.base.basic_checker._BasicChecker",
+              "score": 14.379018832726322
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.check_single_file_item",
+              "score": 14.374473952640493
+            },
+            {
+              "id": "pylint.testutils._primer.primer_compare_command.CompareCommand._load_json",
+              "score": 14.266432435049165
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._load_reporters",
+              "score": 14.238676428337264
+            },
+            {
+              "id": "pylint.checkers.imports.ImportsChecker._add_imported_module",
+              "score": 14.151254693809772
+            },
+            {
+              "id": "pylint.config.option_manager_mixin.OptionsManagerMixIn.read_config_file",
+              "score": 14.132663286163568
+            },
+            {
+              "id": "tests.test_self.TestRunTC.test_relative_imports",
+              "score": 14.065291363561446
+            },
+            {
+              "id": "pylint.utils.linterstats.LinterStats.init_single_module",
+              "score": 14.011173570168696
+            },
+            {
+              "id": "pylint.testutils.functional.test_file.FunctionalTestFile.__init__",
+              "score": 13.984309794988661
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.get_ast",
+              "score": 13.978248415760966
+            },
+            {
+              "id": "pylint.config.config_file_parser._ConfigurationFileParser._parse_ini_file",
+              "score": 13.966254117949825
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._get_file_descr_from_stdin",
+              "score": 13.915401677844146
+            },
+            {
+              "id": "pylint.extensions.private_import.PrivateImportChecker.same_root_dir",
+              "score": 13.834464532518972
+            },
+            {
+              "id": "tests.config.test_deprecations.TestDeprecationArgumentsManager.test_load_config_file",
+              "score": 13.789790737601567
+            },
+            {
+              "id": "pylint.typing.FileItem",
+              "score": 13.772349258993703
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._check_file",
+              "score": 13.704560025205794
+            },
+            {
+              "id": "pylint.lint.expand_modules.expand_modules",
+              "score": 13.635907215412855
+            },
+            {
+              "id": "pylint.config.arguments_manager._ArgumentsManager._load_default_argument_values",
+              "score": 13.630740215427679
+            },
+            {
+              "id": "tests.functional.i.invalid.invalid_exceptions.invalid_exceptions_raised.reusing_same_name_picks_the_latest_raised_value",
+              "score": 13.571892575116756
+            },
+            {
+              "id": "pylint.config.arguments_manager._ArgumentsManager.read_config_file",
+              "score": 13.553714854471835
+            },
+            {
+              "id": "pylint.testutils.lint_module_test.LintModuleTest",
+              "score": 13.521935930512061
+            },
+            {
+              "id": "tests.functional.n.no.no_member",
+              "score": 13.393667900456949
+            },
+            {
+              "id": "pylint.testutils.lint_module_test.LintModuleTest.__init__",
+              "score": 13.391193021253383
+            },
+            {
+              "id": "pylint.config.exceptions._UnrecognizedOptionError",
+              "score": 13.375885862128314
+            },
+            {
+              "id": "pylint.testutils.functional.lint_module_output_update.LintModuleOutputUpdate.__init__",
+              "score": 13.368913530050747
+            },
+            {
+              "id": "pylint.config.find_default_config_files",
+              "score": 13.271259712964357
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.set_current_module",
+              "score": 13.248555881180133
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.generate_reports",
+              "score": 13.210592225252363
+            },
+            {
+              "id": "tests.functional.n.non_ascii_import.non_ascii_import",
+              "score": 13.17079430275581
+            },
+            {
+              "id": "pylint.pyreverse.inspector.Linker.visit_importfrom",
+              "score": 13.153806893246454
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._check_astroid_module",
+              "score": 13.062105928950919
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._iterate_file_descrs",
+              "score": 12.791064890732699
+            },
+            {
+              "id": "tests.testutils.test_functional_testutils",
+              "score": 12.756110994925569
+            },
+            {
+              "id": "tests.lint.unittest_lint.test_load_plugin_config_file",
+              "score": 12.747543284882564
+            },
+            {
+              "id": "pylint.lint",
+              "score": 12.67676506669208
+            },
+            {
+              "id": "tests.testutils.test_lint_module_output_update",
+              "score": 12.542387180752979
+            },
+            {
+              "id": "pylint.config.load_results",
+              "score": 12.503053645749546
+            },
+            {
+              "id": "tests.test_pragma_parser",
+              "score": 12.495304944311258
+            },
+            {
+              "id": "pylint.pyreverse.diagrams.PackageDiagram.module",
+              "score": 12.45816566749204
+            },
+            {
+              "id": "tests.functional.n.non_ascii_import.non_ascii_import_as_okay",
+              "score": 12.442165048804185
+            },
+            {
+              "id": "pylint.typing",
+              "score": 12.387139620932505
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._check_files",
+              "score": 12.349974858831066
+            },
+            {
+              "id": "doc.exts.pylint_extensions.builder_inited",
+              "score": 12.335838958460045
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._parse_error_mode",
+              "score": 12.30153798612584
+            },
+            {
+              "id": "pylint.checkers.non_ascii_names.NonAsciiNameChecker.visit_module",
+              "score": 12.290157163748955
+            },
+            {
+              "id": "pylint.pyreverse.inspector.project_from_files",
+              "score": 12.140470072775503
+            },
+            {
+              "id": "pylint.pyreverse.inspector.Linker.visit_import",
+              "score": 11.947020025535718
+            },
+            {
+              "id": "pylint.testutils.functional.test_file",
+              "score": 11.845406939923233
+            },
+            {
+              "id": "tests.lint.test_pylinter.test_crash_in_file",
+              "score": 11.80244751708721
+            },
+            {
+              "id": "pylint.lint.run.Run.__init__",
+              "score": 11.726096414450526
+            },
+            {
+              "id": "tests.utils.unittest_ast_walker.TestASTWalker",
+              "score": 11.59043089866148
+            },
+            {
+              "id": "pylint.testutils.lint_module_test.LintModuleTest._open_expected_file",
+              "score": 11.582287008402085
+            },
+            {
+              "id": "tests.reporters.unittest_reporting.test_multi_format_output",
+              "score": 11.549385778585108
+            },
+            {
+              "id": "pylint.utils.file_state.FileState.__init__",
+              "score": 11.547505055141478
+            },
+            {
+              "id": "pylint.pyreverse.diagrams.PackageDiagram.get_module",
+              "score": 11.52150363909871
+            },
+            {
+              "id": "pylint.testutils.functional.lint_module_output_update",
+              "score": 11.513001577446891
+            },
+            {
+              "id": "doc.exts.pylint_extensions",
+              "score": 11.499460166385747
+            },
+            {
+              "id": "pylint.testutils.functional.lint_module_output_update.LintModuleOutputUpdate",
+              "score": 11.469144916713967
+            },
+            {
+              "id": "doc.exts.pylint_extensions.get_plugins_info",
+              "score": 11.456060420455831
+            },
+            {
+              "id": "tests.testutils.test_lint_module_output_update.test_lint_module_output_update_fail_before",
+              "score": 11.409357577349281
+            },
+            {
+              "id": "pylint.testutils.lint_module_test.LintModuleTest.__str__",
+              "score": 11.397439896449367
+            },
+            {
+              "id": "tests.testutils.test_lint_module_output_update.test_lint_module_output_update_effective",
+              "score": 11.374983861949419
+            },
+            {
+              "id": "doc.test_messages_documentation.LintModuleTest",
+              "score": 11.351478702766087
+            },
+            {
+              "id": "pylint.config.arguments_manager._ArgumentsManager.load_command_line_configuration",
+              "score": 11.312501863684826
+            },
+            {
+              "id": "pylint.testutils.functional.test_file.parse_python_version",
+              "score": 11.29591847606862
+            },
+            {
+              "id": "pylint.config.find_default_config_files._toml_has_config",
+              "score": 11.285471636177409
+            },
+            {
+              "id": "pylint.testutils.functional.test_file.FunctionalTestFile._file_type",
+              "score": 11.259673053798187
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.should_analyze_file",
+              "score": 11.24404930293258
+            },
+            {
+              "id": "tests.test_check_parallel.TestCheckParallelFramework.test_worker_check_single_file_no_checkers",
+              "score": 11.188764237368623
+            },
+            {
+              "id": "tests.input.similar_lines_b",
+              "score": 11.188716806608939
+            },
+            {
+              "id": "tests.test_check_parallel.TestCheckParallel",
+              "score": 11.175668879490267
+            },
+            {
+              "id": "pylint.checkers.misc.ByIdManagedMessagesChecker.process_module",
+              "score": 11.155397183432953
+            },
+            {
+              "id": "tests.test_check_parallel.TestCheckParallel.test_compare_workers_to_single_proc",
+              "score": 11.149074832672047
+            },
+            {
+              "id": "pylint.checkers.similar.SimilarChecker.process_module",
+              "score": 11.115905302168956
+            },
+            {
+              "id": "pylint.checkers.base.basic_error_checker.BasicErrorChecker._check_nonlocal_and_global.same_scope",
+              "score": 11.059481565813972
+            },
+            {
+              "id": "pylint.checkers.variables.VariablesChecker._check_all",
+              "score": 10.999856295086897
+            },
+            {
+              "id": "pylint.config.option_manager_mixin.OptionsManagerMixIn.load_command_line_configuration",
+              "score": 10.98137613315864
+            },
+            {
+              "id": "tests.functional.n.no.no_name_in_module",
+              "score": 10.918568102639938
+            },
+            {
+              "id": "pylint.checkers.variables.VariablesChecker._check_module_attrs",
+              "score": 10.911713974590928
+            },
+            {
+              "id": "pylint.config.find_default_config_files.find_default_config_files",
+              "score": 10.882577890316812
+            },
+            {
+              "id": "pylint.checkers.format.FormatChecker",
+              "score": 10.878077202664661
+            },
+            {
+              "id": "pylint.checkers.imports.ImportsChecker._check_same_line_imports",
+              "score": 10.860826142963068
+            },
+            {
+              "id": "pylint.testutils._primer.primer_compare_command.CompareCommand.run",
+              "score": 10.852190280338304
+            },
+            {
+              "id": "tests.utils.unittest_ast_walker",
+              "score": 10.851469263503937
+            },
+            {
+              "id": "pylint.checkers.imports.ImportsChecker.visit_importfrom",
+              "score": 10.803937947487618
+            },
+            {
+              "id": "pylint.checkers.logging.LoggingChecker.visit_importfrom",
+              "score": 10.729722934376458
+            },
+            {
+              "id": "tests.test_check_parallel",
+              "score": 10.72033251201099
+            },
+            {
+              "id": "tests.config.test_deprecations.TestDeprecationArgumentsManager",
+              "score": 10.719715726537922
+            },
+            {
+              "id": "tests.test_check_parallel.TestCheckParallel.test_sequential_checkers_work",
+              "score": 10.703607143191622
+            },
+            {
+              "id": "pylint.lint.run.Run",
+              "score": 10.701898019283085
+            },
+            {
+              "id": "tests.test_check_parallel.TestCheckParallel.test_invoke_single_job",
+              "score": 10.664038612622154
+            },
+            {
+              "id": "pylint.utils.utils.get_module_and_frameid",
+              "score": 10.530938422552508
+            },
+            {
+              "id": "tests.functional.f.fallback_import_enabled",
+              "score": 10.530729028617953
+            },
+            {
+              "id": "tests.functional.d.deprecated.deprecated_module_uninstalled",
+              "score": 10.52534231340446
+            },
+            {
+              "id": "tests.functional.n.non_ascii_name.non_ascii_name_staticmethod.OkayClass.public",
+              "score": 10.509740020291948
+            },
+            {
+              "id": "tests.functional.i.import_error",
+              "score": 10.486302304652389
+            },
+            {
+              "id": "tests.testutils.test_lint_module_output_update.test_lint_module_output_update_remove_useless_txt",
+              "score": 10.444649753653215
+            },
+            {
+              "id": "tests.functional.n.new_style_class_py_30.File",
+              "score": 10.436847916298314
+            },
+            {
+              "id": "pylint.config.options_provider_mixin.OptionsProviderMixIn.__init__",
+              "score": 10.391936133909871
+            },
+            {
+              "id": "pylint.utils.file_state.FileState._set_message_state_in_block",
+              "score": 10.379299331222523
+            },
+            {
+              "id": "pylint.checkers.base.basic_error_checker.BasicErrorChecker._check_nonlocal_and_global",
+              "score": 10.352815158816558
+            },
+            {
+              "id": "tests.checkers.unittest_unicode.unittest_bidirectional_unicode.TestBidirectionalUnicodeChecker.test_finds_bidirectional_unicode_that_currently_not_parsed",
+              "score": 10.338265937200772
+            },
+            {
+              "id": "tests.test_check_parallel.TestCheckParallelFramework",
+              "score": 10.336315026448379
+            },
+            {
+              "id": "pylint.pyreverse.inspector.Project.__init__",
+              "score": 10.323193762607444
+            },
+            {
+              "id": "pylint.testutils.functional.test_file.NoFileError",
+              "score": 10.30019510709369
+            },
+            {
+              "id": "tests.input.similar_lines_a",
+              "score": 10.285601549254181
+            },
+            {
+              "id": "tests.utils.unittest_ast_walker.TestASTWalker.Checker",
+              "score": 10.279505464092308
+            },
+            {
+              "id": "pylint.utils.pragma_parser.PragmaParserError",
+              "score": 10.255300484324227
+            },
+            {
+              "id": "tests.lint.test_pylinter",
+              "score": 10.243724862975576
+            },
+            {
+              "id": "pylint.checkers.misc.EncodingChecker.process_module",
+              "score": 10.24317436621671
+            },
+            {
+              "id": "pylint.lint.expand_modules",
+              "score": 10.215724273005401
+            },
+            {
+              "id": "pylint.pyreverse.diagrams.PackageDiagram",
+              "score": 10.146090419799004
+            },
+            {
+              "id": "tests.test_self.TestRunTC.test_abbreviations_are_not_supported",
+              "score": 10.142871050628937
+            },
+            {
+              "id": "tests.functional.n.new_style_class_py_30",
+              "score": 10.116926932633644
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._report_evaluation",
+              "score": 10.110106486925867
+            },
+            {
+              "id": "pylint.lint.pylinter",
+              "score": 10.10698394372783
+            },
+            {
+              "id": "tests.functional.n.new_style_class_py_30.File.__init__",
+              "score": 10.103755751954886
+            },
+            {
+              "id": "tests.functional.r.regression_02.regression_distutil_import_error_73",
+              "score": 10.087316269445243
+            },
+            {
+              "id": "tests.test_functional",
+              "score": 10.080368455480942
+            },
+            {
+              "id": "pylint.testutils.lint_module_test.LintModuleTest.error_msg_for_unequal_messages",
+              "score": 10.077637686293812
+            },
+            {
+              "id": "tests.lint.unittest_lint.test_by_module_statement_value",
+              "score": 10.068964554253737
+            },
+            {
+              "id": "tests.functional.n.no.no_member_assign_same_line",
+              "score": 10.058473951291855
+            },
+            {
+              "id": "tests.test_self.TestRunTC.test_json_report_when_file_has_syntax_error",
+              "score": 10.02863647552552
+            },
+            {
+              "id": "pylint.lint.message_state_handler._MessageStateHandler.process_tokens",
+              "score": 10.017050310674145
+            },
+            {
+              "id": "pylint.checkers.non_ascii_names.NonAsciiNameChecker",
+              "score": 10.012744945069107
+            },
+            {
+              "id": "doc.exts.pylint_messages._get_all_messages",
+              "score": 10.008930090344663
+            },
+            {
+              "id": "tests.test_check_parallel.SequentialTestChecker",
+              "score": 9.99615221952058
+            },
+            {
+              "id": "tests.config.test_deprecations",
+              "score": 9.980492534636603
+            },
+            {
+              "id": "pylint.checkers.non_ascii_names.NonAsciiNameChecker._check_name",
+              "score": 9.96142542076935
+            },
+            {
+              "id": "pylint.checkers.utils.get_import_name",
+              "score": 9.94688285564331
+            },
+            {
+              "id": "tests.extensions.test_private_import",
+              "score": 9.935660470253739
+            },
+            {
+              "id": "tests.checkers.unittest_unicode.unittest_bidirectional_unicode",
+              "score": 9.932697255014224
+            },
+            {
+              "id": "pylint.utils.file_state.FileState",
+              "score": 9.903357529702545
+            },
+            {
+              "id": "tests.checkers.unittest_spelling.TestSpellingChecker.test_more_than_one_error_in_same_line_for_same_word_on_comment",
+              "score": 9.901974454651294
+            },
+            {
+              "id": "pylint.utils.file_state",
+              "score": 9.872158016338595
+            },
+            {
+              "id": "pylint.config._pylint_config.utils.get_and_validate_output_file",
+              "score": 9.871634782724106
+            },
+            {
+              "id": "pylint.pyreverse.utils.FilterMixIn.__init__",
+              "score": 9.866295632711179
+            },
+            {
+              "id": "tests.functional.n.non_ascii_name.non_ascii_name_staticmethod",
+              "score": 9.860477443976032
+            },
+            {
+              "id": "tests.checkers.unittest_format.test_disable_global_option_end_of_line",
+              "score": 9.840773542766982
+            },
+            {
+              "id": "tests.checkers.unittest_typecheck.TestTypeCheckerOnDecorators",
+              "score": 9.803537547215916
+            },
+            {
+              "id": "pylint.config.exceptions",
+              "score": 9.772885950959237
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.check_astroid_module",
+              "score": 9.759237732480436
+            },
+            {
+              "id": "doc.test_messages_documentation.LintModuleTest.__init__",
+              "score": 9.745082908328795
+            },
+            {
+              "id": "pylint.pyreverse.writer",
+              "score": 9.731981327946034
+            },
+            {
+              "id": "tests.functional.n.no.no_member_if_statements",
+              "score": 9.719955625050462
+            },
+            {
+              "id": "pylint.checkers.variables.VariablesChecker.visit_import",
+              "score": 9.718769885136798
+            },
+            {
+              "id": "pylint.testutils.functional.test_file.FunctionalTestFile.module",
+              "score": 9.712744341806678
+            },
+            {
+              "id": "pylint.utils",
+              "score": 9.708507779550803
+            },
+            {
+              "id": "pylint.checkers.format",
+              "score": 9.705736501769216
+            },
+            {
+              "id": "pylint.checkers.variables._assigned_locally",
+              "score": 9.698373632315555
+            },
+            {
+              "id": "tests.testutils.test_lint_module_output_update.test_not_py38",
+              "score": 9.69454385946983
+            },
+            {
+              "id": "tests.test_func.gen_tests",
+              "score": 9.68265718583445
+            },
+            {
+              "id": "tests.checkers.unittest_unicode.unittest_bidirectional_unicode.TestBidirectionalUnicodeChecker",
+              "score": 9.677827461213205
+            },
+            {
+              "id": "pylint.checkers.misc.EncodingChecker",
+              "score": 9.642338550024322
+            },
+            {
+              "id": "tests.lint.unittest_lint.test_load_plugin_command_line",
+              "score": 9.627620030925481
+            },
+            {
+              "id": "tests.functional.ext.private_import.private_import",
+              "score": 9.612549888369275
+            },
+            {
+              "id": "tests.functional.n.no.no_member_assign_same_line.AssignMemberInSameLine",
+              "score": 9.604128665707643
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.load_default_plugins",
+              "score": 9.603844628649389
+            },
+            {
+              "id": "pylint.config.option_manager_mixin.OptionsManagerMixIn.load_configuration",
+              "score": 9.60039908937049
+            },
+            {
+              "id": "tests.functional.n.non_ascii_name_class.non_ascii_name_class",
+              "score": 9.574597236867053
+            },
+            {
+              "id": "tests.checkers.unittest_spelling.TestSpellingChecker.test_more_than_one_error_in_same_line_for_same_word_on_docstring",
+              "score": 9.56863643674555
+            },
+            {
+              "id": "tests.test_pragma_parser.test_simple_pragma_no_messages",
+              "score": 9.565794438705607
+            },
+            {
+              "id": "tests.regrtest_data.beyond_top_four.module.double_name",
+              "score": 9.564819551882707
+            },
+            {
+              "id": "pylint.config.arguments_manager._ArgumentsManager.load_configuration",
+              "score": 9.55395153575682
+            },
+            {
+              "id": "tests.test_functional.test_functional",
+              "score": 9.553124754131566
+            },
+            {
+              "id": "tests.checkers.unittest_unicode.unittest_bad_chars.TestBadCharsChecker.test_find_bad_chars",
+              "score": 9.548659068547662
+            },
+            {
+              "id": "pylint.checkers.variables.VariablesChecker.visit_importfrom",
+              "score": 9.537474715715414
+            },
+            {
+              "id": "pylint.config.option_manager_mixin.OptionsManagerMixIn.load_provider_defaults",
+              "score": 9.524869877844289
+            }
+          ],
+          "scored_documents": 10071,
+          "seconds": 0.01915489999919373
+        },
+        {
+          "query": "pylint module resolution package directory same name module __init__.py missing",
+          "candidates": [
+            {
+              "id": "pylint.utils.utils.register_plugins",
+              "score": 19.20095237986879
+            },
+            {
+              "id": "pylint.testutils.functional.test_file.FunctionalTestFile.module",
+              "score": 18.397128710228827
+            },
+            {
+              "id": "tests.test_self.TestRunTC.test_can_list_directories_without_dunder_init",
+              "score": 17.54754470604063
+            },
+            {
+              "id": "tests.regrtest_data.directory.package.module",
+              "score": 17.502099929452957
+            },
+            {
+              "id": "tests.regrtest_data.directory.package.subpackage.module",
+              "score": 17.33154181132731
+            },
+            {
+              "id": "tests.test_func.LintTestUsingModule._test_functionality",
+              "score": 16.97163578904194
+            },
+            {
+              "id": "tests.regrtest_data.directory.package",
+              "score": 16.826302585908504
+            },
+            {
+              "id": "tests.test_self.TestRunTC.test_allow_import_of_files_found_in_modules_during_parallel_check",
+              "score": 16.739870208246586
+            },
+            {
+              "id": "pylint.testutils._primer.package_to_lint.PackageToLint.clone_directory",
+              "score": 16.692642461895485
+            },
+            {
+              "id": "pylint.testutils._primer.primer_command.PrimerCommand.__init__",
+              "score": 16.562938502444688
+            },
+            {
+              "id": "pylint.testutils._primer",
+              "score": 15.972592102978796
+            },
+            {
+              "id": "tests.lint.unittest_lint.test_recursive_ignore",
+              "score": 15.579338541327864
+            },
+            {
+              "id": "tests.regrtest_data.directory.package.subpackage",
+              "score": 15.548706120050396
+            },
+            {
+              "id": "pylint.pyreverse.diagrams.PackageDiagram.get_module",
+              "score": 15.055510137439386
+            },
+            {
+              "id": "pylint.epylint",
+              "score": 15.00318534202286
+            },
+            {
+              "id": "pylint.pyreverse.diagrams.PackageDiagram",
+              "score": 14.974376704758054
+            },
+            {
+              "id": "pylint.extensions.private_import.PrivateImportChecker.same_root_dir",
+              "score": 14.89940872603357
+            },
+            {
+              "id": "tests.pyreverse.test_inspector.test_instance_attrs_resolution",
+              "score": 14.84915247964715
+            },
+            {
+              "id": "pylint.modify_sys_path",
+              "score": 14.812365833108476
+            },
+            {
+              "id": "tests.regrtest_data.import_package_subpackage_module",
+              "score": 14.505321246821552
+            },
+            {
+              "id": "pylint.testutils._primer.package_to_lint.PackageToLint",
+              "score": 14.381331351094776
+            },
+            {
+              "id": "pylint.pyreverse.writer",
+              "score": 14.380469537810464
+            },
+            {
+              "id": "pylint.pyreverse.inspector.Linker.compute_module",
+              "score": 14.056047440507621
+            },
+            {
+              "id": "pylint.extensions.private_import.PrivateImportChecker.visit_importfrom",
+              "score": 14.007063030619733
+            },
+            {
+              "id": "tests.test_regr.test_check_package___init__",
+              "score": 13.983551405567784
+            },
+            {
+              "id": "pylint.epylint.lint",
+              "score": 13.915635096783616
+            },
+            {
+              "id": "pylint.testutils._primer.primer_compare_command.CompareCommand",
+              "score": 13.819626500730488
+            },
+            {
+              "id": "pylint.testutils._primer.primer_command",
+              "score": 13.813718538417868
+            },
+            {
+              "id": "pylint.pyreverse.writer.DiagramWriter.write",
+              "score": 13.73971794640265
+            },
+            {
+              "id": "pylint.lint.expand_modules.expand_modules",
+              "score": 13.671521725157444
+            },
+            {
+              "id": "tests.regrtest_data.precedence_test",
+              "score": 13.669946284878403
+            },
+            {
+              "id": "pylint.testutils._primer.primer_command.PrimerCommand",
+              "score": 13.662949820957179
+            },
+            {
+              "id": "pylint.pyreverse.diagrams.PackageDiagram.module",
+              "score": 13.657808460899677
+            },
+            {
+              "id": "pylint.testutils._primer.primer_compare_command.CompareCommand._create_comment_for_package",
+              "score": 13.617116277705495
+            },
+            {
+              "id": "tests.functional.n.nonlocal_and_global",
+              "score": 13.596566294540143
+            },
+            {
+              "id": "tests.pyreverse.test_inspector.test_locals_assignment_resolution",
+              "score": 13.542356126198147
+            },
+            {
+              "id": "pylint.utils.utils.IsortDriver.place_module",
+              "score": 13.535301887233334
+            },
+            {
+              "id": "pylint.pyreverse.writer.DiagramWriter",
+              "score": 13.511703347948123
+            },
+            {
+              "id": "pylint.testutils._primer.package_to_lint",
+              "score": 13.493528329785036
+            },
+            {
+              "id": "tests.testutils._primer.test_package_to_lint",
+              "score": 13.473743638665557
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.set_current_module",
+              "score": 13.279218101494996
+            },
+            {
+              "id": "pylint.checkers.imports.ImportsChecker.leave_module",
+              "score": 13.222973935830982
+            },
+            {
+              "id": "pylint.testutils._primer.primer_compare_command",
+              "score": 13.20935233942873
+            },
+            {
+              "id": "pylint.checkers.imports.ImportsChecker._add_imported_module",
+              "score": 13.207967663741103
+            },
+            {
+              "id": "tests.regrtest_data.package_all",
+              "score": 13.19571431292778
+            },
+            {
+              "id": "pylint.checkers.imports.ImportsChecker._check_wildcard_imports",
+              "score": 13.133320184990989
+            },
+            {
+              "id": "pylint.pyreverse.inspector.project_from_files",
+              "score": 12.868992991335784
+            },
+            {
+              "id": "tests.testutils._primer.test_package_to_lint.test_package_to_lint",
+              "score": 12.784761266543487
+            },
+            {
+              "id": "tests.regrtest_data.package.subpackage.module",
+              "score": 12.697250050098818
+            },
+            {
+              "id": "tests.functional.d.deprecated.deprecated_relative_import.dot_relative_import",
+              "score": 12.645592401820313
+            },
+            {
+              "id": "pylint.testutils._primer.primer_compare_command.CompareCommand._cross_reference",
+              "score": 12.592597292669847
+            },
+            {
+              "id": "pylint.pyreverse.writer.DiagramWriter.get_shape_color",
+              "score": 12.566052484692298
+            },
+            {
+              "id": "tests.functional.d.deprecated.deprecated_relative_import.subpackage.dot_dot_relative_import",
+              "score": 12.44029313431869
+            },
+            {
+              "id": "tests.test_func.LintTestUsingModule",
+              "score": 12.40579465950583
+            },
+            {
+              "id": "pylint.pyreverse.diadefslib.DefaultDiadefGenerator.visit_module",
+              "score": 12.380146322679167
+            },
+            {
+              "id": "tests.primer.test_primer_stdlib",
+              "score": 12.376331343392785
+            },
+            {
+              "id": "pylint.extensions.private_import.PrivateImportChecker",
+              "score": 12.260168720602397
+            },
+            {
+              "id": "pylint.pyreverse.writer.DiagramWriter.write_packages",
+              "score": 12.257221094286841
+            },
+            {
+              "id": "pylint.testutils.functional.test_file.FunctionalTestFile",
+              "score": 12.202575540477898
+            },
+            {
+              "id": "pylint.testutils._primer.primer_prepare_command.PrepareCommand.run",
+              "score": 12.15955234706346
+            },
+            {
+              "id": "tests.testutils._primer.test_package_to_lint.test_package_to_lint_default_value",
+              "score": 12.139320469772157
+            },
+            {
+              "id": "pylint.utils.linterstats.LinterStats.init_single_module",
+              "score": 12.070156571532415
+            },
+            {
+              "id": "tests.functional.f.fallback_import_enabled",
+              "score": 12.065059805226312
+            },
+            {
+              "id": "tests.regrtest_data.bad_package.wrong",
+              "score": 12.025458144327503
+            },
+            {
+              "id": "pylint.pyreverse.diagrams.PackageDiagram.extract_relationships",
+              "score": 11.988990819176133
+            },
+            {
+              "id": "pylint.testutils._primer.primer_prepare_command.PrepareCommand",
+              "score": 11.925898876781927
+            },
+            {
+              "id": "pylint.extensions.private_import",
+              "score": 11.919275828361233
+            },
+            {
+              "id": "tests.regrtest_data.package",
+              "score": 11.906365004871143
+            },
+            {
+              "id": "pylint.pyreverse.diagrams.PackageDiagram.modules",
+              "score": 11.904113273099847
+            },
+            {
+              "id": "pylint.testutils._primer.package_to_lint.PackageToLint.pylintrc",
+              "score": 11.816398432458321
+            },
+            {
+              "id": "tests.lint.unittest_expand_modules",
+              "score": 11.782191171960845
+            },
+            {
+              "id": "tests.functional.i.invalid.invalid_name.invalid_name_module_level",
+              "score": 11.588145531286731
+            },
+            {
+              "id": "pylint.testutils._primer.primer_prepare_command",
+              "score": 11.581500867283395
+            },
+            {
+              "id": "tests.pyreverse.test_inspector.test_from_directory",
+              "score": 11.570645872276076
+            },
+            {
+              "id": "pylint.pyreverse.diadefslib.DefaultDiadefGenerator",
+              "score": 11.568807329550163
+            },
+            {
+              "id": "pylint.testutils._primer.primer_compare_command.CompareCommand._create_comment",
+              "score": 11.543211904323405
+            },
+            {
+              "id": "tests.test_func",
+              "score": 11.472392323309972
+            },
+            {
+              "id": "pylint.testutils.functional",
+              "score": 11.39614606562727
+            },
+            {
+              "id": "pylint.testutils.pyreverse.PyreverseConfig.__init__",
+              "score": 11.371830759896532
+            },
+            {
+              "id": "tests.lint.unittest_lint.test_lint_namespace_package_under_dir",
+              "score": 11.321530384993839
+            },
+            {
+              "id": "pylint.testutils._primer.package_to_lint.PackageToLint.paths_to_lint",
+              "score": 11.304053552857532
+            },
+            {
+              "id": "tests.regrtest_data.directory.subdirectory.module",
+              "score": 11.210957918575863
+            },
+            {
+              "id": "pylint.checkers.variables.VariablesChecker.leave_module",
+              "score": 11.190291669252904
+            },
+            {
+              "id": "tests.regrtest_data.directory.subdirectory.subsubdirectory.module",
+              "score": 11.109293358933625
+            },
+            {
+              "id": "tests.functional.w.wrong_import_order2",
+              "score": 11.03928363517692
+            },
+            {
+              "id": "pylint.utils.utils.IsortDriver",
+              "score": 10.955266838366853
+            },
+            {
+              "id": "tests.testutils.test_functional_testutils",
+              "score": 10.923985326863972
+            },
+            {
+              "id": "tests.test_regr",
+              "score": 10.893929592364866
+            },
+            {
+              "id": "tests.checkers.unittest_variables.TestMissingSubmodule.test_package_all",
+              "score": 10.890624322204568
+            },
+            {
+              "id": "pylint.checkers.imports.ImportsChecker._check_same_line_imports",
+              "score": 10.860826142963068
+            },
+            {
+              "id": "tests.functional.i.import_error",
+              "score": 10.849291177894004
+            },
+            {
+              "id": "pylint.testutils._primer.primer.Primer._get_packages_to_lint_from_json",
+              "score": 10.821169509010698
+            },
+            {
+              "id": "pylint.checkers.imports.ImportsChecker.visit_importfrom",
+              "score": 10.803937947487618
+            },
+            {
+              "id": "pylint.testutils.functional.test_file.FunctionalTestFile.__init__",
+              "score": 10.714349847628535
+            },
+            {
+              "id": "tests.primer.test_primer_external",
+              "score": 10.707662316828152
+            },
+            {
+              "id": "pylint.lint.expand_modules._modpath_from_file._is_package_cb",
+              "score": 10.679321657458303
+            },
+            {
+              "id": "tests.input.func_w0401_package",
+              "score": 10.571429409064713
+            },
+            {
+              "id": "tests.regrtest_data.package.subpackage",
+              "score": 10.51595454262401
+            },
+            {
+              "id": "pylint.extensions.initialize",
+              "score": 10.50214226328813
+            },
+            {
+              "id": "pylint.checkers.initialize",
+              "score": 10.425712967524394
+            },
+            {
+              "id": "tests.checkers.unittest_variables.TestMissingSubmodule",
+              "score": 10.410135342894188
+            },
+            {
+              "id": "tests.functional.ext.private_import.private_import",
+              "score": 10.365274384336626
+            },
+            {
+              "id": "pylint.reporters.initialize",
+              "score": 10.35255635737896
+            },
+            {
+              "id": "tests.test_self.TestRunTC.test_recursive_current_dir",
+              "score": 10.33976127213091
+            },
+            {
+              "id": "tests.functional.m.missing.missing_module_docstring_disabled",
+              "score": 10.336695444345517
+            },
+            {
+              "id": "pylint.pyreverse.inspector.Project.__init__",
+              "score": 10.323193762607444
+            },
+            {
+              "id": "tests.functional.c.crash_missing_module_type",
+              "score": 10.264725817769259
+            },
+            {
+              "id": "tests.pyreverse.test_inspector",
+              "score": 10.23500449828703
+            },
+            {
+              "id": "tests.functional.n.non.non_str_assignment_to_dunder_name",
+              "score": 10.217655939660927
+            },
+            {
+              "id": "pylint.checkers.base.basic_checker._BasicChecker",
+              "score": 10.212935660043648
+            },
+            {
+              "id": "pylint.checkers.classes.class_checker._has_different_parameters_default_value",
+              "score": 10.20443745478092
+            },
+            {
+              "id": "pylint.checkers.method_args.MethodArgsChecker.visit_call",
+              "score": 10.192580357486639
+            },
+            {
+              "id": "tests.testutils.test_functional_testutils.test_parsing_of_pylintrc_init_hook",
+              "score": 10.177407757847497
+            },
+            {
+              "id": "tests.functional.n.no.no_name_in_module",
+              "score": 10.15395059868382
+            },
+            {
+              "id": "tests.test_self.TestRunTC.test_parseable_file_path",
+              "score": 10.08557650416242
+            },
+            {
+              "id": "tests.functional.r.repeated_keyword",
+              "score": 10.078689834650447
+            },
+            {
+              "id": "tests.primer.test_primer_stdlib.test_primer_stdlib_no_crash",
+              "score": 10.073758420041552
+            },
+            {
+              "id": "tests.functional.n.no.no_member_assign_same_line",
+              "score": 10.058473951291855
+            },
+            {
+              "id": "tests.functional.i.invalid.invalid_exceptions.invalid_exceptions_raised.reusing_same_name_picks_the_latest_raised_value",
+              "score": 10.022170596390541
+            },
+            {
+              "id": "pylint.testutils._primer.primer_run_command.RunCommand._lint_package",
+              "score": 9.998128029040245
+            },
+            {
+              "id": "tests.functional.e.empty_docstring",
+              "score": 9.963438714569156
+            },
+            {
+              "id": "tests.functional.f.function_redefined_2540",
+              "score": 9.962726100961795
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._discover_files",
+              "score": 9.951731808512129
+            },
+            {
+              "id": "tests.functional.ext.docparams.raise.missing_raises_doc.test_finds_short_name_exception",
+              "score": 9.902257637845828
+            },
+            {
+              "id": "pylint.extensions.docparams.DocstringParameterChecker",
+              "score": 9.877799836828531
+            },
+            {
+              "id": "pylint.testutils.pyreverse.PyreverseConfig",
+              "score": 9.824211619855742
+            },
+            {
+              "id": "pylint.checkers.imports.ImportsChecker._record_import",
+              "score": 9.780942446616908
+            },
+            {
+              "id": "pylint.pyreverse.diagrams",
+              "score": 9.737606168806465
+            },
+            {
+              "id": "pylint.checkers.imports.ImportsChecker._check_imports_order",
+              "score": 9.710156903848972
+            },
+            {
+              "id": "pylint.testutils._primer.primer_run_command.RunCommand.run",
+              "score": 9.698707258837294
+            },
+            {
+              "id": "pylint.checkers.variables._assigned_locally",
+              "score": 9.698373632315555
+            },
+            {
+              "id": "doc.exts.pylint_extensions.builder_inited",
+              "score": 9.614493698875313
+            },
+            {
+              "id": "tests.functional.n.no.no_member_assign_same_line.AssignMemberInSameLine",
+              "score": 9.604128665707643
+            },
+            {
+              "id": "pylint.checkers.base.docstring_checker.DocStringChecker",
+              "score": 9.595869299563507
+            },
+            {
+              "id": "tests.primer.test_primer_external.get_packages_to_lint_from_json",
+              "score": 9.588684952579005
+            },
+            {
+              "id": "tests.regrtest_data.beyond_top_four.module.double_name",
+              "score": 9.564819551882707
+            },
+            {
+              "id": "tests.primer.test_primer_stdlib.is_package",
+              "score": 9.537011012451945
+            },
+            {
+              "id": "tests.checkers.unittest_imports.TestImportsChecker.test_wildcard_import_init",
+              "score": 9.51309087437128
+            },
+            {
+              "id": "tests.regrtest_data.absimp",
+              "score": 9.51026329681865
+            },
+            {
+              "id": "tests.functional.r.redefined.redefined_outer_name_type_checking",
+              "score": 9.4584114412218
+            },
+            {
+              "id": "doc.data.messages.m.missing-class-docstring.bad.Person.__init__",
+              "score": 9.438753803464044
+            },
+            {
+              "id": "doc.data.messages.m.missing-class-docstring.good.Person.__init__",
+              "score": 9.438753803464044
+            },
+            {
+              "id": "pylint.lint.expand_modules._modpath_from_file",
+              "score": 9.412997425346576
+            },
+            {
+              "id": "tests.functional.n.non.non_init_parent_called.Super2",
+              "score": 9.412132269530183
+            },
+            {
+              "id": "pylint.pyreverse.inspector.Project.get_module",
+              "score": 9.37941772479189
+            },
+            {
+              "id": "tests.extensions.test_private_import",
+              "score": 9.365821428080038
+            },
+            {
+              "id": "pylint.pyreverse.diagrams.PackageEntity",
+              "score": 9.357307487084524
+            },
+            {
+              "id": "tests.functional.w.wrong_import_order",
+              "score": 9.328713972730698
+            },
+            {
+              "id": "pylint.pyreverse.inspector.Linker.visit_assignname",
+              "score": 9.307875952849098
+            },
+            {
+              "id": "pylint.testutils._primer.package_to_lint.PackageToLint.lazy_clone",
+              "score": 9.299286512950246
+            },
+            {
+              "id": "pylint.checkers.non_ascii_names.NonAsciiNameChecker._check_module_import",
+              "score": 9.289485490643436
+            },
+            {
+              "id": "doc.exts.pylint_messages._get_category_directory",
+              "score": 9.266250767310018
+            },
+            {
+              "id": "doc.data.messages.m.missing-class-docstring.bad",
+              "score": 9.249476229618717
+            },
+            {
+              "id": "tests.functional.d.docstrings",
+              "score": 9.184877043071678
+            },
+            {
+              "id": "tests.functional.n.name.name_final",
+              "score": 9.182516123464044
+            },
+            {
+              "id": "tests.functional.ext.docparams.parameter.missing_param_doc_required_no_doc_rgx_check_init",
+              "score": 9.180852621973182
+            },
+            {
+              "id": "pylint.checkers.utils.is_reassigned_after_current",
+              "score": 9.178588857171377
+            },
+            {
+              "id": "tests.functional.m.missing.missing_module_docstring",
+              "score": 9.157292490939762
+            },
+            {
+              "id": "pylint.pyreverse.inspector.Project",
+              "score": 9.15561608254033
+            },
+            {
+              "id": "doc.data.messages.m.missing-class-docstring.bad.Person",
+              "score": 9.153385775351252
+            },
+            {
+              "id": "tests.lint.unittest_lint.test_import_sibling_module_from_namespace",
+              "score": 9.148052531486506
+            },
+            {
+              "id": "pylint.testutils._primer.primer_run_command.RunCommand",
+              "score": 9.141195935854086
+            },
+            {
+              "id": "pylint.checkers.base.name_checker.checker.NameChecker.visit_module",
+              "score": 9.137084412489068
+            },
+            {
+              "id": "tests.functional.f.function_redefined.some_func",
+              "score": 9.132203646915187
+            },
+            {
+              "id": "doc.exts.pylint_extensions",
+              "score": 9.102982498116296
+            },
+            {
+              "id": "tests.message.unittest_message_definition_store.test_multiple_child_of_old_name",
+              "score": 9.09468121675879
+            },
+            {
+              "id": "tests.test_self.TestRunTC.test_ignore_path_recursive_current_dir",
+              "score": 9.077323576746602
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.generate_reports",
+              "score": 9.065235504845717
+            },
+            {
+              "id": "tests.functional.w.wildcard_import",
+              "score": 9.043448971426496
+            },
+            {
+              "id": "tests.functional.u.undefined.undefined_variable.Self",
+              "score": 9.028802736694438
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter.check_single_file_item",
+              "score": 9.003467288178689
+            },
+            {
+              "id": "tests.functional.n.no.no_member_assign_same_line.ClassWithMember.__init__",
+              "score": 8.999362812013382
+            },
+            {
+              "id": "pylint.checkers.variables.VariablesChecker._check_module_attrs",
+              "score": 8.984266108782098
+            },
+            {
+              "id": "pylint.extensions.check_elif.ElseifUsedChecker.leave_module",
+              "score": 8.976073592541848
+            },
+            {
+              "id": "tests.functional.n.no.no_member_assign_same_line.AssignMemberFromSuper1.__init__",
+              "score": 8.954756551891899
+            },
+            {
+              "id": "tests.functional.n.no.no_member_assign_same_line.AssignMemberFromSuper2.__init__",
+              "score": 8.954756551891899
+            },
+            {
+              "id": "tests.checkers.unittest_imports.TestImportsChecker",
+              "score": 8.926799348663572
+            },
+            {
+              "id": "pylint.checkers.base.basic_checker.BasicChecker.visit_module",
+              "score": 8.914558906723551
+            },
+            {
+              "id": "tests.functional.s.super.super_checks",
+              "score": 8.914377301815625
+            },
+            {
+              "id": "tests.checkers.unittest_imports",
+              "score": 8.913994560587456
+            },
+            {
+              "id": "tests.functional.m.missing.missing_module_docstring_empty",
+              "score": 8.900947472706774
+            },
+            {
+              "id": "tests.functional.r.regression.regression_4891",
+              "score": 8.89641340011974
+            },
+            {
+              "id": "pylint.utils.linterstats.LinterStats.get_module_message_count",
+              "score": 8.89045669259906
+            },
+            {
+              "id": "tests.functional.n.name.name_final_snake_case",
+              "score": 8.86727640719764
+            },
+            {
+              "id": "pylint.checkers.non_ascii_names.NonAsciiNameChecker.visit_module",
+              "score": 8.853799104153392
+            },
+            {
+              "id": "tests.test_self.TestRunTC.test_import_plugin_from_local_directory_if_pythonpath_cwd",
+              "score": 8.851490088917952
+            },
+            {
+              "id": "pylint.checkers.utils.is_deleted_after_current",
+              "score": 8.839418003328849
+            },
+            {
+              "id": "pylint.checkers.base.basic_error_checker.BasicErrorChecker._check_nonlocal_and_global",
+              "score": 8.829297512290575
+            },
+            {
+              "id": "tests.lint.unittest_lint.test_filename_with__init__",
+              "score": 8.799520728764332
+            },
+            {
+              "id": "tests.functional.n.no.no_member_assign_same_line.AssignMemberInSameLine.__init__",
+              "score": 8.795385992082322
+            },
+            {
+              "id": "pylint.checkers.base_checker.BaseChecker.__str__",
+              "score": 8.794768925958557
+            },
+            {
+              "id": "pylint.lint.pylinter.PyLinter._get_namespace_for_file",
+              "score": 8.791967778237561
+            },
+            {
+              "id": "pylint.pyreverse.diadefslib.DefaultDiadefGenerator.visit_project",
+              "score": 8.789554541305257
+            },
+            {
+              "id": "pylint.checkers.variables._infer_name_module",
+              "score": 8.783833163272334
+            },
+            {
+              "id": "pylint.checkers.method_args.MethodArgsChecker",
+              "score": 8.783325127175239
+            },
+            {
+              "id": "pylint.checkers.logging.LoggingChecker.visit_importfrom",
+              "score": 8.774970721962092
+            },
+            {
+              "id": "pylint.utils.utils.get_module_and_frameid",
+              "score": 8.75238430360898
+            },
+            {
+              "id": "tests.functional.n.no.no_member_assign_same_line.AssignMemberInSameLineAfterTypeAnnotation.__init__",
+              "score": 8.729663919222443
+            },
+            {
+              "id": "tests.functional.n.no.no_member_assign_same_line.AssignMemberInSameLineAfterTypeAnnotation",
+              "score": 8.727476223483167
+            },
+            {
+              "id": "pylint.testutils.functional.find_functional_tests",
+              "score": 8.716000089618976
+            }
+          ],
+          "scored_documents": 10071,
+          "seconds": 0.01783650000106718
+        }
+      ],
+      "order": [
+        "pylint.utils.utils.register_plugins",
+        "pylint.testutils.functional",
+        "pylint.lint.expand_modules.expand_modules",
+        "pylint.testutils.functional.test_file.FunctionalTestFile",
+        "tests.regrtest_data.import_package_subpackage_module",
+        "tests.test_self.TestRunTC.test_allow_import_of_files_found_in_modules_during_parallel_check",
+        "tests.testutils.test_functional_testutils.test_parsing_of_pylintrc_init_hook",
+        "pylint.epylint",
+        "pylint.config.config_initialization._config_initialization",
+        "tests.testutils.test_functional_testutils",
+        "pylint.config.config_initialization",
+        "tests.test_self.TestRunTC.test_relative_imports",
+        "pylint.lint.pylinter.PyLinter.set_current_module",
+        "pylint.pyreverse.inspector.project_from_files",
+        "pylint.lint.caching",
+        "pylint.extensions.private_import.PrivateImportChecker.same_root_dir",
+        "pylint.testutils.functional.test_file.FunctionalTestFile.__init__",
+        "pylint.utils.linterstats.LinterStats.init_single_module",
+        "tests.test_self.TestRunTC.test_parseable_file_path",
+        "pylint.epylint.lint",
+        "pylint.testutils.lint_module_test",
+        "tests.testutils.test_lint_module_output_update",
+        "pylint.config.config_file_parser._ConfigurationFileParser._parse_toml_file",
+        "pylint.pyreverse.diagrams.PackageDiagram.get_module",
+        "pylint.testutils.functional.test_file.FunctionalTestFile.module",
+        "pylint.checkers.base_checker.BaseRawFileChecker",
+        "pylint.config.arguments_manager._ArgumentsManager._parse_toml",
+        "pylint.checkers.imports.ImportsChecker._add_imported_module",
+        "pylint.testutils.functional_test_file",
+        "tests.test_func.LintTestUsingModule",
+        "pylint.testutils.lint_module_test.LintModuleTest",
+        "tests.test_func.LintTestUsingModule._test_functionality",
+        "pylint.testutils.functional.lint_module_output_update.LintModuleOutputUpdate",
+        "pylint.modify_sys_path",
+        "tests.testutils.test_lint_module_output_update.test_lint_module_output_update_fail_before",
+        "pylint.config.config_file_parser",
+        "tests.functional.i.import_error",
+        "pylint.lint.pylinter.PyLinter._load_reporters",
+        "tests.lint.unittest_lint.test_recursive_ignore",
+        "pylint.config.config_file_parser._ConfigurationFileParser",
+        "pylint.testutils._primer.package_to_lint.PackageToLint",
+        "pylint.testutils.functional.lint_module_output_update",
+        "pylint.config.option_manager_mixin.OptionsManagerMixIn._parse_toml",
+        "pylint.testutils._primer.primer_compare_command.CompareCommand",
+        "pylint.pyreverse.diagrams.PackageDiagram.module",
+        "pylint.pyreverse.diagrams.PackageDiagram",
+        "pylint.testutils.lint_module_test.LintModuleTest.__init__",
+        "pylint.testutils.functional.test_file",
+        "tests.test_func",
+        "pylint.config.find_default_config_files",
+        "pylint.interfaces.IRawChecker",
+        "doc.exts.pylint_extensions.builder_inited",
+        "pylint.checkers.base.basic_checker._BasicChecker",
+        "pylint.pyreverse.writer",
+        "pylint.lint.caching.save_results",
+        "pylint.testutils._primer.primer_compare_command",
+        "tests.test_self.TestRunTC.test_json_report_when_file_has_syntax_error",
+        "pylint.testutils._primer.package_to_lint",
+        "tests.test_self.TestRunTC.test_can_list_directories_without_dunder_init",
+        "doc.exts.pylint_extensions",
+        "tests.regrtest_data.directory.package.module",
+        "pylint.lint.pylinter.PyLinter._get_file_descr_from_stdin",
+        "tests.regrtest_data.directory.package.subpackage.module",
+        "tests.test_similar.TestSimilarCodeChecker",
+        "tests.test_check_parallel.TestCheckParallel.test_sequential_checkers_work",
+        "pylint.lint.pylinter.PyLinter.check_single_file_item",
+        "pylint.testutils.configuration_test.get_expected_output",
+        "tests.regrtest_data.directory.package",
+        "tests.functional.u.unnecessary.unnecessary_ellipsis.docstring_only",
+        "pylint.lint.pylinter.PyLinter.get_ast",
+        "pylint.testutils.functional.lint_module_output_update.LintModuleOutputUpdate.__init__",
+        "tests.functional.i.invalid.invalid_exceptions.invalid_exceptions_raised.reusing_same_name_picks_the_latest_raised_value",
+        "tests.test_functional",
+        "pylint.testutils._primer.package_to_lint.PackageToLint.clone_directory",
+        "pylint.lint.pylinter.PyLinter.load_plugin_modules",
+        "pylint.testutils._primer.primer_command.PrimerCommand.__init__",
+        "tests.functional.u.unnecessary.unnecessary_pass.docstring_only",
+        "tests.test_check_parallel.TestCheckParallel",
+        "pylint.lint.run.Run",
+        "tests.extensions.test_private_import",
+        "pylint.lint.pylinter.PyLinter.load_plugin_configuration",
+        "pylint.lint.run.Run.__init__",
+        "pylint.testutils._primer",
+        "pylint.testutils.configuration_test.get_expected_or_default",
+        "tests.test_check_parallel.TestCheckParallel.test_compare_workers_to_single_proc",
+        "tests.config.test_functional_config_loading",
+        "pylint.lint.pylinter.PyLinter._check_file",
+        "tests.regrtest_data.directory.package.subpackage",
+        "tests.test_similar",
+        "tests.functional.f.fallback_import_enabled",
+        "pylint.config.help_formatter._HelpFormatter.get_long_description",
+        "pylint.testutils.functional.test_file.FunctionalTestFile._parse_options",
+        "tests.testutils.test_lint_module_output_update.test_lint_module_output_update_remove_useless_txt",
+        "pylint.lint.pylinter.PyLinter._check_astroid_module",
+        "tests.benchmark.test_baseline_benchmarks.TestEstablishBaselineBenchmarks",
+        "tests.functional.d.deprecated.deprecated_methods_py36",
+        "pylint.testutils._primer.primer_run_command.RunCommand",
+        "pylint.config.config_file_parser._ConfigurationFileParser.parse_config_file",
+        "tests.pyreverse.test_inspector.test_instance_attrs_resolution",
+        "tests.functional.n.non_ascii_import.non_ascii_import",
+        "tests.primer.test_primer_stdlib",
+        "pylint.lint.pylinter.PyLinter.generate_reports",
+        "pylint.lint.pylinter._load_reporter_by_class",
+        "pylint.config.arguments_manager._ArgumentsManager.load_config_file",
+        "script.bump_changelog",
+        "pylint.checkers.imports.ImportsChecker._check_same_line_imports",
+        "tests.lint.test_pylinter.test_crash_in_file",
+        "pylint.config.option_manager_mixin.OptionsManagerMixIn.load_config_file",
+        "tests.checkers.unittest_unicode.unittest_bad_chars.TestBadCharsChecker.test_bad_chars_that_would_currently_crash_python",
+        "pylint.checkers.imports.ImportsChecker.visit_importfrom",
+        "pylint.lint.pylinter.PyLinter._check_files",
+        "pylint.checkers.utils.collect_string_fields",
+        "pylint.lint.pylinter.PyLinter._load_reporter_by_name",
+        "pylint.pyreverse.inspector.Linker.compute_module",
+        "pylint.config.arguments_manager._ArgumentsManager._parse_configuration_file",
+        "pylint.extensions.private_import.PrivateImportChecker.visit_importfrom",
+        "script.bump_changelog.create_new_newsfile_if_necessary",
+        "tests.test_self.TestRunTC.test_import_plugin_from_local_directory_if_pythonpath_cwd",
+        "tests.test_regr.test_check_package___init__",
+        "tests.functional.n.no.no_name_in_module",
+        "pylint.testutils.configuration_test",
+        "pylint.testutils._primer.primer_run_command.RunCommand._lint_package",
+        "pylint.checkers.non_ascii_names.NonAsciiNameChecker.visit_module",
+        "pylint.testutils._primer.primer_command",
+        "tests.lint.unittest_lint.test_init_hooks_called_before_load_plugins",
+        "pylint.pyreverse.writer.DiagramWriter.write",
+        "tests.checkers.unittest_similar.test_ignore_signatures_class_methods_fail",
+        "tests.test_check_parallel.TestCheckParallelFramework.test_worker_check_sequential_checker",
+        "pylint.pyreverse.inspector.Project.__init__",
+        "tests.lint.test_pylinter",
+        "tests.regrtest_data.precedence_test",
+        "tests.testutils.test_configuration_test.test_get_expected_output",
+        "pylint.config.find_default_config_files.find_default_config_files",
+        "pylint.lint.caching.load_results",
+        "pylint.testutils._primer.primer_command.PrimerCommand",
+        "tests.testutils.test_lint_module_output_update.test_lint_module_output_update_effective",
+        "pylint.lint.pylinter.PyLinter.should_analyze_file",
+        "tests.checkers.unittest_unicode.unittest_bidirectional_unicode.TestBidirectionalUnicodeChecker.test_finds_bidirectional_unicode_that_currently_not_parsed",
+        "tests.test_check_parallel.TestCheckParallel.test_invoke_single_job",
+        "pylint.testutils._primer.primer_compare_command.CompareCommand._create_comment_for_package",
+        "pylint.config.find_default_config_files._toml_has_config",
+        "pylint.testutils._primer.primer_compare_command.CompareCommand._load_json",
+        "tests.functional.n.nonlocal_and_global",
+        "tests.lint.test_utils",
+        "tests.pyreverse.test_inspector.test_locals_assignment_resolution",
+        "pylint.testutils.functional.test_file.parse_python_version",
+        "pylint.utils.utils.IsortDriver.place_module",
+        "tests.functional.n.no.no_member_assign_same_line",
+        "pylint.testutils._primer.primer_run_command.RunCommand.run",
+        "tests.functional.ext.private_import.private_import",
+        "pylint.config.option_manager_mixin.OptionsManagerMixIn.read_config_file",
+        "pylint.pyreverse.writer.DiagramWriter",
+        "tests.testutils.test_configuration_test",
+        "pylint.checkers.variables.VariablesChecker._check_module_attrs",
+        "tests.test_self.TestRunTC.test_abbreviations_are_not_supported",
+        "pylint.checkers.similar.SimilarChecker.process_module",
+        "tests.test_similar.TestSimilarCodeChecker.test_useless_suppression",
+        "tests.testutils._primer.test_package_to_lint",
+        "pylint.constants",
+        "pylint.checkers.variables.VariablesChecker.visit_import",
+        "pylint.checkers.imports.ImportsChecker.leave_module",
+        "pylint.config.config_file_parser._ConfigurationFileParser._parse_ini_file",
+        "pylint.checkers.logging.LoggingChecker.visit_importfrom",
+        "tests.regrtest_data.package_all",
+        "tests.test_self.TestCallbackOptions",
+        "pylint.checkers.non_ascii_names.NonAsciiNameChecker",
+        "pylint.checkers.imports.ImportsChecker._check_wildcard_imports",
+        "tests.config.test_deprecations.TestDeprecationArgumentsManager.test_load_config_file",
+        "pylint.checkers.variables._assigned_locally",
+        "pylint.typing.FileItem",
+        "pylint.utils.utils.get_module_and_frameid",
+        "tests.benchmark.test_baseline_benchmarks.TestEstablishBaselineBenchmarks.test_baseline_lots_of_files_j1_empty_checker",
+        "tests.testutils._primer.test_package_to_lint.test_package_to_lint",
+        "pylint.checkers.base.basic_error_checker.BasicErrorChecker._check_nonlocal_and_global",
+        "tests.functional.n.no.no_member_assign_same_line.AssignMemberInSameLine",
+        "tests.functional.r.regression_02.regression_distutil_import_error_73",
+        "tests.regrtest_data.package.subpackage.module",
+        "tests.test_self.TestRunTC",
+        "pylint.checkers.variables.VariablesChecker.visit_importfrom",
+        "pylint.config.arguments_manager._ArgumentsManager._load_default_argument_values",
+        "tests.functional.d.deprecated.deprecated_relative_import.dot_relative_import",
+        "tests.regrtest_data.beyond_top_four.module.double_name",
+        "pylint.testutils._primer.primer_compare_command.CompareCommand._cross_reference",
+        "pylint.checkers.unicode.UnicodeChecker._determine_codec",
+        "pylint.config.arguments_manager._ArgumentsManager.read_config_file",
+        "pylint.pyreverse.writer.DiagramWriter.get_shape_color",
+        "tests.benchmark.test_baseline_benchmarks.TestEstablishBaselineBenchmarks.test_baseline_lots_of_files_j2_empty_checker",
+        "tests.functional.d.deprecated.deprecated_relative_import.subpackage.dot_dot_relative_import",
+        "pylint.testutils.functional.find_functional_tests",
+        "tests.functional.n.no.no_member",
+        "tests.testutils._primer.test_primer",
+        "pylint.pyreverse.diadefslib.DefaultDiadefGenerator.visit_module",
+        "pylint.config.exceptions._UnrecognizedOptionError",
+        "pylint.extensions.private_import.PrivateImportChecker",
+        "tests.test_self.TestRunTC.test_wrong_import_position_when_others_disabled",
+        "pylint.pyreverse.writer.DiagramWriter.write_packages",
+        "pylint.checkers.non_ascii_names",
+        "tests.checkers.unittest_unicode.unittest_bidirectional_unicode.TestBidirectionalUnicodeChecker",
+        "pylint.testutils._primer.primer_prepare_command.PrepareCommand.run",
+        "pylint.config.help_formatter"
+      ],
+      "retrieval_calls": 3,
+      "index_nodes": 10071,
+      "scored_documents": 30213,
+      "source_chars_read": 3215784,
+      "shared_index_seconds": 2.916483499999231
+    }
+  ]
+}
