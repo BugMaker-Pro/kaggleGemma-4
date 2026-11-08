@@ -68,8 +68,6 @@ We contribute (i) a pre-specified, degree- and file-matched topology control acr
 
 **Historical-arm statistics.** Paired task differences: mean difference with a bootstrap 95% interval (2,000 resamples, fixed seed) plus an exact sign test. Follow-up inference is specified with Table 1.
 
-**Null-derived denoiser.** We treat real edges removed by rewiring as positives and added edges as negatives, train on six repositories, and filter seed neighbours on held-out repositories without repair labels.
-
 ---
 
 ## 5. Results
