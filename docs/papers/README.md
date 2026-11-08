@@ -2,7 +2,7 @@
 
 > 下载：2026-10-20，来源 arXiv / ACL Anthology。
 > PDF 已在 `.gitignore` 里（不进仓库）。这份索引进仓库。
-> 读法见 [../literature.md](../literature.md)：**每篇只读摘要 + 方法节 + 实验表头**，写三行笔记。
+> 读法见 [../literature.md](notes.md#literature)：**每篇只读摘要 + 方法节 + 实验表头**，写三行笔记。
 
 ## 地基（先把这三篇读透）
 

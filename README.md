@@ -14,7 +14,7 @@ We distinguish candidate coverage, selection within a shortlist, and the granula
 - **A small positive graph effect.** Seven graph variants show no statistically significant symbol improvement over BM25 on Lite. Graph reranking gains +2.2 percentage points on 2,232 tasks; graph features inside the learned ranker add +2.7 points. These results do not establish that graphs are ineffective.
 - **Reach and displacement differ.** In the Lite setup, the 200-candidate pool's oracle recall is 0.600, rising to 0.630 with neighbours. Sparse useful neighbours and displacement of existing hits limit net gains.
 - **Index content changes the comparison.** Adding each candidate's body raises full-scale BM25 symbol recall from 0.248 to 0.286. The granularity ratio is a property of the retrieval setup, not a constant.
-- **Dense and explicit scores complement each other.** On the same 200 candidates, the held-out 16-feature ranker reaches 0.361 symbol / 0.643 file recall; adding a frozen dense score reaches **0.447 / 0.727**. Dense inputs include body text, unlike the metadata BM25 baseline.
+- **Dense and explicit scores complement each other.** On the same 200 candidates, the held-out 16-feature ranker reaches 0.361 symbol / 0.643 file recall; adding a frozen dense score reaches **0.447 / 0.727**. Dense inputs include body text, unlike the metadata BM25 baseline. Retraining this fusion without three topology features lowers symbol recall to **0.430**; their +1.66-point contribution has a repository interval of +0.66 to +2.42 points.
 - **Scale can change the conclusion.** A hand-written evidence override gains 2.9 points on Lite but −0.2 points at full scale. Lite is included in the full split; sample composition and training size both change, so this is not independent replication or a causal training-size experiment.
 
 All principal comparisons use ten slots, not equal character or token budgets. The 16× file/definition source-length ratio is not a measured agent-cost saving. We evaluate retrieval, not resolved rate.
@@ -33,8 +33,8 @@ Historical Lite seed handling and dense rounding ties differ; both are disclosed
 
 [Results and figure](docs/graph-control-results.md) ·
 [Frozen protocol](docs/graph-control-protocol.md) ·
-[Interpretation](docs/graph-control-interpretation.md) ·
-[Reproduce](docs/graph-control-reproduction.md)
+[Interpretation](docs/novelty-review.md#graph-control-interpretation) ·
+[Reproduce](docs/reproduction.md#graph-control-reproduction)
 
 ```bash
 uv run python tools/audit_graph_controls.py
@@ -60,7 +60,8 @@ The numerical audit recomputes metrics from released outputs; it does not indepe
 | `tools/` | graph interventions, learned ranking, diagnostics, audits, publication build |
 | `data/` | tracked gold labels and per-task experiment outputs |
 | `paper/` | manuscript sources, PDF, figures and writeup variants |
-| `docs/` | protocols, gold audit, reproduction instructions and novelty review |
+| [`artifacts/`](artifacts/README.md) | historical outputs consolidated with per-file hashes and original paths |
+| [`docs/`](docs/README.md) | documentation index: current work, reproducibility, supporting experiments and archives |
 
 An independent gold derivation matches 279 of 300 Lite answer keys exactly; rescoring with repaired targets changes recall by at most 0.7 points. Details: [docs/gold-audit.md](docs/gold-audit.md).
 
