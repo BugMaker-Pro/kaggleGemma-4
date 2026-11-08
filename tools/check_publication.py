@@ -57,7 +57,7 @@ def main() -> int:
         if phrase in body:
             problems.append(f"Stale claim: {phrase}")
     control_summary = ROOT / "data/graph_controls_summary.json"
-    if control_summary.exists() and "**Topology versus intervention.**" in body:
+    if control_summary.exists() and "Primary experiment: topology versus intervention" in body:
         controls = json.loads(control_summary.read_text(encoding="utf-8"))["full"]
         for representation in ("metadata", "body", "dense"):
             values = [f"{controls['arms'][representation][arm]['symbol']:.4f}"
@@ -65,7 +65,7 @@ def main() -> int:
             values.append(f"{controls['primary'][representation+':real-rewired']['holm_p']:.4f}")
             expected_row = "| " + representation + " | " + " | ".join(values) + " |"
             if expected_row not in body:
-                problems.append(f"Topology-control Table 8 differs from audited summary: {representation}")
+                problems.append(f"Topology-control Table 1 differs from audited summary: {representation}")
         for representation in ("body", "dense"):
             p_value = controls['primary'][f'interaction:{representation}-metadata']['holm_p']
             if f"{p_value:.3f}" not in body:
@@ -74,7 +74,8 @@ def main() -> int:
     if ablation_summary.exists() and "fusion without topology features" in body:
         ablation = json.loads(ablation_summary.read_text(encoding="utf-8"))
         reduced = ablation["arms"]["without_graph"]
-        expected = f"| fusion without topology features | {reduced['symbol']:.3f} | {reduced['file']:.3f} |"
+        expected = (f"| fusion without topology features | — | — | "
+                    f"{reduced['symbol']:.3f} | {reduced['file']:.3f} |")
         if expected not in body:
             problems.append("Strong-fusion ablation row differs from audited result")
         effect = ablation["symbol"]

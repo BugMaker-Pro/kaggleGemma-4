@@ -52,49 +52,35 @@ Each randomized graph preserves every candidate's within-file and cross-file deg
 
 Real-minus-rewired effects are +2.14 (CI 1.34–2.66), +0.90 (0.01–1.58), and +1.76 (1.04–2.82) points. The body and dense interactions are −1.24 and −0.38 points (Holm p = 0.126 and 0.598): neither establishes attenuation. Real-minus-base effects are +2.19, −0.01, and +0.64 points; the dense secondary repository test has p = 0.069. Thus rejecting a randomized topology does not establish a useful improvement over dense retrieval.
 
-The primary null replaces 54.2% of edges; 28 graphs accept no swap. The stricter null replaces 19.0%; 273 are immobile. The exploratory denoiser raises body recall from 0.3171 to 0.3195, but its repository interval crosses zero; metadata and dense variants trail unfiltered real promotion. Thus null controls provide algorithmic supervision, not yet robust selection gains.
-
-**A learned ranker.** Sixteen lexical, issue-evidence, graph, and size features feed LightGBM. We sort the 12 repositories, split alternating entries into two groups of six, then train and test in both directions. Each task is evaluated once on unseen repositories; predictions average three seeds. This is repository-held-out two-fold evaluation. Hyperparameters are fixed across folds; exploratory method selection limits claims of an untouched test set.
-
-![paper/table_2.png](table_2.png)
+**A learned ranker.** Sixteen lexical, issue-evidence, graph, and size features feed LightGBM. We sort the 12 repositories, split alternating entries into two groups of six, then train and test in both directions. Each task is evaluated once on unseen repositories; predictions average three seeds. This is repository-held-out two-fold evaluation. Hyperparameters are fixed across folds; exploratory method selection limits claims of an untouched test set. At 290 tasks the ranker lifts symbol recall@10 from 0.275 to 0.332 (+0.057, CI 0.019–0.096; 31 wins, 14 losses; p = 0.016); an evidence override adds a further 0.029 over the ranker (p = 0.035) to reach 0.361, which is +0.086 over BM25 with 39 wins and 13 losses.
 
 **Full-scale ranking.** A frozen 33M bge-small-en-v1.5 encoder scores the same 200 candidates. It embeds the issue's first 1,200 characters and each candidate's path, name, and first 800 body characters, using CLS pooling, cosine similarity, and a 512-token cap. Adding this score to the sixteen features gives +8.6 points (418 wins, 83 losses).
 
-![paper/table_3.png](table_3.png)
+![paper/table_2.png](table_2.png)
 
 The file/symbol ratio falls to 1.63×. Dense also reads body text, so its gain does not isolate pretraining. Removing in/out-degree and seed adjacency, then retraining with identical pools, dense scores, folds, and seeds, costs **1.66 points** (repository 95% CI 0.66–2.42; sign-flip p = 0.0103). This follow-up fixes one primary contrast before new outcome inspection and uses repository-cluster bootstrap intervals.
-
-![paper/table_4.png](table_4.png)
-
-Quoted-body tasks gain **29.4 points on Lite and 29.6 at full scale**; path/frame tasks gain 27.8 at full scale. These gold-defined subsets describe evidence retrospectively, not deployable routing.
-
-**Scale extension.** Table 5 uses the same metric definition on 2,232 scorable tasks from 2,174 snapshots. Training-set size also increases for learned arms.
-
-![paper/table_5.png](table_5.png)
-
-Graph reranking has 169 wins and 90 losses, positive in 8 of 12 repositories. The evidence override's Lite gain does not persist. Sample composition, training size, and historical seed handling differ; this comparison cannot identify a sample-size effect alone.
-
-**What you index moves the gap.** Adding the candidate's body raises symbol recall at 2,232 tasks from 0.248 to 0.286 (+3.8, CI 2.1–5.4): the gap narrows from 2.28× to 1.97×. Another symbol's body instead drops recall to 0.128, so the gain is the candidate's own text; as two ranker columns it is worth **+2.6 points** (202/94).
-
-**Scoring granularity.** Table 6 scores one ranking two ways; all 354 gold symbols resolve into the graph.
-
-![paper/table_6.png](table_6.png)
-
-Line granularity agrees: the ranking covers **23.9%** of the 1,010 changed lines, so the gap is not a matching artefact. **No graph variant has a statistically significant symbol improvement on Lite at ten slots** — Table 7 and Figure 1.
-
-**Source size.** Median gold-file and touched-definition lengths are 28,950 and 1,726 characters; 112 tasks exceed a 25× ratio. These lengths do not establish token, latency, or repair savings.
 
 ![paper/fig1.png](fig1.png)
 
 *Figure 1 — top: symbol recall@k for BM25, the best graph arm, the learned ranker and the ranker with evidence. Bottom left: the same ranking by file and by symbol. Bottom right: the ranker's gain over BM25 by what the issue offers, at both scales.*
 
-![paper/table_7.png](table_7.png)
+**Scale extension.** The same metric definition holds on 2,232 scorable tasks from 2,174 snapshots, with larger training sets for learned arms. Graph reranking has 169 wins and 90 losses, positive in 8 of 12 repositories; the evidence override's Lite gain does not persist. Quoted-body tasks gain **29.4 points on Lite and 29.6 at full scale**; path/frame tasks gain 27.8 at full scale. These gold-defined subsets describe evidence retrospectively, not deployable routing.
+
+**What you index moves the gap.** Adding the candidate's body raises symbol recall at 2,232 tasks from 0.248 to 0.286 (+3.8, CI 2.1–5.4): the gap narrows from 2.28× to 1.97×. Another symbol's body instead drops recall to 0.128, so the gain is the candidate's own text; as two ranker columns it is worth **+2.6 points** (202/94).
+
+**Scoring granularity.** Table 3 scores one ranking two ways; all 354 gold symbols resolve into the graph.
+
+![paper/table_3.png](table_3.png)
+
+Line granularity agrees: the ranking covers **23.9%** of the 1,010 changed lines, so the gap is not a matching artefact. **No graph variant has a statistically significant symbol improvement on Lite at ten slots** — Table 4 and Figure 1.
+
+**Source size.** Median gold-file and touched-definition lengths are 28,950 and 1,726 characters; 112 tasks exceed a 25× ratio, which motivates scoring symbols rather than files. These lengths do not establish token, latency, or repair savings.
+
+![paper/table_4.png](table_4.png)
 
 Second-hop reach increases to 35.7% without a recall gain. Reranking gains +2.9 at k = 20 (p = 0.021).
 
-**Displacement can offset reach.** Personalised PageRank wins the first slot (0.106 against 0.091) and still trades 15 gained gold symbols for 17 lost; at file level it loses 4.5 points (p = 0.019). `graph_open` swaps slots 6–10 for neighbours: 18 tasks lose a gold file, 4 gain one, −4.8 points (p = 0.004). **Reachable targets do not guarantee net gains** — Table 8.
-
-![paper/table_8.png](table_8.png)
+**Displacement can offset reach.** Personalised PageRank wins the first slot (0.106 against 0.091) and still trades 15 gained gold symbols for 17 lost; at file level it loses 4.5 points (p = 0.019). `graph_open` swaps slots 6–10 for neighbours: 18 tasks lose a gold file, 4 gain one, −4.8 points (p = 0.004). **Reachable targets do not guarantee net gains.**
 
 One-hop reach covers 41 of 354 symbols across 38 tasks, or **11.9%** macro recall before overlap and displacement. PPR retrieves 18 of those 41 (44%), but its 15 new gold hits cost 17 existing hits. The 9,855 neighbours are **0.42%** gold versus **3.1%** per text slot: reach alone is a poor guide to replacement.
 

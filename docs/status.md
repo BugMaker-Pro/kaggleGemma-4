@@ -42,14 +42,14 @@
 | --- | --- |
 | **Title** | `Beyond File Hits: Candidate Coverage and Graph Utility in Code Localization` |
 | **Subtitle** | `A controlled retrieval study of graph reach, shortlist displacement, and index content on SWE-bench Lite and the full test split` |
-| **Body** | [paper/kaggle_body_img.md](../paper/kaggle_body_img.md)：2,466 词（仅文字，另含表图内容）、10 个小节、**9 个图片位**；顺序为 `table_1` → `table_2` → `table_3` → `table_4` → `table_5` → `table_6` → `fig1` → `table_7` → `table_8` |
-| **PDF** | [paper/submission.pdf](../paper/submission.pdf)，6 页（参考文献独立一页）；与 Markdown 同源生成，`check_publication.py` 已对照 PDF 核对 72 个源块 |
-| **字数** | 完整文本含标题、副标题和表格，按仓库计数规则 **2,996 词**；限额 3,000，预留 **4**。图片版文字少不代表字数豁免；线上计数最终核对 |
+| **Body** | [paper/kaggle_body_img.md](../paper/kaggle_body_img.md)：2,480 词（仅文字，另含表图内容）、10 个小节、**5 个图片位**；顺序为 `table_1` → `table_2` → `table_3` → `fig1` → `table_4` |
+| **PDF** | [paper/submission.pdf](../paper/submission.pdf)，5 页（参考文献独立一页）；与 Markdown 同源生成，`check_publication.py` 已对照 PDF 核对 65 个源块 |
+| **字数** | 完整文本含标题、副标题和表格，按仓库计数规则 **2,728 词**；限额 3,000，预留 **272**。图片版文字少不代表字数豁免；线上计数最终核对 |
 | **Project Links** | `https://github.com/BugMaker-Pro/kaggleGemma-4` + `https://github.com/BugMaker-Pro/kaggleGemma-4/blob/main/paper/submission.pdf` |
 
-2026-11-08 叙事重排：主结果改为全定量表拓扑对照（新 Table 1），学习排序与全量结果前移（Table 2–5），粒度与 Lite 八臂降为后置背景（Table 6–8）。摘要、引言、讨论、结论改为以“结构信号与干预价值分离”开篇；表号、正文引用、Claim→evidence 表同步更新。字数因此从 2,915 压到 2,996（余量仅 4），后续任何加句都要先删句。
+2026-11-08 叙事重排：主结果改为全定量表拓扑对照（Table 1），学习排序与全量结果合并为一张两尺度表（Table 2）。随后按“删掉不承载主张的实验”精简：删除 null-derived denoiser 段、证据子集表、覆盖与位移表；学习排序的 290 任务数字并入正文。表格从 8 张降到 4 张，PDF 从 6 页降到 5 页，字数从 2,996 降到 2,728（余量 272），并把 Figure 1 前移以消除半页空白。
 
-表格图共有 8 张（Table 1–8）。另有 Figure 1，共 9 个图片位；旧 `table_resolution.png` 不再使用。重排后 Table 1 是全量拓扑对照，Table 2 学习排序、Table 3 全量召回、Table 4 证据子集、Table 5 规模扩展，Table 6 粒度、Table 7 Lite 八臂、Table 8 覆盖与位移。
+表格图共 4 张：Table 1 全量拓扑对照、Table 2 两尺度召回、Table 3 符号/文件粒度、Table 4 Lite 八臂；另有 Figure 1，共 5 个图片位。旧 `table_resolution.png` 与 `table_5`–`table_8.png` 已删除。
 
 备选全文：[paper/kaggle_body_full.md](../paper/kaggle_body_full.md)，2,891 词，表格转列表。`paper/kaggle_body.md` 仅是简短项目介绍，不能代替完整论文提交。
 
