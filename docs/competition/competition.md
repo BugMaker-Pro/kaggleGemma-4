@@ -145,7 +145,7 @@ Rich 开发任务 `rich_3942` 在未经修改的官方环境中通过正反对�
 
 ```powershell
 .venv/Scripts/python.exe tools/audit_main_track.py --run-dir experiments/runs/main-track-smoke-20261108-v2
-.venv/Scripts/python.exe tools/audit_main_track.py --verification-dir .cache/main-track/verification-rich-v1
+.venv/Scripts/python.exe tools/audit_main_track.py --verification-dir .cache/main-track/verification-rich-v1  # 已归档删除，见 docs/cleanup-20261108.md
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/run_main_track_notebook.ps1 -Action Status -BuildDirectory .cache/main-track/build-rich-v1
 ```
 

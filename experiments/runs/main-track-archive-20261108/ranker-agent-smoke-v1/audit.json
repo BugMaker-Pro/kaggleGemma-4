@@ -1,0 +1,111 @@
+{
+  "passed": true,
+  "artifact_checks": 66,
+  "results": [
+    {
+      "arm": "baseline",
+      "task_id": "requests_7433",
+      "resolved": true,
+      "test_exit_code": 0,
+      "tool_calls": 29,
+      "duration_seconds": 288.12717786100006,
+      "patch_sha256": "4ca9795049fc679c1b60c4f32e561b8018529633e79d2dd7b2a3fca87b1ff31e",
+      "patch_chars": 584,
+      "purpose": "engineering_smoke",
+      "harness_error": null,
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "run_command": 12,
+          "read_file": 13,
+          "edit_file": 1,
+          "write_file": 3
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": 26.27333903312683,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [
+          "proxy_test.py"
+        ],
+        "tool_errors": {
+          "CommandError": 3,
+          "FileWriteError": 1
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 301658,
+          "total_completion_tokens": 5419,
+          "total_cached_tokens": 0,
+          "total_tokens": 307077,
+          "total_steps": 31
+        }
+      },
+      "full_ranker_invocations": 0,
+      "exact_original_issue_full_ranker_invocations": 0,
+      "exact_original_issue_full_ranker_successes": 0,
+      "line_ending_equivalent_full_ranker_invocations": 0,
+      "line_ending_equivalent_full_ranker_successes": 0,
+      "full_pipeline_executed_with_original_issue": false,
+      "configured_prompt_present": true,
+      "prompt_evidence": "Runtime package hashes and trace system step",
+      "workflow_agents_observed": [
+        "matched_repair_agent"
+      ],
+      "test_output_present": true
+    },
+    {
+      "arm": "ranker",
+      "task_id": "requests_7433",
+      "resolved": true,
+      "test_exit_code": 0,
+      "tool_calls": 30,
+      "duration_seconds": 286.6203124350001,
+      "patch_sha256": "b7aacf134cfafd5816e675d56d001be8184a3b980f465e5228e20003571ddd7e",
+      "patch_chars": 2389,
+      "purpose": "engineering_smoke",
+      "harness_error": null,
+      "trace_summary": {
+        "ranker_calls": [],
+        "ranker_outputs": [],
+        "tool_invocations_including_rejected_and_free": {
+          "run_command": 19,
+          "read_file": 5,
+          "edit_file": 2,
+          "write_file": 4
+        },
+        "graph_calls": 0,
+        "first_edit_elapsed_seconds": 19.138715505599976,
+        "explicit_submit": false,
+        "workspace_scratch_files_observed": [
+          "reproduce_issue.py"
+        ],
+        "tool_errors": {
+          "CommandError": 3,
+          "FileWriteError": 1,
+          "FileEditError": 1
+        },
+        "model_usage_from_trace": {
+          "total_prompt_tokens": 315373,
+          "total_completion_tokens": 9434,
+          "total_cached_tokens": 0,
+          "total_tokens": 324807,
+          "total_steps": 32
+        }
+      },
+      "full_ranker_invocations": 0,
+      "exact_original_issue_full_ranker_invocations": 0,
+      "exact_original_issue_full_ranker_successes": 0,
+      "line_ending_equivalent_full_ranker_invocations": 0,
+      "line_ending_equivalent_full_ranker_successes": 0,
+      "full_pipeline_executed_with_original_issue": false,
+      "configured_prompt_present": true,
+      "prompt_evidence": "Runtime package hashes and trace system step",
+      "workflow_agents_observed": [
+        "matched_repair_agent"
+      ],
+      "test_output_present": true
+    }
+  ],
+  "integration_executed": false,
+  "scope": "Development engineering comparison with INT8 deployment encoder, not proof of method effectiveness or official Docker compatibility"
+}

@@ -22,5 +22,6 @@
 - [代码反馈](experiments/feedback.md)：流程、首轮试跑和扩样结果。
 - [反事实图算法](experiments/counterfactual-topology-algorithms.md)：图去噪、附加特征与路由。
 - [历史决策摘要](archive/history.md)：已被替代的选题、旧稿计划和未确证设想。
+- [2026-11-08 仓库清理记录](cleanup-20261108.md)：删除了哪些运行缓存、归档在哪里、哪些路径必须保留。
 
-当前共 16 篇 Markdown 文档。后续优先更新已有主题，不为每次小改动新增文档。原始实验数据和回执仍保留在 data/、experiments/runs/，本次仅精简说明文件。
+当前共 17 篇 Markdown 文档。后续优先更新已有主题，不为每次小改动新增文档。原始实验数据和回执仍保留在 data/、experiments/runs/，本次仅精简说明文件。
