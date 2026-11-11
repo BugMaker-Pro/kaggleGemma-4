@@ -26,6 +26,15 @@
 **2026-11-10 结果（compare_ranker_development.py 复核与冻结 comparison.json 一致）**：基线解决 2/10，完整方法 1/10；ranker_only 0，control_only 1。8/10 任务完整方法产生完整输出、6 个与原文等价；绝大多数任务两臂均超 3 分钟会话预算。按预登记判读规则（基线赢则不写），该结果**不进入论文**；论文保持检索层定位，Limitations 已覆盖无下游修复评估。119 个确认任务未使用，两组 `.cache` 运行目录保留。
 
 正式 Docker 依赖、额外编码器的最终参赛适用性、线上 Writeup 更新和榜单提交仍待后续处理。本次未执行 Git commit/push 或线上提交。完整开发过程、失败记录和接续命令见 [比赛开发记录](competition/competition.md#2026-11-08-当日收尾与接续)。
+
+## 2026-11-12 提交记录与主赛道离线预演（不耗 GPU）
+
+- **论文赛道**：用户报告 Writeup 已提交。提交前本机复核：2,990 词、6 页、0 publication failure；`audit_numbers.py --fast` 0 failure；两个 Project Link 匿名访问均 200。回执链接、平台字数、截图仍待用户补入 [writeup-upload.md](../paper/writeup-upload.md#L37)。
+- **主赛道预演一（超时是否可救）**：197 条带轨迹且能对上批结果的 run 中，超时但已有补丁的 run 都执行了官方测试并失败（exit 1/2/124），所以“早提交就能救回超时”不成立。
+- **主赛道预演二（第一瓶颈）**：97/197（49%）run 全程没有一次 `edit_file`/`write_file`，这些 run 解决数为 0；有编辑的 100 条中解决 38 条（38%）。
+- **主赛道预演三（编辑时机）**：按首次编辑时间分桶，0–60s 10/23、60–120s 17/31、120–180s 7/27、180s 以上 4/18。跨批次、跨预算混合，且是相关不是因果；若要用，只能作为“强制早编辑”A/B 的动机，不能作为收益主张。
+- 预演脚本为一次性 scratch（`.cache/analyze_run_timing.py`、`.cache/edit_latency.py`），未纳入 `tools/`。
+
 ## 关键日期（北京时间，UTC+8）
 
 | 事件 | UTC | 北京时间 |
@@ -185,3 +194,23 @@
 **构建备注**：本机 DSH 沙箱拒绝 `os.chmod` 与删除 `paper/` 子目录，`tools/make_pdf.py` 的 `TemporaryDirectory` 会失败；本次用 `.cache/rebuild_pdf_direct.py` 直接调用同一 LibreOffice Kit 转换写 `paper/submission.pdf`（产物 6 页、0 failure）。沙箱外运行 `tools/make_pdf.py` 不受影响。
 
 **待办**：论文修订已提交（eb3291c）并推送；线上核实 submitted/draft、平台字数、5 图顺序与两个 Project Links，然后正式提交；`review-2026-11-11.html` 与四份 11/09 实验文档仍按未跟踪处理。
+
+### 2026-11-11 深夜：60-call 预算对照（opt-02）结果
+
+`ranker-preloc-opt-02`（4 任务，5 分钟 / 60 calls / 80 turns / 并发 3）最终 COMPLETE，输出已拉回：
+
+- baseline **1/4**（`requests_7427`），ranker **0/4**；`opt-01` 是 baseline 0/4、ranker 1/4
+- 两轮合计都是 **1/8**，唯一变化是 `requests_7427` 的胜负臂对调；不是净增益
+- 60-call 下**不再出现** `Agent exceeded tool call budget (30 calls)`；8 次运行里 6 次仍是 `Agent exceeded session timeout (5 min)`，一次无错误但未通过测试
+- 结论：**调用次数不是瓶颈，5 分钟墙钟才是**。提高 calls 只是把“撞调用上限”换成“超时”，不能作为主赛道 fix
+
+该结果不进入论文（预登记：基线赢则不写），只作为主赛道预算结论；内核在 RUNNING 状态挂了约 2 小时后才转 COMPLETE，期间无法取消（403）。
+
+## 2026-11-12 晚间：论文投稿前最后修订（两个 commit，均已推送）
+
+复评 `review-2026-11-11.html` 判定的丢分点（Relevance 3 / Novelty 2 / Quality 2）按性价比做了两轮文字修订，无任何新实验或数字改动：
+
+- `0ab33d0`：Discussion 新增 "Why this matters for coding agents"（32K 窗口 + 16.1× 粒度比，把论文锚回 agentic SE 主题）；Limitations 开头改为「数字不外推、协议可迁移」回应官方 "translate to other similar problems" 评分点；补披露 273 任务不可交换 / 345 边集未变 / django+sympy 占 191/300。为控字数合并了 §5 位移/到达的重复段（保留 audit_numbers 锁定的 44%）。
+- `6a396ea`：副作用审查后弱化部署句——删去 "directly bound what the repair stage can reach"（下游 54 配对基线赢，不得有因果暗示），改为 "packaged as the localization stage of a quantized competition agent; downstream repair is not evaluated here"，与 Reproducibility 口径统一并删除其重复的部署句；补引 falsify-eval 预印本为 [15]（`docs/papers/notes.md:262` 判定必须引用）。放弃把 54 任务配对轨迹作为 released artifact 写入论文：该语料核心结果是下游负结果，亮出来反而引火。
+- 最终自检：`check_publication.py` → **2,997 词、6 页、4 表、15 文献、70 源块、0 failure**；`audit_numbers.py --fast` → **0 failure**；`kaggle_body_img.md` 2,749 词 / 5 图。
+- 待用户完成：线上粘贴新版 `kaggle_body_img.md`、按正文占位顺序（table_1 → table_2 → fig1 → table_3 → table_4）核对图片、确认 submitted 状态并截图回填 [writeup-upload.md](../paper/writeup-upload.md)。Project Link 指向的 PDF 已随 push 更新。
