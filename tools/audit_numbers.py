@@ -315,6 +315,36 @@ def main(argv=None) -> int:
     check("tasks above 25x", 112, sum(1 for ratio in ratios if ratio >= 25), 0)
     check("definitions in the gold file", 48,
           round(statistics.median(row["definitions"] for row in cost)), 0)
+    tokens = [json.loads(line) for line in
+              (ROOT / "data" / "cost_budget_tokens.jsonl").open(encoding="utf-8") if line.strip()]
+
+    def token_recall(curve: list[dict], budget: int, total: int) -> float:
+        hits = 0
+        for point in curve:
+            if point["cost"] > budget:
+                break
+            hits = point["hits"]
+        return hits / total if total else 0.0
+
+    check("ten-slot token cost as definitions", "4,097",
+          f"{statistics.fmean(r['symbol_curve'][-1]['cost'] for r in tokens):,.0f}", 0, fmt="{}")
+    check("ten-slot token cost as whole files", "74,525",
+          f"{statistics.fmean(r['file_curve'][-1]['cost'] for r in tokens):,.0f}", 0, fmt="{}")
+    check("symbol recall at 4k tokens", 0.253,
+          round(statistics.fmean(token_recall(r["symbol_curve"], 4000, r["gold_total"]) for r in tokens), 3), 0.001)
+    check("file recall at 4k tokens", 0.103,
+          round(statistics.fmean(token_recall(r["file_curve"], 4000, r["gold_total"]) for r in tokens), 3), 0.001)
+    check("file recall at 8k tokens", 0.217,
+          round(statistics.fmean(token_recall(r["file_curve"], 8000, r["gold_total"]) for r in tokens), 3), 0.001)
+    check("symbol plateau at 8k tokens", 0.266,
+          round(statistics.fmean(token_recall(r["symbol_curve"], 8000, r["gold_total"]) for r in tokens), 3), 0.001)
+
+    print("\n== rewiring mobility ==")
+    controls = json.loads((ROOT / "data" / "graph_controls_summary.json").read_text(encoding="utf-8"))
+    check("main null mean changed edge fraction", 0.542,
+          round(controls["full"]["mobility"]["rewired"]["mean_changed_edge_fraction"], 3), 0.001)
+    check("strict null mean changed edge fraction", 0.190,
+          round(controls["full"]["mobility"]["rewired_pair"]["mean_changed_edge_fraction"], 3), 0.001)
 
     if not args.fast:
         print("\n== django edge resolution ==")
@@ -563,7 +593,9 @@ def main(argv=None) -> int:
                   "22.8%", "17.2%", "41.7%", "23.9%",
                   "2,232", "2.28×", "0.564", "0.248", "0.643",
                   "27.8", "29.4", "29.6",
-                  "88%", "39%", "87%"):
+                  "88%", "39%", "87%",
+                  "4,097", "74,525", "0.253", "0.103",
+                  "54.2%", "19.0%"):
         present = token in paper
         print(f"  [{'ok  ' if present else 'FAIL'}] draft contains {token!r}")
         if not present:

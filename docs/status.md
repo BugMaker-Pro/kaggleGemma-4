@@ -14,16 +14,16 @@
 - 真实接入：第一轮模型跳过技能的结果保留；第二轮改为先检索后修复，实际 full 调用成功、目标函数排名第一、337 个测试通过，最终补丁只含源码。59 项产物核对通过。
 - 配套工程：匹配预算检查、输入问题保真检查、调用轨迹审计和对照汇总工具已完成；相关 26 项单元测试通过。可重建实验包在 `artifacts/ranker-agent-v2/`。
 
-仍在 Kaggle 运行：
+两组 Kaggle 运行已完成（2026-11-10 查询均为 COMPLETE）：
 
 | 组别 | Notebook | 本地运行目录 | 任务数 |
 | --- | --- | --- | --- |
 | 完整方法 | `yyyyhhhhwww/gemma4-ranker-development-20261108-v1` | `.cache/main-track/ranker-development-v1` | 10 |
 | 匹配证据基线 | `yyyyhhhhwww/gemma4-development-batch-20261108-matched-v2` | `.cache/main-track/ranker-matched-control-v2` | 10 |
 
-两组模型、采样、3 分钟总预算、30 次工具预算、120 秒单命令上限和并发数 2 已核对一致；10 个任务均有空补丁失败、参考补丁通过的环境对照。基线首次启动失败发生在模型发现阶段，未产生修复结果；原始记录保留，修正版为上表 v2。
+两组模型、采样、3 分钟总预算、30 次工具预算、120 秒单命令上限和并发数 2 已核对一致；10 个任务均有空补丁失败、参考补丁通过的环境对照。
 
-下一次只需接续：查询两组状态 → 下载全部产物 → 运行 `tools/compare_ranker_development.py` → 冻结结果和哈希索引 → 更新修复率及失败分析。最终结果下载归档前，保留上表两个 `.cache` 运行目录。完整方法是否优于基线仍待结果，119 个确认任务尚未使用。
+**2026-11-10 结果（compare_ranker_development.py 复核与冻结 comparison.json 一致）**：基线解决 2/10，完整方法 1/10；ranker_only 0，control_only 1。8/10 任务完整方法产生完整输出、6 个与原文等价；绝大多数任务两臂均超 3 分钟会话预算。按预登记判读规则（基线赢则不写），该结果**不进入论文**；论文保持检索层定位，Limitations 已覆盖无下游修复评估。119 个确认任务未使用，两组 `.cache` 运行目录保留。
 
 正式 Docker 依赖、额外编码器的最终参赛适用性、线上 Writeup 更新和榜单提交仍待后续处理。本次未执行 Git commit/push 或线上提交。完整开发过程、失败记录和接续命令见 [比赛开发记录](competition/competition.md#2026-11-08-当日收尾与接续)。
 ## 关键日期（北京时间，UTC+8）
@@ -54,6 +54,15 @@
 备选全文：[paper/kaggle_body_full.md](../paper/kaggle_body_full.md)，2,891 词，表格转列表。`paper/kaggle_body.md` 仅是简短项目介绍，不能代替完整论文提交。
 
 2026-11-01 修订：收窄图效应与粒度结论，纠正等字符预算，补全两折仓库评估，说明 Lite/全量重叠与子采样统计边界，补入 Bellam（2026-10-25）近邻引用。新颖性风险和后续实验见 [novelty-review.md](novelty-review.md)，复现协议见 [reproduction.md](reproduction.md)。这些修改尚未上传或替换线上 Writeup。
+
+### 2026-11-09 状态与数字口径校准（只读核对，未改动线上）
+
+- **提交状态尚未核实**：用户口述 Writeup 已提交，但仓库内**没有**提交回执、线上字数、截图或 `submitted` 确认记录。`paper/writeup-upload.md` 六项核对清单全未勾选；上文 `:28`、`:56` 与下方 `:79` 的「未上传／未执行线上提交」是不同日期的历史表述，**既不能据此断定当前未提交，也不能据此断定已提交**。线上 Kaggle 平台是唯一事实源。官方规则第 80 行明确 draft／未提交不计入评审，因此核实状态是所有后续动作的前置条件。
+- **当前实测（`.venv/Scripts/python.exe`）**：`tools/check_publication.py` → `2916 words; 6 PDF pages; 4 numbered tables; 14 references; 69 source blocks checked against PDF; 0 publication failure(s)`；`tools/audit_numbers.py --fast` → `0 failure(s)`。真正提交载体 `paper/kaggle_body_img.md` 按同一计数规则为 **2,668 词**（表格为 PNG、删去表格题注），与 2,916 的约 248 词差额来自表格文字与题注；平台计数器口径未核实。
+- **上方历史数字保留原样，不代表当前稿**：`:45` 的 2,480（仅文字口径）、`:50` 的 2,728、`:54` 的 2,891、`:61` 的 2,915、5 页 / 8 张表 / "Table 5"，均为精简过程中不同日期的快照。`:50` 的「2,728（余量 84）」算术有误（3000−2728=272；84 是 2,916 口径的余量），此处标注但不改写历史记录。
+- **图片顺序**：`:45` 与 `paper/writeup-upload.md` 记 `table_1 → table_2 → table_3 → fig1 → table_4`，而 `paper/kaggle_body_img.md` 正文占位实为 `table_1 → table_2 → fig1 → table_3 → table_4`（`:50` 记录 Figure 1 曾前移）。清单与载体错位；若日后重新上传图片，以**正文占位顺序**为准。
+- **发布自检覆盖缺口**：`check_publication.py` 对 `kaggle_body_img.md` 只校验图片文件存在，不校验其文字、字数、措辞与图片顺序；`audit_numbers.py` 读 `paper/main.md`（旧版 8 表源稿）。数字本身无漂移（69 源块与 PDF 一致），但线上正文未被自动化覆盖。
+- **待办（只能由用户在线上完成）**：核实 `submitted`／`draft`，记录平台显示的线上字数，保存回执与截图，匿名复核 5 张图顺序与两个 Project Links，然后回填本段。
 
 ## 状态
 
@@ -145,3 +154,34 @@
 ## 2026-11-03 不重叠任务验证已收尾
 
 [新批次记录](experiments/query-generation.md#query-validation)：排除此前 47 条任务，37 条全部生成及评分完成，35 条有可评分符号、2 条无符号目标。固定简单融合 recall@10 58.57%，生成查询 61.43%，差值 +2.86 点；1 条改善、零退步，仓库描述性区间 [0, 9.09] 点，仍不确定。新增补回 django 的 BaseFormSet.empty_form 不在原两池并集中。新增 API 估算闲时约 0.03005 元，180 项测试及独立审计通过。按用户要求，今日到此结束，不开新实验。
+
+## 2026-11-11 主赛道 Fix A 批量验证与杂项实验收尾
+
+**Kaggle 主赛道夜间队列 9 批全部 COMPLETE（06:49 结束）**：`ranker-preloc-paired-v1` + `ranker-preloc-all-01..07` + `ranker-preloc-opt-01`，双臂配对共 54 个任务 / 108 次运行。baseline 11/54、ranker 10/54；ranker_only 2、control_only 3；79/108 报 session timeout。按预登记判读规则（基线赢则不写），**下游修复结果不进入论文**。Fix A 的架构目标已达成：trace 中不再出现 `run_skill_script` 嵌套参数错误，失败集中在 3 分钟预算与 30 次工具调用上限。
+
+**预算/并发对照 `opt-01`**（5 分钟预算 + 并发 3，任务与 all-01 前 4 个相同）：3 分钟下 0/8 成功，5 分钟下 1/8（requests_7427 的 ranker 臂）；其余失败原因转为 5 分钟超时或 `Agent exceeded tool call budget (30 calls)`。加预算与加并发均未带来实质改善。GPU 为单卡 Nvidia L4（tp=1），vLLM 0.90 显存 / 32K 上下文；`--concurrency` 已解锁为 1/2/3/4/6，但主队列保持 2。
+
+**候选池大小对照（290 个 scorable 任务，配对、同 folds/seeds）**：200 池 dense symbol 0.4077 → 500 池 0.3814，delta −0.0263，CI (−0.0575, +0.0045)，W/L 10/20，p=0.0987；base / cosine / file 各指标均不显著。扩大候选池到 500 无收益，**不进论文**，论文维持 200 池设定。
+
+**产物**：`data/features_full_p500.jsonl`(2232)、`data/features_lite_p200.jsonl` 与 `features_lite_p500.jsonl`(290)、`data/embed_lite_p500.jsonl`(290)、`data/dense_scores_lite_p200.jsonl` / `dense_scores_lite_p500.jsonl`、`data/pool-size-comparison.json`；各批 `output/batch-results.jsonl`；`.cache/main-track/overnight-kaggle-state.json` 与 `overnight-local-state.json`。
+
+**修复**：`tools/rank_with_dense.py` 的 `both_columns` 不再无条件引用可选的 body-rank 两列——此前用不存在的 `--body-extra` 禁用该列时会在 `train()` 触发 `IndexError`，导致本地链停在第 4 步。修复后 6/6 步完成，216 项测试通过。论文载体当前 2997/3000 词、6 页 PDF、70 源块比对通过、`0 publication failure(s)`。
+
+### 2026-11-11 晚间：论文修订、等 token 结果与 Fix A 更正
+
+**论文（2026-11-11 修订版，取代上方 2997 词口径）**：
+
+- 删除 `paper/main.md:33` 的 “to our knowledge the first”——它与 `docs/novelty-review.md:11/112` 的自评直接矛盾。
+- 摘要：62.4/27.5 加 “under BM25”；“metadata and dense contrasts survive repository-level testing with Holm correction” 改为 “only metadata and dense survive Holm correction”，不再把 0.90 的 Holm p=0.1787 读成三个都显著。
+- 删除重复的 Source size 段（28,950/1,726 与引言的 48 定义 / 16.1 比值重复）。
+- “Cost, not just slots” 改用 bge-small token 计价：十槽 4,097 tokens（定义）对 74,525（整文件）；4,000 tokens 时定义覆盖 0.253、整文件 0.103；8,000 时整文件 0.217，仍低于定义 0.266。关闭 Limitations 里的 “no equal-token comparison” 缺口。
+- Limitations 补披露：主随机图平均替换 54.2% 边（严格族 19.0%）；500 候选池不提高符号召回；下游改为 “no interpretable downstream repair evaluation”。
+- Related Work 给 CORE-Bench / RepoNav / FuseSearch 各一句分工。
+- 当前自检：`check_publication.py` → **2,990 词、6 页、4 表、14 文献、69 源块、0 failure**；`audit_numbers.py --fast` → **0 failure**；`kaggle_body_img.md` **2,742 词 / 5 图**；备选全文 `kaggle_body_full.md` 已同步为 **2,947 词**（表格转列表）；216 项单测通过（沙箱内 `TemporaryDirectory` 的 chmod 被拒，需 danger-full-access 才能跑全套；这是环境限制而非测试回归）。
+- `audit_numbers.py` 新增 token 计价与 rewiring mobility 检查（4,097 / 74,525 / 0.253 / 0.103 / 0.217 / 0.266，54.2% / 19.0%）；`data/cost_budget_tokens.jsonl` 已从 `.gitignore` 例外，需随提交入库，保证 clone 可复算。
+
+**Fix A 更正（重要）**：上节 “Fix A 的架构目标已达成” 只能读作 “嵌套工具参数错误已修”。核对 9 批共 53 条 ranker trace：**53/53 的 system message 仍是字面量 `{localization_report}`**，kernel log 里 prelocalization 跑了 53 次，但报告从未进入 repair prompt（例：`.cache/main-track/ranker-preloc-all-01/output/results/ranker/traces/trace_fastapi_14246.json:11`）；`.workbuddy/memory/2026-11-11.md:174-181` 的 08:00 审计已记录此事。因此 54 配对不是 “预算不足导致无功效”，而是 **treatment 未投递**，不能作为方法有效/无效的证据；`review-2026-11-11.html` §4.1 的 “注入报告” 表述已更正。
+
+**构建备注**：本机 DSH 沙箱拒绝 `os.chmod` 与删除 `paper/` 子目录，`tools/make_pdf.py` 的 `TemporaryDirectory` 会失败；本次用 `.cache/rebuild_pdf_direct.py` 直接调用同一 LibreOffice Kit 转换写 `paper/submission.pdf`（产物 6 页、0 failure）。沙箱外运行 `tools/make_pdf.py` 不受影响。
+
+**待办**：提交前 `git add data/cost_budget_tokens.jsonl` 并按需处理四份 11/09 实验文档与 `review-2026-11-11.html` 的入库策略；线上核实 submitted/draft、平台字数、5 图顺序与两个 Project Links；然后正式提交。
