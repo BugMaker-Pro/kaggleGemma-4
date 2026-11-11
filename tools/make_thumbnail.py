@@ -28,34 +28,20 @@ def main() -> int:
     axes.set_ylim(0, 6.3)
     axes.axis("off")
 
-    axes.text(0.7, 5.35, "File-level is not symbol-level",
-              fontsize=34, fontweight="bold", color="#111111", va="top")
-    axes.text(0.7, 4.45, "the same ranking, scored two ways",
-              fontsize=21, color="#555555", va="top")
+    axes.text(0.9, 5.2, "File-level is not symbol-level",
+              fontsize=36, fontweight="bold", color="#111111", va="top")
+    axes.text(0.9, 4.35, "the same ranking, scored two ways",
+              fontsize=22, color="#555555", va="top")
 
-    axes.text(0.7, 3.05, "62.4%", fontsize=64, fontweight="bold",
+    axes.text(0.9, 2.25, "62.4%", fontsize=88, fontweight="bold",
               color="#9aa7b1", va="baseline")
-    axes.text(0.7, 2.35, "of gold files at rank 10", fontsize=17, color="#333333")
+    axes.text(0.9, 1.70, "of gold files at rank 10", fontsize=19,
+              color="#333333")
 
-    axes.text(5.35, 3.05, "27.5%", fontsize=64, fontweight="bold",
+    axes.text(6.1, 2.25, "27.5%", fontsize=88, fontweight="bold",
               color="#111111", va="baseline")
-    axes.text(5.35, 2.35, "of gold symbols at rank 10", fontsize=17, color="#333333")
-
-    axes.annotate("", xy=(5.05, 2.86), xytext=(4.15, 2.86),
-                  arrowprops=dict(arrowstyle="-|>", lw=2.2, color="#c0392b"))
-    axes.text(4.6, 3.28, "2.3×", fontsize=25, color="#c0392b", ha="center")
-
-    axes.text(0.7, 1.55,
-              "gold files contain 16× the source text of the touched definitions",
-              fontsize=18, color="#c0392b")
-    axes.text(0.7, 0.90,
-              "290 scorable Lite tasks · graph reranking gains 2.2 points on 2,232",
-              fontsize=15, color="#666666")
-    axes.text(0.7, 0.45,
-              "a ranker plus a dense score reaches 44.7% of symbols on the full split",
-              fontsize=15, color="#666666")
-
-    axes.plot([0.7, 11.3], [2.02, 2.02], color="#e0e0e0", lw=1.2)
+    axes.text(6.1, 1.70, "of gold symbols at rank 10", fontsize=19,
+              color="#333333")
 
     out = ROOT / "paper" / "thumbnail.png"
     fig.savefig(out, dpi=100)
