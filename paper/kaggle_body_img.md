@@ -20,15 +20,15 @@ We contribute (i) a pre-specified, degree- and file-matched topology counterfact
 
 **Agentic localization.** SemNav [12] seeds a candidate set with deterministic retrieval and has an LLM agent revise it with evidence, reporting file hit@10 from 68.33% to 82.67% and improved downstream resolution. A concurrent study of five code-representation workflows [13] finds the same split we do one level down: recall@10 rises from 0.717 to 0.757–0.829 while resolution stays near baseline. We hold the model out and ask what a fixed pool and a static ranking can deliver; FeatLens [14] shows that selecting dependencies at a fixed budget is possible without online LLM calls, which is the selection step our controls isolate.
 
-**Retrieval representations.** CORE-Bench [8] benchmarks code retrieval, RepoNav [9] navigates files, and FuseSearch [10] learns parallel localization. PyCG [4] evaluates call-graph construction; CodexGraph [6] and RepoAtlas [7] expose repository structure to agents. Our graph resolution rate describes one implementation, not these systems.
+**Retrieval representations.** CORE-Bench [8] benchmarks code retrieval, RepoNav [9] navigates files, and FuseSearch [10] learns parallel localization. PyCG [4] evaluates call-graph construction; CodexGraph [6] and RepoAtlas [7] expose repository structure to agents. falsify-eval argues for calibrated nulls and declared power in retrieval claims on a niche corpus [15]; our controls and detection-power accounting instantiate that demand directly on SWE-bench at 2,232 tasks. Our graph resolution rate describes one implementation, not these systems.
 
 ## 3. Setup
 
-**Tasks.** Lite has 300 instances across 12 Python repositories, dominated by django (114) and sympy (77), with 297 base commits. The full test split has 2,294 tasks; 2,232 are scorable and 62 lack resolvable gold symbols. Lite is contained in this split, so the larger study is a scale extension, not independent replication. We measure source retrieval without executing patches.
+**Tasks.** Lite has 300 instances across 12 Python repositories, dominated by django (114) and sympy (77). The full test split has 2,294 tasks; 2,232 are scorable and 62 lack resolvable gold symbols. Lite is contained in this split, so the larger study is a scale extension, not independent replication.
 
 **Gold symbols.** For each task we parse the reference patch and map every changed line to the innermost definition containing it in the *pre-fix* tree: a deleted line anchors itself, an added line the line before it, since the added text does not exist before the fix. That gives 354 definitions over 290 tasks; the other 10 are dropped: 2 change only module-level lines, 8 only add definitions. We separately record 87 changed lines outside definitions; symbol recall excludes these lines and the ten empty-gold tasks. A symbol is `<module>.<qualname>`, module being the file path without `.py`; file-level metrics group the same ranking by file. A second implementation reproduces 279 of 300 keys; rescoring moves recall by at most 0.7 points.
 
-**Query and budget.** Lexical and graph arms use the issue text without rewriting. We compare ten symbol slots. File recall groups these same ten symbols by file; it is not retrieval of ten distinct files. BM25 starts from 200 candidates; graph expansion and diffusion can search outside that pool. The 500-candidate diagnostic is separate.
+**Query and budget.** Lexical and graph arms use the issue text without rewriting. We compare ten symbol slots. File recall groups these same ten symbols by file; it is not retrieval of ten distinct files. BM25 starts from 200 candidates; graph expansion can search outside that pool. The 500-candidate diagnostic is separate.
 
 ## 4. Method
 
@@ -50,7 +50,7 @@ Each randomized graph preserves every candidate's within-file and cross-file deg
 
 ![paper/table_1.png](table_1.png)
 
-Real-minus-rewired effects are +2.14 (CI 1.34–2.66), +0.90 (0.01–1.58), and +1.76 (1.04–2.82) points. The body and dense interactions are −1.24 and −0.38 points (Holm p = 0.126 and 0.598): neither establishes attenuation. On body, same-file beats real edges on symbol (0.3295 against 0.3170) but loses on file recall (0.5277 against 0.6207). Real-minus-base effects are +2.19, −0.01, and +0.64 points.
+Real-minus-rewired effects are +2.14 (CI 1.34–2.66), +0.90 (0.01–1.58), and +1.76 (1.04–2.82) points. The body and dense interactions are −1.24 and −0.38 points (Holm p = 0.126 and 0.598): neither establishes attenuation. On body, same-file beats real edges on symbol (0.3295 against 0.3170) but loses on file recall (0.5277 against 0.6207). Real-minus-base effects are +2.19, −0.01, and +0.64 points. Thus rejecting a randomized topology does not establish a useful improvement over dense retrieval.
 
 **A learned ranker.** Sixteen lexical, issue-evidence, graph, and size features feed LightGBM. We sort the 12 repositories, split alternating entries into two groups of six, then train and test in both directions. Each task is evaluated once on unseen repositories; predictions average three seeds. This is repository-held-out two-fold evaluation. Hyperparameters are fixed across folds; exploratory method selection limits claims of an untouched test set. At 290 tasks the ranker lifts symbol recall@10 from 0.275 to 0.332 (+0.057, CI 0.019–0.096; 31 wins, 14 losses; p = 0.016); an evidence override adds a further 0.029 over the ranker (p = 0.035) to reach 0.361, which is +0.086 over BM25 with 39 wins and 13 losses.
 
@@ -84,7 +84,7 @@ Second-hop reach increases to 35.7% without a recall gain; diffusion converts 18
 
 **Within-file selection.** Given oracle gold files, ten slots recover **66.5%** of gold symbols.
 
-**Reproducibility.** We release per-task rankings, labels, and audits (`tools/audit_numbers.py`; `tools/audit_counterfactual_topology.py`), with protocols in `docs/reproduction.md` and `docs/graph-control-protocol.md`. A quantized variant is packaged for our main-track agent (`artifacts/ranker-agent-v2/`); it is not evaluated here.
+**Reproducibility.** We release per-task rankings, labels, and audits (`tools/audit_numbers.py`; `tools/audit_counterfactual_topology.py`), with protocols in `docs/reproduction.md` and `docs/graph-control-protocol.md`.
 
 ## 6. Discussion
 
@@ -92,9 +92,9 @@ The primary experiment separates **structural signal from intervention value**. 
 
 **The practical rule is concrete.** With metadata-only BM25, promotion buys about two points; with bodies indexed or a dense score, it gains little — spend on index content instead. In learned fusion, topology features still add 1.66 points: keep the graph as features, not a promotion rule.
 
-**Why this matters for coding agents.** A repair agent with a 32K-token window reads what a symbol-level shortlist hands it: at a median 16.1× file-to-definition ratio, file-level retrieval fills the window with 94% unedited code. The displacement and ceiling accounting above is what decides which definitions an agent ever sees. We package the audited fusion ranker into our competition agent's localization stage, where these measurements directly bound what the repair stage can reach.
+**Why this matters for coding agents.** A repair agent with a 32K-token window reads what a symbol-level shortlist hands it: at a median 16.1× file-to-definition ratio, file-level retrieval fills the window with 94% unedited code. The audited fusion ranker is packaged as the localization stage of a quantized competition agent; downstream repair is not evaluated here.
 
-Expansion can add targets but displace existing hits, and candidate-set oracle ceilings are not universal graph limits. Among 80 tasks missed by a 500-candidate pool, only 12 contain detected exact cues; this does not imply absence of semantic evidence.
+Expansion can add targets but displace existing hits, and candidate-set oracle ceilings are not universal graph limits. Among 80 tasks missed by a 500-candidate pool, only 12 contain detected exact cues.
 
 ## 7. Limitations
 
@@ -133,3 +133,5 @@ Matched topology controls reveal structure that constrained random graphs lack u
 [13] Sepidband et al. How Should Agents See Code? Rethinking Code Representations for Agentic Software Engineering. arXiv:2611.07286, 2026.
 
 [14] Li et al. FeatLens: Feature-Guided Dependency Retrieval for Repository-Level Code Generation. arXiv:2609.26480, 2026.
+
+[15] Sparsh Sharma. falsify-eval: Calibrated Nulls and Declared Power for Retrieval Claims. Preprint, 2026. https://spalsh-spec.github.io/falsify-eval/PREPRINT.md
