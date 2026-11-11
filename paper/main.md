@@ -72,9 +72,9 @@ We contribute (i) a pre-specified, degree- and file-matched topology counterfact
 
 ## 5. Results
 
-**Primary experiment: topology versus intervention.** We fix the original candidate pool and compare metadata, body-inclusive BM25, and frozen dense orders. We retain five seeds, promote one-hop neighbours in the remaining slots, and compare real edges with same-file promotion and constrained rewiring. This matches full-scale reranking; historical Lite arms could move seeds. Body scores use whole-repository corpus statistics. Dense retains saved score order; historical rounded-score tie handling changes one task's base recall, without changing the inference.
+**Primary experiment: topology versus intervention.** We fix the original candidate pool and compare metadata, body-inclusive BM25, and frozen dense orders. We retain five seeds, promote one-hop neighbours in the remaining slots, and compare real edges with same-file promotion and constrained rewiring. Body scores use whole-repository corpus statistics. Dense retains saved score order; historical rounded-score tie handling changes one task's base recall, without changing the inference.
 
-Each randomized graph preserves every candidate's within-file and cross-file degree; a stricter variant also preserves its degree to each partner file. Five fixed seeds use 20 attempted swaps per edge, with invariants checked. Random outcomes are averaged within task. Five planned contrasts—real minus rewired under each representation, and two interactions against metadata—use exhaustive repository sign flips and Holm correction; intervals use 10,000 repository-cluster resamples. Protocol and input hashes were fixed before new outcome inspection.
+Each randomized graph preserves every candidate's within-file and cross-file degree; a stricter variant also preserves its degree to each partner file. Five fixed seeds use 20 attempted swaps per edge, with invariants checked. Five planned contrasts—real minus rewired under each representation, and two interactions against metadata—use exhaustive repository sign flips and Holm correction; intervals use 10,000 repository-cluster resamples. Protocol and input hashes were fixed before new outcome inspection.
 
 *Table 1 — symbol recall@10 on 2,232 tasks; p tests real minus rewired with Holm correction*
 
@@ -84,11 +84,11 @@ Each randomized graph preserves every candidate's within-file and cross-file deg
 | body | 0.3171 | 0.3170 | 0.3295 | 0.3080 | 0.3128 | 0.1787 |
 | dense | 0.3659 | 0.3723 | 0.3645 | 0.3547 | 0.3658 | 0.0049 |
 
-Real-minus-rewired effects are +2.14 (CI 1.34–2.66), +0.90 (0.01–1.58), and +1.76 (1.04–2.82) points. The body and dense interactions are −1.24 and −0.38 points (Holm p = 0.126 and 0.598): neither establishes attenuation. On body, same-file beats real edges on symbol (0.3295 against 0.3170) but loses on file recall (0.5277 against 0.6207). Real-minus-base effects are +2.19, −0.01, and +0.64 points; the dense secondary repository test has p = 0.069. Thus rejecting a randomized topology does not establish a useful improvement over dense retrieval.
+Real-minus-rewired effects are +2.14 (CI 1.34–2.66), +0.90 (0.01–1.58), and +1.76 (1.04–2.82) points. The body and dense interactions are −1.24 and −0.38 points (Holm p = 0.126 and 0.598): neither establishes attenuation. On body, same-file beats real edges on symbol (0.3295 against 0.3170) but loses on file recall (0.5277 against 0.6207). Real-minus-base effects are +2.19, −0.01, and +0.64 points.
 
 **A learned ranker.** Sixteen lexical, issue-evidence, graph, and size features feed LightGBM. We sort the 12 repositories, split alternating entries into two groups of six, then train and test in both directions. Each task is evaluated once on unseen repositories; predictions average three seeds. This is repository-held-out two-fold evaluation. Hyperparameters are fixed across folds; exploratory method selection limits claims of an untouched test set. At 290 tasks the ranker lifts symbol recall@10 from 0.275 to 0.332 (+0.057, CI 0.019–0.096; 31 wins, 14 losses; p = 0.016); an evidence override adds a further 0.029 over the ranker (p = 0.035) to reach 0.361, which is +0.086 over BM25 with 39 wins and 13 losses.
 
-**Full-scale ranking.** A frozen 33M bge-small-en-v1.5 encoder scores the same 200 candidates. It embeds the issue's first 1,200 characters and each candidate's path, name, and first 800 body characters, using CLS pooling, cosine similarity, and a 512-token cap. Adding this score to the sixteen features gives +8.6 points (418 wins, 83 losses).
+**Full-scale ranking.** A frozen 33M bge-small-en-v1.5 encoder scores the same 200 candidates. It embeds the issue's first 1,200 characters and each candidate's path, name, and first 800 body characters. Adding this score to the sixteen features gives +8.6 points (418 wins, 83 losses).
 
 *Table 2 — recall@10 at both scales; learned predictions are held out by repository*
 
@@ -137,23 +137,23 @@ Line granularity agrees: the ranking covers **23.9%** of the 1,010 changed lines
 | graph_ppr | **0.106** | 0.214 | 0.268 | 0.579 | −0.007 (−0.040, 0.027) | 0.72 |
 | graph_ppr_text | 0.091 | 0.217 | 0.272 | 0.624 | −0.003 (−0.010, 0.000) | 1.00 |
 
-Second-hop reach increases to 35.7% without a recall gain. Reranking gains +2.9 at k = 20 (p = 0.021).
+Second-hop reach increases to 35.7% without a recall gain; diffusion converts 18 of the 41 reachable symbols (44%) at a median rank of 12.
 
-**Displacement can offset reach.** Personalised PageRank wins the first slot (0.106 against 0.091) and still trades 15 gained gold symbols for 17 lost; at file level it loses 4.5 points (p = 0.019). `graph_open` swaps slots 6–10 for neighbours: 18 tasks lose a gold file, 4 gain one, −4.8 points (p = 0.004). **Reachable targets do not guarantee net gains.**
-
-One-hop reach covers 41 of 354 symbols across 38 tasks, or **11.9%** macro recall before overlap and displacement. PPR retrieves 18 of those 41 (44%), but its 15 new gold hits cost 17 existing hits. The 9,855 neighbours are **0.42%** gold versus **3.1%** per text slot: reach alone is a poor guide to replacement.
+**Displacement can offset reach.** Personalised PageRank wins the first slot (0.106 against 0.091) and still trades 15 gained gold symbols for 17 lost; at file level it loses 4.5 points (p = 0.019). `graph_open` swaps slots 6–10 for neighbours: −4.8 points (p = 0.004). **Reachable targets do not guarantee net gains.** The 9,855 one-hop neighbours are **0.42%** gold versus **3.1%** per text slot: reach alone is a poor guide to replacement.
 
 **Within-file selection.** Given oracle gold files, ten slots recover **66.5%** of gold symbols.
 
-**Reproducibility.** We release per-task rankings, labels, and audits (`tools/audit_numbers.py`; `tools/audit_counterfactual_topology.py`), with protocols in `docs/reproduction.md` and `docs/graph-control-protocol.md`. Auditing saved outputs is distinct from rerunning retrieval and training. A quantized variant is packaged for our main-track agent (`artifacts/ranker-agent-v2/`); it is not evaluated here.
+**Reproducibility.** We release per-task rankings, labels, and audits (`tools/audit_numbers.py`; `tools/audit_counterfactual_topology.py`), with protocols in `docs/reproduction.md` and `docs/graph-control-protocol.md`. A quantized variant is packaged for our main-track agent (`artifacts/ranker-agent-v2/`); it is not evaluated here.
 
 ---
 
 ## 6. Discussion
 
-The primary experiment separates **structural signal from intervention value**. Real topology beats a degree/file-constrained null under metadata and dense ranking, yet its fixed promotion rule adds little over body or dense retrieval. Stronger inputs also leave less unfilled oracle headroom; the interaction does not isolate an information-substitution mechanism. The learned fusion ablation retains a positive topology contribution. These results support comparing how graphs are used rather than assuming stronger text makes them redundant.
+The primary experiment separates **structural signal from intervention value**. Real topology beats a degree/file-constrained null under metadata and dense ranking, yet its fixed promotion rule adds little over body or dense retrieval. Stronger inputs also leave less unfilled oracle headroom; the interaction does not isolate an information-substitution mechanism. The learned fusion ablation retains a positive topology contribution.
 
 **The practical rule is concrete.** With metadata-only BM25, promotion buys about two points; with bodies indexed or a dense score, it gains little — spend on index content instead. In learned fusion, topology features still add 1.66 points: keep the graph as features, not a promotion rule.
+
+**Why this matters for coding agents.** A repair agent with a 32K-token window reads what a symbol-level shortlist hands it: at a median 16.1× file-to-definition ratio, file-level retrieval fills the window with 94% unedited code. The displacement and ceiling accounting above is what decides which definitions an agent ever sees. We package the audited fusion ranker into our competition agent's localization stage, where these measurements directly bound what the repair stage can reach.
 
 Expansion can add targets but displace existing hits, and candidate-set oracle ceilings are not universal graph limits. Among 80 tasks missed by a 500-candidate pool, only 12 contain detected exact cues; this does not imply absence of semantic evidence.
 
@@ -161,13 +161,13 @@ Expansion can add targets but displace existing hits, and candidate-set oracle c
 
 ## 7. Limitations
 
-Python only; one heuristic static graph; no interpretable downstream repair evaluation. The eight-arm study uses metadata BM25, while only graph reranking is repeated at full scale. Multi-turn navigation and type-aware graphs are out of scope. Reference-patch symbols are one repair's targets, not all valid solutions; new definitions and module-level changes require different metrics. Issue-evidence buckets use gold for retrospective analysis, not deployable routing. Lite is nested in the full split; method development reused this benchmark. Historical task-level inference omits repository dependence; follow-up tests address clustering but assume symmetric repository effects under the null. Constrained swaps replace 54.2% of edges on average (19.0% under the stricter null) and are not proven uniformly sampled or mixed. A 500-candidate pool did not improve symbol recall.
+The benchmark-specific numbers do not transfer, but the protocol does: degree/file-matched counterfactual controls, patch-derived answer keys with independent audit, and fixed-slot gain/loss accounting are language- and benchmark-agnostic. Within this benchmark: Python only; one heuristic static graph; no interpretable downstream repair evaluation. The eight-arm study uses metadata BM25, while only graph reranking is repeated at full scale. Multi-turn navigation and type-aware graphs are out of scope. Reference-patch symbols are one repair's targets, not all valid solutions; new definitions and module-level changes require different metrics. Issue-evidence buckets use gold for retrospective analysis, not deployable routing. Lite is nested in the full split; method development reused this benchmark. Historical task-level inference omits repository dependence; follow-up tests address clustering but assume symmetric repository effects under the null. Constrained swaps replace 54.2% of edges on average (19.0% under the stricter null) and are not proven uniformly sampled or mixed (273 tasks non-exchangeable, 345 retain their final edge set); repositories are skewed (django and sympy hold 191 of 300). A 500-candidate pool did not improve symbol recall.
 
 ---
 
 ## 8. Conclusion
 
-Matched topology controls reveal structure that constrained random graphs lack under metadata and dense rankings, but signal does not guarantee improvement from a simple promotion rule, and representation interactions remain inconclusive after correction. Fixed-slot retrieval can also credit files while missing edited definitions: our audit diagnoses candidate coverage and displacement. The contribution is a reproducible diagnosis with explicit controls and limits; learned feature/dense fusion reaches 44.7% symbol and 72.7% file recall. For anyone building a code retriever, the reading order is simple: index content first, topology as features, promotion rules last.
+Matched topology controls reveal structure that constrained random graphs lack under metadata and dense rankings, but signal does not guarantee improvement from a simple promotion rule, and representation interactions remain inconclusive after correction. The contribution is a reproducible diagnosis with explicit controls and limits; learned feature/dense fusion reaches 44.7% symbol and 72.7% file recall. For anyone building a code retriever, the reading order is simple: index content first, topology as features, promotion rules last.
 
 ---
 
