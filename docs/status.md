@@ -180,8 +180,8 @@
 - 当前自检：`check_publication.py` → **2,990 词、6 页、4 表、14 文献、69 源块、0 failure**；`audit_numbers.py --fast` → **0 failure**；`kaggle_body_img.md` **2,742 词 / 5 图**；备选全文 `kaggle_body_full.md` 已同步为 **2,947 词**（表格转列表）；216 项单测通过（沙箱内 `TemporaryDirectory` 的 chmod 被拒，需 danger-full-access 才能跑全套；这是环境限制而非测试回归）。
 - `audit_numbers.py` 新增 token 计价与 rewiring mobility 检查（4,097 / 74,525 / 0.253 / 0.103 / 0.217 / 0.266，54.2% / 19.0%）；`data/cost_budget_tokens.jsonl` 已从 `.gitignore` 例外，需随提交入库，保证 clone 可复算。
 
-**Fix A 更正（重要）**：上节 “Fix A 的架构目标已达成” 只能读作 “嵌套工具参数错误已修”。核对 9 批共 53 条 ranker trace：**53/53 的 system message 仍是字面量 `{localization_report}`**，kernel log 里 prelocalization 跑了 53 次，但报告从未进入 repair prompt（例：`.cache/main-track/ranker-preloc-all-01/output/results/ranker/traces/trace_fastapi_14246.json:11`）；`.workbuddy/memory/2026-11-11.md:174-181` 的 08:00 审计已记录此事。因此 54 配对不是 “预算不足导致无功效”，而是 **treatment 未投递**，不能作为方法有效/无效的证据；`review-2026-11-11.html` §4.1 的 “注入报告” 表述已更正。
+**Fix A 记录校正**：此前把 trace 里的 `system_instruction` 字面量 `{localization_report}` 读成“报告未投递”，是误读。`agent_runner.py:731-747` 记录的只是未模板化的 `agent.instruction`；ADK 在模型调用时执行 `inject_session_state`（`google/adk/flows/llm_flows/instructions.py:51-58`），缺少变量会抛 `Context variable not found`（v10 的 `fastapi_13713` 已证）。prelocalize 把报告写进 session state，因此报告已送达；54 配对的问题仍然是 45/54 超时、仅 9 个可比，属**无功效**，而不是 treatment 未投递。`review-2026-11-11.html` §4.1 的“注入报告”成立，已恢复。
 
 **构建备注**：本机 DSH 沙箱拒绝 `os.chmod` 与删除 `paper/` 子目录，`tools/make_pdf.py` 的 `TemporaryDirectory` 会失败；本次用 `.cache/rebuild_pdf_direct.py` 直接调用同一 LibreOffice Kit 转换写 `paper/submission.pdf`（产物 6 页、0 failure）。沙箱外运行 `tools/make_pdf.py` 不受影响。
 
-**待办**：提交前 `git add data/cost_budget_tokens.jsonl` 并按需处理四份 11/09 实验文档与 `review-2026-11-11.html` 的入库策略；线上核实 submitted/draft、平台字数、5 图顺序与两个 Project Links；然后正式提交。
+**待办**：论文修订已提交（eb3291c）并推送；线上核实 submitted/draft、平台字数、5 图顺序与两个 Project Links，然后正式提交；`review-2026-11-11.html` 与四份 11/09 实验文档仍按未跟踪处理。
