@@ -43,6 +43,10 @@ def main() -> int:
     axes.text(6.1, 1.70, "of gold symbols at rank 10", fontsize=19,
               color="#333333")
 
+    axes.annotate("", xy=(5.75, 2.05), xytext=(4.75, 2.05),
+                  arrowprops=dict(arrowstyle="-|>", lw=2.6, color="#c0392b"))
+    axes.text(5.25, 2.55, "2.3×", fontsize=30, color="#c0392b", ha="center")
+
     out = ROOT / "paper" / "thumbnail.png"
     fig.savefig(out, dpi=100)
     print(f"wrote {out} (1200x630)")
