@@ -1,7 +1,9 @@
 """The writeup card image: one number, readable at 300 px wide.
 
 Kaggle shows this at roughly 300-400 px, so the type has to survive a 3x
-downscale: two numbers, one comparison, nothing else.
+downscale: two numbers, one comparison, nothing else. Both bars are drawn on
+the same scale (10 axis units = 100%), so the 2.3x ratio stays visible even
+when the small type does not.
 
     python tools/make_thumbnail.py     # -> paper/thumbnail.png (1200x630)
 """
@@ -19,6 +21,20 @@ import matplotlib  # noqa: E402
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 
+FILES = 62.4
+SYMBOLS = 27.5
+BAR_SCALE = 11.4  # axis units spanned by a 100% bar
+BAR_HEIGHT = 0.36
+
+
+def _bar(axes, top: float, pct: float, color: str) -> None:
+    axes.add_patch(
+        plt.Rectangle(
+            (0.7, top - BAR_HEIGHT), pct / 100.0 * BAR_SCALE, BAR_HEIGHT,
+            facecolor=color, edgecolor="none",
+        )
+    )
+
 
 def main() -> int:
     plt.rcParams.update({"font.family": "DejaVu Sans"})
@@ -28,24 +44,27 @@ def main() -> int:
     axes.set_ylim(0, 6.3)
     axes.axis("off")
 
-    axes.text(0.9, 5.2, "File-level is not symbol-level",
-              fontsize=36, fontweight="bold", color="#111111", va="top")
-    axes.text(0.9, 4.35, "the same ranking, scored two ways",
-              fontsize=22, color="#555555", va="top")
+    axes.text(0.7, 5.58, "File-level is not symbol-level",
+              fontsize=40, fontweight="bold", color="#10151a", va="baseline")
+    axes.text(0.7, 5.18, "the same top-10 shortlist, scored two ways",
+              fontsize=21, color="#5b6673", va="baseline")
 
-    axes.text(0.9, 2.25, "62.4%", fontsize=88, fontweight="bold",
-              color="#9aa7b1", va="baseline")
-    axes.text(0.9, 1.70, "of gold files at rank 10", fontsize=19,
-              color="#333333")
+    axes.text(0.7, 4.20, f"{FILES}%", fontsize=68, fontweight="bold",
+              color="#5a6672", va="baseline")
+    _bar(axes, 3.94, FILES, "#c2cdd6")
+    axes.text(0.7, 3.28, "of gold files at rank 10", fontsize=21,
+              color="#333333", va="baseline")
 
-    axes.text(6.1, 2.25, "27.5%", fontsize=88, fontweight="bold",
-              color="#111111", va="baseline")
-    axes.text(6.1, 1.70, "of gold symbols at rank 10", fontsize=19,
-              color="#333333")
+    axes.text(0.7, 2.24, f"{SYMBOLS}%", fontsize=68, fontweight="bold",
+              color="#c0392b", va="baseline")
+    _bar(axes, 1.98, SYMBOLS, "#c0392b")
+    axes.text(0.7, 1.32, "of gold symbols at rank 10", fontsize=21,
+              color="#333333", va="baseline")
+    axes.text(4.05, 1.81, "2.3\u00d7 fewer", fontsize=27, fontweight="bold",
+              color="#c0392b", va="center")
 
-    axes.annotate("", xy=(5.75, 2.05), xytext=(4.75, 2.05),
-                  arrowprops=dict(arrowstyle="-|>", lw=2.6, color="#c0392b"))
-    axes.text(5.25, 2.55, "2.3×", fontsize=30, color="#c0392b", ha="center")
+    axes.text(0.7, 0.48, "290 SWE-bench Lite tasks  \u00b7  BM25  \u00b7  top-10",
+              fontsize=18, color="#8a949e", va="baseline")
 
     out = ROOT / "paper" / "thumbnail.png"
     fig.savefig(out, dpi=100)

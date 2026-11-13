@@ -88,7 +88,13 @@ def main(argv=None) -> int:
 
     base_columns = list(range(len(ORDER)))
     full_columns = base_columns + [len(ORDER)]
-    both_columns = full_columns + [len(ORDER) + 1, len(ORDER) + 2]
+    # The two body-rank columns are optional: callers comparing candidate-pool
+    # sizes disable them with a non-existent --body-extra path, because those
+    # columns were generated for the 200-pool rows only.  Referencing them
+    # unconditionally made train() index past the end of every row.
+    has_body_columns = bool(kept) and all(task["has_body"] for task in kept)
+    both_columns = full_columns + ([len(ORDER) + 1, len(ORDER) + 2]
+                                   if has_body_columns else [])
     repos = sorted({task["repo"] for task in kept})
     half = set(repos[::2])
     folds = ((half, set(repos) - half), (set(repos) - half, half))

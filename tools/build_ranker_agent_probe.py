@@ -58,36 +58,104 @@ Original problem:
         result['configs/locator_sampling.yaml']=locator_sampling
     return result
 
+def prelocalize_overrides(baseline):
+    """Single repair agent; a harness pre-step supplies the localization report.
+
+    The staged LLM locator was removed: the 2026-11-08 traces show the 12B model
+    could not emit the nested run_skill_script arguments (three consecutive
+    INVALID_ARGUMENTS on fastapi_14463 consumed the whole session). The
+    deterministic skill now runs before the session and the report is injected
+    as session state; see tools/ranker_prelocalize.py.
+    """
+    agent = baseline['agent.yaml'].replace('name: matched_repair_agent','name: localized_repair_agent')
+    prompt = ('Localization report from the deterministic ranker that already ran before this session '
+              '(do not try to run it again; it is not one of your tools):\n{localization_report}\n\n'
+              'Use the localization report above to choose where to read before editing. '
+              'If the report is an error or empty, use normal search and still submit a non-empty source patch.\n\n'
+              +baseline['prompts/system.md'])
+    result = {'agent.yaml':agent,'prompts/system.md':prompt}
+    if 'eval_config.yaml' in baseline:
+        result['eval_config.yaml']=baseline['eval_config.yaml']
+    sampling = baseline.get('configs/sampling.yaml')
+    if sampling:
+        result['configs/sampling.yaml']=sampling
+    return result
+
+
 def main(argv=None):
     ap=argparse.ArgumentParser()
     ap.add_argument('--task-ids',nargs='+',default=['requests_7433'])
     ap.add_argument('--out',type=Path,default=ROOT/'.cache/main-track/ranker-agent-smoke-v1')
     ap.add_argument('--suffix',default='20261108-v1')
     ap.add_argument('--staged',action='store_true')
+    ap.add_argument('--prelocalize',action='store_true',
+                    help='deterministic harness pre-step instead of the LLM locator stage')
+    ap.add_argument('--runtime-evidence',action='store_true',
+                    help='run FAIL_TO_PASS before the session and inject {runtime_report}; requires --prelocalize')
+    ap.add_argument('--runtime-coverage',action='store_true',
+                    help='also collect pytest-cov coverage for the runtime report; requires --runtime-evidence')
+    ap.add_argument('--visible-tests',action='store_true',
+                    help='apply the task test_patch before the session; treatment arm, hidden control unchanged')
     ap.add_argument('--ranker-only',action='store_true')
     ap.add_argument('--batch',action='store_true')
-    ap.add_argument('--concurrency',type=int,choices=(1,2),default=2)
+    ap.add_argument('--concurrency',type=int,choices=(1,2,3,4,6),default=2,
+                    help='task-level concurrency; the harness caps it with asyncio.Semaphore. '
+                         'On a single L4 the vLLM KV cache is shared, so >2 trades per-request latency for throughput')
     ap.add_argument('--locator-thinking-budget',type=int,default=0,
                     help='thinking tokens for the localization stage; 0 shares the repair-stage sampling (default), 4096 matches it')
-    ap.add_argument('--max-time-minutes',type=int,choices=(3,5),default=3)
+    ap.add_argument('--max-time-minutes',type=int,choices=(3,5,8,10,15,30),default=3)
+    ap.add_argument('--max-tool-calls',type=int,choices=(30,60,90),default=30,
+                    help='per-task tool-call cap; 30 is the frozen default, raise only for an explicit budget contrast')
+    ap.add_argument('--max-turns',type=int,choices=(50,80),default=50)
     ap.add_argument('--display',choices=('quiet','single'),default='quiet',
                     help='single streams every agent step to the notebook log; requires concurrency 1')
+    ap.add_argument('--dev-only',action='store_true',
+                    help='opt back into the old 10-task development cap (default: all 129 official tasks)')
     args=ap.parse_args(argv)
     if args.out.exists():raise ValueError('Refusing existing integration run')
     if args.display=='single' and args.concurrency!=1:
         raise ValueError('display single requires --concurrency 1; the harness downgrades it to a dashboard otherwise')
     split=freeze_split(ROOT/'.cache/main-track/official/tasks.jsonl')
-    if len(set(args.task_ids))!=len(args.task_ids) or not set(args.task_ids)<=set(split['development']):
-        raise ValueError('Only unique frozen development tasks allowed')
+    # All 129 official tasks are verifiable (test_patch + patch).  The former
+    # 10-task cap was a self-imposed split convention, not a platform limit.
+    allowed=set(split['development'])
+    if not args.dev_only:
+        allowed|=set(split['confirmation'])
+    used_confirmation=sorted(set(args.task_ids)&set(split['confirmation']))
+    scope_label='mixed_exploratory' if used_confirmation else 'development_only'
+    if len(set(args.task_ids))!=len(args.task_ids) or not set(args.task_ids)<=allowed:
+        raise ValueError('Only unique frozen official task ids allowed (use --dev-only to restrict to the 10 development tasks)')
     starter=json.loads((ROOT/'.cache/main-track/official-starter.json').read_text(encoding='utf-8-sig'))
     package=json.loads((ROOT/'artifacts/ranker-agent-v1/manifest.json').read_text())
-    baseline=agent_files(ROOT/'.cache/main-track/official/sample_submission','evidence',completion_guardrails=True,max_output_tokens=8192,max_time_minutes=args.max_time_minutes)
+    baseline=agent_files(ROOT/'.cache/main-track/official/sample_submission','evidence',completion_guardrails=True,max_output_tokens=8192,max_time_minutes=args.max_time_minutes,max_tool_calls=args.max_tool_calls,max_turns=args.max_turns)
     baseline['eval_config.yaml']=baseline['eval_config.yaml'].replace('timeout_seconds: 60','timeout_seconds: 120')
-    overrides=staged_overrides(baseline,args.locator_thinking_budget) if args.staged else {}
+    if args.prelocalize and args.staged:
+        raise ValueError('--prelocalize and --staged are mutually exclusive workflows')
+    if args.runtime_evidence and not args.prelocalize:
+        raise ValueError('--runtime-evidence requires --prelocalize (the static report is the fallback)')
+    if args.runtime_coverage and not args.runtime_evidence:
+        raise ValueError('--runtime-coverage requires --runtime-evidence')
+    if args.visible_tests and args.staged:
+        raise ValueError('--visible-tests is defined for the prelocalize/single-agent workflow, not --staged')
+    overrides=prelocalize_overrides(baseline) if args.prelocalize else (
+        staged_overrides(baseline,args.locator_thinking_budget) if args.staged else {})
+    if args.runtime_evidence:
+        prompt=overrides.get('prompts/system.md',baseline['prompts/system.md'])
+        overrides['prompts/system.md']=(
+            'Runtime evidence from the failing test that already ran before this session '
+            '(do not re-run it; use it to choose where to read first):\n{runtime_report}\n\n'
+            +prompt)
+    if args.visible_tests:
+        prompt=overrides.get('prompts/system.md',baseline['prompts/system.md'])
+        overrides['prompts/system.md']=(
+            'The tests for this task are already applied in /workspace. Run them to reproduce '
+            'the failure and verify the fix.\n\n'+prompt)
+        overrides['visible-tests.txt']='1\n'
     runtime_files=dict(package['files'])
     runtime_files.update({name:hashlib.sha256(text.encode()).hexdigest() for name,text in overrides.items()})
     notebook=make_notebook(starter,{'baseline':baseline},split,repair_test_dependencies=True,repair_source_layout=True,
                            additional_test_dependency=True,engineering_task_id=args.task_ids[0])
+    # make_notebook() now accepts any frozen official task id; no assertion rewriting.
     # Mounted immutable files avoid embedding model weights in notebook source.
     install='''import hashlib,json,shutil,zipfile
 from pathlib import Path
@@ -139,9 +207,40 @@ print('Full ranker attached; matched model/sampling/time/tool budgets; no refere
     eval_source=eval_source.replace('SAMPLE_TASKS = selected_tasks','SAMPLE_TASKS = [task for task in tasks if task.instance_id in '+repr(args.task_ids)+']')
     if args.batch:
         from tools.build_main_track_batch import batch_evaluation_code
-        eval_source=batch_evaluation_code(args.task_ids,args.concurrency,args.display)
+        eval_source=batch_evaluation_code(args.task_ids,args.concurrency,args.display,
+                                          allow_confirmation=not args.dev_only,
+                                          scope=scope_label)
     notebook['cells'][evaluation_index]=cell('code',eval_source)
-    notebook['cells'][0]=cell('markdown','# Full ranker agent integration\n\nExecutable full-ranker evaluation; the run manifest specifies whether a control arm is included. The ranker is an INT8 deployment variant trained excluding competition repositories. Actual tool invocation, query fidelity, ranker output and repair tests must be audited. Development tasks only; not an untouched confirmation test or leaderboard score.\n')
+    if args.prelocalize:
+        # Inlined verbatim from the module; the __main__ guard becomes a direct call.
+        preloc_source=(ROOT/'tools/ranker_prelocalize.py').read_text(encoding='utf-8')
+        marker="if __name__ == '__main__':"
+        assert marker in preloc_source
+        preloc_source=preloc_source.split(marker)[0]+'install(WORKING_DIR)\n'
+        notebook['cells'].insert(evaluation_index,cell('code',preloc_source))
+    if args.runtime_evidence:
+        runtime_source=(ROOT/'tools/runtime_prelocalize.py').read_text(encoding='utf-8')
+        marker="if __name__ == '__main__':"
+        assert marker in runtime_source
+        runtime_source=runtime_source.split(marker)[0]+(
+            'install(WORKING_DIR, coverage=True)\n' if args.runtime_coverage else 'install(WORKING_DIR)\n')
+        notebook['cells'].insert(evaluation_index+1,cell('code',runtime_source))
+    if args.visible_tests:
+        visible_source=(ROOT/'tools/visible_test_prelocalize.py').read_text(encoding='utf-8')
+        marker="if __name__ == '__main__':"
+        assert marker in visible_source
+        visible_source=visible_source.split(marker)[0]+'install(WORKING_DIR)\n'
+        insert_at=evaluation_index+(1 if args.prelocalize else 0)+(1 if args.runtime_evidence else 0)
+        notebook['cells'].insert(insert_at,cell('code',visible_source))
+    provenance=('Uses '+str(len(used_confirmation))+' frozen confirmation tasks for exploratory capacity testing; '
+                'NOT an untouched held-out result and MUST NOT be reported as a leaderboard or confirmation score. '
+                if used_confirmation else
+                'Development tasks only; not an untouched confirmation test or leaderboard score. ')
+    notebook['cells'][0]=cell('markdown','# Full ranker agent integration\n\n'
+        'Executable full-ranker evaluation; the run manifest specifies whether a control arm is included. '
+        'The ranker is an INT8 deployment variant trained excluding competition repositories. Actual tool '
+        'invocation, query fidelity, ranker output and repair tests must be audited. All 129 frozen official '
+        'tasks are eligible. '+provenance+'\n')
     args.out.mkdir(parents=True)
     for name,text in baseline.items():
         target=args.out/'baseline'/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_text(text,encoding='utf-8')
@@ -150,10 +249,34 @@ print('Full ranker attached; matched model/sampling/time/tool budgets; no refere
               'arms':{'baseline':{'files':{name:hashlib.sha256(text.encode()).hexdigest() for name,text in baseline.items()}},
                       'ranker':{'files':runtime_files}},
               'scope':'Development integration of compact full ranker, not original paper estimator',
-              'fairness':'Same model, sampling, '+str(args.max_time_minutes)+'min/30-tool limits and 120s command timeout; ranker computation consumes session time'}
-    manifest['workflow']='sequential' if args.staged else 'single_agent'
+              'fairness':'Same model, sampling, '+str(args.max_time_minutes)+'min/'+str(args.max_tool_calls)+'-tool limits, '+str(args.max_turns)+' turns and 120s command timeout; ranker computation consumes session time'}
+    manifest['workflow']='prelocalize' if args.prelocalize else ('sequential' if args.staged else 'single_agent')
+    if args.runtime_evidence:
+        manifest['workflow']+='+runtime'
+        manifest['runtime_evidence']=True
+        manifest['runtime_coverage']=bool(args.runtime_coverage)
+        manifest['fairness']=manifest['fairness']+(
+            '; up to three FAIL_TO_PASS tests run before the session via an in-process patch '
+            'and their wall time counts against the task budget')
+    if args.visible_tests:
+        manifest['workflow']+='+visible'
+        manifest['visible_tests']=True
+        manifest['fairness']=manifest['fairness']+(
+            '; the task test_patch is applied to the agent workspace before the session '
+            '(visible-test protocol; the hidden arm in this batch is not modified)')
+    if used_confirmation:
+        manifest['exploratory']=True
+        manifest['scope']='Mixed development/confirmation exploratory run; NOT an untouched held-out result'
+    manifest['confirmation_tasks_used']=used_confirmation
+    manifest['task_selection']=('all 129 official tasks' if not args.dev_only else '10 development tasks only')
+    if args.prelocalize:
+        manifest['fairness']=manifest['fairness'].replace(
+            'ranker computation consumes session time',
+            'ranker computation runs deterministically before the agent session via an in-process harness patch (tools/ranker_prelocalize.py) and still counts against the task budget clock')
     manifest['result_file']='batch-results.jsonl' if args.batch else 'smoke_results.jsonl'
     manifest['max_time_minutes']=args.max_time_minutes
+    manifest['max_tool_calls']=args.max_tool_calls
+    manifest['max_turns']=args.max_turns
     manifest['display_mode']=args.display
     if args.staged and args.locator_thinking_budget is not None:
         manifest['locator_thinking_budget']=args.locator_thinking_budget

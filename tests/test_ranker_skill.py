@@ -122,13 +122,15 @@ class PortableRankerTests(unittest.TestCase):
             self.assertEqual(load_ranker(path),[model])
             self.assertEqual(ensemble_scores(load_ranker(path),[[3]]),[1.25])
 
-    def test_agent_probe_rejects_confirmation_task(self):
+    def test_agent_probe_dev_only_flag_restores_the_ten_task_cap(self):
         from tools.build_ranker_agent_probe import main
         with tempfile.TemporaryDirectory() as directory:
             output=Path(directory)/'probe'
             with patch('tools.build_ranker_agent_probe.freeze_split',return_value={'development':['dev'],'confirmation':['confirm']}):
-                with self.assertRaisesRegex(ValueError,'frozen development'):
-                    main(['--task-ids','confirm','--out',str(output)])
+                # Default now accepts all 129 frozen official tasks; --dev-only
+                # is the opt-in way to restore the old 10-task restriction.
+                with self.assertRaisesRegex(ValueError,'unique frozen official'):
+                    main(['--task-ids','confirm','--out',str(output),'--dev-only'])
             self.assertFalse(output.exists())
 
     def test_source_scan_excludes_executor_and_dependency_directories(self):

@@ -61,11 +61,13 @@ FEATURES = ("bm25_score", "bm25_rank", "body_run", "body_line", "path_in_issue",
             "doc_tokens")
 
 _INDEX: SnapshotIndex | None = None
+_POOL = 200
 
 
-def _init(repos: str) -> None:
-    global _INDEX
+def _init(repos: str, pool: int = 200) -> None:
+    global _INDEX, _POOL
     _INDEX = SnapshotIndex(repos)
+    _POOL = pool
 
 
 def _normalise(raw: str) -> str:
@@ -122,7 +124,7 @@ def _work(task: dict) -> dict:
     docs = {node_id: document_text(node) for node_id, node in nodes.items()}
     bm25 = BM25(docs)
     issue = task.get("problem_statement") or ""
-    ranked = bm25.search(issue, 200)
+    ranked = bm25.search(issue, _POOL)
     pool = [node_id for node_id, _ in ranked]
     top_score = ranked[0][1] if ranked else 1.0
     files_of = {node_id: node.get("file", "") for node_id, node in nodes.items()}
@@ -267,6 +269,8 @@ def main(argv=None) -> int:
     ap.add_argument("--out", default=str(ROOT / "data" / "features.jsonl"))
     ap.add_argument("--jobs", type=int, default=min(6, os.cpu_count() or 1))
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--pool", type=int, default=200,
+                    help="BM25 candidate pool size; the paper's arms use 200")
     ap.add_argument("--append", action="store_true",
                     help="skip tasks already in --out and append to it; a 2,294-task run "
                          "outlives a download that is still catching up")
@@ -288,7 +292,7 @@ def main(argv=None) -> int:
         print(f"{len(tasks)} tasks, {len(done_ids)} already done, {len(todo)} to run", flush=True)
         tasks = todo
     with out.open(mode, encoding="utf-8") as fh, ProcessPoolExecutor(
-        max_workers=args.jobs, initializer=_init, initargs=(args.repos,)
+        max_workers=args.jobs, initializer=_init, initargs=(args.repos, args.pool)
     ) as pool:
         futures = {pool.submit(_work, task): task for task in tasks}
         for done, future in enumerate(as_completed(futures), 1):
