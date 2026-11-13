@@ -1,4 +1,4 @@
-﻿param(
+param(
     [ValidateSet('Launch','Status','Logs','Fetch','Live')][string]$Action = 'Status',
     [string]$CredentialsPath = 'C:/Users/Administrator/.kaggle/credentials.json',
     [string]$BuildDirectory = '.cache/main-track/build',
@@ -19,7 +19,7 @@ if ($Action -ne 'Launch' -and (Test-Path -LiteralPath $launchReceiptPath)) {
 }
 if ($Action -eq 'Launch') {
     if (Test-Path -LiteralPath $launchReceiptPath) { throw 'This build already has a launch receipt; refusing to launch it again' }
-    if (-not $kernelRequest.isPrivate -or $kernelRequest.sessionTimeoutSeconds -gt 3600) { throw 'Unexpected notebook privacy/runtime settings' }
+    if (-not $kernelRequest.isPrivate -or $kernelRequest.sessionTimeoutSeconds -gt 14400) { throw 'Unexpected notebook privacy/runtime settings' }
     if ($kernelRequest.enableInternet -and (-not $AllowNetworkSetup -or $kernelRequest.enableGpu -or $kernelRequest.modelDataSources.Count)) { throw 'Network is permitted only for explicitly requested CPU dependency setup without model inputs' }
     if ($kernelRequest.enableGpu) {
         $runManifest = Get-Content -LiteralPath (Join-Path $BuildDirectory 'manifest.json') -Raw | ConvertFrom-Json

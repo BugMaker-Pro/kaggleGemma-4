@@ -133,6 +133,22 @@ class ContextReservationTests(unittest.TestCase):
             self.assertEqual(reservations[1], reservations[2])
 
 
+class BudgetOverrideTests(unittest.TestCase):
+    def test_tool_call_and_turn_caps_are_written_to_eval_config(self):
+        import yaml
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root/'prompts').mkdir()
+            (root/'configs').mkdir()
+            (root/'prompts/system.md').write_text('### 1. Identify Target Files Immediately\nLocate\n### 2. Implement\nFix\n')
+            (root/'configs/sampling.yaml').write_text('temperature: 0.2\n')
+            files = agent_files(root, 'baseline', max_time_minutes=5, max_tool_calls=60, max_turns=80)
+            config = yaml.safe_load(files['eval_config.yaml'])['evaluation']
+            self.assertEqual(config['max_time_minutes'], 5)
+            self.assertEqual(config['max_tool_calls'], 60)
+            self.assertEqual(config['max_turns'], 80)
+
+
 class RuntimeArtifactAuditTests(unittest.TestCase):
     def _make_run(self, root):
         import hashlib, zipfile
@@ -234,15 +250,19 @@ class BatchPreparationTests(unittest.TestCase):
                     main(['--task-ids','confirm_1','--out',str(output),'--run-suffix','test'])
             self.assertFalse(output.exists())
 
-    def test_batch_refuses_confirmation_task(self):
+    def test_batch_allows_confirmation_task_with_provenance(self):
         from unittest.mock import patch
-        from tools.build_main_track_batch import main
+        from tools.build_main_track_batch import main, batch_evaluation_code
+        code=batch_evaluation_code(['confirm_1'],2,'quiet',scope='mixed_exploratory')
+        self.assertIn("SPLIT.get('confirmation',[])",code)
+        self.assertIn("'scope':'mixed_exploratory'",code)
         with tempfile.TemporaryDirectory() as directory:
             output=Path(directory)/'batch'
             split={'development':['dev_1'],'confirmation':['confirm_1']}
+            # Unknown ids are still rejected; frozen confirmation ids are accepted.
             with patch('tools.build_main_track_batch.freeze_split',return_value=split):
-                with self.assertRaisesRegex(ValueError,'frozen development'):
-                    main(['--task-ids','confirm_1','--out',str(output),'--run-suffix','test'])
+                with self.assertRaisesRegex(ValueError,'unique frozen official'):
+                    main(['--task-ids','not_a_frozen_task','--out',str(output),'--run-suffix','test'])
             self.assertFalse(output.exists())
 
     def test_throughput_needs_two_distinct_development_tasks(self):

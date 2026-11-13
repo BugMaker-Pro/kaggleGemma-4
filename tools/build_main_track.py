@@ -52,7 +52,7 @@ def freeze_split(path: Path) -> dict:
             'small_repo_note': 'Repositories with <=3 tasks have no confirmation tasks.'}
 
 def agent_files(sample: Path, arm: str, *, completion_guardrails: bool = False, max_output_tokens: int | None = None,
-                max_time_minutes: int = 3) -> dict[str, str]:
+                max_time_minutes: int = 3, max_tool_calls: int = 30, max_turns: int = 50) -> dict[str, str]:
     prompt = (sample / 'prompts/system.md').read_text(encoding='utf-8')
     if arm != 'baseline':
         policy = (ROOT / 'agent/prompts/localization' / (arm + '.md')).read_text(encoding='utf-8')
@@ -76,8 +76,8 @@ def agent_files(sample: Path, arm: str, *, completion_guardrails: bool = False, 
         if changed != 1:
             raise ValueError('Official sampling config must declare exactly one output reservation')
     sampling += '\nseed: 0\n'
-    eval_config = ('evaluation:\n  timeout_seconds: 60\n  max_tool_calls: 30\n'
-                   '  max_time_minutes: ' + str(max_time_minutes) + '\n  max_turns: 50\n')
+    eval_config = ('evaluation:\n  timeout_seconds: 60\n  max_tool_calls: ' + str(max_tool_calls) + '\n'
+                   '  max_time_minutes: ' + str(max_time_minutes) + '\n  max_turns: ' + str(max_turns) + '\n')
     return {'agent.yaml': config, 'prompts/system.md': prompt,
             'configs/sampling.yaml': sampling,
             'eval_config.yaml': eval_config}
@@ -139,7 +139,7 @@ for arm, files in PAYLOADS.items():
     print('Official structure validation passed:', arm)
 tasks = load_tasks(TASKS_PATH)
 selected_tasks = [task for task in tasks if task.instance_id == ENGINEERING_TASK_ID]
-assert len(selected_tasks) == 1 and selected_tasks[0].instance_id in SPLIT['development']
+assert len(selected_tasks) == 1 and selected_tasks[0].instance_id in (set(SPLIT['development'])|set(SPLIT.get('confirmation',[])))
 AGENT_DIR = WORKING_DIR / 'agents' / next(iter(PAYLOADS))
 (WORKING_DIR / 'frozen_split.json').write_text(json.dumps(SPLIT, indent=2), encoding='utf-8')
 print('Engineering smoke only; task:', ENGINEERING_TASK_ID)
