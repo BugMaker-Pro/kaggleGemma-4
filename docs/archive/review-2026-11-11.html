@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gemma-4 论文赛道｜独立诊断与全量实验清单（2026-11-11）</title>
+<style>
+  :root{
+    --bg:#f7f8fa; --panel:#ffffff; --ink:#1c2330; --muted:#5b6675;
+    --line:#dfe4ea; --accent:#2456a6; --accent-soft:#eaf1fc;
+    --fact:#0f6f8f; --fact-bg:#eaf6fa; --judge:#8a6100; --judge-bg:#fff6df;
+    --risk:#a32121; --risk-bg:#fdecec; --ok:#1d6b3f; --ok-bg:#e9f6ee;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    font-size:15px;line-height:1.75}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 26px 90px}
+  header{background:linear-gradient(135deg,#16345f,#2456a6);color:#fff;padding:38px 0 30px;margin-bottom:28px}
+  header .wrap{padding-bottom:0}
+  h1{font-size:27px;margin:0 0 10px;line-height:1.35}
+  .sub{opacity:.9;font-size:14px;margin:0}
+  .badges{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+  .badge{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);
+    border-radius:20px;padding:3px 12px;font-size:12.5px}
+  h2{font-size:21px;margin:38px 0 14px;padding-bottom:9px;border-bottom:2px solid var(--accent)}
+  h3{font-size:17px;margin:26px 0 10px;color:var(--accent)}
+  h4{font-size:15px;margin:18px 0 8px}
+  p{margin:9px 0}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .toc{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 24px;margin-bottom:26px}
+  .toc ol{margin:6px 0;padding-left:22px;columns:2;column-gap:36px}
+  .toc li{margin:3px 0;break-inside:avoid}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:14px 0}
+  .fact,.judge,.risk,.ok{border-left:4px solid;border-radius:6px;padding:12px 16px;margin:12px 0}
+  .fact{background:var(--fact-bg);border-color:var(--fact)}
+  .judge{background:var(--judge-bg);border-color:var(--judge)}
+  .risk{background:var(--risk-bg);border-color:var(--risk)}
+  .ok{background:var(--ok-bg);border-color:var(--ok)}
+  .label{display:inline-block;font-weight:700;font-size:12px;letter-spacing:.5px;margin-right:8px}
+  .fact .label{color:var(--fact)} .judge .label{color:var(--judge)}
+  .risk .label{color:var(--risk)} .ok .label{color:var(--ok)}
+  table{width:100%;border-collapse:collapse;margin:12px 0;background:var(--panel);font-size:13.5px}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:#eef2f8;font-weight:600;white-space:nowrap}
+  tbody tr:nth-child(even){background:#fafbfd}
+  td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .tag{display:inline-block;border-radius:4px;padding:1px 7px;font-size:11.5px;font-weight:600;white-space:nowrap}
+  .t-in{background:var(--ok-bg);color:var(--ok);border:1px solid #b9dfc7}
+  .t-out{background:#f0f1f3;color:#5b6675;border:1px solid #d6dae0}
+  .t-neg{background:var(--risk-bg);color:var(--risk);border:1px solid #f0c4c4}
+  .t-wait{background:var(--judge-bg);color:var(--judge);border:1px solid #ecd59a}
+  code,pre{font-family:Consolas,"Cascadia Mono",Menlo,monospace;font-size:12.8px}
+  code{background:#eef1f5;padding:1px 5px;border-radius:3px}
+  pre{background:#1e2632;color:#e7edf5;padding:14px 16px;border-radius:8px;overflow-x:auto;line-height:1.6}
+  pre code{background:none;padding:0;color:inherit}
+  .small{font-size:12.8px;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:14px 0}
+  .kpi{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:14px 16px}
+  .kpi .n{font-size:24px;font-weight:700;color:var(--accent);line-height:1.2}
+  .kpi .k{font-size:12.5px;color:var(--muted);margin-top:4px}
+  ul,ol{padding-left:22px;margin:8px 0}
+  li{margin:4px 0}
+  hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+  .foot{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+  @media print{body{background:#fff}header{background:#16345f!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .card,.toc,table{break-inside:avoid}h2{break-after:avoid}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Gemma-4 论文赛道：独立诊断与全量实验清单</h1>
+    <p class="sub">仓库 <code style="background:rgba(255,255,255,.15);color:#fff">kaggleGemma-4</code> ｜ 生成于 2026-11-11 21:45，22:15 修订（北京时间）｜ 面向外部审阅者的自包含快照</p>
+    <div class="badges">
+      <span class="badge">论文载体 2,990 / 3,000 词</span>
+      <span class="badge">0 publication failure(s)</span>
+      <span class="badge">数字审计 0 failure(s)</span>
+      <span class="badge">216 项测试通过</span>
+      <span class="badge">截止 2026-11-13 07:59</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<div class="toc">
+  <strong>目录</strong>
+  <ol>
+    <li><a href="#s0">一分钟速览</a></li>
+    <li><a href="#s1">论文与载体现状</a></li>
+    <li><a href="#s2">独立复评（五维评分与硬伤）</a></li>
+    <li><a href="#s3">全量实验清单</a></li>
+    <li><a href="#s4">主赛道下游验证详情</a></li>
+    <li><a href="#s5">风险、待办与分工</a></li>
+    <li><a href="#sa">附录 A：复现命令</a></li>
+    <li><a href="#sb">附录 B：文件索引</a></li>
+  </ol>
+</div>
+
+<div class="fact"><span class="label">本文档是什么</span>
+一份给<strong>不熟悉本项目的审阅者</strong>看的快照：论文写了什么、独立评审怎么判、<strong>全部做过的实验（含未写入论文的负结果）</strong>、以及当前最要紧的待办。所有数字来自仓库内文件与已落盘产物，未做新的实验或新的论文改动。独立复评由单独的评审子代理完成，全程只读。
+</div>
+
+<div class="judge"><span class="label">22:15 修订</span>
+论文已按本报告的可执行项改过一轮：删除 <code>main.md:33</code> 的 “to our knowledge the first”、摘要改为 “only metadata and dense survive Holm correction”、补 bge-small token 计价（十槽 4,097 对 74,525 tokens）、Limitations 补 rewiring 54.2%/19.0% 与 500 池负结果、修 <code>writeup-upload.md</code> 的 6 页 / 2,990 词 / 图片顺序。当前 <code>check_publication.py</code> → 2,990 词、6 页、69 源块、0 failure。<strong>另注</strong>：harness trace 里的 <code>system_instruction</code> 是未模板化的 <code>agent.instruction</code>；ADK 在调用时注入 session state（缺变量会抛 <code>Context variable not found</code>），所以“注入报告”成立，54 配对的问题是超时无功效，不是 treatment 未投递。
+</div>
+
+<h2 id="s0">0. 一分钟速览</h2>
+
+<p><strong>论文题目</strong>：Beyond File Hits: Candidate Coverage and Graph Utility in Code Localization。核心是一个带冻结协议与独立审计的<strong>静态检索层实证诊断</strong>——在 SWE-bench 系任务上，用 degree- 与 file-matched 的拓扑反事实对照，把「图结构里有没有超出粗粒度结构的信息」和「使用图的具体重排规则有没有净收益」分开测量，并报告「文件命中 ≠ 符号命中」的粒度鸿沟（290 个可评分 Lite 任务上，同一份 top-10 覆盖 62.4% 金标文件、仅 27.5% 金标符号）。</p>
+
+<div class="grid">
+  <div class="kpi"><div class="n">3.0–3.2 / 5</div><div class="k">独立复评估计档位：中上，难进前三</div></div>
+  <div class="kpi"><div class="n">4.5 / 5</div><div class="k">最强项 Verifiability（可复现性与审计链）</div></div>
+  <div class="kpi"><div class="n">2 / 5</div><div class="k">最弱项 Novelty 与 Quality</div></div>
+  <div class="kpi"><div class="n">10 词</div><div class="k">3000 词上限下的剩余余量</div></div>
+</div>
+
+<div class="risk"><span class="label">最高优先级</span>
+<strong>不是改文字，是确认线上提交状态。</strong> <code>paper/writeup-upload.md</code> 六项提交核对全部未勾选，<code>docs/status.md:60</code> 明写「仓库内没有提交回执、线上字数、截图或 submitted 确认记录」。官方规则第 80 行：draft / 未提交不计入评审。距截止仅约一天半，此事只能由项目成员在 Kaggle 线上完成。
+</div>
+
+<div class="judge"><span class="label">两个夜间实验的净结论</span>
+主赛道下游验证与 500 候选池对照<strong>都是负结果，但性质不同</strong>：前者 54 个配对任务中 45 个至少一臂超时、真正跑完的仅 9 个且 8:8 打平，属于<strong>无功效</strong>，不能用来否定方法；后者 290 个配对任务、区间收窄、方向为负，属于<strong>有信息量的负结果</strong>，排除了「扩池能提分」这条路线。两者按预登记规则均不进论文。
+</div>
+
+<h2 id="s1">1. 论文与载体现状</h2>
+
+<table>
+<thead><tr><th>文件</th><th>角色</th><th>当前状态</th></tr></thead>
+<tbody>
+<tr><td><code>paper/main.md</code></td><td>主稿（唯一内容源）</td><td>含 1 句主赛道部署的事实陈述（第 150 行附近）</td></tr>
+<tr><td><code>paper/submission.md</code></td><td>完整提交文本</td><td>2,990 词（仓库计数器口径）</td></tr>
+<tr><td><code>paper/submission_body.md</code></td><td>去标题文本</td><td>2,959 词</td></tr>
+<tr><td><code>paper/submission.pdf</code></td><td>PDF 载体</td><td>6 页、4 张编号表、14 条参考文献</td></tr>
+<tr><td><code>paper/kaggle_body_img.md</code></td><td><strong>真正线上 Writeup 载体</strong></td><td>2,742 词，表格为 PNG、删去表格题注</td></tr>
+</tbody>
+</table>
+
+<div class="ok"><span class="label">自检通过</span>
+<code>tools/check_publication.py</code> → <code>2971 words; 6 PDF pages; 4 numbered tables; 14 references; 69 source blocks checked against PDF; 0 publication failure(s)</code>；<code>tools/audit_numbers.py --fast</code> → <code>0 failure(s)</code>；<code>python -m unittest discover -s tests</code> → 216 tests OK。
+</div>
+
+<div class="risk"><span class="label">自检覆盖缺口</span>
+三个载体字数并不一致，而 <code>check_publication.py</code> 对 <code>kaggle_body_img.md</code> <strong>只校验图片文件存在</strong>（第 109–112 行），不校验文字、字数、措辞与图片顺序；<code>audit_numbers.py</code> 读的是 <code>main.md</code>。换言之「0 failure(s)」并未覆盖真正被评审的那份文本。另 <code>paper/writeup-upload.md</code> 已于 22:00 修至「6 页、2,990 词」，图片顺序对齐正文（<code>fig1</code> 在 <code>table_3</code> 前），但该清单仍不在自检覆盖内。
+</div>
+
+<h2 id="s2">2. 独立复评</h2>
+
+<h3>2.1 五维评分（按比赛官方五维等权口径）</h3>
+<table>
+<thead><tr><th>维度</th><th class="num">分</th><th>依据</th></tr></thead>
+<tbody>
+<tr><td>Verifiability</td><td class="num">4.5</td><td>独立金标 279/300、冻结协议与输入哈希、734,354 项独立审计零失败、70 源块与 PDF 比对、复现命令齐全</td></tr>
+<tr><td>Clarity</td><td class="num">4</td><td>结构清楚、现象钩子有效</td></tr>
+<tr><td>Relevance</td><td class="num">3</td><td>检索层诊断离「agentic software engineering」主题有距离</td></tr>
+<tr><td>Novelty</td><td class="num">2</td><td>与已有工作的区分主要是范围缩小，不是方法创新</td></tr>
+<tr><td>Quality</td><td class="num">2</td><td>仅 Python、单一图构建器、单一基准族；官方要求「beyond the competition… translate to other similar problems」，正文明确不外推</td></tr>
+</tbody>
+</table>
+<p class="small">比赛约 302 份投稿取前三（<code>docs/competition/kaggle-paper-track-raw.md:106</code>）。</p>
+
+<h3>2.2 证据链与过度声称</h3>
+<ul>
+<li><strong>概念滑移</strong>：<code>main.md:21,29</code> 把「两种对照结论不同」写成 "signal and intervention value are separate"。但 real−rewired 对照的是随机图、real−base 对照的是原排序，二者不是同一构念的两个属性；且 real 与两类 rewired <strong>共用同一条 promotion rule</strong>（<code>graph-control-protocol.md:23-27</code>），并未把「重排规则」作为因子交叉，因此「已隔离结构信号与具体干预」偏强。</li>
+<li><strong>与自评直接矛盾（已修）</strong>：<code>main.md:33</code> 曾写「to our knowledge the <strong>first</strong> pre-specified, degree- and file-matched topology counterfactual control」，而 <code>docs/novelty-review.md:11</code> 明写「不要主张首次符号评测、首次图消融…」，<code>:112</code> 写「不构成穷尽文献后的首创证明」。2026-11-11 晚间已删去 “to our knowledge the first”，正文与自评一致。</li>
+<li><strong>摘要缺限定（已修）</strong>：62.4 / 27.5 只来自 BM25 单一排序，限定句直到 <code>:31</code> 才出现，摘要未带。22:10 已在摘要加 “under BM25”，并把 0.90 的 n.s. 改为 “only metadata and dense survive Holm correction”。</li>
+<li><strong>部署句的联想风险</strong>：<code>main.md:150</code> 的部署句已改为 “packaged for our main-track agent …; it is not evaluated here”，本身无效果声称；但它与 <code>:166</code>「no interpretable downstream repair evaluation」及下游 54 配对结果并置，仍容易被读成「下游已验证有效」。</li>
+<li><strong>相关工作</strong>：<code>main.md:45</code> 把 CORE-Bench / RepoNav / FuseSearch 压成一句、无分工说明；<code>docs/papers/notes.md:133</code> 要求对 Bellam 的重叠「不能忽略或声称首次」，<code>:340</code> 要求必引的 falsify-eval 不在 14 条参考文献内。</li>
+</ul>
+<div class="judge"><span class="label">判断</span>
+<code>docs/novelty-review.md</code> 比论文正文更诚实也偏保守；修改前的问题是<strong>正文比自评乐观、两者不一致</strong>，删除 “first” 后这条已不再是投稿风险，但正文其余措辞仍应以自评为上限。
+</div>
+
+<h3>2.3 统计设计</h3>
+<ul>
+<li><strong>无 p-hacking 证据</strong>：协议自承「prospective follow-up to an already inspected benchmark, not a preregistration」，但五项主对比、五个图种子、Holm 校正、cluster bootstrap 在 <code>graph-control-protocol.md:47-57</code> 事前冻结，<code>:67</code> 承诺保留全部结果；仓库另有预注册判读规则与「不得入稿」纪律。</li>
+<li><strong>随机对照强度需披露（已修）</strong>：主 null 平均只替换 <strong>54.2%</strong> 原始边，严格 file-pair null 仅 <strong>19.0%</strong>；273 任务不可交换、345 任务最终边集未变（<code>graph-control-results.md:75-76,101</code>）。<code>main.md:166</code> 原只写「not proven uniformly sampled or mixed」，22:10 已补 54.2%/19.0% 两个数字；不可交换任务数仍未写。</li>
+<li><strong>选择性呈现（部分已修）</strong>：摘要原并列 2.14 / 0.90 / 1.76，未标 0.90 的 Holm <strong>p=0.1787（不显著）</strong>；22:10 已改为 “only metadata and dense survive Holm correction”。<code>main.md</code> 的 same-file 列原几乎不解读；22:10 已补 body 数字：same-file 符号 0.3295 &gt; real 0.3170，但文件召回 0.5277 &lt; 0.6207（本报告初稿误把 metadata 的 0.4712/0.5644 写成了 body）。</li>
+<li><strong>Holm 覆盖边界</strong>：只覆盖五项主对比；§6 的实践规则主要依赖<strong>未校正</strong>的次要对比 real−base，主/次界线在 Discussion 被模糊。</li>
+<li><strong>口径</strong>：cluster bootstrap 仅 12 个仓库，django 114 + sympy 77 占 191/300；两折为确定性交替分组、只划一次；「three seeds」是 LightGBM 种子 0/1/2，与拓扑对照的五个图种子 11/23/37/51/71 是两套系统；摘要用 290 的现象钩子，主实验在 2,232 且 Lite 嵌套于其中。290/2,232 无算术错误。</li>
+</ul>
+
+<h3>2.4 写作与可砍空间</h3>
+<p><code>main.md:166</code> 的 Limitations 在 3000 词内算相当诚实（Python only、单一图、无下游可解释评估、Lite 嵌套、方法开发复用、cluster exchangeability、交换链未证明混合）。<strong>22:10 已补</strong>：rewiring 替换比例（54.2%/19.0%）、500 池不显著、下游改为 “no interpretable”。<strong>仍未覆盖</strong>：不可交换任务数、仓库分布不均。可砍注水约 110–180 词：<code>:148</code> Within-file selection、<code>:144-146</code> 两段 displacement/reach（与 Table 4、Figure 1 重复）、<code>:45</code> 三篇一句带过（其中 <code>:125</code> Source size 已于 22:10 删除，约 35 词）。</p>
+
+<h3>2.5 按性价比排序的 5 条建议</h3>
+<table>
+<thead><tr><th>#</th><th>改动</th><th>词数</th><th>审计链影响</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><code>main.md:33</code> 删「to our knowledge the first …」，改为「a pre-specified, degree- and file-matched …」</td><td>净 0</td><td>不破坏；收益最高，消除与自评的正面矛盾</td></tr>
+<tr><td>2</td><td>修 <code>writeup-upload.md</code> 页数/字数/图片顺序、勾选清单、保存回执</td><td>0（不进正文）</td><td>不破坏；<strong>实际优先级最高</strong></td></tr>
+<tr><td>3</td><td>摘要给 62.4/27.5 加 "under BM25"，并标注 0.90 为 n.s.</td><td>+8~10，需砍等量</td><td>不破坏；勿动 <code>check_publication.py:69-72</code> 锁定的两处 p 值</td></tr>
+<tr><td>4</td><td>Limitations 补披露 rewiring 比例、下游 45/54 超时、500 池无收益</td><td>+35~45，从 §5 注水段砍</td><td>不破坏任何精确比对</td></tr>
+<tr><td>5</td><td><code>main.md:45</code> 补 CORE-Bench / RepoNav / FuseSearch / Bellam 的分工，同步修 <code>novelty-review.md:118</code></td><td>净 0</td><td>不破坏；<strong>不要新增文献条目</strong>（自检要求引用连续且全被引用）</td></tr>
+</tbody>
+</table>
+<p class="small"><strong>22:10 状态</strong>：#1–#4 已执行（#3 用 “only metadata and dense survive Holm correction” 替代显式 n.s.；#4 以 “no interpretable” 披露下游，未单列 45/54 超时）；#2 的线上勾选与回执仍需人工完成；#5 未新增文献，只给三篇补了分工句。</p>
+<div class="risk"><span class="label">链路提醒</span>
+改 <code>main.md</code> 后须依次重跑 <code>make_submission.py → make_pdf.py → make_table_images.py → make_kaggle_images.py</code>，再跑两个自检。<code>check_publication.py:63-68</code> 对 Table 1 用<strong>原始串</strong>比对，Table 1 单元绝不能加 markdown 加粗（Table 2/3 走 <code>plain(cell)</code> 不受影响）；<code>:74-85</code> 另锁定 "fusion without topology features" 行与 1.66 / 0.0103 / 0.66 / 2.42。
+</div>
+
+<h2 id="s3">3. 全量实验清单</h2>
+<p class="small">标记说明：<span class="tag t-in">入稿</span> 已写入论文主结果；<span class="tag t-out">未入稿</span> 按预登记或判读规则不进投稿；<span class="tag t-neg">负结果</span>；<span class="tag t-wait">待核实</span>。所有产物路径相对仓库根。</p>
+
+<h3>3.1 检索表示与证据通道（论文主结果的地基）</h3>
+<table>
+<thead><tr><th>实验</th><th>关键数字</th><th>判读</th><th>状态</th></tr></thead>
+<tbody>
+<tr><td>八臂 Lite 图排序先验</td><td>0 或负；全量 +2.2 符号 / +0.0 文件</td><td>图作为先验未带来稳定增益</td><td><span class="tag t-in">入稿</span></td></tr>
+<tr><td>候选自身 body（BM25 索引层）</td><td><strong>+3.8 点</strong>（CI 2.1–5.4，399/274）；noise 控制 −12.0</td><td>索引内容是最强单信号</td><td><span class="tag t-in">入稿</span></td></tr>
+<tr><td>body 两特征（<code>body_in_pool</code> / <code>body_rank</code>）</td><td>+2.6 点（202/94，0.361→0.387）</td><td>预注册判读：大部分收益已被 body-quote 特征吃掉</td><td><span class="tag t-in">入稿</span></td></tr>
+<tr><td>稠密语义分数作为额外特征</td><td><strong>+8.6 点</strong>（418/83，0.361→0.447）</td><td>最强单列增量</td><td><span class="tag t-in">入稿</span></td></tr>
+<tr><td>dense + body 三特征</td><td>0.444，低于只加 dense 的 0.447</td><td>body 被 dense 吸收</td><td><span class="tag t-out">未入稿</span></td></tr>
+<tr><td>全量融合排序器（16 特征 + dense）</td><td>44.70% symbol / 72.7% file recall@10</td><td>论文最强臂</td><td><span class="tag t-in">入稿</span></td></tr>
+<tr><td>融合排序器拓扑特征消融（2026-11-08）</td><td>移除入/出度与种子邻接后 43.04%，<strong>图增量 +1.66 点</strong>，仓库区间 [0.66, 2.42]，符号翻转 p=0.0103</td><td>图作为<strong>特征</strong>仍值 1.66 点</td><td><span class="tag t-in">入稿</span></td></tr>
+<tr><td>BM25 + 余弦 50/50 无训练融合</td><td>0.354，介于 16 特征 0.332 与 +证据 0.361</td><td>无训练融合不占优</td><td><span class="tag t-out">未入稿</span></td></tr>
+<tr><td>稠密全库索引扩池（并集）</td><td>BM25 62.8% → 并集 <strong>62.8%</strong>，天花板 0.600 不变；单独 dense 51.7%</td><td>一个金标都没捞回来</td><td><span class="tag t-neg">负结果</span></td></tr>
+<tr><td>File-first 预算常数乘积曲线（v9）</td><td>10 槽预算无法同时买文件与定义；免费的那 33% 拿不到</td><td>支撑「槽位预算」框架</td><td><span class="tag t-in">入稿</span></td></tr>
+<tr><td>issue 证据通道普查（v12）</td><td>三通道中只有「issue 明写代码线索」值钱</td><td>支撑尾部诊断</td><td><span class="tag t-in">入稿</span></td></tr>
+</tbody>
+</table>
+
+<h3>3.2 拓扑反事实对照（论文的核心贡献）</h3>
+<p>全部 <strong>2,232</strong> 个任务，固定原始候选池与五个保留种子；三种表示（metadata、正文 BM25、冻结 dense），真实图、同文件控制、两种约束随机图；每随机图族五个固定种子、每边 20 次交换尝试；五项主比较与 Holm 校正在看结果前确定。独立审计 734,354 项检查零失败，12 个仓库各重放一项随机对照。</p>
+<table>
+<thead><tr><th>结论</th><th>证据</th><th>可说到的边界</th></tr></thead>
+<tbody>
+<tr><td>真实拓扑优于保持粗粒度结构的随机图</td><td>metadata +2.14 点、dense +1.76 点；Holm p=0.0137 / 0.0049</td><td>在本候选池、图构建器和排序规则下，有超出节点度数的信息</td></tr>
+<tr><td>正文底座上的真实图优势证据较弱</td><td>+0.90 点；Holm <strong>p=0.1787</strong></td><td>不能宣称显著，也不能宣称等价或无效</td></tr>
+<tr><td>有信号不等于净收益</td><td>真实图相对原排序：metadata +2.19、正文 −0.01、dense +0.64 点</td><td>拓扑检验与策略收益必须分开汇报；dense 净收益的次要仓库检验 p=0.069</td></tr>
+<tr><td>更强表示削弱图优势尚未确立</td><td>正文交互 −1.24 点 Holm p=0.126；dense 交互 −0.38 点 p=0.598</td><td>不能写成「文本解释掉了图」</td></tr>
+<tr><td>控制更严格则残差变小</td><td>file-pair null 下 metadata / dense 残差约 +0.86 / +0.65 点</td><td>次要分析，严格 null 平均仅替换 19.0% 边</td></tr>
+<tr><td>文件关系不能简单替代真实图</td><td>相对同文件控制的仓库检验不显著，方向依表示变化</td><td>其文件召回明显下降也需披露</td></tr>
+</tbody>
+</table>
+<p class="small">已披露的两个审计细节：Lite 与全量历史协议不同（Lite 图重排可移动前五个种子，全量保留）；dense 并列规则历史差异使全量基线 0.3659 而旧值 0.3661，事后按历史规则完整重算控制，五项主推断未变（<code>data/graph_controls_tie_sensitivity.json</code>）。</p>
+
+<h3>3.3 粒度、覆盖与成本诊断</h3>
+<table>
+<thead><tr><th>实验</th><th>关键数字</th><th>状态</th></tr></thead>
+<tbody>
+<tr><td>粒度成本（字符口径）</td><td>金标文件 median 28,950 字符 vs 被改定义 1,726（<strong>16.1×</strong>，均值 48.2×）；定义占文件 6.2%；文件内 48 个定义；112/290 任务 ≥25×</td><td><span class="tag t-in">入稿</span></td></tr>
+<tr><td>粒度成本（bge tokenizer 等 token 预算，2026-11-10）</td><td>500 tokens：symbol 0.090 / file 0.003；4,000：0.253 / 0.103；8,000：0.266 / 0.217。10 槽定义列表 4,097 tokens vs 整文件 74,525</td><td><span class="tag t-in">入稿</span>（已写入 §5；Limitations 的 equal-token 缺口已移除）</td></tr>
+<tr><td>尾部 80 任务精确通道诊断</td><td>只覆盖 <strong>12/80（15%）</strong>：名字 5、body 1、路径 1、frame 8；68 个任务只描述行为、从不点名代码</td><td><span class="tag t-in">入稿</span></td></tr>
+<tr><td>尾部短语索引（仓库级 6-gram 原文）</td><td>80 个尾部任务里 10 个 issue 含 ≥6 token 原文代码段（最长 37）→ 天花板约 +2.3 点</td><td><span class="tag t-out">未入稿</span></td></tr>
+<tr><td>近种子 / 远种子分层（2026-11-10）</td><td>near n=84：real−rewired <strong>+0.4667</strong> CI (+0.3786,+0.5476) W/L 59/1；far n=683：−0.0141 CI (−0.0225,−0.0061) W/L 4/44</td><td><span class="tag t-out">未入稿</span>，机制上支持「拓扑是补全而非发现」</td></tr>
+<tr><td>reach / displacement / shortlist displacement</td><td>见 <code>docs/experiments/retrieval.md</code> 与 Table 4、Figure 1</td><td><span class="tag t-in">入稿</span></td></tr>
+</tbody>
+</table>
+
+<h3>3.4 干预算法与预注册否证系列（均为负结果链）</h3>
+<table>
+<thead><tr><th>实验 / 产物</th><th>冻结判读</th><th>状态</th></tr></thead>
+<tbody>
+<tr><td>反事实拓扑算法四法（null-calibrated promotion、topology-surplus features、counterfactual routing、contrastive denoising）<br><code>docs/experiments/counterfactual-topology-algorithms.md</code></td><td>均无稳定收益；oracle 路由 0.4708 vs 跨仓库 0.4346。文档明确「不应替换原主结果，也不应称为新 SOTA」</td><td><span class="tag t-neg">负结果</span></td></tr>
+<tr><td>InterventionEffect Bench v0（7 策略，cluster bootstrap 10,000 次，Holm）<br><code>data/intervention_effect_bench_results.json</code></td><td><strong>未观察到</strong>：主策略区间不跨零但在错误方向、Δrisk 区间跨 0；<code>evidence_high</code> 显著升高风险，<code>null_spread</code> 显著选出更差子集。交付物是基准与新指标本身</td><td><span class="tag t-neg">负结果</span></td></tr>
+<tr><td>干预净收益的事前可预测性（6 个干预前统计量，留出仓库）<br><code>data/intervention_predictability.json</code></td><td><strong>未观察到</strong>：主表示区间跨 0，MSE 改进 +0.0019 实质为零；88.4% 任务净收益为零。body 的秩相关 Holm 后显著但 MSE 为负，必须同表披露</td><td><span class="tag t-neg">负结果</span></td></tr>
+<tr><td>干预敏感度假设的确认性检验<br><code>data/intervention_sensitivity_confirmation.json</code></td><td><code>NOT_CONFIRMED_SIGNAL_NOT_EQUIVALENT</code>：label-free 结构分歧度与上一轮 post-hoc 离散度不等价，按冻结协议强制判未确认</td><td><span class="tag t-neg">负结果</span></td></tr>
+<tr><td>未见任务集 label-free 结构复现（62 个留出任务）<br><code>data/external_structure_check.json</code></td><td><code>REPLICATED_ON_UNSEEN_TASKS</code>：R1 OR 171.15、R2 OR 245.00，Holm 后均 p≈1.3e-08；P1 四个区间全跨 0（未观察到漂移 ≠ 证明等价）。<strong>同仓库新任务集</strong>，非外部验证、非独立复制、与金标/干预收益无关</td><td><span class="tag t-out">未入稿</span></td></tr>
+</tbody>
+</table>
+
+<h3>3.5 查询生成与代码反馈系列</h3>
+<table>
+<thead><tr><th>实验</th><th>关键数字 / 判读</th><th>状态</th></tr></thead>
+<tbody>
+<tr><td>固定查询菜单探索性试跑（12 条历史任务）</td><td>oracle 相对固定组合覆盖 +8.33 点，仓库描述性区间 [0.00, 25.00] 跨过 +2 门槛 → <strong>不确定</strong></td><td><span class="tag t-out">未入稿</span></td></tr>
+<tr><td>轮转候选保留对照</td><td>覆盖 58.33% → <strong>54.17%</strong>，无任务改善、1 个退步 → 不采用</td><td><span class="tag t-neg">负结果</span></td></tr>
+<tr><td>单轮代码反馈 Flash 试跑（24 份配对输入）</td><td>23 次正常、1 次异常未重发；11 个完整配对 recall@10 40.91% → 50.00%，仅 1 个任务改善；费用约 0.034 元</td><td><span class="tag t-out">未入稿</span></td></tr>
+<tr><td>35 条不重叠任务扩样</td><td>70 次调用全正常；反馈 55.24% vs 预规划 56.67%，<strong>−1.43 点</strong>，2 改善 2 退步 → 未复现稳定收益；约 0.106 元</td><td><span class="tag t-neg">负结果</span></td></tr>
+<tr><td>强排序器生成查询（复现 2,232 条历史成绩）</td><td>35 条上候选池 recall@10 60.48% → 70.00%，4 改善 0 退步，区间下界为零 → <strong>仍不确定</strong>；三条改善本已被 metadata 池覆盖</td><td><span class="tag t-out">未入稿</span></td></tr>
+<tr><td>简单融合对照</td><td>63.33% vs 生成查询 70.00%，+6.67 点，3 改善 0 退步，区间下界为零；仅 1 个目标超出原并集</td><td><span class="tag t-out">未入稿</span></td></tr>
+<tr><td>37 条不重叠任务验证（2026-11-03）</td><td>固定简单融合 58.57% → 生成查询 61.43%，+2.86 点，1 改善 0 退步，区间 [0, 9.09] → 仍不确定</td><td><span class="tag t-out">未入稿</span></td></tr>
+</tbody>
+</table>
+
+<h3>3.6 2026-11-10/11 新增实验</h3>
+<table>
+<thead><tr><th>实验</th><th>关键数字 / 判读</th><th>状态</th></tr></thead>
+<tbody>
+<tr><td>三路融合（16 特征 + dense + cross-encoder）<br><code>data/dense_model_scores.jsonl</code></td><td>dense+model − dense = <strong>+0.0032</strong>，CI (−0.003,+0.010)，W/L 87/79，p=0.5871 → cross-encoder 被 dense 吸收</td><td><span class="tag t-neg">负结果</span></td></tr>
+<tr><td>500 候选池对照（290 配对任务、同 folds/seeds）<br><code>data/pool-size-comparison.json</code></td><td>dense_symbol 0.4077 → <strong>0.3814</strong>，delta −0.0263，CI (−0.0575,+0.0045)，W/L 10/20，p=0.0987；其余指标全不显著。机制上 <code>dense−base</code> 从 200 池 +0.0615 (p=0.0025) 降到 500 池 +0.0385 (p=0.0961)，多出的低质量候选稀释了 dense 增量</td><td><span class="tag t-neg">负结果</span></td></tr>
+<tr><td>旧 staged 下游对照（2026-11-08）</td><td>基线 2/10、完整方法 1/10；ranker_only 0、control_only 1 → 按预登记基线赢则不写</td><td><span class="tag t-neg">负结果</span></td></tr>
+<tr><td>Fix A 确定性预定位烟测（2 任务）</td><td><code>requests_7433</code> resolved=True；<code>fastapi_14463</code> 因 3 分钟超时失败；两次 <code>prelocalization ok</code>，不再出现工具参数错误</td><td><span class="tag t-out">未入稿</span></td></tr>
+<tr><td>Fix A 批量配对（9 批 / 54 任务）+ opt-01 对照</td><td>见第 4 节</td><td><span class="tag t-neg">负结果</span></td></tr>
+</tbody>
+</table>
+
+<div class="judge"><span class="label">诚实性张力</span>
+独立复评特别指出：仓库<strong>没有 p-hacking 证据</strong>，负结果也都有预注册判读纪律，但读者在论文里看不到完整实验图景——下游 54 配对、500 池 290 配对、干预可预测性、路由失败等全部不进投稿。这是「披露充分性」问题，不是「造假」问题。建议第 4 条把关键负结果写进 Limitations。
+</div>
+
+<h2 id="s4">4. 主赛道下游验证详情（2026-11-11 夜间）</h2>
+
+<h3>4.1 运行事实</h3>
+<ul>
+<li>队列 <strong>9/9 批 COMPLETE</strong>（00:34 启动，06:49 收尾），全程复用同一个已验证挂载正常的 GPU 内核 slug（新建 slug 曾挂到 0 个 wheel，导致 pip 空参数报错）。</li>
+<li>GPU 为<strong>单卡 Nvidia L4</strong>（<code>tp_size=1</code>），vLLM <code>gpu_memory_utilization=0.90</code>、<code>max_model_len=32768</code>；主队列 <code>CONCURRENCY=2</code>、3 分钟预算、30 次工具调用上限。</li>
+<li>Fix A 架构目标达成：确定性预定位在 harness 内注入报告，9 批 trace 中<strong>再未出现</strong> <code>run_skill_script</code> 缺 <code>skill_name</code>/<code>file_path</code> 的嵌套参数错误（旧 staged 版曾连续三次重发、烧光 3 分钟）。trace 里记录的 <code>system_instruction</code> 是原始 <code>agent.instruction</code>，不是最终 prompt；ADK 在调用时注入 session state（缺变量会报 <code>Context variable not found</code>，v10 的 <code>fastapi_13713</code> 已证），因此报告确实送达。</li>
+</ul>
+
+<h3>4.2 逐批结果（双臂配对）</h3>
+<table>
+<thead><tr><th>批次</th><th class="num">任务数</th><th class="num">baseline</th><th class="num">ranker</th><th class="num">ranker_only</th><th class="num">control_only</th><th class="num">超时 / 运行数</th></tr></thead>
+<tbody>
+<tr><td><code>paired-v1</code>（8 个 development）</td><td class="num">8</td><td class="num">1</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">13 / 16</td></tr>
+<tr><td><code>all-01</code></td><td class="num">6</td><td class="num">1</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">10 / 12</td></tr>
+<tr><td><code>all-02</code></td><td class="num">6</td><td class="num">2</td><td class="num">1</td><td class="num">0</td><td class="num">1</td><td class="num">9 / 12</td></tr>
+<tr><td><code>all-03</code></td><td class="num">6</td><td class="num">1</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">9 / 12</td></tr>
+<tr><td><code>all-04</code></td><td class="num">6</td><td class="num">3</td><td class="num">2</td><td class="num">0</td><td class="num">1</td><td class="num">7 / 12</td></tr>
+<tr><td><code>all-05</code></td><td class="num">6</td><td class="num">0</td><td class="num">1</td><td class="num">1</td><td class="num">0</td><td class="num">8 / 12</td></tr>
+<tr><td><code>all-06</code></td><td class="num">6</td><td class="num">2</td><td class="num">1</td><td class="num">0</td><td class="num">1</td><td class="num">8 / 12</td></tr>
+<tr><td><code>all-07</code></td><td class="num">6</td><td class="num">1</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">10 / 12</td></tr>
+<tr><td><code>opt-01</code>（5 分钟 / 并发 3）</td><td class="num">4</td><td class="num">0</td><td class="num">1</td><td class="num">1</td><td class="num">0</td><td class="num">5 / 8</td></tr>
+<tr><th>合计</th><th class="num">54</th><th class="num">11</th><th class="num">10</th><th class="num">2</th><th class="num">3</th><th class="num">79 / 108</th></tr>
+</tbody>
+</table>
+
+<h3>4.3 配对统计与判读</h3>
+<div class="fact"><span class="label">事实</span>
+baseline <strong>11/54 = 20.4%</strong>，ranker <strong>10/54 = 18.5%</strong>；配对差 <strong>−1.85 点</strong>，bootstrap CI <strong>(−9.26, +5.56)</strong>；discordant 2:3，sign test <strong>p=1.0</strong>。分仓库一致（rich 5:5、requests 3:3、fastapi 3:2、httpx 0:0）。<strong>45/54</strong> 任务至少一臂超时；两臂都跑完的仅 <strong>9</strong> 个，且这 9 个是 <strong>8:8</strong> 打平。
+</div>
+<div class="judge"><span class="label">判断</span>
+这不是「方法略差」，而是<strong>实验无功效</strong>：54 个名义样本里真正产生可比较信息的只有 9 个。因此该结果<strong>既不能支持、也不能否定</strong>方法有效性，按预登记规则不进论文。Fix A 修好了工程 bug（工具调用），但「工程正确」不等于「端到端修复率提升」。
+</div>
+
+<h3>4.4 opt-01 对照：加预算与加并发是否有效</h3>
+<p>取 <code>all-01</code> 前 4 个相同任务，改为 5 分钟预算 + 并发 3 重跑。3 分钟下 <strong>0/8</strong> 成功，5 分钟下 <strong>1/8</strong>（仅 <code>requests_7427</code> 的 ranker 臂）。失败模式从「3 分钟超时」变为「5 分钟超时」或 <code>Agent exceeded tool call budget (30 calls)</code>。</p>
+<div class="judge"><span class="label">判断</span>
+瓶颈是 <strong>30 次工具调用上限 + 单卡 L4 推理慢</strong>，给更多时间只是让 agent 多绕几圈再撞墙。加并发在单卡 L4（KV cache 已被 32K 上下文挤紧）上会拿单请求延迟换吞吐，方向与当前需求相反。<strong>调参救不了</strong>；若要让下游出可用结论，应解开工具调用上限，或改用「只看定位质量」的轻量口径。
+</div>
+
+<h2 id="s5">5. 风险、待办与分工</h2>
+<table>
+<thead><tr><th>优先级</th><th>事项</th><th>谁来做</th></tr></thead>
+<tbody>
+<tr><td><span class="tag t-neg">P0</span></td><td>在 Kaggle 线上核实 <code>submitted</code> / <code>draft</code>，保存提交回执、平台字数与截图，回填 <code>docs/status.md</code>；匿名复核 5 张图顺序与两个 Project Links</td><td><strong>只能由项目成员在线上完成</strong></td></tr>
+<tr><td><span class="tag t-neg">P0</span></td><td>修 <code>paper/writeup-upload.md</code> 的过时数字与图片顺序，勾选六项清单（正文页数/字数/顺序<b>已修</b>；线上勾选与回执仍待人工）</td><td>本项目内可改（不进正文）</td></tr>
+<tr><td><span class="tag t-wait">P1</span></td><td>删 <code>main.md:33</code> 的首创声称（净 0 词、零风险、收益最高）</td><td>本项目内可改</td></tr>
+<tr><td><span class="tag t-wait">P1</span></td><td>摘要加 "under BM25" 并标注 0.90 为 n.s.；Limitations 补披露 rewiring 比例、下游 45/54 超时、500 池无收益（合计 +45~55 词，需从 §5 注水段砍等量）</td><td>本项目内可改</td></tr>
+<tr><td><span class="tag t-wait">P2</span></td><td>补 Related Work 分工说明；<strong>不新增文献条目</strong></td><td>本项目内可改</td></tr>
+<tr><td><span class="tag t-out">P3</span></td><td>若还想让下游出结论：解开 30 次工具调用上限，或改用定位质量口径；不要再单纯加任务数</td><td>需先决定研究方向</td></tr>
+</tbody>
+</table>
+<div class="risk"><span class="label">字数红线</span>
+当前 2,990/3,000，余 <strong>10 词</strong>，且平台计数器口径未核实。任何增词都必须先砍等量词，且改完必须重跑全链路与两个自检。
+</div>
+
+<h2 id="sa">附录 A：复现命令</h2>
+<pre><code># 发布自检（只读）
+.venv/Scripts/python.exe tools/check_publication.py
+.venv/Scripts/python.exe tools/audit_numbers.py --fast
+.venv/Scripts/python.exe -m unittest discover -s tests -q
+
+# 改动 main.md 后的全链路重建（会写产物）
+.venv/Scripts/python.exe tools/make_submission.py
+.venv/Scripts/python.exe tools/make_pdf.py
+.venv/Scripts/python.exe tools/make_table_images.py
+.venv/Scripts/python.exe tools/make_kaggle_images.py
+.venv/Scripts/python.exe tools/check_publication.py
+.venv/Scripts/python.exe tools/audit_numbers.py --fast
+
+# 2026-11-11 新增实验
+.venv/Scripts/python.exe tools/features.py --tasks data/swebench_full.jsonl \
+  --out data/features_full_p500.jsonl --jobs 8 --pool 500 --append
+.venv/Scripts/python.exe tools/embed_retrieve.py --rows data/features_lite_p500.jsonl \
+  --tasks data/swebench_lite.jsonl --out data/embed_lite_p500.jsonl --workers 8
+.venv/Scripts/python.exe tools/rank_with_dense.py --rows data/features_lite_p500.jsonl \
+  --embed data/embed_lite_p500.jsonl --body-extra data/_disabled_body_rank.jsonl \
+  --out data/dense_scores_lite_p500.jsonl
+.venv/Scripts/python.exe tools/compare_pool_size.py \
+  --control data/dense_scores_lite_p200.jsonl \
+  --treatment data/dense_scores_lite_p500.jsonl \
+  --out data/pool-size-comparison.json
+
+# 其他诊断脚本
+.venv/Scripts/python.exe tools/analyse_depth_strata.py
+.venv/Scripts/python.exe tools/cost_budget_tokens.py
+.venv/Scripts/python.exe tools/rank_with_dense_model.py
+.venv/Scripts/python.exe tools/compare_ranker_development.py \
+  --ranker-run .cache/main-track/ranker-development-v1 \
+  --control-run .cache/main-track/ranker-matched-control-v2</code></pre>
+
+<h2 id="sb">附录 B：文件索引</h2>
+<table>
+<thead><tr><th>类别</th><th>路径</th></tr></thead>
+<tbody>
+<tr><td>主稿与载体</td><td><code>paper/main.md</code>、<code>paper/submission.md</code>、<code>paper/submission.pdf</code>、<code>paper/kaggle_body_img.md</code>、<code>paper/writeup-upload.md</code></td></tr>
+<tr><td>新颖性与状态</td><td><code>docs/novelty-review.md</code>、<code>docs/status.md</code>、<code>docs/gold-audit.md</code></td></tr>
+<tr><td>冻结协议与结果</td><td><code>docs/graph-control-protocol.md</code>、<code>docs/graph-control-results.md</code>、<code>docs/reproduction.md</code></td></tr>
+<tr><td>实验记录</td><td><code>docs/experiments/*.md</code>（8 份）、<code>docs/competition/kaggle-paper-track-raw.md</code></td></tr>
+<tr><td>Kaggle 批次产物</td><td><code>.cache/main-track/ranker-preloc-*/output/batch-results.jsonl</code>、<code>.cache/main-track/overnight-kaggle-state.json</code>、<code>overnight-kaggle.log</code></td></tr>
+<tr><td>本地实验链</td><td><code>.cache/main-track/overnight_local.py</code>、<code>overnight-local-state.json</code>、<code>overnight-local.log</code></td></tr>
+<tr><td>夜间数据产物</td><td><code>data/features_full_p500.jsonl</code>(2232)、<code>data/features_lite_p200.jsonl</code> 与 <code>features_lite_p500.jsonl</code>(290)、<code>data/embed_lite_p500.jsonl</code>(290)、<code>data/dense_scores_lite_p200.jsonl</code> / <code>dense_scores_lite_p500.jsonl</code>、<code>data/pool-size-comparison.json</code></td></tr>
+<tr><td>本次修复</td><td><code>tools/rank_with_dense.py</code>（<code>both_columns</code> 不再无条件引用可选 body-rank 列，此前禁用该列会触发 <code>IndexError</code>）</td></tr>
+</tbody>
+</table>
+
+<div class="foot">
+生成时间 2026-11-11 21:45，22:15 修订（北京时间）。数据来源：仓库内文件、已落盘的 <code>batch-results.jsonl</code> 与实验 JSON，以及一次全程只读的独立评审子代理输出。本文档不修改论文、不改写任何结果、不代表已提交状态；修订只更新事实与已完成项。
+</div>
+
+</div>
+</body>
+</html>
